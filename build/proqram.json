@@ -164,7 +164,7 @@
    {"num": "2", "see": ["c18s5", "c18s6"], "title": "Orfoqrafiya və orfoepiya qaydaları"},
    {"num": "3", "see": ["c19s1", "c19s2", "c19s3"], "title": "Leksika", "items": ["Leksika haqqında məlumat", "Azərbaycan dilinin lüğət tərkibi. Lüğətlər"]},
    {"num": "4", "see": ["c19s4", "c19s5"], "title": "Söz yaradıcılığı", "items": ["Söz yaradıcılığının əsas xüsusiyyətləri", "Sözün tərkibi: kök və şəkilçi"]},
-   {"num": "5", "title": "Morfologiya",
+   {"num": "5", "see": ["c20"], "title": "Morfologiya",
     "items": ["Nitq hissələri", "İsim", "Sifət", "Say", "Əvəzlik", "Feil", "Zərf", "Qoşma", "Bağlayıcı", "Ədat", "Modal sözlər", "Nida"]},
    {"num": "6", "title": "Sintaksis",
     "items": [

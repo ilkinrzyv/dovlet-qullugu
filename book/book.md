@@ -4054,6 +4054,349 @@ E) Qarabağ
 Cavab: A
 ```
 
+## Fəsil 20. Morfologiya
+
+**Morfologiya** sözləri nitq hissələrinə görə və onların qrammatik formalarını öyrənir. Bu fəsil proqramın 5-ci mövzusunu əhatə edir: əsas nitq hissələri (isim, sifət, say, əvəzlik, feil, zərf), köməkçi nitq hissələri (qoşma, bağlayıcı, ədat, modal sözlər) və nida.
+
+### 20.1. Nitq hissələri
+
+| Qrup | Nitq hissəsi | Sual | Nümunə |
+| --- | --- | --- | --- |
+| Əsas | İsim | kim? nə? hara? | Əli, kitab, Bakı |
+| Əsas | Sifət | necə? nə cür? hansı? | ağ, gözəl, ağıllı |
+| Əsas | Say | neçə? nə qədər? neçənci? | beş, beşinci |
+| Əsas | Əvəzlik | isim, sifət, say yerində işlənir | mən, bu, kim |
+| Əsas | Feil | nə etdi? nə edir? nə edəcək? | yazdı, gəlir |
+| Əsas | Zərf | necə? nə vaxt? harada? nə qədər? | tez, sabah, irəli |
+| Köməkçi | Qoşma, bağlayıcı, ədat, modal sözlər | suala cavab vermir | üçün, və, -mı, əlbəttə |
+| — | Nida | suala cavab vermir | ah, ura |
+
+**Əsas nitq hissələri** müstəqil mənalıdır, suala cavab verir və cümlə üzvü olur. **Köməkçi nitq hissələri** müstəqil mənalı deyil, suala cavab vermir və cümlə üzvü olmur. **Nida** hiss və həyəcan bildirir, ayrıca qrupdur.
+
+```nümunə
+S: Hansı söz köməkçi nitq hissəsidir?
+A) üçün
+B) gözəl
+C) beş
+D) o
+E) yazmaq
+Cavab: A
+İzah: **Üçün** qoşmadır: tək işlənəndə heç bir suala cavab vermir və cümlə üzvü olmur. Gözəl — sifət, beş — say, o — əvəzlik, yazmaq — feildir; hamısı əsas nitq hissələridir.
+```
+
+```yoxla
+S: Hansı sırada yalnız əsas nitq hissələri verilib?
+A) kitab, gözəl, beş
+B) və, ilə, kitab
+C) ah, gözəl, üçün
+D) amma, beş, bəlkə
+E) ki, kimi, gəlmək
+Cavab: A
+```
+
+### 20.2. İsim
+
+İsim əşyanın adını bildirir: **kim?** (insan), **nə?** (əşya, heyvan), **hara?** (yer).
+
+- **Xüsusi** (*Araz, Bakı, Nizami*) — **ümumi** (*çay, şəhər, şair*);
+- **konkret** (*masa, qələm*) — **mücərrəd** (*sevinc, ağıl, cəsarət* — gözlə görünmür);
+- **tək** — **cəm** (**-lar/-lər**: *kitablar*).
+
+**İsmin hallanması — 6 hal:**
+
+| Hal | Suallar | Şəkilçi | Nümunə |
+| --- | --- | --- | --- |
+| Adlıq | kim? nə? hara? | — | ev |
+| Yiyəlik | kimin? nəyin? haranın? | -ın, -in, -un, -ün | evin |
+| Yönlük | kimə? nəyə? haraya? | -a, -ə | evə |
+| Təsirlik | kimi? nəyi? haranı? | -ı, -i, -u, -ü | evi |
+| Yerlik | kimdə? nədə? harada? | -da, -də | evdə |
+| Çıxışlıq | kimdən? nədən? haradan? | -dan, -dən | evdən |
+
+**Mənsubiyyət** əşyanın kimə aid olduğunu göstərir: *(mənim) kitab-ım, (sənin) kitab-ın, (onun) kitab-ı*. **Diqqət:** *kitabı* forması həm təsirlik hal (*kitabı oxudum — nəyi?*), həm də III şəxs mənsubiyyət (*onun kitabı*) ola bilər — cümlədəki sual həlledicidir.
+
+```nümunə
+S: “Kitabı oxudum” cümləsində “kitabı” sözü hansı haldadır?
+A) təsirlik
+B) yiyəlik
+C) yönlük
+D) adlıq
+E) yerlik
+Cavab: A
+İzah: Sual veririk: **nəyi** oxudum? — kitabı. “Nəyi?” təsirlik halın sualıdır. Burada -ı mənsubiyyət şəkilçisi deyil: “kimin kitabı?” sualı qoyulmur.
+```
+
+```yoxla
+S: “Məktəbdən” sözü hansı suala cavab verir?
+A) haradan?
+B) harada?
+C) haraya?
+D) haranın?
+E) haranı?
+Cavab: A
+```
+
+```nümunə
+S: Hansı isim mücərrəddir?
+A) sevinc
+B) masa
+C) çay
+D) qələm
+E) ağac
+Cavab: A
+İzah: **Sevinc** hiss bildirir — onu görmək, toxunmaq olmur, bu, mücərrəd isimdir. Masa, çay, qələm, ağac konkret əşyalardır.
+```
+
+```yoxla
+S: Hansı söz xüsusi isimdir?
+A) Araz
+B) çay
+C) dəniz
+D) şəhər
+E) dağ
+Cavab: A
+```
+
+### 20.3. Sifət və say
+
+**Sifət** əşyanın əlamətini bildirir (rəng, dad, forma, xasiyyət): **necə? nə cür? hansı?** Düzəltmə sifətlər tez-tez **-lı/-li/-lu/-lü** (*ağıllı*) və **-sız/-siz/-suz/-süz** (*ağılsız*) şəkilçiləri ilə yaranır.
+
+**Sifətin dərəcələri:**
+
+| Dərəcə | Necə yaranır | Nümunə |
+| --- | --- | --- |
+| Adi | — | sarı, qırmızı |
+| Azaltma | **-ımtıl/-imtil/-umtul/-ümtül** | sarımtıl, göyümtül |
+| Çoxaltma | ilk heca təkrarlanır və ya *ən, lap, çox* sözləri artırılır | sapsarı, qıpqırmızı, ən sarı |
+
+**Say** əşyanın miqdarını və sırasını bildirir:
+
+| Növ | Sual | Nümunə |
+| --- | --- | --- |
+| Miqdar sayı | neçə? nə qədər? | beş, on iki |
+| Sıra sayı (**-ıncı/-inci/-uncu/-üncü**) | neçənci? | beşinci, üçüncü |
+| Kəsr sayı | — | beşdə iki, sıfır tam onda beş |
+
+```nümunə
+S: Hansı sifət azaltma dərəcəsindədir?
+A) sarımtıl
+B) sapsarı
+C) ən sarı
+D) sarı
+E) lap sarı
+Cavab: A
+İzah: **-ımtıl** şəkilçisi əlaməti zəiflədir: *sarımtıl* — tam sarı deyil. Sapsarı, ən sarı, lap sarı çoxaltma, sarı isə adi dərəcədir.
+```
+
+```yoxla
+S: Hansı sifət çoxaltma dərəcəsindədir?
+A) qıpqırmızı
+B) qırmızımtıl
+C) qırmızı
+D) qırmızılıq
+E) qırmızılı
+Cavab: A
+```
+
+```nümunə
+S: Hansı söz sıra sayıdır?
+A) üçüncü
+B) üç
+C) üçlük
+D) üçdə bir
+E) üçü
+Cavab: A
+İzah: **-üncü** şəkilçisi sıra sayı düzəldir və “neçənci?” sualına cavab verir. Üç — miqdar sayı, üçdə bir — kəsr sayı; üçlük isim kimi işlənir.
+```
+
+```yoxla
+S: “Yeddi” sözündən sıra sayı düzəlt. (sözü yaz)
+Cavab: yeddinci
+```
+
+### 20.4. Əvəzlik
+
+Əvəzlik isim, sifət və say yerində işlənir, onları **əvəz edir**.
+
+| Növ | Nümunələr |
+| --- | --- |
+| Şəxs | mən, sən, o, biz, siz, onlar |
+| İşarə | bu, o, həmin, belə, elə |
+| Sual | kim, nə, hara, hansı, neçə, necə |
+| Qayıdış | öz (özüm, özün, özü...) |
+| Qeyri-müəyyən | kimsə, nəsə, biri |
+| Təyini | hər, bütün, hamı |
+
+**“O” sözü iki cür işlənir:** isimdən əvvəl gəlib onu göstərirsə — **işarə** əvəzliyi (*o kitab*); insanı əvəz edirsə — **şəxs** əvəzliyi (*O gəldi*).
+
+```nümunə
+S: Hansı cümlədə “o” işarə əvəzliyidir?
+A) O kitabı mənə ver.
+B) O dünən gəldi.
+C) O, müəllimdir.
+D) Onu gördüm.
+E) O, evdə idi.
+Cavab: A
+İzah: A-da **o** isimdən (*kitabı*) əvvəl gəlib onu göstərir — “**hansı** kitabı?” Bu, işarə əvəzliyidir. Digər cümlələrdə o insanı əvəz edir — şəxs əvəzliyidir.
+```
+
+```yoxla
+S: Hansı söz qayıdış əvəzliyidir?
+A) özüm
+B) mən
+C) bu
+D) kim
+E) hamı
+Cavab: A
+```
+
+### 20.5. Feil
+
+Feil hərəkət və iş bildirir. İlkin forması **məsdərdir** (**-maq/-mək**): *yazmaq, gəlmək*. İnkar forması **-ma/-mə** ilə yaranır: *yazmadı*.
+
+**Təsirli və təsirsiz feillər.** Təsirli feil təsirlik halda tamamlıq tələb edir: *kitabı **oxumaq*** (nəyi?). Təsirsiz feil belə tamamlıq qəbul etmir: *getmək, yatmaq*.
+
+**Feilin növləri:**
+
+| Növ | Şəkilçi | Nümunə |
+| --- | --- | --- |
+| Məlum | — | yazdı |
+| Məchul (iş icraçısı göstərilmir) | -ıl, -ın | yazıldı, oxundu |
+| Qayıdış (iş icraçının özünə qayıdır) | -ın, -ıl | yuyundu, geyindi |
+| Qarşılıq-birgəlik | -ış | görüşdülər, yazışdılar |
+| İcbar (işi başqasına gördürmək) | -dır, -t | yazdırdı, oxutdu |
+
+**Feilin şəkilləri (6):**
+
+| Şəkil | Əlamət | Nümunə |
+| --- | --- | --- |
+| Xəbər | zaman bildirir | yazdı, yazır, yazacaq |
+| Əmr | əmr, xahiş | yaz, yazsın |
+| Arzu | arzu | (kaş) yazam, yazasan, yaza |
+| Şərt | -sa/-sə | yazsa |
+| Vacib | -malı/-məli | yazmalıyam |
+| Lazım | -ası/-əsi | yazasıyam |
+
+**Xəbər şəklinin zamanları:** keçmiş (*yazdı, yazıb, yazmış*), indiki (*yazır*), gələcək (*yazacaq, yazar*).
+
+**Təsriflənməyən formalar:**
+
+- **məsdər:** *oxumaq*;
+- **feili sifət** — əşyanın hərəkətlə bağlı əlaməti, **-an, -mış, -dıq, -acaq, -malı**: *oxuyan tələbə, oxunmuş kitab*;
+- **feili bağlama** — iki hərəkəti bağlayır, **-ıb, -araq, -anda, -dıqca, -madan**: *oxuyub getdi, oxuyanda gördü*.
+
+```nümunə
+S: “Məktub yazıldı” cümləsində feil hansı növdədir?
+A) məchul
+B) məlum
+C) qayıdış
+D) qarşılıq-birgəlik
+E) icbar
+Cavab: A
+İzah: Məktubu **kimin** yazdığı göstərilmir, iş obyektin üzərində cəmlənib; feil **-ıl** şəkilçisi ilə düzəlib: yaz-**ıl**-dı. Bu, məchul növdür. Qayıdış növdə iş icraçının özünə qayıdır (*yuyundu*), məktub isə özünü yazmır.
+```
+
+```yoxla
+S: Hansı feil icbar növündədir?
+A) oxutdu
+B) oxudu
+C) oxundu
+D) yuyundu
+E) görüşdü
+Cavab: A
+```
+
+```nümunə
+S: “Gəlməlisən” feili hansı şəkildədir?
+A) vacib
+B) şərt
+C) arzu
+D) əmr
+E) lazım
+Cavab: A
+İzah: **-malı/-məli** vacib şəklinin əlamətidir: gəl-**məli**-sən — mütləq gəlmək lazımdır. Şərt şəkli -sa/-sə (*gəlsə*), lazım şəkli -ası/-əsi (*gələsisən*) ilə düzəlir.
+```
+
+```yoxla
+S: Hansı söz feili sifətdir?
+A) oxuyan (tələbə)
+B) oxuyub
+C) oxumaq
+D) oxuyanda
+E) oxusa
+Cavab: A
+```
+
+### 20.6. Zərf
+
+Zərf hərəkətin əlamətini, yerini, zamanını, miqdarını bildirir və adətən **feilə** aid olur:
+
+| Növ | Sual | Nümunə |
+| --- | --- | --- |
+| Tərzi-hərəkət | necə? nə cür? | yavaş, tez, birdən |
+| Zaman | nə vaxt? | indi, sabah, dünən |
+| Yer | haraya? harada? | irəli, yuxarı, aşağı |
+| Kəmiyyət | nə qədər? | az, çox, bir az |
+
+**Sifətlə qarışdırma:** eyni söz isimdən əvvəl gəlirsə **sifətdir** (*gözəl mahnı*), feilə aid olursa **zərfdir** (*gözəl oxuyur*).
+
+```nümunə
+S: Hansı cümlədə “yaxşı” sözü zərfdir?
+A) O, yaxşı oxuyur.
+B) Yaxşı adamdır.
+C) Yaxşı kitab aldım.
+D) Bu, yaxşı fikirdir.
+E) Yaxşı dost tapdım.
+Cavab: A
+İzah: A-da **yaxşı** feilə (*oxuyur*) aiddir — “**necə** oxuyur?” Bu, zərfdir. Digər cümlələrdə yaxşı isimdən əvvəl gəlib onun əlamətini bildirir (*yaxşı adam, yaxşı kitab*) — sifətdir.
+```
+
+```yoxla
+S: Hansı zərf zaman bildirir?
+A) dünən
+B) yavaş
+C) yuxarı
+D) çox
+E) birdən
+Cavab: A
+```
+
+### 20.7. Köməkçi nitq hissələri və nida
+
+| Nitq hissəsi | Nə edir | Nümunələr |
+| --- | --- | --- |
+| **Qoşma** | isimdən sonra gəlib münasibət bildirir | ilə, üçün, kimi, qədər, sonra, əvvəl, görə, doğru |
+| **Bağlayıcı** | sözləri və cümlələri bağlayır | və, ilə, amma, lakin, ancaq, çünki, ki, həm... həm, ya... ya |
+| **Ədat** | sözə və ya cümləyə əlavə məna (sual, qüvvətləndirmə, məhdudlaşdırma) verir | -mı, da/də, hətta, yalnız, ancaq, axı, bəs, lap |
+| **Modal sözlər** | danışanın fikrə münasibətini bildirir; vergüllə ayrılır | əlbəttə, bəlkə, deyəsən, şübhəsiz, yəqin |
+| **Nida** | hiss və həyəcan bildirir | ah, oh, of, bəh-bəh, ura |
+
+**Eyni söz müxtəlif nitq hissəsi ola bilər:**
+
+- **ilə** — iki həmcins sözü bağlayırsa və onu **və** ilə əvəz etmək olursa, **bağlayıcıdır** (*Əli ilə Vəli gəldi*); vasitə, birgəlik bildirirsə, **qoşmadır** (*qələm ilə yazdı*);
+- **ancaq** — “amma” mənasında bağlayıcı, “yalnız” mənasında ədatdır.
+
+```nümunə
+S: Hansı cümlədə “ilə” bağlayıcıdır?
+A) Əli ilə Vəli gəldi.
+B) Qələm ilə yazdı.
+C) Qatar ilə getdi.
+D) Dostu ilə danışdı.
+E) Bıçaq ilə kəsdi.
+Cavab: A
+İzah: A-da **ilə** iki həmcins mübtədanı bağlayır və onu **və** ilə əvəz etmək olur: *Əli və Vəli gəldi*. Digər cümlələrdə ilə vasitə və ya birgəlik bildirir (*nə ilə? kimlə?*) — bu, qoşmadır.
+```
+
+```yoxla
+S: Hansı söz modal sözdür?
+A) əlbəttə
+B) amma
+C) üçün
+D) ah
+E) hətta
+Cavab: A
+```
+
 # IV hissə — İnformatika {fənn=inf}
 
 # V hissə — Müsahibə

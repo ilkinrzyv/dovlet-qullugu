@@ -1,0 +1,19 @@
+{
+"20": [
+ {"s":"20.1","q":"Hansı söz nidadır?","o":["ura","ilə","və","bəlkə","yalnız"],"a":0,"e":"Ura hiss və həyəcan bildirir — nidadır. İlə qoşma və ya bağlayıcı, və bağlayıcı, bəlkə modal söz, yalnız ədatdır."},
+ {"s":"20.2","q":"Hansı söz yönlük haldadır?","o":["evə","evdə","evdən","evin","evi"],"a":0,"e":"Yönlük hal: kimə? nəyə? haraya? — -a/-ə: evə. Evdə — yerlik, evdən — çıxışlıq, evin — yiyəlik, evi — təsirlik."},
+ {"s":"20.2","q":"Yiyəlik hal hansı suallara cavab verir?","o":["kimin? nəyin? haranın?","kimə? nəyə? haraya?","kimi? nəyi? haranı?","kimdə? nədə? harada?","kimdən? nədən? haradan?"],"a":0,"e":"Yiyəlik hal: kimin? nəyin? haranın? (-ın, -in, -un, -ün). Qalanlar yönlük, təsirlik, yerlik və çıxışlıq halın suallarıdır."},
+ {"s":"20.2","t":"open","q":"Azərbaycan dilində ismin neçə halı var? (rəqəmlə yaz)","a":["6","altı"],"e":"Adlıq, yiyəlik, yönlük, təsirlik, yerlik, çıxışlıq — 6 hal."},
+ {"s":"20.3","q":"Hansı söz kəsr sayıdır?","o":["beşdə iki","beşinci","beş","beşlik","beşi"],"a":0,"e":"Beşdə iki bütövün hissəsini bildirir — kəsr sayıdır. Beşinci sıra, beş miqdar sayıdır."},
+ {"s":"20.3","q":"Hansı söz düzəltmə sifətdir?","o":["ağıllı","ağıl","ağ","ağac","ağır"],"a":0,"e":"Ağıl (isim) + -lı → ağıllı: leksik şəkilçi ilə düzələn sifət. Ağ və ağır sadə sifətlərdir, ağıl və ağac isimdir."},
+ {"s":"20.4","q":"Hansı söz sual əvəzliyidir?","o":["hansı","bu","özü","hər","kimsə"],"a":0,"e":"Hansı — sual əvəzliyi. Bu — işarə, özü — qayıdış, hər — təyini, kimsə — qeyri-müəyyən əvəzlikdir."},
+ {"s":"20.5","q":"“Yuyundu” feili hansı növdədir?","o":["qayıdış","məchul","məlum","icbar","qarşılıq-birgəlik"],"a":0,"e":"İş icraçının özünə qayıdır — özünü yudu: yu-yun-du. Bu, qayıdış növdür."},
+ {"s":"20.5","q":"“Yazsa” feili hansı şəkildədir?","o":["şərt","arzu","əmr","vacib","xəbər"],"a":0,"e":"-sa/-sə şərt şəklinin əlamətidir: yaz-sa."},
+ {"s":"20.5","q":"Hansı söz feili bağlamadır?","o":["gələndə","gələn","gəlmək","gələcək","gəlmiş"],"a":0,"e":"-anda/-əndə feili bağlama şəkilçisidir: gələndə (nə vaxt?). Gələn və gəlmiş feili sifət, gəlmək məsdərdir; gələcək həm feili sifət, həm də gələcək zaman forması ola bilər."},
+ {"s":"20.5","t":"open","q":"“Oxumaq” feilinin icbar növünü məsdər formasında yaz.","a":["oxutmaq"],"e":"Saitlə bitən köklərə icbar şəkilçisi -t artırılır: oxu-t-maq."},
+ {"s":"20.5","t":"open","q":"Azərbaycan dilində feilin neçə şəkli var? (rəqəmlə yaz)","a":["6","altı"],"e":"Xəbər, əmr, arzu, şərt, vacib, lazım — 6 şəkil."},
+ {"s":"20.6","q":"Hansı zərf yer bildirir?","o":["irəli","sabah","tez","az","birdən"],"a":0,"e":"İrəli — yer zərfi (haraya?). Sabah zaman, tez və birdən tərzi-hərəkət, az kəmiyyət zərfidir."},
+ {"s":"20.7","q":"Hansı söz qoşmadır?","o":["üçün","amma","əlbəttə","of","və"],"a":0,"e":"Üçün isimdən sonra gəlib məqsəd münasibəti bildirir — qoşmadır. Amma və və bağlayıcı, əlbəttə modal söz, of nidadır."},
+ {"s":"20.7","q":"“Yalnız sən gəldin” cümləsində “yalnız” hansı nitq hissəsidir?","o":["ədat","bağlayıcı","zərf","modal söz","qoşma"],"a":0,"e":"Yalnız fikri bir şəxslə məhdudlaşdırır — məhdudlaşdırıcı ədatdır."}
+]
+}
