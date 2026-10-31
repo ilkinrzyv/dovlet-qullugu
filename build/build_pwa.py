@@ -8,6 +8,9 @@ SCR = os.path.normpath(os.path.join(BASE, '..'))
 OUT = os.path.join(SCR, 'docs')
 ZIP = os.path.join(SCR, 'dist', 'dovlet-qullugu-offline.zip')
 FONTS = os.path.join(SCR, 'fonts')
+LIBS = os.path.join(SCR, 'libs')
+# the claude.ai version (artifact) the offline app opens for Claude when the reader has no API key of their own
+ARTIFACT = open(os.path.join(BASE, 'artifact.txt'), encoding='utf-8').read().strip() if os.path.exists(os.path.join(BASE, 'artifact.txt')) else ''
 ICONS = os.path.join(BASE, 'icons')
 sys.stdout.reconfigure(encoding='utf-8')
 
@@ -19,7 +22,7 @@ pwa_js = rd(os.path.join(BASE, 'pwa.js'))
 sw_tpl = rd(os.path.join(BASE, 'sw.template.js'))
 
 shutil.rmtree(OUT, ignore_errors=True)
-for d in ('fonts', 'icons'):
+for d in ('fonts', 'icons', 'libs'):
     os.makedirs(os.path.join(OUT, d))
 
 def wr(rel, text):
@@ -52,6 +55,15 @@ for name, d, slug, weights, italic in FAM:
 wr('fonts/fonts.css', font_css)
 shutil.copy(os.path.join(FONTS, 'fontsource-ibm-plex-sans-5.3.0', 'package', 'LICENSE'), os.path.join(OUT, 'fonts', 'LICENSE-IBM-Plex.txt'))
 shutil.copy(os.path.join(FONTS, 'fontsource-literata-5.3.0', 'package', 'LICENSE'), os.path.join(OUT, 'fonts', 'LICENSE-Literata.txt'))
+
+# ---------- markdown for Claude's answers: marked + DOMPurify, vendored so the app needs no network for them ----------
+lib_files = []
+for src, dst in ((os.path.join(LIBS, 'marked-12.0.2', 'marked.min.js'), 'libs/marked.min.js'),
+                 (os.path.join(LIBS, 'dompurify-3.1.6', 'purify.min.js'), 'libs/purify.min.js')):
+    shutil.copy(src, os.path.join(OUT, dst))
+    lib_files.append(dst)
+shutil.copy(os.path.join(LIBS, 'marked-12.0.2', 'LICENSE.md'), os.path.join(OUT, 'libs', 'LICENSE-marked.md'))
+shutil.copy(os.path.join(LIBS, 'dompurify-3.1.6', 'LICENSE'), os.path.join(OUT, 'libs', 'LICENSE-DOMPurify.txt'))
 
 # ---------- icons ----------
 icon_files = []
@@ -95,6 +107,8 @@ INDEX = f'''<!doctype html>
 <nav id="tabbar" class="tabbar" aria-label="Əsas bölmələr"></nav>
 <noscript><p style="padding:24px">Bu kitab JavaScript ilə işləyir — brauzerdə JavaScript-i aç.</p></noscript>
 <script src="book.js"></script>
+<script src="libs/marked.min.js"></script>
+<script src="libs/purify.min.js"></script>
 <script src="pwa.js"></script>
 <script src="app.js"></script>
 </body>
@@ -130,17 +144,17 @@ wr('book.js', book_js)
 wr('index.html', INDEX)
 wr('manifest.webmanifest', manifest)
 
-assets = ['./', 'app.css', 'app.js', 'book.js', 'pwa.js', 'manifest.webmanifest', 'fonts/fonts.css'] + font_files + icon_files
+assets = ['./', 'app.css', 'app.js', 'book.js', 'pwa.js', 'manifest.webmanifest', 'fonts/fonts.css'] + lib_files + font_files + icon_files
 
 # version = content hash of everything the app is made of (templates, not the injected copies)
 h = hashlib.sha256()
-for part in (css, app_js, pwa_js, sw_tpl, book_js, INDEX, manifest, font_css):
+for part in (css, app_js, pwa_js, sw_tpl, book_js, INDEX, manifest, font_css, ARTIFACT):
     h.update(part.encode('utf-8'))
-for rel in font_files + icon_files:
+for rel in lib_files + font_files + icon_files:
     h.update(open(os.path.join(OUT, rel), 'rb').read())
 VERSION = datetime.date.today().strftime('%Y.%m.%d') + '-' + h.hexdigest()[:7]
 
-wr('pwa.js', pwa_js.replace('__VERSION__', VERSION).replace('__ASSET_COUNT__', str(len(assets))))
+wr('pwa.js', pwa_js.replace('__VERSION__', VERSION).replace('__ASSET_COUNT__', str(len(assets))).replace('__ARTIFACT__', ARTIFACT))
 wr('sw.js', sw_tpl.replace('__VERSION__', VERSION).replace('__ASSETS__', json.dumps(assets, ensure_ascii=False, indent=1)))
 
 total = sum(os.path.getsize(os.path.join(OUT, a if a != './' else 'index.html')) for a in assets)
@@ -176,7 +190,8 @@ Sayt yenilənəndə tətbiq növbəti açılışda yeni versiyanı yükləyir v�
 - `index.html` — tətbiqin qabığı
 - `app.js`, `app.css` — interfeys
 - `book.js` — kitabın bütün mətni və testlər
-- `pwa.js` — offline rejim, quraşdırma, ixrac və idxal
+- `pwa.js` — offline rejim, quraşdırma, ixrac və idxal, Claude (öz API açarınla)
+- `libs/` — marked və DOMPurify (Claude cavablarının göstərilməsi; MIT, Apache-2.0/MPL-2.0)
 - `sw.js` — service worker (offline yaddaş)
 - `manifest.webmanifest`, `icons/` — tətbiqin adı və ikonları
 - `fonts/` — IBM Plex Sans, IBM Plex Mono, Literata (SIL Open Font License 1.1)

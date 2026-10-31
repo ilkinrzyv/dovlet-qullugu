@@ -12,13 +12,15 @@ service worker.
 pip install -r requirements.txt
 python build/parse_book.py   # → build/book.json (gitignored); must print "errors 0"
 python build/build_pwa.py    # → docs/ and dist/dovlet-qullugu-offline.zip; prints the new version
+python build/build_page.py   # → dist/dovlet-qullugu.html, the claude.ai version (see Claude below)
 cd build && npm ci && npx playwright install chromium
 npm run test:pwa             # real build: service worker, install, offline reload, programme page offline
 npm run test:app             # fixture book (build/test/): BA/BB filter, open + figure questions, inline nümunə/yoxla,
-                             # Claude links, virtual teacher, mock exam, time-up
+                             # Claude with a mocked API key + handoff links, teacher chat, mock exam, time-up
+npm run test:page            # fixture book as the claude.ai page, `sample` mocked: #ai-… links answer by themselves
 ```
 
-Both checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build/icons/`. Screenshots land in
+All checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build/icons/`. Screenshots land in
 `build/shots/` (gitignored). On Windows the scripts reconfigure stdout to UTF-8; use `python`, not `python3`.
 
 ## Where things live
@@ -49,15 +51,24 @@ Both checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build
 - `build/app.js` — the whole UI in one IIFE: hash router (`#home`, `#c1`, `#c1s2`, `#proqram[-qan]`, `#testler`,
   `#test-c1` / `test-mix` / `test-wrong` / `test-f-qan`, `#imtahan`, `#imtahan-netice`, `#muellim[-men]`,
   `#axtar=...`, `#ayarlar`). `vis()` filters everything by `S.group`. State in localStorage `dq-kitab:v1` (`read`,
-  `last`, `quiz`, `wrong`, `chk` = solved inline checks keyed `cNsKkI`, `theme`, `fs`, `group`, `exam` = the running
-  mock exam with its start time, `exams` = history, `examLast`). Export/import as JSON with `app: "dovlet-qullugu"`.
-- Claude help (`app.js` section 2b, virtual teacher in section 10): links are `https://claude.ai/new?q=<prompt>`, so
-  they open in whatever Claude account the phone is signed into. Never put a model in the link — the owner wants the
-  reader to choose. `?q=` is undocumented, so a tap also copies the prompt. Prompts are Azerbaijani, instructions
-  first, material after (`PROMPT_MAX` cuts only the material); check questions ask for a hint, not the answer. No
-  Claude links inside a running mock exam.
-- `build/pwa.js` — `window.DQ_PWA`: service-worker registration, update bar, install prompt, file save/pick.
-  Present only in the PWA build; guard its use with `if (PWA)`.
+  `last`, `quiz`, `wrong`, `chk` = solved inline checks keyed `cNsKkI` (I = index in `section.qs`), `aiModel`, `theme`,
+  `fs`, `group`, `exam` = the running mock exam with its start time, `exams` = history, `examLast`). Export/import as
+  JSON with `app: "dovlet-qullugu"` (offline app only).
+- Claude (`app.js` section 2b; teacher chat in section 10) answers inside the book, under the button, like the QA book.
+  Two builds of the same `app.js`: the claude.ai page (`build_page.py`, published as an artifact with capability
+  `sample` + images, URL in `build/artifact.txt`) runs on the reader's own claude.ai account via
+  `window.claude.use('sample')`; the offline app calls the Messages API with the reader's own key (`DQ_PWA.sample`,
+  key only in localStorage, sent only to api.anthropic.com). Without a key a button opens the claude.ai page at
+  `#ai-<act>-<ref>` (act `sec|hint|iq|q|topic|adv|chat`; claude.ai passes only plain anchors, no `/`), which routes
+  to the place and starts the answer itself; only book ids travel, typed text goes to the clipboard. The model is
+  the reader's choice (Ayarlar → Claude, `S.aiModel`; `auto` names none). Prompts are Azerbaijani; check questions
+  ask for a hint, not the answer; figures go along as PNG. No Claude inside a running mock exam. claude.ai shows no
+  `confirm()`/`alert()` and blocks downloads — use `askHere()` and keep export/import behind `if (PWA)`.
+  After changing `app.js`/`app.css` or the book, rebuild the page and republish it to the same artifact URL.
+- `libs/` — marked 12.0.2 and DOMPurify 3.1.6 (render Claude's markdown safely); copied into `docs/libs/`; the
+  claude.ai page loads the same versions from jsDelivr.
+- `build/pwa.js` — `window.DQ_PWA`: service-worker registration, update bar, install prompt, file save/pick, Claude
+  API calls. Present only in the PWA build; guard its use with `if (PWA)`.
 - `build/sw.template.js` — cache-first service worker; `build_pwa.py` injects VERSION (content hash) and the precache
   list. Cache names start with `dq-kitab-`.
 

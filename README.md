@@ -114,11 +114,18 @@ Cavab: 7 | yeddi
 
 ### Claude (virtual müəllim)
 
-Tətbiqin “Müəllim” bölməsi, hər bölmənin altındakı “Claude-dan izah istə”, test izahları və yoxlama sualları
-`https://claude.ai/new?q=...` keçidi ilə Claude-u açır: link hansı telefonda açılsa, orada daxil olunmuş Claude
-hesabında yeni söhbət başlayır. Model göstərilmir — oxucu onu Claude-da özü seçir. Bu parametr Anthropic-in rəsmi
-sənədlərində yoxdur, ona görə düymə sualı həm də buferə kopyalayır: Claude boş açılsa, mətni yapışdırmaq kifayətdir.
-İnternet lazımdır.
+Hər bölmənin altındakı “Claude-dan izah istə”, test izahları, nümunə və yoxlama sualları, “Müəllim” bölməsi
+(söhbət, proqram mövzuları, məsləhət) — Claude cavabı düymənin altında, kitabın içində yazır.
+
+- **claude.ai versiyası** (https://claude.ai/artifact/DS1Sg1NBATqkMRPuVkHoER) — Claude oxucunun öz claude.ai hesabı
+  ilə işləyir; ilk dəfə claude.ai icazə soruşur. Başqası açsın deyə səhifəni Paylaş menyusundan linklə paylaş.
+- **Oflayn tətbiq** — Ayarlar → Claude bölməsində öz Anthropic API açarını əlavə etsən, cavab tətbiqdə yazılır.
+  Açar yalnız bu cihazda saxlanılır və yalnız api.anthropic.com-a göndərilir. Açar yoxdursa, düymə claude.ai
+  versiyasında eyni yeri açır və Claude cavaba orada özü başlayır (yazdığın sual buferə kopyalanır).
+- Modeli oxucu seçir (Ayarlar → Claude): Avtomatik, Opus, Sonnet, Haiku. İnternet lazımdır.
+
+claude.ai versiyasını yeniləmək: `python build/build_page.py` → `dist/dovlet-qullugu.html`, sonra eyni artifakta
+yenidən dərc et.
 
 ## Dəyişiklik etmək
 
@@ -133,7 +140,8 @@ Yoxlama (Playwright, Chromium):
 ```bash
 cd build && npm ci && npx playwright install chromium
 npm run test:pwa    # real sayt: offline, quraşdırma, oxu, axtarış
-npm run test:app    # yoxlama kitabı ilə: BA/BB süzgəci, proqram, açıq və şəkilli suallar, nümunə/yoxla blokları, Claude keçidləri, sınaq imtahanı
+npm run test:app    # yoxlama kitabı ilə: BA/BB süzgəci, proqram, açıq və şəkilli suallar, nümunə/yoxla blokları, Claude (API açarı ilə), sınaq imtahanı
+npm run test:page   # claude.ai versiyası: #ai-… keçidləri cavabı özü başladır, model seçimi
 ```
 
 `docs/` qovluğunu commit edib push edəndə GitHub Pages saytı 1–2 dəqiqəyə yeniləyir. Quraşdırılmış
@@ -142,3 +150,4 @@ tətbiq növbəti açılışda yeni versiyanı yükləyir və “Yenilə” düy
 ## Lisenziyalar
 
 Şriftlər: IBM Plex Sans, IBM Plex Mono, Literata — SIL Open Font License 1.1 (`fonts/*/package/LICENSE`).
+Kitabxanalar: marked 12.0.2 (MIT), DOMPurify 3.1.6 (Apache-2.0 / MPL-2.0) — `libs/*/LICENSE*`.

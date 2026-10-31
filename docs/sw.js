@@ -1,5 +1,5 @@
 /* Dövlət Qulluğu — service worker: keeps the whole book on the device so it opens without internet. */
-const VERSION = '2026.10.31-6cb9f0f';
+const VERSION = '2026.10.31-4eae276';
 const CACHE = 'dq-kitab-' + VERSION;
 const ASSETS = [
  "./",
@@ -9,6 +9,8 @@ const ASSETS = [
  "pwa.js",
  "manifest.webmanifest",
  "fonts/fonts.css",
+ "libs/marked.min.js",
+ "libs/purify.min.js",
  "fonts/ibm-plex-sans-latin-ext-400-normal.woff2",
  "fonts/ibm-plex-sans-latin-400-normal.woff2",
  "fonts/ibm-plex-sans-latin-ext-500-normal.woff2",

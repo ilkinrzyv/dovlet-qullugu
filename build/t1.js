@@ -7,6 +7,7 @@ const path = require('path');
 fs.mkdirSync(path.join(__dirname, 'shots'), { recursive: true });
 const ROOT = path.resolve(__dirname, '..', 'docs');
 const BOOK = JSON.parse(fs.readFileSync(path.join(__dirname, 'test', 'book.json'), 'utf-8'));
+const ART = 'https://claude.ai/artifact/TEST';
 const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.webmanifest': 'application/manifest+json', '.png': 'image/png', '.svg': 'image/svg+xml', '.woff2': 'font/woff2' };
 
 function serve(port) {
@@ -14,6 +15,8 @@ function serve(port) {
     let p = decodeURIComponent(req.url.split('?')[0]);
     if (p.endsWith('/')) p += 'index.html';
     if (p === '/book.js') { res.writeHead(200, { 'content-type': TYPES['.js'] }); res.end('window.DQ_BOOK=' + JSON.stringify(BOOK) + ';'); return; }
+    // a fixed claude.ai address, so the handoff links can be checked whatever the real build points at
+    if (p === '/pwa.js') { res.writeHead(200, { 'content-type': TYPES['.js'] }); res.end(fs.readFileSync(path.join(ROOT, 'pwa.js'), 'utf-8').replace(/const ARTIFACT = '[^']*'/, `const ARTIFACT = '${ART}'`)); return; }
     const f = path.join(ROOT, p);
     if (!f.startsWith(ROOT) || !fs.existsSync(f) || fs.statSync(f).isDirectory()) { res.writeHead(404); res.end('nf'); return; }
     res.writeHead(200, { 'content-type': TYPES[path.extname(f)] || 'application/octet-stream' });
@@ -73,7 +76,7 @@ function serve(port) {
       const item = BOOK.quizzes.c1.find(x => x.q === q);
       await page.click(`.opt[data-oi="${item.a}"]`);
     }
-    if (i === 0) out.quizClaude = await page.$$eval('.expl a[data-claude]', els => els.length);
+    if (i === 0) out.quizClaude = await page.$$eval('.expl .ai-box[data-act="q"]', els => els.length);
     await page.click('[data-act="next"]');
   }
   out.bbC1Score = (await state()).quiz.c1;
@@ -87,14 +90,11 @@ function serve(port) {
   out.figRight = await page.$eval('.expl > b', el => el.textContent);
   await shot('t1-figure');
 
-  // ---- questions inside the text (Məntiq): worked examples, checks without a solution, Claude help ----
-  const claudeQ = href => { const u = new URL(href); return { host: u.host, path: u.pathname, params: [...u.searchParams.keys()], q: u.searchParams.get('q') }; };
+  // ---- questions inside the text (Məntiq): worked examples, checks without a solution ----
   await go('c3s1');
   out.iq = await page.$$eval('.iq', els => els.map(e => e.className.replace(/\b(iq|card)\b/g, '').trim()));
   out.exRight = await page.$eval('.iq.ex .opt.right .ol', el => el.textContent);
   out.exSolution = await page.$$eval('.iq.ex .iqe', els => els.length);
-  const hint = claudeQ(await page.$eval('.iq.chk a[data-claude]', a => a.href));
-  out.hintLink = { host: hint.host, path: hint.path, params: hint.params, hint: hint.q.includes('Cavabı dərhal demə'), question: hint.q.includes('3, 5, 7') };
   const c0 = page.locator('.iq.chk').nth(0), c1 = page.locator('.iq.chk').nth(1);
   await c0.locator('.opt[data-oi="0"]').click();
   out.chkWrong = await c0.locator('.iqmsg.bad').count();
@@ -110,20 +110,79 @@ function serve(port) {
   await page.reload();
   await page.waitForSelector('.iq.chk');
   out.chkKept = await page.locator('.iq.chk.solved').count();
-  out.sectionClaude = claudeQ(await page.$eval('.claudebox a[data-claude]', a => a.href)).q.includes('Fəsil 3. Məntiq fəsli');
 
-  // ---- virtual teacher ----
+  // ---- Claude without a key: the button opens the same place in the claude.ai version, which answers there ----
+  await page.evaluate(() => { window.__opened = []; window.open = u => { window.__opened.push(String(u)); return null; }; });
+  await page.click('.claudebox [data-ai]');
+  await page.locator('.iq.chk').nth(2).locator('[data-ai]').click();
+  await page.waitForFunction(() => window.__opened.length === 2);
+  out.handoff = await page.evaluate(() => window.__opened);
+  await go('muellim');
+  await page.evaluate(() => { window.__opened = []; window.open = u => { window.__opened.push(String(u)); return null; }; });
+  await page.fill('#tq', 'Sillogizm nədir?');
+  await page.click('[data-act="chat-send"]');
+  await page.waitForFunction(() => window.__opened.length === 1);
+  out.chatHandoff = await page.evaluate(() => window.__opened[0]);
+
+  // ---- Claude with the reader's own API key: the answer streams in place ----
+  const apiCalls = [];
+  await page.route('https://api.anthropic.com/v1/**', route => {
+    const req = route.request();
+    if (req.method() === 'GET') return route.fulfill({ status: 200, contentType: 'application/json', body: '{"data":[]}' });
+    const body = JSON.parse(req.postData());
+    apiCalls.push(body);
+    const text = `Cavab ${apiCalls.length}: **fərqlərə bax**.`;
+    const ev = [['message_start', { type: 'message_start', message: { model: body.model } }],
+      ['content_block_start', { type: 'content_block_start', index: 0, content_block: { type: 'text', text: '' } }],
+      ['content_block_delta', { type: 'content_block_delta', index: 0, delta: { type: 'text_delta', text } }],
+      ['message_delta', { type: 'message_delta', delta: { stop_reason: 'end_turn' } }], ['message_stop', { type: 'message_stop' }]];
+    return route.fulfill({ status: 200, headers: { 'content-type': 'text/event-stream' }, body: ev.map(([e, d]) => `event: ${e}\ndata: ${JSON.stringify(d)}\n\n`).join('') });
+  });
+  await go('ayarlar');
+  await page.fill('#aikey', 'sk-ant-test-key-123');
+  await page.click('[data-act="key-save"]');
+  await page.waitForSelector('[data-act="key-del"]');
+  out.keySaved = await page.evaluate(() => localStorage.getItem('dq-kitab:pwa:key'));
+  await go('c3s1');
+  const hintBox = page.locator('.iq.chk').nth(2).locator('.ai-box');
+  await hintBox.locator('[data-ai]').click();
+  await hintBox.locator('.ai-meta').waitFor();
+  out.inlineAnswer = (await hintBox.locator('.ai-text').innerText()).trim();
+  const m0 = JSON.stringify(apiCalls[0].messages);
+  out.hintCall = { model: apiCalls[0].model, hint: m0.includes('Cavabı demə'), question: m0.includes('Kvadratın neçə tərəfi') };
+  const figBox = page.locator('.iq.ex').nth(1).locator('.ai-box');
+  await figBox.locator('[data-ai]').click();
+  await figBox.locator('.ai-meta').waitFor();
+  const fc = apiCalls[1].messages[0].content;
+  out.figureSent = Array.isArray(fc) && fc[0].type === 'image' && fc[0].source.media_type === 'image/png' && fc[fc.length - 1].text.includes('şəkli əlavə olunub');
+  await go('ayarlar');
+  await page.click('[data-aimodel="claude-haiku-5-5"]');
+  await go('c3s1');
+  await page.click('.claudebox [data-ai]');
+  await page.locator('.claudebox .ai-meta').waitFor();
+  out.modelChoice = apiCalls[2].model;
+  out.sectionPrompt = JSON.stringify(apiCalls[2].messages).includes('Fəsil 3. Məntiq fəsli');
+  await shot('t1-claude');
+
+  // ---- virtual teacher: a chat whose next turn carries the earlier ones ----
   await go('muellim');
   out.teacherTab = await page.$eval('.tab[aria-current="true"] span', el => el.textContent);
-  out.teacherTopics = await page.$$eval('#t-explain .list a[data-claude]', els => els.length);
-  out.teacherEmpty = await page.$$eval('#t-explain a.claude.primary.off', els => els.length);
+  out.teacherTopics = await page.$$eval('[data-topic]', els => els.length);
   await page.fill('#tq', 'Sillogizm nədir?');
-  const tq = claudeQ(await page.$eval('#t-explain a.claude.primary', a => a.href));
-  out.teacherAsk = { params: tq.params, text: tq.q.includes('Sillogizm nədir?'), subj: tq.q.includes('Fənn: Məntiq') };
+  await page.click('[data-act="chat-send"]');
+  await page.waitForFunction(() => document.querySelectorAll('#chat .bub.ai.prose').length === 1);
+  await page.fill('#tq', 'Bir misal ver');
+  await page.click('[data-act="chat-send"]');
+  await page.waitForFunction(() => document.querySelectorAll('#chat .bub.ai.prose').length === 2);
+  const t1c = apiCalls[apiCalls.length - 2], t2c = apiCalls[apiCalls.length - 1];
+  out.chat = { first: JSON.stringify(t1c.messages).includes('Fənn: Məntiq'), roles: t2c.messages.map(m => m.role).join(','), last: t2c.messages[2].content };
+  await page.click('[data-adv="0"]');
+  await page.waitForFunction(() => document.querySelectorAll('#chat .bub.ai.prose').length === 3);
+  out.adviceCtx = JSON.stringify(apiCalls[apiCalls.length - 1].messages).includes('İmtahan (BB qrupu)');
   await page.click('[data-tsubj="inf"]');
-  out.teacherSwitch = { hash: await page.evaluate(() => location.hash), kept: await page.$eval('#tq', el => el.value) };
-  out.adviceCtx = claudeQ(await page.$eval('#t-advice .row a[data-claude]', a => a.href)).q.includes('İmtahan (BB qrupu)');
+  out.teacherSwitch = { hash: await page.evaluate(() => location.hash), kept: await page.$$eval('#chat .bub', els => els.length) };
   await shot('t1-teacher');
+  await page.evaluate(() => localStorage.removeItem('dq-kitab:pwa:key'));
 
   // search follows the group
   await go('axtar');
@@ -140,7 +199,7 @@ function serve(port) {
   await page.waitForSelector('h1.h1');
   out.bbTimeUp = await state().then(s => ({ hash: null, last: s.examLast && { pts: s.examLast.pts, max: s.examLast.max, timeUp: s.examLast.timeUp }, running: !!s.exam }));
   out.bbTimeUp.hash = await page.evaluate(() => location.hash);
-  out.bbMissClaude = await page.$$eval('.miss a[data-claude]', els => els.length);
+  out.bbMissClaude = await page.$$eval('.miss .ai-box', els => els.length);
 
   // ---- mock exam, BA: answer everything right ----
   await setGroup('BA');
@@ -154,12 +213,13 @@ function serve(port) {
     const q = qOf(ex.items[i].id);
     if (q.t === 'open') await page.fill('#oa', q.a[0]);
     else await page.click(`.opt[data-oi="${q.a}"]`);
-    if (i === 0) { await shot('t1-exam'); out.examNoClaude = await page.$$eval('a[data-claude]', els => els.length); }
+    if (i === 0) { await shot('t1-exam'); out.examNoClaude = await page.$$eval('.ai-box', els => els.length); }
     if (i + 1 < ex.items.length) await page.click('[data-act="next"]');
   }
   await page.click('.qgrid summary');
   out.gridAnswered = await page.$$eval('.gq.has', els => els.length);
   await page.click('[data-act="finish"]');
+  await page.click('[data-act="ask-yes"]');
   await page.waitForFunction(() => location.hash === '#imtahan-netice');
   await page.waitForSelector('.tbl');
   const last = (await state()).examLast;
@@ -191,15 +251,20 @@ function serve(port) {
   eq('quizClaude', 1);
   eq('iq', ['ex', 'chk', 'chk', 'ex', 'chk']);
   eq('exRight', 'B'); eq('exSolution', 2);
-  eq('hintLink', { host: 'claude.ai', path: '/new', params: ['q'], hint: true, question: true });
   eq('chkWrong', 1); eq('chkShowBtn', 1); eq('chkNoSolution', 0); eq('chkSolved', 'Düzdür'); eq('chkOpen', 1);
-  eq('chkSaved', ['c3s1k1', 'c3s1k2']); eq('chkKept', 2); eq('sectionClaude', true);
+  eq('chkSaved', ['c3s1k1', 'c3s1k2']); eq('chkKept', 2);
+  eq('handoff', [ART + '#ai-sec-c3s1', ART + '#ai-hint-c3s1k4']);
+  eq('chatHandoff', ART + '#ai-chat');
+  eq('keySaved', 'sk-ant-test-key-123');
+  eq('inlineAnswer', 'Cavab 1: fərqlərə bax.');
+  eq('hintCall', { model: 'claude-sonnet-5-5', hint: true, question: true });
+  eq('figureSent', true);
+  eq('modelChoice', 'claude-haiku-5-5'); eq('sectionPrompt', true);
   eq('teacherTab', 'Müəllim');
   eq('teacherTopics', BOOK.prog.subjects.find(s => s.id === 'men').topics.filter(t => t.g.includes('BB')).length);
-  eq('teacherEmpty', 1);
-  eq('teacherAsk', { params: ['q'], text: true, subj: true });
-  eq('teacherSwitch', { hash: '#muellim-inf', kept: 'Sillogizm nədir?' });
+  eq('chat', { first: true, roles: 'user,assistant,user', last: 'Bir misal ver' });
   eq('adviceCtx', true);
+  eq('teacherSwitch', { hash: '#muellim-inf', kept: 6 });
   eq('bbMissClaude', 5); eq('examNoClaude', 0);
   out.errors = errors.concat(fail);
   console.log(JSON.stringify(out, null, 1));

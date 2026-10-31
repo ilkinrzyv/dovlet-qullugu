@@ -262,7 +262,30 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 .btn.off{opacity:.55}
 .expl a.btn{display:inline-flex;margin-top:0;font-size:13.5px}
 .expl .row,.miss .row{margin-top:12px}
-.claudebox{margin-top:22px;display:flex;align-items:center;justify-content:space-between;gap:10px 14px;flex-wrap:wrap}
+.claudebox{margin-top:22px}
+.claudebox>.muted{display:block;margin-bottom:10px}
+/* Claude's answer under its button, and the teacher chat */
+.ai-box{margin-top:12px}
+.claudebox .ai-box,.iq-main+.ai-box{margin-top:0}
+.ai-out{margin-top:12px;padding:14px 16px;border:1px solid var(--accent-line);border-radius:12px;background:var(--surface)}
+.ai-text{font-size:16px;line-height:1.6}
+.ai-text>:first-child{margin-top:0}
+.ai-text>:last-child{margin-bottom:0}
+.ai-text h1,.ai-text h2,.ai-text h3{font-family:var(--f-ui);font-size:1.02em;margin:1.1em 0 .4em}
+.ai-wait{display:flex;align-items:center;gap:8px;color:var(--ink-3);font-size:14px}
+.ai-wait[hidden]{display:none}
+.ai-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:aipulse 1s ease-in-out infinite}
+@keyframes aipulse{50%{opacity:.25}}
+.ai-meta{margin:10px 0 0;font-size:12.5px;color:var(--ink-3)}
+.ai-err{margin:10px 0 0;font-size:14px;color:var(--fail)}
+.ai-ctl,.ai-more{margin-top:10px}
+.chat{display:flex;flex-direction:column;gap:10px}
+.chat-empty{margin:0}
+.bub{max-width:94%;padding:10px 14px;border-radius:14px;font-size:15px;line-height:1.55;overflow-wrap:anywhere}
+.bub.me{align-self:flex-end;background:var(--accent);color:var(--accent-ink);border-bottom-right-radius:4px;white-space:pre-wrap}
+.bub.ai{align-self:flex-start;background:var(--surface-2);border:1px solid var(--line);border-bottom-left-radius:4px}
+.bub.ai .ai-text{font-size:15.5px}
+button.secrow{width:100%;text-align:left;font:inherit;color:inherit;background:none}
 .iq{margin:1.4em 0;font-family:var(--f-ui);font-size:15.5px;line-height:1.5}
 .iq>.kicker{display:block;margin-bottom:6px}
 .iq.ex{border-color:var(--accent-line)}
@@ -275,6 +298,8 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 .iqe{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
 .iqe p{margin:.4em 0}
 .iq .row{margin-top:12px}
+.askhere{margin-top:12px;display:flex;flex-direction:column;gap:10px}
+.askhere p{margin:0;font-weight:500}
 .iqmsg{margin:12px 0 0;display:flex;gap:6px;align-items:center;font-weight:500}
 .iqmsg.ok{color:var(--pass)}
 .iqmsg.bad{color:var(--fail)}

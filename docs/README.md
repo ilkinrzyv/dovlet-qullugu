@@ -4,7 +4,7 @@ Bu qovluq dövlət qulluğu imtahanlarına hazırlıq kitabının **offline tət
 internetlə açandan sonra kitab, testlər və irəliləyiş **internetsiz** işləyir. Telefonda ana ekrana adi tətbiq
 kimi quraşdırılır.
 
-Versiya: `2026.10.31-6cb9f0f` · cihazda tutduğu yer: təxminən 1,9 MB.
+Versiya: `2026.10.31-4eae276` · cihazda tutduğu yer: təxminən 2,0 MB.
 
 ## Telefona quraşdır
 
@@ -28,7 +28,8 @@ Sayt yenilənəndə tətbiq növbəti açılışda yeni versiyanı yükləyir v�
 - `index.html` — tətbiqin qabığı
 - `app.js`, `app.css` — interfeys
 - `book.js` — kitabın bütün mətni və testlər
-- `pwa.js` — offline rejim, quraşdırma, ixrac və idxal
+- `pwa.js` — offline rejim, quraşdırma, ixrac və idxal, Claude (öz API açarınla)
+- `libs/` — marked və DOMPurify (Claude cavablarının göstərilməsi; MIT, Apache-2.0/MPL-2.0)
 - `sw.js` — service worker (offline yaddaş)
 - `manifest.webmanifest`, `icons/` — tətbiqin adı və ikonları
 - `fonts/` — IBM Plex Sans, IBM Plex Mono, Literata (SIL Open Font License 1.1)

@@ -4,7 +4,8 @@
 /* =========================================================
    1. Data
    ========================================================= */
-const BOOK = window.DQ_BOOK;
+// the offline app loads book.js; the claude.ai page carries the same data in a JSON script tag
+const BOOK = window.DQ_BOOK || JSON.parse(document.getElementById('book-data').textContent);
 const PWA = window.DQ_PWA || null; // offline app build only
 const CHAPTERS = BOOK.chapters;
 const chById = {}, secById = {}, secCh = {};
@@ -66,6 +67,21 @@ const ICONS = {
 const icon = (n, cls) => `<svg class="i${cls ? ' ' + cls : ''}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n] || ''}</svg>`;
 
 let toastTimer = null;
+// a yes/no question under `after` (claude.ai shows no confirm() dialogs)
+function askHere(after, msg, yes, onYes) {
+  const old = after.parentNode.querySelector('.askhere');
+  if (old) { old.remove(); return; }
+  const d = document.createElement('div');
+  d.className = 'card askhere';
+  d.setAttribute('role', 'alertdialog');
+  d.innerHTML = `<p>${esc(msg)}</p><div class="row"><button type="button" class="btn sm primary" data-act="ask-yes">${esc(yes)}</button>
+    <button type="button" class="btn sm ghost" data-act="ask-no">İmtina</button></div>`;
+  after.insertAdjacentElement('afterend', d);
+  $('[data-act="ask-yes"]', d).addEventListener('click', () => { d.remove(); onYes(); });
+  $('[data-act="ask-no"]', d).addEventListener('click', () => { d.remove(); after.focus(); });
+  $('[data-act="ask-yes"]', d).focus();
+}
+
 function toast(msg) {
   let t = $('.toast');
   if (!t) { t = document.createElement('div'); t.className = 'toast'; t.setAttribute('role', 'status'); document.body.appendChild(t); }
@@ -74,37 +90,84 @@ function toast(msg) {
 }
 
 /* =========================================================
-   2b. Claude: help opens in the reader's own Claude
+   2b. Claude: answers inside the book
    ========================================================= */
-// claude.ai/new?q= starts a chat in whatever account that phone or browser is signed into, with the prompt filled
-// in. No model is named: the reader picks one in Claude. The parameter is undocumented, so a tap also copies the
-// prompt — if Claude opens empty, the reader pastes it.
-const CLAUDE_NEW = 'https://claude.ai/new?q=';
-const PROMPT_MAX = 1800; // characters: instructions come first, so a cut only shortens the quoted material
+// Claude writes its answer right under the button. On claude.ai (the artifact page) it runs on the reader's own
+// Claude account through the `sample` capability. In the offline app it needs the reader's own Anthropic API key
+// (DQ_PWA.sample); without one, the button opens the same place in the claude.ai version (#ai-<act>-<ref>: claude.ai
+// passes on only plain anchors, no slashes), which starts the answer by itself. Only book ids travel in that link — typed text goes to the clipboard.
+// The model is the reader's choice (Ayarlar → Claude); "auto" names none and lets Claude pick.
+const MODELS = [['auto', 'Avtomatik'], ['claude-opus-5-5', 'Opus 5.5'], ['claude-sonnet-5-5', 'Sonnet 5.5'], ['claude-haiku-5-5', 'Haiku 5.5']];
 const clip = (s, n) => { s = String(s || '').replace(/\s+/g, ' ').trim(); return s.length > n ? s.slice(0, n - 1) + '…' : s; };
-const claudeUrl = p => CLAUDE_NEW + encodeURIComponent(p.length > PROMPT_MAX ? p.slice(0, PROMPT_MAX - 1) + '…' : p);
-const claudeLink = (p, label, cls) =>
-  `<a class="btn sm claude${cls ? ' ' + cls : ''}" data-claude href="${esc(claudeUrl(p))}" target="_blank" rel="noopener">${icon('chat')} ${esc(label)}</a>`;
 async function copyText(t) {
   try { await navigator.clipboard.writeText(t); return true; } catch (e) { return false; }
 }
-document.addEventListener('click', e => {
-  const a = e.target.closest && e.target.closest('a[data-claude]');
-  if (!a || e.defaultPrevented) return;
-  copyText(new URL(a.href).searchParams.get('q') || '').then(ok => toast(!navigator.onLine
-    ? 'İnternet yoxdur. Sual kopyalandı — sonra Claude-a yapışdır.'
-    : ok ? 'Claude açılır. Sual həm də kopyalandı: boş açılsa, yapışdır.' : 'Claude açılır.'));
-});
+const AI = {
+  fn: null, images: false,
+  ready: Promise.resolve(),
+  init() {
+    if (PWA) { this.fn = PWA.sample; this.images = true; return; }
+    this.ready = (async () => {
+      try { this.fn = window.claude && typeof window.claude.use === 'function' ? await window.claude.use('sample') : null; } catch (e) { this.fn = null; }
+      if (this.fn && this.fn.limits) { try { this.images = !!(await this.fn.limits()).images; } catch (e) { this.images = false; } }
+    })();
+  },
+  here() { return PWA ? PWA.hasKey() : !!this.fn; },
+  opts() { return S.aiModel && S.aiModel !== 'auto' ? { model: S.aiModel } : {}; }
+};
+function aiErr(e) {
+  switch (e && e.code) {
+    case 'not_granted': case 'sampling_disabled': case 'not_declared': case 'capability_disabled': case 'capability_removed':
+      return 'Claude bu görünüşdə əlçatan deyil: icazə verilməyib və ya hesabda söndürülüb.';
+    case 'rate_limited': return 'Hazırda çox sorğu var və ya istifadə limitinə çatmısan. Bir az sonra yenidən cəhd et.';
+    case 'session_expired': return 'Sessiyanın vaxtı bitib — claude.ai-a yenidən daxil ol.';
+    case 'refused': return 'Claude bu sorğuya cavab vermədi. Sualı başqa cür yaz.';
+    case 'empty_completion': return 'Cavab boş gəldi. Sualı qısalt və ya sadələşdir.';
+    case 'prompt_too_large': return 'Mətn çox uzundur. Daha qısa sual yaz.';
+    case 'offline': return 'İnternet yoxdur. Claude yalnız onlayn işləyir; kitab və testlər offline da işləyir.';
+    case 'auth': case 'permission': return 'API açarı qəbul edilmədi. Ayarlar → Claude bölməsində açarı yoxla.';
+    case 'credit': return 'Anthropic API hesabında kredit qalmayıb (platform.claude.com → Billing).';
+    case 'model': return 'Seçilmiş model bu açarla əlçatan deyil. Ayarlarda başqa model seç.';
+    case 'overloaded': return 'Claude hazırda çox yüklüdür. Bir az sonra yenidən cəhd et.';
+    case 'network': return 'Claude-a qoşulmaq alınmadı. İnterneti yoxla və yenidən cəhd et.';
+    default: return 'Bağlantıda xəta baş verdi. Yenidən cəhd et.';
+  }
+}
+// markdown answers → safe HTML (marked + DOMPurify; plain paragraphs if they are missing)
+function mdToHtml(text) {
+  let html = null;
+  try {
+    if (window.marked && window.DOMPurify) html = window.DOMPurify.sanitize(window.marked.parse(String(text || ''), { gfm: true, breaks: false }));
+  } catch (e) { html = null; }
+  if (html == null) html = String(text || '').split(/\n{2,}/).map(p => `<p>${esc(p).replace(/\n/g, '<br>')}</p>`).join('');
+  return html.replace(/<table>/g, '<div class="tbl"><table>').replace(/<\/table>/g, '</table></div>');
+}
+// an SVG figure as a PNG for Claude to look at (it accepts raster images only)
+function svgToPng(svg) {
+  return new Promise(resolve => {
+    try {
+      const img = new Image();
+      img.onload = () => {
+        const k = 2, w = (img.naturalWidth || 540) * k, h = (img.naturalHeight || 300) * k;
+        const cv = document.createElement('canvas'); cv.width = w; cv.height = h;
+        const g = cv.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, w, h); g.drawImage(img, 0, 0, w, h);
+        cv.toBlob(b => resolve(b), 'image/png');
+      };
+      img.onerror = () => resolve(null);
+      img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+    } catch (e) { resolve(null); }
+  });
+}
 
 const subjTitle = id => SUBJ[id] ? SUBJ[id].title : '';
 function tutor(subj) {
   return `Sən Azərbaycanda dövlət qulluğuna qəbul imtahanına (DİM-in test imtahanı, ${S.group} vəzifə qrupu) hazırlaşan birinə kömək edən səbirli müəllimsən. Azərbaycan dilində, sadə və addım-addım cavab ver.`
     + (subj === 'qan' ? ' Qanun maddələrinə istinad et; əmin olmadığın faktı uydurma, e-qanun.az-da yoxlamağı məsləhət gör.' : '');
 }
-// order: the option order the reader saw (letters follow it); null for open questions
-function qPlain(q, order) {
-  const lines = [`Sual: ${clip(q.qt || q.q, 600)}`];
-  if (q.img) lines.push('(Sualda şəkil var — onu ayrıca göndərəcəm və ya təsvir edəcəm.)');
+// order: the option order the reader saw (letters follow it); null for open questions. img: the figure is attached
+function qPlain(q, order, img) {
+  const lines = [`Sual: ${clip(q.qt || q.q, 1500)}`];
+  if (q.img) lines.push(img ? '(Sualın şəkli əlavə olunub; variantlardakı hərflər şəkildəki hərflərdir.)' : '(Sualda şəkil var, amma əlavə edilə bilmədi — şəkli görmədən ümumi üsulu izah et.)');
   if (q.t === 'open') lines.push('(Açıq sual: cavab yazılır.)');
   else order.forEach((oi, k) => lines.push(`${'ABCDEF'[k]}) ${q.o[oi]}`));
   return lines.join('\n');
@@ -116,35 +179,154 @@ function ansLabel(q, order, v) {
 const topicOf = q => q.s && secById[q.s] ? `${secById[q.s].num ? secById[q.s].num + '. ' : ''}${secById[q.s].title}` : '';
 function pSection(s, c) {
   const where = `${subjTitle(c.subj) ? subjTitle(c.subj) + ' → ' : ''}Fəsil ${c.n}. ${c.title} → ${s.num ? s.num + '. ' : ''}${s.title}`;
-  return `${tutor(c.subj)}\n\nMövzu: ${where}.\nBu mövzunu mənə sadə dillə izah et, 2–3 misal göstər və sonda özümü yoxlamaq üçün 3 sual ver (cavablarını ən sonda ayrıca yaz).\n\nKitabdakı mətndən çıxarış: ${clip(s.text, 900)}`;
+  return `${tutor(c.subj)}\n\nMövzu: ${where}.\nBu mövzunu mənə sadə dillə izah et, 2–3 misal göstər və sonda özümü yoxlamaq üçün 3 sual ver (cavablarını ən sonda ayrıca yaz).\n\nKitabdakı mətn: ${clip(s.text, 6000)}`;
 }
 // a check question the reader is stuck on: a hint first, never the answer straight away
-function pHint(q, order, topic, subj) {
-  return `${tutor(subj)}\n\nBu yoxlama sualında çətinlik çəkirəm${topic ? ` (mövzu: ${topic})` : ''}. Cavabı dərhal demə: əvvəl hansı qayda və ya üsulun lazım olduğunu izah et və bir ipucu ver. Cavabımı yazım, sonra yoxla; tam həlli yalnız mən istəsəm göstər.\n\n${qPlain(q, order)}`;
+function pHint(q, order, topic, subj, img) {
+  return `${tutor(subj)}\n\nBu yoxlama sualında çətinlik çəkirəm${topic ? ` (mövzu: ${topic})` : ''}. Cavabı demə: hansı qayda və ya üsulun lazım olduğunu izah et və bir-iki ipucu ver ki, cavabı özüm tapım. Sonda “Cavabını yaz, yoxlayım” de.\n\n${qPlain(q, order, img)}`;
 }
 // an answered question or a worked example: the full solution and one more like it
-function pExplain(q, order, picked, topic, subj) {
+function pExplain(q, order, picked, topic, subj, img) {
   const e = q.et || (q.k ? '' : q.e);
-  return `${tutor(subj)}\n\nBu sualın həllini addım-addım izah et, düz cavabın niyə məhz bu olduğunu göstər və mənə oxşar bir sual ver (cavabını ən sonda yaz)${topic ? `. Mövzu: ${topic}` : ''}.\n\n${qPlain(q, order)}`
+  return `${tutor(subj)}\n\nBu sualın həllini addım-addım izah et, düz cavabın niyə məhz bu olduğunu göstər və mənə oxşar bir sual ver (cavabını ən sonda yaz)${topic ? `. Mövzu: ${topic}` : ''}.\n\n${qPlain(q, order, img)}`
     + (picked === undefined ? '' : `\nMənim cavabım: ${ansLabel(q, order, picked)}.`)
     + `\nDüz cavab: ${q.t === 'open' ? q.a[0] : ansLabel(q, order, q.a)}.`
-    + (e ? `\nKitabdakı izah: ${clip(e, 500)}` : '');
+    + (e ? `\nKitabdakı izah: ${clip(e, 1500)}` : '');
+}
+
+// what a Claude button asks: act = sec | hint | iq | q | topic | adv; ref = a book id; x = {o: order, p: pick}
+function inlineAt(ref) {
+  const m = /^(.+)k(\d+)$/.exec(ref);
+  const s = m && secById[m[1]], q = s && s.qs && s.qs[+m[2]];
+  return q ? { s, c: chById[secCh[s.id]], q } : null;
+}
+function aiTask(act, ref, x) {
+  x = x || {};
+  if (act === 'sec') { const s = secById[ref]; return s && chById[secCh[ref]].kind === 'chapter' ? { label: `${s.num ? s.num + '. ' : ''}${s.title} — izah`, make: () => pSection(s, chById[secCh[ref]]) } : null; }
+  if (act === 'hint' || act === 'iq') {
+    const t = inlineAt(ref); if (!t) return null;
+    const order = t.q.t === 'open' ? null : t.q.o.map((_, k) => k), topic = `${t.s.num ? t.s.num + '. ' : ''}${t.s.title}`;
+    return { label: (act === 'hint' ? 'İpucu: ' : 'Həll: ') + clip(t.q.qt, 80), img: t.q.img,
+      make: img => act === 'hint' ? pHint(t.q, order, topic, t.c.subj, img) : pExplain(t.q, order, undefined, topic, t.c.subj, img) };
+  }
+  if (act === 'q') {
+    const q = qById[ref]; if (!q) return null;
+    const order = q.t === 'open' ? null : (Array.isArray(x.o) && x.o.length === q.o.length ? x.o : q.o.map((_, k) => k));
+    return { label: 'İzah: ' + clip(q.q, 80), img: q.img, make: img => pExplain(q, order, x.p, topicOf(q), q.subj, img) };
+  }
+  if (act === 'topic') {
+    const [sid, i] = ref.split('.'), s = SUBJ[sid], t = s && s.topics[+i];
+    return t ? { label: `${s.title}, ${t.num}: ${t.title}`, make: () => pTopic(s, t) } : null;
+  }
+  if (act === 'adv') { const a = ADVICE[+ref]; return a ? { label: a[0], make: () => pAdvice(a[1]) } : null; }
+  return null;
+}
+const aiBox = (act, ref, label, x) =>
+  `<div class="ai-box" data-act="${act}" data-ref="${esc(ref)}"${x ? ` data-x="${esc(JSON.stringify(x))}"` : ''}>
+    <button type="button" class="btn sm claude" data-ai>${icon('chat')} <span>${esc(label)}</span></button><div class="ai-out" hidden></div></div>`;
+document.addEventListener('click', e => {
+  const b = e.target.closest && e.target.closest('[data-ai]');
+  if (b) { const box = b.closest('.ai-box'); if (box) runBox(box); }
+});
+
+// the offline app without a key: the same place in the claude.ai version starts the answer there
+function handoff(path, copy) {
+  if (!PWA) { toast('Claude bu görünüşdə əlçatan deyil.'); return; }
+  if (!PWA.online()) { toast('İnternet yoxdur — Claude yalnız onlayn işləyir.'); return; }
+  const url = PWA.artifactLink(path);
+  if (!url) { toast('Claude üçün Ayarlarda öz API açarını əlavə et.'); return; }
+  if (copy) copyText(copy);
+  const w = window.open(url, '_blank');
+  if (w) { try { w.opener = null; } catch (e) { } }
+  toast(copy ? 'claude.ai versiyası açılır. Sualın kopyalandı — orada yapışdır.' : 'claude.ai versiyası açılır — Claude cavabı orada özü başladacaq.');
+}
+
+async function runBox(box) {
+  const act = box.dataset.act, ref = box.dataset.ref;
+  let x = null; try { x = box.dataset.x ? JSON.parse(box.dataset.x) : null; } catch (e) { x = null; }
+  const task = aiTask(act, ref, x);
+  if (!task) return;
+  await AI.ready;
+  if (!AI.here()) { handoff(`ai-${act}-${ref}`); return; }
+  const out = $('.ai-out', box), btn = $('[data-ai]', box);
+  if (box._ctl) return; // already answering
+  let images = null;
+  if (task.img && AI.images) { const png = await svgToPng(task.img); if (png) images = [png]; }
+  const input = task.make(!!images);
+  btn.disabled = true;
+  const res = await aiStream(out, [{ role: 'user', content: input }], { images, holder: box });
+  btn.disabled = false;
+  if (res) {
+    const more = document.createElement('div');
+    more.className = 'row ai-more';
+    more.innerHTML = `<button type="button" class="btn sm ghost" data-act="ai-chat">${icon('chat')} Müəllimlə davam et</button>`;
+    more.firstChild.addEventListener('click', () => { CHAT.turns = [{ role: 'user', content: input, label: task.label }, { role: 'assistant', content: res.text }]; location.hash = '#muellim'; });
+    out.appendChild(more);
+  }
+}
+// stream one answer into `out`; resolves {text} or null. holder._ctl marks a call in progress
+async function aiStream(out, turns, o) {
+  const holder = o.holder || out;
+  const ctl = new AbortController();
+  holder._ctl = ctl;
+  out.hidden = false;
+  out.innerHTML = `<div class="ai-wait"><span class="ai-dot"></span>Claude düşünür…</div><div class="ai-text prose"></div><div class="row ai-ctl"><button type="button" class="btn sm ghost" data-act="ai-stop">${icon('x')} Dayandır</button></div>`;
+  const textEl = $('.ai-text', out), wait = $('.ai-wait', out), ctlRow = $('.ai-ctl', out);
+  ctlRow.firstChild.addEventListener('click', () => ctl.abort());
+  const opts = Object.assign({ signal: ctl.signal, onText: ({ text }) => { wait.hidden = true; textEl.innerHTML = mdToHtml(text); } }, AI.opts());
+  if (o.chat) opts.cache = false; // every chat turn must be a fresh answer; one-off explanations may replay
+  if (o.images) opts.images = o.images;
+  let res = null;
+  try {
+    res = await AI.fn(turns, opts);
+    textEl.innerHTML = mdToHtml(res.text);
+    const model = res.modelApplied ? (MODELS.find(m => m[0] === res.modelApplied) || [0, res.modelApplied])[1] : '';
+    ctlRow.outerHTML = `<p class="ai-meta">Claude${model ? ' · ' + esc(model) : ''}${res.truncated ? ' · cavab yarımçıq qaldı' : ''} · faktları kitabla yoxla</p>`;
+  } catch (e) {
+    wait.hidden = true;
+    if (e && e.text) textEl.innerHTML = mdToHtml(e.text); else if (!(e && e.code === 'cancelled')) textEl.innerHTML = '';
+    ctlRow.outerHTML = e && e.code === 'cancelled' ? '<p class="ai-meta">Dayandırıldı.</p>' : `<p class="ai-err">${esc(aiErr(e))}</p>`;
+    res = null;
+  } finally { holder._ctl = null; }
+  return res;
+}
+
+// a link from the offline app (#ai-<act>-<ref>): open the place, then ask once
+let PENDING = null;
+function aiTarget(act, ref) {
+  if (act === 'sec') return ref;
+  if (act === 'hint' || act === 'iq') { const t = inlineAt(ref); return t ? t.s.id : 'home'; }
+  if (act === 'q') return 'sual-' + ref;
+  if (act === 'topic') return 'muellim-' + ref.split('.')[0];
+  return 'muellim';
+}
+function runPending() {
+  const p = PENDING; PENDING = null;
+  if (!p) return;
+  if (p.act === 'chat') { toast('Sualın kopyalanıb — aşağıdakı sahəyə yapışdır və göndər.'); return; }
+  if (p.act === 'topic' || p.act === 'adv') { const t = aiTask(p.act, p.ref); if (t) chatSend(t.make(), t.label); return; }
+  const box = $$('.ai-box').find(b => b.dataset.act === p.act && b.dataset.ref === p.ref);
+  if (!box) return;
+  box.scrollIntoView({ block: 'center' });
+  runBox(box);
 }
 
 /* =========================================================
    3. Saved state (this device only)
    ========================================================= */
 const KEY = 'dq-kitab:v1';
-const blank = () => ({ read: {}, last: '', quiz: {}, wrong: {}, chk: {}, theme: 'auto', fs: 'm', group: GROUPS[0], exam: null, exams: [], examLast: null });
+const blank = () => ({ read: {}, last: '', quiz: {}, wrong: {}, chk: {}, aiModel: 'auto', theme: 'auto', fs: 'm', group: GROUPS[0], exam: null, exams: [], examLast: null });
 let S = blank();
 try { S = Object.assign(blank(), JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) { S = blank(); }
 if (!GROUPS.includes(S.group)) S.group = GROUPS[0];
 function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { toast('Yadda saxlamaq alınmadı — brauzerin yaddaşı doludur və ya bağlıdır.'); } }
 
 const FS = { s: '15.5px', m: '17px', l: '19px' };
+let ownTheme = false; // data-theme set by this app (the claude.ai viewer sets its own when the reader picks one there)
 function applyLook() {
   const root = document.documentElement;
-  if (S.theme === 'light' || S.theme === 'dark') root.setAttribute('data-theme', S.theme); else root.removeAttribute('data-theme');
+  if (S.theme === 'light' || S.theme === 'dark') { root.setAttribute('data-theme', S.theme); ownTheme = true; }
+  else if (ownTheme) { root.removeAttribute('data-theme'); ownTheme = false; }
   root.style.setProperty('--fs', FS[S.fs] || FS.m);
 }
 
@@ -179,9 +361,12 @@ function tabbar() {
 
 function route() {
   const h = decodeURIComponent(location.hash.slice(1)) || 'home';
+  const ai = /^ai-(sec|hint|iq|q|topic|adv|chat)(?:-([\w.]+))?$/.exec(h);
+  if (ai) { PENDING = { act: ai[1], ref: ai[2] || '' }; location.replace('#' + aiTarget(ai[1], ai[2] || '')); return; }
   clearInterval(examTimer); examTimer = null;
   if (!h.startsWith('test-')) quizRun = null;
   if (secById[h]) { tab = 'home'; vSection(h); }
+  else if (h.startsWith('sual-') && qById[h.slice(5)]) { tab = 'testler'; vQuestion(h.slice(5)); }
   else if (chById[h]) { tab = 'home'; vChapter(h); }
   else if (h === 'proqram' || h.startsWith('proqram-')) { tab = 'home'; vProgram(h.slice(8)); }
   else if (h === 'testler') { tab = 'testler'; vTests(); }
@@ -195,6 +380,7 @@ function route() {
   tabbar();
   if (!h.startsWith('axtar')) window.scrollTo(0, 0);
   $('#view').focus({ preventScroll: true });
+  if (PENDING) AI.ready.then(runPending);
 }
 
 /* =========================================================
@@ -286,7 +472,7 @@ function vSection(id) {
     <div class="row meta muted">${icon('clock')} ${s.mins} dəq oxu ${onlyFor(s)}</div>
     ${groupNote(vis(c) ? s : c)}
     <article class="prose">${s.html}</article>
-    ${c.kind === 'chapter' ? `<div class="card claudebox"><span class="muted small">Aydın olmayan yer var? Virtual müəllim izah etsin.</span>${claudeLink(pSection(s, c), 'Claude-dan izah istə')}</div>` : ''}
+    ${c.kind === 'chapter' ? `<div class="card claudebox"><span class="muted small">Aydın olmayan yer var? Virtual müəllim izah etsin.</span>${aiBox('sec', s.id, 'Claude-dan izah istə')}</div>` : ''}
     <button type="button" class="btn ${S.read[id] ? 'done' : 'primary'} readbtn" data-act="read">${S.read[id] ? icon('check') + ' Oxunub' : 'Oxudum'}</button>
     <nav class="prevnext">${nav(prev, 'prev')}${nav(next, 'next')}</nav>`;
   $('[data-act="read"]').addEventListener('click', e => {
@@ -301,7 +487,7 @@ function vSection(id) {
 
 /* questions inside the text: a worked example (answer and solution shown) or a check (no solution, Claude helps) */
 function inlineQ(box, s, c, q, i) {
-  const id = `${s.id}k${i}`, topic = `${s.num ? s.num + '. ' : ''}${s.title}`;
+  const id = `${s.id}k${i}`;
   const order = q.t === 'open' ? null : q.o.map((_, k) => k); // the author's order: solutions may name letters
   const fig = q.img ? `<figure class="qfig">${q.img}</figure>` : '';
   if (q.k === 'ex') {
@@ -309,14 +495,19 @@ function inlineQ(box, s, c, q, i) {
     box.innerHTML = `<span class="kicker">Nümunə</span><div class="iqq">${q.q}</div>
       ${q.t === 'open' ? `${fig}<p class="iqmsg ok">Cavab: ${esc(q.a[0])}</p>` : qBody(q, order, q.a, true)}
       <div class="iqe"><b>Həlli</b>${q.e}</div>
-      <div class="row">${claudeLink(pExplain(q, order, undefined, topic, c.subj), 'Claude-dan daha ətraflı')}</div>`;
+      ${aiBox('iq', id, 'Claude-dan daha ətraflı')}`;
     return;
   }
   const st = { tried: [], val: '', bad: false, show: false }; // this visit only; a solved check is saved
   const letters = q.fix && q.o.every((x, k) => x === 'ABCDEF'[k]); // options are the figure's labels
+  // the question part redraws on every attempt; Claude's box stays, so a hint is not wiped by the next try
+  box.innerHTML = `<div class="iq-main"></div>${aiBox('hint', id, 'Claude-dan kömək')}`;
+  const main = $('.iq-main', box), cbox = $('.ai-box', box);
   const draw = () => {
     const done = !!S.chk[id], open = done || st.show;
     box.className = 'iq chk card' + (done ? ' solved' : '');
+    cbox.dataset.act = open ? 'iq' : 'hint';
+    $('[data-ai] span', cbox).textContent = open ? 'Claude ilə həlli' : 'Claude-dan kömək';
     const body = q.t === 'open'
       ? `${fig}<div class="row iqopen">
           <input class="oa${done ? ' right' : st.bad ? ' wrong' : ''}" type="text" autocomplete="off" aria-label="Cavab" placeholder="Cavabı yaz" value="${esc(done ? q.a[0] : st.val)}"${open ? ' disabled' : ''}>
@@ -328,16 +519,15 @@ function inlineQ(box, s, c, q, i) {
     const msg = done ? `<p class="iqmsg ok">${icon('check')} Düzdür</p>`
       : st.show ? `<p class="iqmsg">Düz cavab: <b>${esc(q.t === 'open' ? q.a[0] : ansLabel(q, order, q.a))}</b></p>`
       : st.tried.length || st.bad ? `<p class="iqmsg bad">${icon('x')} Səhvdir — yenidən cəhd et və ya Claude-dan ipucu al.</p>` : '';
-    box.innerHTML = `<span class="kicker">Özünü yoxla</span><div class="iqq">${q.q}</div>${body}${msg}
-      <div class="row">${claudeLink(open ? pExplain(q, order, undefined, topic, c.subj) : pHint(q, order, topic, c.subj), open ? 'Claude ilə həlli' : 'Claude-dan kömək')}
-        ${!open && (st.tried.length || st.bad) ? '<button type="button" class="btn sm ghost" data-act="iqshow">Cavabı göstər</button>' : ''}</div>`;
+    main.innerHTML = `<span class="kicker">Özünü yoxla</span><div class="iqq">${q.q}</div>${body}${msg}
+      ${!open && (st.tried.length || st.bad) ? '<div class="row"><button type="button" class="btn sm ghost" data-act="iqshow">Cavabı göstər</button></div>' : ''}`;
     const solve = () => { S.chk[id] = Date.now(); save(); };
-    $$('.opt', box).forEach(b => b.addEventListener('click', () => {
+    $$('.opt', main).forEach(b => b.addEventListener('click', () => {
       const oi = +b.dataset.oi;
       if (oi === q.a) solve(); else st.tried.push(oi);
       draw();
     }));
-    const inp = $('.oa', box), chk = $('[data-act="iqcheck"]', box);
+    const inp = $('.oa', main), chk = $('[data-act="iqcheck"]', main);
     if (chk) {
       const go = () => {
         st.val = inp.value.trim();
@@ -349,7 +539,7 @@ function inlineQ(box, s, c, q, i) {
       chk.addEventListener('click', go);
       inp.addEventListener('keydown', e => { if (e.key === 'Enter') go(); });
     }
-    const sh = $('[data-act="iqshow"]', box);
+    const sh = $('[data-act="iqshow"]', main);
     if (sh) sh.addEventListener('click', () => { st.show = true; draw(); });
   };
   draw();
@@ -508,7 +698,7 @@ function vQuiz(key) {
       ${!ok ? `<p>Düz cavab: <b>${esc(rightText(q))}</b></p>` : ''}
       ${q.e ? `<p>${esc(q.e)}</p>` : ''}
       ${q.s && secById[q.s] ? `<a href="#${q.s}">Bölməni oxu: ${esc(secById[q.s].num)}. ${esc(secById[q.s].title)}</a>` : ''}
-      <div class="row">${claudeLink(pExplain(q, it.order, picked, topicOf(q), q.subj), 'Claude-dan ətraflı izah')}</div>
+      ${aiBox('q', it.id, 'Claude-dan ətraflı izah', { o: it.order, p: picked })}
     </div>
     <button type="button" class="btn primary wide" data-act="next">${quizRun.i + 1 < n ? 'Növbəti sual' : 'Nəticəni gör'} ${icon('arrow')}</button>` : ''}`;
   const pick = v => {
@@ -530,6 +720,22 @@ function vQuiz(key) {
   if (nx) nx.addEventListener('click', () => { quizRun.i++; vQuiz(key); window.scrollTo(0, 0); });
 }
 
+/* one question with its answer and explanation (the claude.ai version opens it from the offline app's links) */
+function vQuestion(id) {
+  const q = qById[id], c = chById[q.ch];
+  topbar(c.kind === 'chapter' ? `Fəsil ${c.n}` : '', 'Sual', 'testler');
+  const order = q.t === 'open' ? null : q.o.map((_, k) => k);
+  $('#view').innerHTML = `
+    <span class="kicker">${esc(c.kind === 'chapter' ? `Fəsil ${c.n}. ${c.title}` : c.title)}</span>
+    <h1 class="qtext">${esc(q.q)}</h1>
+    ${q.t === 'open' ? `${q.img ? `<figure class="qfig">${q.img}</figure>` : ''}<p class="iqmsg ok">Düz cavab: ${esc(q.a[0])}</p>` : qBody(q, order, q.a, true)}
+    <div class="card expl ok"><b>Düz cavab: ${esc(rightText(q))}</b>
+      ${q.e ? `<p>${esc(q.e)}</p>` : ''}
+      ${q.s && secById[q.s] ? `<a href="#${q.s}">Bölməni oxu: ${esc(secById[q.s].num)}. ${esc(secById[q.s].title)}</a>` : ''}
+      ${aiBox('q', id, 'Claude-dan ətraflı izah')}
+    </div>`;
+}
+
 function missedList(items, picks) {
   const missed = items.map((it, i) => ({ q: qById[it.id], p: picks[i], order: it.order })).filter(x => x.q && !isRight(x.q, x.p));
   return missed.length ? `<div class="stack">${missed.map(x => `<div class="card miss">
@@ -538,7 +744,7 @@ function missedList(items, picks) {
       <p class="no">${icon('x')} ${esc(answerText(x.q, x.p))}</p>
       <p class="yes">${icon('check')} ${esc(rightText(x.q))}</p>
       ${x.q.e ? `<p class="muted">${esc(x.q.e)}</p>` : ''}
-      <div class="row">${claudeLink(pExplain(x.q, x.order || x.q.o && x.q.o.map((_, k) => k), x.p, topicOf(x.q), x.q.subj), 'Claude ilə izah')}</div>
+      ${aiBox('q', x.q.id, 'Claude ilə izah', { o: x.order, p: x.p })}
     </div>`).join('')}</div>` : '<p class="card expl ok"><b>Bütün cavablar düzdür.</b></p>';
 }
 
@@ -666,9 +872,9 @@ function examRun() {
   $('[data-act="prev"]').addEventListener('click', () => go(E.i - 1));
   $('[data-act="next"]').addEventListener('click', () => go(E.i + 1));
   $$('.gq').forEach(b => b.addEventListener('click', () => go(+b.dataset.go)));
-  $('[data-act="finish"]').addEventListener('click', () => {
+  $('[data-act="finish"]').addEventListener('click', e => {
     const left = n - Object.keys(E.ans).length;
-    if (confirm(left ? `${left} sual cavabsızdır. İmtahan bitsin?` : 'İmtahan bitsin?')) examFinish(false);
+    askHere(e.currentTarget, left ? `${left} sual cavabsızdır. İmtahan bitsin?` : 'İmtahan bitsin?', 'Bəli, bitir', () => examFinish(false));
   });
   clearInterval(examTimer);
   examTimer = setInterval(() => {
@@ -743,7 +949,7 @@ const ADVICE = [
   ['Müsahibə', 'Testdən sonrakı müsahibəyə necə hazırlaşım? Hansı sual növləri olur və cavabı necə qurum?'],
   ['Motivasiya', 'Hazırlıq dövründə diqqəti və motivasiyanı necə saxlayım? Sadə gündəlik rejim təklif et.']
 ];
-let tSubj = 'men', tDraft = '', aDraft = '';
+let tSubj = 'men', tDraft = '';
 
 function myStatus() {
   const all = learnable(), done = all.filter(id => S.read[id]).length;
@@ -765,6 +971,42 @@ const pAdvice = ask => `Sən Azərbaycanda dövlət qulluğuna qəbul imtahanın
 const pFree = (subj, text) => `${tutor(subj)}\n\nFənn: ${subjTitle(subj)}.\n${text}`;
 const pTopic = (s, t) => `${tutor(s.id)}\n\nBu mövzunu imtahan səviyyəsində izah et: əsas qaydalar, tipik sual növləri, 2–3 həll olunmuş nümunə və sonda özümü yoxlamaq üçün 3 sual (cavabları ən sonda).\n\nDİM proqramı, ${s.title}, mövzu ${t.num}: ${t.title}${t.src ? ` (${t.src})` : ''}.${t.items ? ` Proqrama daxildir: ${clip(t.items.join('; '), 600)}.` : ''}`;
 
+// the conversation lives while the app is open: {role, content, label?}; label is what the bubble shows
+const CHAT = { turns: [], busy: false };
+const CHAT_KEEP = 14; // turns sent to Claude: the first (it carries the instructions) and the latest ones
+function aiMode() {
+  if (!PWA) return AI.fn ? 'Claude sənin claude.ai hesabınla işləyir.' : 'Claude bu görünüşdə əlçatan deyil.';
+  return PWA.hasKey() ? 'Claude öz API açarınla işləyir (Ayarlar → Claude).'
+    : 'Bu tətbiqdə Claude üçün API açarı yoxdur: sual claude.ai versiyasında açılacaq və cavab orada başlayacaq. Cavabın burada görünməsi üçün Ayarlar → Claude bölməsində açar əlavə et.';
+}
+function drawChat() {
+  const el = $('#chat');
+  if (!el) return;
+  el.innerHTML = CHAT.turns.length ? CHAT.turns.map(t => t.role === 'user'
+    ? `<div class="bub me">${esc(t.label || t.content)}</div>`
+    : `<div class="bub ai prose">${mdToHtml(t.content)}</div>`).join('')
+    : '<p class="muted small chat-empty">Sualını yaz, mövzu və ya məsləhət seç — cavab burada yazılacaq.</p>';
+}
+async function chatSend(content, label) {
+  if (CHAT.busy || !content.trim()) return;
+  await AI.ready;
+  CHAT.turns.push({ role: 'user', content, label });
+  drawChat();
+  const el = $('#chat');
+  const out = document.createElement('div');
+  out.className = 'bub ai';
+  el.appendChild(out);
+  out.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  const turns = CHAT.turns.length > CHAT_KEEP ? [CHAT.turns[0], ...CHAT.turns.slice(-(CHAT_KEEP - 1))] : CHAT.turns;
+  CHAT.busy = true;
+  const send = $('[data-act="chat-send"]');
+  if (send) send.disabled = true;
+  const res = await aiStream(out, turns.map(t => ({ role: t.role, content: t.content })), { chat: true });
+  CHAT.busy = false;
+  if (send) send.disabled = false;
+  if (res) { CHAT.turns.push({ role: 'assistant', content: res.text }); drawChat(); }
+}
+
 function vTeacher(focus) {
   if (SUBJ[focus]) tSubj = focus;
   topbar('Claude', 'Virtual müəllim');
@@ -772,46 +1014,55 @@ function vTeacher(focus) {
   $('#view').innerHTML = `
     <span class="kicker">${esc(S.group)} qrupu</span>
     <h1 class="h1">Virtual müəllim</h1>
-    <p class="muted">Müəllim Claude-dur: sualını yazırsan, o sənin hesabında yeni söhbət kimi açılır. Modeli Claude-un özündə seçirsən. İnternet lazımdır.</p>
-    <section class="block" id="t-explain"><div class="block-h"><h2>İzah</h2></div>
-      <div class="card stack">
+    <p class="muted" id="ai-mode">${esc(aiMode())}</p>
+    <section class="block">
+      <div class="card stack chatcard">
+        <div id="chat" class="chat" aria-live="polite"></div>
         <div class="row" role="radiogroup" aria-label="Fənn">${PROG.subjects.map(x =>
           `<button type="button" class="btn sm${x.id === tSubj ? ' on' : ''}" role="radio" aria-checked="${x.id === tSubj}" data-tsubj="${x.id}">${esc(x.title)}</button>`).join('')}</div>
         <label class="sr" for="tq">Sualın</label>
-        <textarea id="tq" class="ta" rows="4" placeholder="${esc(TEACH_HINT[tSubj] || 'Nəyi başa düşmədin?')}">${esc(tDraft)}</textarea>
-        <div class="row">${claudeLink('', 'Claude-dan soruş', 'primary')}<button type="button" class="btn sm" data-act="copy">${icon('copy')} Kopyala</button></div>
+        <textarea id="tq" class="ta" rows="3" placeholder="${esc(CHAT.turns.length ? 'Davam sualını yaz…' : TEACH_HINT[tSubj] || 'Nəyi başa düşmədin?')}">${esc(tDraft)}</textarea>
+        <div class="row"><button type="button" class="btn sm primary" data-act="chat-send">${icon('chat')} Göndər</button>
+          <button type="button" class="btn sm ghost" data-act="chat-new">${icon('refresh')} Yeni söhbət</button></div>
       </div>
-      <h3 class="subh">${esc(s.title)}: proqram mövzuları</h3>
-      <div class="list">${s.topics.filter(vis).map(t => `<a class="secrow" data-claude href="${esc(claudeUrl(pTopic(s, t)))}" target="_blank" rel="noopener">
-        <span class="chn">${esc(t.num)}</span><span class="sect"><b>${esc(t.title)}</b><span class="muted">Claude izah etsin</span></span>${icon('chat')}</a>`).join('')}</div>
     </section>
-    <section class="block" id="t-advice"><div class="block-h"><h2>Məsləhət</h2></div>
-      <div class="card stack">
-        <p class="muted small">Hazırlıq planı, zəif yerlər, vaxt bölgüsü, müsahibə. Claude-a irəliləyişin də gedir: oxunan bölmələr, səhvlərin sayı, son sınaq nəticəsi. Şəxsi məlumat göndərilmir.</p>
-        <div class="row">${ADVICE.map(([l, p]) => `<a class="btn sm" data-claude href="${esc(claudeUrl(pAdvice(p)))}" target="_blank" rel="noopener">${esc(l)}</a>`).join('')}</div>
-        <label class="sr" for="aq">Öz sualın</label>
-        <textarea id="aq" class="ta" rows="3" placeholder="Öz sualını yaz: məsələn, işləyə-işləyə necə hazırlaşım?">${esc(aDraft)}</textarea>
-        <div class="row">${claudeLink('', 'Məsləhət al', 'primary')}<button type="button" class="btn sm" data-act="copy">${icon('copy')} Kopyala</button></div>
-      </div>
+    <section class="block"><div class="block-h"><h2>Məsləhət</h2></div>
+      <p class="muted small">Hazırlıq planı, zəif yerlər, vaxt bölgüsü, müsahibə. Claude-a irəliləyişin də gedir: oxunan bölmələr, səhvlərin sayı, son sınaq nəticəsi. Şəxsi məlumat göndərilmir.</p>
+      <div class="row">${ADVICE.map(([l], i) => `<button type="button" class="btn sm" data-adv="${i}">${esc(l)}</button>`).join('')}</div>
+    </section>
+    <section class="block"><div class="block-h"><h2>${esc(s.title)}: proqram mövzuları</h2></div>
+      <div class="list">${s.topics.map((t, i) => [t, i]).filter(([t]) => vis(t)).map(([t, i]) => `<button type="button" class="secrow" data-topic="${s.id}.${i}">
+        <span class="chn">${esc(t.num)}</span><span class="sect"><b>${esc(t.title)}</b><span class="muted">Claude izah etsin</span></span>${icon('chat')}</button>`).join('')}</div>
     </section>`;
-  // a typed question: the link follows the text; an empty one does not open Claude
-  const ask = (box, build, keep) => {
-    const ta = $('textarea', box), a = $('a.claude.primary', box);
-    const upd = () => { keep(ta.value); a.href = claudeUrl(build(ta.value.trim())); a.classList.toggle('off', !ta.value.trim()); };
-    ta.addEventListener('input', upd);
-    upd();
-    a.addEventListener('click', e => { if (!ta.value.trim()) { e.preventDefault(); ta.focus(); toast('Əvvəlcə sualını yaz.'); } });
-    $('[data-act="copy"]', box).addEventListener('click', async () => {
-      if (!ta.value.trim()) { ta.focus(); return; }
-      toast(await copyText(build(ta.value.trim())) ? 'Kopyalandı — Claude-a yapışdır.' : 'Kopyalamaq alınmadı.');
-    });
+  drawChat();
+  const ta = $('#tq');
+  ta.addEventListener('input', () => { tDraft = ta.value; });
+  // a typed question: the first one carries the teacher's instructions and the subject
+  const send = async () => {
+    const text = ta.value.trim();
+    if (!text) { ta.focus(); return; }
+    await AI.ready;
+    if (!AI.here()) { handoff('ai-chat', text); return; }
+    ta.value = ''; tDraft = '';
+    chatSend(CHAT.turns.length ? text : pFree(tSubj, text), text);
   };
-  ask($('#t-explain .card'), v => pFree(tSubj, v), v => { tDraft = v; });
-  ask($('#t-advice .card'), pAdvice, v => { aDraft = v; });
+  $('[data-act="chat-send"]').addEventListener('click', send);
+  ta.addEventListener('keydown', e => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) send(); });
+  $('[data-act="chat-new"]').addEventListener('click', () => { if (CHAT.busy) return; CHAT.turns = []; drawChat(); ta.placeholder = TEACH_HINT[tSubj] || ''; });
+  const ask = async (act, ref) => {
+    const t = aiTask(act, ref);
+    if (!t) return;
+    await AI.ready;
+    if (!AI.here()) { handoff(`ai-${act}-${ref}`); return; }
+    chatSend(t.make(), t.label);
+  };
+  $$('[data-adv]').forEach(b => b.addEventListener('click', () => ask('adv', b.dataset.adv)));
+  $$('[data-topic]').forEach(b => b.addEventListener('click', () => ask('topic', b.dataset.topic)));
   $$('[data-tsubj]').forEach(b => b.addEventListener('click', () => {
     history.replaceState(null, '', '#muellim-' + b.dataset.tsubj);
     vTeacher(b.dataset.tsubj);
   }));
+  AI.ready.then(() => { const m = $('#ai-mode'); if (m) m.textContent = aiMode(); });
 }
 
 /* =========================================================
@@ -883,14 +1134,17 @@ function vSettings() {
         <div class="set"><span>Rejim</span>${seg('theme', S.theme, [['auto', 'Sistem'], ['light', 'Açıq'], ['dark', 'Qaranlıq']])}</div>
         <div class="set"><span>Mətn ölçüsü</span>${seg('fs', S.fs, [['s', 'Kiçik'], ['m', 'Orta'], ['l', 'Böyük']])}</div>
       </div></section>
+    <section class="block"><div class="block-h"><h2>Claude</h2></div>
+      <div class="card stack" id="set-ai">${claudeRow()}</div></section>
     <section class="block"><div class="block-h"><h2>Tətbiq</h2></div>
       <div class="card stack" id="set-app">${appRow()}</div></section>
     <section class="block"><div class="block-h"><h2>Məlumatlar</h2></div>
       <div class="card stack">
-        <p class="muted">İrəliləyiş və test nəticələri yalnız bu cihazda saxlanılır. Başqa cihaza keçmək üçün ixrac et, orada idxal et.</p>
+        <p class="muted">${PWA ? 'İrəliləyiş və test nəticələri yalnız bu cihazda saxlanılır. Başqa cihaza keçmək üçün ixrac et, orada idxal et.'
+          : 'İrəliləyiş bu brauzerdə saxlanılır. İxrac və idxal oflayn tətbiqdədir (ilkinrzyv.github.io/dovlet-qullugu).'}</p>
         <div class="row">
-          <button type="button" class="btn" data-act="export">${icon('download')} İxrac et</button>
-          <button type="button" class="btn" data-act="import">${icon('upload')} İdxal et</button>
+          ${PWA ? `<button type="button" class="btn" data-act="export">${icon('download')} İxrac et</button>
+          <button type="button" class="btn" data-act="import">${icon('upload')} İdxal et</button>` : ''}
           <button type="button" class="btn ghost danger" data-act="reset">${icon('trash')} Sıfırla</button>
         </div>
       </div></section>`;
@@ -898,12 +1152,47 @@ function vSettings() {
   $$('[data-theme]', $('#view')).forEach(b => b.addEventListener('click', () => { S.theme = b.dataset.theme; save(); applyLook(); vSettings(); }));
   $$('[data-fs]').forEach(b => b.addEventListener('click', () => { S.fs = b.dataset.fs; save(); applyLook(); vSettings(); }));
   bindApp();
-  $('[data-act="export"]').addEventListener('click', exportData);
-  $('[data-act="import"]').addEventListener('click', importData);
-  $('[data-act="reset"]').addEventListener('click', () => {
-    if (!confirm('Bütün irəliləyiş və test nəticələri silinsin?')) return;
-    S = Object.assign(blank(), { theme: S.theme, fs: S.fs, group: S.group }); save(); toast('Sıfırlandı');
+  bindClaude();
+  if (PWA) {
+    $('[data-act="export"]').addEventListener('click', exportData);
+    $('[data-act="import"]').addEventListener('click', importData);
+  }
+  $('[data-act="reset"]').addEventListener('click', e => askHere(e.currentTarget.parentNode, 'Bütün irəliləyiş və test nəticələri silinsin?', 'Bəli, sil', () => {
+    S = Object.assign(blank(), { theme: S.theme, fs: S.fs, group: S.group, aiModel: S.aiModel }); save(); toast('Sıfırlandı');
+  }));
+}
+// model choice (every build) and, in the offline app, the reader's own API key
+function claudeRow() {
+  const models = `<div class="row" role="radiogroup" aria-label="Model">${MODELS.map(([v, l]) =>
+    `<button type="button" class="btn sm${S.aiModel === v ? ' on' : ''}" role="radio" aria-checked="${S.aiModel === v}" data-aimodel="${v}">${esc(l)}</button>`).join('')}</div>
+    <p class="muted small">Model: “Avtomatik” — Claude özü seçir; Opus ən güclü, Haiku ən sürətli modeldir.</p>`;
+  if (!PWA) return `${models}<p class="muted small">${esc(aiMode())} İstifadə hesabının limitindən çıxılır.</p>`;
+  const has = PWA.hasKey(), art = PWA.artifactLink('');
+  return `${models}
+    <p class="small">${has ? `API açarı: <span class="mono">${esc(PWA.keyHint())}</span> — cavablar bu tətbiqdə yazılır.` : 'API açarı yoxdur: Claude düymələri claude.ai versiyasını açır və cavab orada başlayır.'}</p>
+    <label class="sr" for="aikey">API açarı</label>
+    <input id="aikey" class="oa" type="password" autocomplete="off" spellcheck="false" placeholder="sk-ant-…">
+    <div class="row"><button type="button" class="btn sm primary" data-act="key-save">Açarı yadda saxla</button>
+      ${has ? '<button type="button" class="btn sm ghost danger" data-act="key-del">Açarı sil</button>' : ''}
+      ${art ? `<a class="btn sm ghost" href="${esc(art)}" target="_blank" rel="noopener">claude.ai versiyası</a>` : ''}</div>
+    <p class="muted small">Açarı platform.claude.com → API Keys səhifəsində yarat. Açar yalnız bu cihazda saxlanılır və yalnız api.anthropic.com-a göndərilir. Xərc API hesabından çıxılır — claude.ai abunəliyindən ayrıdır.</p>`;
+}
+function bindClaude() {
+  const box = $('#set-ai');
+  if (!box) return;
+  $$('[data-aimodel]', box).forEach(b => b.addEventListener('click', () => { S.aiModel = b.dataset.aimodel; save(); box.innerHTML = claudeRow(); bindClaude(); }));
+  const sv = $('[data-act="key-save"]', box), del = $('[data-act="key-del"]', box);
+  if (sv) sv.addEventListener('click', async () => {
+    const k = $('#aikey').value.trim();
+    if (!k) { $('#aikey').focus(); return; }
+    sv.disabled = true; toast('Açar yoxlanılır…');
+    const r = await PWA.testKey(k);
+    sv.disabled = false;
+    if (!r.ok) { toast(aiErr(r)); return; }
+    PWA.setKey(k); toast('Açar yadda saxlanıldı — Claude artıq bu tətbiqdə cavab verəcək.');
+    box.innerHTML = claudeRow(); bindClaude();
   });
+  if (del) del.addEventListener('click', () => { PWA.clearKey(); box.innerHTML = claudeRow(); bindClaude(); });
 }
 function bindApp() {
   const ins = $('[data-act="install"]');
@@ -945,6 +1234,7 @@ async function importData() {
    13. Start
    ========================================================= */
 applyLook();
+AI.init();
 window.addEventListener('hashchange', route);
 route();
 })();

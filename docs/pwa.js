@@ -1,15 +1,118 @@
-/* Dövlət Qulluğu — offline app layer: service worker, updates, install, backup files.
-   Loaded before app.js; app.js finds it as window.DQ_PWA (absent when the page is opened some other way). */
+/* Dövlət Qulluğu — offline app layer: service worker, updates, install, backup files, Claude through the reader's
+   own API key. Loaded before app.js; app.js finds it as window.DQ_PWA (absent on the claude.ai page). */
 (function () {
 'use strict';
-const VERSION = '2026.10.31-6cb9f0f';
-const ASSET_COUNT = 44;
+const VERSION = '2026.10.31-4eae276';
+const ASSET_COUNT = 46;
 const CACHE = 'dq-kitab-' + VERSION;
+const ARTIFACT = 'https://claude.ai/artifact/DS1Sg1NBATqkMRPuVkHoER'; // the claude.ai version of the book; Claude runs there on the reader's own account
+const API = 'https://api.anthropic.com/v1';
+const K_KEY = 'dq-kitab:pwa:key';
+const DEFAULT_MODEL = 'claude-sonnet-5-5'; // used when the reader leaves the model on “Avtomatik”
 
 const bus = new EventTarget();
 const emit = type => { try { bus.dispatchEvent(new Event(type)); } catch (e) { } };
 const on = (type, fn) => bus.addEventListener(type, fn);
 const online = () => navigator.onLine !== false;
+const ls = {
+  get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); return true; } catch (e) { return false; } },
+  del(k) { try { localStorage.removeItem(k); } catch (e) { } }
+};
+
+/* ---------- Claude: Messages API, streamed, from the browser, with the reader's key ---------- */
+const key = () => (ls.get(K_KEY) || '').trim();
+const hasKey = () => !!key();
+const keyHint = () => { const k = key(); return k ? k.slice(0, 7) + '…' + k.slice(-4) : ''; };
+const artifactLink = path => /^https:\/\/claude\.ai\//.test(ARTIFACT) ? ARTIFACT + (path ? '#' + path : '') : '';
+function apiHeaders(k, json) {
+  const h = { 'x-api-key': k, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' };
+  if (json) h['content-type'] = 'application/json';
+  return h;
+}
+function httpErr(status, j) {
+  const t = (j && j.error && j.error.type) || '', m = (j && j.error && j.error.message) || '';
+  let code = 'upstream_error';
+  if (status === 401 || t === 'authentication_error') code = 'auth';
+  else if (status === 402 || t === 'billing_error' || /credit balance|billing/i.test(m)) code = 'credit';
+  else if (status === 403 || t === 'permission_error') code = 'permission';
+  else if (status === 404 || t === 'not_found_error') code = 'model';
+  else if (status === 413 || t === 'request_too_large') code = 'prompt_too_large';
+  else if (status === 429 || t === 'rate_limit_error') code = 'rate_limited';
+  else if (status === 529 || status === 503 || t === 'overloaded_error') code = 'overloaded';
+  return { code, message: m || ('HTTP ' + status), status };
+}
+const blobB64 = b => new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(String(r.result).split(',')[1]); r.onerror = rej; r.readAsDataURL(b); });
+/* Same contract as the claude.ai page's sample(): resolves {text, truncated, modelApplied}, rejects {code, message, text?}. */
+async function sample(input, opts) {
+  opts = opts || {};
+  if (!online()) throw { code: 'offline', message: 'offline' };
+  if (!hasKey()) throw { code: 'auth', message: 'no key' };
+  if (opts.signal && opts.signal.aborted) throw { code: 'cancelled', message: 'cancelled', text: '' };
+  const msgs = [];
+  (typeof input === 'string' ? [{ role: 'user', content: input }] : input).forEach(m => {
+    const role = m.role === 'assistant' ? 'assistant' : 'user', p = msgs[msgs.length - 1];
+    if (p && p.role === role) p.content += '\n\n' + m.content; else msgs.push({ role, content: String(m.content) });
+  });
+  const imgs = opts.images ? [].concat(opts.images).filter(Boolean) : [];
+  if (imgs.length) {
+    const last = msgs[msgs.length - 1], blocks = [];
+    for (const b of imgs) blocks.push({ type: 'image', source: { type: 'base64', media_type: b.type || 'image/png', data: await blobB64(b) } });
+    last.content = blocks.concat([{ type: 'text', text: last.content }]);
+  }
+  const model = opts.model || DEFAULT_MODEL;
+  let resp;
+  try {
+    resp = await fetch(API + '/messages', { method: 'POST', headers: apiHeaders(key(), true), signal: opts.signal,
+      body: JSON.stringify({ model, max_tokens: 8000, stream: true, messages: msgs }) });
+  } catch (e) {
+    if (opts.signal && opts.signal.aborted) throw { code: 'cancelled', message: 'cancelled', text: '' };
+    throw { code: online() ? 'network' : 'offline', message: String(e && e.message || e) };
+  }
+  if (!resp.ok) { let j = null; try { j = await resp.json(); } catch (e) { j = null; } throw httpErr(resp.status, j); }
+  let text = '', stop = null, streamErr = null;
+  try {
+    const reader = resp.body.getReader(), dec = new TextDecoder();
+    let buf = '';
+    for (;;) {
+      const r = await reader.read();
+      if (r.done) break;
+      buf += dec.decode(r.value, { stream: true }).replace(/\r\n?/g, '\n');
+      let i;
+      while ((i = buf.indexOf('\n\n')) >= 0) {
+        const chunk = buf.slice(0, i); buf = buf.slice(i + 2);
+        let data = '';
+        chunk.split('\n').forEach(line => { if (line.startsWith('data:')) data += line.slice(5).replace(/^ /, ''); });
+        if (!data) continue;
+        let ev; try { ev = JSON.parse(data); } catch (e) { continue; }
+        if (ev.type === 'content_block_delta' && ev.delta && ev.delta.type === 'text_delta') {
+          text += ev.delta.text;
+          if (typeof opts.onText === 'function') { try { opts.onText({ text, delta: ev.delta.text }); } catch (e) { } }
+        } else if (ev.type === 'message_delta' && ev.delta && ev.delta.stop_reason) stop = ev.delta.stop_reason;
+        else if (ev.type === 'error') streamErr = ev.error || { type: 'api_error' };
+      }
+    }
+  } catch (e) {
+    if (opts.signal && opts.signal.aborted) throw { code: 'cancelled', message: 'cancelled', text };
+    throw { code: online() ? 'network' : 'offline', message: String(e && e.message || e), text };
+  }
+  if (streamErr) throw Object.assign(httpErr(streamErr.type === 'overloaded_error' ? 529 : 500, { error: streamErr }), { text });
+  if (stop === 'refusal') throw { code: 'refused', message: 'refused' };
+  if (!text.trim()) throw { code: 'empty_completion', message: 'empty' };
+  return { text, truncated: stop === 'max_tokens', modelApplied: model };
+}
+async function testKey(k) {
+  k = (k || '').trim();
+  if (!online()) return { ok: false, code: 'offline' };
+  try {
+    const r = await fetch(API + '/models?limit=1', { headers: apiHeaders(k, false) });
+    if (r.ok) return { ok: true };
+    let j = null; try { j = await r.json(); } catch (e) { j = null; }
+    return Object.assign({ ok: false }, httpErr(r.status, j));
+  } catch (e) { return { ok: false, code: 'network' }; }
+}
+const setKey = k => { ls.set(K_KEY, (k || '').trim()); emit('key'); };
+const clearKey = () => { ls.del(K_KEY); emit('key'); };
 
 /* ---------- service worker: offline cache + updates ---------- */
 const sw = { supported: 'serviceWorker' in navigator && window.isSecureContext && location.protocol !== 'file:', reg: null, ready: false, updated: false, error: '' };
@@ -118,6 +221,7 @@ window.addEventListener('offline', () => emit('net'));
 
 window.DQ_PWA = {
   VERSION, online, sw, checkUpdate, installState, install, isIOS, isStandalone,
-  persisted, persist, saveFile, pickFile, on
+  persisted, persist, saveFile, pickFile, on,
+  sample, hasKey, keyHint, testKey, setKey, clearKey, artifactLink
 };
 })();

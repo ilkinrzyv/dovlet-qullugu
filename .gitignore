@@ -4,3 +4,4 @@ build/book.json
 build/shots/
 /dist/
 build/test/book.json
+build/test/page*.html
