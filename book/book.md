@@ -3849,6 +3849,211 @@ E) [yarpa]
 Cavab: A
 ```
 
+## Fəsil 19. Leksika və söz yaradıcılığı
+
+**Leksika** dilin söz ehtiyatını — sözlərin mənasını, mənşəyini və işlənməsini öyrənir. **Söz yaradıcılığı** isə sözlərin tərkibini (kök və şəkilçi) və yeni sözlərin necə yarandığını öyrənir. Bu fəsil proqramın 3-cü və 4-cü mövzularını əhatə edir.
+
+### 19.1. Sözün leksik mənası: həqiqi və məcazi, çoxmənalılıq
+
+- **Təkmənalı** sözün bir mənası var: *mübtəda, kompüter*.
+- **Çoxmənalı** sözün bir-biri ilə **bağlı** bir neçə mənası var: *baş* — insanın başı; dəstənin başı (rəhbəri); işin başı (əvvəli).
+- **Həqiqi məna** — sözün ilk, əsas mənası: *şirin alma*.
+- **Məcazi məna** — oxşarlığa görə başqa əşyaya köçürülmüş məna: *şirin söz, daş ürək, qızıl əllər*.
+
+```nümunə
+S: Hansı birləşmədə “baş” sözü məcazi mənada işlənib?
+A) başım ağrıyır
+B) başını yudu
+C) dəstənin başı
+D) başına papaq qoydu
+E) başını tərpətdi
+Cavab: C
+İzah: Dörd variantda **baş** bədən üzvüdür — həqiqi məna. “Dəstənin başı” isə **rəhbər** deməkdir: başın bədəndə ən yuxarıda olması kimi, rəhbər də dəstənin “yuxarısındadır” — məna oxşarlığa görə köçürülüb.
+```
+
+```yoxla
+S: Hansı birləşmədə söz həqiqi mənada işlənib?
+A) daş ürək
+B) qızıl əllər
+C) dəmir iradə
+D) şirin söz
+E) şirin alma
+Cavab: E
+```
+
+### 19.2. Omonimlər, sinonimlər, antonimlər
+
+| Növ | Nədir | Nümunə |
+| --- | --- | --- |
+| **Omonim** | yazılışı və deyilişi eyni, mənaları **əlaqəsiz** sözlər | *yaş* (ömür) – *yaş* (nəm); *üz* (sifət) – *üz* (suda üzmək); *qaz* (quş) – *qaz* (yanacaq) |
+| **Sinonim** | mənaca yaxın sözlər | *igid – cəsur*, *gözəl – qəşəng* |
+| **Antonim** | mənaca zidd sözlər | *isti – soyuq*, *gec – tez* |
+
+**Omonimi çoxmənalı sözlə qarışdırma:** çoxmənalı sözün mənaları bir-biri ilə bağlıdır (*insanın başı – dəstənin başı*), omonimlərin mənaları isə heç bir əlaqəsi olmayan **ayrı-ayrı sözlərdir** (*yaş* — ömür; *yaş* — nəm).
+
+```nümunə
+S: Hansı cümlədə “yaş” sözü “nəm, islaq” mənasında işlənib?
+A) Onun yaşı otuzdur.
+B) Yaş paltarı çıxart.
+C) Yaşın neçədir?
+D) Eyni yaşdayıq.
+E) Yaşı az olsa da, ağıllıdır.
+Cavab: B
+İzah: Dörd cümlədə **yaş** ömür mənasındadır. Yalnız B-də **yaş paltar** — islaq paltar deməkdir. Bu iki “yaş” omonimdir: eyni yazılır, amma mənaları əlaqəsizdir.
+```
+
+```yoxla
+S: Hansı cütdəki sözlər omonimdir?
+A) üz (sifət) – üz (suda üz)
+B) gözəl – qəşəng
+C) isti – soyuq
+D) baş (bədən üzvü) – baş (rəhbər)
+E) kitab – kitabxana
+Cavab: A
+```
+
+### 19.3. Lüğət tərkibi və lüğətlər
+
+**Mənşəyinə görə:**
+
+- **milli (doğma) sözlər:** *ata, su, daş, göz*;
+- **alınma sözlər** — başqa dillərdən keçib: ərəb (*kitab, məktəb*), fars (*şəhər*), Avropa dillərindən (*telefon, kompüter*).
+
+**İşlənmə dairəsinə görə:**
+
+- **ümumişlək sözlər** — hamının işlətdiyi sözlər;
+- **dialektizmlər** — yalnız müəyyən bölgədə işlənən sözlər;
+- **terminlər** — elm, texnika və peşə sahəsinin dəqiq mənalı sözləri: *mübtəda, isim, atom*.
+
+**Köhnəlmiş və yeni sözlər:**
+
+| Növ | Nədir | Nümunə |
+| --- | --- | --- |
+| **Arxaizm** | əşya və anlayış qalır, amma **adı** başqa sözlə əvəz olunub | *yağı* (düşmən), *sayru* (xəstə), *us* (ağıl) |
+| **Tarixizm** | adlandırdığı **əşya və anlayışın özü** artıq yoxdur | *çapar* (atlı poçtalyon), *darğa* |
+| **Neologizm** | yeni əşya və anlayışlarla dilə daxil olan yeni sözlər | *internet, smartfon* |
+
+**Frazeoloji birləşmələr** — mənası tərkibindəki sözlərin mənalarının cəmindən çıxmayan sabit birləşmələr: *göz qoymaq* (izləmək), *qulaq asmaq* (dinləmək), *ağzı süd qoxuyur* (təcrübəsizdir).
+
+**Lüğətlər:**
+
+| Lüğət | Nə üçündür |
+| --- | --- |
+| İzahlı | sözlərin mənasını izah edir |
+| Orfoqrafiya | sözlərin düzgün yazılışını göstərir |
+| Orfoepiya | sözlərin düzgün tələffüzünü göstərir |
+| Tərcümə | sözlərin başqa dildəki qarşılığını verir |
+| Terminoloji | bir sahənin terminlərini izah edir |
+| Sinonimlər, antonimlər, frazeoloji | uyğun söz qruplarını toplayır |
+| Etimoloji | sözlərin mənşəyini izah edir |
+
+```nümunə
+S: Hansı söz arxaizmdir?
+A) yağı (düşmən mənasında)
+B) kompüter
+C) müəllim
+D) çörək
+E) internet
+Cavab: A
+İzah: Düşmən hələ də var, amma onu müasir dildə **yağı** deyil, **düşmən** adlandırırıq — anlayış qalıb, köhnə ad əvəz olunub. Bu, arxaizmdir. Kompüter və internet neologizmdir, müəllim və çörək ümumişlək sözlərdir.
+```
+
+```yoxla
+S: Sözlərin düzgün yazılışını öyrənmək üçün hansı lüğətə baxmaq lazımdır?
+A) orfoqrafiya lüğəti
+B) izahlı lüğət
+C) tərcümə lüğəti
+D) frazeoloji lüğət
+E) etimoloji lüğət
+Cavab: A
+```
+
+```nümunə
+S: Hansı birləşmə frazeoloji birləşmədir?
+A) göz qoymaq
+B) qırmızı alma
+C) böyük ev
+D) kitab oxumaq
+E) yeni məktəb
+Cavab: A
+İzah: **Göz qoymaq** “gözü bir yerə qoymaq” demək deyil, **izləmək** deməkdir — məna sözlərin cəmindən çıxmır, birləşmə sabitdir. Digər birləşmələrin mənası sözlərin mənalarından birbaşa alınır.
+```
+
+```yoxla
+S: Hansı söz alınmadır?
+A) kitab
+B) daş
+C) göz
+D) su
+E) ata
+Cavab: A
+```
+
+### 19.4. Sözün tərkibi: kök və şəkilçi
+
+**Kök** — sözün bölünməyən, əsas mənanı daşıyan hissəsidir: *göz*-lük, *iş*-çi-lər. **Şəkilçi** kökə artırılır və iki cür olur:
+
+| Şəkilçi | Nə edir | Nümunə |
+| --- | --- | --- |
+| **Leksik (sözdüzəldici)** | **yeni söz** yaradır | göz → göz**lük**, iş → iş**çi**, bil → bil**ik** |
+| **Qrammatik (sözdəyişdirici)** | sözün **formasını** dəyişir: cəm, hal, mənsubiyyət, şəxs | göz**lər**, göz**ün**, göz**ümüz**, göz**dən** |
+
+**Sıra:** sözdüzəldici şəkilçilər kökə yaxın, sözdəyişdiricilər onlardan sonra gəlir: *iş* + **çi** (leksik) + **lər** + **imiz** + **dən** (qrammatik).
+
+```nümunə
+S: “Balıqçılarımızdan” sözündə neçə sözdüzəldici şəkilçi var?
+A) 1
+B) 2
+C) 3
+D) 4
+E) 0
+Cavab: A
+İzah: Sözü hissələrə ayıraq: **balıq** (kök) + **-çı** + **-lar** + **-ımız** + **-dan**. Yeni söz yaradan yalnız **-çı**-dır (balıq → balıqçı). -lar (cəm), -ımız (mənsubiyyət), -dan (çıxışlıq hal) sözün formasını dəyişir — qrammatik şəkilçilərdir.
+```
+
+```yoxla
+S: Hansı sözdə leksik (sözdüzəldici) şəkilçi var?
+A) gözlük
+B) gözlər
+C) gözü
+D) gözdən
+E) gözümüz
+Cavab: A
+```
+
+### 19.5. Söz yaradıcılığı: sadə, düzəltmə və mürəkkəb sözlər
+
+| Quruluş | Tərkibi | Nümunə |
+| --- | --- | --- |
+| **Sadə** | bir kök (qrammatik şəkilçi ola bilər) | *ev, kitab, kitablar* |
+| **Düzəltmə** | kök + leksik şəkilçi | *işçi, gözlük, bilik* |
+| **Mürəkkəb** | iki və daha çox kök | *ayaqqabı, Qarabağ, ata-ana, gecə-gündüz* |
+
+Yeni sözlər iki əsas yolla yaranır: **şəkilçi ilə** (düzəltmə sözlər) və **sözlərin birləşməsi ilə** (mürəkkəb sözlər). Mürəkkəb sözlər **bitişik** (*ayaqqabı*) və ya **defislə** (*ata-ana*) yazılır.
+
+**Diqqət:** qrammatik şəkilçi sözü düzəltmə etmir: *kitablar* sadə sözdür, çünki **-lar** yeni söz yaratmır.
+
+```nümunə
+S: Hansı söz mürəkkəbdir?
+A) ayaqqabı
+B) ayaqlar
+C) gözlük
+D) işçi
+E) bilik
+Cavab: A
+İzah: **Ayaqqabı** iki kökdən — *ayaq* və *qab* — əmələ gəlib (+ mənsubiyyət şəkilçisi). Gözlük, işçi, bilik — kök + leksik şəkilçi (düzəltmə), ayaqlar isə qrammatik şəkilçili sadə sözdür.
+```
+
+```yoxla
+S: Hansı söz düzəltmədir?
+A) işçi
+B) kitablar
+C) ev
+D) ata-ana
+E) Qarabağ
+Cavab: A
+```
+
 # IV hissə — İnformatika {fənn=inf}
 
 # V hissə — Müsahibə

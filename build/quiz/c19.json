@@ -1,0 +1,16 @@
+{
+"19": [
+ {"s":"19.1","q":"Hansı birləşmədə “göz” sözü məcazi mənada işlənib?","o":["bulağın gözü","gözü ağrıyır","gözünü yumdu","gözləri qaradır","gözlərini açdı"],"a":0,"e":"Bulağın gözü — suyun çıxdığı yer; məna insan gözünə oxşarlığa görə köçürülüb. Digər birləşmələrdə göz bədən üzvüdür."},
+ {"s":"19.2","q":"Hansı cütdə sözlər sinonimdir?","o":["cəsur – igid","isti – soyuq","dost – düşmən","baş – başçı","gec – tez"],"a":0,"e":"Cəsur və igid mənaca yaxındır. İsti – soyuq, dost – düşmən, gec – tez antonimdir; başçı isə başdan düzəlmiş başqa sözdür."},
+ {"s":"19.2","q":"Hansı cütdə sözlər antonimdir?","o":["gec – tez","gözəl – qəşəng","ev – mənzil","yol – cığır","böyük – nəhəng"],"a":0,"e":"Gec və tez mənaca ziddir. Digər cütlərdəki sözlər mənaca yaxındır."},
+ {"s":"19.2","q":"Hansı sözün omonimi var?","o":["qaz","kitab","dəftər","məktəb","şəhər"],"a":0,"e":"Qaz — quş adı və qaz — yanacaq: eyni yazılışlı, mənaca əlaqəsiz sözlər (omonimlər)."},
+ {"s":"19.3","q":"Hansı söz termindir?","o":["mübtəda","ev","yaxşı","gəlmək","dost"],"a":0,"e":"Mübtəda dilçilik terminidir — elm sahəsinin dəqiq mənalı sözüdür. Digərləri ümumişlək sözlərdir."},
+ {"s":"19.3","q":"Əşya və anlayış qalsa da, adı başqa sözlə əvəz olunmuş köhnə sözlər necə adlanır?","o":["arxaizm","tarixizm","neologizm","termin","dialektizm"],"a":0,"e":"Arxaizmdə anlayış qalır, köhnə ad əvəz olunur (yağı → düşmən). Tarixizmdə əşyanın özü də yox olub (çapar)."},
+ {"s":"19.3","q":"Hansı birləşmə frazeoloji birləşmədir?","o":["qulaq asmaq","uzun yol","yaşıl yarpaq","su içmək","məktub yazmaq"],"a":0,"e":"Qulaq asmaq — dinləmək deməkdir; mənası sözlərin mənalarının cəmindən çıxmır. Digər birləşmələr sərbəstdir."},
+ {"s":"19.4","q":"“Dostluqlarımızdan” sözündə neçə qrammatik (sözdəyişdirici) şəkilçi var?","o":["3","2","4","1","5"],"a":0,"e":"dost (kök) + -luq (leksik) + -lar + -ımız + -dan (qrammatik). Qrammatik şəkilçilər: -lar, -ımız, -dan — 3."},
+ {"s":"19.4","q":"Hansı sözün kökü “bil”dir?","o":["bilik","bilet","bilək","bilərzik","bilyard"],"a":0,"e":"Bilik = bil + -ik (sözdüzəldici). Bilet, bilək, bilərzik, bilyard ayrı sözlərdir — “bil-” onlarda kök deyil."},
+ {"s":"19.4","t":"open","q":"“Kitabçalarımız” sözündə neçə şəkilçi var? (rəqəmlə yaz)","a":["3","üç"],"e":"kitab (kök) + -ça + -lar + -ımız — 3 şəkilçi."},
+ {"s":"19.5","q":"Hansı söz mürəkkəbdir?","o":["gecə-gündüz","gecələr","gecəlik","gecədən","gecəni"],"a":0,"e":"Gecə-gündüz iki kökdən əmələ gəlib, defislə yazılır. Gecəlik düzəltmədir, gecələr, gecədən, gecəni qrammatik şəkilçili sadə sözlərdir."},
+ {"s":"19.5","t":"open","q":"“İşçilər” sözünün kökünü yaz.","a":["iş"],"e":"iş (kök) + -çi (leksik) + -lər (qrammatik)."}
+]
+}
