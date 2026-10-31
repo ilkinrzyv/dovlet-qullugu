@@ -932,6 +932,199 @@ Müddət müraciətin subyektə **daxil olduğu gündən** başlayır.
 | Prokurorluğun aid olmayan müraciəti qaytarması | 5 iş günü | 12.6 |
 | Baş prokurorun məlumatı | 6 ayda ən azı 1 dəfə | 12.7 |
 
+## Fəsil 7. “Normativ hüquqi aktlar haqqında” Konstitusiya Qanunu {qrup=BA}
+
+Konstitusiya Qanunu 21 dekabr 2010-cu ildə qəbul edilib (№ 21-IVKQ), **dərc edildiyi gündən** qüvvəyə minib və 1999-cu ilin eyniadlı qanununu əvəz edib. Proqrama **yalnız BA** qrupu üçün və yalnız aşağıdakı bənd və maddələr daxildir: anlayışlar, maddə 2–4, 17–20, 28, 83, 85–89 və 92.
+
+### 7.1. Əsas anlayışlar
+
+| Anlayış | Mənası | Bənd |
+| --- | --- | --- |
+| **Normativ hüquqi akt** | Dövlət orqanının və ya referendumun qəbul etdiyi, **hamı üçün** məcburi davranış qaydalarını əks etdirən, **qeyri-müəyyən subyektlər dairəsi** üçün və **dəfələrlə** tətbiq olunan rəsmi sənəd | 1.0.1 |
+| **Normativ xarakterli akt** | 4.1-də sadalanan, **məhdud subyektlər dairəsi** üçün məcburi və dəfələrlə tətbiq olunan rəsmi sənəd | 1.0.3 |
+| **Hüquqi akt** | Normativ hüquqi akt, normativ xarakterli akt və ya qeyri-normativ hüquqi akt | 1.0.4 |
+| **Qanunvericilikdə boşluq** | Konkret ictimai münasibəti tənzimləyən normaların **olmaması** | 1.0.9 |
+| **Qanunun analogiyası** | Norma olmadıqda **oxşar münasibəti** tənzimləyən normanın tətbiqi | 1.0.10 |
+| **Hüququn analogiyası** | Oxşar münasibət üçün də norma olmadıqda qanunvericiliyin məğzinin və **hüququn ümumi prinsiplərinin** tətbiqi | 1.0.11 |
+| **Kolliziya** | Eyni münasibəti tənzimləyən qüvvədə olan aktların **ziddiyyəti (uyğunsuzluğu)** | 1.0.12 |
+| **Aktda dəyişiklik** | Mətni dəyişən və ya akta əlavə norma daxil edən dəyişiklik | 1.0.23 |
+| **Sui-istifadə imkanı** | Aktda **korrupsiya təzahürləri** üçün şərait yaradan müddəaların olması | 1.0.24 |
+| **Diskresion səlahiyyətlər** | Orqanın (şəxsin) **öz mülahizəsinə görə** tətbiq edə biləcəyi səlahiyyətlər | 1.0.25 |
+| **Dispozitiv imkan** | Orqanın (şəxsin) **öz seçimi** ilə davranış imkanı | 1.0.26 |
+| **Hüquqi qüvvə** | Aktın tətbiqinin məcburiliyini və digər aktlara münasibətdə üstünlüyünü və ya tabeliyini müəyyən edən xarakteristika | 1.0.27 |
+
+**Fərqi yadda saxla:** qanunun analogiyası — **oxşar norma** götürülür; hüququn analogiyası — oxşar norma da yoxdur, **ümumi prinsiplər** tətbiq olunur.
+
+### 7.2. Aktların növləri və hüquqi qüvvəsi
+
+**Normativ hüquqi aktlar (maddə 2).** Növləri Konstitusiyanın **148-ci**, hüquqi qüvvəsi **149-cu** (II–VI hissələr) və **151-ci** maddələri ilə müəyyən edilir.
+
+**Ziddiyyət olduqda hansı akt tətbiq edilir:**
+
+| Ziddiyyət | Tətbiq edilir |
+| --- | --- |
+| Referendum aktı, qanun, fərman və s. — Konstitusiya ilə | **Konstitusiya** |
+| Qanun, fərman və s. — referendum aktı ilə | **Referendum aktı** |
+| Mülki hüquq normaları olan məcəllə və qanunlar — Mülki Məcəllə ilə | **Mülki Məcəllə** |
+| Fərman və ya digər akt — qanunla | **Qanun** |
+| Nazirlər Kabinetinin qərarı, mərkəzi icra orqanlarının aktları — fərmanla | **Fərman** |
+| Mərkəzi icra orqanlarının aktları — Nazirlər Kabinetinin qərarı ilə | **Nazirlər Kabinetinin qərarı** |
+
+- Nizamnamə, əsasnamə, təlimat, reqlament və qaydaların hüquqi qüvvəsi onları **təsdiq edən aktın** qüvvəsi ilə müəyyən edilir.
+
+**Qeyri-normativ hüquqi aktlar (maddə 3)** — konkret, **birdəfəlik** tədbirlər üçün qəbul edilən aktlar. Normativ akt əsasında qəbul edilir və onun normasına istinad edir. Bunlar:
+
+- Milli Məclisin **qərarları**;
+- Prezidentin **sərəncamları**;
+- Nazirlər Kabinetinin **sərəncamları**;
+- vətəndaşlıq vəziyyəti aktlarını qeydə alan orqanların aktları.
+
+**Normativ xarakterli aktlar (maddə 4):**
+
+1. Konstitusiya Məhkəməsinin qərarları (Konstitusiyanın 130-cu maddəsi üzrə);
+2. Mərkəzi Seçki Komissiyasının qərarları, təlimatları və izahları;
+3. maliyyə bazarları tənzimləyicisinin qərarları;
+4. Məhkəmə-Hüquq Şurasının qərarları;
+5. Audiovizual Şuranın qərarları;
+6. **bələdiyyələrin** qərarları;
+7. **yerli icra hakimiyyəti orqanlarının** qərarları.
+
+- Normativ xarakterli aktlar **icra olunmamasına görə məsuliyyət müəyyən edə bilməz**.
+- Konstitusiya Məhkəməsinin qərarları istisna olmaqla, normativ hüquqi aktlara **zidd ola bilməz**.
+
+### 7.3. Normativ hüquqi aktların növləri (maddə 17–20)
+
+| Orqan | Aktın forması | Əsas | Təsdiq etdiyi sənədlər |
+| --- | --- | --- | --- |
+| Milli Məclis | **Qanun** | Konstitusiyanın 93-cü maddəsi | — |
+| Prezident | **Fərman** | Konstitusiyanın 113-cü maddəsi | Əsasnamə, nizamnamə, qaydalar — **fərmanla** |
+| Nazirlər Kabineti | **Qərar** | Konstitusiyanın 120-ci maddəsinin I hissəsi | Əsasnamə, nizamnamə, qaydalar — **qərarla** |
+| Mərkəzi icra hakimiyyəti orqanı | **Qərar** | Prezidentin aktı (və ya ondan irəli gələn Nazirlər Kabinetinin aktı) | Təlimat, əsasnamə, nizamnamə, qaydalar — **qərarla** |
+
+- Milli Məclisin, Prezidentin və Nazirlər Kabinetinin aktında **istinad edilən Konstitusiya maddəsi** göstərilməli və aktın onun icrası üçün qəbul edildiyi qeyd olunmalıdır.
+- Nazirlər Kabineti mərkəzi icra hakimiyyəti orqanlarının həll edə bilmədiyi məsələlər üzrə də akt qəbul edir.
+- Mərkəzi icra orqanları akt yalnız **Prezidentin aktları ilə onlara aid edilmiş** məsələlər üzrə qəbul edə bilər.
+
+**Rekvizitlər (maddə 28) — 4 məcburi rekvizit:**
+
+1. aktın **növü** (Qanun, Fərman, Qərar və s.);
+2. aktın **adı (sərlövhəsi)**;
+3. qəbul edildiyi **tarix, yer və qeydiyyat nömrəsi**;
+4. imzalamaq səlahiyyəti olan şəxsin **adı, soyadı, vəzifəsi və imzası**.
+
+### 7.4. Rəsmi dərc və qüvvəyə minmə
+
+**Dərc müddətləri (maddə 83):**
+
+| Akt | Dərc müddəti |
+| --- | --- |
+| Qanunlar və fərmanlar | Prezident imzaladıqdan sonra **72 saat** |
+| Milli Məclisin təsdiq etməli olduğu fərmanlar | Təsdiqdən sonra **24 saat** |
+| Nazirlər Kabinetinin qərarları | Qəbuldan sonra **72 saat** |
+| Digər normativ hüquqi aktlar | **Hüquqi Aktların Dövlət Reyestrinə** daxil edildikdən sonra |
+| Rəsmi nəşr orqanlarına daxil olan digər aktlar | Daxil olduğu gündən **5 gün** gec olmayaraq |
+
+**Qüvvəyə minmə (maddə 85):**
+
+- Qanunlar, fərmanlar və Nazirlər Kabinetinin qərarları — aktda daha gec müddət yoxdursa, **rəsmi dərc edildiyi gündən**.
+- Digər aktlar — **Hüquqi Aktların Dövlət Reyestrinin elektron variantında** dərc edildiyi gündən.
+- **Xarici ticarət** fəaliyyətini tənzimləyən akt dərcdən **ən azı 30 gün sonra** qüvvəyə minməlidir (müstəsna hallarda, beynəlxalq təşkilatlara dərhal məlumat verilməklə, aktda göstərilən müddətdə).
+
+### 7.5. Zamana, məkana və şəxslərə görə qüvvə
+
+**Zamana görə (maddə 86):** akt mətnində başqa hal yoxdursa **müddətsiz** qüvvədədir. Müddət müəyyən edilibsə, bitdikdə və ya göstərilən hadisə baş verdikdə **avtomatik ləğv** olunur. Orqan müddət bitənə qədər onu uzada və ya müddətsiz edə bilər.
+
+**Geriyə qüvvə (maddə 87):**
+
+- Konstitusiyanın 149-cu maddəsinin VII hissəsi ilə tənzimlənir.
+- Hüquqi vəziyyəti **yaxşılaşdıran**, məsuliyyəti aradan qaldıran və ya **yüngülləşdirən** akt — aktda göstərilib-göstərilməməsindən asılı olmayaraq **geriyə şamil edilir**.
+- Məsuliyyət **yaradan və ya ağırlaşdıran** aktın geriyə şamil edilməsinə **yol verilmir**.
+
+**Məkana və şəxslərə görə (maddə 88):** aktlar **bütün ərazidə** məcburidir; vətəndaşlara, hüquqi şəxslərə və ərazidə olan **əcnəbilərə və vətəndaşlığı olmayanlara** şamil edilir.
+
+**Qüvvəni itirmə (maddə 89):**
+
+1. tətbiq müddəti başa çatdıqda;
+2. qanunla nəzərdə tutulmuş hallarda **ləğv** edildikdə;
+3. **Konstitusiya Məhkəməsinin qərarı** ilə qüvvədən düşmüş hesab edildikdə — bu halda aktı qəbul etmiş orqan onu ləğv edir.
+
+**İcraya nəzarət (maddə 92)** — normayaratma orqanları (vəzifəli şəxslər) və aktlarla nəzərdə tutulmuş xüsusi orqanlar (şəxslər).
+
+## Fəsil 8. “Azərbaycan Respublikasında dövlət dili haqqında” Qanun
+
+Qanun 30 sentyabr 2002-ci ildə qəbul edilib (№ 365-IIQ), **dərc olunduğu gündən** qüvvəyə minib və 22 dekabr 1992-ci il tarixli eyniadlı qanunu əvəz edib. 3 fəsil, 20 maddə. Qanun dövlət dilinin işlədilməsini **müstəqil dövlətçiliyin başlıca əlamətlərindən biri** sayır.
+
+### 8.1. Dövlət dilinin statusu və dövlətin vəzifələri
+
+> **Maddə 1.1.** Azərbaycan Respublikasının dövlət dili Konstitusiyanın **21-ci maddəsinin I hissəsinə** müvafiq olaraq **Azərbaycan dilidir**. Dövlət dilini bilmək hər bir Azərbaycan Respublikası vətəndaşının **borcudur**.
+
+- Azərbaycan dili ölkənin siyasi, ictimai, iqtisadi, elmi və mədəni həyatının **bütün sahələrində** işlədilir.
+- Dövlət orqanlarında, bələdiyyələrdə, siyasi partiyalarda, QHT-lərdə, həmkarlar təşkilatlarında, digər hüquqi şəxslərdə və onların filiallarında **kargüzarlıq dövlət dilində** aparılır.
+- Dövlət dilinin tətbiqinin normalarını **müvafiq icra hakimiyyəti orqanı** müəyyən edir.
+- Ölkədəki **beynəlxalq təşkilatlarla** və **xarici diplomatik nümayəndəliklərlə** yazışmalar dövlət dilində və ya Azərbaycan dilinə tərcümə olunmaq şərtilə **xarici dildə** aparıla bilər.
+
+**Dövlətin 6 əsas vəzifəsi (maddə 3):** hüquq qaydalarını müəyyən etmək; qanunvericiliyə riayəti təmin etmək; dövlət dilinin **inkişaf proqramını** hazırlamaq və **dövlət büdcəsindən** maliyyələşdirmək; dilin **saflığını** qorumaq və dilçilik elmini inkişaf etdirmək; maddi baza yaratmaq; **xaricdə yaşayan azərbaycanlıların** Azərbaycan dilində təhsil almasına kömək etmək.
+
+### 8.2. Rəsmi mərasimlər, təhsil, media və xidmət sahəsi
+
+**Rəsmi mərasimlər (maddə 4):** dövlət orqanlarının və bələdiyyələrin bütün rəsmi mərasim və tədbirləri dövlət dilində aparılır. İstisna: Azərbaycanın təşkil etdiyi **beynəlxalq səviyyəli** tədbirlər və **digər ölkələrdə** keçirilən tədbirlər.
+
+**Təhsil (maddə 5):**
+
+- Təhsil **dövlət dilində** aparılır.
+- Başqa dillərdə təhsil müəssisələri ola bilər, amma onlarda **dövlət dilinin tədrisi məcburidir**.
+- Ali və orta peşə-ixtisas təhsili müəssisələrinə qəbulda **Azərbaycan dili fənnindən imtahan** verilməlidir.
+
+**Televiziya və radio (maddə 6):** mülkiyyət formasından asılı olmayaraq, dövlət dilində yayımlanan kanalların **aparıcıları dövlət dilini mükəmməl bilməli və səlis danışmalıdır**. Dublyaj olunan film və proqramlar dil normalarına uyğun olmalıdır.
+
+**Xidmət, reklam və elanlar (maddə 7):**
+
+- Bütün xidmət sahələrində, reklam və elanlarda **dövlət dili** işlənir; əcnəbilərə xidmətdə digər dillər də tətbiq oluna bilər.
+- Lövhə, tablo, plakat və reklamda başqa dil işlənərsə, onun tutduğu sahə Azərbaycan dilindəki qarşılığından **böyük olmamalı** və Azərbaycan dilindəki yazıdan **sonra gəlməlidir**.
+- Ölkədə istehsal edilən və **ixrac edilən** malların etiketləri xarici dillərlə yanaşı **dövlət dilində də** olmalıdır.
+- **İdxal edilən** malların etiketləri və istifadə qaydaları **Azərbaycan dilinə tərcümə** ilə müşayiət olunmalıdır.
+
+### 8.3. Adlar, məhkəmə icraatı və beynəlxalq yazışmalar
+
+- **Vətəndaşların adları, ata adları və soyadları** dövlət dilində yazılır (maddə 8).
+- **İnzibati ərazi vahidlərinin** (şəhər, rayon, qəsəbə, kənd) adları dövlət dilində yazılır; xarici dildə də yazıla bilər, amma **əvvəlcə dövlət dilində**, sonra xarici dildə (maddə 9).
+- Coğrafi adların xarici dillərdə verilməsi **Azərbaycan dilində səslənməsinə** və beynəlxalq yazılış qaydalarına uyğun müəyyən edilir (maddə 10).
+
+**Hüquq-mühafizə və məhkəmə (maddə 11):**
+
+| Sahə | Qayda |
+| --- | --- |
+| Hüquq-mühafizə orqanları | Dövlət dili; dövlət dilini bilməyən **tərcüməçidən** istifadə edə bilər |
+| Silahlı Qüvvələr, sərhəd və daxili qoşunlar | Dövlət dili (qanunla nəzərdə tutulmuş hallar istisna) |
+| Notariat kargüzarlığı | Dövlət dili; notarius imkan daxilində sənədi istənilən dildə tərtib edə və ya tərcümə etdirə bilər |
+| Konstitusiya Məhkəməsi | Dövlət dili; dili bilməyənə materialların tərcüməsi və **ana dilində çıxış** təmin olunur |
+| Cinayət, mülki, kommersiya, inzibati mübahisələr | Dövlət dili; prosessual məcəllələrdə nəzərdə tutulmuş hallarda digər dillər |
+| İnzibati icraat | Dövlət dilində və ya **müəyyən ərazi əhalisinin əksəriyyətinin dilində**; tərcüməçi hüququ izah və təmin edilir |
+
+**Beynəlxalq yazışmalar (maddə 12):**
+
+- Beynəlxalq yazışmalar dövlət dilində, zərurət olduqda xarici dillərdən birində də aparılır.
+- **İkitərəfli** müqavilələr **dövlət dilində də**, **çoxtərəfli** müqavilələr tərəflərin razılaşdığı dildə tərtib olunur.
+- Tərəfdar çıxdığımız müqavilələr və konvensiyalar **dövlət dilində nəşr** edilməlidir.
+
+### 8.4. Dil normaları, əlifba, sənədlər və dilin qorunması
+
+- **Dil normaları** (maddə 13) — ədəbi dilin **orfoqrafiya və orfoepiya** normaları. Hamı onlara əməl etməlidir.
+- **Orfoqrafiya lüğəti 5 ildə bir dəfədən az olmayaraq** nəşr olunmalıdır.
+- **Əlifba** (maddə 14) — **latın qrafikalı Azərbaycan əlifbası**.
+- Dövlət dilində çap məhsulları latın qrafikası ilə buraxılır; **ərəb və kiril** əlifbalarından xüsusi hallarda (lüğətlərdə, elmi nəşrlərdə) istifadə oluna bilər (maddə 15).
+
+**Rəsmi sənədlər (maddə 16):**
+
+- **Yalnız dövlət dilində:** doğum və nikah şəhadətnamələri, **şəxsiyyət vəsiqəsi**, **əmək kitabçası**, **hərbi bilet** və ölkə daxilində etibarlı digər sənədlər.
+- **Dövlət dili ilə yanaşı xarici dildə də:** **pasport** və **təhsil haqqında sənədlər**, zəruri hallarda digər sənədlər.
+
+**Təşkilatların adları (maddə 17):** dövlət orqanlarının, bələdiyyələrin, hüquqi şəxslərin adları Azərbaycan dilinin normalarına uyğun yazılır; lövhə, blank, **möhür** və rəsmi ləvazimat dövlət dilində tərtib olunur.
+
+**Dilin qorunması (maddə 18):** dövlət dilinə qarşı **gizli və ya açıq təbliğat**, onun işlənməsinə müqavimət və hüquqlarını məhdudlaşdırma cəhdi **qadağandır**. Media və nəşriyyatlar dil normalarına riayət etməlidir.
+
+**Məsuliyyət (maddə 19):** qanunu pozan hüquqi, fiziki və vəzifəli şəxslər qanunvericiliyə uyğun məsuliyyət daşıyır.
+
 # II hissə — Məntiq {fənn=men}
 
 # III hissə — Azərbaycan dili {fənn=az}
