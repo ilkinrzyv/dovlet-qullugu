@@ -4692,7 +4692,7 @@ Cavab: A
 | **Mötərizə** | əlavə izah |
 | **Çoxnöqtə** | fikrin yarımçıq qalması |
 
-**Ən çox səhv:** mübtəda ilə xəbər arasında vergül **qoyulmur** (*~~Mən, kitabı oxudum~~*).
+**Ən çox səhv:** mübtəda ilə xəbər arasında vergül **qoyulmur**: *Mən, kitabı oxudum* yazmaq səhvdir.
 
 ```nümunə
 S: Hansı cümlədə durğu işarəsi düzgün qoyulub?
@@ -4733,6 +4733,203 @@ B) mötərizə
 C) tire
 D) iki nöqtə
 E) çoxnöqtə
+Cavab: A
+```
+
+## Fəsil 22. Dil, nitq mədəniyyəti, üslubiyyat və əməli yazı
+
+Bu fəsil proqramın son dörd mövzusunu əhatə edir: dil haqqında ümumi məlumat, nitq mədəniyyəti, üslubiyyat və əməli yazı nümunələri. Dövlət qulluqçusu üçün xüsusilə vacib olan **rəsmi-işgüzar üslub** və **sənədlər** Fəsil 13-dəki Kargüzarlıq Təlimatı ilə birlikdə oxunmalıdır.
+
+### 22.1. Dil haqqında ümumi məlumat
+
+- **Dil** — insanlar arasında əsas ünsiyyət vasitəsidir. **Nitq** — dilin konkret işlədilməsidir: **şifahi** (danışıq) və **yazılı**.
+- Azərbaycan dili **türk dilləri ailəsinin oğuz qrupuna** daxildir (türk, türkmən, qaqauz dilləri ilə birlikdə).
+- Ümumxalq dilinin işlənmiş, normaya salınmış forması **ədəbi dildir**; müəyyən bölgələrdə işlənən formalar **dialekt və şivələrdir**.
+- Azərbaycan dili **Azərbaycan Respublikasının dövlət dilidir** — Konstitusiyanın **21-ci maddəsi** (Fəsil 1) və “Dövlət dili haqqında” Qanun (Fəsil 8).
+
+**Əlifbanın tarixi** (Prezidentin 2001-ci il 9 avqust tarixli 552 nömrəli Fərmanına görə):
+
+| Dövr | Hadisə |
+| --- | --- |
+| Min ildən artıq | **ərəb** qrafikalı əlifba |
+| XIX əsrin ikinci yarısı | **Mirzə Fətəli Axundovun** başçılığı ilə əlifba islahatı ideyası |
+| 1922 | Əlifba Komitəsi yaradılır, latın qrafikalı əlifba tərtib olunur |
+| **1929-cu il 1 yanvar** | latın qrafikalı əlifba kütləvi şəkildə tətbiq edilir |
+| **1940-cı il 1 yanvar** | **kiril** qrafikalı əlifbaya keçid |
+| **1991-ci il 25 dekabr** | “Latın qrafikalı Azərbaycan əlifbasının bərpası haqqında” Qanun |
+| 2001-ci il avqust | latın qrafikasına keçid bütövlükdə təmin olunur |
+
+**1 avqust** hər il **Azərbaycan əlifbası və Azərbaycan dili günü** kimi qeyd edilir (Fərman № 552, 9 avqust 2001).
+
+```nümunə
+S: “Latın qrafikalı Azərbaycan əlifbasının bərpası haqqında” Qanun nə vaxt qəbul edilib?
+A) 25 dekabr 1991
+B) 1 yanvar 1929
+C) 1 yanvar 1940
+D) 9 avqust 2001
+E) 12 noyabr 1995
+Cavab: A
+İzah: Latın qrafikalı əlifbanın **bərpası** haqqında Qanun müstəqillikdən sonra, **1991-ci il 25 dekabrda** qəbul edilib. 1929 — latın əlifbasının ilk tətbiqi, 1940 — kiril əlifbasına keçid, 9 avqust 2001 — Azərbaycan əlifbası və dili günü haqqında Fərmanın tarixi, 12 noyabr 1995 — Konstitusiyanın qəbulu.
+```
+
+```yoxla
+S: Azərbaycan dili hansı dil qrupuna daxildir?
+A) türk dillərinin oğuz qrupuna
+B) türk dillərinin qıpçaq qrupuna
+C) hind-Avropa dillərinə
+D) İran dillərinə
+E) Qafqaz dillərinə
+Cavab: A
+```
+
+```nümunə
+S: Azərbaycan əlifbası və Azərbaycan dili günü nə vaxt qeyd olunur?
+A) 1 avqust
+B) 9 avqust
+C) 25 dekabr
+D) 21 fevral
+E) 18 oktyabr
+Cavab: A
+İzah: Prezidentin 2001-ci il 9 avqust tarixli Fərmanı ilə **hər il avqustun 1-i** Azərbaycan əlifbası və Azərbaycan dili günü elan edilib. 9 avqust Fərmanın imzalandığı gündür — tələ budur.
+```
+
+```yoxla
+S: Azərbaycanda kiril qrafikalı əlifba nə vaxtdan tətbiq edilib?
+A) 1940-cı il 1 yanvardan
+B) 1929-cu il 1 yanvardan
+C) 1922-ci ildən
+D) 1991-ci il 25 dekabrdan
+E) 2001-ci il 1 avqustdan
+Cavab: A
+```
+
+### 22.2. Nitq mədəniyyəti
+
+**Ədəbi dilin normaları:** orfoqrafik (yazı), orfoepik (tələffüz), leksik (sözün düzgün mənada işlənməsi), qrammatik (söz formaları və cümlə quruluşu), üslubi (sözün yerinə uyğun seçilməsi).
+
+**Yaxşı nitqin keyfiyyətləri:** düzgünlük, dəqiqlik, aydınlıq, yığcamlıq, ifadəlilik, yerinə və dinləyiciyə uyğunluq.
+
+**Tipik nitq səhvləri:**
+
+| Səhv | Nümunə | Düzgünü |
+| --- | --- | --- |
+| **Pleonazm** — artıq, mənanı təkrarlayan söz | geri qayıtmaq; ən optimal; öz avtobioqrafiyası | qayıtmaq; optimal; avtobioqrafiyası |
+| Sözün səhv mənada işlənməsi | — | izahlı lüğətə bax |
+| Yersiz alınma və danışıq sözləri rəsmi nitqdə | — | ədəbi dilin qarşılığı |
+
+**Niyə pleonazmdır?** *Qayıtmaq* artıq “geriyə gəlmək” deməkdir; *optimal* — “ən yaxşı”; *avtobioqrafiya* — “öz həyatının təsviri”. Əlavə söz mənaya heç nə qatmır.
+
+```nümunə
+S: Hansı ifadədə artıq söz (pleonazm) var?
+A) geri qayıtmaq
+B) evə qayıtmaq
+C) tez qayıtmaq
+D) vaxtında qayıtmaq
+E) işdən qayıtmaq
+Cavab: A
+İzah: **Qayıtmaq** sözünün mənasında “geri” artıq var, ona görə **geri qayıtmaq** pleonazmdır. Digər birləşmələrdə əlavə söz yeni məlumat verir: hara, nə vaxt, haradan.
+```
+
+```yoxla
+S: Hansı ifadədə nitq səhvi var?
+A) ən optimal variant
+B) uyğun variant
+C) yaxşı variant
+D) ən yaxşı variant
+E) optimal variant
+Cavab: A
+```
+
+### 22.3. Üslubiyyat: funksional üslublar
+
+| Üslub | Harada işlənir | Əlamətləri |
+| --- | --- | --- |
+| **Danışıq (məişət)** | gündəlik ünsiyyət | sərbəst, emosional, qısa cümlələr, müraciətlər |
+| **Elmi** | dərslik, məqalə, dissertasiya | terminlər, dəqiqlik, məntiqi ardıcıllıq, emosiyasız |
+| **Rəsmi-işgüzar** | qanun, əmr, ərizə, arayış | sabit ifadələr (*əsasında, nəzərə alaraq, xahiş edirəm*), birmənalılıq, obrazsız |
+| **Publisistik** | qəzet, televiziya, ictimai çıxış | ictimai-siyasi mövzu, təsir etmək məqsədi, müraciət |
+| **Bədii** | ədəbi əsərlər | obrazlılıq, məcazlar, emosionallıq |
+
+```nümunə
+S: “Müraciətə qanunvericiliklə müəyyən edilmiş müddətdə baxılır.” Cümlə hansı üslubdadır?
+A) rəsmi-işgüzar
+B) bədii
+C) danışıq
+D) publisistik
+E) elmi
+Cavab: A
+İzah: Cümlədə sabit rəsmi ifadələr var (*qanunvericiliklə müəyyən edilmiş*), emosiya və obraz yoxdur, fikir birmənalıdır — bu, qanun və sənədlərin dilidir, rəsmi-işgüzar üslubdur.
+```
+
+```yoxla
+S: Hansı cümlə bədii üslubdadır?
+A) Qızıl payız meşəni sarı donuna bürüdü.
+B) Fotosintez işığın təsiri ilə gedən prosesdir.
+C) Ərizəni sabah təqdim edin.
+D) Milli Məclisdə büdcə layihəsi müzakirə olundu.
+E) Ay uşaq, bura bax!
+Cavab: A
+```
+
+### 22.4. Əməli yazı nümunələri
+
+| Sənəd | Nə üçündür |
+| --- | --- |
+| **Ərizə** | şəxsin rəsmi xahişi (işə qəbul, məzuniyyət və s.) |
+| **Tərcümeyi-hal** | şəxsin həyatı haqqında, **birinci şəxsin dilindən**, **xronoloji** ardıcıllıqla məlumat |
+| **Arayış** | təşkilatın müəyyən **faktı təsdiq etməsi** (şəxsin orada işlədiyi, oxuduğu) |
+| **Etibarnamə** | bir şəxsin başqasına **öz adından iş görmək** səlahiyyəti verməsi |
+| **İzahat** | baş vermiş hadisənin (gecikmə, işə gəlməmə) **səbəbinin izahı** |
+| **Xasiyyətnamə** | şəxsin işgüzar və şəxsi keyfiyyətlərinin qiymətləndirilməsi |
+| **Protokol** | iclasın gedişinin, çıxışların və **qəbul olunan qərarların** qeydi |
+| **Akt** | komissiyanın müəyyən **faktı təsdiq etməsi** (təhvil-təslim, yoxlama) |
+
+**Ərizənin quruluşu:**
+
+1. Yuxarıda sağda — **kimə** ünvanlanır (vəzifə, ad, soyad) və **kimdən** (ərizəçinin adı, soyadı, ünvanı).
+2. Ortada — **“Ərizə”** sözü.
+3. Mətn — xahiş qısa və aydın ifadə olunur (*Xahiş edirəm, məni ... qəbul edəsiniz*).
+4. Aşağıda — **tarix** və ərizəçinin **imzası**.
+
+```nümunə
+S: İşə gecikmənin səbəbini rəhbərə izah etmək üçün hansı sənəd yazılır?
+A) izahat
+B) arayış
+C) etibarnamə
+D) protokol
+E) tərcümeyi-hal
+Cavab: A
+İzah: Baş vermiş hadisənin səbəbini izah edən sənəd **izahatdır**. Arayış faktı təsdiq edir, etibarnamə səlahiyyət verir, protokol iclası qeyd edir, tərcümeyi-hal isə şəxsin həyatını təsvir edir.
+```
+
+```yoxla
+S: Bir şəxsin başqasına öz adından maaşını almaq səlahiyyəti verdiyi sənəd necə adlanır?
+A) etibarnamə
+B) ərizə
+C) akt
+D) arayış
+E) xasiyyətnamə
+Cavab: A
+```
+
+```nümunə
+S: Ərizədə “Ərizə” sözü harada yazılır?
+A) ünvanlanan şəxs və ərizəçi haqqında məlumatdan sonra, ortada
+B) ən aşağıda, imzadan sonra
+C) mətnin sonunda
+D) tarixdən əvvəl, solda
+E) heç yazılmır
+Cavab: A
+İzah: Ərizə yuxarıdan aşağı qurulur: əvvəl **kimə və kimdən**, sonra ortada sənədin adı — **“Ərizə”**, sonra xahişin mətni, ən aşağıda tarix və imza.
+```
+
+```yoxla
+S: İclasın gedişini, çıxışları və qəbul olunan qərarları qeyd edən sənəd hansıdır?
+A) protokol
+B) akt
+C) arayış
+D) izahat
+E) etibarnamə
 Cavab: A
 ```
 

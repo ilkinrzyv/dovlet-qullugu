@@ -173,10 +173,10 @@
      "Məntiqi vurğu", "Əlavələr", "Həmcins üzvlər", "Xitab və ara sözlər",
      "Mürəkkəb cümlə: tabesiz və tabeli", "Vasitəsiz və vasitəli nitq"
     ]},
-   {"num": "7", "title": "Dil haqqında ümumi məlumat"},
-   {"num": "8", "title": "Nitq mədəniyyəti"},
-   {"num": "9", "title": "Üslubiyyat"},
-   {"num": "10", "title": "Əməli yazı nümunələri"},
+   {"num": "7", "see": ["c22s1"], "title": "Dil haqqında ümumi məlumat"},
+   {"num": "8", "see": ["c22s2"], "title": "Nitq mədəniyyəti"},
+   {"num": "9", "see": ["c22s3"], "title": "Üslubiyyat"},
+   {"num": "10", "see": ["c22s4"], "title": "Əməli yazı nümunələri"},
    {"num": "11", "see": ["c21s6"], "title": "Durğu işarələri"}
   ]
  },
