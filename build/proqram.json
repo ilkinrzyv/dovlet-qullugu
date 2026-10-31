@@ -129,7 +129,7 @@
  {
   "id": "men", "title": "Məntiq", "opts": 5,
   "topics": [
-   {"num": "1", "title": "Verbal test tapşırıqları",
+   {"num": "1", "see": ["c15"], "title": "Verbal test tapşırıqları",
     "items": [
      "Analogiyaya görə sözün və ya sözlərin seçilməsi",
      "Sözlərin müqayisəsi və ümumiləşdirilməsi: fərqlənən söz, mənaca yaxın və ya zidd söz, əlaqəsi olmayan söz, söz sırasındakı ardıcıllıq",

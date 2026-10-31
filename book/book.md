@@ -2396,6 +2396,406 @@ Himn də **23-cü maddəyə** görə dövlət rəmzidir; musiqisi və mətni ayr
 
 # II hissə — Məntiq {fənn=men}
 
+## Fəsil 15. Verbal test tapşırıqları
+
+İmtahanda Məntiq blokunda **30 sual** var. Qapalı suallarda **5 variant** verilir. DİM-in proqramı Məntiqi üç yerə bölür: **verbal** (sözlər və mətnlə), **fiqurlarla** və **məntiqi-riyazi** tapşırıqlar. Bu fəsil birincisidir.
+
+Bütün Məntiq fəsilləri eyni qaydada qurulub: əvvəlcə üsul izah olunur, sonra **nümunə** gəlir (həlli ilə), ardınca **“Özünü yoxla”** sualı (həllsiz). Yoxlama sualında ilişsən, altdakı **“Claude-dan kömək”** düyməsi cavabı demədən ipucu verdirəcək.
+
+**Ümumi strategiya:**
+
+1. Əvvəlcə tapşırığı **öz sözlərinlə** ifadə et: “burada nə ilə nə arasında əlaqə soruşulur?”
+2. Variantlara baxmadan təxmini cavab düşün, sonra variantları yoxla.
+3. Uyğun gəlməyən variantları bir-bir **at** — çox vaxt düzgün cavab beləcə qalır.
+4. İki variant uyğun görünürsə, əlaqəni **daha dəqiq** ifadə et: tapşırıq həmişə **ən yaxşı** uyğunluğu soruşur.
+
+### 15.1. Analogiya
+
+Analogiya tapşırığında iki söz arasındakı əlaqə verilir; eyni əlaqəni başqa cütdə tapmaq lazımdır. Yazılış: **həkim : xəstəxana = müəllim : ?** (“həkim xəstəxanaya necə aiddirsə, müəllim də ...-ya elə aiddir”).
+
+**Üsul:** birinci cüt üçün əlaqəni **qısa cümlə** ilə de, sonra həmin cümləni variantlara tətbiq et. “Həkim xəstəxanada işləyir” → “Müəllim **məktəbdə** işləyir”.
+
+**Əsas əlaqə növləri:**
+
+| Əlaqə | Nümunə |
+| --- | --- |
+| Hissə – bütöv | təkər : avtomobil |
+| Növ – cins (konkret – ümumi) | qızılgül : çiçək |
+| Alət – onunla görülən iş | bıçaq : kəsmək |
+| Alət – peşə | fırça : rəssam |
+| Xammal – məhsul | un : çörək |
+| İş yeri – işçi | aptek : əczaçı |
+| Səbəb – nəticə | virus : xəstəlik |
+| Zidd məna | isti : soyuq |
+| Yaxın məna | cəsur : igid |
+| Heyvan – balası | inək : buzov |
+| Cihaz – ölçdüyü kəmiyyət | termometr : temperatur |
+
+**Diqqət:** sözlərin **sırası** vacibdir. “Un : çörək” (xammal → məhsul) ilə “çörək : un” (məhsul → xammal) fərqli əlaqələrdir.
+
+```nümunə
+S: Qələm : yazmaq = qayçı : ?
+A) dərzi
+B) kəsmək
+C) kağız
+D) iti
+E) parça
+Cavab: B
+İzah: Birinci cütdə əlaqə “alət – onunla görülən iş”dir: qələmlə **yazırlar**. Qayçı ilə **kəsirlər**. “Dərzi” qayçını işlədən peşədir (başqa əlaqə), “kağız” və “parça” kəsilən materialdır, “iti” isə əlamətdir.
+```
+
+```yoxla
+S: Un : çörək = üzüm : ?
+A) bağ
+B) şirə
+C) giləmeyvə
+D) bağban
+E) salxım
+Cavab: B
+```
+
+Bəzən cütün özünü seçmək lazım olur: “hansı cütdə əlaqə verilmiş cütdəki kimidir?”. Üsul eynidir — əvvəlcə verilmiş cüt üçün cümlə qur.
+
+```nümunə
+S: Hansı cütdə sözlər arasındakı əlaqə **barmaq : əl** cütündəki kimidir?
+A) ayaq : ayaqqabı
+B) yarpaq : ağac
+C) göz : görmək
+D) baş : papaq
+E) diş : həkim
+Cavab: B
+İzah: Barmaq **əlin hissəsidir** (hissə – bütöv). Yarpaq da **ağacın hissəsidir**. Ayaqqabı ayağa, papaq başa geyilir (əşya – bədən üzvü), göz görmək üçündür (orqan – funksiya), diş həkimi isə dişi müalicə edir.
+```
+
+```yoxla
+S: Hansı cütdə əlaqə **qorxaq : cəsur** cütündəki kimidir?
+A) gözəl : yaraşıqlı
+B) xəsis : səxavətli
+C) ağıllı : dərrakəli
+D) yorğun : əldən düşmüş
+E) sakit : dinc
+Cavab: B
+```
+
+```yoxla
+S: Süd : inək = bal : ?
+A) arı
+B) çiçək
+C) pətək
+D) arıçı
+E) şirniyyat
+Cavab: A
+```
+
+### 15.2. Fərqlənən söz və ümumiləşdirmə
+
+**Fərqlənən söz.** Beş sözdən dördü bir əlamətə görə birləşir, biri fərqlənir.
+
+**Üsul:**
+
+1. Hər söz üçün “**bu nədir?**” sualına cavab ver: alət, heyvan, şəhər, rəng...
+2. Dördünü birləşdirən **ümumi qrupu** tap; ona düşməyən söz cavabdır.
+3. Hamısı eyni qrupdadırsa, daha incə əlamətə bax: canlı / cansız, təbii / süni, paytaxt / adi şəhər, simli / nəfəs aləti və s.
+
+**Ümumiləşdirmə.** Verilmiş sözləri bir ümumi anlayışla adlandırmaq lazımdır. **Ən dar** uyğun anlayışı seç: “qızılgül, lalə, nərgiz” üçün “çiçək” düzdür, “bitki” isə çox genişdir.
+
+```nümunə
+S: Hansı söz digərlərindən fərqlənir?
+A) tar
+B) kamança
+C) saz
+D) nağara
+E) ud
+Cavab: D
+İzah: Tar, kamança, saz və ud **simli** musiqi alətləridir. Nağara isə **zərb** alətidir — onda sim yoxdur.
+```
+
+```yoxla
+S: Hansı söz digərlərindən fərqlənir?
+A) Merkuri
+B) Venera
+C) Ay
+D) Mars
+E) Yupiter
+Cavab: C
+```
+
+```nümunə
+S: “Kilometr, santimetr, millimetr, düym” sözlərini ən dəqiq ümumiləşdirən anlayış hansıdır?
+A) ölçü
+B) uzunluq vahidi
+C) metr
+D) məsafə
+E) kütlə vahidi
+Cavab: B
+İzah: Hamısı **uzunluğu** ölçmək üçün vahiddir. “Ölçü” çox genişdir (kütlə, həcm də ölçülür), “metr” özü bu sıradan bir vahiddir, “məsafə” ölçülən kəmiyyətdir — vahid deyil, “kütlə vahidi” isə səhvdir.
+```
+
+```yoxla
+S: “Palıd, şam, qovaq, söyüd” sözlərini ən dəqiq ümumiləşdirən anlayış hansıdır?
+A) meşə
+B) bitki
+C) ağac
+D) yarpaq
+E) budaq
+Cavab: C
+```
+
+### 15.3. Yaxın və zidd mənalı sözlər, söz sırası
+
+**Yaxın məna (sinonim):** eyni nitq hissəsindən olan və eyni mənanı verən söz: *igid – cəsur*, *çalışqan – zəhmətkeş*.
+
+**Zidd məna (antonim):** əks mənalı söz: *qədim – müasir*, *ucuz – baha*.
+
+**Tələ:** zidd mənalı söz soruşulanda variantlarda adətən **yaxın mənalı** söz də olur (və əksinə). Sualı diqqətlə oxu.
+
+**Əlaqəsi olmayan söz:** dörd söz eyni mövzuya və ya vəziyyətə aiddir (məsələn, futbol), biri yox.
+
+**Söz sırası:** sözləri bir əlamətə görə düzmək lazımdır — ölçüyə, zamana, inkişaf mərhələsinə, hissədən bütövə. Sualda istiqamət (artan və ya azalan) adətən deyilir; ona mütləq bax.
+
+```nümunə
+S: Mənaca “cəsarətli” sözünə ən yaxın söz hansıdır?
+A) igid
+B) qəzəbli
+C) qorxaq
+D) güclü
+E) mərhəmətli
+Cavab: A
+İzah: “İgid” də cəsarətli insan deməkdir. “Qorxaq” ziddir; “güclü”, “qəzəbli”, “mərhəmətli” başqa keyfiyyətlərdir — güclü insan qorxaq da ola bilər.
+```
+
+```yoxla
+S: “Qədim” sözünün ziddi hansıdır?
+A) köhnə
+B) müasir
+C) tarixi
+D) məşhur
+E) gözəl
+Cavab: B
+```
+
+```nümunə
+S: Sözləri yaşın artması ardıcıllığı ilə düz: 1) gənc, 2) uşaq, 3) körpə, 4) yeniyetmə, 5) qoca
+A) 3-2-4-1-5
+B) 2-3-4-1-5
+C) 3-4-2-1-5
+D) 3-2-1-4-5
+E) 5-1-4-2-3
+Cavab: A
+İzah: Ən kiçik yaş **körpə** (3), sonra **uşaq** (2), **yeniyetmə** (4), **gənc** (1), **qoca** (5). E variantı azalan sıradır — sual isə artan sıranı soruşur.
+```
+
+```yoxla
+S: Hissədən bütövə doğru düz: 1) şəhər, 2) mənzil, 3) otaq, 4) bina, 5) ölkə
+A) 3-2-4-1-5
+B) 2-3-4-1-5
+C) 3-4-2-1-5
+D) 3-2-1-4-5
+E) 3-2-4-5-1
+Cavab: A
+```
+
+```yoxla
+S: Hansı söz digərləri ilə eyni mövzuya aid deyil?
+A) qapıçı
+B) top
+C) penalti
+D) qol
+E) raket
+Cavab: E
+```
+
+### 15.4. Anaqramlar və yarımçıq sözlər
+
+**Anaqram** — hərflərinin yeri dəyişdirilmiş söz: *AMLA → ALMA*. Tapşırıq növləri:
+
+- anaqramları açıb **fərqlənən** sözü tapmaq;
+- anaqramla sözü **uyğunlaşdırmaq**;
+- **yarımçıq** yazılmış sözləri tamamlamaq.
+
+**Üsul:**
+
+1. Bir-iki anaqramı aç — qalanlarının **mövzusu** (meyvə, şəhər, rəng) aydın olacaq.
+2. Nadir hərflərdən başla (**ğ, q, x, ş, ç**): onlar sözün yerini tez göstərir.
+3. Tanış şəkilçilərə və hərf birləşmələrinə bax: *-çı, -lıq, -ma*.
+4. Yarımçıq sözdə **yalnız bir** söz alınmalıdır. Ağlına iki söz gəlirsə, digər sözlərlə birlikdə yoxla.
+
+```nümunə
+S: Hansı anaqram digərlərindən fərqlənir?
+A) AMLA
+B) DURAM
+C) YEVHA
+D) RAYİX
+E) LAFTAŞI
+Cavab: D
+İzah: Anaqramları açaq: AMLA → **ALMA**, DURAM → **ARMUD**, YEVHA → **HEYVA**, LAFTAŞI → **ŞAFTALI** — bunlar meyvədir. RAYİX → **XİYAR** isə tərəvəzdir.
+```
+
+```yoxla
+S: Hansı anaqram şəhər adı deyil?
+A) KABI
+B) CƏGƏN
+C) RÜK
+D) KİŞƏ
+E) BAQU
+Cavab: C
+```
+
+```nümunə
+S: Hər sözdən bir hərf düşüb: **KİT_B, BU_UD, _ƏKTƏB, LAMP_**. Düşən hərflər ardıcıl oxunanda hansı söz alınır?
+A) ALMA
+B) ALMAZ
+C) LAMA
+D) MALA
+E) AMAL
+Cavab: A
+İzah: KİT**A**B, BU**L**UD, **M**ƏKTƏB, LAMP**A** — düşən hərflər A, L, M, A, yəni **ALMA**. Hər sözdə yalnız bir hərf uyğun gəlir, ona görə cavab birmənalıdır.
+```
+
+```yoxla
+S: Hər sözdən bir hərf düşüb: **DƏ_İZ, SA_T, QA_DAŞ**. Düşən hərflər ardıcıl oxunanda hansı söz alınır? (sözü yaz)
+Cavab: NAR | nar
+```
+
+### 15.5. Cümlənin tamamlanması və mətnin təhlili
+
+**Cümlənin məntiqi tamamlanması.** Boşluqdakı söz cümlənin iki hissəsi arasındakı əlaqəni göstərir. Əsas siqnal sözlər:
+
+| Əlaqə | Sözlər |
+| --- | --- |
+| Səbəb | çünki, ona görə ki |
+| Nəticə | ona görə də, buna görə də, deməli |
+| Ziddiyyət | amma, lakin, halbuki |
+| Güzəşt (“buna baxmayaraq”) | baxmayaraq ki, hərçənd |
+| Şərt | əgər ..., əks halda |
+
+**Mətn üzrə suallar.** Yalnız **mətndə deyilənə** əsaslan, öz biliyini qatma. Hər variant üçün soruş: “mətndən **çıxır**, mətnə **ziddir**, yoxsa mətndə **deyilmir**?” “Həmişə”, “heç vaxt”, “bütün” kimi kəskin sözlü variantlar mətndə belə deyilməyibsə, adətən səhvdir.
+
+```nümunə
+S: “Layihə vaxtında bitmədi, ... komanda bütün gecəni işləmişdi.” Boşluğa hansı söz uyğundur?
+A) çünki
+B) baxmayaraq ki
+C) ona görə də
+D) yəni
+E) və
+Cavab: B
+İzah: Komanda bütün gecəni işləyib — bu, layihənin **bitməsinə** kömək etməli idi, amma bitmədi. Gözlənilənin əksi baş verib, deməli bu, **güzəşt** əlaqəsidir: “baxmayaraq ki”. “Çünki” səhvdir: gecə işləmək layihənin bitməməsinin səbəbi deyil.
+```
+
+```yoxla
+S: “Yollar buz bağlamışdı, ... sürücülər sürəti azaltdılar.” Boşluğa hansı söz uyğundur?
+A) ona görə də
+B) baxmayaraq ki
+C) amma
+D) əks halda
+E) halbuki
+Cavab: A
+```
+
+```nümunə
+S: Mətn: “Kitabxana həftə içi saat 9:00-dan 18:00-dək, şənbə günü isə 10:00-dan 15:00-dək işləyir. Bazar günü kitabxana bağlıdır. Kitabı ən çox 14 gün saxlamaq olar; bu müddəti bir dəfə 7 gün uzatmaq mümkündür.” Mətnə görə hansı fikir doğrudur?
+A) Oxucu kitabı ən çox 21 gün saxlaya bilər.
+B) Kitabxana şənbə günü 8 saat işləyir.
+C) Kitabı bazar günü qaytarmaq olar.
+D) Müddəti iki dəfə uzatmaq olar.
+E) Kitabxana hər gün 9:00-da açılır.
+Cavab: A
+İzah: 14 gün + bir dəfə 7 gün uzatma = **21 gün**. B səhvdir: şənbə günü 10:00–15:00, yəni 5 saat. C səhvdir: bazar günü bağlıdır. D-yə mətn ziddir (“bir dəfə”). E səhvdir: şənbə 10:00-da açılır, bazar bağlıdır.
+```
+
+```yoxla
+S: Mətn: “Muzey bazar ertəsindən başqa həftənin bütün günləri açıqdır. Tələbələr üçün bilet yarı qiymətinədir, 7 yaşadək uşaqlar isə pulsuz daxil olur.” Mətnə görə hansı fikir doğrudur?
+A) Muzey həftədə 6 gün açıqdır.
+B) Tələbələr pulsuz daxil olur.
+C) Muzey bazar günü bağlıdır.
+D) 10 yaşlı uşaq pulsuz daxil olur.
+E) Bazar ertəsi bilet ucuzdur.
+Cavab: A
+```
+
+### 15.6. Şərtə görə məntiqi nəticə
+
+Bu tapşırıqlarda bir neçə **hökm** verilir və onlardan **mütləq** çıxan nəticəni tapmaq lazımdır. Hökmlərin doğru olub-olmadığını yoxlamırıq — onları doğru qəbul edirik.
+
+**Hökm növləri və Eyler dairələri.** A və B-ni iki dairə kimi təsəvvür et:
+
+| Hökm | Şəkil | Nə çıxır | Nə çıxmır |
+| --- | --- | --- | --- |
+| **Bütün** A-lar B-dir | A dairəsi B-nin içindədir | x A-dırsa, x B-dir; B olmayan heç nə A deyil | x B-dirsə, x A-dır |
+| **Bəzi** A-lar B-dir | dairələr kəsişir | Bəzi B-lər A-dır | Bəzi A-lar B deyil |
+| **Heç bir** A B deyil | dairələr ayrıdır | Heç bir B A deyil | — |
+
+**Şərti hökm: “Əgər P, onda Q”.**
+
+| Verilib | Nəticə |
+| --- | --- |
+| P baş verdi | **Q baş verir** ✓ |
+| Q baş vermədi | **P baş verməyib** ✓ |
+| Q baş verdi | heç nə demək olmaz ✗ |
+| P baş vermədi | heç nə demək olmaz ✗ |
+
+İki ən çox yol verilən səhv: “bütün A-lar B-dir, x B-dir, deməli x A-dır” və “əgər P, onda Q; Q oldu, deməli P olub”. İkisi də **səhv** nəticədir.
+
+```nümunə
+S: “Bütün mühəndislər riyaziyyatı bilir. Ramin riyaziyyatı bilir.” Hansı fikir mütləq doğrudur?
+A) Ramin mühəndisdir.
+B) Ramin mühəndis deyil.
+C) Riyaziyyatı bilən hər kəs mühəndisdir.
+D) Riyaziyyatı bilməyən heç kəs mühəndis deyil.
+E) Bəzi mühəndislər riyaziyyatı bilmir.
+Cavab: D
+İzah: “Bütün mühəndislər riyaziyyatı bilir” o deməkdir ki, mühəndislər dairəsi riyaziyyatı bilənlərin içindədir. Bu dairədən **kənarda** olan (riyaziyyatı bilməyən) mühəndis ola bilməz — D. Ramin riyaziyyatı bilənlər dairəsindədir, amma mühəndislər dairəsinin içində olub-olmadığını bilmirik, ona görə A da, B də mütləq deyil. C hökmü tərsinə çevirir, E isə birinci hökmə ziddir.
+```
+
+```yoxla
+S: “Əgər yağış yağırsa, küçə yaş olur. Küçə yaş deyil.” Hansı nəticə mütləq doğrudur?
+A) Yağış yağır.
+B) Yağış yağmır.
+C) Küçəni yuyublar.
+D) Sabah yağış yağacaq.
+E) Küçə həmişə qurudur.
+Cavab: B
+```
+
+```nümunə
+S: “Bəzi tələbələr idmançıdır. Bütün idmançılar səhər qaçışı edir.” Hansı fikir mütləq doğrudur?
+A) Bütün tələbələr səhər qaçışı edir.
+B) Bəzi tələbələr səhər qaçışı edir.
+C) Səhər qaçışı edən hər kəs tələbədir.
+D) Heç bir tələbə səhər qaçışı etmir.
+E) Bəzi idmançılar tələbə deyil.
+Cavab: B
+İzah: İdmançı olan tələbələr var (bəzi tələbələr). Bütün idmançılar səhər qaçışı edirsə, **həmin tələbələr də** qaçış edir — B. A-nı bilmirik: idmançı olmayan tələbələr haqqında heç nə deyilməyib. C hökmü tərsinə çevirir. E mütləq deyil: bəlkə bütün idmançılar tələbədir.
+```
+
+```yoxla
+S: “Heç bir quş məməli deyil. Bütün yarasalar məməlidir.” Hansı nəticə mütləq doğrudur?
+A) Heç bir yarasa quş deyil.
+B) Bəzi yarasalar quşdur.
+C) Bütün məməlilər yarasadır.
+D) Bəzi quşlar yarasadır.
+E) Heç bir məməli uça bilmir.
+Cavab: A
+```
+
+**Dairələrlə saymaq.** İki qrup kəsişirsə, onların ortaq hissəsini iki dəfə saymamaq üçün: **ən azı bir qrupa düşənlər = A + B − hər ikisinə düşənlər**. Deməli, **hər ikisinə düşənlər = A + B − ən azı birinə düşənlər**.
+
+```nümunə
+S: Qrupda 25 nəfər var. 15 nəfər ingilis, 12 nəfər rus dilini bilir, 4 nəfər isə bu dillərin heç birini bilmir. Hər iki dili neçə nəfər bilir?
+A) 2
+B) 4
+C) 6
+D) 8
+E) 10
+Cavab: C
+İzah: Ən azı bir dili bilənlər: 25 − 4 = **21**. Hər iki dili bilənlər: 15 + 12 − 21 = **6**. Yoxlama: yalnız ingilis 15 − 6 = 9, yalnız rus 12 − 6 = 6, hər ikisi 6, heç biri 4 → 9 + 6 + 6 + 4 = 25 ✓.
+```
+
+```yoxla
+S: “Sinifdə 30 şagird var. Hər şagird şahmat və ya futbol dərnəyinə (bəziləri hər ikisinə) gedir. Şahmata 18, futbola 20 şagird gedir.” Hər iki dərnəyə neçə şagird gedir? (rəqəmlə yaz)
+Cavab: 8 | səkkiz
+```
+
 # III hissə — Azərbaycan dili {fənn=az}
 
 # IV hissə — İnformatika {fənn=inf}
