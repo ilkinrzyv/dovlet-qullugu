@@ -3147,6 +3147,419 @@ E) LBŞ
 Cavab: A
 ```
 
+## Fəsil 17. Məntiqi-riyazi test tapşırıqları
+
+Bu tapşırıqlarda məktəb riyaziyyatı (dörd əməl, faiz, sadə tənlik, perimetr və sahə) kifayətdir. Çətinlik hesabda deyil — **qanunauyğunluğu görməkdə** və şərti düzgün **tənliyə çevirməkdədir**. Açıq suallarda cavabı rəqəmlə yazırsan.
+
+**Ümumi qaydalar:**
+
+1. Tapdığın qaydanı **bütün** verilənlərdə yoxla: iki sətirdə işləyən qayda üçüncüdə pozula bilər.
+2. Cavabı tapandan sonra onu şərtə qoy və yoxla — bu, bir neçə saniyə çəkir, səhvin qarşısını alır.
+3. Variantlar bir-birindən çox fərqlənirsə, dəqiq hesab əvəzinə təqribi hesab bəs edir.
+
+### 17.1. Ədədi ardıcıllıqlar
+
+**Əsas növlər:**
+
+| Növ | Nümunə | Qayda |
+| --- | --- | --- |
+| Sabit fərq | 3, 7, 11, 15, … | hər dəfə +4 |
+| Artan fərq | 2, 3, 5, 8, 12, … | +1, +2, +3, +4 |
+| Sabit nisbət | 3, 6, 12, 24, … | hər dəfə ×2 |
+| Qarışıq əməl | 2, 5, 11, 23, … | ×2 + 1 |
+| İki ardıcıllıq növbə ilə | 1, 10, 3, 20, 5, 30, … | tək yerlərdə +2, cüt yerlərdə +10 |
+| Kvadratlar | 1, 4, 9, 16, 25, … | 1², 2², 3², … |
+| Əvvəlki ikisinin cəmi | 1, 1, 2, 3, 5, 8, … | hər ədəd = əvvəlki iki ədədin cəmi |
+
+**Üsul:**
+
+1. Qonşu ədədlərin **fərqlərini** yaz.
+2. Fərqlər sabit deyilsə, **fərqlərin fərqini** yaz.
+3. Ədədlər sürətlə böyüyürsə, **nisbətə** (bölməyə) bax.
+4. Ədədlər “atılıb-düşürsə”, tək və cüt yerlərdəki ədədlərə **ayrıca** bax.
+
+```nümunə
+S: Ardıcıllığı davam etdir: 4, 6, 10, 16, 24, ?
+A) 30
+B) 32
+C) 34
+D) 36
+E) 40
+Cavab: C
+İzah: Fərqlər: 6 − 4 = 2, 10 − 6 = 4, 16 − 10 = 6, 24 − 16 = 8. Fərq hər dəfə 2 artır, növbəti fərq **10**-dur: 24 + 10 = **34**.
+```
+
+```yoxla
+S: Ardıcıllığı davam etdir: 3, 5, 9, 17, 33, ?
+A) 49
+B) 57
+C) 63
+D) 65
+E) 66
+Cavab: D
+```
+
+```nümunə
+S: Ardıcıllığı davam etdir: 2, 15, 4, 12, 6, 9, 8, ?
+A) 6
+B) 7
+C) 10
+D) 3
+E) 12
+Cavab: A
+İzah: Ədədlər atılıb-düşür — tək və cüt yerləri ayrıca yazaq. Tək yerlər: 2, 4, 6, 8 (+2). Cüt yerlər: 15, 12, 9, ? (−3). Sual cüt yerdədir: 9 − 3 = **6**.
+```
+
+```yoxla
+S: Ardıcıllığı davam etdir: 3, 4, 7, 11, 18, ? (rəqəmlə yaz)
+Cavab: 29
+```
+
+### 17.2. Ədədi matrislər və nümunəyə görə qayda
+
+Cədvəldə və ya fiqurlarda ədədlər verilir; onları birləşdirən **qaydanı** tapıb boş yerə tətbiq etmək lazımdır. Qayda adətən sətir (və ya sütun) daxilindədir: iki ədəddən üçüncüsü alınır.
+
+**Üsul:**
+
+1. Tam sətirdən başla və sadə əməlləri yoxla: cəm, fərq, hasil.
+2. Alınmırsa, “hasil ± bir ədəd”, “kvadratların cəmi” kimi birləşmələrə keç.
+3. Qaydanı **ikinci tam sətirdə** mütləq yoxla; yalnız hər ikisində işləyən qayda düzdür.
+4. Boş xana ortadadırsa, əməli tərsinə tətbiq et (cəmdən çıx, hasili böl).
+
+```nümunə
+S: Qanunauyğunluğu tap və sual işarəsinin yerinə gələn ədədi seç.
+
+| | | |
+| --- | --- | --- |
+| 2 | 3 | 8 |
+| 4 | 5 | 24 |
+| 6 | 2 | ? |
+A) 12
+B) 18
+C) 14
+D) 13
+E) 20
+Cavab: B
+İzah: Cəm (2 + 3 = 5) və hasil (2 · 3 = 6) uyğun gəlmir, amma hasil 8-ə yaxındır: 2 · 3 + **2** = 8. İkinci sətirdə yoxlayaq: 4 · 5 + **4** = 24 ✓. Deməli qayda: **birinci · ikinci + birinci**. Üçüncü sətir: 6 · 2 + 6 = **18**.
+```
+
+```yoxla
+S: Qanunauyğunluğu tap: sual işarəsinin yerinə hansı ədəd gəlməlidir? (rəqəmlə yaz)
+
+| | | |
+| --- | --- | --- |
+| 5 | 8 | 13 |
+| 7 | 9 | 16 |
+| 6 | ? | 15 |
+Cavab: 9 | doqquz
+```
+
+```nümunə
+S: Hər üçlükdə nəticə eyni qayda ilə alınır: (2, 3, 4) → 24; (1, 5, 3) → 15; (2, 2, 5) → ?
+A) 9
+B) 18
+C) 20
+D) 25
+E) 10
+Cavab: C
+İzah: Birinci üçlükdə cəm 9-dur, 24 deyil; hasil isə 2 · 3 · 4 = **24** ✓. İkincidə yoxlayaq: 1 · 5 · 3 = 15 ✓. Qayda — **üç ədədin hasili**: 2 · 2 · 5 = **20**.
+```
+
+```yoxla
+S: Hər cütdə nəticə eyni qayda ilə alınır: (3, 4) → 25; (5, 12) → 169; (6, 8) → ?
+A) 100
+B) 14
+C) 48
+D) 196
+E) 64
+Cavab: A
+```
+
+### 17.3. Hərflərlə yazılmış rəqəmlər, tərəzi və tənliklər
+
+**Hərflərlə rəqəmlər.** Hər hərf bir rəqəmdir; müxtəlif hərflər — müxtəlif rəqəmlər. İki rəqəmli **AB** ədədi **10 · A + B** deməkdir. Faydalı faktlar:
+
+- **AB + BA = 11 · (A + B)**
+- **AB − BA = 9 · (A − B)**
+
+```nümunə
+S: AB və BA iki rəqəmli ədədlərdir (A və B — rəqəmlər). AB + BA = 132. A + B neçədir?
+A) 10
+B) 11
+C) 12
+D) 13
+E) 14
+Cavab: C
+İzah: AB + BA = (10A + B) + (10B + A) = 11A + 11B = **11 · (A + B)**. Deməli 11 · (A + B) = 132, A + B = 132 : 11 = **12**.
+```
+
+```yoxla
+S: AB və BA iki rəqəmli ədədlərdir, A > B. AB − BA = 27. A − B neçədir? (rəqəmlə yaz)
+Cavab: 3 | üç
+```
+
+**Tərəzi və simvollar.** Tarazlıqda hər iki tərəfə eyni şeyi əlavə etmək, hər iki tərəfdən eyni şeyi götürmək və ya əvəz etmək olar. Hamısını **bir vahidə** gətir. Simvollu bərabərliklərdə əvvəl bərabərlikləri bir-birindən çıx — tək qalan simvol tapılır.
+
+```nümunə
+S: Tərəzidə 2 alma 3 armudla, 1 armud isə 2 gavalı ilə tarazlaşır. 1 alma neçə gavalı ilə tarazlaşır?
+A) 2
+B) 3
+C) 4
+D) 6
+E) 1,5
+Cavab: B
+İzah: 1 armud = 2 gavalı, deməli 3 armud = 6 gavalı. 2 alma = 3 armud = **6 gavalı**, onda 1 alma = 6 : 2 = **3 gavalı**.
+```
+
+```yoxla
+S: ○ + ○ + △ = 14 və ○ + △ = 9. △ neçədir?
+A) 3
+B) 4
+C) 5
+D) 6
+E) 9
+Cavab: B
+```
+
+**Mətndən tənlik.** Naməlumu (adətən kiçik olanı) **x** ilə işarə et, qalanlarını x ilə ifadə et və şərti bərabərlik kimi yaz.
+
+```nümunə
+S: Bir rəfdə o biri rəfdən 12 kitab çoxdur. İki rəfdə cəmi 60 kitab var. Çox olan rəfdə neçə kitab var?
+A) 24
+B) 30
+C) 36
+D) 40
+E) 48
+Cavab: C
+İzah: Az olan rəfdə **x** kitab, çox olanda **x + 12**. x + (x + 12) = 60 → 2x = 48 → x = 24. Çox olan rəfdə 24 + 12 = **36**. Yoxlama: 24 + 36 = 60 ✓. A variantı (24) az olan rəfdir — tələ.
+```
+
+```yoxla
+S: Bir ədədin 3 mislindən 7 çıxdıqda 20 alınır. Bu ədəd neçədir? (rəqəmlə yaz)
+Cavab: 9 | doqquz
+```
+
+### 17.4. Perimetr və sahə
+
+| Fiqur | Perimetr | Sahə |
+| --- | --- | --- |
+| Kvadrat (tərəfi a) | 4a | a² |
+| Düzbucaqlı (tərəfləri a, b) | 2 · (a + b) | a · b |
+| Üçbucaq (əsası a, hündürlüyü h) | tərəflərin cəmi | a · h / 2 |
+| Düzbucaqlı üçbucaq | tərəflərin cəmi | katetlərin hasili / 2 |
+
+**Pilləli fiqurlar** (bütün tərəfləri üfüqi və ya şaquli). Pillələrin üfüqi hissələrini “yuxarı itələsən”, ən uzun üfüqi tərəfə bərabər olur; şaquli hissələr də belə. Ona görə:
+
+- **küncdən kəsilmiş** və ya pilləli fiqurun perimetri onu əhatə edən **düzbucaqlının perimetrinə bərabərdir**;
+- tərəfin **ortasından oyulmuş** hissə perimetri **2 · dərinlik** qədər artırır;
+- sahəni tapmaq üçün böyük düzbucaqlının sahəsindən kəsilən hissəni **çıx**.
+
+```nümunə
+S: Pilləli fiqurun bütün bucaqları düzdür. Onun perimetri neçə sm-dir?
+Şəkil: men/17-4a.svg
+A) 20
+B) 24
+C) 28
+D) 32
+E) 36
+Cavab: C
+İzah: Pillələrin ölçüləri verilməyib, amma lazım da deyil: bütün üfüqi pillələrin cəmi alt tərəfə (**8 sm**), bütün şaquli pillələrin cəmi sol tərəfə (**6 sm**) bərabərdir. Perimetr əhatə edən düzbucaqlının perimetri qədərdir: 2 · (8 + 6) = **28 sm**.
+```
+
+```yoxla
+S: Düzbucaqlının üst tərəfinin ortasından düzbucaqlı hissə oyulub. Fiqurun perimetri neçə sm-dir?
+Şəkil: men/17-4c.svg
+A) 34
+B) 36
+C) 38
+D) 42
+E) 52
+Cavab: C
+```
+
+```nümunə
+S: 10 × 6 sm ölçülü düzbucaqlının küncündən 4 × 3 sm ölçülü düzbucaqlı kəsilib. Qalan fiqurun sahəsi neçə sm²-dir?
+Şəkil: men/17-4b.svg
+A) 48
+B) 52
+C) 60
+D) 32
+E) 36
+Cavab: A
+İzah: Bütöv düzbucaqlının sahəsi 10 · 6 = 60 sm², kəsilən hissə 4 · 3 = 12 sm². Qalan: 60 − 12 = **48 sm²**. Diqqət: perimetr isə dəyişmir — küncdən kəsik olduğu üçün yenə 2 · (10 + 6) = 32 sm-dir.
+```
+
+```yoxla
+S: Düzbucaqlının sahəsi 48 sm², bir tərəfi 6 sm-dir. Onun perimetri neçə sm-dir?
+A) 14
+B) 24
+C) 28
+D) 48
+E) 96
+Cavab: C
+```
+
+### 17.5. Məntiqi-riyazi məsələlər
+
+Bu məsələlərin hər növünün öz “açarı” var. Açarı bilsən, həll bir-iki addımdır.
+
+**Yaş məsələləri.** Açar: iki insanın **yaş fərqi heç vaxt dəyişmir**, il keçdikcə hər birinin yaşı eyni qədər artır.
+
+```nümunə
+S: Ata oğlundan 4 dəfə böyükdür. 20 il sonra ata oğlundan 2 dəfə böyük olacaq. Oğul indi neçə yaşındadır?
+A) 5
+B) 8
+C) 10
+D) 12
+E) 15
+Cavab: C
+İzah: Oğul indi **x**, ata **4x** yaşındadır. 20 il sonra: oğul x + 20, ata 4x + 20. Şərt: 4x + 20 = 2 · (x + 20) → 4x + 20 = 2x + 40 → 2x = 20 → x = **10**. Yoxlama: indi 10 və 40; 20 il sonra 30 və 60 — iki dəfə ✓.
+```
+
+```yoxla
+S: Ana qızından 24 yaş böyükdür. 6 il sonra ana qızından 3 dəfə böyük olacaq. Qız indi neçə yaşındadır? (rəqəmlə yaz)
+Cavab: 6 | altı
+```
+
+**Faiz məsələləri.** Açar: ardıcıl faiz dəyişmələri **toplanmır, vurulur**. +20% — ×1,2; −20% — ×0,8; endirimdən sonrakı qiymətdən əvvəlkini tapmaq üçün **bölmək** lazımdır.
+
+```nümunə
+S: Məhsulun qiyməti 20% artırıldı, sonra yeni qiymət 20% endirildi. Son qiymət ilkin qiymətə nəzərən necə dəyişdi?
+A) dəyişmədi
+B) 4% ucuzlaşdı
+C) 4% bahalaşdı
+D) 2% ucuzlaşdı
+E) 40% ucuzlaşdı
+Cavab: B
+İzah: İlkin qiymət 100 olsun. 20% artım: 100 · 1,2 = 120. 20% endirim **yeni qiymətdən** hesablanır: 120 · 0,8 = 96. Son qiymət 96 — **4% ucuzlaşıb**. “Dəyişmədi” cavabı faizləri toplamaqdan gələn tələdir.
+```
+
+```yoxla
+S: Maaş əvvəlcə 10% artdı, sonra yeni maaş daha 10% artdı. Maaş ümumilikdə neçə faiz artıb?
+A) 20%
+B) 21%
+C) 11%
+D) 10%
+E) 22%
+Cavab: B
+```
+
+**Sıra və növbə.** Açar: biri öndən **m**-ci, arxadan **n**-cidirsə, sırada **m + n − 1** nəfər var (o özü iki dəfə sayılır).
+
+```nümunə
+S: Növbədə Əli öndən 7-ci, arxadan 5-cidir. Növbədə neçə nəfər var?
+A) 10
+B) 11
+C) 12
+D) 13
+E) 35
+Cavab: B
+İzah: Öndən saydıqda Əli və qabağındakı 6 nəfər — 7; arxadan saydıqda Əli və arxasındakı 4 nəfər — 5. Əli iki dəfə sayılıb: 7 + 5 − 1 = **11**.
+```
+
+```yoxla
+S: Sırada Leyla soldan 4-cü, sağdan 9-cudur. Sırada neçə nəfər var?
+A) 11
+B) 12
+C) 13
+D) 36
+E) 14
+Cavab: B
+```
+
+**“Ən azı neçə” — ən pis hal.** Açar: “**mütləq**” sözü görəndə ən uğursuz halı təsəvvür et — hər dəfə ən pis şey baş verir; ondan sonra bir addım da at.
+
+```nümunə
+S: Qutuda 5 qırmızı və 5 mavi corab var. Qaranlıqda ən azı neçə corab götürmək lazımdır ki, aralarında mütləq eyni rəngli iki corab olsun?
+A) 2
+B) 3
+C) 5
+D) 6
+E) 10
+Cavab: B
+İzah: Ən pis hal: ilk iki corab **müxtəlif rəngli** çıxır (bir qırmızı, bir mavi). Üçüncü corab hansı rəngdə olsa, onlardan biri ilə cüt yaradır. Deməli **3** corab bəs edir, 2 isə zəmanət vermir.
+```
+
+```yoxla
+S: Qutuda 10 qırmızı, 10 mavi və 10 yaşıl corab var. Ən azı neçə corab götürmək lazımdır ki, aralarında mütləq eyni rəngli iki corab olsun? (rəqəmlə yaz)
+Cavab: 4 | dörd
+```
+
+**Görüşlər və oyunlar.** Açar: **n** nəfərin hər biri digər hər biri ilə bir dəfə görüşürsə (oynayırsa), görüşlərin sayı **n · (n − 1) / 2**-dir: hər nəfər n − 1 nəfərlə görüşür, amma hər görüş iki dəfə sayılır.
+
+```nümunə
+S: 6 nəfər görüşdü və hər biri digər hər biri ilə bir dəfə əl sıxdı. Cəmi neçə əl sıxma oldu?
+A) 12
+B) 15
+C) 30
+D) 36
+E) 6
+Cavab: B
+İzah: Hər nəfər 5 nəfərlə əl sıxır: 6 · 5 = 30. Amma hər əl sıxmada iki nəfər var — onu iki dəfə saymışıq: 30 : 2 = **15**. C variantı (30) bu tələdən gəlir.
+```
+
+```yoxla
+S: Turnirdə 10 komanda var və hər komanda digər hər komanda ilə bir dəfə oynayır. Cəmi neçə oyun keçiriləcək? (rəqəmlə yaz)
+Cavab: 45 | qırx beş
+```
+
+### 17.6. Verilənlərin təhlili
+
+Məlumat cədvəl, diaqram və ya mətn şəklində verilir. **Əvvəl başlığı və vahidi oxu** (ədəd, manat, faiz), sonra sualın **nəyi** soruşduğunu müəyyən et.
+
+| Nə soruşulur | Necə hesablanır |
+| --- | --- |
+| Faizlə dəyişmə | (yeni − köhnə) : köhnə · 100 |
+| Orta qiymət | bütün qiymətlərin cəmi : sayı |
+| Hissənin payı | hissə : bütöv · 100 |
+| Faizin faizi | ardıcıl vur: 200-ün 30%-inin 40%-i = 200 · 0,3 · 0,4 |
+
+```nümunə
+S: Mağazanın satışları (ədəd):
+
+| Ay | Satış |
+| --- | --- |
+| Yanvar | 120 |
+| Fevral | 150 |
+| Mart | 90 |
+| Aprel | 140 |
+
+Fevralda satış yanvara nisbətən neçə faiz artıb?
+A) 20%
+B) 25%
+C) 30%
+D) 15%
+E) 50%
+Cavab: B
+İzah: Artım: 150 − 120 = 30. Faiz **köhnə** qiymətdən hesablanır: 30 : 120 · 100 = **25%**. C variantı (30%) artımın özünü faiz sanmaqdan gəlir, D-də 30 yeni qiymətə (150) bölünüb.
+```
+
+```yoxla
+S: Eyni cədvələ görə (yanvar 120, fevral 150, mart 90, aprel 140) dörd ayda orta aylıq satış neçə ədəddir? (rəqəmlə yaz)
+Cavab: 125
+```
+
+```nümunə
+S: Şirkətdə 200 işçi var. Onların 30%-i İT şöbəsində işləyir, İT şöbəsinin isə 40%-i qadındır. İT şöbəsində neçə qadın işləyir?
+A) 24
+B) 30
+C) 40
+D) 60
+E) 80
+Cavab: A
+İzah: İT şöbəsi: 200 · 0,3 = **60** nəfər. Onların 40%-i: 60 · 0,4 = **24**. Faizin faizi ardıcıl vurulur; E variantı (80) 40%-i bütün şirkətdən hesablamaqdan gəlir.
+```
+
+```yoxla
+S: Ailənin aylıq büdcəsi 1200 manatdır: ərzaq — 35%, kommunal xərclər — 15%, nəqliyyat — 10%, qalanı digər xərclərdir. Digər xərclərə neçə manat düşür?
+A) 400
+B) 420
+C) 480
+D) 520
+E) 600
+Cavab: C
+```
+
 # III hissə — Azərbaycan dili {fənn=az}
 
 # IV hissə — İnformatika {fənn=inf}

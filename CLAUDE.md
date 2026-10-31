@@ -34,6 +34,9 @@ Both checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build
   `Cavab: 7 | yeddi`; `Şəkil:` = SVG under `build/fig/`. The parser cuts them into `section.qs` and leaves
   `<div class="iq" data-i>` placeholders; options keep the author's order. In `fənn=men` chapters every section must
   follow the pattern (nümunə, yoxla+)+ — the owner wants each explanation followed by a worked example and a check.
+- `build/figs_men.py` — draws every Məntiq figure into `build/fig/men/` (chapters 15–17 and their tests). The answers
+  are computed there and asserted (cube nets are folded, punched paper unfolded, mirror images transformed, ciphers
+  encoded, perimeters summed), so change a figure in the script and rerun it — never hand-edit those SVGs.
 - `build/proqram.json` — DİM's four test programmes, BA/BB topics only, with the programme's own numbering (so gaps
   such as 2.1 → 2.3 are real), `g` for BA-only topics and `see` = chapter/section ids that teach a topic (checked by
   the parser). `exam` holds the exam shape (40/30/15/15, BA open counts 8/6/3/3, 1 and 2 points, 180 minutes) and the

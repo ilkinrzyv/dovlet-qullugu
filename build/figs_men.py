@@ -475,6 +475,32 @@ assert [k for k, v in SYM.items() if not v] == ['F']                       # D
 figure('16-q12', lambda y: options(y, [B('triangle', 32), B('square', 30), B('circle', 32), shaped(F_SHAPE),
                                        lambda cx, cy: rect(cx - 34, cy - 20, 68, 40)]))
 
+# =====================================================================================================
+# 17.4 Perimeter and area (sides along the grid; labels give only what the reader may use)
+# =====================================================================================================
+def perimeter(ps):
+    return sum(abs(ps[i][0] - ps[i - 1][0]) + abs(ps[i][1] - ps[i - 1][1]) for i in range(len(ps)))
+
+def dimensioned(ps, labels, u=22):
+    def row(y):
+        xs = [x for x, _ in ps]; ys = [v for _, v in ps]
+        ox, oy = (W - (max(xs) - min(xs)) * u) / 2, y + 26
+        out = poly([(ox + x * u, oy + v * u) for x, v in ps], PALE, 2.5)
+        for x, v, t in labels:
+            out += text(ox + x * u, oy + v * u, t, 15, 600)
+        return out, oy + (max(ys) - min(ys)) * u + 34
+    return row
+
+STAIR_P = [(0, 6), (0, 0), (2, 0), (2, 2), (5, 2), (5, 4), (8, 4), (8, 6)]
+L_CUT = [(0, 0), (6, 0), (6, 3), (10, 3), (10, 6), (0, 6)]
+NOTCH = [(0, 0), (4, 0), (4, 2), (8, 2), (8, 0), (12, 0), (12, 5), (0, 5)]
+assert perimeter(STAIR_P) == 28                                             # = 2 · (8 + 6)
+assert area(L_CUT) == 48 and perimeter(L_CUT) == 32                         # 10 · 6 − 4 · 3; a corner cut keeps the perimeter
+assert perimeter(NOTCH) == 38 and area(NOTCH) == 52                         # 2 · (12 + 5) + 2 · 2
+figure('17-4a', dimensioned(STAIR_P, [(4, 6.75, '8 sm'), (-1.4, 3, '6 sm')]), crop=300)
+figure('17-4b', dimensioned(L_CUT, [(5, 6.75, '10 sm'), (-1.4, 3, '6 sm'), (8.6, 2.45, '4 sm'), (7.0, 0.9, '3 sm')]), crop=330)
+figure('17-4c', dimensioned(NOTCH, [(6, 5.75, '12 sm'), (-1.4, 2.5, '5 sm'), (6, -0.7, '4 sm'), (5.0, 1, '2 sm')]), crop=360)
+
 # ---------- 16.6 ciphers (text only): the Azerbaijani alphabet and the codes used in the book ----------
 AZ = 'ABCÇDEƏFGĞHXIİJKQLMNOÖPRSŞTUÜVYZ'
 assert len(AZ) == 32

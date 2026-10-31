@@ -15,6 +15,7 @@ Quraşdırma və məlumatların ixracı haqqında: [docs/README.md](docs/README.
 | `book/book.md` | Kitabın əsas mətni (markdown) |
 | `build/quiz/*.json` | Fəsil testləri |
 | `build/fig/` | Şəkilli suallar üçün SVG fiqurlar |
+| `build/figs_men.py` | Məntiq fiqurlarını çəkir (`build/fig/men/`) və cavablarını hesablayıb yoxlayır |
 | `build/proqram.json` | DİM-in 4 fənn üzrə proqramı (BA və BB mövzuları), imtahanın quruluşu və keçid balları |
 | `build/parse_book.py` | `book.md` + testlər + proqram → `build/book.json` |
 | `build/build_pwa.py` | `build/book.json` → `docs/` (sayt) |

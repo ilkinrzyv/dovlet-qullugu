@@ -1,0 +1,20 @@
+{
+"17": [
+ {"s":"17.1","q":"Ardıcıllığı davam etdir: 5, 8, 14, 26, 50, ?","o":["98","74","96","100","86"],"a":0,"e":"Hər ədəd = əvvəlki · 2 − 2: 5 → 8 → 14 → 26 → 50 → 98. Fərqlərlə də görünür: 3, 6, 12, 24 — növbəti fərq 48, 50 + 48 = 98."},
+ {"s":"17.1","q":"Ardıcıllığı davam etdir: 1, 4, 9, 16, 25, ?","o":["36","30","35","49","32"],"a":0,"e":"Natural ədədlərin kvadratları: 1², 2², 3², 4², 5², növbəti 6² = 36."},
+ {"s":"17.1","t":"open","q":"Ardıcıllığı davam etdir: 2, 6, 12, 20, 30, ? (rəqəmlə yaz)","a":["42"],"e":"Fərqlər: 4, 6, 8, 10 — növbəti 12, 30 + 12 = 42. (Hər ədəd n · (n + 1)-dir: 6 · 7 = 42.)"},
+ {"s":"17.1","q":"Ardıcıllığı davam etdir: 7, 3, 9, 6, 11, 9, ?","o":["13","12","15","10","11"],"a":0,"e":"Tək yerlər: 7, 9, 11 (+2), cüt yerlər: 3, 6, 9 (+3). Sual tək yerdədir: 11 + 2 = 13."},
+ {"s":"17.2","q":"Hər cütdə nəticə eyni qayda ilə alınır: (2, 5) → 12; (3, 4) → 14; (6, 1) → ?","o":["8","7","14","12","6"],"a":0,"e":"Hasil + 2: 2 · 5 + 2 = 12, 3 · 4 + 2 = 14, 6 · 1 + 2 = 8. Cəm qaydası (7 və 7) iki fərqli nəticə verə bilməz."},
+ {"s":"17.2","t":"open","q":"Cədvəlin sətirlərində qayda eynidir: 3, 4, 12 | 5, 2, 10 | ?, 6, 42. Sual işarəsinin yerinə hansı ədəd gəlməlidir? (rəqəmlə yaz)","a":["7","yeddi"],"e":"Üçüncü ədəd ilk ikisinin hasilidir: 3 · 4 = 12, 5 · 2 = 10. ? · 6 = 42 → ? = 7."},
+ {"s":"17.3","q":"A və B rəqəmlərdir: AB + BA = 99, A − B = 5. AB ədədi hansıdır?","o":["72","27","63","81","54"],"a":0,"e":"AB + BA = 11 · (A + B) = 99 → A + B = 9. A − B = 5 → A = 7, B = 2. AB = 72."},
+ {"s":"17.3","q":"□ + □ = ○ və ○ + □ = 18. □ neçədir?","o":["6","9","3","12","4"],"a":0,"e":"○ yerinə □ + □ yazırıq: □ + □ + □ = 18 → □ = 6."},
+ {"s":"17.3","q":"1 kürə 3 kubla, 2 kub isə 1 silindrlə tarazlaşır. 2 kürə neçə silindrlə tarazlaşır?","o":["3","2","4","6","12"],"a":0,"e":"2 kürə = 6 kub; hər 2 kub 1 silindrdir, deməli 6 kub = 3 silindr."},
+ {"s":"17.4","q":"Düzbucaqlının uzunluğu 9 sm, eni isə ondan 4 sm qısadır. Sahəsi neçə sm²-dir?","o":["45","36","28","81","54"],"a":0,"e":"En: 9 − 4 = 5 sm. Sahə: 9 · 5 = 45 sm². 28 sm perimetrdir."},
+ {"s":"17.4","t":"open","q":"Kvadratın sahəsi 64 sm²-dir. Onun perimetri neçə sm-dir? (rəqəmlə yaz)","a":["32"],"e":"Tərəf: √64 = 8 sm. Perimetr: 4 · 8 = 32 sm."},
+ {"s":"17.5","q":"Qardaş bacısından 3 yaş böyükdür. 5 il əvvəl onların yaşlarının cəmi 21 idi. Qardaş indi neçə yaşındadır?","o":["17","14","12","15","20"],"a":0,"e":"5 il əvvəl cəm 21 idisə, indi 21 + 5 + 5 = 31-dir. Bacı x, qardaş x + 3: 2x + 3 = 31 → x = 14, qardaş 17."},
+ {"s":"17.5","q":"Məhsulun qiyməti 25% endirimdən sonra 60 manat oldu. Endirimdən əvvəl qiyməti neçə manat idi?","o":["80","75","85","72","100"],"a":0,"e":"25% endirim — qiymətin 0,75-i qalır: x · 0,75 = 60 → x = 80. 75 manat (60-a 25% əlavə etmək) tələdir: faiz endirimdən əvvəlki qiymətdən hesablanır."},
+ {"s":"17.5","q":"Turnirdə 8 komanda hər biri digər hər komanda ilə bir dəfə oynayır. Cəmi neçə oyun olacaq?","o":["28","56","16","64","36"],"a":0,"e":"8 · 7 / 2 = 28. 56 hər oyunu iki dəfə saymaqdan alınır."},
+ {"s":"17.6","q":"Kitab mağazası həftə içi belə satıb: bazar ertəsi 40, çərşənbə axşamı 25, çərşənbə 35, cümə axşamı 50, cümə 50 kitab. Əvvəlki günə nəzərən satış ən çox hansı gün artıb?","o":["cümə axşamı","cümə","çərşənbə","çərşənbə axşamı","bazar ertəsi"],"a":0,"e":"Dəyişmələr: çərşənbə axşamı −15, çərşənbə +10, cümə axşamı +15, cümə 0. Ən çox artım cümə axşamıdır."},
+ {"s":"17.6","t":"open","q":"Sinifdə 25 şagird var, onların 60%-i qızdır. Sinifdə neçə oğlan var? (rəqəmlə yaz)","a":["10","on"],"e":"Oğlanlar 100% − 60% = 40%: 25 · 0,4 = 10."}
+]
+}

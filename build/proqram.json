@@ -147,7 +147,7 @@
      "Digərlərindən fərqlənən şəkil",
      "Verilmiş təlimata uyğun həll edilən digər tapşırıqlar"
     ]},
-   {"num": "3", "title": "Məntiqi-riyazi test tapşırıqları",
+   {"num": "3", "see": ["c17"], "title": "Məntiqi-riyazi test tapşırıqları",
     "items": [
      "Nümunələrə görə riyazi qanunauyğunluğun tapılması və tətbiqi",
      "Riyazi əməllərə görə dəyişənlərin tapılması: hərflərlə yazılmış rəqəmlər, tərəzidə tarazlıq, ədədi matrislər, tənliklər",
