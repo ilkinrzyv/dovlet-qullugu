@@ -1,0 +1,17 @@
+{
+"29": [
+ {"s":"29.1","q":"Bir şəhər ərazisini əhatə edən şəbəkə necə adlanır?","o":["MAN","LAN","WAN","PAN","Intranet"],"a":0,"e":"MAN (Metropolitan Area Network) — şəhər şəbəkəsi; LAN — lokal, WAN — qlobal, PAN — şəxsi şəbəkə."},
+ {"s":"29.1","q":"Məlumatı ünvana görə yalnız lazımi porta göndərən qurğu hansıdır?","o":["switch (kommutator)","hub (konsentrator)","modem","repeater","proyektor"],"a":0,"e":"Switch qəbul edənin ünvanına baxıb məlumatı yalnız ona göndərir; hub isə bütün portlara yayır."},
+ {"s":"29.2","q":"Ümumi kabel qırıldıqda bütün şəbəkənin dayandığı topologiya hansıdır?","o":["şin","ulduz","tor","ağac","nöqtə-nöqtə"],"a":0,"e":"Şin topologiyasında bütün kompüterlər bir kabelə qoşulur — kabel qırılanda şəbəkə dayanır."},
+ {"s":"29.2","q":"Wi-Fi simsiz şəbəkələri hansı standartlar ailəsinə əsaslanır?","o":["IEEE 802.11","IEEE 802.3","TCP/IP","HTTP","DNS"],"a":0,"e":"Wi-Fi — IEEE 802.11, kabelli Ethernet isə IEEE 802.3 standartlarıdır."},
+ {"s":"29.3","q":"OSI modelinin hansı səviyyəsində MAC ünvanları ilə işlənir?","o":["kanal","şəbəkə","nəqliyyat","tətbiq","seans"],"a":0,"e":"Kanal səviyyəsi (2-ci) qonşu qurğular arasında MAC ünvanları ilə ötürməni təmin edir; IP ünvanlar şəbəkə səviyyəsindədir."},
+ {"s":"29.3","q":"HTTP protokolu OSI modelinin hansı səviyyəsinə aiddir?","o":["tətbiq","nəqliyyat","şəbəkə","kanal","fiziki"],"a":0,"e":"HTTP, FTP, SMTP — istifadəçi proqramlarının protokollarıdır, tətbiq səviyyəsinə (7-ci) aiddir."},
+ {"s":"29.4","q":"IPv4 ünvanının uzunluğu neçə bitdir?","o":["32","128","64","16","8"],"a":0,"e":"IPv4 — 32 bit (4 ədəd × 8 bit), IPv6 — 128 bit."},
+ {"s":"29.4","t":"open","q":"IPv6 ünvanının uzunluğu neçə bitdir? (rəqəmlə yaz)","a":["128"],"e":"IPv6 ünvanı 128 bitdir."},
+ {"s":"29.4","q":"Ümumdünya hörümçək torunu (WWW) kim yaradıb?","o":["Tim Berners-Li","Bill Qeyts","Stiv Cobs","Alan Tyurinq","Çarlz Bebbic"],"a":0,"e":"WWW-ni 1989–1991-ci illərdə CERN-də Tim Berners-Li yaradıb."},
+ {"s":"29.5","q":"Faylların ötürülməsi üçün hansı protokol istifadə olunur?","o":["FTP","SMTP","HTTP","DNS","POP3"],"a":0,"e":"FTP (File Transfer Protocol) — faylların ötürülməsi protokolu."},
+ {"s":"29.5","q":"Elektron poçt ünvanında @ işarəsindən sonra nə gəlir?","o":["poçt serverinin domen adı","istifadəçinin adı","parol","protokol","port nömrəsi"],"a":0,"e":"Ünvan istifadəçi@domen şəklindədir: @-dan əvvəl istifadəçinin adı, sonra poçt serverinin domeni."},
+ {"s":"29.5","q":"HTTPS protokolunda “S” hərfi nəyi bildirir?","o":["təhlükəsiz (şifrələnmiş) əlaqəni","serveri","sürəti","saytı","sistemi"],"a":0,"e":"HTTPS — HTTP Secure: brauzerlə sayt arasındakı məlumat şifrələnir."},
+ {"s":"29.4","t":"open","q":"Azərbaycanın yuxarı səviyyəli internet domenini nöqtəsiz yaz.","a":["az"],"e":"Azərbaycanın ölkə domeni — .az."}
+]
+}

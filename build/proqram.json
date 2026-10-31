@@ -251,12 +251,12 @@
      "Proqram pəncərəsi və komponentləri", "Fayl əməliyyatları", "Verilənlərin tipləri", "Daxil etmə, redaktə və silmə",
      "Süzgəclər və sorğular", "Sıralama", "Obyektlər: cədvəllər, sorğular, formalar, hesabatlar, makroslar, modullar"
     ]},
-   {"num": "12", "title": "Kompüter şəbəkələri",
+   {"num": "12", "see": ["c29s1", "c29s2", "c29s3"], "title": "Kompüter şəbəkələri",
     "items": [
      "Əsas anlayışlar, təyinatı və təsnifatı", "Aparat, proqram və kommunikasiya vasitələri", "Lokal şəbəkələr və topologiyaları",
      "Şəbəkə texnologiyaları", "Kliyent-server texnologiyası", "Simsiz şəbəkələr, Wi-Fi", "OSI modeli və səviyyələri"
     ]},
-   {"num": "13", "title": "İnternet qlobal şəbəkəsi",
+   {"num": "13", "see": ["c29s4", "c29s5"], "title": "İnternet qlobal şəbəkəsi",
     "items": [
      "İnkişaf tarixi", "Təyinatı və əsas anlayışları", "Şəbəkə protokolları, TCP/IP", "Ünvanlaşdırma sistemi", "DNS",
      "Xidmətlər: WWW, E-mail, FTP", "Bulud texnologiyaları", "Veb-texnologiyalar", "URL-ünvanlar", "Veb-brauzerlər",

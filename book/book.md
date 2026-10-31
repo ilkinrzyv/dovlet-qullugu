@@ -6392,4 +6392,294 @@ E) =1000 Or =2000
 Cavab: A
 ```
 
+## Fəsil 29. Kompüter şəbəkələri və İnternet
+
+Bu fəsil proqramın 12-ci (kompüter şəbəkələri) və 13-cü (İnternet qlobal şəbəkəsi) mövzularını əhatə edir: şəbəkənin növləri və qurğuları, topologiyalar, OSI modeli, TCP/IP, IP ünvanlar, DNS, URL və internet xidmətləri.
+
+### 29.1. Şəbəkə: anlayışı, təsnifatı və qurğuları
+
+**Kompüter şəbəkəsi** — rabitə vasitələri ilə birləşmiş və resurslardan (fayllar, printer, internet) birgə istifadə edən kompüterlər qrupudur. Ötürmə sürəti **bit/san** ilə ölçülür (Mbit/san, Gbit/san).
+
+**Ərazi miqyasına görə:**
+
+| Şəbəkə | Əhatəsi |
+| --- | --- |
+| PAN (şəxsi) | bir neçə metr (Bluetooth qurğuları) |
+| **LAN** (lokal) | bir otaq, bina, idarə |
+| **MAN** (şəhər) | bir şəhər |
+| **WAN** (qlobal) | ölkələr, qitələr — **İnternet** |
+
+**Aparat vasitələri:**
+
+| Qurğu | Nə edir |
+| --- | --- |
+| Şəbəkə adapteri (kartı) | kompüteri şəbəkəyə qoşur |
+| **Hub** (konsentrator) | siqnalı **bütün** portlara göndərir |
+| **Switch** (kommutator) | məlumatı ünvana görə yalnız **lazımi** porta göndərir |
+| **Router** (marşrutlaşdırıcı) | **müxtəlif şəbəkələri** birləşdirir, paketlər üçün **yol seçir** |
+| **Modem** | **rəqəmsal** siqnalı **analoq** siqnala və tərsinə çevirir (**mo**dulyasiya–**dem**odulyasiya) |
+| Giriş nöqtəsi (access point) | simsiz qurğuları şəbəkəyə qoşur |
+
+**Rabitə kanalları:** burulmuş cüt kabel, koaksial kabel, **optik lifli kabel** (işıqla ötürür: ən yüksək sürət, maneələrə davamlı), simsiz kanallar (radio, Wi-Fi, peyk). **Proqram vasitələri:** şəbəkə əməliyyat sistemləri, protokollar, drayverlər.
+
+```nümunə
+S: Bir binadakı kompüterləri birləşdirən şəbəkə necə adlanır?
+A) LAN
+B) WAN
+C) MAN
+D) PAN
+E) İnternet
+Cavab: A
+İzah: **LAN** (Local Area Network) bir otaq, bina və ya idarə miqyasında lokal şəbəkədir. MAN şəhəri, WAN və İnternet ölkələri əhatə edir, PAN isə bir neçə metrlik şəxsi şəbəkədir.
+```
+
+```yoxla
+S: Rəqəmsal siqnalı analoq siqnala və tərsinə çevirən qurğu hansıdır?
+A) modem
+B) switch
+C) hub
+D) router
+E) printer
+Cavab: A
+```
+
+```nümunə
+S: Müxtəlif şəbəkələri birləşdirib məlumat paketləri üçün yol seçən qurğu hansıdır?
+A) router
+B) hub
+C) şəbəkə kartı
+D) modem
+E) skaner
+Cavab: A
+İzah: **Router** (marşrutlaşdırıcı) paketin təyinat ünvanına baxıb onu növbəti şəbəkəyə yönəldir — evdəki lokal şəbəkəni internetə də router qoşur. Hub və switch bir şəbəkə daxilində işləyir.
+```
+
+```yoxla
+S: Ən yüksək ötürmə sürəti olan və elektromaqnit maneələrinə davamlı kabel hansıdır?
+A) optik lifli kabel
+B) burulmuş cüt kabel
+C) koaksial kabel
+D) telefon kabeli
+E) USB kabeli
+Cavab: A
+```
+
+### 29.2. Topologiyalar, texnologiyalar, kliyent-server və Wi-Fi
+
+**Lokal şəbəkələrin topologiyaları** (qoşulma sxemi):
+
+| Topologiya | Quruluş | Xüsusiyyəti |
+| --- | --- | --- |
+| **Şin** (bus) | hamısı **bir kabelə** qoşulur | kabel qırılsa, şəbəkə dayanır |
+| **Ulduz** (star) | hamısı **mərkəzi qurğuya** (switch) qoşulur | bir kompüter sıradan çıxsa, digərləri işləyir; mərkəz sıradan çıxsa — hamısı dayanır |
+| **Halqa** (ring) | kompüterlər **qapalı dövrə** yaradır | məlumat bir istiqamətdə ötürülür |
+| Tor (mesh) | kompüterlər bir-biri ilə çoxlu əlaqə ilə | etibarlı, amma bahalı |
+
+**Şəbəkə texnologiyaları:** **Ethernet** — kabelli lokal şəbəkələrin ən geniş yayılmış texnologiyası; **Wi-Fi** — simsiz lokal şəbəkə (**IEEE 802.11** standartları); Bluetooth — qısa məsafəli simsiz əlaqə.
+
+**Kliyent-server texnologiyası:** **server** xidmət göstərir (fayl, poçt, veb, verilənlər bazası), **kliyent** ona sorğu göndərir. Bərabərhüquqlu (peer-to-peer) şəbəkədə isə hər kompüter həm kliyent, həm server ola bilər.
+
+**Wi-Fi:** simsiz qurğular **router** (giriş nöqtəsi) vasitəsilə qoşulur; şəbəkənin adı — **SSID**; əlaqə **WPA2/WPA3** ilə şifrələnməlidir.
+
+```nümunə
+S: Bütün kompüterlərin bir mərkəzi qurğuya (kommutatora) qoşulduğu topologiya hansıdır?
+A) ulduz
+B) şin
+C) halqa
+D) tor
+E) xətti
+Cavab: A
+İzah: **Ulduz** topologiyasında hər kompüter ayrıca kabellə **mərkəzə** qoşulur, ona görə bir kabelin qırılması yalnız bir kompüterə təsir edir. Şində hamı bir kabeldədir, halqada isə dövrə qapalıdır.
+```
+
+```yoxla
+S: Kliyent-server texnologiyasında xidmət göstərən kompüter necə adlanır?
+A) server
+B) kliyent
+C) modem
+D) brauzer
+E) hub
+Cavab: A
+```
+
+### 29.3. OSI modeli
+
+**OSI** (Open Systems Interconnection — açıq sistemlərin qarşılıqlı əlaqəsi) — şəbəkədə məlumat ötürülməsini **7 səviyyəyə** bölən modeldir:
+
+| № | Səviyyə | Nə edir | Nümunə |
+| --- | --- | --- | --- |
+| 7 | **Tətbiq** (Application) | istifadəçi proqramlarına xidmət | HTTP, FTP, SMTP |
+| 6 | Təqdimat (Presentation) | verilənlərin formatı, kodlaşdırma, şifrələmə, sıxlaşdırma | — |
+| 5 | Seans (Session) | əlaqə seansının qurulması və saxlanması | — |
+| 4 | **Nəqliyyat** (Transport) | etibarlı çatdırma, paketlərə bölmə | **TCP**, UDP |
+| 3 | **Şəbəkə** (Network) | **IP ünvanlaşdırma, marşrutlaşdırma** | IP, router |
+| 2 | **Kanal** (Data Link) | qonşu qurğular arasında ötürmə, **MAC ünvanları** | switch |
+| 1 | **Fiziki** (Physical) | bitlərin siqnal kimi ötürülməsi | kabel, hub |
+
+Yadda saxlamaq üçün: **aşağıdan yuxarı** — fiziki, kanal, şəbəkə, nəqliyyat, seans, təqdimat, tətbiq.
+
+```nümunə
+S: Marşrutlaşdırma (paketin yolunun seçilməsi) OSI modelinin hansı səviyyəsində aparılır?
+A) şəbəkə
+B) nəqliyyat
+C) kanal
+D) fiziki
+E) tətbiq
+Cavab: A
+İzah: **Şəbəkə səviyyəsi** (3-cü) IP ünvanlarla işləyir və paketin hansı yolla gedəcəyini seçir — router bu səviyyənin qurğusudur. Nəqliyyat səviyyəsi çatdırılmanın etibarlılığına, kanal səviyyəsi qonşu qurğular arasında ötürməyə cavabdehdir.
+```
+
+```yoxla
+S: OSI modelinin ən aşağı səviyyəsi hansıdır?
+A) fiziki
+B) kanal
+C) tətbiq
+D) seans
+E) təqdimat
+Cavab: A
+```
+
+```nümunə
+S: TCP protokolu OSI modelinin hansı səviyyəsinə aiddir?
+A) nəqliyyat
+B) şəbəkə
+C) tətbiq
+D) kanal
+E) fiziki
+Cavab: A
+İzah: **TCP** məlumatı paketlərə bölür, onların çatdırılmasına nəzarət edir və qəbul tərəfində düzgün sıra ilə yığır — bu, **nəqliyyat** səviyyəsinin (4-cü) işidir. IP isə şəbəkə səviyyəsindədir.
+```
+
+```yoxla
+S: OSI modeli neçə səviyyədən ibarətdir? (rəqəmlə yaz)
+Cavab: 7 | yeddi
+```
+
+### 29.4. İnternet: tarix, TCP/IP, IP ünvan, DNS və URL
+
+**Tarix:** İnternetin sələfi — 1969-cu ildə ABŞ-da yaradılan **ARPANET** şəbəkəsidir; 1983-cü ildə ARPANET **TCP/IP** protokollarına keçdi; 1989–1991-ci illərdə **Tim Berners-Li** CERN-də **Ümumdünya hörümçək torunu (WWW)** yaratdı.
+
+**TCP/IP** — İnternetin baza protokolları: **TCP** məlumatı paketlərə bölür və çatdırılmasına nəzarət edir, **IP** paketləri ünvana görə çatdırır.
+
+**IP ünvan** — şəbəkədəki kompüterin unikal ünvanı:
+
+- **IPv4** — **32 bit**, nöqtələrlə ayrılmış **4 ədəd**, hər biri **0–255**: *192.168.1.10*;
+- **IPv6** — **128 bit**, ünvanların sayı praktiki olaraq tükənməzdir.
+
+**DNS** (Domain Name System) **domen adlarını IP ünvanlara çevirir**: insan *www.e-qanun.az* yazır, kompüter onun IP ünvanını DNS-dən öyrənir. Domen adı sağdan sola oxunur: **yuxarı səviyyə** — ölkə (*.az, .tr*) və ya ümumi (*.com, .org, .edu*), sonra ikinci səviyyə və s.
+
+**URL** — internetdəki resursun tam ünvanı: **protokol://domen/yol**. Məsələn, *https://e-qanun.az/framework/897*: protokol — **https**, domen — **e-qanun.az**, yol — **/framework/897**.
+
+```nümunə
+S: Hansı IPv4 ünvanı düzgün deyil?
+A) 192.168.1.256
+B) 10.0.0.1
+C) 172.16.5.4
+D) 8.8.8.8
+E) 192.168.0.1
+Cavab: A
+İzah: IPv4 ünvanının hər hissəsi 8 bitdir, deməli **0–255** aralığındadır. A-dakı **256** bu həddi aşır — belə ünvan ola bilməz.
+```
+
+```yoxla
+S: Domen adlarını IP ünvanlara çevirən sistem hansıdır?
+A) DNS
+B) FTP
+C) HTTP
+D) SMTP
+E) URL
+Cavab: A
+```
+
+```nümunə
+S: https://e-qanun.az/framework/897 ünvanında protokol hansıdır?
+A) https
+B) e-qanun.az
+C) framework
+D) 897
+E) az
+Cavab: A
+İzah: URL **protokolla** başlayır və ondan sonra **://** gəlir: https. Sonra domen (e-qanun.az, yuxarı səviyyəsi — .az) və serverdəki yol (/framework/897).
+```
+
+```yoxla
+S: İnternetin sələfi sayılan şəbəkə hansıdır?
+A) ARPANET
+B) Ethernet
+C) Wi-Fi
+D) Bluetooth
+E) intranet
+Cavab: A
+```
+
+### 29.5. İnternet xidmətləri, bulud texnologiyaları və internetdə iş
+
+| Xidmət | Protokol | Nə edir |
+| --- | --- | --- |
+| **WWW** | HTTP, **HTTPS** (şifrələnmiş, “S” — secure) | veb-səhifələr |
+| **E-mail** | **SMTP** — göndərmə; **POP3, IMAP** — qəbul | elektron poçt; ünvan: *istifadəçi@domen* |
+| **FTP** | FTP | faylların ötürülməsi |
+
+**Veb-texnologiyalar:** **HTML** — səhifənin strukturu, **CSS** — görünüşü, **JavaScript** — interaktivliyi.
+
+**Veb-brauzerlər:** **Microsoft Edge** (Windows 11-in standart brauzeri), Google Chrome, Mozilla Firefox, Safari, Opera.
+
+**Axtarış sistemləri** (Google, Bing, Yandex) və operatorlar: **"dırnaq"** — dəqiq ifadə; **−söz** — bu sözü nəticədən çıxar; **site:** — yalnız konkret saytda axtar (*site:gov.az*).
+
+**Bulud texnologiyaları** — verilənlərin və proqramların internetdəki serverlərdə saxlanması və istifadəsi (OneDrive, Google Drive). Xidmət modelləri:
+
+| Model | Nə verilir |
+| --- | --- |
+| **SaaS** | hazır **proqram** (brauzerdə poçt, ofis proqramı) |
+| PaaS | proqram yaratmaq üçün **platforma** |
+| IaaS | virtual serverlər, yaddaş — **infrastruktur** |
+
+**Kütləvi kommunikasiya:** mesencerlər, video-konfranslar, **sosial şəbəkələr**.
+
+**Müəlliflik hüququ:** internetdə yerləşdirilmiş mətn, şəkil, musiqi, video da **müəllifin** əsəridir; icazəsiz kopyalanması və yayılması qanunsuzdur. Müəllif əsərindən istifadəyə **açıq lisenziya** ilə (məs., Creative Commons) icazə verə bilər.
+
+**Dövlət orqanlarının saytları** adətən **gov.az** domenində yerləşir; hüquqi aktlar **e-qanun.az**, elektron xidmətlər **“Elektron hökumət” portalı** vasitəsilə əlçatandır.
+
+```nümunə
+S: Elektron məktub göndərmək üçün hansı protokol istifadə olunur?
+A) SMTP
+B) POP3
+C) IMAP
+D) FTP
+E) DNS
+Cavab: A
+İzah: **SMTP** məktubu **göndərir**. POP3 və IMAP poçt qutusundan məktubları **qəbul etmək** üçündür, FTP faylları ötürür, DNS isə adları ünvanlara çevirir.
+```
+
+```yoxla
+S: Hazır proqramdan internet üzərindən istifadə (məsələn, brauzerdə ofis proqramı ilə işləmək) bulud xidmətinin hansı modelidir?
+A) SaaS
+B) IaaS
+C) PaaS
+D) LAN
+E) DNS
+Cavab: A
+```
+
+```nümunə
+S: Axtarış sistemində dəqiq ifadəni (sözlərin məhz bu sıra ilə) tapmaq üçün ifadə necə yazılır?
+A) dırnaq içində
+B) mötərizədə
+C) hər sözdən sonra * ilə
+D) # işarəsi ilə
+E) böyük hərflərlə
+Cavab: A
+İzah: Dırnaq içindəki ifadəni axtarış sistemi **bütöv və bu ardıcıllıqla** axtarır: "dövlət qulluğu haqqında qanun". Böyük-kiçik hərf axtarışa təsir etmir.
+```
+
+```yoxla
+S: Windows 11-in standart veb-brauzeri hansıdır?
+A) Microsoft Edge
+B) Google Chrome
+C) Mozilla Firefox
+D) Safari
+E) Opera
+Cavab: A
+```
+
 # V hissə — Müsahibə
