@@ -1094,14 +1094,8 @@ function drawTrend(el, rows) {
 window.addEventListener('resize', () => { const el = $('#trend'); if (el && trendRows && el.dataset.w !== String(el.clientWidth)) drawTrend(el, trendRows); });
 
 /* =========================================================
-   10. Virtual teacher: explanations and advice from Claude, with the reader's progress as context
+   10. Virtual teacher: one plain chat about anything; ready-made advice on an empty chat carries the reader's progress
    ========================================================= */
-const TEACH_HINT = {
-  qan: 'Məsələn: inzibati akt ilə inzibati icraat arasında fərq nədir?',
-  men: 'Məsələn: “bəzi” və “heç bir” olan hökmlərdən necə nəticə çıxarılır?',
-  az: 'Məsələn: mürəkkəb sözlər nə vaxt bitişik, nə vaxt defislə yazılır?',
-  inf: 'Məsələn: ikilik say sistemindən onluğa necə keçirəm?'
-};
 const ADVICE = [
   ['Hazırlıq planı', 'İmtahana qədər mənə həftəlik hazırlıq planı qur. Əvvəlcə neçə həftəm qaldığını və gündə nə qədər vaxt ayıra bildiyimi soruş.'],
   ['Zəif yerlərim', 'Nəticələrimə görə hansı fənlərə və mövzulara daha çox vaxt ayırmalıyam? Konkret addımlar təklif et.'],
@@ -1110,7 +1104,7 @@ const ADVICE = [
   ['Müsahibə', 'Testdən sonrakı müsahibəyə necə hazırlaşım? Hansı sual növləri olur və cavabı necə qurum?'],
   ['Motivasiya', 'Hazırlıq dövründə diqqəti və motivasiyanı necə saxlayım? Sadə gündəlik rejim təklif et.']
 ];
-let tSubj = 'men', tDraft = '';
+let tDraft = '';
 
 function myStatus() {
   const all = learnable(), done = all.filter(id => S.read[id]).length;
@@ -1130,7 +1124,8 @@ function examFacts() {
   return `İmtahan (${S.group} qrupu): ${FULL} test sualı — ${EXAM.blocks.map(b => `${SUBJ[b.subj].title} ${b.n}`).join(', ')}${open ? `; onlardan ${open}-i açıq sualdır` : '; hamısı qapalıdır'}. Qapalı sual ${EXAM.points.closed}, açıq sual ${EXAM.points.open} bal. Keçid həddi alt qruplar üzrə: ${pass}. Testdən sonra müsahibə keçirilir.`;
 }
 const pAdvice = ask => `Sən Azərbaycanda dövlət qulluğuna qəbul imtahanına hazırlaşanlara məsləhət verən təcrübəli mentorsan. Azərbaycan dilində, konkret və praktik cavab ver. Rəsmi qaydanı bilmirsənsə uydurma — DİM-in saytında (dim.gov.az) yoxlamağı məsləhət gör.\n\n${ask}\n\n${myStatus()}\n${examFacts()}`;
-const pFree = (subj, text) => `${tutor(subj)}\n\nFənn: ${subjTitle(subj)}.\n${text}`;
+// the first typed question carries the teacher's instructions; the reader may ask about anything
+const pFree = text => `${tutor()} Söhbət istənilən mövzuda ola bilər: imtahan fənləri (qanunvericilik, məntiq, Azərbaycan dili, informatika), müsahibə, hazırlıq və ya başqa sual. Qanunlar və rəsmi qaydalar barədə əmin olmadığın faktı uydurma — e-qanun.az və ya dim.gov.az saytında yoxlamağı məsləhət gör.\n\n${text}`;
 const pTopic = (s, t) => `${tutor(s.id)}\n\nBu mövzunu imtahan səviyyəsində izah et: əsas qaydalar, tipik sual növləri, 2–3 həll olunmuş nümunə və sonda özümü yoxlamaq üçün 3 sual (cavabları ən sonda).\n\nDİM proqramı, ${s.title}, mövzu ${t.num}: ${t.title}${t.src ? ` (${t.src})` : ''}.${t.items ? ` Proqrama daxildir: ${clip(t.items.join('; '), 600)}.` : ''}`;
 
 // the conversation lives while the app is open: {role, content, label?}; label is what the bubble shows
@@ -1147,7 +1142,9 @@ function drawChat() {
   el.innerHTML = CHAT.turns.length ? CHAT.turns.map(t => t.role === 'user'
     ? `<div class="bub me">${esc(t.label || t.content)}</div>`
     : `<div class="bub ai prose">${mdToHtml(t.content)}</div>`).join('')
-    : '<p class="muted small chat-empty">Sualını yaz, mövzu və ya məsləhət seç — cavab burada yazılacaq.</p>';
+    : `<div class="chat-empty"><p class="muted small">İstənilən mövzuda yaz: qanun maddəsi, məntiq məsələsi, dil qaydası, Excel düsturu, müsahibə və ya hazırlıq planı. Cavab burada yazılacaq.</p>
+      <div class="row">${ADVICE.map(([l], i) => `<button type="button" class="btn sm" data-adv="${i}">${esc(l)}</button>`).join('')}</div>
+      <p class="muted small">Bu hazır mövzular Claude-a irəliləyişini də göndərir: oxunan bölmələr, səhvlər, son sınaq nəticəsi.</p></div>`;
 }
 async function chatSend(content, label) {
   if (CHAT.busy || !content.trim()) return;
@@ -1169,10 +1166,9 @@ async function chatSend(content, label) {
   if (res) { CHAT.turns.push({ role: 'assistant', content: res.text }); drawChat(); }
 }
 
-function vTeacher(focus) {
-  if (SUBJ[focus]) tSubj = focus;
+const ASK_HINT = 'Sualını yaz… Məsələn: inzibati akt nədir? Bu məntiq məsələsini necə həll edim?';
+function vTeacher() {
   topbar('Claude', 'Virtual müəllim');
-  const s = SUBJ[tSubj];
   $('#view').innerHTML = `
     <span class="kicker">${esc(S.group)} qrupu</span>
     <h1 class="h1">Virtual müəllim</h1>
@@ -1180,50 +1176,37 @@ function vTeacher(focus) {
     <section class="block">
       <div class="card stack chatcard">
         <div id="chat" class="chat" aria-live="polite"></div>
-        <div class="row" role="radiogroup" aria-label="Fənn">${PROG.subjects.map(x =>
-          `<button type="button" class="btn sm${x.id === tSubj ? ' on' : ''}" role="radio" aria-checked="${x.id === tSubj}" data-tsubj="${x.id}">${esc(x.title)}</button>`).join('')}</div>
         <label class="sr" for="tq">Sualın</label>
-        <textarea id="tq" class="ta" rows="3" placeholder="${esc(CHAT.turns.length ? 'Davam sualını yaz…' : TEACH_HINT[tSubj] || 'Nəyi başa düşmədin?')}">${esc(tDraft)}</textarea>
+        <textarea id="tq" class="ta" rows="3" placeholder="${esc(CHAT.turns.length ? 'Davam sualını yaz…' : ASK_HINT)}">${esc(tDraft)}</textarea>
         <div class="row"><button type="button" class="btn sm primary" data-act="chat-send">${icon('chat')} Göndər</button>
           <button type="button" class="btn sm ghost" data-act="chat-new">${icon('refresh')} Yeni söhbət</button></div>
       </div>
-    </section>
-    <section class="block"><div class="block-h"><h2>Məsləhət</h2></div>
-      <p class="muted small">Hazırlıq planı, zəif yerlər, vaxt bölgüsü, müsahibə. Claude-a irəliləyişin də gedir: oxunan bölmələr, səhvlərin sayı, son sınaq nəticəsi. Şəxsi məlumat göndərilmir.</p>
-      <div class="row">${ADVICE.map(([l], i) => `<button type="button" class="btn sm" data-adv="${i}">${esc(l)}</button>`).join('')}</div>
-    </section>
-    <section class="block"><div class="block-h"><h2>${esc(s.title)}: proqram mövzuları</h2></div>
-      <div class="list">${s.topics.map((t, i) => [t, i]).filter(([t]) => vis(t)).map(([t, i]) => `<button type="button" class="secrow" data-topic="${s.id}.${i}">
-        <span class="chn">${esc(t.num)}</span><span class="sect"><b>${esc(t.title)}</b><span class="muted">Claude izah etsin</span></span>${icon('chat')}</button>`).join('')}</div>
     </section>`;
   drawChat();
   const ta = $('#tq');
   ta.addEventListener('input', () => { tDraft = ta.value; });
-  // a typed question: the first one carries the teacher's instructions and the subject
+  // a typed question: the first one carries the teacher's instructions
   const send = async () => {
     const text = ta.value.trim();
     if (!text) { ta.focus(); return; }
     await AI.ready;
     if (!AI.here()) { handoff('ai-chat', text); return; }
     ta.value = ''; tDraft = '';
-    chatSend(CHAT.turns.length ? text : pFree(tSubj, text), text);
+    chatSend(CHAT.turns.length ? text : pFree(text), text);
   };
   $('[data-act="chat-send"]').addEventListener('click', send);
   ta.addEventListener('keydown', e => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) send(); });
-  $('[data-act="chat-new"]').addEventListener('click', () => { if (CHAT.busy) return; CHAT.turns = []; drawChat(); ta.placeholder = TEACH_HINT[tSubj] || ''; });
-  const ask = async (act, ref) => {
-    const t = aiTask(act, ref);
+  $('[data-act="chat-new"]').addEventListener('click', () => { if (CHAT.busy) return; CHAT.turns = []; drawChat(); ta.placeholder = ASK_HINT; });
+  // the ready-made advice shown on an empty chat
+  $('#chat').addEventListener('click', async e => {
+    const b = e.target.closest && e.target.closest('[data-adv]');
+    if (!b) return;
+    const t = aiTask('adv', b.dataset.adv);
     if (!t) return;
     await AI.ready;
-    if (!AI.here()) { handoff(`ai-${act}-${ref}`); return; }
+    if (!AI.here()) { handoff(`ai-adv-${b.dataset.adv}`); return; }
     chatSend(t.make(), t.label);
-  };
-  $$('[data-adv]').forEach(b => b.addEventListener('click', () => ask('adv', b.dataset.adv)));
-  $$('[data-topic]').forEach(b => b.addEventListener('click', () => ask('topic', b.dataset.topic)));
-  $$('[data-tsubj]').forEach(b => b.addEventListener('click', () => {
-    history.replaceState(null, '', '#muellim-' + b.dataset.tsubj);
-    vTeacher(b.dataset.tsubj);
-  }));
+  });
   AI.ready.then(() => { const m = $('#ai-mode'); if (m) m.textContent = aiMode(); });
 }
 

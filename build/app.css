@@ -306,7 +306,8 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 .ai-err{margin:10px 0 0;font-size:14px;color:var(--fail)}
 .ai-ctl,.ai-more{margin-top:10px}
 .chat{display:flex;flex-direction:column;gap:10px}
-.chat-empty{margin:0}
+.chat-empty{display:flex;flex-direction:column;gap:10px}
+.chat-empty p{margin:0}
 .bub{max-width:94%;padding:10px 14px;border-radius:14px;font-size:15px;line-height:1.55;overflow-wrap:anywhere}
 .bub.me{align-self:flex-end;background:var(--accent);color:var(--accent-ink);border-bottom-right-radius:4px;white-space:pre-wrap}
 .bub.ai{align-self:flex-start;background:var(--surface-2);border:1px solid var(--line);border-bottom-left-radius:4px}

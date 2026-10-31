@@ -73,6 +73,8 @@ All checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build/
   the reader's choice (Ayarlar → Claude, `S.aiModel`; `auto` names none). Prompts are Azerbaijani; check questions
   ask for a hint, not the answer; figures go along as PNG. No Claude inside a running mock exam. claude.ai shows no
   `confirm()`/`alert()` and blocks downloads — use `askHere()` and keep export/import behind `if (PWA)`.
+  The teacher page is one plain chat on any topic (the owner's wish: no subject picker, no topic list); the
+  ready-made advice prompts show only on an empty chat; `#ai-topic-…` links still open the chat with that topic.
   After changing `app.js`/`app.css` or the book, rebuild the page and republish it to the same artifact URL.
 - `libs/` — marked 12.0.2 and DOMPurify 3.1.6 (render Claude's markdown safely); copied into `docs/libs/`; the
   claude.ai page loads the same versions from jsDelivr.

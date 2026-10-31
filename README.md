@@ -114,8 +114,9 @@ Cavab: 7 | yeddi
 
 ### Claude (virtual müəllim)
 
-Hər bölmənin altındakı “Claude-dan izah istə”, test izahları, nümunə və yoxlama sualları, “Müəllim” bölməsi
-(söhbət, proqram mövzuları, məsləhət) — Claude cavabı düymənin altında, kitabın içində yazır.
+Hər bölmənin altındakı “Claude-dan izah istə”, test izahları, nümunə və yoxlama sualları — Claude cavabı düymənin
+altında, kitabın içində yazır. “Müəllim” bölməsi istənilən mövzuda sadə söhbətdir; söhbət boş olanda hazır məsləhət
+mövzuları (hazırlıq planı, zəif yerlər, müsahibə və s.) təklif olunur.
 
 - **claude.ai versiyası** (https://claude.ai/artifact/DS1Sg1NBATqkMRPuVkHoER) — Claude oxucunun öz claude.ai hesabı
   ilə işləyir; ilk dəfə claude.ai icazə soruşur. Başqası açsın deyə səhifəni Paylaş menyusundan linklə paylaş.

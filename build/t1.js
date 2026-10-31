@@ -167,7 +167,8 @@ function serve(port) {
   // ---- virtual teacher: a chat whose next turn carries the earlier ones ----
   await go('muellim');
   out.teacherTab = await page.$eval('.tab[aria-current="true"] span', el => el.textContent);
-  out.teacherTopics = await page.$$eval('[data-topic]', els => els.length);
+  out.teacherPlain = { subjects: await page.$$eval('[data-tsubj]', els => els.length), topics: await page.$$eval('[data-topic]', els => els.length),
+    starters: await page.$$eval('#chat [data-adv]', els => els.length) };
   await page.fill('#tq', 'Sillogizm nədir?');
   await page.click('[data-act="chat-send"]');
   await page.waitForFunction(() => document.querySelectorAll('#chat .bub.ai.prose').length === 1);
@@ -175,12 +176,14 @@ function serve(port) {
   await page.click('[data-act="chat-send"]');
   await page.waitForFunction(() => document.querySelectorAll('#chat .bub.ai.prose').length === 2);
   const t1c = apiCalls[apiCalls.length - 2], t2c = apiCalls[apiCalls.length - 1];
-  out.chat = { first: JSON.stringify(t1c.messages).includes('Fənn: Məntiq'), roles: t2c.messages.map(m => m.role).join(','), last: t2c.messages[2].content };
-  await page.click('[data-adv="0"]');
-  await page.waitForFunction(() => document.querySelectorAll('#chat .bub.ai.prose').length === 3);
+  out.chat = { first: JSON.stringify(t1c.messages).includes('istənilən mövzuda'), roles: t2c.messages.map(m => m.role).join(','), last: t2c.messages[2].content,
+    starters: await page.$$eval('#chat [data-adv]', els => els.length) };
+  await page.click('[data-act="chat-new"]');
+  await page.click('#chat [data-adv="0"]');
+  await page.waitForFunction(() => document.querySelectorAll('#chat .bub.ai.prose').length === 1);
   out.adviceCtx = JSON.stringify(apiCalls[apiCalls.length - 1].messages).includes('İmtahan (BB qrupu)');
-  await page.click('[data-tsubj="inf"]');
-  out.teacherSwitch = { hash: await page.evaluate(() => location.hash), kept: await page.$$eval('#chat .bub', els => els.length) };
+  await go('muellim-inf');
+  out.oldLink = { tab: await page.$eval('.tab[aria-current="true"] span', el => el.textContent), kept: await page.$$eval('#chat .bub', els => els.length) };
   await shot('t1-teacher');
   await page.evaluate(() => localStorage.removeItem('dq-kitab:pwa:key'));
 
@@ -339,10 +342,10 @@ function serve(port) {
   eq('figureSent', true);
   eq('modelChoice', 'claude-haiku-5-5'); eq('sectionPrompt', true);
   eq('teacherTab', 'Müəllim');
-  eq('teacherTopics', BOOK.prog.subjects.find(s => s.id === 'men').topics.filter(t => t.g.includes('BB')).length);
-  eq('chat', { first: true, roles: 'user,assistant,user', last: 'Bir misal ver' });
+  eq('teacherPlain', { subjects: 0, topics: 0, starters: 6 });
+  eq('chat', { first: true, roles: 'user,assistant,user', last: 'Bir misal ver', starters: 0 });
   eq('adviceCtx', true);
-  eq('teacherSwitch', { hash: '#muellim-inf', kept: 6 });
+  eq('oldLink', { tab: 'Müəllim', kept: 2 });
   eq('bbMissClaude', 5); eq('examNoClaude', 0);
   eq('statLink', 1);
   eq('statTop', ['76%', '9', '100%', '2']);

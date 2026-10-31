@@ -7328,10 +7328,10 @@ Cavab: A
 
 Müsahibəyə ən yaxşı hazırlıq — **yüksək səslə məşqdir**. Tətbiqin **Müəllim** bölməsində:
 
-1. **Məsləhət** hissəsində **“Müsahibə”** düyməsini bas — Claude müsahibəyə necə hazırlaşmaq barədə plan verəcək.
+1. Söhbət boş olanda altdakı **“Müsahibə”** düyməsini bas — Claude müsahibəyə necə hazırlaşmaq barədə plan verəcək.
 2. Və ya **öz sualını** yaz, məsələn: *“Mənimlə ... vəzifəsi üzrə dövlət qulluğu müsahibəsi məşqi apar. Bir-bir sual ver, cavabımı gözlə, sonra onu dörd meyar üzrə (bilik, peşə hazırlığı, ümumi dünyagörüşü, vəzifə üçün keyfiyyətlər) 2–5 balla qiymətləndir və necə yaxşılaşdıra biləcəyimi de.”*
 
-Claude sənin hesabında açılır, cavablarını yazılı və ya səsli verə bilərsən. Hər məşqdən sonra zəif meyarı qeyd et və növbəti dəfə ona diqqət yetir.
+Claude cavabı elə həmin söhbətdə yazır: cavabını yaz və göndər, o qiymətləndirib növbəti sualı verəcək. Hər məşqdən sonra zəif meyarı qeyd et və növbəti dəfə ona diqqət yetir.
 
 **Diqqət:** Claude-un verdiyi faktları — xüsusən qanun maddələrini və tarixləri — bu kitabla və rəsmi mənbələrlə (e-qanun.az, dim.gov.az) yoxla.
 
