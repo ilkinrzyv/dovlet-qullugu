@@ -1,0 +1,16 @@
+{
+"25": [
+ {"s":"25.1","q":"Hansı əməliyyat sisteminin funksiyasına aid deyil?","o":["mətnin orfoqrafiyasını yoxlamaq","yaddaşı idarə etmək","faylları idarə etmək","qurğuları idarə etmək","proqramların işini idarə etmək"],"a":0,"e":"Orfoqrafiya yoxlaması tətbiqi proqramların (məs., Word) işidir. ƏS resursları, faylları, qurğuları və proqramların işini idarə edir."},
+ {"s":"25.1","q":"Android əməliyyat sistemini hansı şirkət hazırlayıb?","o":["Google","Apple","Microsoft","IBM","Intel"],"a":0,"e":"Android — Google-un Linux nüvəsi əsasında hazırladığı mobil ƏS-dir. iOS və macOS Apple-a, Windows Microsoft-a məxsusdur."},
+ {"s":"25.2","q":"FAT32 fayl sistemində bir faylın həcmi ən çox nə qədər ola bilər?","o":["4 GB","2 MB","16 GB","1 TB","limitsiz"],"a":0,"e":"FAT32-də bir faylın həcmi 4 GB-dan çox ola bilməz; böyük fayllar üçün NTFS və ya exFAT istifadə olunur."},
+ {"s":"25.2","q":"Hansı genişlənmə PowerPoint təqdimatına aiddir?","o":[".pptx",".docx",".xlsx",".accdb",".txt"],"a":0,"e":".pptx — PowerPoint, .docx — Word, .xlsx — Excel, .accdb — Access, .txt — sadə mətn."},
+ {"s":"25.3","q":"Windows 11-də Başlat menyusu standart olaraq harada yerləşir?","o":["tapşırıq panelinin mərkəzində","ekranın sağ yuxarı küncündə","iş masasının ortasında","pəncərənin başlıq sətrində","Fayl bələdçisində"],"a":0,"e":"Windows 11-də Başlat düyməsi və sancaqlanmış proqramlar tapşırıq panelinin mərkəzində yerləşir (parametrlərdən sola çəkmək olar)."},
+ {"s":"25.4","q":"Hansı düymə seçilmiş fayl və ya qovluğun adını dəyişməyə imkan verir?","o":["F2","F5","F1","F11","Esc"],"a":0,"e":"F2 — adını dəyişmək. F5 — yeniləmək, F1 — kömək, F11 — tam ekran, Esc — ləğv etmək."},
+ {"s":"25.4","q":"Ctrl düyməsi basılı halda faylı başqa qovluğa dartdıqda nə baş verir?","o":["faylın surəti yaradılır","fayl köçürülür","fayl silinir","faylın qısayolu yaranır","heç nə baş vermir"],"a":0,"e":"Ctrl ilə dartmaq həmişə surət çıxarır, Shift ilə dartmaq həmişə köçürür."},
+ {"s":"25.4","t":"open","q":"Faylı Zibil qutusundan keçirmədən silmək üçün Delete ilə birlikdə hansı düymə basılır? (düymənin adını yaz)","a":["shift"],"e":"Shift + Delete faylı birdəfəlik silir."},
+ {"s":"25.4","q":"Kompüteri kilidləmək üçün hansı düymələr birləşməsi istifadə olunur?","o":["Win + L","Win + D","Win + E","Alt + F4","Ctrl + L"],"a":0,"e":"Win + L kompüteri kilidləyir; Win + D iş masasını göstərir, Win + E Fayl bələdçisini açır, Alt + F4 pəncərəni bağlayır."},
+ {"s":"25.5","q":"Axtarışda “*” maskası nəyi bildirir?","o":["istənilən sayda istənilən simvolu","tam bir simvolu","yalnız rəqəmləri","yalnız hərfləri","boşluğu"],"a":0,"e":"* — istənilən sayda (sıfır da ola bilər) simvol; ? — tam bir simvol."},
+ {"s":"25.5","t":"open","q":"“a??.txt” maskasına uyğun gələn faylın adında (genişlənmə olmadan) neçə simvol olur? (rəqəmlə yaz)","a":["3","üç"],"e":"a + iki ? — hər ? bir simvol: cəmi 3 simvol (məs., abc.txt, a12.txt)."},
+ {"s":"25.5","q":"Paint proqramı nədir?","o":["rastr qrafik redaktor","mətn prosessoru","cədvəl prosessoru","veb-brauzer","antivirus"],"a":0,"e":"Paint — Windows-un standart rastr qrafik redaktorudur."}
+]
+}

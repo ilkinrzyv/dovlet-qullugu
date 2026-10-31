@@ -5367,4 +5367,251 @@ E) TXT
 Cavab: A
 ```
 
+## Fəsil 25. Əməliyyat sistemləri və Windows 11
+
+Bu fəsil proqramın 5-ci (əməliyyat sistemləri, fayl və kataloq) və 6-cı (**Microsoft Windows 11 Pro, 25H2**) mövzularını əhatə edir. Windows suallarının çoxu **düymələr birləşməsi**, fayl əməliyyatları və **maskalar** haqqındadır — cədvəlləri yaxşı öyrən.
+
+### 25.1. Əməliyyat sistemi: anlayışı, funksiyaları və növləri
+
+**Əməliyyat sistemi (ƏS)** — kompüterin qurğularını və proqramlarını idarə edən, istifadəçi ilə kompüter arasında əlaqə yaradan əsas sistem proqramıdır. Kompüter işə düşəndə **ilk** o yüklənir.
+
+**Əsas funksiyaları:** prosessorun, yaddaşın və qurğuların (resursların) idarəsi; proqramların (proseslərin) işinin idarəsi; fayl sisteminin idarəsi; istifadəçi interfeysi; istifadəçi hesabları və təhlükəsizlik.
+
+**Təsnifat:**
+
+| Əlamət | Növlər |
+| --- | --- |
+| İnterfeys | **əmr sətri** (MS DOS) — **qrafik** (Windows, macOS) |
+| Eyni vaxtda işləyən tapşırıqlar | **təktapşırıqlı** (MS DOS) — **çoxtapşırıqlı** (Windows, Linux, macOS) |
+| İstifadəçilərin sayı | tək istifadəçili — **çox istifadəçili** (UNIX, Linux, Windows) |
+
+| ƏS | Xüsusiyyəti |
+| --- | --- |
+| MS DOS | Microsoft; əmr sətri, təktapşırıqlı |
+| UNIX | çox istifadəçili, serverlərdə geniş yayılıb |
+| **Linux** | UNIX-ə bənzər, **açıq mənbə kodlu** |
+| macOS | Apple kompüterləri üçün |
+| Windows | Microsoft; qrafik interfeysli, ən geniş yayılmış masaüstü ƏS |
+| **Android** | **Google**; mobil qurğular, Linux nüvəsi əsasında |
+| iOS | Apple; iPhone üçün |
+
+```nümunə
+S: Hansı əməliyyat sistemi təktapşırıqlıdır və əmr sətri interfeysi ilə işləyir?
+A) MS DOS
+B) Windows 11
+C) macOS
+D) Android
+E) iOS
+Cavab: A
+İzah: **MS DOS**-da əmrlər klaviaturadan sətir-sətir yazılır və eyni anda bir proqram işləyir. Windows, macOS, Android və iOS qrafik interfeysli və çoxtapşırıqlıdır.
+```
+
+```yoxla
+S: Hansı əməliyyat sistemi açıq mənbə kodludur?
+A) Linux
+B) Windows 11
+C) iOS
+D) macOS
+E) MS DOS
+Cavab: A
+```
+
+### 25.2. Fayl, kataloq və fayl sistemi
+
+**Fayl** — xarici yaddaşda saxlanan, adı olan verilənlər toplusudur. Tam adı: **ad.genişlənmə** (*hesabat.docx*). **Genişlənmə** faylın tipini göstərir:
+
+| Genişlənmə | Tip |
+| --- | --- |
+| .txt | sadə mətn (Notepad) |
+| .docx | Word sənədi |
+| .xlsx | Excel iş kitabı |
+| .pptx | PowerPoint təqdimatı |
+| .accdb | Access verilənlər bazası |
+| .pdf | PDF sənəd |
+| .jpg, .png | təsvir |
+| .mp3 / .mp4 | səs / video |
+| .exe | icra olunan proqram |
+| .zip, .rar | arxiv |
+
+Windows-da fayl adında bu simvollar **işlənə bilməz**: **\ / : * ? " < > |**
+
+**Kataloq (qovluq)** faylları qruplaşdırır. Diskin ən yuxarı kataloqu **kök kataloqdur** (*C:\*). Faylın **tam yolu** diskdən başlayaraq bütün qovluqları göstərir: *C:\Users\Ali\Documents\hesabat.docx*.
+
+**Fayl sistemi** — faylların diskdə yerləşdirilmə qaydasıdır: **NTFS** (Windows-un əsas fayl sistemi), **FAT32** (bir faylın həcmi **4 GB**-dan çox ola bilməz), **exFAT** (flash daşıyıcılar üçün).
+
+**Fayl və qovluğun xarakteristikaları:** ad, tip, həcm, yaradılma və dəyişmə tarixi, atributlar (yalnız oxunan, gizli).
+
+```nümunə
+S: “C:\Hesabatlar\2025\iyun.xlsx” yolunda fayl hansıdır və onun tipi nədir?
+A) iyun.xlsx — Excel iş kitabı
+B) 2025 — Excel faylı
+C) Hesabatlar — fayl
+D) C: — fayl
+E) iyun — Word sənədi
+Cavab: A
+İzah: Yolun **sonuncu** hissəsi fayldır, ondan əvvəlkilər qovluqlardır: C: — disk, Hesabatlar və 2025 — qovluqlar. Genişlənmə **.xlsx** faylın Excel iş kitabı olduğunu göstərir.
+```
+
+```yoxla
+S: Hansı simvol Windows-da fayl adında istifadə oluna bilməz?
+A) ?
+B) _
+C) -
+D) (
+E) 5
+Cavab: A
+```
+
+### 25.3. Windows 11: iş masası, Başlat, pəncərələr
+
+**Əsas komponentlər:**
+
+- **İş masası (Desktop)** — əsas ekran; ikonlar, qısayollar.
+- **Başlat menyusu (Start)** — Windows 11-də **tapşırıq panelinin mərkəzində** yerləşir; sancaqlanmış və tövsiyə olunan proqramlar və fayllar.
+- **Tapşırıq paneli (Taskbar)** — Başlat, axtarış, Tapşırıq görünüşü (Task View), açıq və sancaqlanmış proqramlar, bildiriş sahəsi (saat, dil, səs, şəbəkə).
+
+**Fluent dizayn sistemi** — Windows 11-in vizual üslubu: **yumru künclü** pəncərələr, yarışəffaf fon effektləri, sadələşdirilmiş ikonlar və animasiyalar.
+
+**Əsas obyektlər:** **fayl**, **qovluq** və **qısayol** — başqa obyektə aparan keçid; ikonunda kiçik ox olur. Qısayol silinəndə **obyektin özü silinmir**.
+
+**Pəncərə:** başlıq sətri, idarəetmə düymələri (**kiçilt — böyüt/bərpa et — bağla**), lent və ya menyu, ünvan sətri, sürüşdürmə zolaqları.
+
+**Pəncərələrin vəziyyəti:**
+
+- **Snap Layouts** — pəncərələri ekranda **yan-yana** düzmək: böyütmə düyməsinin üstünə gətir və ya **Win + Z**; **Win + ← / →** pəncərəni ekranın yarısına çəkir.
+- Tam ekran rejimi; **çox monitor** dəstəyi (hər monitorda ayrı pəncərələr); toxunma rejimində sadələşdirilmiş idarə.
+
+```nümunə
+S: Windows 11-də pəncərələri ekranda yan-yana düzmək üçün hansı funksiya var?
+A) Snap Layouts
+B) Mübadilə buferi
+C) Zibil qutusu
+D) Tapşırıq meneceri
+E) Paint
+Cavab: A
+İzah: **Snap Layouts** pəncərələri hazır sxemlərlə (yarı-yarıya, üç hissəyə və s.) ekranda düzür. Onu böyütmə düyməsinin üstünə gəlməklə və ya Win + Z ilə açmaq olar.
+```
+
+```yoxla
+S: İş masasındakı qısayol silindikdə nə baş verir?
+A) yalnız qısayol silinir, obyektin özü qalır
+B) qısayolun göstərdiyi fayl da silinir
+C) fayl Zibil qutusuna köçür
+D) kompüter yenidən başlayır
+E) qovluq gizlənir
+Cavab: A
+```
+
+### 25.4. Fayl bələdçisi, fayl əməliyyatları və mübadilə buferi
+
+**Fayl bələdçisi (File Explorer)** — fayl və qovluqlarla işləmək üçün proqramdır (**Win + E**).
+
+**Ən vacib düymələr:**
+
+| Düymələr | Nə edir |
+| --- | --- |
+| Ctrl + C / Ctrl + X / Ctrl + V | surət götür / kəs / yapışdır |
+| Ctrl + Z / Ctrl + Y | geri al / təkrarla |
+| Ctrl + A | hamısını seç |
+| **F2** | adını dəyiş |
+| Delete | **Zibil qutusuna** göndər |
+| **Shift + Delete** | **birdəfəlik** sil (Zibil qutusuna düşmür) |
+| Ctrl + Shift + N | yeni qovluq |
+| **Win + V** | mübadilə buferinin **tarixçəsi** |
+| Alt + Tab | pəncərələr arasında keçid |
+| Win + D | iş masasını göstər |
+| Win + I | Parametrlər |
+| Win + L | kompüteri kilidlə |
+| Win + Shift + S | ekranın bir hissəsinin şəklini çək |
+
+**Siçanla dartmaq:** eyni diskdə — **köçürür**, başqa diskə — **surətini çıxarır**. **Ctrl** basılı dartanda həmişə surət, **Shift** ilə həmişə köçürmə olur.
+
+**Zibil qutusu (Recycle Bin):** silinən fayllar oradan **bərpa** oluna bilər. Shift + Delete ilə və flash daşıyıcıdan silinən fayllar ora düşmür.
+
+**Mübadilə buferi (Clipboard)** — kopyalanan və ya kəsilən obyektin müvəqqəti saxlandığı yaddaş sahəsidir. Adi halda **sonuncu** kopyalanan saxlanılır; **Win + V** ilə bir neçə əvvəlki elementə də baxmaq olar.
+
+```nümunə
+S: Faylı Zibil qutusundan keçirmədən birdəfəlik silmək üçün hansı düymələr birləşməsi istifadə olunur?
+A) Shift + Delete
+B) Delete
+C) Ctrl + Delete
+D) Alt + F4
+E) Ctrl + Z
+Cavab: A
+İzah: **Delete** faylı Zibil qutusuna göndərir — oradan bərpa etmək olar. **Shift + Delete** isə faylı Zibil qutusundan keçirmədən silir. Alt + F4 pəncərəni bağlayır, Ctrl + Z son əməliyyatı geri alır.
+```
+
+```yoxla
+S: Windows 11-də mübadilə buferinin tarixçəsini açan düymələr birləşməsi hansıdır?
+A) Win + V
+B) Ctrl + V
+C) Win + E
+D) Alt + Tab
+E) Win + D
+Cavab: A
+```
+
+### 25.5. Axtarış və maskalar, Parametrlər, standart proqramlar
+
+**Maskalar** fayl adlarını şablonla axtarmağa imkan verir:
+
+| Simvol | Mənası | Nümunə |
+| --- | --- | --- |
+| **\*** | **istənilən sayda** (sıfır da ola bilər) istənilən simvol | **\*.docx** — bütün Word sənədləri |
+| **?** | **tam bir** istənilən simvol | **hesabat?.xlsx** — hesabat1.xlsx, hesabatA.xlsx (hesabat10.xlsx yox) |
+
+**Parametrlər (Settings, Win + I):** Sistem, Bluetooth və qurğular, Şəbəkə və internet, Fərdiləşdirmə, Proqramlar, Hesablar, Vaxt və dil, Oyunlar, Əlçatanlıq, Məxfilik və təhlükəsizlik, Windows Update.
+
+**Standart proqramlar:**
+
+| Proqram | Təyinatı |
+| --- | --- |
+| **Paint** | rastr qrafik redaktor |
+| **Notepad** | sadə mətn redaktoru (.txt) |
+| Calculator | kalkulyator |
+| Snipping Tool | ekran şəkli (Win + Shift + S) |
+| **Xbox Game Bar** | **Win + G**: oyun zamanı ekranın yazılması, səs, sistem göstəriciləri |
+
+```nümunə
+S: “hesabat?.xlsx” maskasına hansı fayl uyğun gəlir?
+A) hesabat1.xlsx
+B) hesabat10.xlsx
+C) hesabat.xlsx
+D) hesabat1.docx
+E) yeni_hesabat1.xlsx
+Cavab: A
+İzah: **?** düz **bir** simvolu əvəz edir: “hesabat” + bir simvol + “.xlsx”. hesabat10 (iki simvol) və hesabat (simvol yoxdur) uyğun gəlmir; D-də genişlənmə, E-də adın əvvəli fərqlidir.
+```
+
+```yoxla
+S: Bütün PDF fayllarını tapmaq üçün hansı maska yazılır?
+A) *.pdf
+B) ?.pdf
+C) pdf.*
+D) *pdf?
+E) ??.pdf
+Cavab: A
+```
+
+```nümunə
+S: Windows 11-də Xbox Game Bar hansı düymələr birləşməsi ilə açılır?
+A) Win + G
+B) Win + X
+C) Win + I
+D) Win + L
+E) Ctrl + G
+Cavab: A
+İzah: **Win + G** Xbox Game Bar-ı açır. Win + I Parametrləri açır, Win + L kompüteri kilidləyir, Win + X isə Başlat düyməsinin kontekst menyusunu açır.
+```
+
+```yoxla
+S: Sadə mətn (.txt) faylları yaratmaq üçün Windows-un hansı standart proqramı nəzərdə tutulub?
+A) Notepad
+B) Paint
+C) Xbox Game Bar
+D) Snipping Tool
+E) Calculator
+Cavab: A
+```
+
 # V hissə — Müsahibə

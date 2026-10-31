@@ -202,12 +202,12 @@
      "Sistem proqram təminatı və təsnifatı", "Tətbiqi proqram təminatı və təsnifatı", "İnstrumental proqram təminatı və təsnifatı",
      "Proqramlaşdırma vasitələri", "Kompüter virusları və təsnifatı", "Antivirus proqramları", "Verilənlərin sıxlaşdırılması"
     ]},
-   {"num": "5", "title": "Əməliyyat sistemləri",
+   {"num": "5", "see": ["c25s1", "c25s2"], "title": "Əməliyyat sistemləri",
     "items": [
      "Əməliyyat sistemi anlayışı", "ƏS-nin əsas funksiyaları", "ƏS-lərin təsnifatı: MS DOS, UNIX, Linux, Mac OS, Windows, Android, iOS",
      "Fayl və fayl sistemi", "Kataloq anlayışı", "Fayl və kataloqların əsas xarakteristikaları"
     ]},
-   {"num": "6", "title": "Microsoft Windows 11 (Pro, 25H2)",
+   {"num": "6", "see": ["c25s3", "c25s4", "c25s5"], "title": "Microsoft Windows 11 (Pro, 25H2)",
     "items": [
      "Təyinatı, əsas xarakteristikaları və anlayışları", "İş masası, Başlat menyusu, Tapşırıq paneli", "“Fluent” dizayn sistemi",
      "Əsas obyektlər: fayl, qovluq, qısayol", "Pəncərələrin növləri: tam ekran, Snap Layouts, çox monitor, toxunma rejimi",
