@@ -3562,6 +3562,293 @@ Cavab: C
 
 # III hissə — Azərbaycan dili {fənn=az}
 
+## Fəsil 18. Fonetika, orfoqrafiya və orfoepiya
+
+İmtahanda Azərbaycan dilindən **15 sual** var, qapalı suallarda **5 variant** verilir. Bu fəsil proqramın ilk iki mövzusunu əhatə edir: **fonetika** (səslər, ahəng, heca, vurğu, səs hadisələri) və **orfoqrafiya–orfoepiya** (düzgün yazı və düzgün tələffüz).
+
+Hər bölmədə qayda izah olunur, sonra **nümunə** (həlli ilə) və **“Özünü yoxla”** sualı gəlir.
+
+### 18.1. Səslər və hərflər
+
+**Səs** danışıqda eşidilir, **hərf** isə yazıda səsin işarəsidir. Azərbaycan əlifbasında **32 hərf** var: **9 sait** və **23 samit**.
+
+**Saitlər:**
+
+| Əlamət | Saitlər |
+| --- | --- |
+| Qalın | a, ı, o, u |
+| İncə | e, ə, i, ö, ü |
+| Dodaqlanan | o, u, ö, ü |
+| Dodaqlanmayan | a, ı, e, ə, i |
+
+**Samitlər.** Cingiltili samitin kar qarşılığı var:
+
+| Cingiltili | b | v | g | ğ | d | z | j | c |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Kar** | p | f | k | x | t | s | ş | ç |
+
+**Sonor samitlər** — **l, m, n, r, y** — səs telləri ilə tələffüz olunur, kar qarşılıqları yoxdur.
+
+```nümunə
+S: Hansı sözdə yalnız qalın saitlər var?
+A) kitab
+B) qapı
+C) dəftər
+D) qələm
+E) müəllim
+Cavab: B
+İzah: Qapı sözündə **a** və **ı** var — hər ikisi qalındır. Kitab sözündə **i** incədir, dəftər, qələm və müəllim sözlərində isə incə saitlər var.
+```
+
+```yoxla
+S: Hansı sözdə dodaqlanan sait yoxdur?
+A) gözəl
+B) quş
+C) kitab
+D) üzüm
+E) torpaq
+Cavab: C
+```
+
+```nümunə
+S: Hansı cərgədə cingiltili samit ilə onun kar qarşılığı düzgün verilib?
+A) b – p
+B) m – n
+C) l – r
+D) y – h
+E) z – ş
+Cavab: A
+İzah: **b** cingiltili, **p** onun kar qarşılığıdır. m, n, l, r, y sonor samitlərdir, kar qarşılıqları yoxdur. z-nin kar qarşılığı ş deyil, **s**-dir.
+```
+
+```yoxla
+S: “Qarabağ” sözündə neçə sait var? (rəqəmlə yaz)
+Cavab: 3 | üç
+```
+
+### 18.2. Ahəng qanunu və şəkilçilərin variantları
+
+Azərbaycan dilində şəkilçilər sözün **son hecasındakı saitə** uyğunlaşır. Buna **ahəng qanunu** deyilir.
+
+- **Damaq ahəngi:** son hecada qalın sait varsa, şəkilçi də qalın saitli olur; incə sait varsa — incə: *dağ-lar*, *dəftər-lər*.
+- **Dodaq ahəngi:** son hecada dodaqlanan sait (o, u, ö, ü) varsa, dördvariantlı şəkilçi də dodaqlanan variantda olur: *duz-lu*, *göz-lü*, amma *dad-lı*, *bilik-li*.
+
+| Şəkilçi növü | Nümunələr |
+| --- | --- |
+| İkivariantlı | -lar/-lər, -da/-də, -dan/-dən, -a/-ə, -ma/-mə, -maq/-mək |
+| Dördvariantlı | -ı/-i/-u/-ü, -ın/-in/-un/-ün, -lı/-li/-lu/-lü, -lıq/-lik/-luq/-lük, -çı/-çi/-çu/-çü |
+
+Alınma sözlərin bir çoxu ahəngə tabe deyil (*kitab, müəllim, telefon*), amma onlara da şəkilçi **son hecaya görə** artırılır: *kitab-lar*, *telefon-u*.
+
+```nümunə
+S: Hansı sözə “-lu” şəkilçisi artırılır?
+A) duz
+B) dad
+C) bilik
+D) göz
+E) dil
+Cavab: A
+İzah: Son hecada **qalın və dodaqlanan** sait (u) olduğu üçün dördvariantlı şəkilçinin **-lu** variantı gəlir: *duzlu*. Dad → *dadlı* (a — dodaqlanmayan), bilik → *bilikli*, dil → *dilli*, göz → *gözlü* (ö incə və dodaqlanandır).
+```
+
+```yoxla
+S: Hansı söz ahəng qanununa uyğun yazılmayıb?
+A) daşlıq
+B) gözlük
+C) dağlıq
+D) düzlük
+E) qumlük
+Cavab: E
+```
+
+### 18.3. Heca və vurğu
+
+**Heca.** Hecanın əsası saitdir: sözdə **neçə sait varsa, o qədər heca** var. Saitlə bitən heca **açıq** (*a-ta* — hər iki heca açıqdır), samitlə bitən heca **qapalı** hecadır (*dəf-tər* — hər iki heca qapalıdır). Sətirdən-sətrə keçirmədə söz hecalara görə bölünür; bir hərfi sətrin sonunda saxlamaq və ya yeni sətrə keçirmək olmaz.
+
+**Vurğu.** Azərbaycan dilində vurğu **əsasən son hecaya** düşür: *ki-táb*, *gö-zə́l*. Şəkilçi artırılanda vurğu da sona keçir: *kitab-lár*. İstisnalar:
+
+- bəzi zərflər: *sónra, índi*;
+- bir çox yer adları: *Bákı, Şúşa*;
+- inkar şəkilçisi **-ma/-mə** vurğunu özündən əvvəlki hecaya çəkir: *yáz-ma*, *gə́l-mə*;
+- sual ədatı **-mı** və **-dır** vurğu qəbul etmir.
+
+```nümunə
+S: “Müəllimlərimizdən” sözündə neçə heca var?
+A) 5
+B) 6
+C) 7
+D) 8
+E) 9
+Cavab: C
+İzah: Saitləri sayaq: m**ü**-**ə**l-l**i**m-l**ə**-r**i**-m**i**z-d**ə**n — 7 sait, deməli **7 heca**.
+```
+
+```yoxla
+S: “Azərbaycan” sözündə neçə heca var? (rəqəmlə yaz)
+Cavab: 4 | dörd
+```
+
+```nümunə
+S: Hansı sözdə vurğu son hecaya düşmür?
+A) kitab
+B) gözəl
+C) Bakı
+D) qələm
+E) dəftər
+Cavab: C
+İzah: Vurğu əsasən son hecaya düşür: *kitáb, gözə́l, qələ́m, dəftə́r*. Yer adları isə çox vaxt istisnadır: **Bákı** — vurğu birinci hecadadır.
+```
+
+```yoxla
+S: Hansı sözdə vurğu birinci hecaya düşür?
+A) sonra
+B) almalar
+C) məktəb
+D) yazıçı
+E) çiçək
+Cavab: A
+```
+
+### 18.4. Səs hadisələri
+
+Söz şəkilçi qəbul edəndə səslər dəyişə bilər:
+
+| Hadisə | Nə baş verir | Nümunələr |
+| --- | --- | --- |
+| Sait düşümü | ikinci hecadakı sait düşür | ağız → ağzı, burun → burnu, oğul → oğlu, alın → alnı, ömür → ömrü |
+| k → y | çoxhecalı sözün sonundakı k saitdən əvvəl y olur | çörək → çörəyi, ürək → ürəyi |
+| q → ğ | çoxhecalı sözün sonundakı q saitdən əvvəl ğ olur | otaq → otağı, yarpaq → yarpağı |
+| Bitişdirici samit | saitlə bitən sözə saitlə başlayan şəkilçi artırılanda arada **y, n, s** gəlir | ata-ya, ata-nın, ata-sı, su-yu |
+
+Bu dəyişmələr **yazıda da** əks olunur: *çörəyi*, *otağı*, *ağzı* belə yazılır.
+
+```nümunə
+S: Hansı sözə saitlə başlayan şəkilçi artırılanda kökdəki sait düşür?
+A) ağız
+B) qapı
+C) kitab
+D) dəniz
+E) qələm
+Cavab: A
+İzah: Ağız + ı → **ağzı**: ikinci hecadakı ı düşür. Qapı → qapını, kitab → kitabı, dəniz → dənizi, qələm → qələmi — sait düşmür.
+```
+
+```yoxla
+S: Hansı sözdə k → y dəyişməsi baş verib?
+A) ürəyi
+B) kitabı
+C) gözü
+D) əli
+E) evi
+Cavab: A
+```
+
+```nümunə
+S: “Ana” sözünə yiyəlik hal şəkilçisi artırılanda hansı bitişdirici samit işlənir?
+A) n
+B) y
+C) s
+D) ş
+E) l
+Cavab: A
+İzah: Saitlə bitən sözə yiyəlik hal şəkilçisi **-nın/-nin** şəklində artırılır: ana + **n** + ın → *ananın*. **n** təsirlik halda da gəlir (*ananı*); **y** yönlük halda (*anaya*), **s** isə III şəxs mənsubiyyətdə (*anası*) işlənir.
+```
+
+```yoxla
+S: “Otaq” sözünə “-ı” şəkilçisi artırılanda söz necə yazılır? (sözü yaz)
+Cavab: otağı
+```
+
+### 18.5. Orfoqrafiya: düzgün yazı
+
+**Böyük hərflə yazılır:** cümlənin birinci sözü; şəxs adları və soyadları; coğrafi adlar (*Xəzər dənizi*, *Kür çayı* — ümumi isim kiçik hərflə); dövlət orqanlarının və təşkilatların adı (*Azərbaycan Respublikasının Milli Məclisi*); bayram adlarında xüsusi ad (*Novruz bayramı*).
+
+**Defislə yazılır:**
+
+- qoşa sözlər: *ata-ana, qab-qacaq, gec-tez*;
+- təkrarlar: *yavaş-yavaş, ev-ev*;
+- təxmini miqdar bildirən saylar: *beş-altı*.
+
+**Bitişik yazılır:** mürəkkəb sözlərin çoxu (*ayaqqabı, Qarabağ*); sual ədatı **-mı/-mi** (*gəldinmi?*).
+
+**Ayrı yazılır:**
+
+- **da/də** bağlayıcısı və ədatı: *Mən də gəldim.* (Müqayisə et: *Kitab məndədir* — burada **-də** yerlik hal şəkilçisidir, bitişik yazılır.)
+- **ki** bağlayıcısı: *Dedi ki, gələcək.*
+- mürəkkəb feillər: *qəbul etmək, kömək etmək*.
+
+```nümunə
+S: Hansı cümlədə orfoqrafiya səhvi var?
+A) Məndə gəldim.
+B) Dedi ki, gəlir.
+C) Sən gəldinmi?
+D) Kitab məndədir.
+E) O da gəlib.
+Cavab: A
+İzah: “Mən də gəldim” cümləsində **də** “həm də” mənasında ədatdır, **ayrı** yazılmalıdır. D-də isə **-də** yerlik hal şəkilçisidir (*harada? — məndə*), ona görə bitişik yazılıb — düzdür.
+```
+
+```yoxla
+S: Hansı söz düzgün yazılıb?
+A) yavaşyavaş
+B) ata-ana
+C) qəbuletmək
+D) ayaq-qabı
+E) gecəgündüz
+Cavab: B
+```
+
+```nümunə
+S: Hansı birləşmə düzgün yazılıb?
+A) Novruz bayramı
+B) novruz bayramı
+C) Novruz Bayramı
+D) xəzər dənizi
+E) Bakı Şəhəri
+Cavab: A
+İzah: Bayram adında xüsusi ad (**Novruz**) böyük, ümumi isim (**bayramı**) kiçik hərflə yazılır. Coğrafi adda da belədir: *Xəzər dənizi*, *Bakı şəhəri*.
+```
+
+```yoxla
+S: Hansı cümlədə “ki” bağlayıcısı düzgün yazılıb?
+A) Dedi ki, sabah gələcək.
+B) Dediki, sabah gələcək.
+C) Dedi-ki sabah gələcək.
+D) Dedi, ki sabah gələcək.
+E) Dedi ki sabah, gələcək.
+Cavab: A
+```
+
+### 18.6. Orfoepiya: düzgün tələffüz
+
+**Orfoqrafiya** düzgün yazının, **orfoepiya** isə düzgün tələffüzün qaydalarıdır. Bəzi sözlər yazıldığı kimi deyil, ədəbi tələffüz qaydası ilə deyilir:
+
+- söz sonundakı cingiltili **b, d** kar tələffüz olunur: *kitab* [kitap], *palıd* [palıt];
+- söz sonunda qalın saitdən sonra gələn **q** [x] kimi tələffüz olunur: *yarpaq* [yarpax], *otaq* [otax], *uşaq* [uşax].
+
+**Diqqət:** tələffüzə görə yazmaq səhvdir. *Yarpax* deyilir, amma **yarpaq** yazılır.
+
+```nümunə
+S: Hansı sözün sonundakı samit kar tələffüz olunur?
+A) kitab
+B) qələm
+C) ana
+D) bal
+E) şəhər
+Cavab: A
+İzah: Söz sonundakı cingiltili **b** kar **p** kimi deyilir: *kitab* [kitap]. Qələm, bal və şəhər sonor samitlə (m, l, r), ana isə saitlə bitir — onlarda belə dəyişmə yoxdur.
+```
+
+```yoxla
+S: “Yarpaq” sözünün ədəbi tələffüzü hansıdır?
+A) [yarpax]
+B) [yarpak]
+C) [yarpağ]
+D) [yarpag]
+E) [yarpa]
+Cavab: A
+```
+
 # IV hissə — İnformatika {fənn=inf}
 
 # V hissə — Müsahibə
