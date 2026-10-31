@@ -38,7 +38,11 @@ All checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build/
   follow the pattern (nümunə, yoxla+)+ — the owner wants each explanation followed by a worked example and a check.
 - `build/figs_men.py` — draws every Məntiq figure into `build/fig/men/` (chapters 15–17 and their tests). The answers
   are computed there and asserted (cube nets are folded, punched paper unfolded, mirror images transformed, ciphers
-  encoded, perimeters summed), so change a figure in the script and rerun it — never hand-edit those SVGs.
+  encoded, perimeters summed), so change a figure in the script and rerun it — never hand-edit those SVGs. It also
+  writes `answers.json` (per figure: the option index, or the right answer as text); `parse_book.py` fails when a
+  question on that figure answers otherwise. Cube views (16.7) fold the net printed side out and test a view against
+  all 24 rotations; assembly tasks (16.8) use an exact-cover solver and are picked so the answer is the same whether or
+  not pieces may be flipped; charts (17.7) are drawn from the same numbers the answers are computed from.
 - `build/proqram.json` — DİM's four test programmes, BA/BB topics only, with the programme's own numbering (so gaps
   such as 2.1 → 2.3 are real), `g` for BA-only topics and `see` = chapter/section ids that teach a topic (checked by
   the parser). `exam` holds the exam shape (40/30/15/15, BA open counts 8/6/3/3, 1 and 2 points, 180 minutes) and the

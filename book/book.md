@@ -2797,6 +2797,86 @@ S: “Sinifdə 30 şagird var. Hər şagird şahmat və ya futbol dərnəyinə (
 Cavab: 8 | səkkiz
 ```
 
+### 15.7. Uzun mətnlər və yerləşdirmə məsələləri
+
+**Uzun mətn.** Bəzən yarım səhifəlik mətn verilir. Mətni iki dəfə oxumamaq üçün əvvəlcə **sualı** oxu, sonra mətndə lazım olan yerləri qeyd et:
+
+1. **Rəqəmlər, tarixlər, müddətlər** — hesablama tələb edən variantlar çox vaxt bunlardan qurulur.
+2. **Məhdudlaşdıran sözlər** — “yalnız”, “ən azı”, “istisna olmaqla”, “bir dəfə”.
+3. **Müqayisələr** — “ən çox”, “ən az”, “daha tez”.
+
+Variant mətndəki sözləri təkrar etsə də, mənasını dəyişə bilər: “ən az” əvəzinə “ən çox”, “bəzi” əvəzinə “bütün”. Hər variantı mətndəki **konkret cümlə** ilə tutuşdur.
+
+| Sual | Necə yoxlanır |
+| --- | --- |
+| Mətnə görə hansı fikir doğrudur? | Mətndə təsdiqi var; lazım gələrsə iki faktı birləşdir və ya hesabla |
+| Mətndə hansı məlumat verilməyib? | Hər variantı mətndə axtar; tapılmayan cavabdır |
+| Mətnin əsas fikri hansıdır? | Bütün mətnə aid olan fikir; tək bir detal əsas fikir deyil |
+
+```nümunə
+S: Mətn: “Keçən il şəhərdə velosiped icarəsi xidməti açıldı. Velosipedi mobil tətbiqlə və ya dayanacaqdakı terminalda bank kartı ilə götürmək olar. İlk 30 dəqiqə pulsuzdur, sonrakı hər yarım saat üçün 50 qəpik ödənilir. Velosipedi istənilən dayanacağa qaytarmaq mümkündür, lakin dayanacaqdan kənarda qoyulmuş velosipedə görə 10 manat cərimə yazılır. Xidmət martın 1-dən noyabrın 30-dək işləyir, qış aylarında velosipedlər təmir olunur. İlk ildə ən çox metro stansiyasının yanındakı dayanacaqdan, ən az isə şəhər parkının şimal girişindəki dayanacaqdan istifadə edilib.” Mətnə görə hansı fikir doğrudur?
+A) Velosipedi yalnız götürüldüyü dayanacağa qaytarmaq olar.
+B) Velosipeddən 1 saat istifadə 50 qəpikdir.
+C) Xidmət il boyu işləyir.
+D) Velosipedi yalnız mobil tətbiqlə götürmək olar.
+E) Parkın şimal girişindəki dayanacaqdan ən çox istifadə olunub.
+Cavab: B
+İzah: 1 saat = ilk 30 dəqiqə (pulsuz) + bir yarım saat (50 qəpik) = **50 qəpik** — B mətndən hesablanır. A-ya mətn ziddir (“istənilən dayanacağa”), C-yə də (“martın 1-dən noyabrın 30-dək”). D-də “yalnız” sözü səhvdir: terminal da var. E-də “ən az” “ən çox”la əvəz olunub.
+```
+
+```yoxla
+S: Mətn: “Kitab festivalı üç gün — cümə, şənbə və bazar günləri keçiriləcək. Cümə günü festival yalnız məktəblilər üçün, şənbə və bazar günləri isə hamı üçün açıq olacaq. Giriş pulsuzdur, ustad dərslərinə isə əvvəlcədən qeydiyyat tələb olunur. Hər gün saat 15:00-da tanınmış yazıçılarla görüş keçiriləcək. Festivalda 40-dan çox nəşriyyat iştirak edir, kitablar 20%-dək endirimlə satılacaq.” Mətndə hansı məlumat verilməyib?
+A) festivalın neçə gün davam edəcəyi
+B) yazıçılarla görüşün saatı
+C) festivala girişin qiyməti
+D) festivalın keçiriləcəyi yer
+E) endirimin ən böyük həddi
+Cavab: D
+```
+
+**Yerləşdirmə məsələləri.** Bir neçə adam (əşya, gün) sıraya düzülür və ya peşə, şəhər kimi xüsusiyyətlərlə uyğunlaşdırılır. Şərtlər çox olanda hamısını yadda saxlamaq çətindir — **sxem və ya cədvəl** çək:
+
+1. Ən **kəsin** şərtdən başla (“Cavid ortadadır”, “hesabat cümə günüdür”).
+2. Sonra **iki obyekti bağlayan** şərtləri yaz: “yanaşı”, “sağında”, “bir gün sonra”.
+3. Mümkün halları sına; şərtə zidd çıxan halı at.
+4. Uyğunlaşdırma məsələsində cədvəldə “olmaz”ları işarələ: sətirdə və ya sütunda tək boş xana qalırsa, cavab odur.
+5. Sonda tapdığın düzülüşü **bütün şərtlərlə** bir daha yoxla.
+
+```nümunə
+S: Anar, Bəxtiyar, Cavid, Dəniz və Elvin bir sırada, soldan sağa 1-dən 5-dək nömrələnmiş yerlərdə otururlar.
+
+- Cavid ortadakı (3-cü) yerdə oturur.
+- Anar kənar yerlərdən birində oturur.
+- Bəxtiyar həm Cavidlə, həm də Anarla yanaşı oturur.
+- Elvin Bəxtiyarın sağ tərəfində, amma kənarda olmayan yerdə oturur.
+
+Dəniz neçənci yerdə oturur?
+A) 1
+B) 2
+C) 4
+D) 5
+E) müəyyən etmək olmaz
+Cavab: D
+İzah: Bəxtiyar Cavidlə yanaşıdır: 2-ci və ya 4-cü yer. O, kənarda oturan Anarla da yanaşıdır: ya Bəxtiyar 2, Anar 1, ya da Bəxtiyar 4, Anar 5. Elvin Bəxtiyarın sağındadır: Bəxtiyar 4-də olsa, Elvinə yalnız 5 qalır, orada isə Anar oturur — deməli **Bəxtiyar 2, Anar 1**. Elvin 4 və ya 5-də ola bilər; kənarda olmadığı üçün **4-cü** yerdədir. Dənizə **5-ci** yer qalır. Yoxlama: 1 Anar, 2 Bəxtiyar, 3 Cavid, 4 Elvin, 5 Dəniz — bütün şərtlər ödənir.
+```
+
+```yoxla
+S: Aysel, Leyla, Nərmin və Səbinədən biri həkim, biri müəllim, biri mühəndis, biri hüquqşünasdır.
+
+- Aysel həkim də, müəllim də deyil.
+- Leyla mühəndis də, hüquqşünas da deyil.
+- Səbinə həkim də, mühəndis də deyil.
+- Nərmin hüquqşünas da, həkim də deyil.
+
+Leylanın peşəsi nədir?
+A) həkim
+B) müəllim
+C) mühəndis
+D) hüquqşünas
+E) müəyyən etmək olmaz
+Cavab: A
+```
+
 ## Fəsil 16. Fiqurlarla bağlı test tapşırıqları
 
 Bu fəsildə tapşırıqlar şəkillərlə verilir: analogiya, sıranın davamı, fiqurların sayılması və birləşdirilməsi, kubun açılışı, simmetriya və şifrlər. Şəkildəki variantlar **A–E** hərfləri ilə işarələnib — cavabı hərf düyməsi ilə seçirsən.
@@ -3146,6 +3226,121 @@ C) LBR
 D) RBS
 E) LBŞ
 Cavab: A
+```
+
+### 16.7. Fəza münasibətləri: kubun görünüşləri
+
+Kub şəkildə adətən bir **küncündən** göstərilir: üst üz, sol-ön üz və sağ-ön üz görünür. Bu üç üz bir təpədə görüşür — hamısı bir-biri ilə **qonşudur**. Bu bölmədə üzlərdə qara dairə, çevrə, ortasında nöqtə olan çevrə, qara kvadrat, boş kvadrat və dörd nöqtə var; kub döndərildikdə işarələrin özü dəyişmir, yalnız yeri dəyişir. Açılışla şəkli tutuşdurmaq üçün iki qayda var:
+
+1. **Qarşı üzlər birlikdə görünmür.** Açılışda arasında bir üz olan iki üz (16.4) kubda qarşı-qarşıyadır. Belə iki işarəni yanaşı göstərən kub bu açılışdan alına bilməz.
+2. **Sıra qaydası.** Açılışda üç üzün bir nöqtədə görüşdüyü küncü tap və işarələri o nöqtənin ətrafında **saat əqrəbi istiqamətində** oxu. Kubun şəklində eyni üç işarəni də saat əqrəbi istiqamətində — **üst → sağ → sol** — oxu. Sıra eyni olmalıdır (hansı işarədən başlamağın fərqi yoxdur). Sıra tərsinədirsə, bu, kubun **güzgü əksidir** — belə kub alınmır.
+
+Üç üz açılışda bir nöqtədə görüşmürsə, açılışı xəyalən qatla və üzlərdən birini qonşusunun yanına “köçür”.
+
+```nümunə
+S: Açılışdan kub qatlanır. Hansı kub bu açılışdan alınır?
+Şəkil: men/16-7a.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: C
+İzah: Qarşı üzlər: çevrə ilə boş kvadrat, qara kvadrat ilə dörd nöqtə, qara dairə ilə ortasında nöqtə olan çevrə (hər cütün arasında bir üz var). A-da çevrə ilə boş kvadrat, D-də dörd nöqtə ilə qara kvadrat yanaşıdır — bu kublar alınmır. Qalanları sıra qaydası ilə yoxlayaq. Qara dairənin xanasının **sol yuxarı** küncündə çevrə, qara dairə və qara kvadrat görüşür; saat əqrəbi ilə: çevrə → qara dairə → qara kvadrat. C-də üst → sağ → sol: qara kvadrat → çevrə → qara dairə — bu, eyni dairəvi sıradır, C **düzdür**. B-də üst → sağ → sol: qara dairə → boş kvadrat → dörd nöqtə, açılışda isə (qara dairənin sağ aşağı küncü) qara dairə → dörd nöqtə → boş kvadrat — sıra tərsdir. E-də də belədir: qara kvadrat → boş kvadrat → qara dairə, açılışda isə (sol aşağı künc) qara kvadrat → qara dairə → boş kvadrat.
+```
+
+```yoxla
+S: Açılışdan kub qatlanır. Hansı kub bu açılışdan **alına bilməz**?
+Şəkil: men/16-7b.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: D
+```
+
+**Bir neçə görünüş.** Eyni kub bir neçə vəziyyətdə göstərilirsə, görünməyən üzü də tapmaq olar. Hər üzün **4 qonşusu** və **1 qarşı üzü** var. Şəkillərdə bir işarənin yanında görünən bütün işarələri yaz: dörd fərqli qonşu tapılırsa, qalan **altıncı işarə** onun qarşısındadır — o, şəkillərdə heç görünməsə də.
+
+```nümunə
+S: Eyni kub iki vəziyyətdə göstərilib. Qara dairənin qarşı üzündə hansı işarə var?
+Şəkil: men/16-7c.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: C
+İzah: Qara dairə iki şəkildə də görünür. 1-ci şəkildə onun qonşuları dörd nöqtə və çevrədir, 2-ci şəkildə qara kvadrat və boş kvadrat. Bu, qara dairənin **dörd** fərqli qonşusudur. Altı işarədən qalan yeganə işarə — ortasında nöqtə olan çevrə — qara dairənin **qarşısındadır** (C). Bu işarə şəkillərdə görünmür, amma cavab məhz odur.
+```
+
+```yoxla
+S: Eyni kub iki vəziyyətdə göstərilib. Çevrənin qarşı üzündə hansı işarə var?
+Şəkil: men/16-7d.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: E
+```
+
+### 16.8. Fiqurun hissələrinin xəyalən birləşdirilməsi
+
+Bu tapşırıqlarda hissələrdən hansı fiqurun alınacağını və ya fiqurdakı boş yeri hansı hissənin dolduracağını tapmaq lazımdır. Hissələri **döndərmək** olar.
+
+**Üsul:**
+
+1. **Xanaları say.** Fiqurun xanalarının sayı hissələrin xanalarının cəminə bərabər olmalıdır. Sayı uyğun gəlməyən variant dərhal düşür.
+2. **Ən dar yerdən başla.** Fiqurun çıxıntıları və künc xanaları çox vaxt yalnız bir hissə ilə doldurula bilər — onları əvvəl yerləşdir.
+3. **Böyük hissəni əvvəl qoy.** Ən çox xanası olan və ya qeyri-adi formalı hissənin yeri azdır; o yerləşəndə qalan hissə üçün yer aydın olur.
+
+```nümunə
+S: Yuxarıdakı iki hissədən (döndərmək olar) hansı fiquru düzəltmək olar?
+Şəkil: men/16-8a.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: B
+İzah: Hissələrdə 5 + 4 = 9 xana var; variantların hamısı da 9 xanadır, ona görə formaya baxırıq. B-də dörd xanalı “L” hissəsi sol sütunun üç xanasını və yuxarı sırada onun sağındakı xananı tutur; qalan beş xana — 2×2 kvadrat və onun sağ aşağısındakı xana — beş xanalı hissənin döndərilmiş vəziyyətidir. Digər variantlarda elə xana var ki, onu iki hissədən heç biri tuta bilmir: bir hissəni harada yerləşdirsək də, ikincisi üçün qalan yer onun formasında olmur.
+```
+
+```yoxla
+S: Yuxarıdakı iki hissədən (döndərmək olar) hansı fiquru düzəltmək olar?
+Şəkil: men/16-8b.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: E
+```
+
+**Boş yeri tamamlamaq.** Fiqurda boş (qırıq xətlə çəkilmiş) xanalar var və onları bir hissə ilə doldurmaq lazımdır. Boş xanaları say və formasını sözlə təsvir et: məsələn, “yuxarıda iki xana, altında bir xana sağa sürüşmüş üç xana”. Sonra variantları xəyalən döndər — doğru hissə boş yerlə **eyni formadadır**, amma adətən döndərilmiş vəziyyətdə çəkilir.
+
+```nümunə
+S: Hansı hissə fiqurdakı boş yeri tam doldurur? (hissəni döndərmək olar)
+Şəkil: men/16-8c.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: B
+İzah: Boş yer 5 xanadır: yuxarı sırada soldan iki xana, ikinci sırada isə bir xana sağa sürüşmüş üç xana. Deməli boş yer üç xanalı düz zolaqdan və onun **ucuna** yan tərəfdən birləşmiş iki xanadan ibarətdir. B hissəsini saat əqrəbinin əksinə 90° döndərsək, məhz bu forma alınır. A və C-də dörd xana bir düz xətt üzərindədir, D-də heç bir üç xana bir düz xətt üzərində deyil, E-də isə üç xanalı zolağın iki ucuna əks tərəflərdən birər xana birləşib.
+```
+
+```yoxla
+S: Hansı hissə fiqurdakı boş yeri tam doldurur? (hissəni döndərmək olar)
+Şəkil: men/16-8d.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: D
 ```
 
 ## Fəsil 17. Məntiqi-riyazi test tapşırıqları
@@ -3559,6 +3754,61 @@ C) 480
 D) 520
 E) 600
 Cavab: C
+```
+
+### 17.7. Diaqramlar və qrafiklər
+
+**Sütunlu diaqram və xətti qrafik.** Əvvəl **başlığı, vahidi və şkalanı** oxu: söhbət nədən gedir, ədədlər nə ilə ölçülür (ədəd, manat, °C)? Sonra sualın nə istədiyini müəyyən et.
+
+| Sual | Hesablama |
+| --- | --- |
+| Neçə çox / az | iki qiymətin fərqi |
+| Neçə faiz artıb | (yeni − köhnə) : köhnə · 100 |
+| Orta qiymət | cəm : say |
+| Ən böyük artım (qrafik) | qonşu nöqtələrin fərqi ən böyük olan hissə |
+
+Qrafikdə xəttin **meyli** dəyişmənin sürətini göstərir: xətt nə qədər dikdirsə, dəyişmə o qədər böyükdür. Bir neçə sütunun cəmi soruşulursa, sütunları tək-tək müqayisə etmək lazım deyil — cəmi tap.
+
+```nümunə
+S: Diaqramda kitab mağazasında yanvar–iyun aylarında satılan kitabların sayı göstərilib. Birinci rübdə (yanvar–mart) satılan kitablar ikinci rübdə (aprel–iyun) satılanlardan neçə ədəd azdır?
+Şəkil: men/17-7a.svg
+A) 30
+B) 35
+C) 40
+D) 45
+E) 50
+Cavab: C
+İzah: I rüb: 40 + 55 + 35 = **130**. II rüb: 60 + 45 + 65 = **170**. Fərq: 170 − 130 = **40**.
+```
+
+```yoxla
+S: Qrafikdə bir həftə ərzində günorta havanın temperaturu (°C) göstərilib. Həftənin orta temperaturu neçə dərəcədir? (rəqəmlə yaz)
+Şəkil: men/17-7b.svg
+Cavab: 16 | on altı
+```
+
+**Dairəvi diaqram.** Bütöv dairə **100%**-dir, yəni **360°**. Deməli 1% = 3,6°, 10% = 36°, 25% = 90° (düz bucaq).
+
+- Hissənin miqdarı = ümumi miqdar · faiz : 100.
+- Sektorun bucağı = faiz · 3,6°; bucaq verilibsə, faiz = bucaq : 3,6.
+- İki hissənin fərqi soruşulursa, əvvəlcə **faizləri çıx**, sonra bir dəfə hesabla.
+
+```nümunə
+S: Diaqramda sorğuda iştirak edən tələbələrin seçdiyi xarici dillər göstərilib. Sorğuda 240 tələbə iştirak edib. İngilis dilini seçənlər rus dilini seçənlərdən neçə nəfər çoxdur?
+Şəkil: men/17-7c.svg
+A) 24
+B) 30
+C) 36
+D) 40
+E) 60
+Cavab: C
+İzah: Faizlərin fərqi: 40% − 25% = **15%**. 240-ın 15%-i: 240 · 0,15 = **36**. Ayrı-ayrılıqda hesablasaq da eyni çıxır: 96 − 60 = 36. E (60) rus dilini seçənlərin özüdür.
+```
+
+```yoxla
+S: Diaqramda ailənin aylıq xərclərinin bölgüsü göstərilib. Diaqramda “Nəqliyyat” sektorunun mərkəzi bucağı neçə dərəcədir? (rəqəmlə yaz)
+Şəkil: men/17-7d.svg
+Cavab: 54 | 54°
 ```
 
 # III hissə — Azərbaycan dili {fənn=az}

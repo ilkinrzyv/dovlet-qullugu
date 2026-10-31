@@ -68,6 +68,24 @@ def figure(rel, where):
         return None
     return svg
 
+# The figure generator records what each question on a figure must answer (build/fig/<dir>/answers.json): an option
+# index when the options are the figure's letters, else the right answer as text.
+fig_answers = {}
+def check_fig_answer(rel, q, where):
+    d = os.path.dirname(rel)
+    if d not in fig_answers:
+        p = os.path.join(args.fig, d, 'answers.json')
+        fig_answers[d] = json.load(open(p, encoding='utf-8')) if os.path.isfile(p) else {}
+    want = fig_answers[d].get(os.path.basename(rel))
+    if want is None:
+        return
+    if q['t'] == 'open':
+        ok = isinstance(want, str) and want in q['a']
+    else:
+        ok = q['a'] == want if isinstance(want, int) else q['o'][q['a']] == want
+    if not ok:
+        err(f'{where}: the figure {rel} answers {LETTERS[want] if isinstance(want, int) else want!r}')
+
 # ---------- questions inside a section: ```nümunə (worked example) and ```yoxla (check, no explanation) ----------
 BLOCK_RE = re.compile(r'^```(nümunə|yoxla)[ \t]*\n(.*?)\n```[ \t]*$', re.M | re.S)
 LETTERS = 'ABCDEF'
@@ -125,6 +143,7 @@ def inline_q(kind, src, where, subj):
         svg = figure(f['Şəkil'].strip(), where)
         if svg:
             q['img'] = svg
+            check_fig_answer(f['Şəkil'].strip(), q, where)
     return q
 
 def inline_blocks(src, sid, subj):
@@ -288,6 +307,7 @@ for f in sorted(glob.glob(os.path.join(args.quiz, '*.json'))):
                 svg = figure(q['img'], where)
                 if svg:
                     item['img'] = svg
+                    check_fig_answer(q['img'], item, where)
             out.append(item)
             nq += 1
 
