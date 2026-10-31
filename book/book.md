@@ -1775,6 +1775,124 @@ Rəsmiləşdirmə — **imzalama, təsdiq, qeydiyyat və möhür** vasitəsilə 
 | Sənədlərin çatdırılması | gündə azı 2 dəfə |
 | Nəzarət haqqında məlumat | ayda 1 dəfə; təhlil ildə azı 1 dəfə |
 
+## Fəsil 14. Dövlət rəmzlərinə dair qanunvericilik
+
+Konstitusiyanın **23-cü maddəsinə** görə Azərbaycanın dövlət rəmzləri **Dövlət bayrağı, Dövlət gerbi və Dövlət himnidir**. Proqrama onların istifadəsi haqqında üç qanun daxildir:
+
+| Qanun | Tarix və nömrə |
+| --- | --- |
+| “Dövlət bayrağının istifadəsi qaydaları haqqında” | 8 iyun 2004, № 683-IIQ |
+| “Dövlət Gerbindən istifadə qaydaları haqqında” | 19 fevral 2019, № 1511-VQ |
+| “Dövlət Himnindən istifadə qaydaları haqqında” | 19 fevral 2019, № 1512-VQ |
+
+Gerb və himn qanunları **eyni gündə** qəbul edilib və quruluşları demək olar ki, eynidir.
+
+### 14.1. Dövlət bayrağı: harada qaldırılır və yerləşdirilir
+
+- Vətəndaşlar, habelə ərazidə olan **əcnəbilər və vətəndaşlığı olmayanlar** bayrağa **hörmətlə** yanaşmalıdır (maddə 1).
+
+**Daimi qaldırılır (maddə 2.1):** Prezident sarayı və dövlət iqamətgahları; Milli Məclis, Nazirlər Kabineti, Konstitusiya Məhkəməsi, Ali Məhkəmə, Məhkəmə-Hüquq Şurası, mərkəzi icra hakimiyyəti orqanları, Prokurorluq, **Mərkəzi Bank**, MSK, Hesablama Palatası, Naxçıvanın uyğun orqanları, **yerli icra hakimiyyəti** orqanları, **Ombudsmanın** binası. Həmçinin **sərhəd** nəzarət-buraxılış məntəqələri və zastavalar.
+
+**Digər hallarda:**
+
+- Diplomatik nümayəndəliklər və konsulluqlar — beynəlxalq normalara və **diplomatik protokola** uyğun.
+- Azərbaycan reyestrində qeydə alınmış **gəmilər**.
+- Hərbi hissələr və gəmilər: **bayram günlərində**, **hərbi andiçmədə**, dövlət mükafatı təqdim edildikdə, xarici ərazidə olduqda.
+- Xarici bayraqlı gəmi Azərbaycanın daxili sularında və limanında **öz bayrağı ilə yanaşı** Azərbaycan bayrağını da qaldırmalıdır.
+
+**Daimi yerləşdirilir (maddə 3):** Milli Məclisin **iclas salonunda**, Prezidentin **iş otağında**, **məhkəmələrin iclas salonlarında**, yüksək vəzifəli şəxslərin iş otaqlarında. Həmçinin Prezidentin, dövlət nümayəndə heyəti rəhbərlərinin və səfirlərin **nəqliyyat vasitələrində**, andiçmə yerlərində.
+
+**Təsviri (maddə 4):** beynəlxalq uçuşlar edən mülki və hərbi nəqliyyat **təyyarələrində**, sərhəd gəmilərində, **dövlət mükafatlarında** və rəsmi döş nişanlarında.
+
+**Könüllü istifadə (maddə 5):** bələdiyyələrin, QHT-lərin, müəssisələrin binalarında və **yaşayış evlərində** qaldırıla bilər. **Dərs ilinin birinci günü** təhsil müəssisələrində bayraq qaldırılır.
+
+### 14.2. Dövlət bayrağı: qaydalar və məhdudiyyətlər
+
+**Matəm (maddə 7):** matəm günlərində bayrağın dəstəyinin və ya dirəyinin yuxarısına eni **10 santimetr** olan **qara lent** bərkidilir və (və ya) bayraq dirəyin **yarısına qədər endirilir**.
+
+**Digər bayraqlarla birgə (maddə 8):**
+
+- Təşkilatların bayraqlarının ölçüsü Dövlət bayrağının ölçüsündən **böyük ola bilməz**.
+- Başqa dövlətlərin, beynəlxalq təşkilatların və s. bayraqları ilə birgə olduqda, **qarşıdan baxıldıqda Dövlət bayrağı solda** olmalıdır.
+
+**Tələblər (maddə 9):**
+
+- Bayraq Konstitusiyaya və bayrağın təsviri haqqında Konstitusiya Qanununa uyğun olmalıdır.
+- Rənglər **“Pantone”** kataloquna uyğun: **mavi — Pantone 306C**, **qırmızı — Pantone Red 032C**, **yaşıl — Pantone 362C**.
+- Bayraq **bütöv** olmalı, **solğun** görünməməlidir.
+- Parçanın aşağı tərəfi yerdən **azı 3 metr** hündürlükdə olmalıdır.
+
+**Məhdudiyyətlər (maddə 10):** bayraq masa və kürsülərin üstünə **örtük kimi sərilə bilməz**, oturulan və **ayaq basılan** yerlərə qoyula bilməz.
+
+- Bayraq qaldırılarkən himnin mütləq ifa edildiyi hallar **Himn qanunu** ilə müəyyən edilir.
+- Təhqiredici hərəkətlər və qanuna zidd istifadə **məsuliyyətə** səbəb olur. Qanun **dərc edildiyi gündən** qüvvəyə minib.
+
+### 14.3. Dövlət gerbi
+
+**Ümumi müddəalar:**
+
+- Gerb Konstitusiyanın **23-cü maddəsinin I hissəsinə** görə dövlət rəmzidir; təsviri ayrıca **Konstitusiya Qanunu** ilə müəyyən edilir.
+- Konstitusiyanın **75-ci maddəsinə** görə hər vətəndaş gerbə hörmət etməlidir; **69-cu maddəyə** görə bu vəzifəni əcnəbilər və vətəndaşlığı olmayanlar da daşıyır.
+- **Dövlət rəmzləri müəlliflik hüququnun obyekti deyil** (maddə 5).
+
+**Qabarıq təsviri vurulur (maddə 6):** Prezident sarayına, iqamətgahlara və Prezidentin xidməti otağına; **Milli Məclisin** binasına, iclas salonuna və sədrin otağına; Naxçıvan Ali Məclisinə; **bütün məhkəmələrin** binalarına və iclas salonlarına, Konstitusiya və Ali Məhkəmə sədrlərinin otaqlarına; **diplomatik nümayəndəliklərin və konsulluqların** binalarına.
+
+**Təsvirindən istifadə (maddə 7):** hüquqi aktların və dövlət adından verilən sənədlərin **blanklarında**, **pul nişanlarında**, qiymətli kağızlarda, **şəxsiyyət vəsiqəsində və pasportda**, dövlət orqanlarının **möhürlərində** və lövhələrində, dövlət təltiflərində, rəsmi nəşrlərdə, **sərhəd nişanlarında**.
+
+- Gerbə ehtiram bəsləyən **hər kəs** onun təsvirindən qanuna uyğun istifadə edə bilər.
+- **Yeni dərs ilinin birinci dərsi** digər rəmzlərlə yanaşı gerbin öyrənilməsinə həsr edilir.
+
+**Məhdudiyyətlər (maddə 8):** gerb **oturulan və ayaq basılan** yerlərdə təsvir edilə bilməz; **təhrifinə yol verilmir**.
+
+**Məsuliyyət:** Mülki, İnzibati Xətalar və Cinayət məcəllələri üzrə.
+
+### 14.4. Dövlət himni
+
+Himn də **23-cü maddəyə** görə dövlət rəmzidir; musiqisi və mətni ayrıca Konstitusiya Qanunu ilə təsdiq edilib. Hörmət vəzifəsi (75 və 69-cu maddələr) və müəlliflik hüququ qaydası gerbdəki kimidir.
+
+**Himn mütləq ifa edilir (maddə 6.1):**
+
+1. Prezident seçilmiş şəxsin **andiçmə mərasimində** (and içdikdən **sonra**);
+2. Prezident **Milli Məclisin iclaslarına gəldikdə**;
+3. Milli Məclisin növbəti və növbədənkənar **sessiyalarının başlanması və qurtarması** zamanı;
+4. Naxçıvan Ali Məclisinin sessiyalarının başlanması və qurtarması zamanı;
+5. **bayramlara** həsr olunmuş təntənəli yığıncaqların açılışı və bağlanışı zamanı;
+6. dövlət və xalq üçün **mühüm tarixi hadisələrdə**;
+7. görkəmli xadimlərin, Vətən Müharibəsi Qəhrəmanlarının və Milli Qəhrəmanların **abidələrinin açılışında**;
+8. təntənəli tədbirlərdə **bayraq qaldırılarkən və ya asılarkən**;
+9. rəsmi görüşə gələn xarici dövlət və hökumət başçılarının qarşılanmasında və yola salınmasında (həmin ölkənin himnindən **sonra**).
+
+**İfa və dinləmə qaydası:**
+
+- Himn bütün hallarda **tam** ifa edilir — orkestr, xor, vokal, alət və ya səsyazma ilə.
+- **Vətəndaşlar** himni **ayaq üstə, farağat vəziyyətdə** sona qədər dinləməli və ya **oxumalıdır**.
+- **Əcnəbilər və vətəndaşlığı olmayanlar** ayaq üstə, farağat vəziyyətdə sona qədər **dinləməlidir**.
+
+**Digər hallar (maddə 7):**
+
+- Hərbi qulluqçular üçün — **Silahlı Qüvvələrin Daxili xidmət nizamnaməsi**; hərbi ehtiramlı dəfn — **Qarnizon və qarovul xidmətləri nizamnaməsi**.
+- İdman yarışlarında — yarışı təşkil edən **idman təşkilatı** müəyyən edir.
+- Himn **hər səhər** televiziya və radio yayımlarının **əvvəlində** ifa edilir.
+- Himnin mətni və musiqisi **Əlifba kitabının birinci səhifəsində** dərc edilir.
+- Yeni dərs ilinin birinci dərsi rəmzlərin öyrənilməsinə həsr edilir.
+
+**Məhdudiyyətlər (maddə 8):** himn **başqa dildə oxuna bilməz**; **təhrifinə yol verilmir**.
+
+### 14.5. Yadda saxla
+
+| Nə | Qayda |
+| --- | --- |
+| Rəmzlər | Konstitusiyanın 23-cü maddəsi |
+| Hörmət vəzifəsi | 75-ci maddə (vətəndaşlar), 69-cu maddə (əcnəbilər) |
+| Matəm lenti | qara, eni 10 sm; bayraq dirəyin yarısına endirilir |
+| Bayrağın hündürlüyü | parçanın aşağı tərəfi yerdən azı 3 m |
+| Rənglər | mavi 306C, qırmızı Red 032C, yaşıl 362C |
+| Başqa bayraqlarla | Dövlət bayrağı qarşıdan baxanda solda, ölçüsü ən böyük |
+| Müəlliflik hüququ | dövlət rəmzləri onun obyekti deyil |
+| Himnin dili | yalnız Azərbaycan dili |
+| Gündəlik himn | hər səhər TV və radio yayımının əvvəlində |
+| Əlifba kitabı | birinci səhifədə himnin mətni və musiqisi |
+
 # II hissə — Məntiq {fənn=men}
 
 # III hissə — Azərbaycan dili {fənn=az}
