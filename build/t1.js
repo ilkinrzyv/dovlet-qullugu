@@ -226,6 +226,39 @@ function serve(port) {
   out.baResult = { pts: last.pts, max: last.max, pct: last.pct, n: last.n };
   out.passChips = await page.$$eval('.chip.pass', els => els.length);
   await shot('t1-result');
+
+  // ---- statistics: every answer counts; a wrong round in chapter 1 makes its sections weak ----
+  await go('test-c1');
+  for (let i = 0; i < 4; i++) {
+    if (await page.$('#oa')) { await page.fill('#oa', 'yox'); await page.click('[data-act="check"]'); }
+    else {
+      const q = await page.$eval('.qtext', el => el.textContent), it = BOOK.quizzes.c1.find(x => x.q === q);
+      await page.click(`.opt[data-oi="${(it.a + 1) % it.o.length}"]`);
+    }
+    await page.click('[data-act="next"]');
+  }
+  // an older, weaker mock exam, so the trend has two points
+  await page.evaluate(() => {
+    const s = JSON.parse(localStorage.getItem('dq-kitab:v1'));
+    s.exams.push({ at: Date.now() - 2 * 864e5, group: 'BA', n: 9, pts: 5, max: 11, pct: 45, timeUp: false,
+      bySubj: { qan: { right: 2, n: 5, pts: 3, max: 6 }, men: { right: 1, n: 2, pts: 1, max: 3 } } });
+    localStorage.setItem('dq-kitab:v1', JSON.stringify(s));
+  });
+  await page.reload();
+  await go('home');
+  out.statLink = await page.$$eval('.statlink[href="#statistika"]', els => els.length);
+  await go('statistika');
+  out.statTop = await page.$$eval('.stat b', els => els.map(e => e.textContent));
+  out.statSubj = await page.$$eval('.srow', els => els.map(e => e.dataset.subj + ' ' + e.querySelector('.chip').textContent));
+  out.weak = await page.$$eval('.wk', els => els.map(e => e.dataset.sec + ' ' + e.querySelector('.chn').textContent));
+  out.trendPts = await page.$$eval('#trend .pt', els => els.length);
+  await page.focus('#trend .pt');
+  out.trendTip = (await page.textContent('#trend .tip')).includes('45%') && await page.isVisible('#trend .tip');
+  out.trendRows = await page.$$eval('.tbl tbody tr', els => els.length);
+  await shot('t1-stats');
+  await page.click('.wk[data-sec="c1s1"] a.btn');
+  await page.waitForSelector('.qhead .kicker');
+  out.topicQuiz = { hash: await page.evaluate(() => location.hash), head: await page.$eval('.qhead .kicker', el => el.textContent) };
   await page.emulateMedia({ colorScheme: 'dark' });
   await go('test-c3');
   await shot('t1-figure-dark');
@@ -266,6 +299,12 @@ function serve(port) {
   eq('adviceCtx', true);
   eq('teacherSwitch', { hash: '#muellim-inf', kept: 6 });
   eq('bbMissClaude', 5); eq('examNoClaude', 0);
+  eq('statLink', 1);
+  eq('statTop', ['76%', '9', '100%', '2']);
+  eq('statSubj', ['qan 67% · orta', 'men 100% · yaxşı', 'az 100% · yaxşı', 'inf 100% · yaxşı']);
+  eq('weak', ['c1s2 50%', 'c1s1 67%']);
+  eq('trendPts', 2); eq('trendTip', true); eq('trendRows', 2);
+  eq('topicQuiz', { hash: '#test-s-c1s1', head: 'Sual 1 / 3' });
   out.errors = errors.concat(fail);
   console.log(JSON.stringify(out, null, 1));
   process.exit(out.errors.length ? 1 : 0);

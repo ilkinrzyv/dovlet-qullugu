@@ -62,6 +62,7 @@ const ICONS = {
   timer: '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/>',
   flag: '<path d="M5 21V4h11l-1.5 4L16 12H5"/>',
   chat: '<path d="M4 5h16v11H10l-4.5 3.5V16H4z"/><path d="M8 9.5h8M8 12.5h5"/>',
+  chart: '<path d="M3 20h18"/><path d="M6 20v-6M11 20V6M16 20v-9M21 20V9" transform="translate(-1.5 0)"/>',
   copy: '<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4h-9A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H8"/>'
 };
 const icon = (n, cls) => `<svg class="i${cls ? ' ' + cls : ''}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n] || ''}</svg>`;
@@ -315,7 +316,7 @@ function runPending() {
    3. Saved state (this device only)
    ========================================================= */
 const KEY = 'dq-kitab:v1';
-const blank = () => ({ read: {}, last: '', quiz: {}, wrong: {}, chk: {}, aiModel: 'auto', theme: 'auto', fs: 'm', group: GROUPS[0], exam: null, exams: [], examLast: null });
+const blank = () => ({ read: {}, last: '', quiz: {}, wrong: {}, ans: {}, chk: {}, aiModel: 'auto', theme: 'auto', fs: 'm', group: GROUPS[0], exam: null, exams: [], examLast: null });
 let S = blank();
 try { S = Object.assign(blank(), JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) { S = blank(); }
 if (!GROUPS.includes(S.group)) S.group = GROUPS[0];
@@ -373,6 +374,7 @@ function route() {
   else if (h.startsWith('test-')) { tab = 'testler'; vQuiz(h.slice(5)); }
   else if (h === 'imtahan') { tab = 'testler'; vExam(); }
   else if (h === 'imtahan-netice') { tab = 'testler'; vExamResult(); }
+  else if (h === 'statistika') { tab = 'testler'; vStats(); }
   else if (h === 'muellim' || h.startsWith('muellim-')) { tab = 'muellim'; vTeacher(h.slice(8)); }
   else if (h === 'axtar' || h.startsWith('axtar=')) { tab = 'axtar'; vSearch(h.slice(6)); }
   else if (h === 'ayarlar') { tab = 'ayarlar'; vSettings(); }
@@ -420,6 +422,7 @@ function vHome() {
         <div><b>${done}</b><span>/ ${all.length} bölmə oxunub</span></div>
         <div><b>${nq}</b><span>test sualı</span></div>
         ${bar(done, all.length)}
+        <a class="statlink" href="#statistika">${icon('chart')} Statistika: düzgünlük, zəif mövzular</a>
       </div>
       ${nextSec ? `<a class="card cont" href="#${next}">
         <span class="kicker">${S.last ? 'Davam et' : 'Başla'}</span>
@@ -647,6 +650,8 @@ function vTests() {
         <span class="sect"><b>Qarışıq test</b><span class="muted">${all.length ? `Bütün fəsillərdən ${Math.min(MIX_SIZE, all.length)} təsadüfi sual${S.quiz.mix ? ` · son nəticə ${S.quiz.mix.last}%` : ''}` : 'Hələ sual yoxdur'}</span></span>${icon('chev')}</a>
       <a class="secrow${wrong.length ? '' : ' off'}" href="#test-wrong"><span class="tick acc">${icon('redo')}</span>
         <span class="sect"><b>Səhvlərim</b><span class="muted">${wrong.length ? `${wrong.length} sual təkrar gözləyir` : 'Hələ səhv yoxdur'}</span></span>${icon('chev')}</a>
+      <a class="secrow" href="#statistika"><span class="tick acc">${icon('chart')}</span>
+        <span class="sect"><b>Statistika</b><span class="muted">Fənlər üzrə düzgünlük, zəif mövzular, sınaq dinamikası</span></span>${icon('chev')}</a>
     </div>
     ${subj.length ? `<section class="block"><div class="block-h"><h2>Fənn testləri</h2></div>
       <div class="list">${subj.map(([s, n]) => {
@@ -668,12 +673,14 @@ function quizIds(key) {
   if (key === 'mix') return shuffle(all).slice(0, MIX_SIZE);
   if (key === 'wrong') return shuffle(Object.keys(S.wrong).filter(id => all.includes(id)));
   if (key.startsWith('f-')) return shuffle(all.filter(id => qById[id].subj === key.slice(2))).slice(0, MIX_SIZE);
+  if (key.startsWith('s-')) return shuffle(all.filter(id => qById[id].s === key.slice(2)));
   return chById[key] ? chQuiz(key) : [];
 }
 function quizName(key) {
   if (key === 'mix') return 'Qarışıq test';
   if (key === 'wrong') return 'Səhvlərim';
   if (key.startsWith('f-') && SUBJ[key.slice(2)]) return SUBJ[key.slice(2)].title;
+  if (key.startsWith('s-') && secById[key.slice(2)]) return secName(secById[key.slice(2)]);
   return chById[key] ? `Fəsil ${chById[key].n}. ${chById[key].title}` : 'Test';
 }
 
@@ -704,6 +711,7 @@ function vQuiz(key) {
   const pick = v => {
     quizRun.picks[quizRun.i] = v;
     if (isRight(q, v)) delete S.wrong[it.id]; else S.wrong[it.id] = Date.now();
+    note(it.id, isRight(q, v));
     save();
     vQuiz(key);
     const nx = $('[data-act="next"]');
@@ -808,7 +816,7 @@ function vExam() {
       <p class="muted small">${esc(EXAM.pass_note)}</p></section>
     ${hist.length ? `<section class="block"><div class="block-h"><h2>Əvvəlki nəticələr</h2></div>
       <div class="list">${hist.map(r => `<div class="secrow"><span class="chn">${r.pct}%</span>
-        <span class="sect"><b>${r.pts} / ${r.max} bal</b><span class="muted">${new Date(r.at).toLocaleDateString('az')} · ${r.n} sual</span></span></div>`).join('')}</div></section>` : ''}`;
+        <span class="sect"><b>${r.pts} / ${r.max} bal</b><span class="muted">${day(r.at)} · ${r.n} sual</span></span></div>`).join('')}</div></section>` : ''}`;
   const st = $('[data-act="start"]');
   if (st) st.addEventListener('click', () => {
     const items = [];
@@ -898,6 +906,7 @@ function examFinish(timeUp) {
     r.n++; r.max += w;
     if (isRight(q, v)) { pts += w; r.right++; r.pts += w; delete S.wrong[it.id]; }
     else if (v !== undefined && v !== '') S.wrong[it.id] = Date.now();
+    if (v !== undefined && v !== '') note(it.id, isRight(q, v));
   });
   const max = examMax(items), res = { at: Date.now(), group: E.group, n: items.length, pts, max, pct: pct(pts, max), bySubj, timeUp };
   S.examLast = Object.assign({ items, picks, used: Math.min(E.secs, Math.round((Date.now() - E.start) / 1000)) }, res);
@@ -933,6 +942,123 @@ function vExamResult() {
 }
 
 /* =========================================================
+   9b. Statistics: accuracy by subject and topic, weakest topics, the mock exam trend
+   ========================================================= */
+// every answered test question (practice and exams): S.ans[id] = [right, tries, last answer right 1/0]
+function note(id, ok) { const a = S.ans[id] || [0, 0, 0]; S.ans[id] = [a[0] + (ok ? 1 : 0), a[1] + 1, ok ? 1 : 0]; }
+const LEVELS = [[80, 'pass', 'yaxşı'], [60, 'warn', 'orta'], [0, 'fail', 'zəif']];
+const level = p => LEVELS.find(l => p >= l[0]);
+const subjName = id => SUBJ[id] ? SUBJ[id].title : 'Müsahibə'; // chapters without a subject are the interview part
+function tally(ids) {
+  const t = { r: 0, n: 0, tried: 0, bank: ids.length };
+  ids.forEach(id => { const a = S.ans[id]; if (a) { t.r += a[0]; t.n += a[1]; t.tried++; } });
+  return t;
+}
+// a topic is a section of the book; it needs two answers before it can count as weak
+function weakTopics(limit) {
+  const by = {};
+  pool().forEach(id => {
+    const q = qById[id], a = S.ans[id];
+    if (!a || !secById[q.s]) return;
+    const t = by[q.s] || (by[q.s] = { r: 0, n: 0 });
+    t.r += a[0]; t.n += a[1];
+  });
+  return Object.keys(by).map(sid => ({ s: secById[sid], r: by[sid].r, n: by[sid].n, p: pct(by[sid].r, by[sid].n) }))
+    .filter(x => x.n >= 2 && x.p < 80 && vis(x.s) && vis(chById[secCh[x.s.id]]))
+    .sort((a, b) => a.p - b.p || b.n - a.n).slice(0, limit);
+}
+const secName = s => `${s.num ? s.num + '. ' : ''}${s.title}`;
+const MON = ['yan', 'fev', 'mar', 'apr', 'may', 'iyn', 'iyl', 'avq', 'sen', 'okt', 'noy', 'dek']; // browsers often lack az month names
+const day = t => { const d = new Date(t); return `${d.getDate()} ${MON[d.getMonth()]}`; };
+
+function vStats() {
+  topbar('Testlər', 'Statistika', 'testler');
+  const all = pool(), T = tally(all), secs = learnable();
+  const full = S.exams.filter(r => r.group === S.group && !r.subj);
+  const best = full.reduce((m, r) => Math.max(m, r.pct), -1);
+  const chk = Object.keys(S.chk).filter(id => { const t = inlineAt(id); return t && vis(t.s); }).length;
+  const subjects = [...PROG.subjects.map(s => s.id), ''].map(id => {
+    const mine = secs.filter(sid => (chById[secCh[sid]].subj || '') === id);
+    return { id, t: tally(all.filter(q => (qById[q].subj || '') === id)), read: mine.filter(sid => S.read[sid]).length, secs: mine.length };
+  }).filter(x => x.t.bank || x.secs);
+  const weak = weakTopics(8);
+  const cols = EXAM.blocks.filter(b => full.some(r => r.bySubj[b.subj]));
+  $('#view').innerHTML = `
+    <span class="kicker">${esc(S.group)} qrupu</span>
+    <h1 class="h1">Statistika</h1>
+    ${T.n ? '' : '<p class="card note">Hələ test cavabı yoxdur. <a href="#testler">Testlər</a> bölməsində fəsil testi və ya qarışıq test həll et — düzgünlük və zəif mövzular burada toplanacaq.</p>'}
+    <div class="card stat">
+      <div><b>${T.n ? pct(T.r, T.n) + '%' : '—'}</b><span>düz cavab</span></div>
+      <div><b>${T.tried}</b><span>/ ${T.bank} sual həll edilib</span></div>
+      <div><b>${best >= 0 ? best + '%' : '—'}</b><span>ən yaxşı sınaq</span></div>
+      <div><b>${chk}</b><span>yoxlama sualı həll olunub</span></div>
+    </div>
+    <section class="block"><div class="block-h"><h2>Fənlər üzrə</h2></div>
+      <div class="list">${subjects.map(x => {
+        const p = x.t.n ? pct(x.t.r, x.t.n) : null, L = p == null ? null : level(p);
+        return `<div class="srow" data-subj="${x.id || 'other'}">
+          <div class="srow-h"><b>${esc(subjName(x.id))}</b>${L ? `<span class="chip ${L[1]}">${p}% · ${L[2]}</span>` : '<span class="chip">cavab yoxdur</span>'}</div>
+          ${bar(x.t.r, x.t.n)}
+          <span class="muted small">${x.t.tried}/${x.t.bank} sual həll edilib · ${x.t.r}/${x.t.n} cavab düz · oxunub ${x.read}/${x.secs} bölmə</span>
+        </div>`;
+      }).join('')}</div>
+      <p class="muted small">Düzgünlük: məşq testləri və sınaq imtahanlarındakı bütün cavablar. 80%-dən yuxarı — yaxşı, 60–79% — orta.</p></section>
+    <section class="block"><div class="block-h"><h2>Zəif mövzular</h2></div>
+      ${weak.length ? `<div class="list">${weak.map(x => `<div class="secrow wk" data-sec="${x.s.id}"><span class="chn">${x.p}%</span>
+        <span class="sect"><a href="#${x.s.id}"><b>${esc(secName(x.s))}</b></a><span class="muted">${esc(subjName(chById[secCh[x.s.id]].subj))} · ${x.r}/${x.n} cavab düz</span></span>
+        <a class="btn sm" href="#test-s-${x.s.id}">Məşq et</a></div>`).join('')}</div>`
+        : `<p class="card muted empty">${T.n ? 'Zəif mövzu yoxdur: ən azı 2 cavab verilmiş bütün mövzularda düzgünlük 80% və yuxarıdır.' : 'Test həll etdikcə düzgünlüyü 80%-dən aşağı olan mövzular burada görünəcək.'}</p>`}
+      <p class="muted small">Mövzu kitabın bölməsidir; sayılması üçün ən azı 2 cavab lazımdır. “Məşq et” yalnız o bölmənin suallarını verir.</p></section>
+    <section class="block"><div class="block-h"><h2>Sınaq imtahanı dinamikası</h2></div>
+      ${full.length ? `${full.length > 1 ? '<div class="card trend" id="trend"></div>' : ''}
+      <div class="tbl nums${full.length > 1 ? ' block' : ''}"><table><thead><tr><th>Tarix</th><th>Ümumi</th>${cols.map(b => `<th>${esc(SUBJ[b.subj].title)}</th>`).join('')}</tr></thead>
+        <tbody>${full.slice(0, 10).map(r => `<tr><td>${day(r.at)}</td><td><b>${r.pct}%</b></td>${cols.map(b => { const x = r.bySubj[b.subj];
+          return `<td>${x ? `${pct(x.right, x.n)}% <span class="muted small">${x.right}/${x.n}</span>` : '—'}</td>`; }).join('')}</tr>`).join('')}</tbody></table></div>`
+        : '<p class="card muted empty">Hələ sınaq imtahanı verməmisən — <a href="#imtahan">sınaq imtahanı</a> bitəndən sonra nəticələr burada qrafikdə görünəcək.</p>'}</section>`;
+  trendRows = full.length > 1 ? full.slice(0, 12).reverse() : null;
+  if (trendRows) drawTrend($('#trend'), trendRows);
+}
+let trendRows = null;
+
+// mock exam results over time: one line on a fixed 0–100% scale, the group's pass thresholds as a band
+function drawTrend(el, rows) {
+  const passes = EXAM.pass.filter(r => r.sub.startsWith(S.group)).map(r => r.pct);
+  const lo = Math.min(...passes), hi = Math.max(...passes);
+  el.dataset.w = el.clientWidth;
+  const W = Math.max(240, el.clientWidth - 32), H = 190, L = 40, R = 14, T = 14, B = 26;
+  const X = i => L + (rows.length > 1 ? i * (W - L - R) / (rows.length - 1) : (W - L - R) / 2), Y = p => T + (100 - p) * (H - T - B) / 100;
+  const every = Math.ceil(rows.length / 8);
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Sınaq imtahanı nəticələri, faizlə: ${rows.map(r => r.pct + '%').join(', ')}">
+    <rect class="band" x="${L}" y="${Y(hi)}" width="${W - L - R}" height="${Y(lo) - Y(hi)}"/>
+    ${[0, 50, 100].map(v => `<line class="grid" x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}"/><text class="ax" x="${L - 8}" y="${Y(v) + 4}" text-anchor="end">${v}%</text>`).join('')}
+    <text class="ax" x="${L + 6}" y="${Y(hi) + 12}">keçid ${lo}–${hi}%</text>
+    ${rows.map((r, i) => i % every && i !== rows.length - 1 ? '' : `<text class="ax" x="${X(i)}" y="${H - 6}" text-anchor="middle">${i + 1}</text>`).join('')}
+    <line class="guide" x1="0" x2="0" y1="${T}" y2="${H - B}" visibility="hidden"/>
+    <polyline class="ln" points="${rows.map((r, i) => `${X(i)},${Y(r.pct)}`).join(' ')}"/>
+    ${rows.map((r, i) => `<circle class="pt" cx="${X(i)}" cy="${Y(r.pct)}" r="4.5" tabindex="0" data-i="${i}" aria-label="İmtahan ${i + 1}, ${day(r.at)}: ${r.pct}%"/>`).join('')}
+    <text class="val" x="${X(rows.length - 1)}" y="${Y(rows[rows.length - 1].pct) - 11}" text-anchor="${rows.length > 1 ? 'end' : 'middle'}">${rows[rows.length - 1].pct}%</text>
+  </svg><div class="tip" hidden></div>`;
+  const svg = $('svg', el), tip = $('.tip', el), guide = $('.guide', el);
+  const show = i => {
+    const r = rows[i];
+    guide.setAttribute('x1', X(i)); guide.setAttribute('x2', X(i)); guide.setAttribute('visibility', 'visible');
+    tip.innerHTML = `<b>${r.pct}%</b> · ${r.pts}/${r.max} bal<br><span>İmtahan ${i + 1} · ${day(r.at)}${r.timeUp ? ' · vaxt bitdi' : ''}</span>`;
+    tip.hidden = false;
+    const k = svg.getBoundingClientRect().width / W;
+    tip.style.left = Math.min(Math.max(X(i) * k + 16, 70), el.clientWidth - 70) + 'px';
+    tip.style.top = (Y(r.pct) * k + 12 + 14) + 'px';
+  };
+  const hide = () => { tip.hidden = true; guide.setAttribute('visibility', 'hidden'); };
+  svg.addEventListener('pointermove', e => {
+    const k = svg.getBoundingClientRect().width / W, x = (e.clientX - svg.getBoundingClientRect().left) / k;
+    show(rows.length > 1 ? Math.max(0, Math.min(rows.length - 1, Math.round((x - L) / ((W - L - R) / (rows.length - 1))))) : 0);
+  });
+  svg.addEventListener('pointerleave', hide);
+  $$('.pt', el).forEach(c => { c.addEventListener('focus', () => show(+c.dataset.i)); c.addEventListener('blur', hide); });
+}
+window.addEventListener('resize', () => { const el = $('#trend'); if (el && trendRows && el.dataset.w !== String(el.clientWidth)) drawTrend(el, trendRows); });
+
+/* =========================================================
    10. Virtual teacher: explanations and advice from Claude, with the reader's progress as context
    ========================================================= */
 const TEACH_HINT = {
@@ -956,11 +1082,12 @@ function myStatus() {
   const wrong = {};
   Object.keys(S.wrong).forEach(id => { const q = qById[id]; if (q && vis(q)) wrong[q.subj] = (wrong[q.subj] || 0) + 1; });
   const w = PROG.subjects.filter(s => wrong[s.id]).map(s => `${s.title} ${wrong[s.id]}`);
-  const ex = S.exams.find(r => r.group === S.group);
+  const ex = S.exams.find(r => r.group === S.group && !r.subj), wk = weakTopics(4);
   return [`Mənim vəziyyətim: kitabda ${done}/${all.length} bölmə oxumuşam.`,
     w.length ? `Təkrar gözləyən səhv suallarım: ${w.join(', ')}.` : 'Hələ səhv sual qeydə alınmayıb.',
+    wk.length ? `Zəif mövzularım: ${wk.map(x => `${secName(x.s)} (${x.p}%)`).join(', ')}.` : '',
     ex ? `Son sınaq imtahanı: ${ex.pct}% (${EXAM.blocks.filter(b => ex.bySubj[b.subj]).map(b => `${SUBJ[b.subj].title} ${ex.bySubj[b.subj].right}/${ex.bySubj[b.subj].n}`).join(', ')}).` : 'Sınaq imtahanı hələ verməmişəm.'
-  ].join(' ');
+  ].filter(Boolean).join(' ');
 }
 function examFacts() {
   const open = EXAM.blocks.reduce((a, b) => a + ((b.open && b.open[S.group]) || 0), 0);
