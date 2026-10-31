@@ -115,6 +115,25 @@ const MOCK = () => {
   await page.click('[data-act="ask-yes"]');
   out.reset = await page.evaluate(() => { const s = JSON.parse(localStorage.getItem('dq-kitab:v1')); return { chk: Object.keys(s.chk).length, model: s.aiModel }; });
 
+  // the look: light by default; a theme the claude.ai viewer applies later does not override the reader's choice
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await page.reload();
+  await page.waitForSelector('#view > *');
+  out.look = await page.evaluate(async () => {
+    const root = document.documentElement, first = root.getAttribute('data-theme');
+    root.setAttribute('data-theme', 'dark');                       // what the viewer does when its own theme is dark
+    await new Promise(r => setTimeout(r, 50));
+    return [first, root.getAttribute('data-theme'), getComputedStyle(document.body).backgroundColor];
+  });
+  await page.goto(URL0 + '#ayarlar');
+  await page.waitForSelector('#set-ai');
+  await page.click('[data-theme="auto"]');
+  out.lookSystem = await page.evaluate(async () => {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    await new Promise(r => setTimeout(r, 50));
+    return document.documentElement.getAttribute('data-theme');
+  });
+
   // outside claude.ai (a saved copy): no Claude, the book still works
   const bare = await open(false);
   await bare.goto(URL0 + '#c3s1');
@@ -136,6 +155,8 @@ const MOCK = () => {
   eq('opus', { model: 'claude-opus-5-5', meta: true });
   eq('reset', { chk: 0, model: 'claude-opus-5-5' });
   eq('bare', 'Claude bu görünüşdə əlçatan deyil.');
+  eq('look', ['light', 'light', 'rgb(245, 243, 236)']);
+  eq('lookSystem', 'dark');
   out.errors = errors.concat(fail);
   console.log(JSON.stringify(out, null, 1));
   process.exit(out.errors.length ? 1 : 0);

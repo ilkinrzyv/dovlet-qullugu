@@ -79,6 +79,7 @@ NAME = 'Dövlət Qulluğu'
 nch = sum(1 for c in book['chapters'] if c['kind'] == 'chapter')
 nq = sum(len(v) for v in book['quizzes'].values())
 DESC = f'Dövlət qulluğu imtahanlarına hazırlıq: {nch} fəsil, {nq} test sualı. Offline işləyir.'
+LOOK = open(os.path.join(BASE, 'look.js'), encoding='utf-8').read().strip()  # the saved look, applied before the page paints
 INDEX = f'''<!doctype html>
 <html lang="az">
 <head>
@@ -86,9 +87,9 @@ INDEX = f'''<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{NAME}</title>
 <meta name="description" content="{DESC}">
-<meta name="theme-color" content="#F5F3EC" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#111317" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F5F3EC">
 <meta name="color-scheme" content="light dark">
+<script>{LOOK}</script>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
 <link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">

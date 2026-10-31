@@ -290,7 +290,21 @@ function serve(port) {
   out.statSubjEx = await page.$$eval('.sx', els => els.map(e => e.getAttribute('href') + ' ' + e.querySelector('.chn').textContent));
   out.statTrendAfter = await page.$$eval('#trend .pt', els => els.length);
   await shot('t1-stats-subj');
+  // ---- the look: light by default even on a dark system; "Sistem" saved while it was the default turns light once ----
   await page.emulateMedia({ colorScheme: 'dark' });
+  await page.reload();
+  await page.waitForSelector('#view > *');
+  out.lightDefault = await page.evaluate(() => [document.documentElement.getAttribute('data-theme'), getComputedStyle(document.body).backgroundColor]);
+  await page.evaluate(() => { const s = JSON.parse(localStorage.getItem('dq-kitab:v1')); s.theme = 'auto'; delete s.themeV; localStorage.setItem('dq-kitab:v1', JSON.stringify(s)); });
+  await page.reload();
+  await go('ayarlar');
+  out.oldSystem = [await page.$eval('[data-theme][aria-checked="true"]', b => b.dataset.theme), await page.evaluate(() => document.documentElement.getAttribute('data-theme'))];
+  await page.click('[data-theme="auto"]');
+  await page.reload();
+  await page.waitForSelector('#view > *');
+  out.systemKept = await page.evaluate(() => [document.documentElement.getAttribute('data-theme'), getComputedStyle(document.body).backgroundColor]);
+  await go('ayarlar');
+  await page.click('[data-theme="dark"]');
   await go('test-c3');
   await shot('t1-figure-dark');
 
@@ -343,6 +357,9 @@ function serve(port) {
   eq('menResult', { h1: '2 / 3 bal · 67%', passChips: 0, again: '#imtahan-men', saved: 'men' });
   eq('fullHist', 2); eq('homeBest', 'ən yaxşı: 100%');
   eq('statSubjEx', ['#imtahan-men 67%']); eq('statTrendAfter', 2);
+  eq('lightDefault', ['light', 'rgb(245, 243, 236)']);
+  eq('oldSystem', ['light', 'light']);
+  eq('systemKept', [null, 'rgb(17, 19, 23)']);
   out.errors = errors.concat(fail);
   console.log(JSON.stringify(out, null, 1));
   process.exit(out.errors.length ? 1 : 0);

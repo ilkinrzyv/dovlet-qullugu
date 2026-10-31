@@ -316,19 +316,32 @@ function runPending() {
    3. Saved state (this device only)
    ========================================================= */
 const KEY = 'dq-kitab:v1';
-const blank = () => ({ read: {}, last: '', quiz: {}, wrong: {}, ans: {}, chk: {}, aiModel: 'auto', theme: 'auto', fs: 'm', group: GROUPS[0], exam: null, exams: [], examLast: null });
+// themeV: saved after light became the default look (2026-10-31); before that "auto" (Sistem) was only the default
+const blank = () => ({ read: {}, last: '', quiz: {}, wrong: {}, ans: {}, chk: {}, aiModel: 'auto', theme: 'light', themeV: 1, fs: 'm', group: GROUPS[0], exam: null, exams: [], examLast: null });
 let S = blank();
-try { S = Object.assign(blank(), JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) { S = blank(); }
+try {
+  const saved = JSON.parse(localStorage.getItem(KEY) || '{}');
+  if (saved.theme === 'auto' && !saved.themeV) saved.theme = 'light';   // the same rule as look.js
+  S = Object.assign(blank(), saved);
+} catch (e) { S = blank(); }
 if (!GROUPS.includes(S.group)) S.group = GROUPS[0];
 function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { toast('Yadda saxlamaq alınmadı — brauzerin yaddaşı doludur və ya bağlıdır.'); } }
 
 const FS = { s: '15.5px', m: '17px', l: '19px' };
-let ownTheme = false; // data-theme set by this app (the claude.ai viewer sets its own when the reader picks one there)
+let ownTheme = !!window.DQ_LOOK; // data-theme set by this app (look.js sets it first); the claude.ai viewer may set its own
+let lookWatch = null;
 function applyLook() {
   const root = document.documentElement;
   if (S.theme === 'light' || S.theme === 'dark') { root.setAttribute('data-theme', S.theme); ownTheme = true; }
   else if (ownTheme) { root.removeAttribute('data-theme'); ownTheme = false; }
   root.style.setProperty('--fs', FS[S.fs] || FS.m);
+  // a look the reader chose here wins over one the claude.ai viewer applies later; "Sistem" leaves the viewer's in place
+  if (!lookWatch && window.MutationObserver) {
+    lookWatch = new MutationObserver(() => {
+      if ((S.theme === 'light' || S.theme === 'dark') && root.getAttribute('data-theme') !== S.theme) root.setAttribute('data-theme', S.theme);
+    });
+    lookWatch.observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+  }
 }
 
 /* what the chosen position group sees */
@@ -1280,7 +1293,7 @@ function vSettings() {
       </div></section>
     <section class="block"><div class="block-h"><h2>Görünüş</h2></div>
       <div class="card stack">
-        <div class="set"><span>Rejim</span>${seg('theme', S.theme, [['auto', 'Sistem'], ['light', 'Açıq'], ['dark', 'Qaranlıq']])}</div>
+        <div class="set"><span>Rejim</span>${seg('theme', S.theme, [['light', 'Açıq'], ['dark', 'Qaranlıq'], ['auto', 'Sistem']])}</div>
         <div class="set"><span>Mətn ölçüsü</span>${seg('fs', S.fs, [['s', 'Kiçik'], ['m', 'Orta'], ['l', 'Böyük']])}</div>
       </div></section>
     <section class="block"><div class="block-h"><h2>Claude</h2></div>

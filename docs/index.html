@@ -5,9 +5,19 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Dövlət Qulluğu</title>
 <meta name="description" content="Dövlət qulluğu imtahanlarına hazırlıq: 32 fəsil, 1025 test sualı. Offline işləyir.">
-<meta name="theme-color" content="#F5F3EC" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#111317" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F5F3EC">
 <meta name="color-scheme" content="light dark">
+<script>// The saved look, applied before the page paints: build_pwa.py and build_page.py inline this at the top of the page.
+// The default is light; a state saved while "Sistem" was still the default (no themeV) counts as light too. app.js
+// (applyLook) takes over after load and keeps the same rule.
+(function () {
+  var t = 'light';
+  try {
+    var s = JSON.parse(localStorage.getItem('dq-kitab:v1') || '{}');
+    if (s.theme === 'dark' || (s.theme === 'auto' && s.themeV)) t = s.theme;
+  } catch (e) { }
+  if (t !== 'auto') { document.documentElement.setAttribute('data-theme', t); window.DQ_LOOK = 1; }
+})();</script>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
 <link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">

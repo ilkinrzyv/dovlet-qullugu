@@ -16,6 +16,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 book = json.load(open(args.book, encoding='utf-8'))
 css = open(os.path.join(BASE, 'app.css'), encoding='utf-8').read()
 js = open(os.path.join(BASE, 'app.js'), encoding='utf-8').read()
+look = open(os.path.join(BASE, 'look.js'), encoding='utf-8').read().strip()  # the saved look before the page paints
 data = json.dumps(book, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 assert '</script' not in js.lower()
 
@@ -34,6 +35,9 @@ page = f'''<title>Dövlət Qulluğu Kitabı</title>
 <style>
 {css}
 </style>
+<script>
+{look}
+</script>
 <header id="topbar" class="topbar"><div class="wrap"></div></header>
 <main id="view" class="wrap" tabindex="-1" aria-live="polite"></main>
 <nav id="tabbar" class="tabbar" aria-label="Əsas bölmələr"></nav>
