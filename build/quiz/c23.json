@@ -1,0 +1,15 @@
+{
+"23": [
+ {"s":"23.1","q":"Emal olunub mənalandırılmış verilənlər nəyə çevrilir?","o":["məlumata","bitə","koda","fayla","alqoritmə"],"a":0,"e":"Verilən — emal olunmamış faktlardır; onlar emal olunub mənalandırıldıqda məlumata çevrilir. Təcrübə ilə sistemləşmiş məlumat isə bilikdir."},
+ {"s":"23.1","q":"Kompüterin alqoritmik təminatı ingiliscə necə adlanır?","o":["brainware","hardware","software","firmware","shareware"],"a":0,"e":"Hardware — texniki, software — proqram, brainware — alqoritmik təminatdır."},
+ {"s":"23.2","q":"Toxunma ilə qavranılan informasiya necə adlanır?","o":["taktil","vizual","audial","olfaktor","qustator"],"a":0,"e":"Taktil — toxunma; vizual — görmə; audial — eşitmə; olfaktor — qoxu; qustator — dad."},
+ {"s":"23.3","q":"1 bayt neçə bitdir?","o":["8","2","10","16","1024"],"a":0,"e":"1 bayt = 8 bit."},
+ {"s":"23.3","q":"Hansı vahid ən böyükdür?","o":["TB","GB","MB","KB","bayt"],"a":0,"e":"Bayt < KB < MB < GB < TB; hər növbəti vahid əvvəlkindən 1024 dəfə böyükdür."},
+ {"s":"23.3","t":"open","q":"1 KB neçə baytdır? (rəqəmlə yaz)","a":["1024"],"e":"1 KB = 2¹⁰ = 1024 bayt."},
+ {"s":"23.3","q":"İkilik say sistemində 101₂ + 11₂ cəmi necə yazılır?","o":["1000","112","110","1110","1001"],"a":0,"e":"101₂ = 5, 11₂ = 3, cəm 8 = 1000₂. 112 ikilik yazılış deyil — ikilik sistemdə 2 rəqəmi yoxdur."},
+ {"s":"23.4","q":"UTF-8 kodlaşdırmasında bir simvol neçə bayt tuta bilər?","o":["1-dən 4-ə qədər","həmişə 1","həmişə 2","həmişə 4","8"],"a":0,"e":"UTF-8 dəyişən uzunluqlu kodlaşdırmadır: latın hərfləri 1 bayt, Azərbaycan hərfləri (ə, ğ, ş...) 2 bayt, bəzi simvollar 3–4 bayt tutur."},
+ {"s":"23.4","t":"open","q":"Hər simvolu 1 baytla kodlaşdırılan 8 simvolluq söz neçə bit tutur? (rəqəmlə yaz)","a":["64"],"e":"8 simvol · 1 bayt = 8 bayt = 64 bit."},
+ {"s":"23.5","q":"Rəng dərinliyi 24 bit olarsa, palitrada neçə rəng olur?","o":["16 777 216","24","65 536","256","48"],"a":0,"e":"2²⁴ = 16 777 216 rəng. 65 536 = 2¹⁶, 256 = 2⁸."},
+ {"s":"23.5","q":"Səsin kodlaşdırılmasında saniyədəki ölçmələrin sayı necə adlanır?","o":["diskretləşdirmə tezliyi","rəng dərinliyi","piksel","kvantlama dərinliyi","bit"],"a":0,"e":"Diskretləşdirmə tezliyi saniyədəki ölçmələrin sayıdır (Hs). Kvantlama dərinliyi bir ölçmənin bit sayıdır."}
+]
+}

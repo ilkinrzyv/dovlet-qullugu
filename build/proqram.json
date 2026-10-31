@@ -183,7 +183,7 @@
  {
   "id": "inf", "title": "İnformatika", "opts": 5,
   "topics": [
-   {"num": "1", "title": "İnformatika və onun əsas anlayışları",
+   {"num": "1", "see": ["c23"], "title": "İnformatika və onun əsas anlayışları",
     "items": [
      "İnformatika fundamental elm kimi: predmeti və vəzifələri", "İnformatikanın tərkib hissələri",
      "İnformasiya anlayışı və əsas xassələri", "Verilən, məlumat və bilik", "İnformasiyanın formaları və təqdimolunma üsulları",

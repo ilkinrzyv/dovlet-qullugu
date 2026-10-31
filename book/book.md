@@ -4935,4 +4935,216 @@ Cavab: A
 
 # IV hissə — İnformatika {fənn=inf}
 
+## Fəsil 23. İnformasiya və kodlaşdırma
+
+İmtahanda İnformatikadan **15 sual** var, qapalı suallarda **5 variant** verilir. DİM-in proqramı geniş mövzunu əhatə edir: informasiya, kompüter, proqram təminatı, Windows 11, Office 2019, Access, şəbəkələr, internet, elektron dövlət və informasiya təhlükəsizliyi. Bu fəsil birinci mövzudur: **informasiya, onun ölçülməsi və kodlaşdırılması**. Burada hesablama tələb edən sualların çoxu var.
+
+### 23.1. İnformatika və informasiya
+
+**İnformatika** informasiyanın toplanması, saxlanması, emalı və ötürülməsi üsullarını və vasitələrini (ilk növbədə kompüteri) öyrənən elmdir. Onun üç tərkib hissəsi:
+
+| Hissə | İngiliscə | Nədir |
+| --- | --- | --- |
+| Texniki təminat | **hardware** | kompüter və qurğular |
+| Proqram təminatı | **software** | proqramlar |
+| Alqoritmik təminat | **brainware** | alqoritmlər, məsələnin həll üsulları |
+
+**Verilən, məlumat, bilik:**
+
+- **Verilən** — qeydə alınmış, hələ emal olunmamış faktlar (rəqəmlər, simvollar);
+- **məlumat** — emal olunub mənalandırılmış verilən;
+- **bilik** — təcrübə ilə sistemləşdirilmiş, nəticə çıxarmağa imkan verən informasiya.
+
+**İnformasiyanın əsas xassələri:**
+
+| Xassə | Mənası |
+| --- | --- |
+| Obyektivlik | kiminsə fikrindən asılı deyil |
+| Düzgünlük (dəqiqlik) | həqiqi vəziyyəti əks etdirir |
+| Dolğunluq | qərar qəbul etmək üçün kifayətdir |
+| Aktuallıq | indiki zaman üçün əhəmiyyətlidir |
+| Faydalılıq | məqsədə çatmağa kömək edir |
+| Anlaşıqlılıq | qəbul edənin başa düşəcəyi formadadır |
+
+```nümunə
+S: İnformasiyanın hansı xassəsi onun indiki zaman üçün əhəmiyyətli olmasını bildirir?
+A) aktuallıq
+B) dolğunluq
+C) obyektivlik
+D) anlaşıqlılıq
+E) dəqiqlik
+Cavab: A
+İzah: **Aktuallıq** — informasiyanın vaxtında olması, köhnəlməməsidir: dünənki hava proqnozu bu gün aktual deyil. Dolğunluq kifayət qədər olmaq, obyektivlik kiminsə fikrindən asılı olmamaq, anlaşıqlılıq başa düşülən olmaq deməkdir.
+```
+
+```yoxla
+S: Kompüterin texniki təminatı ingiliscə necə adlanır?
+A) hardware
+B) software
+C) brainware
+D) firmware
+E) freeware
+Cavab: A
+```
+
+### 23.2. İnformasiyanın formaları, növləri və prosesləri
+
+**Təqdimolunma formaları:** mətn, ədədi, qrafik (şəkil), səs, video; bir neçəsinin birləşməsi — **multimedia**.
+
+**Qavrama üsuluna görə növlər:**
+
+| Növ | Hiss orqanı |
+| --- | --- |
+| Vizual | görmə |
+| Audial | eşitmə |
+| Taktil | toxunma |
+| Olfaktor | qoxu |
+| Qustator (dad) | dad |
+
+**Əsas informasiya prosesləri:** **toplanma**, **saxlanma**, **emal** və **ötürülmə**. Ötürülmədə üç tərəf var: **mənbə** → **rabitə kanalı** → **qəbuledici**.
+
+```nümunə
+S: İnsanın qoxu ilə qavradığı informasiya necə adlanır?
+A) olfaktor
+B) audial
+C) vizual
+D) taktil
+E) qustator
+Cavab: A
+İzah: **Olfaktor** informasiya qoxu ilə qavranılır. Audial — eşitmə, vizual — görmə, taktil — toxunma, qustator — dad ilə.
+```
+
+```yoxla
+S: Telefonla danışıqda informasiyanın ötürülməsi prosesində telefon xətti hansı rolu oynayır?
+A) rabitə kanalı
+B) mənbə
+C) qəbuledici
+D) yaddaş
+E) emal vasitəsi
+Cavab: A
+```
+
+### 23.3. İnformasiyanın ölçü vahidləri və ikilik say sistemi
+
+Kompüter informasiyanı **ikilik** formada — 0 və 1 ilə saxlayır. Ən kiçik vahid **bit**dir (0 və ya 1).
+
+| Vahid | Qiymət |
+| --- | --- |
+| 1 bayt | **8 bit** |
+| 1 KB (kilobayt) | **1024 bayt** |
+| 1 MB (meqabayt) | 1024 KB |
+| 1 GB (giqabayt) | 1024 MB |
+| 1 TB (terabayt) | 1024 GB |
+| 1 PB (petabayt) | 1024 TB |
+
+**i bit ilə neçə müxtəlif kod?** N = **2ⁱ**: 1 bit — 2, 2 bit — 4, 3 bit — 8, 8 bit — 256. Tərsinə: N müxtəlif simvolu kodlaşdırmaq üçün ən azı elə i bit lazımdır ki, 2ⁱ ≥ N olsun.
+
+**İkilikdən onluğa:** hər rəqəmi öz yerinin “çəkisinə” vur və topla: **1011₂** = 1·8 + 0·4 + 1·2 + 1·1 = **11**. **Onluqdan ikiliyə:** ədədi ardıcıl 2-yə böl, qalıqları **sondan əvvələ** yaz: 12 → 6 (0) → 3 (0) → 1 (1) → 0 (1) → **1100₂**.
+
+```nümunə
+S: 3 KB neçə bitdir?
+A) 24576
+B) 3072
+C) 24000
+D) 3000
+E) 6144
+Cavab: A
+İzah: 1 KB = 1024 bayt, deməli 3 KB = 3 · 1024 = **3072 bayt**. Hər bayt 8 bitdir: 3072 · 8 = **24 576 bit**. B variantı baytların sayıdır, C və D isə 1 KB-ı səhvən 1000 bayt saymaqdan alınır.
+```
+
+```yoxla
+S: 5 bitlə neçə müxtəlif simvolu kodlaşdırmaq olar? (rəqəmlə yaz)
+Cavab: 32
+```
+
+```nümunə
+S: 1011₂ ədədi onluq say sistemində neçədir?
+A) 11
+B) 13
+C) 9
+D) 1011
+E) 10
+Cavab: A
+İzah: Sağdan sola rəqəmlərin çəkiləri: 1, 2, 4, 8. 1011₂ = **1·8 + 0·4 + 1·2 + 1·1** = 8 + 2 + 1 = **11**.
+```
+
+```yoxla
+S: Onluq say sistemindəki 12 ədədi ikilik say sistemində necə yazılır?
+A) 1100
+B) 1010
+C) 1110
+D) 0011
+E) 1001
+Cavab: A
+```
+
+### 23.4. Simvolların kodlaşdırılması: ASCII və UNICODE
+
+Hər simvola (hərf, rəqəm, işarə) bir **ədədi kod** uyğun gəlir; kodlar cədvəllə müəyyən olunur.
+
+| Standart | Bit | Simvol sayı |
+| --- | --- | --- |
+| **ASCII** (standart) | 7 | **128** (latın hərfləri, rəqəmlər, işarələr) |
+| Genişlənmiş ASCII | 8 (1 bayt) | 256 |
+| **UNICODE** (məktəb kursundakı variant) | 16 (2 bayt) | **65 536** |
+
+Müasir UNICODE dünyanın bütün yazılarını əhatə edir (1 milyondan çox kod nöqtəsi); kodlar **UTF-8** (bir simvol 1–4 bayt) və **UTF-16** (2 və ya 4 bayt) formatlarında yazılır. Azərbaycan hərfləri (ə, ğ, ş...) standart ASCII-də yoxdur, onlar UNICODE ilə kodlaşdırılır.
+
+**Mətnin həcmi** = simvolların sayı × bir simvolun bit (bayt) sayı. Boşluq və durğu işarələri də simvoldur.
+
+```nümunə
+S: Hər simvolu 16 bitlə kodlaşdırılan 200 simvolluq mətnin həcmi neçə baytdır?
+A) 400
+B) 200
+C) 3200
+D) 1600
+E) 800
+Cavab: A
+İzah: 16 bit = **2 bayt**. 200 simvol · 2 bayt = **400 bayt**. C variantı (3200) bitlərin sayıdır — sual isə baytı soruşur.
+```
+
+```yoxla
+S: Standart ASCII cədvəlində neçə simvol var?
+A) 128
+B) 256
+C) 65536
+D) 64
+E) 1024
+Cavab: A
+```
+
+### 23.5. Təsvir və səsin kodlaşdırılması
+
+**Rastr təsvir** nöqtələrdən — **piksellərdən** ibarətdir. Hər pikselin rəngi **i bit**lə kodlaşdırılır (**rəng dərinliyi**); onda palitrada **2ⁱ rəng** olur: 1 bit — ağ-qara, 8 bit — 256 rəng, 24 bit — 16 777 216 rəng.
+
+**Təsvirin həcmi** = en (piksel) × hündürlük (piksel) × rəng dərinliyi (bit).
+
+**Səs** analoq siqnaldır; kompüter onu müəyyən fasilələrlə ölçür:
+
+- **diskretləşdirmə tezliyi** — saniyədəki ölçmələrin sayı (Hs, məs., 44 100 Hs);
+- **kvantlama dərinliyi** — bir ölçmənin bit sayı (məs., 16 bit).
+
+**Səs faylının həcmi** = tezlik × dərinlik × müddət (san) × kanal sayı (mono 1, stereo 2).
+
+```nümunə
+S: Hər pikseli 8 bitlə kodlaşdırılan 100 × 50 piksellik təsvir neçə bayt yaddaş tutur?
+A) 5000
+B) 40000
+C) 625
+D) 1000
+E) 50000
+Cavab: A
+İzah: Piksellərin sayı: 100 · 50 = **5000**. Hər piksel 8 bit = **1 bayt**, deməli həcm 5000 bayt. B (40 000) bitlərin sayıdır.
+```
+
+```yoxla
+S: Palitrada 256 rəng varsa, bir pikselin rəngi neçə bitlə kodlaşdırılır?
+A) 8
+B) 256
+C) 16
+D) 4
+E) 2
+Cavab: A
+```
+
 # V hissə — Müsahibə
