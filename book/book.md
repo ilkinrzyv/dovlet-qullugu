@@ -1357,6 +1357,222 @@ Maddə 13-1-ə görə:
 | İnformasiya şikayəti | 10 + 10 iş günü | 13-1.1 |
 | İnformasiya sahibinin sənəd təqdimi | 5 iş günü | 13-1.6 |
 
+## Fəsil 11. “Məhkəmələr və hakimlər haqqında” Qanun
+
+Qanun 10 iyun 1997-ci ildə qəbul edilib (№ 310-IQ). Proqrama yalnız bu maddələr daxildir: məhkəmə hakimiyyəti (1, 3, 4, 5), ədalət mühakiməsinin əsas müddəaları (7–14) və məhkəmə sistemi (19). Burada Konstitusiyanın maddələrinə çoxlu istinad var — onları da yadda saxla.
+
+### 11.1. Məhkəmə hakimiyyəti
+
+**Məhkəmələrin təsisi (maddə 1):**
+
+- Azərbaycanda **qanunlarla təsis edilmiş** məhkəmələr fəaliyyət göstərir.
+- Konstitusiyanın **125-ci maddəsinin VI hissəsinə** uyğun olaraq **qadağandır:** məhkəmələrin səlahiyyətlərini dəyişmək üçün müəyyən olunmamış hüquqi üsullar tətbiq etmək; **fövqəladə məhkəmələr** və **xarici dövlətlərin** məhkəmələrini, yaxud bu Qanunla nəzərdə tutulmayan qaydada məhkəmələr yaratmaq.
+- **Konstitusiya Məhkəməsinin** fəaliyyəti ayrıca — “Konstitusiya Məhkəməsi haqqında” Qanunla müəyyən olunur.
+
+**Vəzifələr (maddə 3):** məhkəmələrin fəaliyyəti **yalnız ədalət mühakiməsinə** və qanunla nəzərdə tutulmuş hallarda **məhkəmə nəzarətinə** yönəlib. Məhkəmələr insan və vətəndaş hüquqlarını, bütün təşkilatların qanuni mənafelərini müdafiə edir. **Məhkəmələrin üzərinə başqa vəzifələr qoyulması yolverilməzdir.**
+
+**İşlərə baxılma (maddə 4):**
+
+| İnstansiya | Tərkib |
+| --- | --- |
+| Birinci instansiya | Hakim **təkbaşına**, **üç hakim**, və ya **andlı iclasçılar** |
+| Apellyasiya | **Üç və ya daha çox** hakim |
+| Kassasiya | **Üç və ya daha çox** hakim |
+
+- Məhkəmələr Konstitusiyanı, qanunları, digər qanunvericilik aktlarını və beynəlxalq müqavilələri rəhbər tutur.
+- İclasın **protokolu** aparılır; texniki vasitələrdən istifadə edilə bilər.
+
+**Qərarlar (maddə 5):**
+
+- Məhkəmələr **Azərbaycan Respublikası adından** qətnamə, hökm, qərardad və qərarlar çıxarır.
+- Bütün qərarlar qəbul olunduğu gündən **bir aydan gec olmayaraq anonimləşdirilməklə elektron qaydada** yayılmalıdır.
+- Qanuni qüvvəyə minmiş qərarlar ərazidə **bütün fiziki və hüquqi şəxslər** tərəfindən **mütləq, vaxtında və dəqiq** icra olunmalıdır; icra edilməməsi məsuliyyətə səbəb olur.
+
+### 11.2. Ədalət mühakiməsinin əsas müddəaları
+
+| Maddə | Müddəa | Konstitusiyada |
+| --- | --- | --- |
+| 7 | Qanun və məhkəmə qarşısında **hüquq bərabərliyi** | 25-ci maddə |
+| 8 | Hakimlərin **müstəqilliyi** təmin edilməklə, heç bir məhdudiyyət qoyulmadan, **faktlara əsasən, qərəzsiz, ədalətlə** və qanunlara müvafiq | — |
+| 9 | Məhkəmə icraatına **müdaxilənin** və **hörmətsizliyin** yolverilməzliyi | — |
+| 10 | **Müdafiə hüququ** | 61-ci maddənin II hissəsi (pulsuz hüquqi yardım) |
+| 11 | **Təqsirsizlik prezumpsiyası** | 63-cü maddə |
+| 12 | İcraatın **açıq** aparılması | 127-ci maddənin V hissəsi |
+| 13 | **Çəkişmə** prinsipi | 127-ci maddənin VII hissəsi |
+| 14 | İcraatın **dili** | 127-ci maddənin X hissəsi |
+
+**Bərabərlik (maddə 7):** ədalət mühakiməsi irqindən, milliyyətindən, dinindən, dilindən, cinsindən, mənşəyindən, əmlak vəziyyətindən, qulluq mövqeyindən, əqidəsindən, partiya və birlik mənsubiyyətindən asılı olmayaraq həyata keçirilir.
+
+**Müdaxilə (maddə 9):** hər hansı şəxsin bilavasitə və ya dolayı yolla məhkəmə icraatına məhdudiyyət qoyması, təsir, hədə və müdaxiləsi, məhkəməyə hörmətsizlik və ya **aşkar etinasızlıq** yolverilməzdir və məsuliyyətə səbəb olur.
+
+**Müdafiə hüququ (maddə 10):**
+
+- Vətəndaşların, ərazidə yaşayan əcnəbilərin və vətəndaşlığı olmayanların hüquqları və hüquqi şəxslərin mənafeləri icraatın **istənilən mərhələsində** məhkəmə müdafiəsi ilə təmin olunur. **Heç kəs məhkəmə müdafiəsi hüququndan məhrum edilə bilməz.**
+- Şübhəli və təqsirləndirilən şəxsə **tutulduğu, həbsə alındığı, ittiham olunduğu andan** müdafiəçinin köməyi təmin edilir.
+- Qanunla nəzərdə tutulmuş hallarda hüquqi yardım **ödənişsiz, dövlət hesabına** göstərilir.
+
+**Açıqlıq (maddə 12):**
+
+- Qapalı iclas halları istisna olmaqla, bütün məhkəmələrdə icraat **açıq** aparılır.
+- Qanunda nəzərdə tutulmuş hallar istisna olmaqla, cinayət işlərinin **qiyabi** icraatına yol verilmir.
+- **Bütün hallarda** məhkəmə qərarları **açıq elan edilir**.
+
+**Çəkişmə (maddə 13):** icraat **tərəflərin hüquq bərabərliyi** təmin olunmaqla çəkişmə prinsipi əsasında aparılır.
+
+**Dil (maddə 14):** icraatın dilini bilməyən şəxslərin hüquqlarının məhdudlaşdırılması yolverilməzdir; qanunla nəzərdə tutulmuş hallarda hər kəsə **tərcüməçidən pulsuz** istifadə hüququ təmin edilir.
+
+### 11.3. Məhkəmə sistemi
+
+**Ədalət mühakiməsini həyata keçirən məhkəmələr (maddə 19):**
+
+1. rayon (şəhər) məhkəmələri;
+2. ağır cinayətlər məhkəmələri;
+3. Naxçıvan Muxtar Respublikasının ağır cinayətlər məhkəməsi;
+4. hərbi məhkəmələr;
+5. Ağır cinayətlərə dair işlər üzrə hərbi məhkəmə;
+6. inzibati məhkəmələr;
+7. kommersiya məhkəmələri;
+8. Beynəlxalq müqavilələrdən irəli gələn mübahisələrə dair iqtisad məhkəməsi;
+9. Naxçıvan Muxtar Respublikasının Ali Məhkəməsi;
+10. apellyasiya məhkəmələri;
+11. **Ali Məhkəmə**.
+
+- Qanunla müəyyən edilmiş qaydada **digər məhkəmələr** də yaradıla bilər.
+- Hakimlərin ümumi sayı Konstitusiyanın **109-cu maddəsinin 32-ci bəndinə** uyğun (Prezident tərəfindən) müəyyənləşdirilir.
+- Hər məhkəmə **müstəqil hüquqi şəxsdir** və **Dövlət gerbinin təsviri olan möhürü** var.
+
+## Fəsil 12. “Elektron imza və elektron sənəd haqqında” Qanun
+
+Qanun 9 mart 2004-cü ildə qəbul edilib (№ 602-IIQ), **dərc edildiyi gündən** qüvvəyə minib. 7 fəsil, 37 maddə. Proqrama bütövlükdə daxildir. Əsas fikir: **gücləndirilmiş imza + təkmil sertifikat = əl imzası**.
+
+### 12.1. Əsas anlayışlar
+
+| Anlayış | Mənası (maddə 1) |
+| --- | --- |
+| **Elektron imza** | Digər verilənlərə əlavə edilən və ya onlarla məntiqi əlaqəli olan, **imza sahibini identikləşdirməyə** imkan verən verilənlər |
+| **Gücləndirilmiş imza** | Yalnız sahibinə məxsus, onun nəzarətindəki vasitələrlə yaradılan və məlumatın **bütövlüyünü, dəyişməzliyini, təhrif olunmadığını** müəyyən etməyə imkan verən imza |
+| **İmza sahibi** | Öz adından və ya səlahiyyət verən şəxs adından çıxış edən **fiziki şəxs** |
+| **İmza yaratma məlumatları** | **Yalnız sahibinə bəlli** olan kod və ya kriptoqrafik açar |
+| **İmzanı yoxlama məlumatları** | İmzanın həqiqiliyini yoxlamaq üçün kod və ya açar |
+| **Sertifikat** | Yoxlama məlumatlarının sahibə məxsus olması barədə Mərkəzin verdiyi **kağız və ya elektron** sənəd |
+| **Təkmil sertifikat** | **Akkreditə edilmiş Mərkəzin** gücləndirilmiş imza üçün verdiyi sertifikat |
+| **Sertifikat xidmətləri mərkəzi** | Sertifikat verən hüquqi şəxs və ya fərdi sahibkar |
+| **Akkreditə edilmiş Mərkəz** | Təkmil sertifikat vermək hüququ dövlət orqanının şəhadətnaməsi ilə təsdiqlənmiş mərkəz |
+| **Elektron sənəd** | Elektron formada (mətn, səs, görüntü, audio-görüntü) saxlanılan kontent |
+| **Elektron sənəd dövriyyəsi** | İnformasiya sistemində elektron sənədin nizamlanmış hərəkəti |
+| **Vasitəçi** | Göndərən və Alan arasında dövriyyə xidməti göstərən şəxs |
+| **Korporativ informasiya sistemi** | Məhdud saylı istifadəçisi olan sistem |
+| **Vaxt göstəricisi** | Akkreditə edilmiş Mərkəzin məlumatın təqdim olunduğu an barədə elektron qeydi |
+
+### 12.2. Hüquqi qüvvə və istifadə sahələri
+
+- Elektron imza və sənəd qanunla nəzərdə tutulmuş hallar istisna olmaqla **bütün fəaliyyət sahələrində** istifadə oluna bilər (maddə 2).
+
+**Hüquqi qüvvə (maddə 3):**
+
+- Elektron imza **elektron formada, sertifikatsız** və ya sertifikatlaşdırılmamış vasitələrlə yaradıldığına görə **etibarsız sayıla bilməz**.
+- Sertifikatlaşdırılmış vasitələrlə yaradılmış, qüvvədə olan **təkmil sertifikatlı gücləndirilmiş imza** — **əl imzası ilə bərabər** hüquqi qüvvəyə malikdir.
+- Təkmil sertifikatda imza sahibinin **səlahiyyətləri** göstərilibsə, bu imza **möhürlə təsdiq edilmiş əl imzasına** bərabərdir.
+- Belə imzalanmış elektron sənəd **yazılı sənəd** tələbinə cavab verir.
+- **Notarial təsdiq** və ya **dövlət qeydiyyatı** tələb olunan hallar istisna olmaqla, elektron sənəd **kağız sənədə bərabərdir**.
+
+**İstifadə (maddə 5–7):**
+
+- Elektron imza **yalnız öz sahibinə** məxsusdur; sahibin **bir neçə** imza yaratma məlumatı ola bilər.
+- **Sertifikatı olmayan** imzadan istifadə edərkən qarşı tərəfi **xəbərdar etmək** lazımdır.
+- **Dövlət idarəçiliyində:** dövlət və bələdiyyə orqanlarının sistemlərində **yalnız gücləndirilmiş imza** və sertifikatlaşdırılmış vasitələr; orqanlar **akkreditə edilmiş Mərkəzin** xidmətindən istifadə etməlidir; şəxslərin bu orqanlara göndərdiyi elektron məlumat **gücləndirilmiş imza** ilə təsdiqlənməlidir.
+- **Korporativ sistemdə** imza sistemin daxili sənədləri və ya iştirakçılar arasında müqavilə ilə tənzimlənir.
+
+### 12.3. Sertifikat xidmətləri mərkəzləri
+
+**Qeydiyyat və akkreditasiya (maddə 9):**
+
+- Mərkəz fəaliyyətə başlamazdan **30 gün əvvəl** dövlət orqanına məlumat verib **qeydiyyatdan** keçməlidir.
+- Dövlət orqanı sənədləri **30 gün** ərzində yoxlayıb qərar qəbul edir.
+- **Təkmil sertifikat** xidməti üçün mərkəz **akkreditədən** keçir.
+- **Akkreditə edilmiş mərkəzlərin sayına məhdudiyyət yoxdur.**
+- Qeydiyyatdan imtina əsasları: tələblərə uyğunsuzluq, **yanlış məlumat**, təhlükəsizlik auditinin mənfi nəticəsi, **vergi borcu** və s.
+
+**Xidmətlər (maddə 10):** sertifikat vermək; dayandırmaq, bərpa və ləğv etmək; sertifikatlar barədə məlumat vermək; **vaxt göstəricilərini** qeyd etmək; imza yaratmaq; məsləhət vermək.
+
+**Vəzifələr (maddə 17–18):**
+
+- Təhlükəsizliyi və sahib barədə məlumatların mühafizəsini təmin etmək; **sertifikatlar reyestrini** aparmaq.
+- **Hər il** informasiya sisteminin **təhlükəsizlik auditini** keçirmək və nəticəni **30 gün** ərzində dövlət orqanına təqdim etmək.
+- Sertifikat vermək üçün **sertifikatlaşdırılmış** imza vasitələrindən istifadə etmək; zərəri ödəmək üçün maliyyə imkanına malik olmaq.
+- Müqavilədən əvvəl sahibi istifadə qaydaları və Mərkəzin statusu barədə **məlumatlandırmaq**.
+- İmza sahibinin müqaviləni pozması nəticəsində dəyən zərərə görə Mərkəz **məsuliyyət daşımır**.
+
+**Fəaliyyətə xitam (maddə 19):**
+
+- Xitama **ən azı 30 gün** qalmış mediada elan verir və sahibləri xəbərdar edir; **30 gün** keçdikdən sonra qüvvədə olan sertifikatları ləğv edir.
+- Akkreditə edilmiş mərkəz təkmil sertifikatları sahiblərin razılığı ilə başqa akkreditə edilmiş mərkəzə və ya dövlət orqanına təhvil verir.
+- Dövlət orqanı məlumatlar düzgün olmadıqda və ya **müntəzəm qanun pozuntusunda** qeydiyyatı və akkreditasiyanı ləğv edə bilər.
+
+### 12.4. Sertifikat: verilmə, tərkib, dayandırma və ləğv
+
+- Sertifikat şəxslə Mərkəz arasında **müqavilə** və ya **şəxsiyyət vəsiqəsinin fərdiləşdirilməsi** zamanı verilir (maddə 11). Təkmil sertifikat üçün **akkreditə edilmiş mərkəzə** müraciət olunur.
+
+**Tərkibi (maddə 12):** mərkəzin adı və ünvanı; **seriya nömrəsi**; sahibin adı, atasının adı, soyadı və ya **təxəllüsü**; **qüvvədə olma müddəti**; yoxlama məlumatı; imza vasitələrinin adı. Təxəllüs istifadə olunubsa, bu, sertifikatda **aşkar qeyd** olunur.
+
+**Etibarsızlıq (12.9):** qanuna uyğun verilmədikdə; müddəti bitdikdə; mərkəzin imzası həqiqi olmadıqda; dayandırıldıqda və ya ləğv edildikdə; qeyd olunmuş münasibətlərdə istifadə edilmədikdə.
+
+**Dayandırma (maddə 13):** sahibin müraciəti; səlahiyyətli orqanın müraciəti; mərkəzin **əsaslı şübhəsi** (bu halda **48 saatdan artıq** dayandırıla bilməz). Mərkəz sahibə **dərhal** məlumat verir. Müraciətlər **yazılı** olmalıdır.
+
+**Ləğv (maddə 14):** sahibin müraciəti, müddətin bitməsi, səlahiyyətli orqanın qərarı, sahibin **vəfatı** və ya fəaliyyət qabiliyyətsizliyi, **saxta** sənədlər, imza məlumatları üzərində **nəzarətin itirilməsi**, qaydaların pozulması və s. Ləğvlə bağlı mübahisələr **məhkəmədə** həll edilir.
+
+**Xarici sertifikatlar (maddə 16)** Azərbaycanda qüvvədədir: verən mərkəz Azərbaycanda **akkreditə** olunubsa; təhlükəsizlik tələblərinə uyğundursa; akkreditə edilmiş Mərkəz və ya dövlət orqanı **təminat** verirsə; dövlətlərarası müqavilədə nəzərdə tutulubsa.
+
+**İmza sahibi (maddə 20):** imza vasitələrini qorumağa **cavabdehdir**, başqasının istifadəsinə yol verməməlidir; nəzarəti itirdikdə Mərkəzə **dərhal** xəbər verib sertifikatın dayandırılmasını tələb etməlidir; verdiyi məlumatların düzgünlüyünə görə məsuliyyət daşıyır.
+
+### 12.5. Elektron sənəd və dövriyyə
+
+**Tələblər (maddə 21):** texniki vasitələrlə yaradılmalı və ötürülməli; müəyyən **quruluşa** malik olmalı; **identikləşdirməyə imkan verən rekvizitləri** olmalı; **vizual** şəkildə təqdim olunmalıdır.
+
+**Quruluş (maddə 22):**
+
+| Hissə | Nə var |
+| --- | --- |
+| **Ümumi hissə** | Sənədin məzmunu və ünvanlandığı şəxs |
+| **Xüsusi hissə** | Elektron imza(lar) və vaxt göstəricisi(ləri) |
+
+**Təqdimat formaları (maddə 23):**
+
+- **Daxili forma** — verilənlər daşıyıcısında yazılmış şəkli.
+- **Xarici forma** — displeydə, kağızda və s. vizual əks etdirilməsi.
+
+**Əsl və surət (maddə 24–25):**
+
+- Elektron sənədin **əsli yalnız daxili formada** ola bilər; eyni olan bütün nüsxələr **əsl** sayılır.
+- **Elektron sənədin elektron formada surəti ola bilməz.**
+- Surət — kağız üzərindəki xarici formanın **qanuna uyğun təsdiqi** ilə hazırlanır və üzərində surət olduğu qeyd edilir. Belə surət əsli ilə **eyni qüvvəyə** malikdir.
+- Eyni şəxsin kağızda və elektron formada tərtib etdiyi eyni məzmunlu sənədlərin hər biri **müstəqildir** — kağız olanı surət sayılmır.
+
+**Göndərmə və alma (maddə 27–28):**
+
+- Müqavilədə başqa hal yoxdursa, Alandan **təsdiqləmə** çatanadək sənəd **alınmamış** sayılır.
+- **Göndərilmə vaxtı** — sənədin Göndərənin nəzarətində olmayan sistemə daxil olduğu an; **alınma vaxtı** — Alanın göstərdiyi sistemə daxil olduğu an.
+
+**Saxlanma (maddə 29):** sənəd quruluşunu saxlamalı, Göndərəni, Alanı və vaxtı müəyyən etməyə imkan verməli; saxlanma müddəti **kağız sənəd üçün nəzərdə tutulandan az olmamalıdır**.
+
+**Vasitəçi (maddə 31):** dövlət orqanında **qeydiyyatdan** keçir; xidmət göstərdiyi sənədlərin vaxt və mənbə məlumatını **6 ay** saxlayır; sənədlərin **məzmununa görə məsuliyyət daşımır**.
+
+**Konfidensial sənədlər (maddə 32):** **dövlət sirri** olan sənədlərin mübadiləsi üçün **yalnız sertifikatlaşdırılmış** imza və dövriyyə vasitələri istifadə olunur.
+
+**Məsuliyyət (maddə 36):** sertifikatlaşdırılmamış vasitələrdən istifadəyə görə istifadəçilər **fərdi məsuliyyət** daşıyır; sistemin təhlükəsizliyinə **mülkiyyətçi** cavabdehdir.
+
+### 12.6. Yadda saxla: rəqəmlər
+
+| Nə | Rəqəm | Maddə |
+| --- | --- | --- |
+| Qəbul / qüvvəyə minmə | 09.03.2004 / dərc edildiyi gündən | 37 |
+| Mərkəzin qeydiyyat üçün məlumatı | fəaliyyətdən 30 gün əvvəl | 9.1 |
+| Sənədlərin yoxlanılması | 30 gün | 9.3 |
+| Şübhəyə görə dayandırma | 48 saatdan artıq yox | 13.3 |
+| Audit nəticəsinin təqdimi | 30 gün (audit hər il) | 17.3.8 |
+| Fəaliyyətə xitam elanı | ən azı 30 gün əvvəl | 19.2 |
+| Vasitəçinin məlumat saxlaması | 6 ay | 31.3 |
+
 # II hissə — Məntiq {fənn=men}
 
 # III hissə — Azərbaycan dili {fənn=az}
