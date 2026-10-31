@@ -80,6 +80,62 @@ function serve(port) {
   out.dark = await page.evaluate(() => document.documentElement.getAttribute('data-theme'));
   await page.screenshot({ path: path.join(__dirname, 'shots', 'settings-dark.png'), fullPage: true });
 
+  // ---- install banner: the browser's install dialog (Android, desktop) or Share → Add to Home Screen (iOS) ----
+  const fakePrompt = () => {            // what Chrome fires when the page can be installed
+    const e = new Event('beforeinstallprompt', { cancelable: true });
+    e.prompt = async () => { window.__prompted = (window.__prompted || 0) + 1; };
+    e.userChoice = Promise.resolve({ outcome: 'accepted', platform: 'web' });
+    window.dispatchEvent(e);
+  };
+  const ins = {};
+  ins.desktopNone = await page.$$eval('#pwa-install', els => els.length);
+  await page.evaluate(fakePrompt);
+  await page.waitForSelector('#pwa-install[data-kind="prompt"] .pi-go');
+  await page.waitForTimeout(400);                           // let the banner finish sliding in
+  await page.screenshot({ path: path.join(__dirname, 'shots', 'install-prompt.png') });
+  await page.click('#pwa-install .pi-go');
+  await page.waitForSelector('#pwa-install', { state: 'detached' });
+  ins.prompted = await page.evaluate(() => window.__prompted);
+  const phone = async (ua, init) => {
+    const c = await browser.newContext({ userAgent: ua, viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, hasTouch: true, isMobile: true, serviceWorkers: 'block' });
+    if (init) await c.addInitScript(init);
+    const p = await c.newPage();
+    p.on('pageerror', e => errors.push('pageerror: ' + e.message));
+    await p.goto(`http://127.0.0.1:${PORT}/`);
+    await p.waitForSelector('#view > *');
+    return p;
+  };
+  const kindOf = async p => { await p.waitForSelector('#pwa-install', { timeout: 8000 }); return p.$eval('#pwa-install', el => el.dataset.kind); };
+  const IOS = 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/604.1';
+  const IOS_CHROME = 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/138.0.7204.156 Mobile/15E148 Safari/604.1';
+  const ANDROID = 'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36';
+  let p = await phone(IOS);
+  ins.ios = await kindOf(p);
+  await p.waitForTimeout(400);
+  await p.screenshot({ path: path.join(__dirname, 'shots', 'install-ios.png') });
+  await p.click('#pwa-install .pi-x');
+  ins.iosLater = await p.evaluate(() => !!localStorage.getItem('dq-kitab:pwa:install-later'));
+  await p.reload();
+  await p.waitForTimeout(2500);
+  ins.iosAfterClose = await p.$$eval('#pwa-install', els => els.length);
+  await p.context().close();
+  p = await phone(IOS_CHROME);
+  ins.iosChrome = await kindOf(p);
+  await p.context().close();
+  p = await phone(IOS, () => Object.defineProperty(navigator, 'standalone', { get: () => true }));
+  await p.waitForTimeout(2500);
+  ins.iosInstalled = await p.$$eval('#pwa-install', els => els.length);
+  await p.context().close();
+  p = await phone(ANDROID);
+  ins.android = await kindOf(p);
+  await p.waitForTimeout(400);
+  await p.screenshot({ path: path.join(__dirname, 'shots', 'install-android.png') });
+  await p.evaluate(fakePrompt);
+  await p.waitForSelector('#pwa-install[data-kind="prompt"] .pi-go');
+  ins.androidLater = 'prompt';
+  await p.context().close();
+  out.install = ins;
+
   // ---- host gone + offline: reload and use the book ----
   await new Promise(r => { srv.close(r); srv.closeAllConnections(); });
   await ctx.setOffline(true);
@@ -102,6 +158,8 @@ function serve(port) {
   if (!out.searchHits) fail.push('search found nothing for “kecid”');
   if (!out.offlineTopics) fail.push('offline programme page');
   if (out.dark !== 'dark') fail.push('theme switch');
+  const wantInstall = { desktopNone: 0, prompted: 1, ios: 'ios', iosLater: true, iosAfterClose: 0, iosChrome: 'iosother', iosInstalled: 0, android: 'android', androidLater: 'prompt' };
+  if (JSON.stringify(out.install) !== JSON.stringify(wantInstall)) fail.push('install banner: ' + JSON.stringify(out.install));
   if (out.offlineSections !== firstCh.sections.length) fail.push('offline chapter view');
   if (out.offlineReadKept !== 1) fail.push('offline progress lost');
   if (!out.offlineFont) fail.push('fonts not cached');

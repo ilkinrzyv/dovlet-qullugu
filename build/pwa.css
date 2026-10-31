@@ -3,3 +3,17 @@
 .pwa-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:61;display:flex;align-items:center;gap:12px;
   padding:8px 8px 8px 16px;border-radius:12px;background:var(--ink);color:var(--bg);font-size:14px;box-shadow:var(--shadow);width:max-content;max-width:calc(100% - 32px)}
 .pwa-bar button{flex:none;height:34px;padding:0 14px;border-radius:9px;background:var(--accent);color:var(--accent-ink);font-weight:600}
+.pwa-install{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(72px + env(safe-area-inset-bottom,0px));z-index:59;
+  width:min(520px,calc(100% - 24px - env(safe-area-inset-left,0px) - env(safe-area-inset-right,0px)));
+  display:flex;align-items:flex-start;gap:12px;padding:12px 8px 12px 12px;background:var(--surface);color:var(--ink);
+  border:1px solid var(--line-2);border-radius:14px;box-shadow:var(--shadow);font-size:14px;line-height:1.45;animation:piup .25s ease-out}
+.pwa-install img{flex:none;width:44px;height:44px;border-radius:10px}
+.pi-text{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.pi-title{font-size:15px}
+.pi-text span{color:var(--ink-2)}
+.pi-share{width:17px;height:17px;vertical-align:-3px;fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pi-go{flex:none;align-self:center;height:38px;padding:0 14px;border-radius:10px;background:var(--accent);color:var(--accent-ink);font-weight:600}
+.pi-x{flex:none;width:34px;height:34px;margin-top:-6px;border-radius:9px;color:var(--ink-3);font-size:24px;line-height:1}
+.pi-x:hover{background:var(--bg-2);color:var(--ink)}
+@keyframes piup{from{opacity:0;transform:translate(-50%,12px)}}
+@media (prefers-reduced-motion:reduce){.pwa-install{animation:none}}

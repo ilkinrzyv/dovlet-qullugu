@@ -129,6 +129,7 @@ async function checkCache() {
 }
 function showUpdateBar() {
   if (document.getElementById('pwa-bar')) return;
+  closeBanner(false); // the update bar sits in the same place
   const bar = document.createElement('div');
   bar.id = 'pwa-bar'; bar.className = 'pwa-bar'; bar.setAttribute('role', 'status');
   bar.innerHTML = '<span>Kitabın yeni versiyası yükləndi.</span><button type="button">Yenilə</button>';
@@ -164,6 +165,57 @@ async function install() {
   const d = deferred; deferred = null;
   try { await d.prompt(); const ch = await d.userChoice; emit('install'); return !!ch && ch.outcome === 'accepted'; } catch (e) { emit('install'); return false; }
 }
+
+/* ---------- install banner: offered when the page opens, until the book is installed ---------- */
+// Android and desktop Chrome/Edge: the banner's button opens the browser's own install dialog (beforeinstallprompt).
+// iOS has no such dialog, so the banner says how to add the page from the Share menu; Android browsers without the
+// event get the menu path, and the banner turns into the button if the event comes later. Nothing shows in the
+// installed app; "Bağla" hides the banner for LATER_DAYS.
+const K_LATER = 'dq-kitab:pwa:install-later';
+const LATER_DAYS = 3;
+const UA = navigator.userAgent || '';
+const isAndroid = () => /android/i.test(UA);
+const isIOSSafari = () => isIOS() && /Safari\//.test(UA) && !/CriOS|FxiOS|EdgiOS|OPiOS|GSA\//.test(UA);
+const snoozed = () => Date.now() - (+ls.get(K_LATER) || 0) < LATER_DAYS * 864e5;
+const SHARE = '<svg class="pi-share" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3M8 7l4-4 4 4"/><path d="M8 11H6.5A1.5 1.5 0 0 0 5 12.5v7A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5v-7a1.5 1.5 0 0 0-1.5-1.5H16"/></svg>';
+const HOW = {
+  prompt: 'İnternetsiz də açılır və telefonda ayrıca tətbiq kimi işləyir.',
+  ios: `Safari-də <b>Paylaş</b> ${SHARE} düyməsinə toxun (bəzən “•••” menyusundadır), sonra <b>“Ana ekrana əlavə et”</b> (Add to Home Screen) və <b>“Əlavə et”</b>.`,
+  iosother: `Brauzerin <b>Paylaş</b> ${SHARE} menyusunda <b>“Ana ekrana əlavə et”</b> (Add to Home Screen) seç. Belə seçim yoxdursa, səhifəni Safari-də aç.`,
+  android: 'Brauzerin menyusunu (<b>⋮</b>) aç və <b>“Tətbiqi quraşdır”</b> (Install app) və ya <b>“Ana ekrana əlavə et”</b> (Add to Home screen) seç. Belə seçim yoxdursa, səhifəni Chrome-da aç.'
+};
+function closeBanner(later) {
+  const b = document.getElementById('pwa-install');
+  if (b) b.remove();
+  if (later) ls.set(K_LATER, String(Date.now()));
+}
+function showBanner(kind) {
+  if (!document.body || isStandalone() || snoozed() || document.getElementById('pwa-bar')) return;
+  let b = document.getElementById('pwa-install');
+  if (b && b.dataset.kind === kind) return;
+  if (!b) {
+    b = document.createElement('div');
+    b.id = 'pwa-install'; b.className = 'pwa-install';
+    b.setAttribute('role', 'region'); b.setAttribute('aria-label', 'Tətbiqi quraşdır');
+    document.body.appendChild(b);
+  }
+  b.dataset.kind = kind;
+  b.innerHTML = `<img src="icons/icon-192.png" alt="" width="44" height="44"><div class="pi-text"><b class="pi-title">Kitabı ana ekrana əlavə et</b><span>${HOW[kind]}</span></div>`
+    + (kind === 'prompt' ? '<button type="button" class="pi-go">Quraşdır</button>' : '')
+    + '<button type="button" class="pi-x" aria-label="Bağla">×</button>';
+  const go = b.querySelector('.pi-go');
+  if (go) go.addEventListener('click', async () => { const ok = await install(); closeBanner(!ok); });
+  b.querySelector('.pi-x').addEventListener('click', () => closeBanner(true));
+}
+function offerInstall() {
+  if (isStandalone()) return;
+  if (deferred) showBanner('prompt');
+  else if (isIOS()) showBanner(isIOSSafari() ? 'ios' : 'iosother');
+  else if (isAndroid()) showBanner('android');
+}
+on('install', () => { if (deferred) showBanner('prompt'); });
+window.addEventListener('appinstalled', () => closeBanner(false));
+window.addEventListener('load', () => setTimeout(offerInstall, isAndroid() ? 3500 : 1200)); // Android: give the browser time to offer its dialog
 
 /* ---------- storage, files ---------- */
 async function persisted() { try { return !!(navigator.storage && navigator.storage.persisted && await navigator.storage.persisted()); } catch (e) { return false; } }
