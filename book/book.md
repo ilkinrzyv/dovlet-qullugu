@@ -6198,4 +6198,198 @@ E) F2
 Cavab: A
 ```
 
+## Fəsil 28. Verilənlər bazası və Microsoft Access 2019
+
+Bu fəsil proqramın 10-cu mövzusudur: verilənlər bazası (VB), verilənlər bazasının idarəetmə sistemləri (VBİS) və **Microsoft Access 2019**.
+
+### 28.1. Verilənlər bazası, struktur elementləri və modellər
+
+**Verilənlər bazası** — müəyyən sahəyə aid, strukturlaşdırılmış qaydada saxlanan və bir-biri ilə əlaqəli verilənlər toplusudur (məs., işçilərin, kitabların, vətəndaş müraciətlərinin bazası).
+
+**Relyasiya VB-nin struktur elementləri:**
+
+| Element | Digər adı | Nədir |
+| --- | --- | --- |
+| **Cədvəl** | relyasiya | bir obyekt növü haqqında verilənlər |
+| **Sahə** | sütun, atribut | obyektin bir xassəsi (Soyad, Doğum tarixi) |
+| **Yazı** | sətir, qeyd | bir obyekt haqqında bütün verilənlər |
+| **Açar sahə** | ilkin açar (primary key) | hər yazını **birmənalı** müəyyən edən sahə: təkrarlanmır, boş qala bilməz |
+
+**VB modelləri:**
+
+| Model | Quruluş |
+| --- | --- |
+| **İyerarxik** | **ağac**: hər elementin yalnız **bir** yuxarı (“valideyn”) elementi var |
+| **Şəbəkə** | element **bir neçə** yuxarı elementlə əlaqəli ola bilər |
+| **Relyasiya** | verilənlər **cədvəllərdə**, cədvəllər açarlarla əlaqələnir — ən geniş yayılmış model |
+| **Obyektyönlü** | verilənlər xassələri və metodları olan **obyektlər** kimi saxlanılır |
+
+```nümunə
+S: Relyasiya modelində cədvəlin sətri necə adlanır?
+A) yazı
+B) sahə
+C) açar
+D) sorğu
+E) forma
+Cavab: A
+İzah: Cədvəlin **sətri** bir obyekt haqqında bütün verilənləri saxlayır — bu, **yazıdır** (qeyd). **Sütun** isə sahədir. Sorğu və forma VB obyektləridir, struktur elementi deyil.
+```
+
+```yoxla
+S: Verilənlərin ağac quruluşunda təşkil olunduğu, hər elementin yalnız bir yuxarı elementi olduğu model hansıdır?
+A) iyerarxik
+B) şəbəkə
+C) relyasiya
+D) obyektyönlü
+E) cədvəl
+Cavab: A
+```
+
+### 28.2. Verilənlər bazasının idarəetmə sistemləri (VBİS)
+
+**VBİS** — verilənlər bazasını yaratmaq, verilənləri daxil etmək, dəyişmək, axtarmaq və idarə etmək üçün proqram sistemidir.
+
+**Funksiyaları:** VB-nin strukturunun təsviri; verilənlərin daxil edilməsi, redaktəsi və silinməsi; sorğular vasitəsilə axtarış və seçmə; verilənlərin mühafizəsi (giriş hüquqları) və bütövlüyü; ehtiyat surəti və bərpa.
+
+**Komponentləri:** verilənlərin təsviri və manipulyasiyası dilləri, sorğu dili — **SQL** (Structured Query Language), istifadəçi interfeysi vasitələri (formalar, hesabatlar), proqramlaşdırma vasitələri.
+
+**Təsnifat:**
+
+- iş üsuluna görə: **lokal** (bir kompüterdə), **fayl-server**, **kliyent-server** (verilənlər serverdə, istifadəçilər şəbəkə ilə qoşulur);
+- nümunələr: **Microsoft Access** (fərdi və kiçik bazalar), Microsoft SQL Server, Oracle, MySQL, PostgreSQL (kliyent-server sistemləri).
+
+```nümunə
+S: Hansı proqram VBİS-dir?
+A) Microsoft Access
+B) Microsoft Word
+C) Paint
+D) Windows 11
+E) PowerPoint
+Cavab: A
+İzah: **Access** verilənlər bazası yaratmaq və idarə etmək üçündür — VBİS-dir. Word mətn prosessoru, PowerPoint təqdimat proqramı, Paint qrafik redaktor, Windows 11 isə əməliyyat sistemidir.
+```
+
+```yoxla
+S: Relyasiya verilənlər bazalarında sorğular üçün standart dil hansıdır?
+A) SQL
+B) HTML
+C) CSS
+D) XML
+E) URL
+Cavab: A
+```
+
+### 28.3. Access 2019: obyektlər və iş mərhələləri
+
+Access verilənlər bazası **bir faylda** saxlanılır — **.accdb**. Pəncərə digər Office proqramları kimidir (lent, Cəld müraciət paneli, vəziyyət sətri); solda **Naviqasiya paneli** bazanın bütün obyektlərini göstərir.
+
+**Access obyektləri:**
+
+| Obyekt | Təyinatı |
+| --- | --- |
+| **Cədvəl** (Table) | verilənləri **saxlayır** — əsas obyekt |
+| **Sorğu** (Query) | verilənləri şərtə görə **seçir**, hesablayır, dəyişir |
+| **Forma** (Form) | verilənləri **daxil etmək** və baxmaq üçün rahat interfeys |
+| **Hesabat** (Report) | verilənləri **çap üçün** səliqəli hazırlayır |
+| **Makros** (Macro) | əməliyyatları **avtomatlaşdırır** (kodsuz) |
+| **Modul** (Module) | **VBA** dilində proqram kodu |
+
+**Cədvəlin iki əsas rejimi:** **Design View** (konstruktor — sahələr, tiplər, açar) və **Datasheet View** (cədvəl — verilənlər).
+
+**VB-nin işlənilməsinin mərhələləri:** məsələnin təhlili → cədvəllərin strukturunun layihələndirilməsi (sahələr, tiplər, açar) → cədvəllər arasında **əlaqələrin** qurulması → verilənlərin daxil edilməsi → sorğu, forma və hesabatların yaradılması.
+
+```nümunə
+S: Access-də verilənlər bilavasitə hansı obyektdə saxlanılır?
+A) cədvəl
+B) sorğu
+C) forma
+D) hesabat
+E) makros
+Cavab: A
+İzah: Verilənlər yalnız **cədvəllərdə** saxlanılır. Sorğu, forma və hesabat cədvəldəki verilənləri seçir, göstərir və ya çapa hazırlayır, makros isə əməliyyatları avtomatlaşdırır.
+```
+
+```yoxla
+S: Access-də VBA proqram kodu hansı obyektdə yazılır?
+A) modul
+B) makros
+C) forma
+D) hesabat
+E) sorğu
+Cavab: A
+```
+
+### 28.4. Verilənlərin tipləri, sıralama, süzgəc və sorğular
+
+**Sahə tipləri (Access 2019):**
+
+| Tip | Nə üçün |
+| --- | --- |
+| **Short Text** | qısa mətn — **255 simvoladək** |
+| Long Text | böyük mətn |
+| Number | ədəd |
+| Date/Time | tarix və vaxt |
+| **Currency** | **pul** məbləğləri |
+| **AutoNumber** | hər yeni yazıya **avtomatik artan unikal** nömrə (açar üçün əlverişli) |
+| Yes/No | məntiqi qiymət (bəli/xeyr) |
+| OLE Object, Attachment | başqa proqramın obyekti, fayl əlavəsi |
+| Hyperlink | keçid (veb-ünvan) |
+| Calculated | başqa sahələrdən hesablanan qiymət |
+| Lookup Wizard | qiyməti siyahıdan seçmək |
+
+**Daxil etmə, redaktə, silmə** Datasheet rejimində aparılır. Silinmiş yazını **geri qaytarmaq olmur** — Access bunu soruşur.
+
+**Sıralama:** artan (Ascending) və azalan (Descending). **Süzgəc:** şərtə uyğun yazıları göstərir (Filter by Selection, Filter by Form).
+
+**Sorğular:** seçmə sorğusu (Select), parametrli, hesablanan sahəli, yekun (Totals); dəyişdirən sorğular — cədvəl yaratma, əlavə etmə, yeniləmə, silmə. Sorğu konstruktorunda **şərt** (Criteria) yazılır:
+
+| Şərt | Mənası |
+| --- | --- |
+| >100 | 100-dən böyük |
+| "Bakı" | dəqiq “Bakı” |
+| **Like "A\*"** | **A ilə başlayan** (\* — istənilən sayda simvol) |
+| **Between 1000 And 2000** | 1000-dən 2000-dək, **hər iki qiymət daxil** |
+
+```nümunə
+S: Hər yeni yazıya avtomatik artan unikal nömrə verən sahə tipi hansıdır?
+A) AutoNumber
+B) Number
+C) Short Text
+D) Currency
+E) Yes/No
+Cavab: A
+İzah: **AutoNumber** sahəsinə istifadəçi heç nə yazmır: Access hər yazıya özü təkrarlanmayan nömrə verir — ona görə açar sahə üçün əlverişlidir. Number tipinə ədədi istifadəçi daxil edir.
+```
+
+```yoxla
+S: Access 2019-da Short Text tipli sahəyə ən çox neçə simvol yazmaq olar?
+A) 255
+B) 65 535
+C) 1024
+D) 128
+E) 8
+Cavab: A
+```
+
+```nümunə
+S: “Soyad” sahəsində A hərfi ilə başlayan soyadları seçmək üçün sorğuda hansı şərt yazılır?
+A) Like "A*"
+B) "A?"
+C) ="A"
+D) Like "*A"
+E) >"A"
+Cavab: A
+İzah: **Like "A\*"**: “A” ilə başlayır, \* isə ardınca istənilən sayda simvol deməkdir. ="A" yalnız dəqiq “A” qiymətini, Like "\*A" isə **A ilə bitən** soyadları seçərdi.
+```
+
+```yoxla
+S: Sorğuda “Maaş” sahəsi üçün 1000 ilə 2000 arasındakı qiymətləri (1000 və 2000 də daxil olmaqla) seçən şərt hansıdır?
+A) Between 1000 And 2000
+B) >1000 And <2000
+C) 1000-2000
+D) Like "1000*"
+E) =1000 Or =2000
+Cavab: A
+```
+
 # V hissə — Müsahibə

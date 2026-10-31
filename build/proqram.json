@@ -244,7 +244,7 @@
      "Slayda mətnin daxil edilməsi və formatlaşdırılması", "Obyektlərin əlavə edilməsi", "Slaydlar arasında keçid effektləri",
      "Animasiya effektləri", "Görünüş rejimləri", "Slaydların nümayişi"
     ]},
-   {"num": "10", "title": "Verilənlər bazası. Microsoft Access 2019",
+   {"num": "10", "see": ["c28"], "title": "Verilənlər bazası. Microsoft Access 2019",
     "items": [
      "Verilənlər bazası anlayışı", "VB-nin struktur elementləri", "VBİS, funksiyaları və növləri", "VBİS-in komponentləri",
      "VB modelləri: iyerarxik, şəbəkə, relyasiya, obyektyönlü", "VBİS-in təsnifatı", "Access-də VB-nin işlənilməsinin mərhələləri",

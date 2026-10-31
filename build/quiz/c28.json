@@ -1,0 +1,15 @@
+{
+"28": [
+ {"s":"28.1","q":"Relyasiya verilənlər bazasında cədvəlin sütunu necə adlanır?","o":["sahə","yazı","açar","hesabat","modul"],"a":0,"e":"Sütun — sahə (atribut), sətir — yazı (qeyd)."},
+ {"s":"28.1","q":"Hər yazını birmənalı müəyyən edən, təkrarlanmayan sahə necə adlanır?","o":["açar sahə (primary key)","hesablanan sahə","mətn sahəsi","süzgəc","indeks səhifəsi"],"a":0,"e":"Açar sahənin qiyməti hər yazıda fərqlidir və boş ola bilməz — yazını birmənalı müəyyən edir."},
+ {"s":"28.1","q":"Ən geniş yayılmış verilənlər bazası modeli hansıdır?","o":["relyasiya","iyerarxik","şəbəkə","obyektyönlü","faktoqrafik"],"a":0,"e":"Relyasiya modeli — cədvəllər və onların açarlarla əlaqəsi — ən geniş yayılıb (Access, SQL Server, Oracle, MySQL)."},
+ {"s":"28.1","q":"Elementin bir neçə yuxarı elementlə əlaqəli ola bildiyi model hansıdır?","o":["şəbəkə","iyerarxik","relyasiya","obyektyönlü","xətti"],"a":0,"e":"İyerarxik modeldə hər elementin bir “valideyni” var, şəbəkə modelində isə bir neçə ola bilər."},
+ {"s":"28.2","t":"open","q":"Relyasiya verilənlər bazalarında sorğu dilinin üç hərfli qısa adını yaz.","a":["sql"],"e":"SQL — Structured Query Language."},
+ {"s":"28.3","q":"Access 2019 verilənlər bazası faylının genişlənməsi hansıdır?","o":[".accdb",".xlsx",".docx",".pptx",".txt"],"a":0,"e":"Access 2007-dən başlayaraq bazalar .accdb formatında saxlanılır."},
+ {"s":"28.3","q":"Verilənləri çap üçün səliqəli şəkildə hazırlayan Access obyekti hansıdır?","o":["hesabat","forma","sorğu","makros","modul"],"a":0,"e":"Hesabat (Report) çap üçündür, forma isə ekranda daxil etmə və baxış üçündür."},
+ {"s":"28.3","q":"Verilənləri daxil etmək üçün rahat interfeys yaradan Access obyekti hansıdır?","o":["forma","hesabat","cədvəl","modul","makros"],"a":0,"e":"Forma (Form) — verilənlərin daxil edilməsi və baxılması üçün pəncərə."},
+ {"s":"28.3","q":"Cədvəlin strukturunu (sahələri, tipləri, açarı) dəyişmək üçün hansı rejim istifadə olunur?","o":["Design View","Datasheet View","Print Preview","Form View","Layout View"],"a":0,"e":"Design View (konstruktor) cədvəlin strukturunu, Datasheet View isə verilənləri göstərir."},
+ {"s":"28.4","q":"Pul məbləğlərini saxlamaq üçün hansı sahə tipi nəzərdə tutulub?","o":["Currency","Short Text","Yes/No","AutoNumber","Hyperlink"],"a":0,"e":"Currency — pul tipi; hesablamalarda yuvarlaqlaşdırma xətalarının qarşısını alır."},
+ {"s":"28.4","t":"open","q":"Access-in əsas obyektləri — cədvəl, sorğu, forma, hesabat, makros, modul. Onlar neçədir? (rəqəmlə yaz)","a":["6","altı"],"e":"Altı obyekt növü: cədvəllər, sorğular, formalar, hesabatlar, makroslar, modullar."}
+]
+}
