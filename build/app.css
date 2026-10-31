@@ -117,6 +117,7 @@ svg.i{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-widt
 .stat b{font-size:24px;font-weight:700}
 .stat span{color:var(--ink-2);font-size:14px}
 .stat .bar{grid-column:1/-1}
+.subjex{display:flex;flex-direction:column;gap:6px;margin-top:12px}
 .statlink{grid-column:1/-1;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;text-decoration:none}
 .statlink svg.i{width:17px;height:17px}
 

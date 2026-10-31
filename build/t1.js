@@ -259,6 +259,37 @@ function serve(port) {
   await page.click('.wk[data-sec="c1s1"] a.btn');
   await page.waitForSelector('.qhead .kicker');
   out.topicQuiz = { hash: await page.evaluate(() => location.hash), head: await page.$eval('.qhead .kicker', el => el.textContent) };
+
+  // ---- one subject's timed exam (Məntiq): its own count and time, no pass table, kept apart from whole exams ----
+  await go('testler');
+  out.subjExLinks = await page.$$eval('.subjex a', els => els.map(a => a.getAttribute('href')));
+  await go('imtahan');
+  out.subjExRows = await page.$$eval('a.secrow[href^="#imtahan-"]', els => els.length);
+  await go('imtahan-men');
+  out.menPlan = { h1: await page.$eval('h1.h1', el => el.textContent), rows: await page.$$eval('.tbl tbody tr', els => els.length) };
+  await page.click('[data-act="start"]');
+  await page.waitForSelector('.timer');
+  const mex = (await state()).exam;
+  out.menExam = { subj: mex.subj, n: mex.items.length, secs: mex.secs, kicker: await page.$eval('.tb-kicker', el => el.textContent) };
+  for (let i = 0; i < mex.items.length; i++) {
+    const q = qOf(mex.items[i].id);
+    if (q.t === 'open') await page.fill('#oa', q.a[0]); else await page.click(`.opt[data-oi="${(q.a + 1) % q.o.length}"]`); // the closed one wrong
+    if (i + 1 < mex.items.length) await page.click('[data-act="next"]');
+  }
+  await page.click('[data-act="finish"]');
+  await page.click('[data-act="ask-yes"]');
+  await page.waitForFunction(() => location.hash === '#imtahan-netice');
+  await page.waitForSelector('h1.h1');
+  out.menResult = { h1: await page.$eval('h1.h1', el => el.textContent), passChips: await page.$$eval('.chip.pass, .chip.fail', els => els.length),
+    again: await page.$eval('.row.block a.btn.primary', a => a.getAttribute('href')), saved: (await state()).exams[0].subj };
+  await go('imtahan');
+  out.fullHist = await page.$$eval('.hist .secrow', els => els.length);
+  await go('home');
+  out.homeBest = await page.$eval('a.tile[href="#imtahan"] .muted', el => el.textContent);
+  await go('statistika');
+  out.statSubjEx = await page.$$eval('.sx', els => els.map(e => e.getAttribute('href') + ' ' + e.querySelector('.chn').textContent));
+  out.statTrendAfter = await page.$$eval('#trend .pt', els => els.length);
+  await shot('t1-stats-subj');
   await page.emulateMedia({ colorScheme: 'dark' });
   await go('test-c3');
   await shot('t1-figure-dark');
@@ -305,6 +336,13 @@ function serve(port) {
   eq('weak', ['c1s2 50%', 'c1s1 67%']);
   eq('trendPts', 2); eq('trendTip', true); eq('trendRows', 2);
   eq('topicQuiz', { hash: '#test-s-c1s1', head: 'Sual 1 / 3' });
+  eq('subjExLinks', ['#imtahan-qan', '#imtahan-men', '#imtahan-az', '#imtahan-inf']);
+  eq('subjExRows', 4);
+  eq('menPlan', { h1: 'Məntiq sınağı', rows: 1 });
+  eq('menExam', { subj: 'men', n: 2, secs: 300, kicker: 'Məntiq sınağı · BA' });
+  eq('menResult', { h1: '2 / 3 bal · 67%', passChips: 0, again: '#imtahan-men', saved: 'men' });
+  eq('fullHist', 2); eq('homeBest', 'ən yaxşı: 100%');
+  eq('statSubjEx', ['#imtahan-men 67%']); eq('statTrendAfter', 2);
   out.errors = errors.concat(fail);
   console.log(JSON.stringify(out, null, 1));
   process.exit(out.errors.length ? 1 : 0);

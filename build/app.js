@@ -374,6 +374,7 @@ function route() {
   else if (h.startsWith('test-')) { tab = 'testler'; vQuiz(h.slice(5)); }
   else if (h === 'imtahan') { tab = 'testler'; vExam(); }
   else if (h === 'imtahan-netice') { tab = 'testler'; vExamResult(); }
+  else if (h.startsWith('imtahan-') && SUBJ[h.slice(8)]) { tab = 'testler'; vExam(h.slice(8)); }
   else if (h === 'statistika') { tab = 'testler'; vStats(); }
   else if (h === 'muellim' || h.startsWith('muellim-')) { tab = 'muellim'; vTeacher(h.slice(8)); }
   else if (h === 'axtar' || h.startsWith('axtar=')) { tab = 'axtar'; vSearch(h.slice(6)); }
@@ -413,7 +414,7 @@ function vHome() {
   const extras = CHAPTERS.filter(c => c.kind === 'extra' && vis(c));
   const nq = pool().length;
   const cov = PROG.subjects.map(s => coverage(s.id)).reduce((a, b) => [a[0] + b[0], a[1] + b[1]], [0, 0]);
-  const best = S.exams.filter(r => r.group === S.group).reduce((m, r) => Math.max(m, r.pct), -1);
+  const best = S.exams.filter(r => r.group === S.group && !r.subj).reduce((m, r) => Math.max(m, r.pct), -1);
   $('#view').innerHTML = `
     <section class="hero">
       <span class="kicker">İmtahana hazırlıq · ${esc(S.group)} qrupu</span>
@@ -645,6 +646,8 @@ function vTests() {
       <span class="kicker">${S.exam ? 'Davam edir' : 'Sınaq imtahanı'}</span>
       <b>${S.exam ? 'İmtahana qayıt' : 'İmtahan kimi: taymerlə, fənlər üzrə nəticə'}</b>
       <span class="muted">${EXAM.blocks.map(b => `${SUBJ[b.subj].title} ${b.n}`).join(' · ')}</span>${icon('arrow')}</a>
+    ${S.exam ? '' : `<div class="subjex"><span class="muted small">Yalnız bir fənn, vaxtla:</span>
+      <div class="row">${EXAM.blocks.map(b => `<a class="btn sm" href="#imtahan-${b.subj}">${esc(SUBJ[b.subj].title)} · ${b.n}</a>`).join('')}</div></div>`}
     <div class="list block">
       <a class="secrow${all.length ? '' : ' off'}" href="#test-mix"><span class="tick acc">${icon('shuffle')}</span>
         <span class="sect"><b>Qarışıq test</b><span class="muted">${all.length ? `Bütün fəsillərdən ${Math.min(MIX_SIZE, all.length)} təsadüfi sual${S.quiz.mix ? ` · son nəticə ${S.quiz.mix.last}%` : ''}` : 'Hələ sual yoxdur'}</span></span>${icon('chev')}</a>
@@ -779,9 +782,9 @@ function quizResult() {
    9. Mock exam: the real exam's subjects and counts, a timer, no hints until the end
    ========================================================= */
 const FULL = EXAM.blocks.reduce((a, b) => a + b.n, 0);
-function examPlan(group) {
+function examPlan(group, subj) {
   const all = ALL_Q.filter(id => qById[id].g.includes(group) && (chById[qById[id].ch].g || GROUPS).includes(group));
-  return EXAM.blocks.map(b => {
+  return EXAM.blocks.filter(b => !subj || b.subj === subj).map(b => {
     const open = (b.open && b.open[group]) || 0;
     const mine = all.filter(id => qById[id].subj === b.subj);
     const mc = mine.filter(id => qById[id].t === 'mc'), op = mine.filter(id => qById[id].t === 'open');
@@ -791,32 +794,43 @@ function examPlan(group) {
 const examSecs = n => Math.max(300, Math.round(EXAM.minutes * 60 * n / FULL));
 const examMax = items => items.reduce((a, it) => a + (qById[it.id] && qById[it.id].t === 'open' ? EXAM.points.open : EXAM.points.closed), 0);
 
-function vExam() {
+// subj: one subject's part of the exam (its question count, its share of the time); none = the whole exam
+function vExam(subj) {
   if (S.exam) { examRun(); return; }
-  topbar('Testlər', 'Sınaq imtahanı', 'testler');
-  const plan = examPlan(S.group), take = plan.reduce((a, p) => a + p.take, 0);
-  const open = plan.reduce((a, p) => a + p.open, 0);
-  const maxFull = FULL - open + open * EXAM.points.open;
-  const hist = S.exams.filter(r => r.group === S.group).slice(0, 8);
+  const one = SUBJ[subj] ? subj : null;
+  const plan = examPlan(S.group, one), take = plan.reduce((a, p) => a + p.take, 0);
+  const n = plan.reduce((a, p) => a + p.b.n, 0), open = plan.reduce((a, p) => a + p.open, 0);
+  const maxPts = n - open + open * EXAM.points.open;
+  const title = one ? `${SUBJ[one].title} sınağı` : 'Sınaq imtahanı', what = one ? 'sınaq' : 'imtahan';
+  topbar('Testlər', title, one ? 'imtahan' : 'testler');
+  const hist = S.exams.filter(r => r.group === S.group && (r.subj || null) === one).slice(0, 8);
   $('#view').innerHTML = `
     <span class="kicker">${esc(S.group)} qrupu</span>
-    <h1 class="h1">Sınaq imtahanı</h1>
-    <p class="muted">Sualların sayı və fənləri real imtahandakı kimidir. Cavablar imtahan bitəndən sonra göstərilir.</p>
+    <h1 class="h1">${esc(title)}</h1>
+    <p class="muted">${one ? `Real imtahanın “${esc(SUBJ[one].title)}” hissəsi kimi: sualların sayı imtahandakı qədərdir, vaxt bu fənnin payına düşən qədər.`
+      : 'Sualların sayı və fənləri real imtahandakı kimidir.'} Cavablar ${what} bitəndən sonra göstərilir.</p>
     <div class="tbl"><table>
       <thead><tr><th>Fənn</th><th>Sual</th>${open ? '<th>O cümlədən açıq</th>' : ''}<th>Bankda</th></tr></thead>
       <tbody>${plan.map(p => `<tr><td>${esc(SUBJ[p.b.subj].title)}</td><td>${p.b.n}</td>${open ? `<td>${p.open}</td>` : ''}<td>${p.mc.length + (p.open ? p.op.length : 0)}</td></tr>`).join('')}</tbody>
     </table></div>
     <div class="card stack">
-      <p>${icon('clock')} Vaxt: <b>${clock(EXAM.minutes * 60)}</b> (100 sual üçün) · Qapalı sual ${EXAM.points.closed} bal${open ? `, açıq sual ${EXAM.points.open} bal` : ''} · Ən yüksək bal: <b>${maxFull}</b></p>
-      ${take < FULL ? `<p class="warnline">Bankda hələ ${take} uyğun sual var — imtahan ${take} sualla olacaq, vaxt da mütənasib: ${clock(examSecs(take))}.</p>` : ''}
-      <p class="muted small">${esc(EXAM.minutes_note)}${open ? ' ' + esc(EXAM.open_note) : ''}</p>
-      <button type="button" class="btn primary" data-act="start"${take ? '' : ' disabled'}>${take ? 'İmtahanı başla' : 'Hələ sual yoxdur'}</button>
+      <p>${icon('clock')} Vaxt: <b>${clock(examSecs(n))}</b> (${n} sual üçün) · Qapalı sual ${EXAM.points.closed} bal${open ? `, açıq sual ${EXAM.points.open} bal` : ''} · Ən yüksək bal: <b>${maxPts}</b></p>
+      ${take < n ? `<p class="warnline">Bankda hələ ${take} uyğun sual var — ${what} ${take} sualla olacaq, vaxt da mütənasib: ${clock(examSecs(take))}.</p>` : ''}
+      <p class="muted small">${one ? `Vaxt ${EXAM.minutes} dəqiqənin bu fənnin sual payına (${n}/${FULL}) düşən hissəsidir. ` : ''}${esc(EXAM.minutes_note)}${open ? ' ' + esc(EXAM.open_note) : ''}</p>
+      <button type="button" class="btn primary" data-act="start"${take ? '' : ' disabled'}>${take ? (one ? 'Sınağı başla' : 'İmtahanı başla') : 'Hələ sual yoxdur'}</button>
     </div>
+    ${one ? '' : `<section class="block"><div class="block-h"><h2>Fənn üzrə sınaq</h2></div>
+      <div class="list">${EXAM.blocks.map(b => {
+        const last = S.exams.find(r => r.group === S.group && r.subj === b.subj);
+        return `<a class="secrow" href="#imtahan-${b.subj}"><span class="tick acc">${icon('timer')}</span>
+          <span class="sect"><b>${esc(SUBJ[b.subj].title)}</b><span class="muted">${b.n} sual · ${clock(examSecs(b.n))}${last ? ` · son nəticə ${last.pct}%` : ''}</span></span>${icon('chev')}</a>`;
+      }).join('')}</div>
+      <p class="muted small">Yalnız bir fənn: imtahandakı qədər sual, vaxt imtahandakı payına görə.</p></section>
     <section class="block"><div class="block-h"><h2>Keçid balları (${esc(S.group)})</h2></div>${passTable(null)}
-      <p class="muted small">${esc(EXAM.pass_note)}</p></section>
+      <p class="muted small">${esc(EXAM.pass_note)}</p></section>`}
     ${hist.length ? `<section class="block"><div class="block-h"><h2>Əvvəlki nəticələr</h2></div>
-      <div class="list">${hist.map(r => `<div class="secrow"><span class="chn">${r.pct}%</span>
-        <span class="sect"><b>${r.pts} / ${r.max} bal</b><span class="muted">${day(r.at)} · ${r.n} sual</span></span></div>`).join('')}</div></section>` : ''}`;
+      <div class="list hist">${hist.map(r => `<div class="secrow"><span class="chn">${r.pct}%</span>
+        <span class="sect"><b>${r.pts} / ${r.max} bal</b><span class="muted">${day(r.at)} · ${r.n} sual${r.timeUp ? ' · vaxt bitdi' : ''}</span></span></div>`).join('')}</div></section>` : ''}`;
   const st = $('[data-act="start"]');
   if (st) st.addEventListener('click', () => {
     const items = [];
@@ -824,7 +838,7 @@ function vExam() {
       shuffle(p.mc).slice(0, p.b.n - p.open).forEach(id => items.push({ id, order: optOrder(qById[id]) }));
       shuffle(p.op).slice(0, p.open).forEach(id => items.push({ id, order: null }));
     });
-    S.exam = { group: S.group, start: Date.now(), secs: examSecs(items.length), items, ans: {}, i: 0 };
+    S.exam = { group: S.group, subj: one, start: Date.now(), secs: examSecs(items.length), items, ans: {}, i: 0 };
     save();
     examRun();
   });
@@ -854,7 +868,8 @@ function examRun() {
   const it = E.items[E.i], q = qById[it.id];
   const picked = E.ans[E.i];
   const done = Object.keys(E.ans).filter(k => E.ans[k] !== '' && E.ans[k] != null).length;
-  topbar(`Sınaq imtahanı · ${E.group}`, SUBJ[q.subj] ? SUBJ[q.subj].title : 'Sual', 'testler', `<span class="timer mono" aria-live="off">${clock(examLeft())}</span>`);
+  const what = SUBJ[E.subj] ? 'Sınağı' : 'İmtahanı';
+  topbar(`${SUBJ[E.subj] ? SUBJ[E.subj].title + ' sınağı' : 'Sınaq imtahanı'} · ${E.group}`, SUBJ[q.subj] ? SUBJ[q.subj].title : 'Sual', 'testler', `<span class="timer mono" aria-live="off">${clock(examLeft())}</span>`);
   $('#view').innerHTML = `
     <div class="row qhead"><span class="kicker">Sual ${E.i + 1} / ${n}${q.t === 'open' ? ' · açıq' : ''}</span>${bar(done, n)}</div>
     <h1 class="qtext">${esc(q.q)}</h1>
@@ -868,7 +883,7 @@ function examRun() {
         const a = E.ans[k], has = a !== undefined && a !== '' && a !== null;
         return `<button type="button" class="gq${has ? ' has' : ''}${k === E.i ? ' cur' : ''}" data-go="${k}">${k + 1}</button>`;
       }).join('')}</div></details>
-    <button type="button" class="btn ghost danger wide" data-act="finish">${icon('flag')} İmtahanı bitir</button>`;
+    <button type="button" class="btn ghost danger wide" data-act="finish">${icon('flag')} ${what} bitir</button>`;
   const go = k => { E.i = k; save(); examRun(); window.scrollTo(0, 0); };
   $$('.opt[data-oi]').forEach(b => b.addEventListener('click', () => {
     const oi = +b.dataset.oi;
@@ -882,7 +897,8 @@ function examRun() {
   $$('.gq').forEach(b => b.addEventListener('click', () => go(+b.dataset.go)));
   $('[data-act="finish"]').addEventListener('click', e => {
     const left = n - Object.keys(E.ans).length;
-    askHere(e.currentTarget, left ? `${left} sual cavabsızdır. İmtahan bitsin?` : 'İmtahan bitsin?', 'Bəli, bitir', () => examFinish(false));
+    const ask = SUBJ[E.subj] ? 'Sınaq bitsin?' : 'İmtahan bitsin?';
+    askHere(e.currentTarget, left ? `${left} sual cavabsızdır. ${ask}` : ask, 'Bəli, bitir', () => examFinish(false));
   });
   clearInterval(examTimer);
   examTimer = setInterval(() => {
@@ -909,33 +925,35 @@ function examFinish(timeUp) {
     if (v !== undefined && v !== '') note(it.id, isRight(q, v));
   });
   const max = examMax(items), res = { at: Date.now(), group: E.group, n: items.length, pts, max, pct: pct(pts, max), bySubj, timeUp };
+  if (SUBJ[E.subj]) res.subj = E.subj; // one subject's part only; the whole exam has none
   S.examLast = Object.assign({ items, picks, used: Math.min(E.secs, Math.round((Date.now() - E.start) / 1000)) }, res);
   S.exams.unshift(res);
-  S.exams = S.exams.slice(0, 30);
+  S.exams = S.exams.slice(0, 40);
   S.exam = null;
   save();
   if (location.hash === '#imtahan-netice') vExamResult(); else location.hash = '#imtahan-netice';
 }
 
 function vExamResult() {
-  const R = S.examLast;
-  topbar('Sınaq imtahanı', 'Nəticə', 'testler');
+  const R = S.examLast, one = R && SUBJ[R.subj] ? R.subj : null;
+  topbar(one ? `${SUBJ[one].title} sınağı` : 'Sınaq imtahanı', 'Nəticə', 'testler');
   if (!R) { location.replace('#imtahan'); return; }
   const g = S.group;
   S.group = R.group; // the pass table belongs to the group the exam was taken in
   const table = passTable(R.pct);
   S.group = g;
   $('#view').innerHTML = `
-    <span class="kicker">${esc(R.group)} qrupu · ${R.n} sual${R.timeUp ? ' · vaxt bitdi' : ''}</span>
+    <span class="kicker">${esc(R.group)} qrupu · ${one ? esc(SUBJ[one].title) + ' sınağı · ' : ''}${R.n} sual${R.timeUp ? ' · vaxt bitdi' : ''}</span>
     <h1 class="h1">${R.pts} / ${R.max} bal · ${R.pct}%</h1>
     ${bar(R.pts, R.max)}
     <p class="muted">Vaxt: ${clock(R.used)}</p>
     <div class="tbl block"><table><thead><tr><th>Fənn</th><th>Düz</th><th>Bal</th></tr></thead>
       <tbody>${EXAM.blocks.filter(b => R.bySubj[b.subj]).map(b => { const r = R.bySubj[b.subj];
         return `<tr><td>${esc(SUBJ[b.subj].title)}</td><td>${r.right} / ${r.n}</td><td>${r.pts} / ${r.max}</td></tr>`; }).join('')}</tbody></table></div>
-    <section class="block"><div class="block-h"><h2>Keçid balları</h2></div>${table}</section>
+    ${one ? '<p class="muted small">Keçid balları bütün imtahan üçündür, ona görə fənn sınağında göstərilmir.</p>'
+      : `<section class="block"><div class="block-h"><h2>Keçid balları</h2></div>${table}</section>`}
     <div class="row block">
-      <a class="btn primary" href="#imtahan">${icon('refresh')} Yeni imtahan</a>
+      <a class="btn primary" href="#imtahan${one ? '-' + one : ''}">${icon('refresh')} ${one ? 'Yeni sınaq' : 'Yeni imtahan'}</a>
       <a class="btn" href="#testler">Testlərə qayıt</a>
     </div>
     <section class="block"><div class="block-h"><h2>Səhv və cavabsız suallar</h2></div>${missedList(R.items, R.picks)}</section>`;
@@ -983,6 +1001,7 @@ function vStats() {
   }).filter(x => x.t.bank || x.secs);
   const weak = weakTopics(8);
   const cols = EXAM.blocks.filter(b => full.some(r => r.bySubj[b.subj]));
+  const subjEx = EXAM.blocks.map(b => ({ b, list: S.exams.filter(r => r.group === S.group && r.subj === b.subj) })).filter(x => x.list.length);
   $('#view').innerHTML = `
     <span class="kicker">${esc(S.group)} qrupu</span>
     <h1 class="h1">Statistika</h1>
@@ -1014,7 +1033,10 @@ function vStats() {
       <div class="tbl nums${full.length > 1 ? ' block' : ''}"><table><thead><tr><th>Tarix</th><th>Ümumi</th>${cols.map(b => `<th>${esc(SUBJ[b.subj].title)}</th>`).join('')}</tr></thead>
         <tbody>${full.slice(0, 10).map(r => `<tr><td>${day(r.at)}</td><td><b>${r.pct}%</b></td>${cols.map(b => { const x = r.bySubj[b.subj];
           return `<td>${x ? `${pct(x.right, x.n)}% <span class="muted small">${x.right}/${x.n}</span>` : '—'}</td>`; }).join('')}</tr>`).join('')}</tbody></table></div>`
-        : '<p class="card muted empty">Hələ sınaq imtahanı verməmisən — <a href="#imtahan">sınaq imtahanı</a> bitəndən sonra nəticələr burada qrafikdə görünəcək.</p>'}</section>`;
+        : '<p class="card muted empty">Hələ sınaq imtahanı verməmisən — <a href="#imtahan">sınaq imtahanı</a> bitəndən sonra nəticələr burada qrafikdə görünəcək.</p>'}</section>
+    ${subjEx.length ? `<section class="block"><div class="block-h"><h2>Fənn sınaqları</h2></div>
+      <div class="list">${subjEx.map(x => `<a class="secrow sx" href="#imtahan-${x.b.subj}"><span class="chn">${x.list[0].pct}%</span>
+        <span class="sect"><b>${esc(SUBJ[x.b.subj].title)}</b><span class="muted">son: ${day(x.list[0].at)} · ən yaxşı ${Math.max(...x.list.map(r => r.pct))}% · ${x.list.length} dəfə</span></span>${icon('chev')}</a>`).join('')}</div></section>` : ''}`;
   trendRows = full.length > 1 ? full.slice(0, 12).reverse() : null;
   if (trendRows) drawTrend($('#trend'), trendRows);
 }

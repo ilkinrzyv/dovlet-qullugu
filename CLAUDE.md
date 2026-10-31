@@ -49,14 +49,15 @@ All checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build/
   (inlined; no scripts, handlers or external links), `fix: true` keeps option order when options are the figure's
   letters. Optional `g`. Quiz ids are positional (`c1q3`): new questions go at the end of a chapter's list.
 - `build/app.js` — the whole UI in one IIFE: hash router (`#home`, `#c1`, `#c1s2`, `#proqram[-qan]`, `#testler`,
-  `#test-c1` / `test-mix` / `test-wrong` / `test-f-qan` / `test-s-c1s2` (one section), `#imtahan`, `#imtahan-netice`,
-  `#statistika`, `#sual-c1q3`, `#muellim[-men]`,
-  `#axtar=...`, `#ayarlar`). `vis()` filters everything by `S.group`. State in localStorage `dq-kitab:v1` (`read`,
-  `last`, `quiz`, `wrong`, `ans` = per test question `[right, tries, last 1/0]` from practice and exams (the
-  statistics page: accuracy per subject, weak sections = under 80% with 2+ answers), `chk` = solved inline checks
-  keyed `cNsKkI` (I = index in `section.qs`), `aiModel`, `theme`,
-  `fs`, `group`, `exam` = the running mock exam with its start time, `exams` = history, `examLast`). Export/import as
-  JSON with `app: "dovlet-qullugu"` (offline app only).
+  `#test-c1` / `test-mix` / `test-wrong` / `test-f-qan` / `test-s-c1s2` (one section), `#imtahan`, `#imtahan-men`
+  (one subject's part: its question count, its share of the time), `#imtahan-netice`, `#statistika`, `#sual-c1q3`,
+  `#muellim[-men]`, `#axtar=...`, `#ayarlar`). `vis()` filters everything by `S.group`. State in localStorage
+  `dq-kitab:v1` (`read`, `last`, `quiz`, `wrong`, `ans` = per test question `[right, tries, last 1/0]` from practice
+  and exams (the statistics page: accuracy per subject, weak sections = under 80% with 2+ answers), `chk` = solved
+  inline checks keyed `cNsKkI` (I = index in `section.qs`), `aiModel`, `theme`, `fs`, `group`, `exam` = the running
+  mock exam with its start time (`subj` set for a one-subject exam), `exams` = history (entries with `subj` are
+  subject exams; whole-exam views filter them out), `examLast`). Export/import as JSON with `app: "dovlet-qullugu"`
+  (offline app only).
 - Claude (`app.js` section 2b; teacher chat in section 10) answers inside the book, under the button, like the QA book.
   Two builds of the same `app.js`: the claude.ai page (`build_page.py`, published as an artifact with capability
   `sample` + images, URL in `build/artifact.txt`) runs on the reader's own claude.ai account via

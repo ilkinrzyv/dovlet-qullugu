@@ -2,7 +2,7 @@
    own API key. Loaded before app.js; app.js finds it as window.DQ_PWA (absent on the claude.ai page). */
 (function () {
 'use strict';
-const VERSION = '2026.10.31-45696ca';
+const VERSION = '2026.10.31-5d61393';
 const ASSET_COUNT = 46;
 const CACHE = 'dq-kitab-' + VERSION;
 const ARTIFACT = 'https://claude.ai/artifact/DS1Sg1NBATqkMRPuVkHoER'; // the claude.ai version of the book; Claude runs there on the reader's own account
