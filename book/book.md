@@ -12,7 +12,7 @@ Bu kitab dövlət qulluğuna qəbulun test imtahanına (BA və BB qrupları) haz
 | Məntiq | Verbal, fiqurlu və məntiqi-riyazi tapşırıqların həll üsulları |
 | Azərbaycan dili | Fonetikadan durğu işarələrinə qədər qaydalar |
 | İnformatika | Kompüter, Windows 11, Office 2019, şəbəkə, təhlükəsizlik |
-| Müsahibə | Müsahibədə verilən suallar və cavablar |
+| Müsahibə | Müsahibənin qaydaları, sual növləri və cavabın qurulması, ümumi dünyagörüşü faktları |
 
 ### Vəzifə qrupu
 
@@ -23,6 +23,7 @@ Bu kitab dövlət qulluğuna qəbulun test imtahanına (BA və BB qrupları) haz
 - **Proqram** səhifəsi DİM proqramının bütün mövzularını göstərir: hansı mövzu kitabda var, hansını oxumusan.
 - Bölməni oxuyandan sonra aşağıdakı **“Oxudum”** düyməsini bas — irəliləyiş ana səhifədə görünür.
 - **Testlər** bölməsində fəsil testi, fənn testi, qarışıq test, əvvəl səhv etdiyin suallar və **sınaq imtahanı** var.
+- Bölmələrin içində **nümunələr** (həlli ilə) və **“Özünü yoxla”** sualları var. İlişsən, **“Claude-dan kömək”** düyməsi ipucu verdirir; **Müəllim** bölməsində Claude-dan istənilən mövzunun izahını və hazırlıq məsləhəti ala bilərsən (internet lazımdır).
 - **Axtarış** bütün mətndə işləyir; “ə, ı, ö, ü, ş, ç, ğ” hərflərini yazmasan da tapır.
 - Tətbiq bir dəfə açılandan sonra internetsiz işləyir. Telefonda ana ekrana əlavə et.
 
@@ -6944,3 +6945,362 @@ Cavab: A
 ```
 
 # V hissə — Müsahibə
+
+## Fəsil 31. Müsahibəyə hazırlıq
+
+Test imtahanından keçdikdən sonra vakant vəzifəyə **müsahibə** ilə qəbul olunursan. Müsahibə testdən fərqli olaraq yalnız bilik yox, həm də **danışıq, düşüncə tərzi və davranış** yoxlayır. Bu fəsil müsahibənin necə keçdiyini, hansı suallar verildiyini və cavabı necə qurmağı izah edir. Ümumi dünyagörüşü sualları üçün faktlar növbəti fəsildədir.
+
+### 31.1. Müsahibə necə keçir
+
+Qaydalar “Dövlət qulluğu haqqında” Qanunda (Fəsil 2.11) və DİM-in izahlarında verilib:
+
+- Vakant vəzifə yarandığı gündən **bir ay** ərzində müsabiqə və ya müsahibə barədə qərar verilir; elan müsahibəyə bir ay qalmış verilir.
+- **Komissiya 3 nəfərdir** — DİM-in nümayəndəsi və müstəqil ekspert daxil olmaqla.
+- Müsahibə hər namizədlə **ayrıca**, ən azı **20 dəqiqə** aparılır.
+- İntizam tənbehi almış qulluqçu **altı ay** müsahibəyə buraxılmır.
+
+**Dörd meyar** qiymətləndirilir, hər biri **2-dən 5-ə qədər** balla:
+
+| Meyar | Nə yoxlanılır |
+| --- | --- |
+| Bilik səviyyəsi | qanunvericilik, vəzifə ilə bağlı sahə bilikləri |
+| Peşə hazırlığı | təcrübə, bacarıqlar, işi necə quracağın |
+| Ümumi dünyagörüşü | dövlət, tarix, cəmiyyət, mədəniyyət haqqında məlumatlılıq |
+| Vəzifə üçün zəruri keyfiyyətlər | ünsiyyət, məsuliyyət, etik davranış, stressə davamlılıq |
+
+Ən yüksək bal **4 × 5 = 20**-dir. **16 və daha çox bal** toplayan müsahibədən keçmiş sayılır. Vəzifəyə təyin edilməyən uğurlu namizədlər **iki il** həmin orqanda ehtiyat kadr kimi saxlanılır. Nəzərə alınır: ixtisas dərəcəsi, attestasiyanın nəticələri, əlavə təhsil. Nəticədən **apellyasiya şurasına**, Şuraya və məhkəməyə şikayət vermək olar.
+
+> Mənbə: DİM, “Dövlət qulluğuna qəbul qaydaları ilə bağlı nələri bilməliyik?” (2017) və Qanunun 29-cu maddəsi. Qaydalar dəyişə bilər — son məlumatı dim.gov.az-da yoxla.
+
+```nümunə
+S: Müsahibədən keçmək üçün ən azı neçə bal toplamaq lazımdır?
+A) 16
+B) 12
+C) 20
+D) 15
+E) 18
+Cavab: A
+İzah: Dörd meyarın hər biri 2–5 balla qiymətləndirilir, ən yüksək bal 4 · 5 = **20**-dir. Keçid həddi **16** baldır — yəni orta hesabla hər meyardan 4 bal. 20 maksimumdur, keçid həddi deyil.
+```
+
+```yoxla
+S: Hansı meyar müsahibədə qiymətləndirilən dörd meyara daxil deyil?
+A) namizədin yaşı
+B) bilik səviyyəsi
+C) peşə hazırlığı
+D) ümumi dünyagörüşü
+E) vakant vəzifə üçün zəruri keyfiyyətlər
+Cavab: A
+```
+
+### 31.2. Sual növləri və cavabın qurulması
+
+| Sual növü | Nümunə | Necə hazırlaşmalı |
+| --- | --- | --- |
+| **Özün haqqında** | “Özünüzü təqdim edin.” | 1–2 dəqiqəlik plan: təhsil → təcrübə → bu vəzifəyə uyğun bacarıqlar → niyə bu vəzifə |
+| **Motivasiya** | “Niyə dövlət qulluğu? Niyə bizim orqan?” | orqanın **Əsasnaməsini**, funksiyalarını, saytındakı son xəbərləri öyrən |
+| **Bilik** | “Maraqlar toqquşması nədir?” | Dövlət qulluğu, Etik davranış, Korrupsiya, Müraciətlər qanunları (Fəsil 2–6) və vəzifənin sahə qanunu |
+| **Situasiya** | “Vətəndaş sizə kobudluq edərsə...” | qanuna, etik qaydalara və sakit ünsiyyətə əsaslanan addım-addım cavab |
+| **Davranış (təcrübə)** | “Çətin bir işi necə həll etdiniz?” | **STAR** üsulu |
+| **Ümumi dünyagörüşü** | “Dövlət Suverenliyi Günü nə vaxtdır?” | Fəsil 32 |
+
+**STAR üsulu** — təcrübə haqqında suala strukturlu cavab:
+
+1. **S** — Situasiya: hansı vəziyyət idi?
+2. **T** — Tapşırıq: sənin vəzifən nə idi?
+3. **A** — Addımlar: konkret olaraq **sən** nə etdin?
+4. **R** — Nəticə: nə alındı, nə öyrəndin? (mümkünsə rəqəmlə)
+
+**Situasiya suallarında** cavabı qanuna bağla. Məsələn, qanunsuz göstəriş haqqında suala “Etik davranış qaydaları haqqında” Qanunun 10.2-ci maddəsinə uyğun cavab verilir (Fəsil 3.3): əvvəl **yazılı əsaslandırma**, sonra rəhbərdən **yazılı təsdiq** tələbi, bundan sonra da qanunsuzluğa əmin olduqda icradan **imtina**.
+
+```nümunə
+S: Müsahibədə soruşurlar: “Birbaşa rəhbəriniz sizə qanuna zidd olduğuna əmin olduğunuz göstəriş versə, nə edərsiniz?” Hansı cavab qanuna uyğundur?
+A) Göstərişin qanuna zidd olduğunu yazılı əsaslandırar, yazılı təsdiqini tələb edərdim; təsdiqdən sonra da qanunsuz olduğuna əmin olsam, icra etməkdən imtina edərdim.
+B) Rəhbərin hər göstərişini müzakirəsiz icra edərdim.
+C) Heç nə demədən işi yerinə yetirməzdim.
+D) Məsələni dərhal sosial şəbəkədə paylaşardım.
+E) İşdən çıxmaq barədə ərizə yazardım.
+Cavab: A
+İzah: Bu, “Dövlət qulluqçularının etik davranış qaydaları haqqında” Qanunun 10.2-ci maddəsindəki ardıcıllıqdır (Fəsil 3.3). Komissiya həm qanunu bildiyini, həm də münaqişəni qanuni yolla həll etməyi bacardığını görür. B qanunsuzluğa şərik olmaqdır, C və E qeyri-peşəkar, D isə etik qaydalara ziddir.
+```
+
+```yoxla
+S: “Özünüzü təqdim edin” sualına hansı cavab daha uğurludur?
+A) 1–2 dəqiqədə təhsil, təcrübə və bu vəzifəyə uyğun bacarıqlar haqqında qısa və ardıcıl danışmaq
+B) uşaqlıqdan başlayaraq bütün həyatını təfərrüatı ilə danışmaq
+C) “CV-də hər şey yazılıb” deyib susmaq
+D) yalnız hobbilərdən danışmaq
+E) keçmiş iş yerini və rəhbərini tənqid etmək
+Cavab: A
+```
+
+### 31.3. Davranış, ünsiyyət və tipik səhvlər
+
+**Müsahibədən əvvəl:**
+
+- vəzifənin təsvirini və orqanın Əsasnaməsini oxu;
+- vəzifəyə aid qanunları və bu kitabın Qanunvericilik hissəsini təkrarla;
+- “Özünüzü təqdim edin”, “Niyə bu vəzifə?” suallarının cavabını **yüksək səslə** məşq et;
+- vaxtından tez gəl, rəsmi geyin, şəxsiyyət vəsiqəsini və lazım olan sənədləri götür.
+
+**Müsahibə zamanı:**
+
+- sualı **sonadək dinlə**, lazım gələrsə dəqiqləşdir;
+- cavabı **qısa və strukturlu** qur: əvvəl əsas fikir, sonra əsaslandırma və nümunə;
+- bilmədiyin sualda **uydurma**: dürüst etiraf et, bildiyin əlaqəli məlumatı de və necə öyrənəcəyini göstər;
+- komissiyanın hər üzvünə müraciət et, sakit və nəzakətli ol;
+- sonda vəzifə haqqında **yerinə düşən sual** verə bilərsən.
+
+**Tipik səhvlər:** suala cavab verməyib başqa mövzuya keçmək; əzbər, quru mətn danışmaq; keçmiş iş yerini pisləmək; şişirtmək və həqiqətə uyğun olmayan məlumat vermək; maaş və güzəştləri ilk sual etmək; telefonla məşğul olmaq.
+
+```nümunə
+S: Komissiya üzvü bilmədiyiniz bir qanun maddəsini soruşur. Ən düzgün davranış hansıdır?
+A) Dəqiq bilmədiyini dürüst deyib mövzu ilə bağlı bildiyini qısa izah etmək və bu barədə mənbədən (e-qanun.az) dəqiqləşdirəcəyini bildirmək
+B) Təxmini bir maddə nömrəsi uydurmaq
+C) Uzun müddət susmaq
+D) Sualı eşitməmiş kimi başqa mövzuya keçmək
+E) Sualın yersiz olduğunu demək
+Cavab: A
+İzah: Komissiya **dürüstlüyü** və **məsələyə yanaşmanı** qiymətləndirir. Uydurma cavab tez üzə çıxır və “vəzifə üçün zəruri keyfiyyətlər” meyarından bal itirdirir. Bildiyin əlaqəli məlumat və mənbəni bilmək isə peşəkarlıq göstəricisidir.
+```
+
+```yoxla
+S: Hansı davranış müsahibədə tipik səhv sayılır?
+A) keçmiş iş yerini və həmkarlarını pisləmək
+B) sualı sonadək dinləmək
+C) cavabı qısa və strukturlu qurmaq
+D) bilmədiyini dürüst etiraf etmək
+E) sonda vəzifə haqqında sual vermək
+Cavab: A
+```
+
+### 31.4. Virtual müəllimlə müsahibə məşqi
+
+Müsahibəyə ən yaxşı hazırlıq — **yüksək səslə məşqdir**. Tətbiqin **Müəllim** bölməsində:
+
+1. **Məsləhət** hissəsində **“Müsahibə”** düyməsini bas — Claude müsahibəyə necə hazırlaşmaq barədə plan verəcək.
+2. Və ya **öz sualını** yaz, məsələn: *“Mənimlə ... vəzifəsi üzrə dövlət qulluğu müsahibəsi məşqi apar. Bir-bir sual ver, cavabımı gözlə, sonra onu dörd meyar üzrə (bilik, peşə hazırlığı, ümumi dünyagörüşü, vəzifə üçün keyfiyyətlər) 2–5 balla qiymətləndir və necə yaxşılaşdıra biləcəyimi de.”*
+
+Claude sənin hesabında açılır, cavablarını yazılı və ya səsli verə bilərsən. Hər məşqdən sonra zəif meyarı qeyd et və növbəti dəfə ona diqqət yetir.
+
+**Diqqət:** Claude-un verdiyi faktları — xüsusən qanun maddələrini və tarixləri — bu kitabla və rəsmi mənbələrlə (e-qanun.az, dim.gov.az) yoxla.
+
+## Fəsil 32. Ümumi dünyagörüşü: Azərbaycan dövləti
+
+Müsahibədə **ümumi dünyagörüşü** meyarı üzrə çox vaxt Azərbaycanın dövlətçilik tarixi, əlamətdar günləri, beynəlxalq əlaqələri və mədəniyyəti haqqında soruşulur. Bu fəsildə ən vacib faktlar toplanıb. Bayramların siyahısı, Zəfər və Dövlət Suverenliyi günləri rəsmi mətnlərdən (Əmək Məcəlləsi, Prezidentin sərəncamları) yoxlanılıb. Dövlət quruluşu Fəsil 1-də, dövlət rəmzləri Fəsil 14-də, əlifba tarixi Fəsil 22-də verilib.
+
+**Diqqət:** “son hadisələr”, iqtisadi göstəricilər və layihələrin rəqəmləri tez dəyişir — onları müsahibədən əvvəl rəsmi saytlardan (president.az, gov.az) təzələ.
+
+### 32.1. Azərbaycan Xalq Cümhuriyyəti (1918–1920)
+
+- **1918-ci il 28 may** — Azərbaycan Milli Şurası Tiflisdə **İstiqlal Bəyannaməsini** qəbul etdi, **Azərbaycan Xalq Cümhuriyyəti (AXC)** yarandı — müsəlman Şərqində ilk demokratik respublika. Milli Şuranın sədri — **Məhəmməd Əmin Rəsulzadə**.
+- İlk hökumətin başçısı (Baş nazir) — **Fətəli xan Xoyski**.
+- **Parlament 1918-ci il 7 dekabrda** açıldı; qadınlara seçki hüququ verildi.
+- **1918-ci il 9 noyabr** — üçrəngli bayraq dövlət bayrağı kimi qəbul edildi (bu gün **Dövlət bayrağı günüdür**).
+- **26 iyun 1918** — Azərbaycan Silahlı Qüvvələrinin yaradılması (**Silahlı Qüvvələr günü**).
+- **1919** — Bakı Dövlət Universiteti təsis edildi.
+- **1920-ci il 28 aprel** — AXC süqut etdi.
+
+AXC dövründən bu günə qalan əlamətdar günlər: **28 may** — Müstəqillik Günü, **26 iyun** — Silahlı Qüvvələr günü, **9 noyabr** — Dövlət bayrağı günü.
+
+```nümunə
+S: Azərbaycan Xalq Cümhuriyyətinin ilk hökumətinin başçısı kim olub?
+A) Fətəli xan Xoyski
+B) Məhəmməd Əmin Rəsulzadə
+C) Əlimərdan bəy Topçubaşov
+D) Nəsib bəy Yusifbəyli
+E) Həsən bəy Zərdabi
+Cavab: A
+İzah: İlk hökumətə (Nazirlər Şurasına) **Fətəli xan Xoyski** başçılıq edib. **M. Ə. Rəsulzadə** isə İstiqlal Bəyannaməsini qəbul edən **Milli Şuranın sədri** idi — iki rolu qarışdırma. H. Zərdabi “Əkinçi” qəzetinin naşiridir (XIX əsr).
+```
+
+```yoxla
+S: Azərbaycan Xalq Cümhuriyyətinin yaranması hansı tarixdə elan edilib?
+A) 28 may 1918
+B) 18 oktyabr 1991
+C) 9 noyabr 1918
+D) 28 aprel 1920
+E) 26 iyun 1918
+Cavab: A
+```
+
+### 32.2. Müstəqilliyin bərpası (1988–1995)
+
+| Tarix | Hadisə |
+| --- | --- |
+| 17 noyabr 1988 | Azadlıq meydanında xalq hərəkatının başlanğıcı — **Milli Dirçəliş günü** |
+| 31 dekabr 1989 | Naxçıvanda sərhəd hadisələri — **Dünya azərbaycanlılarının həmrəyliyi günü** |
+| **20 yanvar 1990** | sovet qoşunlarının Bakıda dinc əhaliyə qarşı qırğını — **Ümumxalq hüzn günü** |
+| 30 avqust 1991 | Ali Sovet dövlət müstəqilliyinin bərpası haqqında Bəyannamə qəbul etdi |
+| **18 oktyabr 1991** | **“Dövlət Müstəqilliyi haqqında” Konstitusiya Aktı** — **Müstəqilliyin Bərpası Günü** |
+| 29 dekabr 1991 | müstəqillik referendumu |
+| **26 fevral 1992** | **Xocalı soyqırımı** |
+| **15 iyun 1993** | **Heydər Əliyev** Ali Sovetin sədri seçildi — **Milli qurtuluş günü** |
+| 1994, may | atəşkəs |
+| **12 noyabr 1995** | **Konstitusiya** referendumla qəbul edildi — **Konstitusiya günü** |
+
+```nümunə
+S: “Dövlət Müstəqilliyi haqqında” Konstitusiya Aktı nə vaxt qəbul edilib?
+A) 18 oktyabr 1991
+B) 30 avqust 1991
+C) 28 may 1918
+D) 29 dekabr 1991
+E) 12 noyabr 1995
+Cavab: A
+İzah: Konstitusiya Aktı **1991-ci il 18 oktyabrda** qəbul edilib, bu gün **Müstəqilliyin Bərpası Günü** kimi qeyd olunur. 30 avqust — Ali Sovetin Bəyannaməsi, 29 dekabr — referendum, 12 noyabr 1995 — Konstitusiyanın qəbulu, 28 may — AXC-nin yaranmasıdır (Müstəqillik Günü).
+```
+
+```yoxla
+S: Milli qurtuluş günü hansı hadisə ilə bağlıdır?
+A) 1993-cü il 15 iyunda Heydər Əliyevin Ali Sovetin sədri seçilməsi
+B) 1918-ci il 28 mayda İstiqlal Bəyannaməsinin qəbulu
+C) 1995-ci il 12 noyabrda Konstitusiyanın qəbulu
+D) 1988-ci il 17 noyabrda xalq hərəkatının başlanması
+E) 2020-ci il 8 noyabrda Şuşanın azad edilməsi
+Cavab: A
+```
+
+### 32.3. Vətən müharibəsi və suverenliyin tam bərpası
+
+Prezidentin 2020-ci il 3 dekabr tarixli 2314 nömrəli və 2024-cü il 19 sentyabr tarixli 294 nömrəli sərəncamlarına görə:
+
+- Ermənistan 1990-cı illərin əvvəllərində Azərbaycan ərazisinin **20 faizini** işğal etmiş, **1 milyondan artıq** azərbaycanlı yurd-yuvasından didərgin düşmüşdü.
+- **BMT Təhlükəsizlik Şurasının 822, 853, 874 və 884 saylı qətnamələri** (1993) yerinə yetirilmədi, danışıqlar 30 ilə yaxın nəticə vermədi.
+- **2020-ci il 27 sentyabr** — **44 günlük Vətən müharibəsi** başladı. Cəbrayıl, Füzuli, Zəngilan, Qubadlı şəhərləri və **Şuşa** daxil olmaqla 300-dən çox yaşayış məntəqəsi azad edildi; Ermənistan **Kəlbəcər, Ağdam və Laçın** rayonlarını qaytarmağa məcbur oldu.
+- **8 noyabr** (Şuşanın azad edilməsi) — **Zəfər Günü** (Sərəncam, 3 dekabr 2020, № 2314).
+- **27 sentyabr** — **Anım Günü**: torpaqların azad edilməsi uğrunda həlak olmuş şəhidlərin xatirəsi (Əmək Məcəlləsi, maddə 106-1).
+- **2023-cü il 19 sentyabr** — Qarabağ iqtisadi rayonunda **antiterror tədbirləri** başladı, **23 saat** davam edib **20 sentyabrda** başa çatdı; Azərbaycanın **suverenliyi tam bərpa olundu**.
+- **20 sentyabr** — **Dövlət Suverenliyi Günü** (Sərəncam, 19 sentyabr 2024, № 294).
+
+```nümunə
+S: Zəfər Günü hansı tarixdə qeyd olunur və hansı hadisə ilə bağlıdır?
+A) 8 noyabr — Şuşanın azad edilməsi
+B) 27 sentyabr — Vətən müharibəsinin başlanması
+C) 20 sentyabr — suverenliyin tam bərpası
+D) 10 noyabr — müharibənin başa çatması
+E) 9 noyabr — Dövlət bayrağı günü
+Cavab: A
+İzah: Zəfər Günü **8 noyabr** — Şuşanın düşmən əsarətindən qurtarıldığı gün (Prezidentin 2020-ci il 3 dekabr tarixli Sərəncamı). 27 sentyabr — Anım Günü, 20 sentyabr — Dövlət Suverenliyi Günüdür.
+```
+
+```yoxla
+S: 2023-cü ilin sentyabrında keçirilən antiterror tədbirləri nə qədər davam edib?
+A) 23 saat
+B) 44 gün
+C) 3 gün
+D) bir həftə
+E) 10 saat
+Cavab: A
+```
+
+### 32.4. Bayramlar və əlamətdar günlər
+
+**Əmək Məcəlləsinin 105-ci maddəsinə görə bayramlar** (* — **iş günü sayılmayanlar**):
+
+| Tarix | Bayram |
+| --- | --- |
+| 1–2 yanvar | Yeni il bayramı * |
+| 8 mart | Qadınlar günü * |
+| 9 may | Faşizm üzərində qələbə günü * |
+| **28 may** | **Müstəqillik Günü** * |
+| **15 iyun** | Azərbaycan xalqının milli qurtuluş günü * |
+| **26 iyun** | Silahlı Qüvvələr günü * |
+| **20 sentyabr** | **Dövlət Suverenliyi Günü** |
+| **18 oktyabr** | **Müstəqilliyin Bərpası Günü** |
+| **8 noyabr** | **Zəfər Günü** * |
+| **9 noyabr** | **Dövlət bayrağı günü** * |
+| **12 noyabr** | **Konstitusiya günü** |
+| 17 noyabr | Milli Dirçəliş günü |
+| 31 dekabr | Dünya azərbaycanlılarının həmrəyliyi günü * |
+| — | Novruz (5 gün) *, Qurban (2 gün) *, Ramazan (2 gün) * |
+
+**Hüzn və anım günləri:** **20 yanvar** — Ümumxalq hüzn günü (iş günü sayılmır); **27 sentyabr** — Anım Günü. Həmçinin **26 fevral** Xocalı soyqırımı və **31 mart** azərbaycanlıların soyqırımı günü kimi anılır.
+
+```nümunə
+S: Əmək Məcəlləsinə görə hansı bayram iş günü hesab edilmir?
+A) Zəfər Günü (8 noyabr)
+B) Konstitusiya günü (12 noyabr)
+C) Milli Dirçəliş günü (17 noyabr)
+D) Müstəqilliyin Bərpası Günü (18 oktyabr)
+E) Dövlət Suverenliyi Günü (20 sentyabr)
+Cavab: A
+İzah: Maddə 105.2-də iş günü sayılmayan bayramlar sadalanır və **Zəfər Günü** onların arasındadır. Konstitusiya günü, Milli Dirçəliş günü, Müstəqilliyin Bərpası Günü və Dövlət Suverenliyi Günü bayram kimi qeyd olunur, amma iş günüdür.
+```
+
+```yoxla
+S: Novruz bayramı Əmək Məcəlləsinə görə neçə gün qeyd olunur? (rəqəmlə yaz)
+Cavab: 5 | beş
+```
+
+### 32.5. Beynəlxalq əlaqələr və enerji layihələri
+
+**Beynəlxalq təşkilatlara üzvlük:**
+
+| Təşkilat | Üzvlük |
+| --- | --- |
+| **BMT** | **2 mart 1992**; 2012–2013-cü illərdə Təhlükəsizlik Şurasının qeyri-daimi üzvü |
+| ATƏT | 30 yanvar 1992 |
+| İslam Əməkdaşlıq Təşkilatı | 1991 |
+| **Avropa Şurası** | **25 yanvar 2001** |
+| Qoşulmama Hərəkatı | 2011; 2019–2023-cü illərdə sədr |
+| Türk Dövlətləri Təşkilatı | təsisçi; 2009-cu ildə Naxçıvan sazişi ilə yaranıb |
+
+**COP29** — BMT-nin İqlim Dəyişmələri üzrə Çərçivə Konvensiyasının Tərəflər Konfransı 2024-cü ilin noyabrında Bakıda keçirilib.
+
+**Enerji layihələri:**
+
+- **“Əsrin müqaviləsi”** — **1994-cü il 20 sentyabr**da Xəzərin Azərbaycan sektorundakı yataqlar üzrə imzalanmış neft sazişi.
+- **Bakı–Tbilisi–Ceyhan** neft kəməri — 2006-cı ildə istismara verilib.
+- **Cənub Qaz Dəhlizi** — Azərbaycan qazını Avropaya çatdırır: Cənubi Qafqaz kəməri, **TANAP** (Türkiyə ərazisində, 2018-ci ildə açılıb) və **TAP** (Yunanıstan, Albaniya, İtaliya; 2020-ci ilin sonunda istismara verilib).
+
+```nümunə
+S: Azərbaycan BMT-yə nə vaxt üzv olub?
+A) 2 mart 1992
+B) 18 oktyabr 1991
+C) 25 yanvar 2001
+D) 30 yanvar 1992
+E) 12 noyabr 1995
+Cavab: A
+İzah: Azərbaycan **1992-ci il 2 martda** BMT-yə üzv qəbul edilib. 30 yanvar 1992 — ATƏT-ə, 25 yanvar 2001 — Avropa Şurasına üzvlük tarixidir.
+```
+
+```yoxla
+S: “Əsrin müqaviləsi” nə vaxt imzalanıb?
+A) 20 sentyabr 1994
+B) 18 oktyabr 1991
+C) 12 noyabr 1995
+D) 2 mart 1992
+E) 28 may 1918
+Cavab: A
+```
+
+### 32.6. Mədəniyyət və mətbuat
+
+| Fakt | Qeyd |
+| --- | --- |
+| **“Əkinçi”** | Azərbaycan dilində ilk qəzet; ilk sayı **22 iyul 1875**; naşiri **Həsən bəy Zərdabi** — 22 iyul **Milli Mətbuat günüdür** |
+| **“Molla Nəsrəddin”** | satirik jurnal; ilk sayı **1906**-cı ildə Tiflisdə; redaktoru **Cəlil Məmmədquluzadə** |
+| **“Leyli və Məcnun”** | **Üzeyir Hacıbəyli**; 1908 — **müsəlman Şərqində ilk opera** |
+| **Dövlət himni** | musiqisi — **Üzeyir Hacıbəyli**, sözləri — **Əhməd Cavad** |
+| UNESCO-nun Ümumdünya İrs Siyahısı | İçərişəhər, Şirvanşahlar sarayı və Qız qalası (2000), Qobustan (2007), Xan sarayı ilə Şəkinin tarixi mərkəzi (2019) |
+
+```nümunə
+S: Azərbaycan dilində ilk qəzet hansıdır və onun naşiri kim olub?
+A) “Əkinçi” — Həsən bəy Zərdabi
+B) “Molla Nəsrəddin” — Cəlil Məmmədquluzadə
+C) “Əkinçi” — Cəlil Məmmədquluzadə
+D) “Molla Nəsrəddin” — Həsən bəy Zərdabi
+E) “Kaspi” — Üzeyir Hacıbəyli
+Cavab: A
+İzah: **“Əkinçi”** qəzetinin ilk sayı **1875-ci il 22 iyulda** çıxıb, naşiri **Həsən bəy Zərdabi** olub; bu gün Milli Mətbuat günüdür. “Molla Nəsrəddin” isə 1906-cı ildə C. Məmmədquluzadənin nəşr etdiyi satirik jurnaldır.
+```
+
+```yoxla
+S: Azərbaycan Respublikasının Dövlət himninin musiqisinin müəllifi kimdir?
+A) Üzeyir Hacıbəyli
+B) Əhməd Cavad
+C) Müslüm Maqomayev
+D) Qara Qarayev
+E) Fikrət Əmirov
+Cavab: A
+```

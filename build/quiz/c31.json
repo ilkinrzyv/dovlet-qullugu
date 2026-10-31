@@ -1,0 +1,11 @@
+{
+"31": [
+ {"s":"31.1","q":"Müsahibə komissiyası neçə nəfərdən ibarətdir?","o":["3","5","2","7","4"],"a":0,"e":"Komissiya 3 nəfərdir — DİM-in nümayəndəsi və müstəqil ekspert daxil olmaqla."},
+ {"s":"31.1","t":"open","q":"Müsahibədə toplana biləcək ən yüksək bal neçədir? (rəqəmlə yaz)","a":["20","iyirmi"],"e":"4 meyar × ən çoxu 5 bal = 20. Keçid həddi 16 baldır."},
+ {"s":"31.1","q":"Müsahibədən uğurla keçmiş, amma vəzifəyə təyin edilməmiş namizəd neçə il ehtiyat kadr kimi saxlanılır?","o":["2 il","1 il","3 il","5 il","6 ay"],"a":0,"e":"Belə namizədlər iki il həmin orqanda ehtiyat kadr kimi saxlanılır."},
+ {"s":"31.1","q":"Müsahibə hər namizədlə ən azı nə qədər aparılır?","o":["20 dəqiqə","5 dəqiqə","10 dəqiqə","1 saat","2 saat"],"a":0,"e":"Müsahibə hər namizədlə ayrıca, ən azı 20 dəqiqə aparılır."},
+ {"s":"31.2","q":"STAR üsulunda “A” hərfi nəyi bildirir?","o":["namizədin atdığı konkret addımları","auditoriyanı","alternativləri","arqumentləri","analizi"],"a":0,"e":"S — situasiya, T — tapşırıq, A — addımlar (konkret olaraq sən nə etdin), R — nəticə."},
+ {"s":"31.2","q":"Hansı suala STAR üsulu ilə cavab vermək ən əlverişlidir?","o":["“Çətin bir işi necə həll etdiniz?”","“Doğum tarixiniz?”","“Konstitusiya nə vaxt qəbul edilib?”","“Hansı dilləri bilirsiniz?”","“Ünvanınız haradır?”"],"a":0,"e":"STAR keçmiş təcrübə haqqında davranış suallarına strukturlu cavab vermək üçündür."},
+ {"s":"31.3","q":"Müsahibədə bilmədiyiniz faktı soruşduqda ən düzgün davranış hansıdır?","o":["dürüst etiraf edib bildiyi əlaqəli məlumatı və mənbəni demək","təxmini fakt uydurmaq","susmaq","mövzunu dəyişmək","sualı tənqid etmək"],"a":0,"e":"Uydurma cavab etibarı itirir; dürüstlük və məsələyə yanaşma “vəzifə üçün zəruri keyfiyyətlər” meyarında qiymətləndirilir."}
+]
+}
