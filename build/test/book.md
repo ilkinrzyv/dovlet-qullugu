@@ -32,7 +32,57 @@ Mətn.
 
 ### 3.1. Fiqurlar
 
-Mətn.
+Ardıcıllıqda hər ədəd əvvəlkindən 2 artıqdır.
+
+```nümunə
+S: 2, 4, 6, ? — sual işarəsinin yerinə hansı ədəd gəlməlidir?
+A) 7
+B) 8
+C) 9
+D) 10
+E) 12
+Cavab: B
+İzah: Hər ədəd əvvəlkindən **2** artıqdır: 6 + 2 = 8.
+```
+
+```yoxla
+S: 3, 5, 7, ? — sual işarəsinin yerinə hansı ədəd gəlməlidir?
+A) 8
+B) 10
+C) 9
+D) 11
+E) 12
+Cavab: C
+```
+
+```yoxla
+S: 1, 3, 5, ? (rəqəmlə yaz)
+Cavab: 7 | yeddi
+```
+
+Kvadratın dörd tərəfi bərabərdir.
+
+```nümunə
+S: Şəkildə hansı fiqur kvadratdır?
+Şəkil: f1.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: B
+İzah: B-nin dörd tərəfi bərabərdir.
+```
+
+```yoxla
+S: Kvadratın neçə tərəfi var?
+A) 3
+B) 4
+C) 5
+D) 6
+E) 8
+Cavab: B
+```
 
 # III hissə — Azərbaycan dili {fənn=az}
 

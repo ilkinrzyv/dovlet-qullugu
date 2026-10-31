@@ -59,7 +59,9 @@ const ICONS = {
   clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
   map: '<path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/>',
   timer: '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/>',
-  flag: '<path d="M5 21V4h11l-1.5 4L16 12H5"/>'
+  flag: '<path d="M5 21V4h11l-1.5 4L16 12H5"/>',
+  chat: '<path d="M4 5h16v11H10l-4.5 3.5V16H4z"/><path d="M8 9.5h8M8 12.5h5"/>',
+  copy: '<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4h-9A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H8"/>'
 };
 const icon = (n, cls) => `<svg class="i${cls ? ' ' + cls : ''}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n] || ''}</svg>`;
 
@@ -72,10 +74,68 @@ function toast(msg) {
 }
 
 /* =========================================================
+   2b. Claude: help opens in the reader's own Claude
+   ========================================================= */
+// claude.ai/new?q= starts a chat in whatever account that phone or browser is signed into, with the prompt filled
+// in. No model is named: the reader picks one in Claude. The parameter is undocumented, so a tap also copies the
+// prompt — if Claude opens empty, the reader pastes it.
+const CLAUDE_NEW = 'https://claude.ai/new?q=';
+const PROMPT_MAX = 1800; // characters: instructions come first, so a cut only shortens the quoted material
+const clip = (s, n) => { s = String(s || '').replace(/\s+/g, ' ').trim(); return s.length > n ? s.slice(0, n - 1) + '…' : s; };
+const claudeUrl = p => CLAUDE_NEW + encodeURIComponent(p.length > PROMPT_MAX ? p.slice(0, PROMPT_MAX - 1) + '…' : p);
+const claudeLink = (p, label, cls) =>
+  `<a class="btn sm claude${cls ? ' ' + cls : ''}" data-claude href="${esc(claudeUrl(p))}" target="_blank" rel="noopener">${icon('chat')} ${esc(label)}</a>`;
+async function copyText(t) {
+  try { await navigator.clipboard.writeText(t); return true; } catch (e) { return false; }
+}
+document.addEventListener('click', e => {
+  const a = e.target.closest && e.target.closest('a[data-claude]');
+  if (!a || e.defaultPrevented) return;
+  copyText(new URL(a.href).searchParams.get('q') || '').then(ok => toast(!navigator.onLine
+    ? 'İnternet yoxdur. Sual kopyalandı — sonra Claude-a yapışdır.'
+    : ok ? 'Claude açılır. Sual həm də kopyalandı: boş açılsa, yapışdır.' : 'Claude açılır.'));
+});
+
+const subjTitle = id => SUBJ[id] ? SUBJ[id].title : '';
+function tutor(subj) {
+  return `Sən Azərbaycanda dövlət qulluğuna qəbul imtahanına (DİM-in test imtahanı, ${S.group} vəzifə qrupu) hazırlaşan birinə kömək edən səbirli müəllimsən. Azərbaycan dilində, sadə və addım-addım cavab ver.`
+    + (subj === 'qan' ? ' Qanun maddələrinə istinad et; əmin olmadığın faktı uydurma, e-qanun.az-da yoxlamağı məsləhət gör.' : '');
+}
+// order: the option order the reader saw (letters follow it); null for open questions
+function qPlain(q, order) {
+  const lines = [`Sual: ${clip(q.qt || q.q, 600)}`];
+  if (q.img) lines.push('(Sualda şəkil var — onu ayrıca göndərəcəm və ya təsvir edəcəm.)');
+  if (q.t === 'open') lines.push('(Açıq sual: cavab yazılır.)');
+  else order.forEach((oi, k) => lines.push(`${'ABCDEF'[k]}) ${q.o[oi]}`));
+  return lines.join('\n');
+}
+function ansLabel(q, order, v) {
+  if (q.t === 'open') return v == null || v === '' ? 'cavab yazmamışam' : v;
+  return v == null ? 'cavab verməmişəm' : `${'ABCDEF'[order.indexOf(v)]}) ${q.o[v]}`;
+}
+const topicOf = q => q.s && secById[q.s] ? `${secById[q.s].num ? secById[q.s].num + '. ' : ''}${secById[q.s].title}` : '';
+function pSection(s, c) {
+  const where = `${subjTitle(c.subj) ? subjTitle(c.subj) + ' → ' : ''}Fəsil ${c.n}. ${c.title} → ${s.num ? s.num + '. ' : ''}${s.title}`;
+  return `${tutor(c.subj)}\n\nMövzu: ${where}.\nBu mövzunu mənə sadə dillə izah et, 2–3 misal göstər və sonda özümü yoxlamaq üçün 3 sual ver (cavablarını ən sonda ayrıca yaz).\n\nKitabdakı mətndən çıxarış: ${clip(s.text, 900)}`;
+}
+// a check question the reader is stuck on: a hint first, never the answer straight away
+function pHint(q, order, topic, subj) {
+  return `${tutor(subj)}\n\nBu yoxlama sualında çətinlik çəkirəm${topic ? ` (mövzu: ${topic})` : ''}. Cavabı dərhal demə: əvvəl hansı qayda və ya üsulun lazım olduğunu izah et və bir ipucu ver. Cavabımı yazım, sonra yoxla; tam həlli yalnız mən istəsəm göstər.\n\n${qPlain(q, order)}`;
+}
+// an answered question or a worked example: the full solution and one more like it
+function pExplain(q, order, picked, topic, subj) {
+  const e = q.et || (q.k ? '' : q.e);
+  return `${tutor(subj)}\n\nBu sualın həllini addım-addım izah et, düz cavabın niyə məhz bu olduğunu göstər və mənə oxşar bir sual ver (cavabını ən sonda yaz)${topic ? `. Mövzu: ${topic}` : ''}.\n\n${qPlain(q, order)}`
+    + (picked === undefined ? '' : `\nMənim cavabım: ${ansLabel(q, order, picked)}.`)
+    + `\nDüz cavab: ${q.t === 'open' ? q.a[0] : ansLabel(q, order, q.a)}.`
+    + (e ? `\nKitabdakı izah: ${clip(e, 500)}` : '');
+}
+
+/* =========================================================
    3. Saved state (this device only)
    ========================================================= */
 const KEY = 'dq-kitab:v1';
-const blank = () => ({ read: {}, last: '', quiz: {}, wrong: {}, theme: 'auto', fs: 'm', group: GROUPS[0], exam: null, exams: [], examLast: null });
+const blank = () => ({ read: {}, last: '', quiz: {}, wrong: {}, chk: {}, theme: 'auto', fs: 'm', group: GROUPS[0], exam: null, exams: [], examLast: null });
 let S = blank();
 try { S = Object.assign(blank(), JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) { S = blank(); }
 if (!GROUPS.includes(S.group)) S.group = GROUPS[0];
@@ -102,7 +162,7 @@ const onlyFor = x => x && x.g && x.g.length < GROUPS.length ? `<span class="chip
 /* =========================================================
    4. Shell: top bar, tab bar, router
    ========================================================= */
-const TABS = [['home', 'Kitab', 'book'], ['testler', 'Testlər', 'checklist'], ['axtar', 'Axtarış', 'search'], ['ayarlar', 'Ayarlar', 'sliders']];
+const TABS = [['home', 'Kitab', 'book'], ['testler', 'Testlər', 'checklist'], ['muellim', 'Müəllim', 'chat'], ['axtar', 'Axtarış', 'search'], ['ayarlar', 'Ayarlar', 'sliders']];
 let tab = 'home';
 let examTimer = null;
 
@@ -128,6 +188,7 @@ function route() {
   else if (h.startsWith('test-')) { tab = 'testler'; vQuiz(h.slice(5)); }
   else if (h === 'imtahan') { tab = 'testler'; vExam(); }
   else if (h === 'imtahan-netice') { tab = 'testler'; vExamResult(); }
+  else if (h === 'muellim' || h.startsWith('muellim-')) { tab = 'muellim'; vTeacher(h.slice(8)); }
   else if (h === 'axtar' || h.startsWith('axtar=')) { tab = 'axtar'; vSearch(h.slice(6)); }
   else if (h === 'ayarlar') { tab = 'ayarlar'; vSettings(); }
   else { tab = 'home'; vHome(); }
@@ -225,6 +286,7 @@ function vSection(id) {
     <div class="row meta muted">${icon('clock')} ${s.mins} dəq oxu ${onlyFor(s)}</div>
     ${groupNote(vis(c) ? s : c)}
     <article class="prose">${s.html}</article>
+    ${c.kind === 'chapter' ? `<div class="card claudebox"><span class="muted small">Aydın olmayan yer var? Virtual müəllim izah etsin.</span>${claudeLink(pSection(s, c), 'Claude-dan izah istə')}</div>` : ''}
     <button type="button" class="btn ${S.read[id] ? 'done' : 'primary'} readbtn" data-act="read">${S.read[id] ? icon('check') + ' Oxunub' : 'Oxudum'}</button>
     <nav class="prevnext">${nav(prev, 'prev')}${nav(next, 'next')}</nav>`;
   $('[data-act="read"]').addEventListener('click', e => {
@@ -234,6 +296,62 @@ function vSection(id) {
     b.className = `btn ${S.read[id] ? 'done' : 'primary'} readbtn`;
     b.innerHTML = S.read[id] ? icon('check') + ' Oxunub' : 'Oxudum';
   });
+  (s.qs || []).forEach((q, i) => { const box = $(`.iq[data-i="${i}"]`); if (box) inlineQ(box, s, c, q, i); });
+}
+
+/* questions inside the text: a worked example (answer and solution shown) or a check (no solution, Claude helps) */
+function inlineQ(box, s, c, q, i) {
+  const id = `${s.id}k${i}`, topic = `${s.num ? s.num + '. ' : ''}${s.title}`;
+  const order = q.t === 'open' ? null : q.o.map((_, k) => k); // the author's order: solutions may name letters
+  const fig = q.img ? `<figure class="qfig">${q.img}</figure>` : '';
+  if (q.k === 'ex') {
+    box.className = 'iq ex card';
+    box.innerHTML = `<span class="kicker">Nümunə</span><div class="iqq">${q.q}</div>
+      ${q.t === 'open' ? `${fig}<p class="iqmsg ok">Cavab: ${esc(q.a[0])}</p>` : qBody(q, order, q.a, true)}
+      <div class="iqe"><b>Həlli</b>${q.e}</div>
+      <div class="row">${claudeLink(pExplain(q, order, undefined, topic, c.subj), 'Claude-dan daha ətraflı')}</div>`;
+    return;
+  }
+  const st = { tried: [], val: '', bad: false, show: false }; // this visit only; a solved check is saved
+  const draw = () => {
+    const done = !!S.chk[id], open = done || st.show;
+    box.className = 'iq chk card' + (done ? ' solved' : '');
+    const body = q.t === 'open'
+      ? `${fig}<div class="row iqopen">
+          <input class="oa${done ? ' right' : st.bad ? ' wrong' : ''}" type="text" autocomplete="off" aria-label="Cavab" placeholder="Cavabı yaz" value="${esc(done ? q.a[0] : st.val)}"${open ? ' disabled' : ''}>
+          ${open ? '' : '<button type="button" class="btn primary" data-act="iqcheck">Yoxla</button>'}</div>`
+      : `${fig}<div class="opts">${order.map((oi, k) => {
+          const cls = open && oi === q.a ? ' right' : st.tried.includes(oi) ? ' wrong' : open ? ' dim' : '';
+          return `<button type="button" class="opt${cls}" data-oi="${oi}"${open || st.tried.includes(oi) ? ' disabled' : ''}><span class="ol">${'ABCDEF'[k]}</span><span>${esc(q.o[oi])}</span></button>`;
+        }).join('')}</div>`;
+    const msg = done ? `<p class="iqmsg ok">${icon('check')} Düzdür</p>`
+      : st.show ? `<p class="iqmsg">Düz cavab: <b>${esc(q.t === 'open' ? q.a[0] : ansLabel(q, order, q.a))}</b></p>`
+      : st.tried.length || st.bad ? `<p class="iqmsg bad">${icon('x')} Səhvdir — yenidən cəhd et və ya Claude-dan ipucu al.</p>` : '';
+    box.innerHTML = `<span class="kicker">Özünü yoxla</span><div class="iqq">${q.q}</div>${body}${msg}
+      <div class="row">${claudeLink(open ? pExplain(q, order, undefined, topic, c.subj) : pHint(q, order, topic, c.subj), open ? 'Claude ilə həlli' : 'Claude-dan kömək')}
+        ${!open && (st.tried.length || st.bad) ? '<button type="button" class="btn sm ghost" data-act="iqshow">Cavabı göstər</button>' : ''}</div>`;
+    const solve = () => { S.chk[id] = Date.now(); save(); };
+    $$('.opt', box).forEach(b => b.addEventListener('click', () => {
+      const oi = +b.dataset.oi;
+      if (oi === q.a) solve(); else st.tried.push(oi);
+      draw();
+    }));
+    const inp = $('.oa', box), chk = $('[data-act="iqcheck"]', box);
+    if (chk) {
+      const go = () => {
+        st.val = inp.value.trim();
+        if (!st.val) { inp.focus(); return; }
+        st.bad = !isRight(q, st.val);
+        if (!st.bad) solve();
+        draw();
+      };
+      chk.addEventListener('click', go);
+      inp.addEventListener('keydown', e => { if (e.key === 'Enter') go(); });
+    }
+    const sh = $('[data-act="iqshow"]', box);
+    if (sh) sh.addEventListener('click', () => { st.show = true; draw(); });
+  };
+  draw();
 }
 
 /* reading progress line under the top bar */
@@ -389,6 +507,7 @@ function vQuiz(key) {
       ${!ok ? `<p>Düz cavab: <b>${esc(rightText(q))}</b></p>` : ''}
       ${q.e ? `<p>${esc(q.e)}</p>` : ''}
       ${q.s && secById[q.s] ? `<a href="#${q.s}">Bölməni oxu: ${esc(secById[q.s].num)}. ${esc(secById[q.s].title)}</a>` : ''}
+      <div class="row">${claudeLink(pExplain(q, it.order, picked, topicOf(q), q.subj), 'Claude-dan ətraflı izah')}</div>
     </div>
     <button type="button" class="btn primary wide" data-act="next">${quizRun.i + 1 < n ? 'Növbəti sual' : 'Nəticəni gör'} ${icon('arrow')}</button>` : ''}`;
   const pick = v => {
@@ -411,13 +530,14 @@ function vQuiz(key) {
 }
 
 function missedList(items, picks) {
-  const missed = items.map((it, i) => ({ q: qById[it.id], p: picks[i] })).filter(x => x.q && !isRight(x.q, x.p));
+  const missed = items.map((it, i) => ({ q: qById[it.id], p: picks[i], order: it.order })).filter(x => x.q && !isRight(x.q, x.p));
   return missed.length ? `<div class="stack">${missed.map(x => `<div class="card miss">
       <b>${esc(x.q.q)}</b>
       ${x.q.img ? `<figure class="qfig sm">${x.q.img}</figure>` : ''}
       <p class="no">${icon('x')} ${esc(answerText(x.q, x.p))}</p>
       <p class="yes">${icon('check')} ${esc(rightText(x.q))}</p>
       ${x.q.e ? `<p class="muted">${esc(x.q.e)}</p>` : ''}
+      <div class="row">${claudeLink(pExplain(x.q, x.order || x.q.o && x.q.o.map((_, k) => k), x.p, topicOf(x.q), x.q.subj), 'Claude ilə izah')}</div>
     </div>`).join('')}</div>` : '<p class="card expl ok"><b>Bütün cavablar düzdür.</b></p>';
 }
 
@@ -606,7 +726,95 @@ function vExamResult() {
 }
 
 /* =========================================================
-   10. Search
+   10. Virtual teacher: explanations and advice from Claude, with the reader's progress as context
+   ========================================================= */
+const TEACH_HINT = {
+  qan: 'Məsələn: inzibati akt ilə inzibati icraat arasında fərq nədir?',
+  men: 'Məsələn: “bəzi” və “heç bir” olan hökmlərdən necə nəticə çıxarılır?',
+  az: 'Məsələn: mürəkkəb sözlər nə vaxt bitişik, nə vaxt defislə yazılır?',
+  inf: 'Məsələn: ikilik say sistemindən onluğa necə keçirəm?'
+};
+const ADVICE = [
+  ['Hazırlıq planı', 'İmtahana qədər mənə həftəlik hazırlıq planı qur. Əvvəlcə neçə həftəm qaldığını və gündə nə qədər vaxt ayıra bildiyimi soruş.'],
+  ['Zəif yerlərim', 'Nəticələrimə görə hansı fənlərə və mövzulara daha çox vaxt ayırmalıyam? Konkret addımlar təklif et.'],
+  ['Vaxt bölgüsü', 'İmtahanda vaxtı fənlər və suallar arasında necə bölüm? Çətin suala ilişəndə nə edim?'],
+  ['Məntiq vərdişləri', 'Məntiq suallarını sürətli və düzgün həll etmək üçün hansı üsullar və gündəlik məşqlər lazımdır?'],
+  ['Müsahibə', 'Testdən sonrakı müsahibəyə necə hazırlaşım? Hansı sual növləri olur və cavabı necə qurum?'],
+  ['Motivasiya', 'Hazırlıq dövründə diqqəti və motivasiyanı necə saxlayım? Sadə gündəlik rejim təklif et.']
+];
+let tSubj = 'men', tDraft = '', aDraft = '';
+
+function myStatus() {
+  const all = learnable(), done = all.filter(id => S.read[id]).length;
+  const wrong = {};
+  Object.keys(S.wrong).forEach(id => { const q = qById[id]; if (q && vis(q)) wrong[q.subj] = (wrong[q.subj] || 0) + 1; });
+  const w = PROG.subjects.filter(s => wrong[s.id]).map(s => `${s.title} ${wrong[s.id]}`);
+  const ex = S.exams.find(r => r.group === S.group);
+  return [`Mənim vəziyyətim: kitabda ${done}/${all.length} bölmə oxumuşam.`,
+    w.length ? `Təkrar gözləyən səhv suallarım: ${w.join(', ')}.` : 'Hələ səhv sual qeydə alınmayıb.',
+    ex ? `Son sınaq imtahanı: ${ex.pct}% (${EXAM.blocks.filter(b => ex.bySubj[b.subj]).map(b => `${SUBJ[b.subj].title} ${ex.bySubj[b.subj].right}/${ex.bySubj[b.subj].n}`).join(', ')}).` : 'Sınaq imtahanı hələ verməmişəm.'
+  ].join(' ');
+}
+function examFacts() {
+  const open = EXAM.blocks.reduce((a, b) => a + ((b.open && b.open[S.group]) || 0), 0);
+  const pass = EXAM.pass.filter(r => r.sub.startsWith(S.group)).map(r => `${r.sub} ${r.pct}%`).join(', ');
+  return `İmtahan (${S.group} qrupu): ${FULL} test sualı — ${EXAM.blocks.map(b => `${SUBJ[b.subj].title} ${b.n}`).join(', ')}${open ? `; onlardan ${open}-i açıq sualdır` : '; hamısı qapalıdır'}. Qapalı sual ${EXAM.points.closed}, açıq sual ${EXAM.points.open} bal. Keçid həddi alt qruplar üzrə: ${pass}. Testdən sonra müsahibə keçirilir.`;
+}
+const pAdvice = ask => `Sən Azərbaycanda dövlət qulluğuna qəbul imtahanına hazırlaşanlara məsləhət verən təcrübəli mentorsan. Azərbaycan dilində, konkret və praktik cavab ver. Rəsmi qaydanı bilmirsənsə uydurma — DİM-in saytında (dim.gov.az) yoxlamağı məsləhət gör.\n\n${ask}\n\n${myStatus()}\n${examFacts()}`;
+const pFree = (subj, text) => `${tutor(subj)}\n\nFənn: ${subjTitle(subj)}.\n${text}`;
+const pTopic = (s, t) => `${tutor(s.id)}\n\nBu mövzunu imtahan səviyyəsində izah et: əsas qaydalar, tipik sual növləri, 2–3 həll olunmuş nümunə və sonda özümü yoxlamaq üçün 3 sual (cavabları ən sonda).\n\nDİM proqramı, ${s.title}, mövzu ${t.num}: ${t.title}${t.src ? ` (${t.src})` : ''}.${t.items ? ` Proqrama daxildir: ${clip(t.items.join('; '), 600)}.` : ''}`;
+
+function vTeacher(focus) {
+  if (SUBJ[focus]) tSubj = focus;
+  topbar('Claude', 'Virtual müəllim');
+  const s = SUBJ[tSubj];
+  $('#view').innerHTML = `
+    <span class="kicker">${esc(S.group)} qrupu</span>
+    <h1 class="h1">Virtual müəllim</h1>
+    <p class="muted">Müəllim Claude-dur: sualını yazırsan, o sənin hesabında yeni söhbət kimi açılır. Modeli Claude-un özündə seçirsən. İnternet lazımdır.</p>
+    <section class="block" id="t-explain"><div class="block-h"><h2>İzah</h2></div>
+      <div class="card stack">
+        <div class="row" role="radiogroup" aria-label="Fənn">${PROG.subjects.map(x =>
+          `<button type="button" class="btn sm${x.id === tSubj ? ' on' : ''}" role="radio" aria-checked="${x.id === tSubj}" data-tsubj="${x.id}">${esc(x.title)}</button>`).join('')}</div>
+        <label class="sr" for="tq">Sualın</label>
+        <textarea id="tq" class="ta" rows="4" placeholder="${esc(TEACH_HINT[tSubj] || 'Nəyi başa düşmədin?')}">${esc(tDraft)}</textarea>
+        <div class="row">${claudeLink('', 'Claude-dan soruş', 'primary')}<button type="button" class="btn sm" data-act="copy">${icon('copy')} Kopyala</button></div>
+      </div>
+      <h3 class="subh">${esc(s.title)}: proqram mövzuları</h3>
+      <div class="list">${s.topics.filter(vis).map(t => `<a class="secrow" data-claude href="${esc(claudeUrl(pTopic(s, t)))}" target="_blank" rel="noopener">
+        <span class="chn">${esc(t.num)}</span><span class="sect"><b>${esc(t.title)}</b><span class="muted">Claude izah etsin</span></span>${icon('chat')}</a>`).join('')}</div>
+    </section>
+    <section class="block" id="t-advice"><div class="block-h"><h2>Məsləhət</h2></div>
+      <div class="card stack">
+        <p class="muted small">Hazırlıq planı, zəif yerlər, vaxt bölgüsü, müsahibə. Claude-a irəliləyişin də gedir: oxunan bölmələr, səhvlərin sayı, son sınaq nəticəsi. Şəxsi məlumat göndərilmir.</p>
+        <div class="row">${ADVICE.map(([l, p]) => `<a class="btn sm" data-claude href="${esc(claudeUrl(pAdvice(p)))}" target="_blank" rel="noopener">${esc(l)}</a>`).join('')}</div>
+        <label class="sr" for="aq">Öz sualın</label>
+        <textarea id="aq" class="ta" rows="3" placeholder="Öz sualını yaz: məsələn, işləyə-işləyə necə hazırlaşım?">${esc(aDraft)}</textarea>
+        <div class="row">${claudeLink('', 'Məsləhət al', 'primary')}<button type="button" class="btn sm" data-act="copy">${icon('copy')} Kopyala</button></div>
+      </div>
+    </section>`;
+  // a typed question: the link follows the text; an empty one does not open Claude
+  const ask = (box, build, keep) => {
+    const ta = $('textarea', box), a = $('a.claude.primary', box);
+    const upd = () => { keep(ta.value); a.href = claudeUrl(build(ta.value.trim())); a.classList.toggle('off', !ta.value.trim()); };
+    ta.addEventListener('input', upd);
+    upd();
+    a.addEventListener('click', e => { if (!ta.value.trim()) { e.preventDefault(); ta.focus(); toast('Əvvəlcə sualını yaz.'); } });
+    $('[data-act="copy"]', box).addEventListener('click', async () => {
+      if (!ta.value.trim()) { ta.focus(); return; }
+      toast(await copyText(build(ta.value.trim())) ? 'Kopyalandı — Claude-a yapışdır.' : 'Kopyalamaq alınmadı.');
+    });
+  };
+  ask($('#t-explain .card'), v => pFree(tSubj, v), v => { tDraft = v; });
+  ask($('#t-advice .card'), pAdvice, v => { aDraft = v; });
+  $$('[data-tsubj]').forEach(b => b.addEventListener('click', () => {
+    history.replaceState(null, '', '#muellim-' + b.dataset.tsubj);
+    vTeacher(b.dataset.tsubj);
+  }));
+}
+
+/* =========================================================
+   11. Search
    ========================================================= */
 const INDEX = CHAPTERS.flatMap(c => c.sections.map(s => ({ id: s.id, t: fold(s.title), x: fold(s.text), raw: s.text })));
 
@@ -641,7 +849,7 @@ function vSearch(q0) {
 }
 
 /* =========================================================
-   11. Settings
+   12. Settings
    ========================================================= */
 function seg(name, cur, opts) {
   return `<div class="seg" role="radiogroup">${opts.map(([v, l]) =>
@@ -733,7 +941,7 @@ async function importData() {
 }
 
 /* =========================================================
-   12. Start
+   13. Start
    ========================================================= */
 applyLook();
 window.addEventListener('hashchange', route);

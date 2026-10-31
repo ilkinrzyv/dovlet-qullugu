@@ -67,7 +67,7 @@ svg.i{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-widt
 
 /* ---------- tab bar ---------- */
 .tabbar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
-.tabbar .wrap{display:grid;grid-template-columns:repeat(4,1fr);height:60px}
+.tabbar .wrap{display:grid;grid-template-columns:repeat(5,1fr);height:60px}
 .tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--ink-3);font-size:11.5px;font-weight:500;text-decoration:none}
 .tab svg.i{width:22px;height:22px}
 .tab[aria-current="true"]{color:var(--accent)}
@@ -253,6 +253,37 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 .seg{display:inline-flex;padding:3px;border-radius:10px;background:var(--bg-2);gap:2px}
 .seg button{height:34px;padding:0 12px;border-radius:8px;font-size:14px;color:var(--ink-2)}
 .seg button[aria-checked="true"]{background:var(--surface);color:var(--ink);font-weight:600;box-shadow:var(--shadow)}
+
+/* ---------- Claude, questions inside the text, virtual teacher ---------- */
+.btn.sm{min-height:36px;padding:0 12px;font-size:13.5px;border-radius:9px}
+.btn.sm svg.i{width:16px;height:16px}
+.btn.claude:not(.primary){border-color:var(--accent-line);background:var(--accent-soft);color:var(--accent)}
+.btn.on{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:600}
+.btn.off{opacity:.55}
+.expl a.btn{display:inline-flex;margin-top:0;font-size:13.5px}
+.expl .row,.miss .row{margin-top:12px}
+.claudebox{margin-top:22px;display:flex;align-items:center;justify-content:space-between;gap:10px 14px;flex-wrap:wrap}
+.iq{margin:1.4em 0;font-family:var(--f-ui);font-size:15.5px;line-height:1.5}
+.iq>.kicker{display:block;margin-bottom:6px}
+.iq.ex{border-color:var(--accent-line)}
+.iq.ex>.kicker{color:var(--accent)}
+.iq.chk{border-style:dashed;border-color:var(--line-2)}
+.iq.chk.solved{border-style:solid;border-color:var(--pass-line)}
+.iqq{font-weight:600;margin-bottom:12px}
+.iqq p{margin:0 0 .5em}
+.iqq p:last-child{margin-bottom:0}
+.iqe{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.iqe p{margin:.4em 0}
+.iq .row{margin-top:12px}
+.iqmsg{margin:12px 0 0;display:flex;gap:6px;align-items:center;font-weight:500}
+.iqmsg.ok{color:var(--pass)}
+.iqmsg.bad{color:var(--fail)}
+.iqmsg svg.i{width:17px;height:17px;flex:none}
+.iq .iqopen{flex-wrap:nowrap;margin-top:0}
+.iqopen .oa{flex:1;min-width:0}
+.ta{width:100%;min-height:92px;padding:12px 14px;border:1.5px solid var(--line-2);border-radius:12px;background:var(--surface);font:inherit;font-size:16px;line-height:1.45;color:var(--ink);resize:vertical}
+.ta:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.subh{font-size:15px;font-weight:600;margin:20px 0 10px;color:var(--ink-2)}
 
 /* ---------- toast ---------- */
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:60;

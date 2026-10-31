@@ -57,6 +57,82 @@ def plain(src):
     h = h.replace('&quot;', '"').replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>').replace('&#39;', "'")
     return re.sub(r'\s+', ' ', h).strip()
 
+def figure(rel, where):
+    p = os.path.join(args.fig, rel)
+    if not os.path.isfile(p):
+        err(f'{where}: no figure {rel}')
+        return None
+    svg = open(p, encoding='utf-8').read().strip()
+    if not svg.startswith('<svg') or re.search(r'<script|\son\w+\s*=|href\s*=\s*["\']?\s*(?:https?:|javascript:)', svg, re.I):
+        err(f'{where}: {rel} must be a plain inline SVG')
+        return None
+    return svg
+
+# ---------- questions inside a section: ```nümunə (worked example) and ```yoxla (check, no explanation) ----------
+BLOCK_RE = re.compile(r'^```(nümunə|yoxla)[ \t]*\n(.*?)\n```[ \t]*$', re.M | re.S)
+LETTERS = 'ABCDEF'
+
+def inline_q(kind, src, where, subj):
+    """`S:` question (markdown, may run on), `A)`… options, `Cavab:` a letter, or `x | y` for an open question,
+    `İzah:` the solution (examples only; may run on), `Şəkil:` an SVG under build/fig/."""
+    f, opts, cur = {}, [], None
+    for line in src.split('\n'):
+        m = re.match(r'^([A-F])\)\s+(.+)$', line)
+        if m:
+            if m.group(1) != LETTERS[len(opts)]:
+                err(f'{where}: options must run A, B, C…')
+            opts.append(m.group(2).strip())
+            cur = None
+            continue
+        m = re.match(r'^(S|Cavab|İzah|Şəkil):\s*(.*)$', line)
+        if m:
+            cur = m.group(1)
+            if cur in f:
+                err(f'{where}: {cur}: given twice')
+            f[cur] = m.group(2)
+        elif cur in ('S', 'İzah'):
+            f[cur] += '\n' + line
+        elif line.strip():
+            err(f'{where}: stray line {line.strip()[:40]!r}')
+    q = {'k': kind, 'q': html(f.get('S', '').strip()), 'qt': plain(f.get('S', ''))}
+    if not q['qt']:
+        err(f'{where}: no S: question')
+    ans = f.get('Cavab', '').strip()
+    if opts:
+        need = SUBJ[subj]['opts'] if subj else None
+        if need and len(opts) != need:
+            err(f'{where}: {SUBJ[subj]["title"]} questions have {need} options, this one has {len(opts)}')
+        if len(set(opts)) != len(opts):
+            err(f'{where}: repeated option')
+        if len(ans) != 1 or ans not in LETTERS[:len(opts)]:
+            err(f'{where}: Cavab must be one of the option letters')
+            ans = 'A'
+        q.update(t='mc', o=opts, a=LETTERS.index(ans))
+    else:
+        acc = [x.strip() for x in ans.split('|') if x.strip()]
+        if not acc:
+            err(f'{where}: no Cavab:')
+        q.update(t='open', a=acc)
+    if kind == 'ex':
+        if not f.get('İzah', '').strip():
+            err(f'{where}: a nümunə needs İzah:')
+        q.update(e=html(f.get('İzah', '').strip()), et=plain(f.get('İzah', '')))
+    elif 'İzah' in f:
+        err(f'{where}: a yoxla question has no İzah (the reader asks Claude instead)')
+    if f.get('Şəkil', '').strip():
+        svg = figure(f['Şəkil'].strip(), where)
+        if svg:
+            q['img'] = svg
+    return q
+
+def inline_blocks(src, sid, subj):
+    """Cut the inline questions out of a section; each leaves a placeholder paragraph the app fills in."""
+    qs = []
+    def cut(m):
+        qs.append(inline_q('ex' if m.group(1) == 'nümunə' else 'chk', m.group(2), f'{sid} {m.group(1)} #{len(qs) + 1}', subj))
+        return f'\n\nIQ{len(qs) - 1}IQ\n\n'
+    return BLOCK_RE.sub(cut, src), qs
+
 ATTR_RE = re.compile(r'\s*\{([^{}]*)\}\s*$')
 NUM_RE = re.compile(r'^(\d+(?:\.\d+)*)\.\s+(.*)$')
 CH_RE = re.compile(r'^Fəsil\s+(\d+)\.\s*(.+)$')
@@ -124,13 +200,24 @@ for k, (_, level, raw) in enumerate(heads):
         nm = NUM_RE.match(title)
         num, name = (nm.group(1), nm.group(2)) if nm else ('', title)
         sid = at.get('id') or f'{chapter["id"]}s{len(chapter["sections"]) + 1}'
-        src = body(k)
+        src, qs = inline_blocks(body(k), sid, chapter['subj'])
         g = at.get('g', chapter['g'])
         if not set(g) <= set(chapter['g']):
             err(f'{sid}: groups {g} wider than its chapter')
-        words = len(plain(src).split())
-        chapter['sections'].append({'id': sid, 'num': num, 'title': name, 'html': html(src), 'text': plain(src),
-                                    'mins': max(1, round(words / 160)), 'g': g})
+        # Məntiq is taught by example: every explanation is followed by a worked example, then a check question
+        if chapter['subj'] == 'men' and not re.fullmatch(r'(ec+)+', ''.join(q['k'][0] for q in qs)):
+            err(f'{sid}: Məntiq: after each explanation put a ```nümunə block, then at least one ```yoxla block')
+        h = html(src)
+        for i in range(len(qs)):
+            if f'<p>IQ{i}IQ</p>' not in h:
+                err(f'{sid}: question block {i + 1} must stand on its own, outside lists and quotes')
+            h = h.replace(f'<p>IQ{i}IQ</p>', f'<div class="iq" data-i="{i}"></div>')
+        txt = ' '.join([re.sub(r'IQ\d+IQ', ' ', plain(src))] + [q['qt'] for q in qs]).strip()
+        sec = {'id': sid, 'num': num, 'title': name, 'html': h, 'text': re.sub(r'\s+', ' ', txt),
+               'mins': max(1, round(len(txt.split()) / 160)), 'g': g}
+        if qs:
+            sec['qs'] = qs
+        chapter['sections'].append(sec)
         new_id = sid
     if new_id in seen:
         err(f'duplicate id {new_id}')
@@ -139,17 +226,6 @@ for k, (_, level, raw) in enumerate(heads):
 # ---------- quizzes: {"<chapter number>": [{s, q, o, a, e} | {t: "open", s, q, a: [...], e}]} ----------
 by_num = {c['n']: c for c in book['chapters'] if c['kind'] == 'chapter'}
 sec_by_num = {s['num']: (s, c) for c in book['chapters'] for s in c['sections'] if s['num']}
-
-def figure(rel, where):
-    p = os.path.join(args.fig, rel)
-    if not os.path.isfile(p):
-        err(f'{where}: no figure {rel}')
-        return None
-    svg = open(p, encoding='utf-8').read().strip()
-    if not svg.startswith('<svg') or re.search(r'<script|\son\w+\s*=|href\s*=\s*["\']?\s*(?:https?:|javascript:)', svg, re.I):
-        err(f'{where}: {rel} must be a plain inline SVG')
-        return None
-    return svg
 
 book['quizzes'] = {}
 nq = 0
