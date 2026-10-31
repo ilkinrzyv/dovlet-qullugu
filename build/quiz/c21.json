@@ -1,0 +1,19 @@
+{
+"21": [
+ {"s":"21.1","q":"“Ev qapısı” hansı növ təyini söz birləşməsidir?","o":["II növ","I növ","III növ","feili birləşmə","söz birləşməsi deyil"],"a":0,"e":"Yalnız ikinci tərəf mənsubiyyət şəkilçilidir (qapı-sı), birinci tərəf şəkilçisizdir — II növ. “Evin qapısı” III növ olardı."},
+ {"s":"21.1","q":"“Gözəl qız” birləşməsində sintaktik əlaqə hansıdır?","o":["yanaşma","idarə","uzlaşma","tabesizlik","qoşulma"],"a":0,"e":"Tərəflər şəkilçisiz, yalnız sıra və mənaca bağlanır — yanaşma əlaqəsi."},
+ {"s":"21.2","q":"“Sabah gələcəyəm” cümləsi şəxsə görə hansı növdür?","o":["müəyyən şəxsli","qeyri-müəyyən şəxsli","ümumi şəxsli","şəxssiz","cüttərkibli"],"a":0,"e":"Mübtəda yoxdur, amma iş görən xəbərin şəkilçisindən bilinir (gələcəy-əm — mən): müəyyən şəxsli cümlə."},
+ {"s":"21.2","t":"open","q":"Məqsəd və intonasiyaya görə cümlənin neçə növü var? (rəqəmlə yaz)","a":["4","dörd"],"e":"Nəqli, sual, əmr və nida cümlələri — 4 növ."},
+ {"s":"21.3","q":"“Bağın ağacları yaşıllaşdı” cümləsində “bağın” hansı üzvdür?","o":["təyin","mübtəda","tamamlıq","zərflik","xəbər"],"a":0,"e":"Nəyin ağacları? — bağın. Söz isimə aiddir və onun əlamətini (aidiyyətini) bildirir — təyindir."},
+ {"s":"21.3","q":"Hansı zərflik növü “niyə?” sualına cavab verir?","o":["səbəb","məqsəd","zaman","yer","tərzi-hərəkət"],"a":0,"e":"Səbəb zərfliyi: niyə? nə səbəbə? Məqsəd zərfliyi nə üçün? sualına cavab verir."},
+ {"s":"21.3","q":"“Uşaqlar həyətdə oynayır” cümləsində mübtəda hansıdır?","o":["uşaqlar","həyətdə","oynayır","mübtəda yoxdur","uşaqlar oynayır"],"a":0,"e":"Kim oynayır? — uşaqlar (adlıq hal). Həyətdə — yer zərfliyi, oynayır — xəbər."},
+ {"s":"21.3","t":"open","q":"“Mən dostuma məktub yazdım” cümləsində neçə tamamlıq var? (rəqəmlə yaz)","a":["2","iki"],"e":"Dostuma (kimə?) — vasitəli, məktub (nə?) — vasitəsiz tamamlıq: 2."},
+ {"s":"21.4","q":"Hansı cümlədə xitab var?","o":["Dostlar, gəlin başlayaq!","Dostlar gəldi.","Dostlarım, Əli və Vəli, gəldi.","Əlbəttə, dostlar gələcək.","Dostlar və qohumlar gəldi."],"a":0,"e":"Danışan dostlara müraciət edir — “Dostlar” xitabdır. C-də “Əli və Vəli” əlavədir, D-də “əlbəttə” ara sözdür."},
+ {"s":"21.4","q":"Xitab və ara sözlər cümlədə hansı üzv olur?","o":["cümlə üzvü olmur","mübtəda","təyin","zərflik","tamamlıq"],"a":0,"e":"Xitab və ara sözlər qrammatik cəhətdən cümlə üzvləri ilə bağlı olmur — cümlə üzvü deyil, vergüllə ayrılır."},
+ {"s":"21.5","q":"Hansı cümlə tabesiz mürəkkəb cümlədir?","o":["Külək əsdi, yarpaqlar töküldü.","Bilirəm ki, gələcəksən.","Əgər gəlsən, gedərik.","Gec olduğu üçün qayıtdıq.","Biz gələndə o getmişdi."],"a":0,"e":"İki bərabərhüquqlu hissə bağlayıcısız birləşib — tabesiz. B və C tabeli mürəkkəb cümlədir, D və E-də isə bir xəbər var — sadə cümlələrdir."},
+ {"s":"21.5","q":"“Nə vaxt ki yaz gəldi, çöllər yaşıllaşdı.” Budaq cümlə hansı növdür?","o":["zaman","səbəb","şərt","yer","məqsəd"],"a":0,"e":"Çöllər nə vaxt yaşıllaşdı? — yaz gələndə. “Nə vaxt ki” zaman budaq cümləsinin vasitəsidir."},
+ {"s":"21.5","t":"open","q":"Mürəkkəb cümlə ən azı neçə sadə cümlədən ibarət olur? (rəqəmlə yaz)","a":["2","iki"],"e":"Mürəkkəb cümlə iki və daha çox sadə cümlədən ibarətdir."},
+ {"s":"21.6","q":"Vasitəsiz nitqdən əvvəl, müəllifin sözlərindən sonra hansı işarə qoyulur?","o":["iki nöqtə","tire","nöqtəli vergül","mötərizə","sual işarəsi"],"a":0,"e":"Kamal dedi: “Mən sabah gələcəyəm.” — müəllifin sözlərindən sonra iki nöqtə qoyulur, vasitəsiz nitq dırnaqda yazılır."},
+ {"s":"21.6","q":"Hansı cümlədə durğu işarəsi düzgün qoyulub?","o":["Deyəsən, yağış yağacaq.","Deyəsən yağış, yağacaq.","Deyəsən yağış yağacaq,","Deyəsən: yağış yağacaq.","Deyəsən — yağış, yağacaq."],"a":0,"e":"Deyəsən ara sözdür — vergüllə ayrılır. Mübtəda (yağış) ilə xəbər arasında vergül qoyulmur."}
+]
+}

@@ -4397,6 +4397,345 @@ E) hətta
 Cavab: A
 ```
 
+## Fəsil 21. Sintaksis və durğu işarələri
+
+**Sintaksis** söz birləşmələrini və cümləni öyrənir: sözlər bir-biri ilə necə əlaqələnir, cümlə hansı üzvlərdən ibarətdir, sadə cümlələr mürəkkəb cümlədə necə birləşir. Durğu işarələri sintaksislə sıx bağlıdır, ona görə bu fəsildə birlikdə verilir (proqramın 6-cı və 11-ci mövzuları).
+
+### 21.1. Söz birləşmələri və sintaktik əlaqələr
+
+**Söz birləşməsi** — məna və qrammatik cəhətdən bağlı iki və daha çox əsas nitq hissəsi: biri **tabe edən** (əsas), digəri **tabe olan** tərəfdir. Əsas tərəf isimdirsə — **ismi** birləşmə (*qırmızı alma*), feildirsə — **feili** birləşmə (*kitabı oxumaq*).
+
+**Təyini söz birləşmələrinin üç növü:**
+
+| Növ | Quruluş | Nümunə |
+| --- | --- | --- |
+| I növ | hər iki tərəf şəkilçisiz | dəmir qapı, gözəl şəhər |
+| II növ | ikinci tərəf mənsubiyyət şəkilçili | ev qapısı, Bakı şəhəri |
+| III növ | birinci tərəf yiyəlik halda, ikinci tərəf mənsubiyyət şəkilçili | evin qapısı, şəhərin küçəsi |
+
+**Sintaktik əlaqə növləri:**
+
+| Əlaqə | Nədir | Nümunə |
+| --- | --- | --- |
+| **Uzlaşma** | tərəflər şəxsə və kəmiyyətə görə uyğunlaşır | mənim kitab**ım**, biz gəldi**k** |
+| **İdarə** | əsas söz tabe sözü müəyyən **halda** tələb edir | kitab**ı** oxumaq, ev**ə** getmək |
+| **Yanaşma** | şəkilçisiz, yalnız sıra və mənaca bağlanır | gözəl qız, tez gəlmək |
+
+```nümunə
+S: “Evin qapısı” hansı növ təyini söz birləşməsidir?
+A) III növ
+B) I növ
+C) II növ
+D) feili birləşmə
+E) söz birləşməsi deyil
+Cavab: A
+İzah: Birinci tərəf **yiyəlik** haldadır (*ev-in*), ikinci tərəf **mənsubiyyət** şəkilçilidir (*qapı-sı*) — bu, III növdür. “Ev qapısı” olsaydı (yalnız ikinci tərəfdə şəkilçi), II növ olardı.
+```
+
+```yoxla
+S: “Kitabı oxumaq” birləşməsində sintaktik əlaqə hansıdır?
+A) idarə
+B) uzlaşma
+C) yanaşma
+D) tabesizlik
+E) qoşulma
+Cavab: A
+```
+
+### 21.2. Cümlə və onun növləri
+
+**Məqsəd və intonasiyaya görə (4 növ):**
+
+| Növ | Məqsəd | Sonda | Nümunə |
+| --- | --- | --- | --- |
+| Nəqli | xəbər vermək | nöqtə | Kitab stolun üstündədir. |
+| Sual | soruşmaq | sual işarəsi | Kitabı verdin? |
+| Əmr | əmr, xahiş | nöqtə və ya nida | Kitabı mənə ver. |
+| Nida | güclü hiss | nida işarəsi | Nə gözəl gündür! |
+
+**Tərkibinə görə:** həm mübtədası, həm xəbəri olan cümlə **cüttərkibli**, yalnız bir baş üzvü olan cümlə **təktərkibli** cümlədir.
+
+**Şəxsə görə təktərkibli cümlələr:**
+
+| Növ | Əlamət | Nümunə |
+| --- | --- | --- |
+| Müəyyən şəxsli | iş görən xəbərin şəxs şəkilçisindən bilinir | Sabah gələcəyəm. |
+| Qeyri-müəyyən şəxsli | xəbər III şəxs cəmdədir, iş görən bilinmir | Qapını döydülər. |
+| Ümumi şəxsli | fikir hamıya aiddir (atalar sözləri) | Əkməsən, biçməzsən. |
+| Şəxssiz | iş görən təsəvvür olunmur | Bu barədə çox danışıldı. |
+
+```nümunə
+S: “Qapını döydülər” cümləsi şəxsə görə hansı növdür?
+A) qeyri-müəyyən şəxsli
+B) müəyyən şəxsli
+C) ümumi şəxsli
+D) şəxssiz
+E) cüttərkibli
+Cavab: A
+İzah: Mübtəda yoxdur, xəbər **III şəxs cəmdədir** (*döy-dü-lər*) və qapını **kimin** döydüyü bilinmir — bu, qeyri-müəyyən şəxsli cümlədir. Müəyyən şəxsli olsaydı, iş görən xəbərdən aydın olardı (*döydüm* — mən).
+```
+
+```yoxla
+S: Hansı cümlə ümumi şəxslidir?
+A) Əkməsən, biçməzsən.
+B) Sabah gələcəyəm.
+C) Qapını açdılar.
+D) Uşaqlar oynayır.
+E) Kitab oxuyuram.
+Cavab: A
+```
+
+```nümunə
+S: Hansı cümlə əmr cümləsidir?
+A) Kitabı mənə ver.
+B) Kitabı verdin?
+C) Kitabı verdim.
+D) Nə gözəl kitabdır!
+E) Kitab stolun üstündədir.
+Cavab: A
+İzah: **Ver** — feilin əmr şəkli: danışan dinləyicidən iş tələb edir. B sual, C və E nəqli, D nida cümləsidir.
+```
+
+```yoxla
+S: “Nə gözəl gündür!” cümləsi məqsəd və intonasiyaya görə hansı növdür?
+A) nida
+B) nəqli
+C) sual
+D) əmr
+E) şərt
+Cavab: A
+```
+
+### 21.3. Cümlə üzvləri, söz sırası və məntiqi vurğu
+
+**Baş üzvlər:**
+
+- **Mübtəda** — iş görən və ya haqqında danışılan: **kim? nə? hara?** (adlıq hal): *Uşaqlar oynayır.*
+- **Xəbər** — mübtəda haqqında deyilən: **feili xəbər** (*Uşaq **oxuyur***) və **ismi xəbər** (*Qardaşım **həkimdir***).
+
+**İkinci dərəcəli üzvlər:**
+
+| Üzv | Sual | Nümunə |
+| --- | --- | --- |
+| **Vasitəsiz tamamlıq** | kimi? nəyi? (təsirlik hal) | Kitabı oxudum. |
+| **Vasitəli tamamlıq** | kimə? nədə? kimdən? kimlə? | Dostuma yazdım. |
+| **Təyin** | kimin? nəyin? hansı? necə? neçə? | Bağın ağacları; gözəl şəhər |
+| **Zərflik** | necə? nə vaxt? harada? nə qədər? niyə? nə üçün? | Diqqətlə oxudu. |
+
+**Zərfliyin növləri:** tərzi-hərəkət (*necə?*), zaman (*nə vaxt?*), yer (*harada?*), kəmiyyət (*nə qədər?*), səbəb (*niyə?*), məqsəd (*nə üçün?*).
+
+**Söz sırası.** Adi sıra: **mübtəda əvvəldə, xəbər sonda**; təyin təyin etdiyi sözdən əvvəl; tamamlıq və zərflik xəbərdən əvvəl gəlir. Bu sıra dəyişəndə (adətən bədii dildə) **inversiya** yaranır.
+
+**Məntiqi vurğu** cümlədə ən vacib sözü fərqləndirir. Adi halda o, **xəbərdən əvvəlki sözə** düşür: *Mən sabah **kitabxanaya** gedəcəyəm.*
+
+```nümunə
+S: “Tələbə kitabı diqqətlə oxudu” cümləsində “diqqətlə” hansı üzvdür?
+A) tərzi-hərəkət zərfliyi
+B) tamamlıq
+C) təyin
+D) mübtəda
+E) xəbər
+Cavab: A
+İzah: **Necə** oxudu? — diqqətlə. Söz feilə (*oxudu*) aiddir və hərəkətin tərzini bildirir — tərzi-hərəkət zərfliyidir. *Kitabı* isə vasitəsiz tamamlıqdır (*nəyi?*).
+```
+
+```yoxla
+S: “Qardaşım həkimdir” cümləsində xəbər hansı növdür?
+A) ismi xəbər
+B) feili xəbər
+C) tamamlıq
+D) mübtəda
+E) təyin
+Cavab: A
+```
+
+```nümunə
+S: “Mən dostuma məktub yazdım” cümləsində vasitəli tamamlıq hansıdır?
+A) dostuma
+B) məktub
+C) mən
+D) yazdım
+E) vasitəli tamamlıq yoxdur
+Cavab: A
+İzah: **Kimə** yazdım? — dostuma: yönlük haldadır, bu, vasitəli tamamlıqdır. **Nə** yazdım? — məktub: vasitəsiz tamamlıqdır (qeyri-müəyyən təsirlik). Mən — mübtəda, yazdım — xəbər.
+```
+
+```yoxla
+S: “Mən sabah kitabxanaya gedəcəyəm” cümləsində məntiqi vurğu adi halda hansı sözə düşür?
+A) kitabxanaya
+B) mən
+C) sabah
+D) gedəcəyəm
+E) heç birinə
+Cavab: A
+```
+
+### 21.4. Həmcins üzvlər, əlavələr, xitab və ara sözlər
+
+- **Həmcins üzvlər** — eyni suala cavab verən və eyni üzvə aid olan üzvlər; bağlayıcısız (vergüllə) və ya bağlayıcı ilə bağlanır: *Bağda **alma, armud, heyva** yetişib.* Həmcins üzvlərdən əvvəl **ümumiləşdirici söz** gəlirsə, ondan sonra iki nöqtə qoyulur: *Hər şey yetişib: alma da, armud da.*
+- **Əlavə** — başqa üzvü izah edən söz və ya birləşmə; vergüllə ayrılır: *Bizim müəllimimiz, **Aynur xanım**, dərsə gəldi.*
+- **Xitab** — müraciət olunan şəxs və ya əşya: ***Əli**, bura gəl!*
+- **Ara sözlər** — danışanın fikrə münasibəti: *əlbəttə, deyəsən, məsələn, beləliklə, birincisi*.
+
+**Xitab və ara sözlər cümlə üzvü deyil**, qrammatik cəhətdən cümlə üzvləri ilə bağlı olmur və vergüllə ayrılır.
+
+```nümunə
+S: “Anar, sabah bizə gəl” cümləsində “Anar” nədir?
+A) xitab
+B) mübtəda
+C) əlavə
+D) ara söz
+E) tamamlıq
+Cavab: A
+İzah: Danışan **Anara müraciət edir**. Xəbər II şəxsdədir (*gəl* — sən), deməli Anar mübtəda deyil; o, cümlə üzvü olmayan xitabdır və vergüllə ayrılıb.
+```
+
+```yoxla
+S: Hansı cümlədə ara söz var?
+A) Əlbəttə, biz qalib gələcəyik.
+B) Biz qalib gələcəyik.
+C) Əli, qalib gəldik!
+D) Biz, tələbələr, qalib gəldik.
+E) Biz də qalib gəldik.
+Cavab: A
+```
+
+```nümunə
+S: Hansı cümlədə həmcins mübtədalar var?
+A) Əli və Vəli məktəbə getdi.
+B) Əli məktəbə getdi və oxudu.
+C) Əli kitabı və dəftəri götürdü.
+D) Əli tez və sakit danışdı.
+E) Əli məktəbə getdi.
+Cavab: A
+İzah: A-da **kim** getdi? — Əli və Vəli: iki mübtəda eyni xəbərə aiddir. B-də həmcins xəbərlər (*getdi və oxudu*), C-də həmcins tamamlıqlar (*kitabı və dəftəri*), D-də həmcins zərfliklər (*tez və sakit*) var.
+```
+
+```yoxla
+S: Hansı cümlədə əlavə var?
+A) Bizim müəllimimiz, Aynur xanım, dərsə gəldi.
+B) Aynur xanım, dərsə gəlin.
+C) Əlbəttə, Aynur xanım gələcək.
+D) Aynur xanım və Leyla gəldi.
+E) Aynur xanım gəldi.
+Cavab: A
+```
+
+### 21.5. Mürəkkəb cümlə; vasitəsiz və vasitəli nitq
+
+**Mürəkkəb cümlə** iki və daha çox sadə cümlədən ibarətdir.
+
+- **Tabesiz** mürəkkəb cümlədə hissələr **bərabərhüquqludur**; bağlayıcısız (*Yağış yağdı, küçələr yaş oldu*) və ya *və, amma, lakin* bağlayıcıları ilə birləşir.
+- **Tabeli** mürəkkəb cümlədə **baş cümlə** və onu izah edən **budaq cümlə** var; vasitələr: *ki, çünki, əgər, -sa, nə vaxt ki* və s.: *Bilirəm **ki**, sən gələcəksən.*
+
+**Budaq cümlənin növləri** baş cümlənin hansı üzvünü və ya mənasını izah etməsinə görə müəyyən olunur: mübtəda, xəbər, tamamlıq, təyin, zaman, yer, tərzi-hərəkət, kəmiyyət, səbəb, məqsəd, şərt, qarşılaşdırma, nəticə budaq cümlələri. Sual qoy: *niyə?* — səbəb, *nə vaxt?* — zaman, *hansı şərtlə?* — şərt.
+
+**Vasitəsiz və vasitəli nitq:**
+
+- **Vasitəsiz nitq** başqasının sözlərini **olduğu kimi** verir, dırnaqda yazılır: *Kamal dedi: “Mən sabah gələcəyəm.”*
+- **Vasitəli nitq** onları danışanın dili ilə verir, adətən **ki** ilə: *Kamal dedi ki, **o** sabah gələ**cək**.* Şəxs əvəzlikləri və feilin şəxsi dəyişir, dırnaq götürülür.
+
+```nümunə
+S: Hansı cümlə tabeli mürəkkəb cümlədir?
+A) Bilirəm ki, sən gələcəksən.
+B) Yağış yağdı, küçələr yaş oldu.
+C) Mən gəldim, amma o getmişdi.
+D) Günəş çıxdı və hava isindi.
+E) Əli kitab oxuyur.
+Cavab: A
+İzah: A-da **ki** ilə bağlanan ikinci hissə (*sən gələcəksən*) baş cümlədəki **nəyi bilirəm?** sualına cavab verir — tamamlıq budaq cümləsidir. B, C, D-də hissələr bərabərhüquqludur (tabesiz), E isə sadə cümlədir.
+```
+
+```yoxla
+S: Kamal dedi: “Mən sabah gələcəyəm.” Bu cümlənin vasitəli nitqə çevrilmiş forması hansıdır?
+A) Kamal dedi ki, o sabah gələcək.
+B) Kamal dedi ki, mən sabah gələcəyəm.
+C) Kamal dedi: o sabah gələcək.
+D) Kamal dedi ki: “Mən sabah gələcəyəm.”
+E) Kamal sabah gələcəyəm dedi.
+Cavab: A
+```
+
+```nümunə
+S: “Biz evdə qaldıq, çünki hava soyuq idi.” Budaq cümlə hansı növdür?
+A) səbəb
+B) zaman
+C) şərt
+D) məqsəd
+E) nəticə
+Cavab: A
+İzah: Baş cümləyə sual veririk: **niyə** evdə qaldıq? — çünki hava soyuq idi. Budaq cümlə səbəbi bildirir və **çünki** bağlayıcısı ilə bağlanır — səbəb budaq cümləsidir.
+```
+
+```yoxla
+S: “Əgər vaxtında gəlsən, qatara çatarsan.” Budaq cümlə hansı növdür?
+A) şərt
+B) səbəb
+C) zaman
+D) məqsəd
+E) qarşılaşdırma
+Cavab: A
+```
+
+### 21.6. Durğu işarələri
+
+| İşarə | Əsas hallar |
+| --- | --- |
+| **Nöqtə** | nəqli cümlənin sonunda |
+| **Sual işarəsi** | sual cümləsinin sonunda |
+| **Nida işarəsi** | nida və həyəcanlı əmr cümləsinin sonunda |
+| **Vergül** | bağlayıcısız həmcins üzvlər arasında; *amma, lakin* bağlayıcılarından əvvəl; xitab, ara söz, əlavə ayrılır; **ki**-dən sonra; mürəkkəb cümlənin hissələri arasında |
+| **Nöqtəli vergül** | daxilində vergül olan geniş hissələr arasında |
+| **İki nöqtə** | ümumiləşdirici sözdən sonra, həmcins üzvlərdən əvvəl; vasitəsiz nitqdən əvvəl (müəllifin sözlərindən sonra) |
+| **Tire** | həmcins üzvlərdən sonra ümumiləşdirici sözdən əvvəl (*Alma, armud, heyva — hamısı yetişib*); vasitəsiz nitqdən sonra müəllifin sözlərindən əvvəl |
+| **Dırnaq** | vasitəsiz nitq, sitat; əsər, qəzet, jurnal adları |
+| **Mötərizə** | əlavə izah |
+| **Çoxnöqtə** | fikrin yarımçıq qalması |
+
+**Ən çox səhv:** mübtəda ilə xəbər arasında vergül **qoyulmur** (*~~Mən, kitabı oxudum~~*).
+
+```nümunə
+S: Hansı cümlədə durğu işarəsi düzgün qoyulub?
+A) Əli, bura gəl!
+B) Əli bura, gəl!
+C) Əli bura gəl,
+D) Əli: bura gəl!
+E) Əli — bura, gəl.
+Cavab: A
+İzah: **Əli** xitabdır — vergüllə ayrılır. Cümlə həyəcanlı əmrdir, sonunda nida işarəsi qoyulur. Digər variantlarda vergül, iki nöqtə və tire yersiz işlənib.
+```
+
+```yoxla
+S: Hansı halda iki nöqtə qoyulur?
+A) ümumiləşdirici sözdən sonra, həmcins üzvlərdən əvvəl
+B) xitabdan sonra
+C) nəqli cümlənin sonunda
+D) ara sözdən sonra
+E) sual cümləsinin sonunda
+Cavab: A
+```
+
+```nümunə
+S: Hansı cümlədə vergül səhv qoyulub?
+A) Dedi ki, gəlməyəcək.
+B) Əlbəttə, gələcəyik.
+C) Bağda alma, armud, heyva yetişib.
+D) Mən, kitabı oxudum.
+E) Yağış yağdı, küçələr yaş oldu.
+Cavab: D
+İzah: D-də vergül **mübtəda** (*mən*) ilə cümlənin qalanı arasına qoyulub — bu, səhvdir. A-da vergül **ki**-dən sonra, B-də ara sözdən sonra, C-də həmcins üzvlər arasında, E-də tabesiz mürəkkəb cümlənin hissələri arasında qoyulub — hamısı düzdür.
+```
+
+```yoxla
+S: Əsər və qəzet adları hansı durğu işarəsi ilə yazılır?
+A) dırnaq
+B) mötərizə
+C) tire
+D) iki nöqtə
+E) çoxnöqtə
+Cavab: A
+```
+
 # IV hissə — İnformatika {fənn=inf}
 
 # V hissə — Müsahibə

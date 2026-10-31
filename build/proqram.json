@@ -166,7 +166,7 @@
    {"num": "4", "see": ["c19s4", "c19s5"], "title": "Söz yaradıcılığı", "items": ["Söz yaradıcılığının əsas xüsusiyyətləri", "Sözün tərkibi: kök və şəkilçi"]},
    {"num": "5", "see": ["c20"], "title": "Morfologiya",
     "items": ["Nitq hissələri", "İsim", "Sifət", "Say", "Əvəzlik", "Feil", "Zərf", "Qoşma", "Bağlayıcı", "Ədat", "Modal sözlər", "Nida"]},
-   {"num": "6", "title": "Sintaksis",
+   {"num": "6", "see": ["c21s1", "c21s2", "c21s3", "c21s4", "c21s5"], "title": "Sintaksis",
     "items": [
      "Söz birləşmələri", "Sintaktik əlaqələr", "Cümlə (məqsəd və intonasiyaya, şəxsə görə növləri)", "Cümlə üzvləri",
      "Baş üzvlər: mübtəda və xəbər", "İkinci dərəcəli üzvlər: tamamlıq, təyin, zərflik", "Cümlədə sözlərin sırası",
@@ -177,7 +177,7 @@
    {"num": "8", "title": "Nitq mədəniyyəti"},
    {"num": "9", "title": "Üslubiyyat"},
    {"num": "10", "title": "Əməli yazı nümunələri"},
-   {"num": "11", "title": "Durğu işarələri"}
+   {"num": "11", "see": ["c21s6"], "title": "Durğu işarələri"}
   ]
  },
  {
