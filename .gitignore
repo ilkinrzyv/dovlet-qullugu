@@ -3,3 +3,4 @@ __pycache__/
 build/book.json
 build/shots/
 /dist/
+build/test/book.json

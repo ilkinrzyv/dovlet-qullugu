@@ -9,15 +9,13 @@ const PWA = window.DQ_PWA || null; // offline app build only
 const CHAPTERS = BOOK.chapters;
 const chById = {}, secById = {}, secCh = {};
 CHAPTERS.forEach(c => { chById[c.id] = c; c.sections.forEach(s => { secById[s.id] = s; secCh[s.id] = c.id; }); });
-const ORDER = []; // reading order of every section, intro pages included
-CHAPTERS.forEach(c => c.sections.forEach(s => ORDER.push(s.id)));
-const MAIN = CHAPTERS.filter(c => c.kind === 'chapter');
-const LEARNABLE = [];
-MAIN.forEach(c => c.sections.forEach(s => LEARNABLE.push(s.id)));
 const QUIZ = BOOK.quizzes || {};
 const qById = {};
 Object.keys(QUIZ).forEach(ch => QUIZ[ch].forEach(q => { qById[q.id] = Object.assign({ ch }, q); }));
 const ALL_Q = Object.keys(qById);
+const PROG = BOOK.prog, EXAM = PROG.exam, GROUPS = EXAM.groups;
+const SUBJ = {};
+PROG.subjects.forEach(s => { SUBJ[s.id] = s; });
 const MIX_SIZE = 20;
 
 /* =========================================================
@@ -33,6 +31,13 @@ function fold(s) {
   return String(s || '').toLocaleLowerCase('az').replace(/̇/g, '')
     .replace(/ə/g, 'e').replace(/ı/g, 'i').replace(/ö/g, 'o').replace(/ü/g, 'u')
     .replace(/ş/g, 's').replace(/ç/g, 'c').replace(/ğ/g, 'g');
+}
+// open answers: case, spaces, a trailing dot and decimal comma do not matter; letters do
+const norm = s => String(s == null ? '' : s).toLocaleLowerCase('az').trim().replace(/\s+/g, ' ').replace(/,/g, '.').replace(/\.$/, '');
+function clock(sec) {
+  sec = Math.max(0, Math.round(sec));
+  const h = Math.floor(sec / 3600), m = Math.floor(sec / 60) % 60, s = sec % 60;
+  return (h ? h + ':' + String(m).padStart(2, '0') : m) + ':' + String(s).padStart(2, '0');
 }
 const ICONS = {
   book: '<path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/>',
@@ -51,7 +56,10 @@ const ICONS = {
   upload: '<path d="M12 20V9M7 14l5-5 5 5"/><path d="M5 4h14"/>',
   phone: '<rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/>',
   trash: '<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>',
-  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  map: '<path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/>',
+  timer: '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/>',
+  flag: '<path d="M5 21V4h11l-1.5 4L16 12H5"/>'
 };
 const icon = (n, cls) => `<svg class="i${cls ? ' ' + cls : ''}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n] || ''}</svg>`;
 
@@ -67,9 +75,10 @@ function toast(msg) {
    3. Saved state (this device only)
    ========================================================= */
 const KEY = 'dq-kitab:v1';
-const blank = () => ({ read: {}, last: '', quiz: {}, wrong: {}, theme: 'auto', fs: 'm' });
+const blank = () => ({ read: {}, last: '', quiz: {}, wrong: {}, theme: 'auto', fs: 'm', group: GROUPS[0], exam: null, exams: [], examLast: null });
 let S = blank();
 try { S = Object.assign(blank(), JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) { S = blank(); }
+if (!GROUPS.includes(S.group)) S.group = GROUPS[0];
 function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { toast('Yadda saxlamaq alınmadı — brauzerin yaddaşı doludur və ya bağlıdır.'); } }
 
 const FS = { s: '15.5px', m: '17px', l: '19px' };
@@ -79,20 +88,29 @@ function applyLook() {
   root.style.setProperty('--fs', FS[S.fs] || FS.m);
 }
 
-const readIn = c => c.sections.filter(s => S.read[s.id]).length;
-const totalRead = () => LEARNABLE.filter(id => S.read[id]).length;
+/* what the chosen position group sees */
+const vis = x => !x || !x.g || x.g.includes(S.group);
+const visChapters = () => CHAPTERS.filter(vis);
+const visSections = c => c.sections.filter(vis);
+function order() { const o = []; visChapters().forEach(c => visSections(c).forEach(s => o.push(s.id))); return o; }
+function learnable() { const o = []; visChapters().filter(c => c.kind === 'chapter').forEach(c => visSections(c).forEach(s => o.push(s.id))); return o; }
+const pool = () => ALL_Q.filter(id => vis(qById[id]) && vis(chById[qById[id].ch]));
+const chQuiz = id => (QUIZ[id] || []).filter(q => vis(q)).map(q => q.id);
+const readIn = c => visSections(c).filter(s => S.read[s.id]).length;
+const onlyFor = x => x && x.g && x.g.length < GROUPS.length ? `<span class="chip">yalnız ${esc(x.g.join(', '))}</span>` : '';
 
 /* =========================================================
    4. Shell: top bar, tab bar, router
    ========================================================= */
 const TABS = [['home', 'Kitab', 'book'], ['testler', 'Testlər', 'checklist'], ['axtar', 'Axtarış', 'search'], ['ayarlar', 'Ayarlar', 'sliders']];
 let tab = 'home';
+let examTimer = null;
 
-function topbar(kicker, name, back) {
+function topbar(kicker, name, back, extra) {
   $('#topbar .wrap').innerHTML = `
     ${back ? `<a class="ibtn" href="#${esc(back)}" aria-label="Geri">${icon('back')}</a>` : ''}
     <div class="tb-title">${kicker ? `<span class="tb-kicker">${esc(kicker)}</span>` : ''}<span class="tb-name">${esc(name)}</span></div>
-    <div class="readbar"><i></i></div>`;
+    ${extra || ''}<div class="readbar"><i></i></div>`;
 }
 function tabbar() {
   $('#tabbar').innerHTML = `<div class="wrap">${TABS.map(([id, label, ic]) =>
@@ -101,83 +119,102 @@ function tabbar() {
 
 function route() {
   const h = decodeURIComponent(location.hash.slice(1)) || 'home';
-  const view = $('#view');
-  quizRun = h.startsWith('test-') ? quizRun : null;
+  clearInterval(examTimer); examTimer = null;
+  if (!h.startsWith('test-')) quizRun = null;
   if (secById[h]) { tab = 'home'; vSection(h); }
   else if (chById[h]) { tab = 'home'; vChapter(h); }
+  else if (h === 'proqram' || h.startsWith('proqram-')) { tab = 'home'; vProgram(h.slice(8)); }
   else if (h === 'testler') { tab = 'testler'; vTests(); }
   else if (h.startsWith('test-')) { tab = 'testler'; vQuiz(h.slice(5)); }
+  else if (h === 'imtahan') { tab = 'testler'; vExam(); }
+  else if (h === 'imtahan-netice') { tab = 'testler'; vExamResult(); }
   else if (h === 'axtar' || h.startsWith('axtar=')) { tab = 'axtar'; vSearch(h.slice(6)); }
   else if (h === 'ayarlar') { tab = 'ayarlar'; vSettings(); }
   else { tab = 'home'; vHome(); }
   tabbar();
   if (!h.startsWith('axtar')) window.scrollTo(0, 0);
-  view.focus({ preventScroll: true });
+  $('#view').focus({ preventScroll: true });
 }
 
 /* =========================================================
    5. Book views
    ========================================================= */
 function bar(a, b) { return `<div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct(a, b)}"><i style="width:${pct(a, b)}%"></i></div>`; }
+const groupNote = x => vis(x) ? '' : `<p class="card note">Bu mövzu ${esc(S.group)} qrupunun proqramında yoxdur — yalnız ${esc(x.g.join(', '))} üçündür.</p>`;
 
 function chRow(c) {
-  const n = readIn(c), total = c.sections.length;
+  const secs = visSections(c), n = readIn(c), nq = chQuiz(c.id).length;
   const label = c.kind === 'chapter' ? `Fəsil ${c.n}` : 'Giriş';
   return `<a class="chrow" href="#${c.id}">
     <span class="chn">${esc(label)}</span>
-    <span class="cht"><b>${esc(c.title)}</b>${c.kind === 'chapter' ? `<span class="chm">${n}/${total} bölmə${QUIZ[c.id] ? ` · ${QUIZ[c.id].length} sual` : ''}</span>${bar(n, total)}` : ''}</span>
+    <span class="cht"><b>${esc(c.title)}</b>${c.kind === 'chapter' ? `<span class="chm">${n}/${secs.length} bölmə${nq ? ` · ${nq} sual` : ''} ${onlyFor(c)}</span>${bar(n, secs.length)}` : ''}</span>
     ${icon('chev')}</a>`;
 }
 
+function coverage(subj) {
+  const topics = SUBJ[subj].topics.filter(vis);
+  return [topics.filter(t => (t.see || []).some(x => vis(chById[x] || secById[x]))).length, topics.length];
+}
+
 function vHome() {
-  topbar('', BOOK.title);
-  const done = totalRead(), all = LEARNABLE.length;
-  const next = S.last && secById[S.last] ? S.last : (LEARNABLE.find(id => !S.read[id]) || ORDER[0]);
+  topbar(`${S.group} qrupu`, BOOK.title);
+  const all = learnable(), done = all.filter(id => S.read[id]).length;
+  const next = S.last && secById[S.last] && vis(secById[S.last]) ? S.last : (all.find(id => !S.read[id]) || order()[0]);
   const nextSec = next && secById[next];
-  const extras = CHAPTERS.filter(c => c.kind === 'extra');
-  const tests = Object.keys(S.quiz).length;
+  const extras = CHAPTERS.filter(c => c.kind === 'extra' && vis(c));
+  const nq = pool().length;
+  const cov = PROG.subjects.map(s => coverage(s.id)).reduce((a, b) => [a[0] + b[0], a[1] + b[1]], [0, 0]);
+  const best = S.exams.filter(r => r.group === S.group).reduce((m, r) => Math.max(m, r.pct), -1);
   $('#view').innerHTML = `
     <section class="hero">
-      <span class="kicker">İmtahana hazırlıq</span>
+      <span class="kicker">İmtahana hazırlıq · ${esc(S.group)} qrupu</span>
       <h1 class="h1">${esc(BOOK.title)}</h1>
       <div class="card stat">
-        <div><b>${done}</b><span>/ ${all} bölmə oxunub</span></div>
-        <div><b>${tests}</b><span>test işlənib</span></div>
-        ${bar(done, all)}
+        <div><b>${done}</b><span>/ ${all.length} bölmə oxunub</span></div>
+        <div><b>${nq}</b><span>test sualı</span></div>
+        ${bar(done, all.length)}
       </div>
       ${nextSec ? `<a class="card cont" href="#${next}">
         <span class="kicker">${S.last ? 'Davam et' : 'Başla'}</span>
         <b>${esc((nextSec.num ? nextSec.num + '. ' : '') + nextSec.title)}</b>
         <span class="muted">${esc(chById[secCh[next]].title)}</span>${icon('arrow')}</a>` : ''}
+      <div class="tiles">
+        <a class="card tile" href="#proqram">${icon('map')}<b>Proqram</b><span class="muted">${cov[0]}/${cov[1]} mövzu kitabda</span></a>
+        <a class="card tile" href="#imtahan">${icon('timer')}<b>Sınaq imtahanı</b><span class="muted">${S.exam ? 'davam edir' : best >= 0 ? `ən yaxşı: ${best}%` : `${EXAM.blocks.reduce((a, b) => a + b.n, 0)} sual`}</span></a>
+      </div>
     </section>
     ${extras.length ? `<section class="block"><div class="list">${extras.map(chRow).join('')}</div></section>` : ''}
-    ${BOOK.parts.map(p => `<section class="block">
-      <div class="block-h"><h2>${esc(p.title)}</h2></div>
-      <div class="list">${p.chapters.map(id => chRow(chById[id])).join('')}</div>
-    </section>`).join('')}`;
+    ${BOOK.parts.filter(vis).map(p => {
+      const chs = p.chapters.map(id => chById[id]).filter(vis);
+      return `<section class="block">
+        <div class="block-h"><h2>${esc(p.title)}</h2></div>
+        ${chs.length ? `<div class="list">${chs.map(chRow).join('')}</div>`
+          : `<p class="card muted empty">Hazırlanır.${p.subj ? ` Mövzular <a href="#proqram-${p.subj}">Proqram</a> səhifəsindədir.` : ''}</p>`}
+      </section>`;
+    }).join('')}`;
 }
 
 function vChapter(id) {
   const c = chById[id];
   const kicker = c.kind === 'chapter' ? `Fəsil ${c.n}` : 'Giriş';
   topbar(kicker, c.title, 'home');
-  const q = QUIZ[id];
-  const best = S.quiz[id];
+  const q = chQuiz(id), best = S.quiz[id];
   $('#view').innerHTML = `
     <span class="kicker">${esc(kicker)}</span>
     <h1 class="h1">${esc(c.title)}</h1>
+    ${groupNote(c)}
     ${c.lead ? `<div class="prose lead">${c.lead}</div>` : ''}
-    <div class="list block">${c.sections.map(s => `<a class="secrow${S.read[s.id] ? ' done' : ''}" href="#${s.id}">
+    <div class="list block">${visSections(c).map(s => `<a class="secrow${S.read[s.id] ? ' done' : ''}" href="#${s.id}">
       <span class="tick">${S.read[s.id] ? icon('check') : ''}</span>
-      <span class="sect"><b>${esc((s.num ? s.num + '. ' : '') + s.title)}</b><span class="muted">${s.mins} dəq</span></span>
+      <span class="sect"><b>${esc((s.num ? s.num + '. ' : '') + s.title)}</b><span class="muted">${s.mins} dəq ${onlyFor(s)}</span></span>
       ${icon('chev')}</a>`).join('')}</div>
-    ${q ? `<a class="card quizcta block" href="#test-${id}">
+    ${q.length ? `<a class="card quizcta block" href="#test-${id}">
       ${icon('checklist')}<span><b>Fəsil testi</b><span class="muted">${q.length} sual${best ? ` · ən yaxşı nəticə ${best.best}%` : ''}</span></span>${icon('arrow')}</a>` : ''}`;
 }
 
 function vSection(id) {
   const s = secById[id], c = chById[secCh[id]];
-  const i = ORDER.indexOf(id), prev = ORDER[i - 1], next = ORDER[i + 1];
+  const ord = order(), i = ord.indexOf(id), prev = i > 0 ? ord[i - 1] : null, next = i >= 0 ? ord[i + 1] : null;
   const kicker = c.kind === 'chapter' ? `Fəsil ${c.n}${s.num ? ' · ' + s.num : ''}` : c.title;
   topbar(kicker, s.title, c.id);
   if (S.last !== id) { S.last = id; save(); }
@@ -185,7 +222,8 @@ function vSection(id) {
   $('#view').innerHTML = `
     <span class="kicker">${esc(kicker)}</span>
     <h1 class="h1">${esc(s.title)}</h1>
-    <div class="row meta muted">${icon('clock')} ${s.mins} dəq oxu</div>
+    <div class="row meta muted">${icon('clock')} ${s.mins} dəq oxu ${onlyFor(s)}</div>
+    ${groupNote(vis(c) ? s : c)}
     <article class="prose">${s.html}</article>
     <button type="button" class="btn ${S.read[id] ? 'done' : 'primary'} readbtn" data-act="read">${S.read[id] ? icon('check') + ' Oxunub' : 'Oxudum'}</button>
     <nav class="prevnext">${nav(prev, 'prev')}${nav(next, 'next')}</nav>`;
@@ -207,41 +245,126 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 /* =========================================================
-   6. Tests
+   6. Programme map: every DİM topic of the chosen group, and where the book teaches it
+   ========================================================= */
+function vProgram(focus) {
+  topbar('DİM', 'Proqram', 'home');
+  const block = EXAM.blocks.reduce((m, b) => { m[b.subj] = b; return m; }, {});
+  $('#view').innerHTML = `
+    <span class="kicker">${esc(S.group)} qrupu</span>
+    <h1 class="h1">Test imtahanı proqramı</h1>
+    <p class="muted">DİM-in proqramında ${esc(S.group)} qrupuna düşən mövzular. Hər mövzunun yanında onu öyrədən fəsil görünür.</p>
+    <div class="row subnav">${PROG.subjects.map(s => `<button type="button" class="btn sm" data-go="${s.id}">${esc(s.title)}</button>`).join('')}</div>
+    ${PROG.subjects.map(s => {
+      const [have, total] = coverage(s.id), b = block[s.id];
+      return `<section class="block" id="pr-${s.id}">
+        <div class="block-h"><h2>${esc(s.title)}${b ? ` · ${b.n} sual` : ''}</h2></div>
+        <div class="card stack">
+          <div class="row cov"><span><b>${have}/${total}</b> mövzu kitabda</span>${bar(have, total)}</div>
+          ${s.note ? `<p class="muted small">${esc(s.note)}</p>` : ''}
+        </div>
+        <div class="list ptopics">${s.topics.filter(vis).map(t => topicRow(s, t)).join('')}</div>
+      </section>`;
+    }).join('')}`;
+  $$('[data-go]').forEach(b => b.addEventListener('click', () => $('#pr-' + b.dataset.go).scrollIntoView({ behavior: 'smooth' })));
+  if (focus && $('#pr-' + focus)) $('#pr-' + focus).scrollIntoView();
+}
+function topicRow(s, t) {
+  const where = (t.see || []).filter(x => vis(chById[x] || secById[x]));
+  const secs = [];
+  where.forEach(x => { if (chById[x]) visSections(chById[x]).forEach(sec => secs.push(sec.id)); else secs.push(x); });
+  const read = secs.filter(id => S.read[id]).length;
+  return `<div class="ptopic">
+    <div class="pt-head"><span class="chn">${esc(t.num)}</span>
+      <span class="sect"><b>${esc(t.title)}</b>${t.src ? `<span class="muted small">${esc(t.src)}</span>` : ''}</span></div>
+    <div class="row pt-meta">${onlyFor(t)}
+      ${where.length ? where.map(x => `<a class="chip acc" href="#${x}">${esc(chById[x] ? `Fəsil ${chById[x].n}` : secById[x].num || secById[x].title)}</a>`).join('')
+        + `<span class="chip${read === secs.length && secs.length ? ' pass' : ''}">${read}/${secs.length} oxunub</span>`
+        : '<span class="chip warn">hazırlanır</span>'}</div>
+    ${t.items ? `<details><summary>Proqrama daxildir (${t.items.length})</summary><ul>${t.items.map(x => `<li>${esc(x)}</li>`).join('')}</ul></details>` : ''}
+  </div>`;
+}
+
+/* =========================================================
+   7. Questions (shared by practice tests and the mock exam)
+   ========================================================= */
+const isRight = (q, v) => q.t === 'open' ? v != null && q.a.some(x => norm(x) === norm(v)) && norm(v) !== '' : v === q.a;
+const optOrder = q => q.t === 'open' ? null : (q.fix ? q.o.map((_, i) => i) : shuffle(q.o.map((_, i) => i)));
+const answerText = (q, v) => q.t === 'open' ? (v == null || v === '' ? '—' : v) : (v == null ? '—' : q.o[v]);
+const rightText = q => q.t === 'open' ? q.a[0] : q.o[q.a];
+
+// reveal: show right / wrong marks (practice after answering, never during the exam)
+function qBody(q, order, picked, reveal) {
+  const fig = q.img ? `<figure class="qfig">${q.img}</figure>` : '';
+  if (q.t === 'open') {
+    const ok = reveal && isRight(q, picked);
+    return `${fig}<div class="openq">
+      <label class="sr" for="oa">Cavab</label>
+      <input id="oa" class="oa${reveal ? (ok ? ' right' : ' wrong') : ''}" type="text" inputmode="text" autocomplete="off" placeholder="Cavabı yaz" value="${esc(picked || '')}"${reveal ? ' disabled' : ''}>
+      ${reveal ? '' : '<span class="muted small">Açıq sual: cavabı özün yazırsan.</span>'}
+    </div>`;
+  }
+  // options that only name the labels drawn in the figure (A, B, C…) become a row of letter buttons
+  const letters = q.fix && order.every((oi, k) => q.o[oi] === 'ABCDEF'[k]);
+  return `${fig}<div class="opts${letters ? ' letters' : ''}">${order.map((oi, k) => {
+    let cls = '';
+    if (reveal) cls = oi === q.a ? ' right' : (oi === picked ? ' wrong' : ' dim');
+    else if (oi === picked) cls = ' picked';
+    return `<button type="button" class="opt${cls}" data-oi="${oi}" aria-pressed="${oi === picked}"${reveal ? ' disabled' : ''}>
+      <span class="ol">${'ABCDEF'[k]}</span>${letters ? '' : `<span>${esc(q.o[oi])}</span>`}</button>`;
+  }).join('')}</div>`;
+}
+
+/* =========================================================
+   8. Practice tests
    ========================================================= */
 let quizRun = null; // { key, items: [{ id, order }], i, picks: [] } — in memory only
 
 function vTests() {
   topbar('', 'Testlər');
-  const wrong = Object.keys(S.wrong).filter(id => qById[id]);
-  const withQ = MAIN.filter(c => QUIZ[c.id] && QUIZ[c.id].length);
+  const all = pool();
+  const wrong = Object.keys(S.wrong).filter(id => all.includes(id));
+  const withQ = visChapters().filter(c => c.kind === 'chapter' && chQuiz(c.id).length);
+  const subj = PROG.subjects.map(s => [s, all.filter(id => qById[id].subj === s.id).length]).filter(x => x[1]);
   $('#view').innerHTML = `
-    <span class="kicker">Məşq</span>
+    <span class="kicker">Məşq · ${esc(S.group)} qrupu</span>
     <h1 class="h1">Testlər</h1>
-    <p class="muted">Hər sualdan sonra düzgün cavab və izahı görünür. Səhv etdiyin suallar ayrıca toplanır.</p>
+    <a class="card cont" href="#imtahan">
+      <span class="kicker">${S.exam ? 'Davam edir' : 'Sınaq imtahanı'}</span>
+      <b>${S.exam ? 'İmtahana qayıt' : 'İmtahan kimi: taymerlə, fənlər üzrə nəticə'}</b>
+      <span class="muted">${EXAM.blocks.map(b => `${SUBJ[b.subj].title} ${b.n}`).join(' · ')}</span>${icon('arrow')}</a>
     <div class="list block">
-      <a class="secrow" href="#test-mix"><span class="tick acc">${icon('shuffle')}</span>
-        <span class="sect"><b>Qarışıq test</b><span class="muted">Bütün fəsillərdən ${Math.min(MIX_SIZE, ALL_Q.length)} təsadüfi sual${S.quiz.mix ? ` · son nəticə ${S.quiz.mix.last}%` : ''}</span></span>${icon('chev')}</a>
-      <a class="secrow${wrong.length ? '' : ' off'}" href="#test-wrong"${wrong.length ? '' : ' aria-disabled="true" tabindex="-1"'}><span class="tick acc">${icon('redo')}</span>
+      <a class="secrow${all.length ? '' : ' off'}" href="#test-mix"><span class="tick acc">${icon('shuffle')}</span>
+        <span class="sect"><b>Qarışıq test</b><span class="muted">${all.length ? `Bütün fəsillərdən ${Math.min(MIX_SIZE, all.length)} təsadüfi sual${S.quiz.mix ? ` · son nəticə ${S.quiz.mix.last}%` : ''}` : 'Hələ sual yoxdur'}</span></span>${icon('chev')}</a>
+      <a class="secrow${wrong.length ? '' : ' off'}" href="#test-wrong"><span class="tick acc">${icon('redo')}</span>
         <span class="sect"><b>Səhvlərim</b><span class="muted">${wrong.length ? `${wrong.length} sual təkrar gözləyir` : 'Hələ səhv yoxdur'}</span></span>${icon('chev')}</a>
     </div>
+    ${subj.length ? `<section class="block"><div class="block-h"><h2>Fənn testləri</h2></div>
+      <div class="list">${subj.map(([s, n]) => {
+        const r = S.quiz['f-' + s.id];
+        return `<a class="secrow" href="#test-f-${s.id}"><span class="tick acc">${icon('checklist')}</span>
+          <span class="sect"><b>${esc(s.title)}</b><span class="muted">${Math.min(MIX_SIZE, n)} sual (bankda ${n})${r ? ` · ən yaxşı ${r.best}%` : ''}</span></span>${icon('chev')}</a>`;
+      }).join('')}</div></section>` : ''}
     <section class="block"><div class="block-h"><h2>Fəsil testləri</h2></div>
       <div class="list">${withQ.length ? withQ.map(c => {
         const r = S.quiz[c.id];
         return `<a class="secrow" href="#test-${c.id}"><span class="chn">${c.n}</span>
-          <span class="sect"><b>${esc(c.title)}</b><span class="muted">${QUIZ[c.id].length} sual${r ? ` · ən yaxşı ${r.best}%` : ''}</span></span>${icon('chev')}</a>`;
-      }).join('') : '<p class="muted card">Hələ test yoxdur.</p>'}</div></section>`;
-  $$('.secrow.off').forEach(a => a.addEventListener('click', e => e.preventDefault()));
+          <span class="sect"><b>${esc(c.title)}</b><span class="muted">${chQuiz(c.id).length} sual${r ? ` · ən yaxşı ${r.best}%` : ''}</span></span>${icon('chev')}</a>`;
+      }).join('') : '<p class="muted empty">Hələ test yoxdur — fəsillər əlavə olunduqca burada görünəcək.</p>'}</div></section>`;
+  $$('.secrow.off').forEach(a => { a.setAttribute('aria-disabled', 'true'); a.tabIndex = -1; a.addEventListener('click', e => e.preventDefault()); });
 }
 
 function quizIds(key) {
-  if (key === 'mix') return shuffle(ALL_Q).slice(0, MIX_SIZE);
-  if (key === 'wrong') return shuffle(Object.keys(S.wrong).filter(id => qById[id]));
-  return (QUIZ[key] || []).map(q => q.id);
+  const all = pool();
+  if (key === 'mix') return shuffle(all).slice(0, MIX_SIZE);
+  if (key === 'wrong') return shuffle(Object.keys(S.wrong).filter(id => all.includes(id)));
+  if (key.startsWith('f-')) return shuffle(all.filter(id => qById[id].subj === key.slice(2))).slice(0, MIX_SIZE);
+  return chById[key] ? chQuiz(key) : [];
 }
 function quizName(key) {
   if (key === 'mix') return 'Qarışıq test';
   if (key === 'wrong') return 'Səhvlərim';
+  if (key.startsWith('f-') && SUBJ[key.slice(2)]) return SUBJ[key.slice(2)].title;
   return chById[key] ? `Fəsil ${chById[key].n}. ${chById[key].title}` : 'Test';
 }
 
@@ -249,47 +372,62 @@ function vQuiz(key) {
   if (!quizRun || quizRun.key !== key) {
     const ids = quizIds(key);
     if (!ids.length) { location.replace('#testler'); return; }
-    quizRun = { key, items: ids.map(id => ({ id, order: shuffle(qById[id].o.map((_, i) => i)) })), i: 0, picks: [] };
+    quizRun = { key, items: ids.map(id => ({ id, order: optOrder(qById[id]) })), i: 0, picks: [] };
   }
   topbar('Test', quizName(key), 'testler');
   if (quizRun.i >= quizRun.items.length) { quizResult(); return; }
   const it = quizRun.items[quizRun.i], q = qById[it.id], picked = quizRun.picks[quizRun.i];
-  const n = quizRun.items.length, answered = picked != null;
+  const n = quizRun.items.length, answered = picked !== undefined;
+  const ok = answered && isRight(q, picked);
   $('#view').innerHTML = `
     <div class="row qhead"><span class="kicker">Sual ${quizRun.i + 1} / ${n}</span>${bar(quizRun.i + (answered ? 1 : 0), n)}</div>
     <h1 class="qtext">${esc(q.q)}</h1>
-    <div class="opts">${it.order.map((oi, k) => {
-      let cls = '';
-      if (answered) cls = oi === q.a ? ' right' : (oi === picked ? ' wrong' : ' dim');
-      return `<button type="button" class="opt${cls}" data-oi="${oi}"${answered ? ' disabled' : ''}>
-        <span class="ol">${'ABCDEF'[k]}</span><span>${esc(q.o[oi])}</span></button>`;
-    }).join('')}</div>
-    ${answered ? `<div class="card expl ${picked === q.a ? 'ok' : 'bad'}">
-      <b>${picked === q.a ? 'Düzdür' : 'Səhvdir'}</b>${q.e ? `<p>${esc(q.e)}</p>` : ''}
+    ${qBody(q, it.order, picked, answered)}
+    ${!answered && q.t === 'open' ? `<button type="button" class="btn primary wide" data-act="check">Yoxla</button>` : ''}
+    ${answered ? `<div class="card expl ${ok ? 'ok' : 'bad'}">
+      <b>${ok ? 'Düzdür' : 'Səhvdir'}</b>
+      ${!ok ? `<p>Düz cavab: <b>${esc(rightText(q))}</b></p>` : ''}
+      ${q.e ? `<p>${esc(q.e)}</p>` : ''}
       ${q.s && secById[q.s] ? `<a href="#${q.s}">Bölməni oxu: ${esc(secById[q.s].num)}. ${esc(secById[q.s].title)}</a>` : ''}
     </div>
     <button type="button" class="btn primary wide" data-act="next">${quizRun.i + 1 < n ? 'Növbəti sual' : 'Nəticəni gör'} ${icon('arrow')}</button>` : ''}`;
-  $$('.opt[data-oi]').forEach(b => b.addEventListener('click', () => {
-    const oi = +b.dataset.oi;
-    quizRun.picks[quizRun.i] = oi;
-    if (oi === q.a) delete S.wrong[it.id]; else S.wrong[it.id] = Date.now();
+  const pick = v => {
+    quizRun.picks[quizRun.i] = v;
+    if (isRight(q, v)) delete S.wrong[it.id]; else S.wrong[it.id] = Date.now();
     save();
     vQuiz(key);
     const nx = $('[data-act="next"]');
     if (nx) nx.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-  }));
+  };
+  $$('.opt[data-oi]').forEach(b => b.addEventListener('click', () => pick(+b.dataset.oi)));
+  const chk = $('[data-act="check"]'), inp = $('#oa');
+  if (chk) {
+    const go = () => { if (!inp.value.trim()) { inp.focus(); return; } pick(inp.value.trim()); };
+    chk.addEventListener('click', go);
+    inp.addEventListener('keydown', e => { if (e.key === 'Enter') go(); });
+  }
   const nx = $('[data-act="next"]');
   if (nx) nx.addEventListener('click', () => { quizRun.i++; vQuiz(key); window.scrollTo(0, 0); });
 }
 
+function missedList(items, picks) {
+  const missed = items.map((it, i) => ({ q: qById[it.id], p: picks[i] })).filter(x => x.q && !isRight(x.q, x.p));
+  return missed.length ? `<div class="stack">${missed.map(x => `<div class="card miss">
+      <b>${esc(x.q.q)}</b>
+      ${x.q.img ? `<figure class="qfig sm">${x.q.img}</figure>` : ''}
+      <p class="no">${icon('x')} ${esc(answerText(x.q, x.p))}</p>
+      <p class="yes">${icon('check')} ${esc(rightText(x.q))}</p>
+      ${x.q.e ? `<p class="muted">${esc(x.q.e)}</p>` : ''}
+    </div>`).join('')}</div>` : '<p class="card expl ok"><b>Bütün cavablar düzdür.</b></p>';
+}
+
 function quizResult() {
   const { key, items, picks } = quizRun;
-  const right = items.filter((it, i) => picks[i] === qById[it.id].a).length;
+  const right = items.filter((it, i) => isRight(qById[it.id], picks[i])).length;
   const score = pct(right, items.length);
   const prev = S.quiz[key];
   S.quiz[key] = { best: Math.max(score, prev ? prev.best : 0), last: score, at: Date.now() };
   save();
-  const missed = items.map((it, i) => ({ q: qById[it.id], p: picks[i] })).filter(x => x.p !== x.q.a);
   $('#view').innerHTML = `
     <span class="kicker">Nəticə</span>
     <h1 class="h1">${right} / ${items.length} düz · ${score}%</h1>
@@ -298,20 +436,179 @@ function quizResult() {
       <button type="button" class="btn primary" data-act="again">${icon('refresh')} Yenidən</button>
       <a class="btn" href="#testler">Testlərə qayıt</a>
     </div>
-    ${missed.length ? `<section class="block"><div class="block-h"><h2>Səhv cavablar</h2></div>
-      <div class="stack">${missed.map(x => `<div class="card miss">
-        <b>${esc(x.q.q)}</b>
-        <p class="no">${icon('x')} ${esc(x.q.o[x.p])}</p>
-        <p class="yes">${icon('check')} ${esc(x.q.o[x.q.a])}</p>
-        ${x.q.e ? `<p class="muted">${esc(x.q.e)}</p>` : ''}
-      </div>`).join('')}</div></section>` : '<p class="card expl ok"><b>Bütün cavablar düzdür.</b></p>'}`;
+    <section class="block"><div class="block-h"><h2>Səhv cavablar</h2></div>${missedList(items, picks)}</section>`;
   $('[data-act="again"]').addEventListener('click', () => { quizRun = null; vQuiz(key); });
 }
 
 /* =========================================================
-   7. Search
+   9. Mock exam: the real exam's subjects and counts, a timer, no hints until the end
    ========================================================= */
-const INDEX = ORDER.map(id => ({ id, t: fold(secById[id].title), x: fold(secById[id].text), raw: secById[id].text }));
+const FULL = EXAM.blocks.reduce((a, b) => a + b.n, 0);
+function examPlan(group) {
+  const all = ALL_Q.filter(id => qById[id].g.includes(group) && (chById[qById[id].ch].g || GROUPS).includes(group));
+  return EXAM.blocks.map(b => {
+    const open = (b.open && b.open[group]) || 0;
+    const mine = all.filter(id => qById[id].subj === b.subj);
+    const mc = mine.filter(id => qById[id].t === 'mc'), op = mine.filter(id => qById[id].t === 'open');
+    return { b, open, mc, op, take: Math.min(mc.length, b.n - open) + Math.min(op.length, open) };
+  });
+}
+const examSecs = n => Math.max(300, Math.round(EXAM.minutes * 60 * n / FULL));
+const examMax = items => items.reduce((a, it) => a + (qById[it.id] && qById[it.id].t === 'open' ? EXAM.points.open : EXAM.points.closed), 0);
+
+function vExam() {
+  if (S.exam) { examRun(); return; }
+  topbar('Testlər', 'Sınaq imtahanı', 'testler');
+  const plan = examPlan(S.group), take = plan.reduce((a, p) => a + p.take, 0);
+  const open = plan.reduce((a, p) => a + p.open, 0);
+  const maxFull = FULL - open + open * EXAM.points.open;
+  const hist = S.exams.filter(r => r.group === S.group).slice(0, 8);
+  $('#view').innerHTML = `
+    <span class="kicker">${esc(S.group)} qrupu</span>
+    <h1 class="h1">Sınaq imtahanı</h1>
+    <p class="muted">Sualların sayı və fənləri real imtahandakı kimidir. Cavablar imtahan bitəndən sonra göstərilir.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Fənn</th><th>Sual</th>${open ? '<th>O cümlədən açıq</th>' : ''}<th>Bankda</th></tr></thead>
+      <tbody>${plan.map(p => `<tr><td>${esc(SUBJ[p.b.subj].title)}</td><td>${p.b.n}</td>${open ? `<td>${p.open}</td>` : ''}<td>${p.mc.length + (p.open ? p.op.length : 0)}</td></tr>`).join('')}</tbody>
+    </table></div>
+    <div class="card stack">
+      <p>${icon('clock')} Vaxt: <b>${clock(EXAM.minutes * 60)}</b> (100 sual üçün) · Qapalı sual ${EXAM.points.closed} bal${open ? `, açıq sual ${EXAM.points.open} bal` : ''} · Ən yüksək bal: <b>${maxFull}</b></p>
+      ${take < FULL ? `<p class="warnline">Bankda hələ ${take} uyğun sual var — imtahan ${take} sualla olacaq, vaxt da mütənasib: ${clock(examSecs(take))}.</p>` : ''}
+      <p class="muted small">${esc(EXAM.minutes_note)}${open ? ' ' + esc(EXAM.open_note) : ''}</p>
+      <button type="button" class="btn primary" data-act="start"${take ? '' : ' disabled'}>${take ? 'İmtahanı başla' : 'Hələ sual yoxdur'}</button>
+    </div>
+    <section class="block"><div class="block-h"><h2>Keçid balları (${esc(S.group)})</h2></div>${passTable(null)}
+      <p class="muted small">${esc(EXAM.pass_note)}</p></section>
+    ${hist.length ? `<section class="block"><div class="block-h"><h2>Əvvəlki nəticələr</h2></div>
+      <div class="list">${hist.map(r => `<div class="secrow"><span class="chn">${r.pct}%</span>
+        <span class="sect"><b>${r.pts} / ${r.max} bal</b><span class="muted">${new Date(r.at).toLocaleDateString('az')} · ${r.n} sual</span></span></div>`).join('')}</div></section>` : ''}`;
+  const st = $('[data-act="start"]');
+  if (st) st.addEventListener('click', () => {
+    const items = [];
+    plan.forEach(p => {
+      shuffle(p.mc).slice(0, p.b.n - p.open).forEach(id => items.push({ id, order: optOrder(qById[id]) }));
+      shuffle(p.op).slice(0, p.open).forEach(id => items.push({ id, order: null }));
+    });
+    S.exam = { group: S.group, start: Date.now(), secs: examSecs(items.length), items, ans: {}, i: 0 };
+    save();
+    examRun();
+  });
+}
+
+function passTable(score) {
+  const rows = EXAM.pass.filter(r => r.sub.startsWith(S.group));
+  return `<div class="tbl"><table><thead><tr><th>Alt qrup</th><th>Keçid</th>${score != null ? '<th>Sən</th>' : ''}<th>Vəzifələr</th></tr></thead>
+    <tbody>${rows.map(r => `<tr><td><b>${r.sub}</b></td><td>${r.pct}%</td>${score != null ? `<td>${score >= r.pct ? `<span class="chip pass">${icon('check')} keçir</span>` : '<span class="chip fail">keçmir</span>'}</td>` : ''}<td class="small">${esc(r.who)}</td></tr>`).join('')}</tbody></table></div>`;
+}
+
+function examLeft() { return S.exam.secs - (Date.now() - S.exam.start) / 1000; }
+
+function examRun() {
+  const E = S.exam;
+  if (E.items.some(it => !qById[it.id])) { // the book was updated mid-exam: drop questions that no longer exist
+    const items = [], ans = {};
+    E.items.forEach((it, k) => { if (qById[it.id]) { if (E.ans[k] !== undefined) ans[items.length] = E.ans[k]; items.push(it); } });
+    E.items = items; E.ans = ans; E.i = 0;
+    if (!items.length) S.exam = null;
+    save();
+    if (!S.exam) { vExam(); return; }
+  }
+  if (examLeft() <= 0) { examFinish(true); return; }
+  const n = E.items.length;
+  if (E.i >= n) E.i = n - 1;
+  const it = E.items[E.i], q = qById[it.id];
+  const picked = E.ans[E.i];
+  const done = Object.keys(E.ans).filter(k => E.ans[k] !== '' && E.ans[k] != null).length;
+  topbar(`Sınaq imtahanı · ${E.group}`, SUBJ[q.subj] ? SUBJ[q.subj].title : 'Sual', 'testler', `<span class="timer mono" aria-live="off">${clock(examLeft())}</span>`);
+  $('#view').innerHTML = `
+    <div class="row qhead"><span class="kicker">Sual ${E.i + 1} / ${n}${q.t === 'open' ? ' · açıq' : ''}</span>${bar(done, n)}</div>
+    <h1 class="qtext">${esc(q.q)}</h1>
+    ${qBody(q, it.order, picked, false)}
+    <nav class="exnav">
+      <button type="button" class="btn" data-act="prev"${E.i ? '' : ' disabled'}>${icon('back')} Əvvəlki</button>
+      <button type="button" class="btn primary" data-act="next"${E.i + 1 < n ? '' : ' disabled'}>Növbəti ${icon('chev')}</button>
+    </nav>
+    <details class="qgrid card"><summary>Bütün suallar · ${done}/${n} cavablanıb</summary>
+      <div class="grid">${E.items.map((x, k) => {
+        const a = E.ans[k], has = a !== undefined && a !== '' && a !== null;
+        return `<button type="button" class="gq${has ? ' has' : ''}${k === E.i ? ' cur' : ''}" data-go="${k}">${k + 1}</button>`;
+      }).join('')}</div></details>
+    <button type="button" class="btn ghost danger wide" data-act="finish">${icon('flag')} İmtahanı bitir</button>`;
+  const go = k => { E.i = k; save(); examRun(); window.scrollTo(0, 0); };
+  $$('.opt[data-oi]').forEach(b => b.addEventListener('click', () => {
+    const oi = +b.dataset.oi;
+    if (E.ans[E.i] === oi) delete E.ans[E.i]; else E.ans[E.i] = oi; // tap again to clear
+    save(); examRun();
+  }));
+  const inp = $('#oa');
+  if (inp) inp.addEventListener('input', () => { if (inp.value.trim()) E.ans[E.i] = inp.value.trim(); else delete E.ans[E.i]; save(); });
+  $('[data-act="prev"]').addEventListener('click', () => go(E.i - 1));
+  $('[data-act="next"]').addEventListener('click', () => go(E.i + 1));
+  $$('.gq').forEach(b => b.addEventListener('click', () => go(+b.dataset.go)));
+  $('[data-act="finish"]').addEventListener('click', () => {
+    const left = n - Object.keys(E.ans).length;
+    if (confirm(left ? `${left} sual cavabsızdır. İmtahan bitsin?` : 'İmtahan bitsin?')) examFinish(false);
+  });
+  clearInterval(examTimer);
+  examTimer = setInterval(() => {
+    if (!S.exam) { clearInterval(examTimer); return; }
+    const left = examLeft(), t = $('.timer');
+    if (t) { t.textContent = clock(left); t.classList.toggle('low', left < 300); }
+    if (left <= 0) { clearInterval(examTimer); examFinish(true); }
+  }, 1000);
+}
+
+function examFinish(timeUp) {
+  const E = S.exam;
+  clearInterval(examTimer);
+  const items = E.items.filter(it => qById[it.id]);
+  const picks = items.map(it => E.ans[E.items.indexOf(it)]);
+  let pts = 0;
+  const bySubj = {};
+  items.forEach((it, i) => {
+    const q = qById[it.id], w = q.t === 'open' ? EXAM.points.open : EXAM.points.closed, v = picks[i];
+    const r = bySubj[q.subj] || (bySubj[q.subj] = { right: 0, n: 0, pts: 0, max: 0 });
+    r.n++; r.max += w;
+    if (isRight(q, v)) { pts += w; r.right++; r.pts += w; delete S.wrong[it.id]; }
+    else if (v !== undefined && v !== '') S.wrong[it.id] = Date.now();
+  });
+  const max = examMax(items), res = { at: Date.now(), group: E.group, n: items.length, pts, max, pct: pct(pts, max), bySubj, timeUp };
+  S.examLast = Object.assign({ items, picks, used: Math.min(E.secs, Math.round((Date.now() - E.start) / 1000)) }, res);
+  S.exams.unshift(res);
+  S.exams = S.exams.slice(0, 30);
+  S.exam = null;
+  save();
+  if (location.hash === '#imtahan-netice') vExamResult(); else location.hash = '#imtahan-netice';
+}
+
+function vExamResult() {
+  const R = S.examLast;
+  topbar('Sınaq imtahanı', 'Nəticə', 'testler');
+  if (!R) { location.replace('#imtahan'); return; }
+  const g = S.group;
+  S.group = R.group; // the pass table belongs to the group the exam was taken in
+  const table = passTable(R.pct);
+  S.group = g;
+  $('#view').innerHTML = `
+    <span class="kicker">${esc(R.group)} qrupu · ${R.n} sual${R.timeUp ? ' · vaxt bitdi' : ''}</span>
+    <h1 class="h1">${R.pts} / ${R.max} bal · ${R.pct}%</h1>
+    ${bar(R.pts, R.max)}
+    <p class="muted">Vaxt: ${clock(R.used)}</p>
+    <div class="tbl block"><table><thead><tr><th>Fənn</th><th>Düz</th><th>Bal</th></tr></thead>
+      <tbody>${EXAM.blocks.filter(b => R.bySubj[b.subj]).map(b => { const r = R.bySubj[b.subj];
+        return `<tr><td>${esc(SUBJ[b.subj].title)}</td><td>${r.right} / ${r.n}</td><td>${r.pts} / ${r.max}</td></tr>`; }).join('')}</tbody></table></div>
+    <section class="block"><div class="block-h"><h2>Keçid balları</h2></div>${table}</section>
+    <div class="row block">
+      <a class="btn primary" href="#imtahan">${icon('refresh')} Yeni imtahan</a>
+      <a class="btn" href="#testler">Testlərə qayıt</a>
+    </div>
+    <section class="block"><div class="block-h"><h2>Səhv və cavabsız suallar</h2></div>${missedList(R.items, R.picks)}</section>`;
+}
+
+/* =========================================================
+   10. Search
+   ========================================================= */
+const INDEX = CHAPTERS.flatMap(c => c.sections.map(s => ({ id: s.id, t: fold(s.title), x: fold(s.text), raw: s.text })));
 
 function snippet(raw, q) {
   const f = fold(raw), at = f.indexOf(q);
@@ -330,13 +627,13 @@ function vSearch(q0) {
   const run = () => {
     const q = fold(inp.value.trim());
     history.replaceState(null, '', '#axtar' + (inp.value.trim() ? '=' + encodeURIComponent(inp.value.trim()) : ''));
-    if (q.length < 2) { $('#hits').innerHTML = '<p class="muted">Ən azı 2 hərf yaz.</p>'; return; }
-    const hits = INDEX.filter(e => e.t.includes(q) || e.x.includes(q)).slice(0, 50);
+    if (q.length < 2) { $('#hits').innerHTML = '<p class="muted empty">Ən azı 2 hərf yaz.</p>'; return; }
+    const hits = INDEX.filter(e => vis(secById[e.id]) && vis(chById[secCh[e.id]]) && (e.t.includes(q) || e.x.includes(q))).slice(0, 50);
     $('#hits').innerHTML = hits.length ? hits.map(e => {
       const s = secById[e.id], c = chById[secCh[e.id]];
       return `<a class="hit" href="#${e.id}"><span class="kicker">${esc(c.kind === 'chapter' ? `Fəsil ${c.n}` : c.title)}</span>
         <b>${esc((s.num ? s.num + '. ' : '') + s.title)}</b><span class="snip">${snippet(e.raw, q)}</span></a>`;
-    }).join('') : '<p class="muted">Heç nə tapılmadı.</p>';
+    }).join('') : '<p class="muted empty">Heç nə tapılmadı.</p>';
   };
   inp.addEventListener('input', run);
   run();
@@ -344,7 +641,7 @@ function vSearch(q0) {
 }
 
 /* =========================================================
-   8. Settings
+   11. Settings
    ========================================================= */
 function seg(name, cur, opts) {
   return `<div class="seg" role="radiogroup">${opts.map(([v, l]) =>
@@ -367,6 +664,11 @@ function vSettings() {
   topbar('', 'Ayarlar');
   $('#view').innerHTML = `
     <h1 class="h1">Ayarlar</h1>
+    <section class="block"><div class="block-h"><h2>Vəzifə qrupu</h2></div>
+      <div class="card stack">
+        <div class="set"><span>Qrup</span>${seg('group', S.group, GROUPS.map(g => [g, g]))}</div>
+        <p class="muted small">Kitab, testlər, axtarış və sınaq imtahanı yalnız bu qrupun proqramına düşən mövzuları göstərir. BA-da 20 açıq sual var, BB-də hamısı qapalıdır.</p>
+      </div></section>
     <section class="block"><div class="block-h"><h2>Görünüş</h2></div>
       <div class="card stack">
         <div class="set"><span>Rejim</span>${seg('theme', S.theme, [['auto', 'Sistem'], ['light', 'Açıq'], ['dark', 'Qaranlıq']])}</div>
@@ -383,6 +685,7 @@ function vSettings() {
           <button type="button" class="btn ghost danger" data-act="reset">${icon('trash')} Sıfırla</button>
         </div>
       </div></section>`;
+  $$('[data-group]').forEach(b => b.addEventListener('click', () => { S.group = b.dataset.group; save(); vSettings(); toast(`${S.group} qrupu seçildi`); }));
   $$('[data-theme]', $('#view')).forEach(b => b.addEventListener('click', () => { S.theme = b.dataset.theme; save(); applyLook(); vSettings(); }));
   $$('[data-fs]').forEach(b => b.addEventListener('click', () => { S.fs = b.dataset.fs; save(); applyLook(); vSettings(); }));
   bindApp();
@@ -390,7 +693,7 @@ function vSettings() {
   $('[data-act="import"]').addEventListener('click', importData);
   $('[data-act="reset"]').addEventListener('click', () => {
     if (!confirm('Bütün irəliləyiş və test nəticələri silinsin?')) return;
-    S = Object.assign(blank(), { theme: S.theme, fs: S.fs }); save(); toast('Sıfırlandı');
+    S = Object.assign(blank(), { theme: S.theme, fs: S.fs, group: S.group }); save(); toast('Sıfırlandı');
   });
 }
 function bindApp() {
@@ -424,11 +727,13 @@ async function importData() {
   if (!text) return;
   let j = null; try { j = JSON.parse(text); } catch (e) { j = null; }
   if (!j || j.app !== 'dovlet-qullugu' || !j.data || typeof j.data !== 'object') { toast('Bu fayl bu kitabın ixracı deyil.'); return; }
-  S = Object.assign(blank(), j.data); save(); applyLook(); vSettings(); toast('İdxal olundu');
+  S = Object.assign(blank(), j.data);
+  if (!GROUPS.includes(S.group)) S.group = GROUPS[0];
+  save(); applyLook(); vSettings(); toast('İdxal olundu');
 }
 
 /* =========================================================
-   9. Start
+   12. Start
    ========================================================= */
 applyLook();
 window.addEventListener('hashchange', route);

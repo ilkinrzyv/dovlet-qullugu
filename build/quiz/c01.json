@@ -1,6 +1,0 @@
-{
-"1": [
- {"s":"1.1","q":"Nümunə sual: qanundan sitat kitabda necə verilir?","o":["Sitat bloku (>) ilə","Cədvəl ilə","Kod bloku ilə","Şəkil ilə"],"a":0,"e":"Qanunun mətni “>” ilə başlayan sitat blokunda yazılır və tətbiqdə ayrıca çərçivədə görünür."},
- {"s":"1.2","q":"Nümunə sual: “Yadda saxla” siyahısı nə üçündür?","o":["Fəslin ən vacib faktlarını imtahandan əvvəl tez təkrar etmək üçün","Testin cavablarını gizlətmək üçün","Fəsli qısaltmaq üçün","Heç nə üçün"],"a":0,"e":"“Yadda saxla” fəslin əsas faktlarını qısa siyahıda toplayır — imtahandan əvvəl təkrar üçün."}
-]
-}

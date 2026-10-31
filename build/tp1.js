@@ -1,4 +1,5 @@
-// PWA check: service worker precache, installability, reading + test flow, offline reload with the host gone.
+// PWA check on the real build: service worker precache, installability, reading, offline reload with the host gone.
+// The app's own flows (groups, tests, mock exam) are checked on a fixture book by t1.js.
 const { chromium } = require('playwright');
 const http = require('http');
 const fs = require('fs');
@@ -30,7 +31,7 @@ function serve(port) {
   page.on('console', m => { if (m.type() === 'error') errors.push('console: ' + m.text()); });
   const out = {};
   const book = JSON.parse(fs.readFileSync(path.join(__dirname, 'book.json'), 'utf-8'));
-  const firstCh = book.chapters.find(c => c.kind === 'chapter');
+  const firstCh = book.chapters.find(c => c.kind === 'chapter' && c.sections.length) || book.chapters.find(c => c.sections.length);
 
   await page.goto(`http://127.0.0.1:${PORT}/`);
   await page.waitForFunction(() => window.DQ_PWA && window.DQ_PWA.sw.ready === true, null, { timeout: 30000 });
@@ -66,7 +67,7 @@ function serve(port) {
 
   // search folds Azerbaijani letters
   await page.goto(`http://127.0.0.1:${PORT}/#axtar`);
-  await page.fill('#q', 'cedvel');
+  await page.fill('#q', 'kecid');
   out.searchHits = await page.$$eval('.hit', els => els.length);
 
   await page.goto(`http://127.0.0.1:${PORT}/#ayarlar`);
@@ -82,6 +83,9 @@ function serve(port) {
   await page.waitForSelector('.secrow', { timeout: 15000 });
   out.offlineSections = await page.$$eval('.secrow', els => els.length);
   out.offlineReadKept = await page.$$eval('.secrow.done', els => els.length);
+  await page.goto(`http://127.0.0.1:${PORT}/#proqram`);
+  await page.waitForSelector('.ptopic', { timeout: 15000 });
+  out.offlineTopics = await page.$$eval('.ptopic', els => els.length);
   out.offlineFont = await page.evaluate(async () => { await document.fonts.ready; return document.fonts.check('16px Literata', 'ə'); });
 
   await browser.close();
@@ -91,7 +95,8 @@ function serve(port) {
   if (Array.isArray(out.manifestErrors) && out.manifestErrors.length) fail.push('manifest: ' + JSON.stringify(out.manifestErrors));
   if (out.readSaved !== 1) fail.push('read mark not saved');
   if (book.quizzes[firstCh.id] && !(out.quizSaved && typeof out.quizSaved.best === 'number')) fail.push('quiz result not saved');
-  if (!out.searchHits) fail.push('search found nothing for “cedvel”');
+  if (!out.searchHits) fail.push('search found nothing for “kecid”');
+  if (!out.offlineTopics) fail.push('offline programme page');
   if (out.dark !== 'dark') fail.push('theme switch');
   if (out.offlineSections !== firstCh.sections.length) fail.push('offline chapter view');
   if (out.offlineReadKept !== 1) fail.push('offline progress lost');

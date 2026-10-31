@@ -1,0 +1,278 @@
+{
+"_": "DİM-in test imtahanı proqramları, yalnız BA və BB qruplarına düşən mövzular. Mövzu nömrələri proqramdakı kimidir. g = qruplar (yoxdursa BA və BB), see = mövzunu öyrədən fəsil və ya bölmə id-ləri.",
+"exam": {
+ "groups": ["BA", "BB"],
+ "minutes": 180,
+ "minutes_note": "3 saat — qeyri-rəsmi mənbələrə görə; DİM-in elanında yoxla.",
+ "points": {"closed": 1, "open": 2},
+ "blocks": [
+  {"subj": "qan", "n": 40, "open": {"BA": 8}},
+  {"subj": "men", "n": 30, "open": {"BA": 6}},
+  {"subj": "az", "n": 15, "open": {"BA": 3}},
+  {"subj": "inf", "n": 15, "open": {"BA": 3}}
+ ],
+ "open_note": "BA-da 20 açıq sualın fənlər üzrə bölgüsü (8/6/3/3) qeyri-rəsmi mənbədəndir.",
+ "pass": [
+  {"sub": "BA1", "pct": 85, "who": "4-cü təsnifat: baş məsləhətçi, baş mühasib, böyük məsləhətçi"},
+  {"sub": "BA2", "pct": 80, "who": "4-cü təsnifat: aparıcı məsləhətçi, məsləhətçi"},
+  {"sub": "BA3", "pct": 75, "who": "5-ci təsnifat: baş məsləhətçi, baş mühasib, böyük məsləhətçi"},
+  {"sub": "BA4", "pct": 70, "who": "5-ci təsnifat: aparıcı məsləhətçi, məsləhətçi, hakim köməkçisi, məhkəmə iclasının katibi"},
+  {"sub": "BB1", "pct": 80, "who": "6-cı təsnifat: baş məsləhətçi, baş mühasib, böyük məsləhətçi"},
+  {"sub": "BB2", "pct": 75, "who": "6-cı təsnifat: aparıcı məsləhətçi, məsləhətçi, hakim köməkçisi, məhkəmə iclasının katibi"},
+  {"sub": "BB3", "pct": 70, "who": "7-ci təsnifat: baş məsləhətçi, baş mühasib, böyük məsləhətçi"},
+  {"sub": "BB4", "pct": 65, "who": "7-ci təsnifat: aparıcı məsləhətçi, məsləhətçi, hakim köməkçisi, məhkəmə iclasının katibi"}
+ ],
+ "pass_note": "DİM, “Dövlət qulluğuna qəbul qaydaları ilə bağlı nələri bilməliyik?”, 2017, Cədvəl 1 (keçid balı faizlə)."
+},
+"subjects": [
+ {
+  "id": "qan", "title": "Qanunvericilik", "opts": 4,
+  "note": "Proqrama alt mövzuları daxil edilmiş hüquqi sənədlər üzrə bilik yalnız həmin mövzular üzrə yoxlanılır.",
+  "topics": [
+   {"num": "1", "title": "Azərbaycan Respublikasının Konstitusiyası", "src": "Konstitusiya, 12 noyabr 1995"},
+   {"num": "2.1", "title": "“Dövlət qulluğu haqqında” Azərbaycan Respublikasının Qanunu", "src": "21 iyul 2000, № 926-IQ; tətbiqi barədə Prezidentin 29 dekabr 2000-ci il 435 nömrəli Fərmanı (3-cü hissə)"},
+   {"num": "2.3", "title": "“Dövlət qulluqçularının etik davranış qaydaları haqqında” Qanun", "src": "31 may 2007, № 352-IIIQ; tətbiqi barədə Prezidentin 16 avqust 2007-ci il 614 nömrəli Fərmanı (3-cü bənd)"},
+   {"num": "3", "title": "“Korrupsiyaya qarşı mübarizə haqqında” Qanun", "src": "13 yanvar 2004, № 580-IIQ"},
+   {"num": "4", "title": "“Məlumat azadlığı haqqında” Qanun", "src": "19 iyun 1998, № 505-IQ"},
+   {"num": "5", "title": "“Vətəndaşların müraciətləri haqqında” Qanun", "src": "30 sentyabr 2015, № 1308-IVQ"},
+   {"num": "8", "title": "“Normativ hüquqi aktlar haqqında” Konstitusiya Qanunu", "g": ["BA"], "src": "21 dekabr 2010, № 21-IVKQ",
+    "items": [
+     "Normativ hüquqi aktın anlayışı (bənd 1.0.1)",
+     "Normativ xarakterli aktın anlayışı (bənd 1.0.3)",
+     "Hüquqi aktın anlayışı (bənd 1.0.4)",
+     "Qanunvericilikdə boşluqlar (bənd 1.0.9)",
+     "Qanunun analogiyası (bənd 1.0.10)",
+     "Hüququn analogiyası (bənd 1.0.11)",
+     "Normativ hüquqi aktların kolliziyası (bənd 1.0.12)",
+     "Normativ hüquqi aktda dəyişikliklərin edilməsi (bənd 1.0.23)",
+     "Normativ hüquqi aktdan sui-istifadə imkanı (bənd 1.0.24)",
+     "Diskresion səlahiyyətlər (bənd 1.0.25)",
+     "Dispozitiv imkan (bənd 1.0.26)",
+     "Normativ hüquqi aktın hüquqi qüvvəsi (bənd 1.0.27)",
+     "Normativ hüquqi aktlar və onların hüquqi qüvvəsi (maddə 2)",
+     "Qeyri-normativ hüquqi aktlar və onların hüquqi qüvvəsi (maddə 3)",
+     "Normativ xarakterli aktlar və onların hüquqi qüvvəsi (maddə 4)",
+     "Milli Məclisin normativ hüquqi aktları (maddə 17–20)",
+     "Prezidentin normativ hüquqi aktları (maddə 17–20)",
+     "Nazirlər Kabinetinin normativ hüquqi aktları (maddə 17–20)",
+     "Mərkəzi icra hakimiyyəti orqanlarının normativ hüquqi aktları (maddə 17–20)",
+     "Normativ hüquqi aktların rekvizitləri (maddə 28)",
+     "Rəsmi dərc edilmə müddətləri və şərtləri (maddə 83)",
+     "Normativ hüquqi aktların qüvvəyə minməsi (maddə 85)",
+     "Zamana görə qüvvəsi (maddə 86)",
+     "Geriyə qüvvəsi (maddə 87)",
+     "Məkana və şəxslərə görə qüvvəsi (maddə 88)",
+     "Qüvvəsinin itirilməsi (maddə 89)",
+     "İcrasına nəzarət (maddə 92)"
+    ]},
+   {"num": "9", "title": "“Azərbaycan Respublikasında dövlət dili haqqında” Qanun", "src": "30 sentyabr 2002, № 365-IIQ"},
+   {"num": "10", "title": "“İnzibati icraat haqqında” Qanun", "g": ["BA"], "src": "21 oktyabr 2005, № 1036-IIQ",
+    "items": ["I fəsil", "II fəsil"]},
+   {"num": "11", "title": "İnsan hüquqları üzrə müvəkkil (Ombudsman) haqqında Konstitusiya Qanunu", "g": ["BA"], "src": "28 dekabr 2001, № 246-IIKQ",
+    "items": [
+     "Müvəkkilin fəaliyyətinin əsasları (maddə 1)",
+     "Müvəkkilin seçilməsi (maddə 2)",
+     "Müvəkkilin səlahiyyət müddəti (maddə 4)",
+     "Şikayətlərin verilməsi qaydası (maddə 8)",
+     "Şikayətin məzmunu (maddə 9)",
+     "Şikayətlə bağlı qərarın qəbul edilməsi (maddə 10)",
+     "Şikayətə baxılmasından imtina üçün əsaslar (maddə 11)",
+     "Şikayətə baxılması və milli preventiv mexanizmin funksiyaları (maddə 12)",
+     "Şikayətə baxılmanın nəticələri (maddə 13)",
+     "İnformasiya əldə etmək hüququnun pozulmasına dair şikayətlər (maddə 13-1)"
+    ]},
+   {"num": "12", "title": "“Məhkəmələr və hakimlər haqqında” Qanun", "src": "10 iyun 1997, № 310-IQ",
+    "items": [
+     "Məhkəmələrin təsis olunması (maddə 1)",
+     "Məhkəmələrin vəzifələri (maddə 3)",
+     "Məhkəmələrdə işlərə baxılması (maddə 4)",
+     "Məhkəmələrin qərarları (maddə 5)",
+     "Qanun və məhkəmə qarşısında hüquq bərabərliyi (maddə 7)",
+     "Ədalət mühakiməsinin müstəqil, qərəzsiz, qanuna uyğun həyata keçirilməsi (maddə 8)",
+     "Məhkəmə icraatına müdaxilənin və hörmətsizliyin yolverilməzliyi (maddə 9)",
+     "Müdafiə hüquqlarının təmin edilməsi (maddə 10)",
+     "Təqsirsizlik prezumpsiyası (maddə 11)",
+     "Məhkəmə icraatının açıq aparılması (maddə 12)",
+     "Çəkişmə prinsipi (maddə 13)",
+     "Məhkəmə icraatının aparıldığı dil (maddə 14)",
+     "Ədalət mühakiməsini həyata keçirən məhkəmələr (maddə 19)"
+    ]},
+   {"num": "13", "title": "“Elektron imza və elektron sənəd haqqında” Qanun", "src": "9 mart 2004, № 602-IIQ"},
+   {"num": "18", "title": "Kargüzarlığın aparılmasına dair Təlimat", "src": "Prezidentin 27 sentyabr 2003-cü il 935 nömrəli Fərmanı ilə təsdiq edilmiş Təlimat",
+    "items": [
+     "Təlimatın tələblərinə riayət olunmasına nəzarət (Fərman)",
+     "Ümumi müddəalar (hissə 1)",
+     "Sənədlərin hazırlanması üçün ümumi tələblər (hissə 2)",
+     "Sənədlərin rəsmiləşdirilməsi üçün ümumi tələblər (hissə 3)",
+     "Sənədlərin mətninin şrifti (bənd 33)",
+     "Vərəqdə qoyulan sahələr (bənd 34)",
+     "Təşkilatın və struktur bölməsinin adının yazılışı (bənd 36–38)",
+     "Böyük hərflə yazılan vəzifə adları (bənd 39)",
+     "Mürəkkəb ixtisar adları (bənd 40)",
+     "Sənədlərin nömrələnməsi (bənd 41–42)",
+     "Sənədlərə əlavələrin (qoşmaların) edilməsi (hissə 5)",
+     "Surətlərin çıxarılması və verilməsi (bənd 46–49)",
+     "Qərarların hazırlanması və tərtibi (hissə 7)",
+     "Sərəncamların hazırlanması və tərtibi (hissə 8)",
+     "Əmrlərin hazırlanması və tərtibi (hissə 9)",
+     "Protokolların hazırlanması və tərtibi (hissə 10)",
+     "Arayışlar və məlumat vərəqələri (hissə 11)",
+     "Məktub, teleqram və telefonoqram (hissə 13)",
+     "Sənədlərin dövriyyəsinin təşkili (hissə 14)",
+     "Sənədlərin icrasına nəzarətin təşkili (hissə 16)"
+    ]},
+   {"num": "19.1", "title": "“Dövlət bayrağının istifadəsi qaydaları haqqında” Qanun", "src": "8 iyun 2004, № 683-IIQ"},
+   {"num": "19.2", "title": "“Dövlət Gerbindən istifadə qaydaları haqqında” Qanun", "src": "19 fevral 2019, № 1511-VQ"},
+   {"num": "19.3", "title": "“Dövlət Himnindən istifadə qaydaları haqqında” Qanun", "src": "19 fevral 2019, № 1512-VQ"}
+  ]
+ },
+ {
+  "id": "men", "title": "Məntiq", "opts": 5,
+  "topics": [
+   {"num": "1", "title": "Verbal test tapşırıqları",
+    "items": [
+     "Analogiyaya görə sözün və ya sözlərin seçilməsi",
+     "Sözlərin müqayisəsi və ümumiləşdirilməsi: fərqlənən söz, mənaca yaxın və ya zidd söz, əlaqəsi olmayan söz, söz sırasındakı ardıcıllıq",
+     "Anaqramlar: fərqli sözün seçilməsi, uyğunluq, yarımçıq sözlərin tamamlanması",
+     "Mətn və cümlə: məntiqi tamamlama, məntiqi təhlil, şərtə görə nəticə, mətnin məzmunu üzrə sual"
+    ]},
+   {"num": "2", "title": "Fiqurlarla bağlı test tapşırıqları",
+    "items": [
+     "Analogiyaya görə şəklin seçilməsi",
+     "Şəklin məntiqi tamamlanması, sıranın davam etdirilməsi",
+     "Fiqurun hissələrinin xəyalən birləşdirilməsi və ya ayrılması",
+     "Fəza münasibətləri: fiqurun açılışı, açılışa görə fiqur, başqa görünüşün tapılması",
+     "Simmetriya: qatlanaraq kəsilmiş kağızın açılışı",
+     "Şifrlənmiş məlumatın açılması",
+     "Digərlərindən fərqlənən şəkil",
+     "Verilmiş təlimata uyğun həll edilən digər tapşırıqlar"
+    ]},
+   {"num": "3", "title": "Məntiqi-riyazi test tapşırıqları",
+    "items": [
+     "Nümunələrə görə riyazi qanunauyğunluğun tapılması və tətbiqi",
+     "Riyazi əməllərə görə dəyişənlərin tapılması: hərflərlə yazılmış rəqəmlər, tərəzidə tarazlıq, ədədi matrislər, tənliklər",
+     "Fiqurun perimetri və ya sahəsi",
+     "Məntiqi-riyazi məsələlər",
+     "Müxtəlif formada verilənlərin təhlili"
+    ]}
+  ]
+ },
+ {
+  "id": "az", "title": "Azərbaycan dili", "opts": 5,
+  "topics": [
+   {"num": "1", "title": "Fonetika"},
+   {"num": "2", "title": "Orfoqrafiya və orfoepiya qaydaları"},
+   {"num": "3", "title": "Leksika", "items": ["Leksika haqqında məlumat", "Azərbaycan dilinin lüğət tərkibi. Lüğətlər"]},
+   {"num": "4", "title": "Söz yaradıcılığı", "items": ["Söz yaradıcılığının əsas xüsusiyyətləri", "Sözün tərkibi: kök və şəkilçi"]},
+   {"num": "5", "title": "Morfologiya",
+    "items": ["Nitq hissələri", "İsim", "Sifət", "Say", "Əvəzlik", "Feil", "Zərf", "Qoşma", "Bağlayıcı", "Ədat", "Modal sözlər", "Nida"]},
+   {"num": "6", "title": "Sintaksis",
+    "items": [
+     "Söz birləşmələri", "Sintaktik əlaqələr", "Cümlə (məqsəd və intonasiyaya, şəxsə görə növləri)", "Cümlə üzvləri",
+     "Baş üzvlər: mübtəda və xəbər", "İkinci dərəcəli üzvlər: tamamlıq, təyin, zərflik", "Cümlədə sözlərin sırası",
+     "Məntiqi vurğu", "Əlavələr", "Həmcins üzvlər", "Xitab və ara sözlər",
+     "Mürəkkəb cümlə: tabesiz və tabeli", "Vasitəsiz və vasitəli nitq"
+    ]},
+   {"num": "7", "title": "Dil haqqında ümumi məlumat"},
+   {"num": "8", "title": "Nitq mədəniyyəti"},
+   {"num": "9", "title": "Üslubiyyat"},
+   {"num": "10", "title": "Əməli yazı nümunələri"},
+   {"num": "11", "title": "Durğu işarələri"}
+  ]
+ },
+ {
+  "id": "inf", "title": "İnformatika", "opts": 5,
+  "topics": [
+   {"num": "1", "title": "İnformatika və onun əsas anlayışları",
+    "items": [
+     "İnformatika fundamental elm kimi: predmeti və vəzifələri", "İnformatikanın tərkib hissələri",
+     "İnformasiya anlayışı və əsas xassələri", "Verilən, məlumat və bilik", "İnformasiyanın formaları və təqdimolunma üsulları",
+     "İnformasiyanın növləri", "Əsas informasiya prosesləri: toplanma, saxlanma, emal, ötürülmə",
+     "Kodlaşdırma anlayışı", "Simvolların kodlaşdırılması: ASCII və UNICODE", "İnformasiya miqdarının ölçü vahidləri",
+     "Müxtəlif tip informasiyaların kodlaşdırılması"
+    ]},
+   {"num": "2", "title": "Kompüter və onun texniki təminatı (hardware)",
+    "items": [
+     "EHM-lərin yaranması və inkişaf mərhələləri", "EHM-lərin arxitekturası və quruluş prinsipləri", "EHM-lərin təsnifatı",
+     "Fərdi kompüterin əsas xarakteristikaları", "FK-nın təsnifatı və xüsusiyyətləri", "FK-nın əsas qurğuları və iş prinsipi",
+     "Daxili və xarici yaddaş qurğuları", "Periferiya qurğuları"
+    ]},
+   {"num": "4", "title": "Proqram təminatı (software)",
+    "items": [
+     "Sistem proqram təminatı və təsnifatı", "Tətbiqi proqram təminatı və təsnifatı", "İnstrumental proqram təminatı və təsnifatı",
+     "Proqramlaşdırma vasitələri", "Kompüter virusları və təsnifatı", "Antivirus proqramları", "Verilənlərin sıxlaşdırılması"
+    ]},
+   {"num": "5", "title": "Əməliyyat sistemləri",
+    "items": [
+     "Əməliyyat sistemi anlayışı", "ƏS-nin əsas funksiyaları", "ƏS-lərin təsnifatı: MS DOS, UNIX, Linux, Mac OS, Windows, Android, iOS",
+     "Fayl və fayl sistemi", "Kataloq anlayışı", "Fayl və kataloqların əsas xarakteristikaları"
+    ]},
+   {"num": "6", "title": "Microsoft Windows 11 (Pro, 25H2)",
+    "items": [
+     "Təyinatı, əsas xarakteristikaları və anlayışları", "İş masası, Başlat menyusu, Tapşırıq paneli", "“Fluent” dizayn sistemi",
+     "Əsas obyektlər: fayl, qovluq, qısayol", "Pəncərələrin növləri: tam ekran, Snap Layouts, çox monitor, toxunma rejimi",
+     "Pəncərə komponentləri və idarəetmə elementləri", "Fayl bələdçisi (File Explorer)", "Qovluq və fayllar üzərində əməliyyatlar",
+     "Mübadilə buferi (Clipboard)", "Axtarış, * və ? maskaları", "Parametrlər (Settings)", "Standart proqramlar: Paint, Notepad, Xbox Game Bar və s."
+    ]},
+   {"num": "7", "title": "Microsoft Word 2019",
+    "items": [
+     "Təyinatı və əsas xüsusiyyətləri", "Proqram pəncərəsi və komponentləri", "Lent interfeysi (Ribbon)", "Cəld müraciət paneli",
+     "Vəziyyət sətri", "Mətnin daxil edilməsi və redaktəsi", "Mətn sahəsində keçidlər", "Fraqmentin seçilməsi və surətinin köçürülməsi",
+     "“Drag and Drop”", "Fraqmentin yerinin dəyişdirilməsi", "Mübadilə buferi ilə iş", "Fayl əməliyyatları", "Mətnin formatlaşdırılması",
+     "Üslublar", "Mövzular", "Səhifə parametrləri", "Obyektlərin əlavə edilməsi", "Cədvəllərlə iş", "Görünüş rejimləri",
+     "Sənədin tərtibatı", "Mündəricat", "Sənədin icmalı", "Tezaurus"
+    ]},
+   {"num": "8", "title": "Microsoft Excel 2019",
+    "items": [
+     "Təyinatı və əsas xüsusiyyətləri", "Proqram pəncərəsi və komponentləri", "Lent interfeysi, Cəld müraciət paneli, Düstur sətri, Vəziyyət sətri",
+     "Elektron cədvəlin komponentləri", "Verilənlərin daxil edilməsi və redaktəsi", "Xanaların və verilənlərin formatlaşdırılması",
+     "Düsturların daxil edilməsi və redaktəsi", "Funksiyalar və kateqoriyaları",
+     "Statistical: AVERAGE, COUNT, COUNTA, COUNTIF, MAX, MIN",
+     "Logical: AND, OR, NOT, IF, TRUE, FALSE",
+     "Math & Trig: ABS, FACT, POWER, PRODUCT, SUM",
+     "Text: LEFT, RIGHT, LEN, UPPER, LOWER, PROPER, TRIM, CONCAT, TEXTJOIN",
+     "Date & Time: DAYS, NETWORKDAYS.INTL, NOW, TODAY, WEEKDAY, WORKDAY, WORKDAY.INTL",
+     "Lookup & Reference: TRANSPOSE",
+     "Fayl əməliyyatları", "İş vərəqlərinin idarə edilməsi", "Görünüş rejimləri, miqyas və formatlaşdırma", "İş kitablarının pəncərələri",
+     "Səhifə parametrləri və fonu", "Obyektlərin əlavə edilməsi", "Diaqramlar", "Verilənlər siyahısı", "Sıralama və süzgəc",
+     "Verilənlərin analizi", "Yekun cədvəl"
+    ]},
+   {"num": "9", "title": "Microsoft PowerPoint 2019",
+    "items": [
+     "Təyinatı və əsas xüsusiyyətləri", "Elektron təqdimat və slaydlar", "Proqram pəncərəsi və komponentləri",
+     "Lent interfeysi, Cəld müraciət paneli, Vəziyyət sətri", "Fayl əməliyyatları", "Təqdimatın hazırlanması",
+     "Slayda mətnin daxil edilməsi və formatlaşdırılması", "Obyektlərin əlavə edilməsi", "Slaydlar arasında keçid effektləri",
+     "Animasiya effektləri", "Görünüş rejimləri", "Slaydların nümayişi"
+    ]},
+   {"num": "10", "title": "Verilənlər bazası. Microsoft Access 2019",
+    "items": [
+     "Verilənlər bazası anlayışı", "VB-nin struktur elementləri", "VBİS, funksiyaları və növləri", "VBİS-in komponentləri",
+     "VB modelləri: iyerarxik, şəbəkə, relyasiya, obyektyönlü", "VBİS-in təsnifatı", "Access-də VB-nin işlənilməsinin mərhələləri",
+     "Proqram pəncərəsi və komponentləri", "Fayl əməliyyatları", "Verilənlərin tipləri", "Daxil etmə, redaktə və silmə",
+     "Süzgəclər və sorğular", "Sıralama", "Obyektlər: cədvəllər, sorğular, formalar, hesabatlar, makroslar, modullar"
+    ]},
+   {"num": "12", "title": "Kompüter şəbəkələri",
+    "items": [
+     "Əsas anlayışlar, təyinatı və təsnifatı", "Aparat, proqram və kommunikasiya vasitələri", "Lokal şəbəkələr və topologiyaları",
+     "Şəbəkə texnologiyaları", "Kliyent-server texnologiyası", "Simsiz şəbəkələr, Wi-Fi", "OSI modeli və səviyyələri"
+    ]},
+   {"num": "13", "title": "İnternet qlobal şəbəkəsi",
+    "items": [
+     "İnkişaf tarixi", "Təyinatı və əsas anlayışları", "Şəbəkə protokolları, TCP/IP", "Ünvanlaşdırma sistemi", "DNS",
+     "Xidmətlər: WWW, E-mail, FTP", "Bulud texnologiyaları", "Veb-texnologiyalar", "URL-ünvanlar", "Veb-brauzerlər",
+     "Müəlliflik hüququ (Copyright)", "Axtarış sistemləri", "Kütləvi kommunikasiya sistemləri", "Sosial şəbəkələr",
+     "Dövlət və bələdiyyə orqanlarının internet saytları"
+    ]},
+   {"num": "15", "title": "Elektron dövlət",
+    "items": ["Elektron dövlət anlayışı və elementləri", "Rəqəmsal İnkişaf Konsepsiyası", "Elektron Hökumət İnformasiya Sistemi"]},
+   {"num": "16", "title": "İnformasiya təhlükəsizliyi",
+    "items": [
+     "İnformasiya təhlükəsizliyi anlayışı", "İnformasiyanın təhlükəsiz idarə edilməsi", "Zərərli proqram təminatı",
+     "Eyniləşdirmə, autentifikasiya, avtorizasiya", "Korporativ kibergigiyena", "Fərdi məlumatların qorunması", "Şifrə təhlükəsizliyi",
+     "Sosial mühəndislik", "İnternetdən təhlükəsiz istifadə", "Mobil cihaz təhlükəsizliyi", "Wi-Fi və şəbəkə təhlükəsizliyi",
+     "Sosial media təhlükəsizliyi"
+    ]}
+  ]
+ }
+]
+}

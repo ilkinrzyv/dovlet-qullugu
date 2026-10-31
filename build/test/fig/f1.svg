@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 70" width="300" height="70" font-family="sans-serif" font-size="14">
+  <text x="10" y="64">A</text><circle cx="30" cy="30" r="20"/>
+  <text x="70" y="64">B</text><rect x="72" y="10" width="40" height="40"/>
+  <text x="130" y="64">C</text><path d="M152 10L172 50H132Z"/>
+  <text x="190" y="64">D</text><ellipse cx="215" cy="30" rx="24" ry="14"/>
+  <text x="250" y="64">E</text><path d="M260 30L275 10L290 30L275 50Z"/>
+</svg>
