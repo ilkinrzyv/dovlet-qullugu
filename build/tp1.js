@@ -52,11 +52,15 @@ function serve(port) {
   out.readSaved = await page.evaluate(() => Object.keys(JSON.parse(localStorage.getItem('dq-kitab:v1')).read).length);
   await page.screenshot({ path: path.join(__dirname, 'shots', 'section.png'), fullPage: true });
 
-  // chapter test: answer every question with the first option shown
+  // chapter test: answer every question with the first option shown (open ones with a guess)
   if (book.quizzes[firstCh.id]) {
     await page.goto(`http://127.0.0.1:${PORT}/#test-${firstCh.id}`);
     for (let i = 0; i < book.quizzes[firstCh.id].length; i++) {
-      await page.click('.opt[data-oi]');
+      await page.waitForSelector('.opt[data-oi], #oa');
+      if (await page.$('#oa')) {
+        await page.fill('#oa', '1');
+        await page.click('[data-act="check"]');
+      } else await page.click('.opt[data-oi]');
       await page.waitForSelector('.expl');
       if (i === 0) await page.screenshot({ path: path.join(__dirname, 'shots', 'quiz.png'), fullPage: true });
       await page.click('[data-act="next"]');

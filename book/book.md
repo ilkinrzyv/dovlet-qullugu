@@ -89,6 +89,507 @@ Məsələn, BB4 üçün 100 baldan 65, BA4 üçün 120 baldan 84 bal lazımdır.
 
 # I hissə — Qanunvericilik {fənn=qan}
 
+## Fəsil 1. Azərbaycan Respublikasının Konstitusiyası
+
+Konstitusiya **12 noyabr 1995-ci ildə ümumxalq səsverməsində (referendumda)** qəbul edilib, **27 noyabr 1995-ci ildən** qüvvədədir. Ona üç referendumla dəyişiklik edilib: **24 avqust 2002**, **18 mart 2009** və **26 sentyabr 2016**. Konstitusiya **5 bölmə, 12 fəsil** və 158 maddədən ibarətdir. Proqramda bütövlükdə BA və BB qrupları üçündür.
+
+| Bölmə | Fəsillər |
+| --- | --- |
+| I. Ümumi müddəalar | I. Xalq hakimiyyəti; II. Dövlətin əsasları |
+| II. Əsas hüquqlar, azadlıqlar və vəzifələr | III. Əsas insan və vətəndaş hüquqları və azadlıqları; IV. Vətəndaşların əsas vəzifələri |
+| III. Dövlət hakimiyyəti | V. Qanunvericilik hakimiyyəti; VI. İcra hakimiyyəti; VII. Məhkəmə hakimiyyəti; VIII. Naxçıvan Muxtar Respublikası |
+| IV. Yerli özünüidarəetmə | IX. Yerli özünüidarəetmə |
+| V. Hüquq və qanun | X. Qanunvericilik sistemi; XI. Konstitusiyaya dəyişikliklər; XII. Konstitusiyaya əlavələr |
+
+**Preambula** xalqın niyyətlərini bəyan edir: dövlətin müstəqilliyini, suverenliyini və ərazi bütövlüyünü qorumaq; demokratik quruluşa təminat; vətəndaş cəmiyyəti; **qanunların aliliyini təmin edən hüquqi, dünyəvi dövlət**; hamının layiqli həyat səviyyəsi; bütün xalqlarla dostluq və sülh.
+
+### 1.1. Xalq hakimiyyəti (maddə 1–6)
+
+- **Hakimiyyətin yeganə mənbəyi Azərbaycan xalqıdır** (maddə 1). Xalq — ölkədə və ondan kənarda yaşayan Azərbaycan vətəndaşlarıdır.
+- Xalq suveren hüququnu **bilavasitə referendum** və **seçilmiş nümayəndələri** vasitəsilə həyata keçirir. Seçki hüququ: **ümumi, bərabər, birbaşa**; səsvermə: **sərbəst, gizli, şəxsi** (maddə 2).
+
+**Referendum (maddə 3):**
+
+| Yalnız referendumla həll olunur | Referendum keçirilə bilməz |
+| --- | --- |
+| Konstitusiyanın qəbulu və ona dəyişikliklər | Vergilər və dövlət büdcəsi |
+| Dövlət sərhədlərinin dəyişdirilməsi | Amnistiya və əfv |
+| | Seçilməsi, təyini, təsdiqi qanunvericilik və ya icra orqanlarının səlahiyyətində olan vəzifəli şəxslər |
+
+- Xalqın seçdiyi səlahiyyətli nümayəndələrdən başqa heç kəs xalqı təmsil edə, xalqın adından danışa bilməz (maddə 4).
+- **Azərbaycan xalqı vahiddir**; Azərbaycan bütün vətəndaşların **ümumi və bölünməz vətənidir** (maddə 5).
+- **Hakimiyyətin mənimsənilməsi xalqa qarşı ən ağır cinayətdir** (maddə 6).
+
+### 1.2. Dövlətin əsasları (maddə 7–23)
+
+**Azərbaycan dövləti (maddə 7)** — **demokratik, hüquqi, dünyəvi, unitar respublika**.
+
+- Hakimiyyət **daxili məsələlərdə yalnız hüquqla**, xarici məsələlərdə beynəlxalq müqavilələrlə məhdudlaşır.
+- **Hakimiyyətlərin bölünməsi:** qanunvericilik — **Milli Məclis**; icra — **Prezident**; məhkəmə — **məhkəmələr**. Onlar qarşılıqlı fəaliyyət göstərir və öz səlahiyyətləri çərçivəsində müstəqildir.
+
+**Dövlət başçısı (maddə 8)** — **Prezident**. O, xalqın vahidliyini təcəssüm etdirir, dövlətçiliyin **varisliyini** təmin edir; müstəqilliyin, ərazi bütövlüyünün, beynəlxalq müqavilələrə riayətin və **məhkəmə hakimiyyətinin müstəqilliyinin təminatçısıdır**.
+
+**Digər əsaslar:**
+
+| Maddə | Mövzu | Əsas müddəa |
+| --- | --- | --- |
+| 9 | Silahlı Qüvvələr | Ordu və başqa silahlı birləşmələr; **müharibəni** başqa dövlətlərin müstəqilliyinə qəsd və münaqişələrin həlli üsulu kimi **rədd edir**; **Ali Baş Komandan — Prezident** |
+| 11 | Ərazi | **Vahid, toxunulmaz, bölünməz**; daxili sular, Xəzərin Azərbaycan bölməsi, hava məkanı ərazinin tərkib hissəsidir; ərazi **özgəninkiləşdirilə bilməz**; sərhədlər yalnız Milli Məclisin qərarı ilə **referendumla** dəyişdirilə bilər |
+| 12 | Dövlətin ali məqsədi | **İnsan və vətəndaş hüquq və azadlıqlarının**, layiqli həyat səviyyəsinin təmin edilməsi |
+| 13 | Mülkiyyət | **Toxunulmazdır**; növləri: **dövlət, xüsusi, bələdiyyə** |
+| 14 | Təbii ehtiyatlar | Azərbaycan Respublikasına mənsubdur |
+| 15 | İqtisadi inkişaf | Bazar münasibətləri əsasında **sosial yönümlü** iqtisadiyyat; inhisarçılığa və haqsız rəqabətə yol verilmir |
+| 17 | Ailə, uşaqlar | Ailə — cəmiyyətin əsas özəyi, dövlətin xüsusi himayəsində; **15 yaşına çatmamış uşaqlar işə götürülə bilməz** |
+| 18 | Din və dövlət | **Din dövlətdən ayrıdır**; bütün etiqadlar qanun qarşısında bərabərdir; **dövlət təhsil sistemi dünyəvidir** |
+| 19 | Pul vahidi | **Manat**; pul nişanlarını tədavülə yalnız **Mərkəzi Bank** buraxır; Mərkəzi Bank dövlətin **müstəsna mülkiyyətindədir**; başqa valyutanın ödəniş vasitəsi kimi işlədilməsi **qadağandır** |
+| 20 | Dövlətin borcları | Qiyama və dövlət çevrilişinə kömək üçün alınmış borclar öhdəlik kimi qəbul edilmir |
+| 21 | Dövlət dili | **Azərbaycan dili**; dövlət başqa dillərin sərbəst işlədilməsini də təmin edir |
+| 22 | Paytaxt | **Bakı** |
+| 23 | Dövlət rəmzləri | **Bayraq, gerb, himn** |
+
+**Dövlət bayrağı (maddə 23.II):** bərabər enli **üç üfüqi zolaq** — yuxarı **mavi**, orta **qırmızı**, aşağı **yaşıl**; qırmızı zolağın ortasında hər iki üzdə **ağ aypara və səkkizguşəli ulduz**. Eninin uzunluğuna nisbəti **1:2**. Bayrağın və gerbin təsviri, himnin musiqisi və mətni **Konstitusiya qanunu** ilə müəyyən edilir.
+
+### 1.3. Əsas hüquq və azadlıqlar: ümumi prinsiplər (maddə 24–26, 71)
+
+- **İnsan ləyaqəti qorunur.** Hər kəsin **doğulduğu andan** toxunulmaz, pozulmaz və ayrılmaz hüquqları var. Hüquqlardan **sui-istifadəyə yol verilmir** (maddə 24).
+- **Bərabərlik (maddə 25):** hamı qanun və məhkəmə qarşısında bərabərdir; **kişi ilə qadın** bərabər hüquqludur; irqinə, dininə, dilinə, cinsinə, əqidəsinə və s. görə hüquqları məhdudlaşdırmaq **qadağandır**.
+- Hər kəs hüquqlarını **qanunla qadağan olunmayan üsullarla** müdafiə edə bilər (maddə 26).
+
+**Təminat (maddə 71):**
+
+- Hüquqları qorumaq **qanunvericilik, icra və məhkəmə** hakimiyyəti orqanlarının borcudur.
+- Məhdudlaşdırma gözlənilən nəticəyə **mütənasib** olmalıdır.
+- **Müharibə, hərbi vəziyyət, fövqəladə vəziyyət və səfərbərlik** zamanı hüquqlar **qismən və müvəqqəti** məhdudlaşdırıla bilər — əhaliyə **qabaqcadan** məlumat verilir.
+- Heç kəs **din, vicdan, fikir və əqidəsini açıqlamağa** məcbur edilə bilməz.
+- Hüquq və azadlıqlar **birbaşa qüvvədədir**; mübahisələri **məhkəmələr** həll edir.
+- Törədildiyi zaman hüquq pozuntusu sayılmayan əmələ görə məsuliyyət yoxdur; məsuliyyəti yüngülləşdirən yeni qanun tətbiq edilir.
+- **Hər kəs qanunla qadağan olunmayan hərəkətləri edə bilər**; dövlət orqanları yalnız Konstitusiya və qanun hüdudlarında fəaliyyət göstərir.
+
+### 1.4. Şəxsi, sosial və siyasi hüquqlar (maddə 27–70)
+
+**Şəxsi hüquqlar:**
+
+| Maddə | Hüquq | Yadda saxla |
+| --- | --- | --- |
+| 27 | Yaşamaq | Silahın işlədilməsi yalnız zəruri müdafiə, son zərurət, cinayətkarın tutulması, qiyamın yatırılması, silahlı basqın və s. hallarda |
+| 28 | Azadlıq | Yalnız qanunla tutulma, həbs, azadlıqdan məhrumetmə ilə məhdudlaşır; vətəndaşın ölkəyə **maneəsiz qayıtmaq** hüququ var |
+| 29 | Mülkiyyət | **Heç bir növə üstünlük verilmir**; məhkəmə qərarı olmadan mülkiyyətdən məhrum etmək olmaz; **tam müsadirəyə yol verilmir**; dövlət ehtiyacı üçün yalnız **qabaqcadan ədalətli ödənişlə**; vərəsəlik təmin olunur |
+| 30 | Əqli mülkiyyət | Müəlliflik və ixtiraçılıq hüququ qanunla qorunur |
+| 31 | Təhlükəsiz yaşamaq | Həyata, sağlamlığa, mülkiyyətə qəsd qadağandır |
+| 32 | Şəxsi toxunulmazlıq | Şəxsi və ailə həyatının sirri; razılıq olmadan məlumat toplamaq, **izləmək**, foto-video çəkmək olmaz; yazışma və telefon sirri; hər kəs haqqındakı məlumatla tanış ola və düzəlişini tələb edə bilər |
+| 33 | Mənzil toxunulmazlığı | Qanun və ya **məhkəmə qərarı** olmadan sakinlərin iradəsi ziddinə mənzilə daxil olmaq olmaz |
+| 34 | Nikah | **Könüllü razılıq**; ər-arvad bərabərdir; **18 yaşına çatmış** əmək qabiliyyətli uşaqlar əmək qabiliyyətsiz valideynlərini saxlamağa borcludur |
+| 44–46 | Milli mənsubiyyət, ana dili, şərəf və ləyaqət | **İşgəncə qadağandır**; razılıq olmadan tibbi və elmi təcrübə aparılmaz |
+| 47 | Fikir və söz azadlığı | Fikri açıqlamağa məcbur etmək olmaz; ədavət oyadan təbliğat qadağandır |
+| 48 | Vicdan azadlığı | Hər hansı dinə etiqad etmək və ya **heç bir dinə etiqad etməmək**; dini etiqad hüquq pozuntusuna bəraət qazandırmır |
+
+**Sosial-iqtisadi hüquqlar:**
+
+| Maddə | Hüquq | Yadda saxla |
+| --- | --- | --- |
+| 35 | Əmək | **Zorla işlətmək olmaz**; minimum əmək haqqından az olmayan haqq; işsizlərin sosial müavinət hüququ |
+| 36 | Tətil | **Silahlı Qüvvələrdə və digər silahlı birləşmələrdə xidmət edən hərbi qulluqçular və mülki şəxslər tətil edə bilməz**; **lokaut qadağandır** (qanunla müəyyən hallar istisna) |
+| 37 | İstirahət | İş günü gündə **8 saatdan artıq olmayaraq**; ildə azı bir dəfə **21 təqvim günündən** az olmayan ödənişli məzuniyyət |
+| 38 | Sosial təminat | Yardıma möhtaclara kömək **ilk növbədə ailə üzvlərinin** borcudur |
+| 39 | Sağlam ətraf mühit | Ekoloji zərərin əvəzini almaq hüququ |
+| 41 | Sağlamlıq | Həyat üçün təhlükəli faktları **gizlədən vəzifəli şəxslər** məsuliyyət daşıyır |
+| 42 | Təhsil | Dövlət **pulsuz icbari ümumi orta təhsili** təmin edir; istedadlılara zəmanət |
+| 43 | Mənzil | Heç kəs mənzilindən **qanunsuz** məhrum edilə bilməz |
+
+**Siyasi hüquqlar:**
+
+| Maddə | Hüquq | Yadda saxla |
+| --- | --- | --- |
+| 49 | Toplaşmaq | Dövlət orqanlarını **qabaqcadan xəbərdar etməklə**, dinc və **silahsız** yığıncaq, mitinq, piket |
+| 50 | Məlumat azadlığı | **Mətbuatda dövlət senzurası qadağandır**; təkzib və cavab hüququ |
+| 52 | Vətəndaşlıq | Azərbaycan ərazisində və ya vətəndaşlardan doğulan, **valideynlərindən biri** vətəndaş olan şəxs vətəndaşdır |
+| 53 | Vətəndaşlığın təminatı | Qanunla müəyyən edilmiş **itirilmə halları** istisna olmaqla, vətəndaşlıqdan **heç bir halda məhrum edilə bilməz**; ölkədən **qovula** və ya xarici dövlətə **verilə bilməz** |
+| 54 | Siyasi həyatda iştirak | Dövlət çevrilişinə **müstəqil müqavimət** vətəndaşın hüququdur |
+| 55 | Dövlətin idarəsində iştirak | Vəzifəli şəxslər vətəndaşlar sırasından təyin edilir; əcnəbilər dövlət qulluğuna qanunla qəbul edilə bilər |
+| 56 | Seçki hüququ | Məhkəmə ilə **fəaliyyət qabiliyyətsiz** sayılanlar seçkidə iştirak edə bilməz; hərbçilərin, hakimlərin, dövlət məmurlarının, din xadimlərinin, məhkumların **seçilmək** hüququ məhdudlaşdırıla bilər |
+| 57 | Müraciət | Fərdi və kollektiv; **hərbi qulluqçular yalnız fərdi** qaydada; hər müraciətə **yazılı cavab**; **tənqidə görə təqib qadağandır**, təhqir və böhtan tənqid sayılmır |
+| 58 | Birləşmək | Heç kəs birliyə daxil olmağa məcbur edilə bilməz; Konstitusiyanı pozan birliyin fəaliyyətinə **yalnız məhkəmə** xitam verə bilər |
+| 59 | Azad sahibkarlıq | Dövlət tənzimləməsi yalnız dövlət maraqları, insan həyatı və sağlamlığı ilə bağlı |
+
+**Hüquqi müdafiə təminatları:**
+
+- İşə **qərəzsiz** və **ağlabatan müddətdə** baxılması, dinlənilmək hüququ; dövlət orqanlarının hərəkətlərindən inzibati qaydada və məhkəməyə şikayət (maddə 60).
+- **Yüksək keyfiyyətli hüquqi yardım**; qanunla nəzərdə tutulmuş hallarda **ödənişsiz**; tutulduğu andan **müdafiəçi** (maddə 61).
+- İşə **qanunla müəyyən edilmiş məhkəmədə** baxılır; razılıq olmadan başqa məhkəməyə verilmir (maddə 62).
+- **Təqsirsizlik prezumpsiyası (maddə 63):** təqsir sübut edilməyibsə və məhkəmə hökmü yoxdursa şəxs təqsirsizdir; **əsaslı şübhələr təqsirli bilinməyə əsas deyil**; təqsirləndirilən təqsirsizliyini **sübut etməyə borclu deyil**; qanunsuz sübutlardan istifadə olunmur.
+- Bir cinayətə görə **təkrar məhkumluq yoxdur** (maddə 64); yuxarı məhkəməyə, əfvə müraciət hüququ (maddə 65).
+- Heç kəs **özünə, ərinə (arvadına), övladlarına, valideynlərinə, qardaşına, bacısına** qarşı ifadə verməyə məcbur edilə bilməz (maddə 66).
+- Dövlət orqanlarının qanunsuz hərəkətləri ilə vurulmuş zərəri **dövlət ödəyir** (maddə 68).
+- **Əcnəbilər** qanunla başqa hal yoxdursa vətəndaşlarla **bərabər** hüquqlardan istifadə edir (maddə 69); Azərbaycan **siyasi sığınacaq** verir; siyasi əqidəsinə görə təqib edilən başqa dövlətə verilmir (maddə 70).
+
+### 1.5. Vətəndaşların əsas vəzifələri (maddə 72–80)
+
+- Vəzifələr yalnız **Konstitusiya və ya qanunla** qoyula bilər. **Qanunu bilməmək məsuliyyətdən azad etmir** (maddə 72).
+- **Vergiləri** tam həcmdə və vaxtında ödəmək hər kəsin borcudur (maddə 73).
+- **Vətənə sədaqət müqəddəsdir.** Konstitusiyaya sadiqliyə and içmiş vəzifəli şəxs dövlətə qarşı cinayətə görə məhkum olunarsa, vəzifədən getmiş sayılır və **bir daha bu vəzifəni tuta bilməz** (maddə 74).
+- **Dövlət rəmzlərinə** (bayraq, gerb, himn) hörmət (maddə 75).
+- **Vətəni müdafiə** hər vətəndaşın borcudur; əqidəsi hərbi xidmətə ziddirsə, qanunla müəyyən hallarda **alternativ xidmət** mümkündür (maddə 76).
+- Tarix və mədəniyyət abidələrini və **ətraf mühiti** qorumaq hər kəsin borcudur (maddə 77–78).
+- Heç kəs Konstitusiyaya zidd vəzifəni icra etməyə məcbur edilə bilməz (maddə 79).
+
+### 1.6. Qanunvericilik hakimiyyəti: Milli Məclis (maddə 81–98¹)
+
+**Tərkib və seçki:**
+
+| Məsələ | Qayda | Maddə |
+| --- | --- | --- |
+| Deputatların sayı | **125** | 82 |
+| Seçki sistemi | **Majoritar**; ümumi, bərabər, birbaşa seçki hüququ; sərbəst, şəxsi, gizli səsvermə | 83 |
+| Çağırışın müddəti | **5 il**; müharibədə hərbi əməliyyatların sonunadək uzadılır (qərarı **Konstitusiya Məhkəməsi** verir) | 84 |
+| Seçki günü | Hər 5 ildən bir **noyabrın birinci bazar günü** | 84 |
+| Seçkilərin nəticələri | **Konstitusiya Məhkəməsi** yoxlayır və təsdiq edir | 86 |
+| Səlahiyyətli olmaq üçün | **83 deputatın** səlahiyyəti təsdiq olunmalıdır | 87 |
+| Boş yerə seçki keçirilmir | Səlahiyyətin bitməsinə **120 gündən az** qalarsa | 87 |
+
+**Deputat seçilə bilməz (maddə 85):** **ikili vətəndaşlığı** olan; başqa dövlətlər qarşısında öhdəliyi olan; **icra və ya məhkəmə** sistemində qulluq edən; elmi, pedaqoji və yaradıcılıq fəaliyyəti istisna olmaqla başqa **ödənişli** fəaliyyətlə məşğul olan; **din xadimləri**; fəaliyyət qabiliyyətsizliyi məhkəmə ilə təsdiq edilən; **ağır cinayətə** görə məhkum olunan; cəza çəkən şəxslər.
+
+**Sessiyalar (maddə 88):**
+
+- Hər il iki növbəti sessiya: **yaz və payız**.
+- 83 deputatın səlahiyyəti təsdiq edildikdən sonra ilk iclas **bir həftədən gec olmayaraq** çağırılır. **Martın 10-dək** təsdiq edilməzsə, ilk iclasın vaxtını **Konstitusiya Məhkəməsi** müəyyən edir.
+- **Növbədənkənar sessiyanı** sədr **Prezidentin** və ya **42 deputatın** tələbi ilə çağırır.
+- İclaslar **açıqdır**; **83 deputatın** tələbi və ya **Prezidentin** təklifi ilə qapalı iclas keçirilə bilər.
+
+**Mandatdan məhrumetmə (maddə 89):** səslər düzgün hesablanmadıqda; **vətəndaşlıqdan çıxdıqda** və ya başqa vətəndaşlıq qəbul etdikdə; məhkəmə hökmü ilə; dövlət orqanında vəzifə tutduqda, din xadimi olduqda, sahibkarlıqla məşğul olduqda; **özü imtina etdikdə**; səsvermə hüququnu şəxsən həyata keçirmədikdə; **etik davranış qaydalarını kobud pozduqda**.
+
+**Toxunulmazlıq (maddə 90–91):**
+
+- Deputat səlahiyyət müddətində **cinayət başında yaxalanma** halları istisna olmaqla cinayət məsuliyyətinə cəlb edilə, tutula, axtarışa və şəxsi müayinəyə məruz qala bilməz. Yaxalanarsa, tutan orqan **dərhal Baş prokurora** xəbər verir.
+- Toxunulmazlığa **Baş prokurorun təqdimatı** ilə **Milli Məclisin qərarı** ilə xitam verilir.
+- Deputat Milli Məclisdəki fəaliyyətinə, **səsverməyə və fikrinə görə** məsuliyyətə cəlb oluna bilməz.
+
+**İşin təşkili və aktlar (maddə 92–93):**
+
+- Milli Məclis sədrini və müavinlərini seçir, komitə və komissiyalar təşkil edir, **Hesablama Palatası** yaradır.
+- Aktlar: **Konstitusiya qanunları, qanunlar və qərarlar**.
+- Deputatlar **səsvermə hüququnu şəxsən** həyata keçirir.
+- Qanun və qərarlarda icra və məhkəmə orqanlarına **konkret tapşırıqlar nəzərdə tutula bilməz**.
+
+**Ümumi qaydalar (maddə 94)** — 27 sahə üzrə qanunlar (insan hüquqları, seçkilər, məhkəmə quruluşu, vergilər, əmək, **dövlət qulluğu**, gömrük, bank işi və s.).
+
+- **Prezident seçkiləri, Milli Məclisə seçkilər və deputatların statusu, referendum** haqqında qanunlar — **83 səs**; qalan qanunlar — **63 səs** çoxluğu ilə.
+
+**Milli Məclisin həll etdiyi məsələlər (maddə 95), o cümlədən:**
+
+| Məsələ | Kimin təqdimatı ilə |
+| --- | --- |
+| Dövlət büdcəsinin təsdiqi və icrasına nəzarət | Prezident |
+| Ombudsmanın seçilməsi | Prezident |
+| Hərbi doktrinanın təsdiqi | Prezident |
+| **Baş nazirin** təyininə razılıq | Prezident |
+| Konstitusiya, Ali və apellyasiya məhkəmələri **hakimlərinin təyini** | Prezident |
+| **Baş prokurorun** təyini və azad edilməsinə razılıq | Prezident |
+| Prezidentin **impiçment** qaydasında kənarlaşdırılması | **Konstitusiya Məhkəməsi** |
+| Nazirlər Kabinetinə **etimad** məsələsi | — |
+| **Mərkəzi Bank** İdarə Heyəti üzvlərinin təyini və azad edilməsi | Prezident |
+| Müharibə elanına və sülhə razılıq | Prezidentin müraciəti |
+| **Referendum** təyini, **amnistiya**, bələdiyyələrin hesabatları | — |
+
+**Qanunvericilik təşəbbüsü (maddə 96)** — **deputatlar, Prezident, Ali Məhkəmə, Prokurorluq, Naxçıvan Ali Məclisi** və seçki hüququ olan **40 min vətəndaş**.
+
+- Bu subyektlərin (deputatlardan başqa) layihələri **təqdim olunmuş şəkildə** səsə qoyulur; dəyişiklik yalnız onların **razılığı** ilə.
+- Bu layihələr **iki ay** ərzində səsə qoyulur. Prezident, Ali Məhkəmə, Prokurorluq və ya Naxçıvan Ali Məclisi layihəni **təcili** elan edibsə — **20 gün**.
+
+**Qanunların imzalanması (maddə 97):** qəbul edildiyi gündən **14 gün** ərzində Prezidentə təqdim edilir; təcili qanun — **24 saat** ərzində. Aktlar, başqa qayda yoxdursa, **dərc edildiyi gündən** qüvvəyə minir (maddə 98).
+
+**Milli Məclisin buraxılması (maddə 98¹).** **Prezident** Milli Məclisi buraxır, əgər eyni çağırış **bir il ərzində iki dəfə** Nazirlər Kabinetinə **etimadsızlıq** göstərərsə, ya da Prezidentin iki dəfə təqdim etdiyi Konstitusiya Məhkəməsi, Ali Məhkəmə və ya Mərkəzi Bank İdarə Heyəti üzvlərini müddətində təyin etməzsə, yaxud öz vəzifələrini aradan qaldırıla bilməyən səbəblərdən icra etməzsə. Növbədənkənar seçilən çağırışın müddəti 5 ildən az ola bilər.
+
+### 1.7. İcra hakimiyyəti: Prezident (maddə 99–108)
+
+- **İcra hakimiyyəti Prezidentə mənsubdur** (maddə 99).
+
+**Prezidentliyə namizəd (maddə 100):** **35 yaşdan** aşağı olmayan, ölkədə **10 ildən artıq daimi yaşayan**, seçki hüququ olan, **ağır cinayətə görə məhkum olunmayan**, başqa dövlətlər qarşısında öhdəliyi olmayan, **ali təhsilli**, **ikili vətəndaşlığı olmayan** Azərbaycan vətəndaşı.
+
+**Seçki (maddə 101–102):**
+
+- Müddət — **7 il**. Prezident **növbədənkənar** prezident seçkiləri elan edə bilər.
+- Səsvermədə iştirak edənlərin **yarısından çoxunun** səsi ilə seçilir; toplanmazsa, **ikinci bazar günü** ən çox səs toplamış **iki namizəd** arasında ikinci dövrə keçirilir.
+- Yekunları səsvermə günündən sonra **14 gün** ərzində **Konstitusiya Məhkəməsi** elan edir.
+
+**And (maddə 103):** nəticələr elan olunduğu gündən **3 gün** ərzində **Konstitusiya Məhkəməsi hakimlərinin iştirakı ilə**:
+
+> “Azərbaycan Respublikası Prezidentinin səlahiyyətlərini həyata keçirərkən Azərbaycan Respublikasının Konstitusiyasına əməl edəcəyimə, dövlətin müstəqilliyini və ərazi bütövlüyünü qoruyacağıma, xalqa ləyaqətlə xidmət edəcəyimə and içirəm”.
+
+And içdiyi gündən səlahiyyətlərin icrasına başlamış sayılır.
+
+**Vitse-prezidentlər (maddə 103¹):** **Birinci vitse-prezident** və vitse-prezidentləri **Prezident təyin və azad edir**. Tələblər: seçki hüququ, **ali təhsil**, başqa dövlətlər qarşısında öhdəliyin olmaması.
+
+**Vaxtından əvvəl getmə (maddə 104–105):**
+
+- **İstefa** ərizəsi **Konstitusiya Məhkəməsinə** təqdim olunur.
+- Səhhətinə görə səlahiyyətləri icra edə bilməməsi faktını **Konstitusiya Məhkəməsi** hakimlərin **6 səs** çoxluğu ilə təsdiq edir (Milli Məclisin müraciəti ilə).
+- Prezident vaxtından əvvəl gedərsə, **60 gün** ərzində növbədənkənar seçki keçirilir. Yeni Prezident seçilənədək səlahiyyətləri **Birinci vitse-prezident** icra edir.
+- Birinci vitse-prezident istefa verərsə və ya səhhətinə görə icra edə bilməzsə, Prezidentin müəyyən etdiyi ardıcıllıqla **vitse-prezident** Birinci vitse-prezident statusu alır. Bu da mümkün olmadıqda — **Baş nazir**, sonra **Milli Məclisin sədri**; o da mümkün deyilsə, kimin icra edəcəyini **Milli Məclis** qərara alır.
+
+**Toxunulmazlıq:** Prezident **toxunulmazdır** (maddə 106). Vitse-prezidentin toxunulmazlığına **Baş prokurorun təqdimatı** ilə **Prezident** xitam verir.
+
+**İmpiçment (maddə 107):**
+
+1. Prezident **ağır cinayət** törətdikdə **Konstitusiya Məhkəməsinin** təşəbbüsü ilə, **Ali Məhkəmənin 30 gün** ərzində verdiyi rəy əsasında məsələ Milli Məclis qarşısında qaldırılır.
+2. Milli Məclis **95 səs** çoxluğu ilə qərar qəbul edir.
+3. Qərarı **Konstitusiya Məhkəməsinin sədri** imzalayır; Konstitusiya Məhkəməsi **bir həftə** ərzində tərəfdar çıxmazsa, qərar qüvvəyə minmir.
+4. Qərar **2 ay** ərzində qəbul edilməzsə, ittiham **rədd edilmiş** sayılır.
+
+**Təminat (maddə 108):** Prezident və ailəsi **dövlət hesabına** təmin edilir; təhlükəsizliyini **xüsusi mühafizə xidmətləri** təmin edir.
+
+### 1.8. Prezidentin səlahiyyətləri və aktları (maddə 109–113)
+
+**Səlahiyyətlər (maddə 109, 32 bənd).** Ən çox soruşulanlar:
+
+| Prezident özü edir | Milli Məclisin razılığı / təsdiqi ilə |
+| --- | --- |
+| Milli Məclisə **seçkiləri təyin edir** | **Baş naziri** təyin edir (razılıqla) |
+| Dövlət iqtisadi və sosial **proqramlarını təsdiq edir** | **Baş prokuroru** təyin və azad edir (razılıqla) |
+| Nazirlər Kabinetinin üzvlərini təyin və azad edir; zəruri hallarda iclaslarına **sədrlik edir** | **Müharibə elan edir və sülh bağlayır** (razılıqla) |
+| Nazirlər Kabinetinin **istefası** haqqında qərar qəbul edir | Dövlət büdcəsini **təsdiqə təqdim edir** |
+| Mərkəzi və yerli icra orqanlarını **yaradır** | **Hərbi doktrinanı** təsdiqə verir |
+| NK-nın və Naxçıvan NK-nın, mərkəzi və yerli icra orqanlarının aktlarını **ləğv edir** | KM, Ali və apellyasiya məhkəmələri **hakimləri** barədə təqdimat verir |
+| **Digər məhkəmələrin hakimlərini** təyin edir | **Ombudsmanın** seçilməsi barədə təqdimat verir |
+| **Mərkəzi Bankın sədrini** İdarə Heyətinin üzvləri sırasından təyin edir | Mərkəzi Bank İdarə Heyəti üzvləri barədə təqdimat verir |
+| **Prezident Administrasiyasını** təşkil edir, rəhbərini təyin edir | Diplomatik nümayəndəliklərin **təsis edilməsi** barədə təqdimat verir |
+| Diplomatik nümayəndələri təyin edir və geri çağırır; xarici diplomatların **etimadnamə və övdətnamələrini** qəbul edir | Silahlı Qüvvələrin təyinatı ilə bağlı olmayan işlərə cəlb edilməsi barədə təqdimat verir |
+| **Referendum** təyin edir; qanunları **imzalayır və dərc edir** | |
+| **Vətəndaşlıq** və **siyasi sığınacaq** məsələlərini həll edir; **əfv edir** | |
+| Dövlət təltifləri verir; **ali hərbi və ali xüsusi rütbələr** verir | |
+| **Səfərbərlik** elan edir; müddətli hərbi xidmətə çağırış barədə qərar qəbul edir | |
+| **Təhlükəsizlik Şurasını** yaradır; **xüsusi mühafizə xidmətləri** yaradır | |
+| **Fövqəladə və hərbi vəziyyət** elan edir | |
+
+Konstitusiya ilə Milli Məclisə və məhkəmələrə aid edilməyən digər məsələləri də Prezident **icra qaydasında** həll edir (109.32).
+
+**Qanunların imzalanması (maddə 110):**
+
+- Prezident qanunu ona təqdim olunduğu gündən **56 gün** ərzində imzalayır; etirazı varsa, bu müddətdə **etirazları ilə birlikdə** Milli Məclisə qaytara bilər.
+- **Konstitusiya qanunları** Prezident imzalamazsa **qüvvəyə minmir**.
+- Adi qanunlarda veto aradan qaldırıla bilər: **83 səslə** qəbul edilmiş qanun **95 səslə**, **63 səslə** qəbul edilmiş qanun **83 səslə** yenidən qəbul edilərsə, qüvvəyə minir.
+
+Prezident beynəlxalq müqavilə bağlamaq hüququnu **vitse-prezidentə, Nazirlər Kabinetinin üzvlərinə** və müəyyən etdiyi digər şəxslərə verə bilər (maddə 110¹).
+
+**Hərbi və fövqəladə vəziyyət (maddə 111–112):**
+
+| | Hərbi vəziyyət | Fövqəladə vəziyyət |
+| --- | --- | --- |
+| Əsaslar | Ərazinin bir hissəsi **faktik işğal** olunduqda; müharibə elan edildikdə; **real silahlı hücum** təhlükəsi; **blokada** və ya onun real təhlükəsi | **Təbii fəlakət, epidemiya, epizootiya**, böyük qəzalar; ərazi bütövlüyünə, **qiyama, dövlət çevrilişinə** yönələn hərəkətlər; zorakılıqla **kütləvi iğtişaşlar** və s. |
+| Harada | **Bütün ərazidə** və ayrı-ayrı yerlərdə | **Ayrı-ayrı yerlərdə** |
+| Fərman | **24 saat** ərzində Milli Məclisin **təsdiqinə** verilir | **24 saat** ərzində Milli Məclisin **təsdiqinə** verilir |
+
+**Aktlar (maddə 113):** ümumi qaydalar müəyyən etdikdə — **fərmanlar**, başqa məsələlər üzrə — **sərəncamlar**. Başqa qayda yoxdursa, **dərc edildiyi gündən** qüvvəyə minir.
+
+### 1.9. Nazirlər Kabineti və yerli icra hakimiyyəti (maddə 114–124)
+
+- Nazirlər Kabinetini icra səlahiyyətlərinin təşkili üçün **Prezident yaradır**. O, Prezidentin **yuxarı icra orqanıdır**, Prezidentə **tabedir və cavabdehdir**; iş qaydasını Prezident müəyyən edir (maddə 114).
+- **Tərkibi (maddə 115):** Baş nazir, onun müavinləri, nazirlər və başqa mərkəzi icra orqanlarının rəhbərləri.
+- **İstefa (maddə 116):** yeni seçilmiş Prezident səlahiyyətlərinin icrasına başladığı gün Nazirlər Kabineti **Prezidentə istefa verir**.
+- İclaslarına, bir qayda olaraq, **Baş nazir** sədrlik edir (maddə 117).
+
+**Baş nazirin təyini (maddə 118):**
+
+1. Prezident namizədliyi vəzifəyə başladığı gündən **bir ay**, yaxud Nazirlər Kabinetinin istefasından **iki həftə** ərzində Milli Məclisə təqdim edir.
+2. Milli Məclis **bir həftədən gec olmayaraq** qərar qəbul edir.
+3. Bu qayda pozularsa və ya namizədlərə **üç dəfə** razılıq verilməzsə, Prezident Baş naziri **Milli Məclisin razılığı olmadan** təyin edə bilər.
+
+**Səlahiyyətlər (maddə 119):** dövlət büdcəsinin **layihəsini hazırlayıb Prezidentə təqdim edir**; büdcənin icrasını təmin edir; maliyyə-kredit və pul siyasətini, dövlət iqtisadi və sosial təminat proqramlarını həyata keçirir; **nazirliklərə və mərkəzi icra orqanlarına rəhbərlik edir, onların aktlarını ləğv edir**.
+
+**Aktlar (maddə 120):** ümumi qaydalar üçün — **qərarlar**, başqa məsələlər üzrə — **sərəncamlar**; dərc edildiyi gündən qüvvəyə minir.
+
+**Üzvlərə tələblər (maddə 121–122):** seçki hüququ, **ali təhsil**, başqa dövlətlər qarşısında öhdəliyin olmaması. Başqa seçkili və ya təyinatlı vəzifə tuta bilməzlər; **elmi, pedaqoji və yaradıcılıq** fəaliyyətindən başqa ödənişli işlə məşğul ola bilməzlər.
+
+**Baş nazirin toxunulmazlığı (maddə 123):** cinayət başında yaxalanma istisna olmaqla tutula, məsuliyyətə cəlb edilə bilməz; toxunulmazlığına **Baş prokurorun təqdimatı** ilə **Prezident** xitam verir.
+
+**Yerli icra hakimiyyəti (maddə 124):** yerlərdə icra hakimiyyətini **icra hakimiyyəti başçıları** həyata keçirir; onları **Prezident** təyin və azad edir, səlahiyyətlərini də **Prezident** müəyyən edir.
+
+**Kim kimin toxunulmazlığına xitam verir:**
+
+| Şəxs | Kimin təqdimatı ilə | Kim xitam verir |
+| --- | --- | --- |
+| Deputat | Baş prokuror | **Milli Məclis** |
+| Vitse-prezident | Baş prokuror | **Prezident** |
+| Baş nazir | Baş prokuror | **Prezident** |
+
+### 1.10. Məhkəmə hakimiyyəti və Prokurorluq (maddə 125–133)
+
+- Məhkəmə hakimiyyətini **ədalət mühakiməsi yolu ilə yalnız məhkəmələr** həyata keçirir: **Konstitusiya Məhkəməsi, Ali Məhkəmə, apellyasiya məhkəmələri, ümumi və ixtisaslaşdırılmış məhkəmələr** (maddə 125).
+- Konstitusiya, mülki və cinayət məhkəmə icraatı vasitəsilə həyata keçirilir. Cinayət məhkəmə icraatında **Prokurorluq və müdafiə tərəfi** iştirak edir.
+- **Fövqəladə məhkəmələrin yaradılması qadağandır.** Məhkəmə icraatı **həqiqətin müəyyən edilməsini** təmin etməlidir.
+
+**Hakimə tələblər (maddə 126):** seçki hüququ olan, **ali hüquq təhsilli**, hüquqşünas ixtisası üzrə **5 ildən artıq** işləyən vətəndaş. Hakim başqa vəzifə tuta, elmi, pedaqoji və yaradıcılıq fəaliyyətindən başqa ödənişli işlə, **siyasi fəaliyyətlə** məşğul ola, **partiya üzvü** ola bilməz.
+
+**Ədalət mühakiməsinin prinsipləri (maddə 127):**
+
+- Hakimlər **müstəqildir**, yalnız **Konstitusiyaya və qanunlara** tabedir, səlahiyyət müddətində **dəyişilməzdir**.
+- İşlərə **qərəzsiz**, ədalətlə, tərəflərin hüquq bərabərliyinə və faktlara əsasən baxılır; məhkəməyə təsir və müdaxilə yolverilməzdir.
+- Bütün məhkəmələrdə icraat **açıqdır**. **Qapalı iclas** yalnız **dövlət, peşə və kommersiya sirrinin** açılması və ya **şəxsi və ailə həyatının məxfiliyi** təhlükəsi olduqda.
+- Cinayət işlərində **qiyabi icraata yol verilmir** (qanunda nəzərdə tutulan hallar istisna).
+- İcraat **çəkişmə prinsipi** əsasında; hər mərhələdə **müdafiə hüququ**; ədalət mühakiməsi **təqsirsizlik prezumpsiyasına** əsaslanır.
+- **Dil:** dövlət dili və ya həmin yerin **əhalisinin çoxluq təşkil edən hissəsinin dili**. Dili bilməyən iştirakçının **tərcüməçi** və **ana dilində çıxış** hüququ var.
+
+**Hakimlərin toxunulmazlığı (maddə 128):**
+
+- Hakimlər **toxunulmazdır**; cinayət məsuliyyətinə yalnız qanunda nəzərdə tutulan qaydada cəlb oluna bilər.
+- Hakim cinayət törətdikdə, onun vəzifədən kənarlaşdırılması təşəbbüsünü **Prezident** **Ali Məhkəmənin rəyi** əsasında (rəy **30 gün** ərzində) Milli Məclis qarşısında irəli sürür.
+- **Konstitusiya, Ali və apellyasiya** məhkəmələrinin hakimləri — **83 səs**; digər hakimlər — **63 səs**.
+
+**Məhkəmə qərarları (maddə 129):** **dövlətin adından** çıxarılır, icrası **məcburidir**; icra olunmaması məsuliyyətə səbəb olur; qərar **qanuna və sübutlara** əsaslanmalıdır.
+
+**Konstitusiya Məhkəməsi (maddə 130):**
+
+- **9 hakimdən** ibarətdir; hakimləri **Prezidentin təqdimatı ilə Milli Məclis** təyin edir.
+- **Sorğu verə bilənlər:** **Prezident, Milli Məclis, Nazirlər Kabineti, Ali Məhkəmə, Prokurorluq, Naxçıvan Ali Məclisi**.
+- Həll etdiyi məsələlər: qanunların, fərman və sərəncamların, qərarların, normativ aktların **Konstitusiyaya və qanunlara uyğunluğu**; bələdiyyə aktlarının uyğunluğu; **qüvvəyə minməmiş dövlətlərarası müqavilələrin** Konstitusiyaya uyğunluğu; hakimiyyətlər arasında **səlahiyyət bölgüsü** mübahisələri. Həmçinin Konstitusiyanı və qanunları **şərh edir**.
+- **Hər kəs** hüquq və azadlıqlarını pozan aktlardan Konstitusiya Məhkəməsinə **şikayət** verə bilər. **Məhkəmələr** şərh üçün müraciət edə bilər. **Ombudsman** sorğu verə bilər.
+- Qərarları ərazidə **məcburi qüvvəyə** malikdir və **dərc edilməlidir**. Uyğunsuz sayılan aktlar qərarda göstərilən müddətdə **qüvvədən düşür**; dövlətlərarası müqavilələr isə **qüvvəyə minmir**.
+
+**Ali Məhkəmə (maddə 131):** mülki, cinayət və digər işlər üzrə **ali məhkəmə orqanıdır**; **kassasiya** qaydasında ədalət mühakiməsi həyata keçirir, məhkəmə praktikası üzrə **izahatlar** verir. Hakimlərini **Prezidentin təqdimatı ilə Milli Məclis** təyin edir; qərarları dərc edilməlidir.
+
+**Apellyasiya məhkəmələri (maddə 132):** **yuxarı instansiya** məhkəmələridir; hakimlərini **Prezidentin təqdimatı ilə Milli Məclis** təyin edir.
+
+**Prokurorluq (maddə 133):**
+
+- Qanunların icra və tətbiqinə **nəzarət edir**; cinayət işləri başlayır və **istintaq** aparır; məhkəmədə **dövlət ittihamını** müdafiə edir; iddia qaldırır; məhkəmə qərarlarından **protest** verir.
+- Ərazi və ixtisaslaşdırılmış prokurorların **Baş prokurora tabeliyinə** əsaslanan **vahid mərkəzləşdirilmiş** orqandır.
+
+| Vəzifə | Kim təyin edir |
+| --- | --- |
+| Baş prokuror | **Prezident**, Milli Məclisin **razılığı ilə** |
+| Baş prokurorun müavinləri, ixtisaslaşdırılmış prokurorluq rəhbərləri, Naxçıvan prokuroru | **Prezident**, Baş prokurorun **təqdimatı ilə** |
+| Ərazi və ixtisaslaşdırılmış prokurorlar | **Baş prokuror**, Prezidentin **razılığı ilə** |
+
+**Hakimlər kim tərəfindən təyin edilir:**
+
+| Məhkəmə | Təyin edən |
+| --- | --- |
+| Konstitusiya Məhkəməsi, Ali Məhkəmə, apellyasiya məhkəmələri | **Milli Məclis**, Prezidentin təqdimatı ilə |
+| Digər məhkəmələr | **Prezident** |
+
+### 1.11. Naxçıvan Muxtar Respublikası (maddə 134–141)
+
+- Naxçıvan Azərbaycanın tərkibində **muxtar dövlətdir** və onun **ayrılmaz tərkib hissəsidir**; statusu **bu Konstitusiya** ilə müəyyən edilir (maddə 134).
+- Azərbaycanın Konstitusiyası, qanunları, Prezidentin fərmanları və Nazirlər Kabinetinin qərarları Naxçıvanda **məcburidir**.
+- **Naxçıvanın Konstitusiyasını** Azərbaycan **Prezidenti** Milli Məclisə təqdim edir, o, **Konstitusiya qanunu** ilə təsdiq edilir.
+
+| Hakimiyyət | Orqan (maddə 135) |
+| --- | --- |
+| Qanunvericilik | **Ali Məclis** |
+| İcra | **Nazirlər Kabineti** |
+| Məhkəmə | Naxçıvanın **məhkəmələri** |
+
+| Məsələ | Qayda | Maddə |
+| --- | --- | --- |
+| Ali vəzifəli şəxs | **Ali Məclisin sədri** | 136 |
+| Ali Məclisin tərkibi | **45 üzv** | 137 |
+| Ali Məclisin səlahiyyət müddəti | **5 il** | 137 |
+| Ali Məclisin qanunla tənzimlədiyi sahələr | Ali Məclisə seçkilər, vergilər, iqtisadiyyatın inkişaf istiqamətləri, sosial təminat, ətraf mühit, **turizm**, səhiyyə, elm, mədəniyyət | 138 |
+| Ali Məclisin qərarla həll etdiyi məsələlər | büdcənin, iqtisadi və sosial proqramların təsdiqi; Baş nazirin təyini və azad edilməsi; NK tərkibinin təsdiqi; NK-ya **etimad** | 139 |
+| Baş nazir | **Azərbaycan Prezidentinin təqdimatı** ilə **Ali Məclis** təyin edir | 140 |
+| Nazirlər Kabinetinin tərkibi | **Baş nazirin təklifi** ilə **Ali Məclis** təsdiq edir | 140 |
+| Nazirlər Kabinetinin aktları | **qərar və sərəncamlar** | 140 |
+| Yerli icra başçıları | **Ali Məclis sədrinin təqdimatı** ilə **Azərbaycan Prezidenti** təyin edir | 141 |
+
+### 1.12. Yerli özünüidarəetmə: bələdiyyələr (maddə 142–146¹)
+
+- Yerli özünüidarəni **bələdiyyələr** həyata keçirir; onlar **seçkilər əsasında** yaradılır (maddə 142).
+- Bələdiyyə **iclaslar, daimi və başqa komissiyalar** vasitəsilə işləyir; iclasları **bələdiyyənin sədri** çağırır (maddə 143).
+
+**İclaslarda həll olunan məsələlər (maddə 144):** üzvlərin səlahiyyətlərinin tanınması və xitamı; **reqlamentin** təsdiqi; sədrin, müavinlərin, komissiyaların seçilməsi; **yerli vergi və ödənişlərin** müəyyən edilməsi; **yerli büdcənin** və onun icrası haqqında hesabatın təsdiqi; bələdiyyə mülkiyyətinə sahiblik və sərəncam; yerli sosial, iqtisadi və **ekoloji** proqramlar.
+
+- Bələdiyyələrə qanunvericilik və icra hakimiyyəti **əlavə səlahiyyətlər** verə bilər — bunun üçün **maliyyə vəsaiti** də ayrılmalıdır; icrasına həmin hakimiyyətlər nəzarət edir.
+
+**Qərarlar (maddə 145):**
+
+| Qərar | Səs çoxluğu |
+| --- | --- |
+| Ümumi qayda | **Sadə səs çoxluğu** |
+| **Yerli vergilər və ödənişlər** | Üzvlərin **üçdə iki** səs çoxluğu |
+
+**Müstəqilliyin təminatı (maddə 146):**
+
+- Bələdiyyələr səlahiyyətlərində **müstəqildir**, amma bu, vətəndaşlar qarşısında **məsuliyyəti istisna etmir**; müstəqillik dövlətin **suverenliyinə xələl gətirə bilməz**.
+- **Dövlət bələdiyyələrin fəaliyyətinə nəzarət edir.** Qanunla müəyyən hallarda bələdiyyələr **Milli Məclisə hesabat** verir.
+- Bələdiyyələrin **məhkəmə müdafiəsinə** və dövlət orqanlarının qərarlarından yaranan əlavə xərclərin ödənilməsinə təminat verilir.
+- Bələdiyyə qulluqçularının qanunsuz hərəkətləri ilə insan hüquqlarına dəyən ziyana görə bələdiyyələr **mülki məsuliyyət** daşıyır (maddə 146¹).
+
+### 1.13. Qanunvericilik sistemi (maddə 147–151)
+
+- **Konstitusiya** ən yüksək və **birbaşa** hüquqi qüvvəyə malikdir, qanunvericilik sisteminin **əsasıdır** (maddə 147).
+
+**Qanunvericilik sistemi (maddə 148)** — hüquqi qüvvəsinə görə sıra ilə:
+
+1. Konstitusiya;
+2. **referendumla** qəbul edilmiş aktlar;
+3. qanunlar;
+4. fərmanlar;
+5. Nazirlər Kabinetinin qərarları;
+6. mərkəzi icra hakimiyyəti orqanlarının normativ aktları.
+
+- Azərbaycanın tərəfdar çıxdığı **beynəlxalq müqavilələr** sistemin **ayrılmaz tərkib hissəsidir**.
+- Naxçıvanda həm də onun Konstitusiyası, qanunları və NK qərarları qüvvədədir; Naxçıvanın sistemi Azərbaycanın sisteminə **uyğun olmalıdır**.
+- **Yerli icra orqanları** öz səlahiyyətləri daxilində sistemdəki aktlara zidd olmayan **normativ xarakterli aktlar** qəbul edə bilər.
+
+**Normativ hüquqi aktlar (maddə 149):**
+
+| Akt | Nəyə zidd olmamalıdır | Dərc edildikdən sonra kim üçün məcburidir |
+| --- | --- | --- |
+| Referendum aktları | — | vətəndaşlar, üç hakimiyyət, hüquqi şəxslər, bələdiyyələr |
+| Qanunlar | Konstitusiya | vətəndaşlar, üç hakimiyyət, hüquqi şəxslər, bələdiyyələr |
+| Fərmanlar | Konstitusiya, qanunlar | vətəndaşlar, **icra orqanları**, hüquqi şəxslər |
+| NK qərarları | Konstitusiya, qanunlar, fərmanlar | vətəndaşlar, **mərkəzi və yerli icra orqanları**, hüquqi şəxslər |
+| Mərkəzi icra orqanlarının aktları | Konstitusiya, qanunlar, fərmanlar, NK qərarları | — |
+
+- Aktlar **hüquqa və haqq-ədalətə** (bərabər mənafelərə bərabər münasibətə) əsaslanmalıdır.
+- **Geriyə qüvvə:** vəziyyəti **yaxşılaşdıran**, məsuliyyəti **aradan qaldıran və ya yüngülləşdirən** aktlar geriyə şamil edilir; qalanları **edilmir**.
+- **Normativ akt dərc edilməlidir.** Dərc edilməyən aktın icrasına heç kəs məcbur edilə və onu pozduğuna görə məsuliyyətə cəlb edilə bilməz. Dərc qaydası **Konstitusiya qanunu** ilə müəyyən edilir.
+
+**Bələdiyyə aktları (maddə 150)** hüquqa və haqq-ədalətə əsaslanmalı, Konstitusiyaya, qanunlara, fərmanlara, NK qərarlarına zidd olmamalıdır; onun ərazisində yaşayan vətəndaşlar və yerləşən hüquqi şəxslər üçün **məcburidir**.
+
+**Beynəlxalq müqavilələr (maddə 151).** Qanunvericilik aktı ilə Azərbaycanın tərəfdar çıxdığı **dövlətlərarası müqavilə** arasında ziddiyyət olarsa, **beynəlxalq müqavilə** tətbiq edilir. İstisna: **Konstitusiya və referendumla qəbul edilən aktlar**.
+
+### 1.14. Konstitusiyada dəyişikliklər və əlavələr (maddə 152–158)
+
+| | Dəyişiklik (mətndə) | Əlavə |
+| --- | --- | --- |
+| Necə qəbul edilir | **Yalnız referendumla** (maddə 152) | Milli Məclisdə **95 səslə**, **Konstitusiya qanunu** şəklində (maddə 156) |
+| Kim təklif edir | **Milli Məclis** və ya **Prezident**; əvvəlcədən **Konstitusiya Məhkəməsinin rəyi** alınır (maddə 153) | **Prezident** və ya **azı 63 deputat** (maddə 157) |
+| Nəyə toxunmaq olmaz | **1, 2, 6, 7, 8 və 21-ci** maddələr; III fəsildəki hüquqların **ləğvi** və ya beynəlxalq müqavilələrdən **artıq** məhdudlaşdırılması (maddə 155) | **Birinci bölmənin** (Ümumi müddəalar) müddəaları ilə bağlı əlavə təklif edilə bilməz (maddə 158) |
+
+- Konstitusiya Məhkəməsi **referendumla** qəbul edilmiş dəyişikliklərə dair qərar qəbul **edə bilməz** (maddə 154).
+- **Əlavələr** Milli Məclisdə **iki dəfə** səsə qoyulur; ikinci səsvermə birincidən **6 ay sonra** keçirilir. Hər iki səsvermədən sonra Prezidentə imzaya göndərilir; **ikinci səsvermədən sonra imzalandıqda** qüvvəyə minir.
+- Konstitusiya qanunları Konstitusiyanın **ayrılmaz hissəsidir** və onun əsas mətninə **zidd olmamalıdır**.
+
+**Keçid müddəaları.** Konstitusiya **rəsmən dərc olunduğu gündən** qüvvəyə minib; **1978-ci il 21 aprel** Konstitusiyası qüvvədən düşüb.
+
+### 1.15. Yadda saxla: rəqəmlər
+
+| Rəqəm | Nə | Maddə |
+| --- | --- | --- |
+| 125 | Milli Məclisin deputatları | 82 |
+| 5 il | Milli Məclisin və Naxçıvan Ali Məclisinin müddəti | 84, 137 |
+| 7 il | Prezidentin müddəti | 101 |
+| 35 yaş, 10 il | Prezidentliyə namizəd: yaş; ölkədə daimi yaşama | 100 |
+| 83 | Milli Məclisin səlahiyyətli olması; qapalı iclas tələbi; seçki, status, referendum qanunları; yüksək məhkəmələrin hakimlərini kənarlaşdırma | 87, 88, 94, 128 |
+| 63 | Adi qanunlar; digər hakimləri kənarlaşdırma; əlavə təklif edən deputatlar | 94, 128, 157 |
+| 95 | İmpiçment; Konstitusiyaya əlavələr; 83 səslə qəbul edilmiş qanuna vetonu aradan qaldırmaq | 107, 156, 110 |
+| 42 | Növbədənkənar sessiya tələb edən deputatlar | 88 |
+| 40 000 | Qanunvericilik təşəbbüsü olan seçicilər | 96 |
+| 9 | Konstitusiya Məhkəməsinin hakimləri | 130 |
+| 6 səs | KM-in Prezidentin səhhət səbəbi ilə getməsini təsdiqi | 104 |
+| 45 | Naxçıvan Ali Məclisinin üzvləri | 137 |
+| 56 gün | Prezidentin qanunu imzalama müddəti | 110 |
+| 14 gün / 24 saat | Qanunun Prezidentə təqdimi (adi / təcili) | 97 |
+| 2 ay / 20 gün | Təşəbbüs layihəsinin səsə qoyulması (adi / təcili) | 96 |
+| 60 gün | Prezident vaxtından əvvəl getdikdə növbədənkənar seçki | 105 |
+| 3 gün | Prezidentin and içməsi | 103 |
+| 30 gün | Ali Məhkəmənin rəyi (impiçment, hakimin kənarlaşdırılması) | 107, 128 |
+| 24 saat | Hərbi və fövqəladə vəziyyət fərmanının təsdiqə verilməsi | 111, 112 |
+| 6 ay | Əlavələr üzrə iki səsvermə arasındakı müddət | 156 |
+| 15 yaş | Bu yaşa çatmamış uşaqlar işə götürülə bilməz | 17 |
+| 8 saat, 21 gün | İş günü; illik ödənişli məzuniyyət | 37 |
+| ⅔ | Bələdiyyədə yerli vergi və ödəniş qərarları | 145 |
+
 ## Fəsil 2. “Dövlət qulluğu haqqında” Qanun
 
 Qanun 21 iyul 2000-ci ildə qəbul edilib (№ 926-IQ), **1 sentyabr 2001-ci ildən** qüvvədədir. Dövlət qulluğunun hüquqi, təşkilati və maliyyə-iqtisadi əsaslarını müəyyən edir. İmtahanda ən çox sual verilən qanunlardan biridir: rəqəmlərə (müddətlər, yaş, faizlər) xüsusi diqqət et.

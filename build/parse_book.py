@@ -214,13 +214,18 @@ for f in sorted(glob.glob(os.path.join(args.quiz, '*.json'))):
             nq += 1
 
 # ---------- programme: every “see” must point at a chapter or section ----------
+# Only the real book must cover every link; a test book has a few chapters, so the rest are dropped.
+strict = os.path.abspath(args.src) == os.path.abspath(ap.get_default('src'))
 known = {c['id'] for c in book['chapters']} | {s['id'] for c in book['chapters'] for s in c['sections']}
 for s in prog['subjects']:
     for t in s['topics']:
         t.setdefault('g', GROUPS)
-        for x in t.get('see', []):
-            if x not in known:
+        see = t.get('see', [])
+        for x in see:
+            if x not in known and strict:
                 err(f'proqram {s["id"]} {t["num"]}: unknown id {x}')
+        if see and not strict:
+            t['see'] = [x for x in see if x in known]
 book['prog'] = prog
 
 json.dump(book, open(args.out, 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, separators=(',', ':'))

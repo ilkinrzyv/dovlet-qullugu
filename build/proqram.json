@@ -29,13 +29,13 @@
   "id": "qan", "title": "Qanunvericilik", "opts": 4,
   "note": "Proqrama alt mövzuları daxil edilmiş hüquqi sənədlər üzrə bilik yalnız həmin mövzular üzrə yoxlanılır.",
   "topics": [
-   {"num": "1", "title": "Azərbaycan Respublikasının Konstitusiyası", "src": "Konstitusiya, 12 noyabr 1995"},
-   {"num": "2.1", "title": "“Dövlət qulluğu haqqında” Azərbaycan Respublikasının Qanunu", "src": "21 iyul 2000, № 926-IQ; tətbiqi barədə Prezidentin 29 dekabr 2000-ci il 435 nömrəli Fərmanı (3-cü hissə)"},
-   {"num": "2.3", "title": "“Dövlət qulluqçularının etik davranış qaydaları haqqında” Qanun", "src": "31 may 2007, № 352-IIIQ; tətbiqi barədə Prezidentin 16 avqust 2007-ci il 614 nömrəli Fərmanı (3-cü bənd)"},
-   {"num": "3", "title": "“Korrupsiyaya qarşı mübarizə haqqında” Qanun", "src": "13 yanvar 2004, № 580-IIQ"},
-   {"num": "4", "title": "“Məlumat azadlığı haqqında” Qanun", "src": "19 iyun 1998, № 505-IQ"},
-   {"num": "5", "title": "“Vətəndaşların müraciətləri haqqında” Qanun", "src": "30 sentyabr 2015, № 1308-IVQ"},
-   {"num": "8", "title": "“Normativ hüquqi aktlar haqqında” Konstitusiya Qanunu", "g": ["BA"], "src": "21 dekabr 2010, № 21-IVKQ",
+   {"num": "1", "see": ["c1"], "title": "Azərbaycan Respublikasının Konstitusiyası", "src": "Konstitusiya, 12 noyabr 1995"},
+   {"num": "2.1", "see": ["c2"], "title": "“Dövlət qulluğu haqqında” Azərbaycan Respublikasının Qanunu", "src": "21 iyul 2000, № 926-IQ; tətbiqi barədə Prezidentin 29 dekabr 2000-ci il 435 nömrəli Fərmanı (3-cü hissə)"},
+   {"num": "2.3", "see": ["c3"], "title": "“Dövlət qulluqçularının etik davranış qaydaları haqqında” Qanun", "src": "31 may 2007, № 352-IIIQ; tətbiqi barədə Prezidentin 16 avqust 2007-ci il 614 nömrəli Fərmanı (3-cü bənd)"},
+   {"num": "3", "see": ["c4"], "title": "“Korrupsiyaya qarşı mübarizə haqqında” Qanun", "src": "13 yanvar 2004, № 580-IIQ"},
+   {"num": "4", "see": ["c5"], "title": "“Məlumat azadlığı haqqında” Qanun", "src": "19 iyun 1998, № 505-IQ"},
+   {"num": "5", "see": ["c6"], "title": "“Vətəndaşların müraciətləri haqqında” Qanun", "src": "30 sentyabr 2015, № 1308-IVQ"},
+   {"num": "8", "see": ["c7"], "title": "“Normativ hüquqi aktlar haqqında” Konstitusiya Qanunu", "g": ["BA"], "src": "21 dekabr 2010, № 21-IVKQ",
     "items": [
      "Normativ hüquqi aktın anlayışı (bənd 1.0.1)",
      "Normativ xarakterli aktın anlayışı (bənd 1.0.3)",
@@ -65,10 +65,10 @@
      "Qüvvəsinin itirilməsi (maddə 89)",
      "İcrasına nəzarət (maddə 92)"
     ]},
-   {"num": "9", "title": "“Azərbaycan Respublikasında dövlət dili haqqında” Qanun", "src": "30 sentyabr 2002, № 365-IIQ"},
-   {"num": "10", "title": "“İnzibati icraat haqqında” Qanun", "g": ["BA"], "src": "21 oktyabr 2005, № 1036-IIQ",
+   {"num": "9", "see": ["c8"], "title": "“Azərbaycan Respublikasında dövlət dili haqqında” Qanun", "src": "30 sentyabr 2002, № 365-IIQ"},
+   {"num": "10", "see": ["c9"], "title": "“İnzibati icraat haqqında” Qanun", "g": ["BA"], "src": "21 oktyabr 2005, № 1036-IIQ",
     "items": ["I fəsil", "II fəsil"]},
-   {"num": "11", "title": "İnsan hüquqları üzrə müvəkkil (Ombudsman) haqqında Konstitusiya Qanunu", "g": ["BA"], "src": "28 dekabr 2001, № 246-IIKQ",
+   {"num": "11", "see": ["c10"], "title": "İnsan hüquqları üzrə müvəkkil (Ombudsman) haqqında Konstitusiya Qanunu", "g": ["BA"], "src": "28 dekabr 2001, № 246-IIKQ",
     "items": [
      "Müvəkkilin fəaliyyətinin əsasları (maddə 1)",
      "Müvəkkilin seçilməsi (maddə 2)",
@@ -81,7 +81,7 @@
      "Şikayətə baxılmanın nəticələri (maddə 13)",
      "İnformasiya əldə etmək hüququnun pozulmasına dair şikayətlər (maddə 13-1)"
     ]},
-   {"num": "12", "title": "“Məhkəmələr və hakimlər haqqında” Qanun", "src": "10 iyun 1997, № 310-IQ",
+   {"num": "12", "see": ["c11"], "title": "“Məhkəmələr və hakimlər haqqında” Qanun", "src": "10 iyun 1997, № 310-IQ",
     "items": [
      "Məhkəmələrin təsis olunması (maddə 1)",
      "Məhkəmələrin vəzifələri (maddə 3)",
@@ -97,8 +97,8 @@
      "Məhkəmə icraatının aparıldığı dil (maddə 14)",
      "Ədalət mühakiməsini həyata keçirən məhkəmələr (maddə 19)"
     ]},
-   {"num": "13", "title": "“Elektron imza və elektron sənəd haqqında” Qanun", "src": "9 mart 2004, № 602-IIQ"},
-   {"num": "18", "title": "Kargüzarlığın aparılmasına dair Təlimat", "src": "Prezidentin 27 sentyabr 2003-cü il 935 nömrəli Fərmanı ilə təsdiq edilmiş Təlimat",
+   {"num": "13", "see": ["c12"], "title": "“Elektron imza və elektron sənəd haqqında” Qanun", "src": "9 mart 2004, № 602-IIQ"},
+   {"num": "18", "see": ["c13"], "title": "Kargüzarlığın aparılmasına dair Təlimat", "src": "Prezidentin 27 sentyabr 2003-cü il 935 nömrəli Fərmanı ilə təsdiq edilmiş Təlimat",
     "items": [
      "Təlimatın tələblərinə riayət olunmasına nəzarət (Fərman)",
      "Ümumi müddəalar (hissə 1)",
@@ -121,9 +121,9 @@
      "Sənədlərin dövriyyəsinin təşkili (hissə 14)",
      "Sənədlərin icrasına nəzarətin təşkili (hissə 16)"
     ]},
-   {"num": "19.1", "title": "“Dövlət bayrağının istifadəsi qaydaları haqqında” Qanun", "src": "8 iyun 2004, № 683-IIQ"},
-   {"num": "19.2", "title": "“Dövlət Gerbindən istifadə qaydaları haqqında” Qanun", "src": "19 fevral 2019, № 1511-VQ"},
-   {"num": "19.3", "title": "“Dövlət Himnindən istifadə qaydaları haqqında” Qanun", "src": "19 fevral 2019, № 1512-VQ"}
+   {"num": "19.1", "see": ["c14s1", "c14s2"], "title": "“Dövlət bayrağının istifadəsi qaydaları haqqında” Qanun", "src": "8 iyun 2004, № 683-IIQ"},
+   {"num": "19.2", "see": ["c14s3"], "title": "“Dövlət Gerbindən istifadə qaydaları haqqında” Qanun", "src": "19 fevral 2019, № 1511-VQ"},
+   {"num": "19.3", "see": ["c14s4"], "title": "“Dövlət Himnindən istifadə qaydaları haqqında” Qanun", "src": "19 fevral 2019, № 1512-VQ"}
   ]
  },
  {
