@@ -11,6 +11,12 @@
  {"s":"26.4","q":"Word cədvəlində bir neçə xananı bir xanaya çevirən əmr hansıdır?","o":["Merge Cells","Split Cells","Insert Row","Delete Table","AutoFit"],"a":0,"e":"Merge Cells xanaları birləşdirir, Split Cells isə bir xananı bir neçə xanaya bölür."},
  {"s":"26.5","q":"PowerPoint-də slayddakı obyektin hərəkət (görünmə, yox olma) effekti hansı tabda təyin olunur?","o":["Animations","Transitions","Design","Slide Show","View"],"a":0,"e":"Obyektlərin effektləri — Animations, slaydlar arasındakı keçidlər — Transitions tabında təyin olunur."},
  {"s":"26.5","q":"PowerPoint-də nümayişi əvvəldən başlatmaq üçün hansı düymə istifadə olunur?","o":["F5","Shift + F5","Esc","F7","Ctrl + M"],"a":0,"e":"F5 — əvvəldən, Shift + F5 — cari slayddan; Esc nümayişi dayandırır."},
- {"s":"26.5","t":"open","q":"PowerPoint 2019 təqdimat faylının standart genişlənməsini nöqtəsiz yaz.","a":["pptx"],"e":"PowerPoint 2019 təqdimatları .pptx formatında saxlanılır."}
+ {"s":"26.5","t":"open","q":"PowerPoint 2019 təqdimat faylının standart genişlənməsini nöqtəsiz yaz.","a":["pptx"],"e":"PowerPoint 2019 təqdimatları .pptx formatında saxlanılır."},
+ {"s":"26.1","q":"Word-də yeni sənəd yaratmaq üçün hansı düymələr birləşməsi istifadə olunur?","o":["Ctrl + N","Ctrl + O","Ctrl + S","Ctrl + W","Ctrl + P"],"a":0,"e":"Ctrl + N — yeni sənəd, Ctrl + O — aç, Ctrl + S — yadda saxla, Ctrl + W — bağla, Ctrl + P — çap."},
+ {"s":"26.2","q":"Word-də Backspace düyməsi nəyi silir?","o":["kursordan solda olan simvolu","kursordan sağda olan simvolu","bütün sətri","bütün abzası","seçilmiş şrifti"],"a":0,"e":"Backspace kursordan solda, Delete isə kursordan sağda olan simvolu silir."},
+ {"s":"26.2","q":"Word-də “Tap və əvəz et” pəncərəsini açmaq üçün hansı düymələr birləşməsi istifadə olunur?","o":["Ctrl + H","Ctrl + F","Ctrl + R","Ctrl + E","Ctrl + G"],"a":0,"e":"Ctrl + H — tap və əvəz et, Ctrl + F — axtarış (Naviqasiya paneli). Ctrl + R və Ctrl + E abzası sağa və mərkəzə düzləndirir."},
+ {"s":"26.3","q":"Word-də seçilmiş mətni kursivə çevirmək üçün hansı düymələr birləşməsi istifadə olunur?","o":["Ctrl + I","Ctrl + B","Ctrl + U","Ctrl + K","Ctrl + L"],"a":0,"e":"Ctrl + B — qalın, Ctrl + I — kursiv, Ctrl + U — altdan xətt. Ctrl + L abzası sola düzləndirir."},
+ {"s":"26.4","q":"Word-də sənədə su nişanı (Watermark) hansı tabda əlavə olunur?","o":["Design","Insert","Home","View","Review"],"a":0,"e":"Design (Dizayn) tabı sənədin tərtibatına aiddir: mövzular, su nişanı, səhifə rəngi, səhifə haşiyəsi."},
+ {"s":"26.5","q":"PowerPoint-də nümayişi dayandırmaq üçün hansı düymə basılır?","o":["Esc","F5","Shift + F5","Enter","Delete"],"a":0,"e":"F5 nümayişi əvvəldən, Shift + F5 cari slayddan başladır, Esc dayandırır."}
 ]
 }

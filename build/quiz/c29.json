@@ -12,6 +12,14 @@
  {"s":"29.5","q":"Faylların ötürülməsi üçün hansı protokol istifadə olunur?","o":["FTP","SMTP","HTTP","DNS","POP3"],"a":0,"e":"FTP (File Transfer Protocol) — faylların ötürülməsi protokolu."},
  {"s":"29.5","q":"Elektron poçt ünvanında @ işarəsindən sonra nə gəlir?","o":["poçt serverinin domen adı","istifadəçinin adı","parol","protokol","port nömrəsi"],"a":0,"e":"Ünvan istifadəçi@domen şəklindədir: @-dan əvvəl istifadəçinin adı, sonra poçt serverinin domeni."},
  {"s":"29.5","q":"HTTPS protokolunda “S” hərfi nəyi bildirir?","o":["təhlükəsiz (şifrələnmiş) əlaqəni","serveri","sürəti","saytı","sistemi"],"a":0,"e":"HTTPS — HTTP Secure: brauzerlə sayt arasındakı məlumat şifrələnir."},
- {"s":"29.4","t":"open","q":"Azərbaycanın yuxarı səviyyəli internet domenini nöqtəsiz yaz.","a":["az"],"e":"Azərbaycanın ölkə domeni — .az."}
+ {"s":"29.4","t":"open","q":"Azərbaycanın yuxarı səviyyəli internet domenini nöqtəsiz yaz.","a":["az"],"e":"Azərbaycanın ölkə domeni — .az."},
+ {"s":"29.1","q":"Bluetooth qurğularından ibarət, bir neçə metr əhatəli şəbəkə necə adlanır?","o":["PAN","LAN","MAN","WAN","VPN"],"a":0,"e":"PAN — şəxsi şəbəkə (bir neçə metr), LAN — lokal (bina), MAN — şəhər, WAN — qlobal şəbəkə."},
+ {"s":"29.2","q":"Kompüterlərin qapalı dövrə yaratdığı və məlumatın bir istiqamətdə ötürüldüyü topologiya hansıdır?","o":["halqa","ulduz","şin","tor","ağac"],"a":0,"e":"Halqa topologiyasında kompüterlər qapalı dövrə yaradır, məlumat bir istiqamətdə ötürülür. Şində hamı bir kabelə, ulduzda mərkəzi qurğuya qoşulur."},
+ {"s":"29.2","q":"Simsiz (Wi-Fi) şəbəkənin adı necə adlanır?","o":["SSID","WPA2","MAC","DNS","URL"],"a":0,"e":"SSID — Wi-Fi şəbəkəsinin adıdır. WPA2/WPA3 — şifrələmə standartları, MAC — qurğunun fiziki ünvanı."},
+ {"s":"29.3","q":"OSI modelinin hansı səviyyəsində verilənlərin formatı, kodlaşdırılması və şifrələnməsi həyata keçirilir?","o":["təqdimat","seans","nəqliyyat","kanal","fiziki"],"a":0,"e":"Təqdimat (6-cı) səviyyəsi verilənlərin formatına, kodlaşdırmaya, şifrələməyə və sıxlaşdırmaya cavabdehdir."},
+ {"s":"29.4","q":"Hansı IPv4 ünvanı düzgündür?","o":["10.0.0.255","256.10.1.1","192.168.1","172.16.300.2","1.2.3.4.5"],"a":0,"e":"IPv4 ünvanı nöqtələrlə ayrılmış 4 ədəddən ibarətdir, hər biri 0–255. 256 və 300 bu həddən böyükdür, “192.168.1”-də 3, “1.2.3.4.5”-də 5 ədəd var."},
+ {"s":"29.4","q":"https://www.gov.az/az/news ünvanında domen hansıdır?","o":["www.gov.az","https","/az/news","az","news"],"a":0,"e":"URL = protokol://domen/yol: protokol — https, domen — www.gov.az, yol — /az/news."},
+ {"s":"29.5","q":"Virtual serverlər və yaddaş (infrastruktur) təqdim edən bulud xidməti modeli hansıdır?","o":["IaaS","SaaS","PaaS","DNS","VPN"],"a":0,"e":"IaaS — infrastruktur (virtual serverlər, yaddaş), PaaS — proqram yaratmaq üçün platforma, SaaS — hazır proqram."},
+ {"s":"29.5","q":"Axtarışda nəticələri yalnız gov.az saytlarından almaq üçün hansı operator yazılır?","o":["site:gov.az","\"gov.az\"","-gov.az","gov.az*","url:gov.az"],"a":0,"e":"“site:” operatoru axtarışı konkret saytla məhdudlaşdırır. Dırnaq dəqiq ifadəni axtarır, “−” isə sözü nəticədən çıxarır."}
 ]
 }
