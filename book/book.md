@@ -1573,6 +1573,208 @@ Qanun 9 mart 2004-cü ildə qəbul edilib (№ 602-IIQ), **dərc edildiyi günd�
 | Fəaliyyətə xitam elanı | ən azı 30 gün əvvəl | 19.2 |
 | Vasitəçinin məlumat saxlaması | 6 ay | 31.3 |
 
+## Fəsil 13. Kargüzarlığın aparılmasına dair Təlimat
+
+Təlimatın tam adı: “Dövlət orqanlarında, dövlət mülkiyyətində olan və paylarının (səhmlərinin) nəzarət zərfi dövlətə məxsus olan hüquqi şəxslərdə və büdcə təşkilatlarında kargüzarlığın aparılmasına dair Təlimat”. Prezidentin **27 sentyabr 2003-cü il 935 nömrəli Fərmanı** ilə təsdiq edilib. Proqrama Təlimatın 1–3, 5, 7–11, 13, 14, 16-cı hissələri və 4-cü, 6-cı hissələrdən ayrı-ayrı bəndlər daxildir. Təlimat praktikdir: imtahanda kağız ölçüsü, şrift, sahələr və müddətlər soruşulur.
+
+### 13.1. Fərman və ümumi müddəalar
+
+**Fərman (bənd 3):** Təlimatın tələblərinə riayət edilməsinə **ümumi nəzarəti Prezident Administrasiyasının Sənədlərlə və vətəndaşların müraciətləri ilə iş şöbəsi** həyata keçirir.
+
+**Ümumi müddəalar (Təlimatın 1-ci hissəsi):**
+
+- Təlimat təşkilatlarda sənədlərin hazırlanmasını, qeydiyyatını, hərəkətini, icrasını, uçotunu və **arxivə verilməsini** tənzimləyir.
+- **Şamil edilmir:** vətəndaşların müraciətləri ilə bağlı kargüzarlığa; yerli icra hakimiyyəti orqanlarında kargüzarlıq ayrıca təlimatla aparılır.
+- **Kargüzarlıq** — sənədləşdirmə və sənədlərlə işin təşkili üzrə fəaliyyət. Kargüzarlıq **dövlət dilində** aparılır.
+- Kargüzarlığı **dəftərxana** və ya xüsusi ayrılmış əməkdaşlar (**kargüzarlıq xidməti**) aparır; Təlimata riayətə **təşkilatın rəhbərliyi** nəzarət edir; tabe təşkilatlarda — **baş təşkilat**.
+
+**Kargüzarlıq sistemi (bənd 5):**
+
+| Sistem | Hansı təşkilatda |
+| --- | --- |
+| **Mərkəzləşdirilmiş** | Struktur bölmələri az, sənəd dövriyyəsi ildə **25 000 sənədə qədər** |
+| **Mərkəzləşdirilməmiş** | Strukturu mürəkkəb, dövriyyə ildə **25 000-dən çox** və ya bölmələri ayrı-ayrı ərazilərdə |
+
+- Rəhbər dəyişdikdə işlər və icrada olan sənədlər **akt üzrə** təhvil verilir; aktın bir nüsxəsi kargüzarlıq xidmətində qalır.
+
+### 13.2. Sənədlərin hazırlanmasına tələblər
+
+**Sərəncam mahiyyətli sənədlər** — **qərar, sərəncam, əmr**. Onların hüquqi əsasları: normativ aktlar, yuxarı təşkilatın tapşırığı, cari fəaliyyət, aparatın işini tənzimləmək zərurəti (bənd 7).
+
+**Kağız formatları (bənd 8):**
+
+| Format | Ölçü |
+| --- | --- |
+| **A4** | 210 × 297 mm |
+| **A5** | 210 × 148 mm |
+
+**Blanklar (bənd 9–11):**
+
+- Blanklar **1 nömrəli ağ yazı kağızından** hazırlanır.
+- **İki və daha çox təşkilat** adından hazırlanan sənədlər **blanksız** tərtib edilir və rəhbərin imzası, **gerbli möhürlə** təsdiqlənir.
+- Blankda çap edilən rekvizitlər: **Dövlət Gerbi**; Azərbaycan Respublikasının adı; təşkilatın **tam adı**; poçt indeksi, ünvan, telefon, faks, e-poçt. Rekvizitlər blankın **yuxarı hissəsində eninə**, dövlət dilində çap edilir.
+
+**Sənədin mətni (bənd 14–16):**
+
+- Adətən **iki hissə**: birinci — əsas götürülən faktlar; ikinci — nəticələr, təkliflər, qərarlar.
+- **Başlıq** vərəqin **ortasında, mətndən əvvəl** yazılır; **“nə haqqında?”** sualına cavab verir (məs.: “...tədbirləri haqqında”).
+
+**Ünvan (bənd 17):**
+
+- Təşkilata göndərilirsə — adı **yönlük halda** (“...Nazirliyinə”); vəzifəli şəxsə — təşkilatın adı **yiyəlik**, şəxsin adı **yönlük halda**.
+- **Fiziki şəxsə** — əvvəl **poçt ünvanı**, sonra soyadı və adı. **Təşkilatlara** göndərilən sənədlərdə poçt ünvanı **yazılmır**.
+- Sənəddə **dörddən çox ünvan olmamalıdır**; çox olduqda göndəriş siyahısı tərtib edilir.
+
+**Tarix və nömrə (bənd 19–20):**
+
+- Sənədin tarixi — **imzalanma və ya təsdiq tarixi**; onu imzalayan qoyur.
+- Tarix **rəqəmlə**: gün, ay, il (15.12.2003-cü il və ya 15 dekabr 2003-cü il).
+- **Qeydiyyat nömrəsi** = işin nomenklatur nömrəsi + qeydiyyat sıra nömrəsi.
+
+**Razılaşdırma (bənd 21–23):**
+
+- Təşkilat daxilində **viza** ilə: viza verənin **soyadı və adı, imzası və tarix**. Sərəncam mahiyyətli sənədlərdə viza **birinci nüsxədə son vərəqin arxasında** qoyulur.
+- Təşkilatlar arasında — **razılaşdırma qrifi** (“Razılaşdırılmışdır” və ya “Razıyam” + vəzifə, ad, soyad, imza, tarix). Qrif **titul vərəqinin yuxarı sağ küncündə** yerləşir.
+
+### 13.3. Sənədlərin rəsmiləşdirilməsi
+
+Rəsmiləşdirmə — **imzalama, təsdiq, qeydiyyat və möhür** vasitəsilə sənədə hüquqi qüvvə vermək (bənd 24).
+
+**İmza (bənd 25–29):**
+
+- Sənədin **bütün nüsxələri** imzalanır. İmzanın tərkibi: **vəzifə, şəxsi imza, ad və soyad**.
+- İmzalamalı olan şəxs yoxdursa, **müavini və ya vəzifəsini icra edən** imzalayır və **öz faktiki vəzifəsini** göstərir.
+- **“Əvəzinə” sözü yazmaq və ya vəzifə adının qabağına xətt çəkmək qadağandır.**
+- Blankda tərtib edilibsə vəzifə **qısa** (“Sədr”), blanksızdırsa **tam** göstərilir.
+- Bir neçə şəxsin imzası — vəzifə ardıcıllığı ilə **bir-birinin altında**; eyni dərəcəli şəxslər — **bir səviyyədə**; komissiya sənədində — komissiyadakı **vəzifə bölgüsü** (sədr, üzvlər).
+
+**Təsdiq (bənd 30–31):** əsasnamələr, nizamnamələr, planlar, yoxlama aktları, işlərin təhvil aktları və s. təsdiq edilir — **təsdiqetmə qrifi** (“Təsdiq edilmişdir” və ya “Təsdiq edirəm” + vəzifə, imza, ad, soyad, tarix) və ya sərəncam mahiyyətli sənədlə.
+
+**Möhür (bənd 32):**
+
+- Blankda tərtib edilməyən sənədə möhür vurulmalıdır.
+- Maliyyə sənədləri, arayışlar, vəsiqələr, nizamnamələr, **əmək kitabçaları**, məhv aktları — **Dövlət gerbi əks olunmuş möhürlə**.
+- **Möhür vəzifə adının və şəxsi imzanın üstünü tutmamalıdır.**
+
+### 13.4. Kompüterlə hazırlanan sənədlər və yazılış qaydaları
+
+**Şrift (bənd 33):** mətn **“Arial” 12** şrifti ilə, **A4** formatda, **bir və ya bir yarım** sətirarası intervalla (maliyyə və statistik cədvəllər istisna).
+
+**Vərəqdə sahələr (bənd 34):**
+
+| Tərəf | Sahə |
+| --- | --- |
+| Soldan | **25 mm** |
+| Sağdan | ən azı **8 mm** |
+| Yuxarıdan | **20 mm** |
+| Aşağıdan (A4) | azı **19 mm** |
+| Aşağıdan (A5) | azı **16 mm** |
+
+**Böyük və kiçik hərf (bənd 36–40):**
+
+| Nə | Qayda | Nümunə |
+| --- | --- | --- |
+| Təşkilatın adı | Köməkçi sözlərdən başqa **bütün sözlərin** baş hərfi böyük | Ticarət və Sənaye Palatası |
+| Struktur bölməsinin adı | **Yalnız birinci** hərf böyük | Komitənin Aparatı |
+| Bölmə daxilindəki vahid | **Kiçik** hərflə | ...Aparatının Əmək statistikası şöbəsi |
+| Rayon (şəhər) icra hakimiyyəti | **Bütün sözlər** böyük hərflə | Nərimanov Rayon İcra Hakimiyyəti |
+| Vəzifə adları | **Kiçik** hərflə (istisna: Prezident, Baş nazir, Baş prokuror və s.) | maliyyə naziri, BDU-nun rektoru |
+| Mürəkkəb ixtisarlar | **Böyük** hərflə | DTX |
+
+**Nömrələmə (bənd 41–42):** iki və daha çox səhifəli sənədlər **ikinci səhifədən** başlayaraq **ərəb rəqəmləri** ilə nömrələnir. Nömrə **“№”** işarəsi və ya “nömrə” (“nömrəli”) sözü ilə ifadə olunur.
+
+### 13.5. Əlavələr və surətlər
+
+**Əlavələr (5-ci hissə, bənd 43–45):**
+
+- Sərəncam mahiyyətli sənədlə təsdiq edilən əlavədə **birinci vərəqin yuxarı sağ küncündə** “...nömrəli əmri ilə təsdiq edilmişdir” qeydi yazılır.
+- Mətndə adı çəkilən qoşma barədə qeyd **imzadan əvvəl** yazılır: “**Qoşma: 20 vərəq, 3 nüsxə.**”
+- Qoşmalar **kitab şəklində** bağlanıbsa, vərəqlərin sayı göstərilmir.
+
+**Surətlər (bənd 46–49):**
+
+- Surət çıxarmaq üçün müvafiq **rəhbərin göstərişi və ya icazəsi** lazımdır; aidiyyəti tərəflərə **təşkilat rəhbərliyinin icazəsi** ilə verilir.
+- Adi vərəqdə hazırlanan surətin **birinci vərəqinin yuxarı sağ küncündə “Surət”** yazılır.
+- Surət **“Düzdür”** təsdiqləyici yazısı ilə (imza rekvizitindən aşağıda, sol sahədə) təsdiq edilir: təsdiq edənin vəzifəsi, imzası, adı, soyadı, tarix və **möhür**.
+
+### 13.6. Qərar, sərəncam, əmr, protokol və arayış
+
+| Sənəd | Kim qəbul edir / imzalayır | Quruluş | Açar söz |
+| --- | --- | --- | --- |
+| **Qərar** (7-ci hissə) | **Kollegial orqan**; sədr və katib imzalayır | Şərh + sərəncam hissəsi | “**qərara alır**” |
+| **Sərəncam** (8-ci hissə) | Təşkilat **rəhbəri** | Adətən yalnız sərəncam hissəsi | “tapşırılsın”, “təsdiq edilsin” |
+| **Əmr** (9-cu hissə) | Təşkilat **rəhbəri** | Şərh + sərəncam hissəsi | “**əmr edirəm**” |
+| **Protokol** (10-cu hissə) | Rəhbər və iclasın **katibi** | Giriş + əsas hissə | “**Qərara alındı**” |
+| **Arayış, məlumat vərəqəsi** (11-ci hissə) | Təşkilatın və ya bölmənin rəhbəri | Faktlar + nəticə və təkliflər | — |
+
+**Qərar:**
+
+- Şərh hissəsində qərarın **səbəbləri və məqsədləri**; izaha ehtiyac yoxdursa, şərh hissəsi olmaya da bilər.
+- Sərəncam hissəsinin **son bəndində** icraya **nəzarət** edən göstərilir.
+- Qəbul edilmiş qərar **ən geci 7 gün** ərzində icraçılara çatdırılır.
+- Qeyd kitabındakı nömrə qərarın nömrəsidir. Qəbul edilmiş qərara **rəhbərliyin razılığı olmadan düzəliş etmək qadağandır**.
+
+**Sərəncam və əmr:**
+
+- Hər ikisi təqvim ili çərçivəsində **xronoloji** nömrələnir və kitabda qeydə alınır.
+- Əmrin hər bəndi **konkret icraçının adı və soyadı** ilə başlayır. Layihənin son variantına yalnız əmri **imzalayan rəhbər** düzəliş edə bilər.
+
+**Protokol:**
+
+- Kollegial orqanların iclaslarında və rəhbərin göstərişi ilə digər iclaslarda yazılır.
+- **Geniş protokolda** girişdə sədr, katib, dəvət olunanlar, məruzəçilər və gündəlik; sonra çıxışların qısa mətni və qərar.
+- **Stenoqramı aparılan** iclasın protokolu **qısa** olur, stenoqram əlavə edilir.
+- Protokollar **təqvim ili çərçivəsində** nömrələnir.
+
+**Arayış:** başlığına məlumatın aid olduğu **tarix və dövr** daxil edilir. Vətəndaşların xahişi ilə verilən arayışlar rəhbər tərəfindən imzalanır və kitabda qeydə alınır.
+
+### 13.7. Məktub, teleqram, telefonoqram və sənəd dövriyyəsi
+
+**Məktublar (13-cü hissə):**
+
+- Məktub **bir məsələyə dair** tərtib edilir; mətn iki hissədən ibarətdir (faktlar + nəticə və xahiş).
+- **Teleqraf** yazışması **ancaq təcili** məsələlərə dair aparılır; teleqram **iki nüsxə** çap olunur, sözlər hecalara bölünmür, imza **möhürlə** təsdiq olunur.
+- **Telefonoqramda** göstərilir: kimə verilir, imzalayanın vəzifəsi və soyadı, **tarix və saat**, ötürənin vəzifəsi və soyadı, təşkilatın telefonu.
+
+**Sənəd dövriyyəsi (14-cü hissə)** — sənədin daxil olduğu və ya yaradıldığı andan icra edildiyi və ya göndərildiyi anadək hərəkəti. Tələblər: **operativ**, **lazımsız mərhələlərsiz**, **eyni qaydada**.
+
+- **Şəxsi korrespondensiya istisna** olmaqla, bütün zərflər açılır.
+- Daxil olan sənədin **birinci səhifəsinin aşağı sağ küncündə qeyd ştampı** vurulur.
+- Daxil olmuş sənədlər **qeydə alındığı gün** rəhbərliyə verilir; teleqramlar və təcili sənədlər **ilk növbədə**.
+- Rəhbərin göstərişi — **dərkənar** — mətndən əvvəl **yuxarı sol hissədə** yazılır. **Dərkənarda birinci göstərilən şəxs əsas icraçıdır.**
+- Göndərilən sənədlər **elə həmin gün** işlənib göndərilir; mühüm zərurət olmadan **sifarişli** göndərilmir.
+- Teleqramlar və təcili sənədlər **dərhal**, qalan sənədlər **gündə azı iki dəfə** çatdırılır.
+
+### 13.8. İcraya nəzarət
+
+**16-cı hissə** — sənədlərin vaxtında və keyfiyyətli icrasına nəzarət:
+
+- Nəzarəti **rəhbərlər** həyata keçirir; bilavasitə — **kargüzarlıq xidməti** və ya xüsusi **nəzarət xidməti**.
+- **Xüsusi nəzarətə** götürülür: normativ aktların icrası ilə bağlı sənədlər; yuxarı orqanların və təşkilatın özünün **icra müddəti göstərilən** tapşırıqları.
+- İcra müddəti sənədin **təşkilata daxil olduğu vaxtdan** hesablanır. Rəhbər müddəti icraçının **əsaslandırılmış yazılı xahişi** ilə uzada bilər.
+- Nəzarətdəki sənədin birinci vərəqinin **yuxarı sağ kənarında “N”** işarəsi qoyulur və ya **“Nəzarətdədir”** ştampı vurulur.
+- Sənəd **məsələ həll olunduqda və göndərənə mahiyyətcə cavab verildikdə** icra edilmiş sayılır.
+- Nəzarətdən sənədi, icradan başqa hallarda, **yalnız onu nəzarətə götürmüş** vəzifəli şəxs çıxara bilər.
+- Nəzarətdəki sənədlərin icrası barədə rəhbərliyə **ayda 1 dəfə** məlumat verilir; digər sənədlərin icrası **ildə azı 1 dəfə** təhlil edilir.
+
+### 13.9. Yadda saxla
+
+| Nə | Qayda |
+| --- | --- |
+| Ümumi nəzarət | Prezident Administrasiyasının Sənədlərlə və vətəndaşların müraciətləri ilə iş şöbəsi |
+| Mərkəzləşdirilmiş sistem | ildə 25 000 sənədə qədər |
+| A4 / A5 | 210×297 / 210×148 mm |
+| Şrift | Arial 12, 1 və ya 1,5 interval |
+| Sahələr | sol 25, sağ ≥8, yuxarı 20, aşağı ≥19 (A5 — ≥16) mm |
+| Ünvan sayı | 4-dən çox olmamalı |
+| Viza | son vərəqin arxasında |
+| Razılaşdırma və təsdiq qrifi, “Surət”, “N” | yuxarı sağ künc |
+| Qeyd ştampı | birinci səhifənin aşağı sağ küncü |
+| Dərkənar | mətndən əvvəl yuxarı sol hissə |
+| Qərarın icraçılara çatdırılması | ən geci 7 gün |
+| Sənədlərin çatdırılması | gündə azı 2 dəfə |
+| Nəzarət haqqında məlumat | ayda 1 dəfə; təhlil ildə azı 1 dəfə |
+
 # II hissə — Məntiq {fənn=men}
 
 # III hissə — Azərbaycan dili {fənn=az}
