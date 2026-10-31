@@ -214,7 +214,7 @@
      "Pəncərə komponentləri və idarəetmə elementləri", "Fayl bələdçisi (File Explorer)", "Qovluq və fayllar üzərində əməliyyatlar",
      "Mübadilə buferi (Clipboard)", "Axtarış, * və ? maskaları", "Parametrlər (Settings)", "Standart proqramlar: Paint, Notepad, Xbox Game Bar və s."
     ]},
-   {"num": "7", "title": "Microsoft Word 2019",
+   {"num": "7", "see": ["c26s1", "c26s2", "c26s3", "c26s4"], "title": "Microsoft Word 2019",
     "items": [
      "Təyinatı və əsas xüsusiyyətləri", "Proqram pəncərəsi və komponentləri", "Lent interfeysi (Ribbon)", "Cəld müraciət paneli",
      "Vəziyyət sətri", "Mətnin daxil edilməsi və redaktəsi", "Mətn sahəsində keçidlər", "Fraqmentin seçilməsi və surətinin köçürülməsi",
@@ -237,7 +237,7 @@
      "Səhifə parametrləri və fonu", "Obyektlərin əlavə edilməsi", "Diaqramlar", "Verilənlər siyahısı", "Sıralama və süzgəc",
      "Verilənlərin analizi", "Yekun cədvəl"
     ]},
-   {"num": "9", "title": "Microsoft PowerPoint 2019",
+   {"num": "9", "see": ["c26s5"], "title": "Microsoft PowerPoint 2019",
     "items": [
      "Təyinatı və əsas xüsusiyyətləri", "Elektron təqdimat və slaydlar", "Proqram pəncərəsi və komponentləri",
      "Lent interfeysi, Cəld müraciət paneli, Vəziyyət sətri", "Fayl əməliyyatları", "Təqdimatın hazırlanması",

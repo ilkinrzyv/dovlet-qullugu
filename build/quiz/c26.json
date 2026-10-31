@@ -1,0 +1,16 @@
+{
+"26": [
+ {"s":"26.1","t":"open","q":"Word-də sənədi yadda saxlamaq üçün Ctrl ilə birlikdə hansı hərf düyməsi basılır? (hərfi yaz)","a":["s"],"e":"Ctrl + S — yadda saxla (Save)."},
+ {"s":"26.2","q":"Word-də son əməliyyatı geri almaq üçün hansı düymələr birləşməsi istifadə olunur?","o":["Ctrl + Z","Ctrl + Y","Ctrl + X","Ctrl + G","Alt + Z"],"a":0,"e":"Ctrl + Z — geri al (Undo), Ctrl + Y — təkrarla (Redo), Ctrl + X — kəs."},
+ {"s":"26.2","q":"Word-də cümləni tez seçmək üçün nə etmək lazımdır?","o":["Ctrl basılı halda cümləyə klik etmək","sözə iki dəfə klik etmək","abzasa üç dəfə klik etmək","Ctrl + A basmaq","Alt basılı halda klik etmək"],"a":0,"e":"Ctrl + klik cümləni, iki dəfə klik sözü, üç dəfə klik abzası, Ctrl + A bütün sənədi seçir."},
+ {"s":"26.3","q":"Word-də mətni mərkəzə düzləndirmək üçün hansı düymələr birləşməsi istifadə olunur?","o":["Ctrl + E","Ctrl + C","Ctrl + M","Ctrl + J","Ctrl + R"],"a":0,"e":"Ctrl + E — mərkəzə; Ctrl + J — eninə; Ctrl + R — sağa; Ctrl + C — surət götürmək."},
+ {"s":"26.3","q":"Word-də Ctrl + Enter nə edir?","o":["yeni səhifəyə keçir (səhifə ayırıcısı qoyur)","yeni abzas başladır","sənədi yadda saxlayır","sənədi bağlayır","cədvəl əlavə edir"],"a":0,"e":"Ctrl + Enter səhifə ayırıcısı qoyur — mətn yeni səhifədən davam edir. Yeni abzas üçün sadəcə Enter basılır."},
+ {"s":"26.3","q":"Bütün sənədin rəng, şrift və effekt dəstini birdən dəyişən vasitə hansıdır?","o":["mövzu (Theme)","üslub (Style)","səhifə parametrləri","tezaurus","mündəricat"],"a":0,"e":"Mövzu (Design tabı) bütün sənədin görünüşünü dəyişir; üslub isə ayrı-ayrı mətn hissələrinin formatıdır."},
+ {"s":"26.4","q":"Word-də orfoqrafiya və qrammatika yoxlaması hansı düymə ilə başladılır?","o":["F7","F5","F12","F1","Shift + F7"],"a":0,"e":"F7 — orfoqrafiya və qrammatika; Shift + F7 — tezaurus; F12 — fərqli yadda saxla."},
+ {"s":"26.4","q":"Word sənədinin standart görünüş rejimi hansıdır?","o":["Print Layout","Read Mode","Web Layout","Outline","Draft"],"a":0,"e":"Print Layout (səhifə tərtibatı) sənədi çapda görünəcəyi kimi göstərir və standart rejimdir."},
+ {"s":"26.4","q":"Word cədvəlində bir neçə xananı bir xanaya çevirən əmr hansıdır?","o":["Merge Cells","Split Cells","Insert Row","Delete Table","AutoFit"],"a":0,"e":"Merge Cells xanaları birləşdirir, Split Cells isə bir xananı bir neçə xanaya bölür."},
+ {"s":"26.5","q":"PowerPoint-də slayddakı obyektin hərəkət (görünmə, yox olma) effekti hansı tabda təyin olunur?","o":["Animations","Transitions","Design","Slide Show","View"],"a":0,"e":"Obyektlərin effektləri — Animations, slaydlar arasındakı keçidlər — Transitions tabında təyin olunur."},
+ {"s":"26.5","q":"PowerPoint-də nümayişi əvvəldən başlatmaq üçün hansı düymə istifadə olunur?","o":["F5","Shift + F5","Esc","F7","Ctrl + M"],"a":0,"e":"F5 — əvvəldən, Shift + F5 — cari slayddan; Esc nümayişi dayandırır."},
+ {"s":"26.5","t":"open","q":"PowerPoint 2019 təqdimat faylının standart genişlənməsini nöqtəsiz yaz.","a":["pptx"],"e":"PowerPoint 2019 təqdimatları .pptx formatında saxlanılır."}
+]
+}

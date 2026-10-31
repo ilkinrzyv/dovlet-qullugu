@@ -5614,4 +5614,235 @@ E) Calculator
 Cavab: A
 ```
 
+## Fəsil 26. Microsoft Word 2019 və PowerPoint 2019
+
+Bu fəsil proqramın 7-ci (**Word 2019** mətn prosessoru) və 9-cu (**PowerPoint 2019** təqdimat proqramı) mövzularını əhatə edir. Office proqramlarının pəncərəsi oxşardır: lent, Cəld müraciət paneli, vəziyyət sətri. Lentdəki tabların adları burada ingiliscə (proqramın orijinal interfeysi) və mötərizədə Azərbaycan dilində verilir.
+
+### 26.1. Word 2019: pəncərə və fayl əməliyyatları
+
+| Komponent | Nədir |
+| --- | --- |
+| **Başlıq sətri** | sənədin və proqramın adı |
+| **Cəld müraciət paneli** (Quick Access Toolbar) | ən çox işlənən əmrlər (yadda saxla, geri al, təkrarla); fərdiləşdirilir |
+| **Lent** (Ribbon) | **tablardan**, tablar **qruplardan**, qruplar **əmrlərdən** ibarətdir; Ctrl + F1 lenti gizlədir/göstərir |
+| **Vəziyyət sətri** (Status Bar) | aşağıda: səhifə nömrəsi, **sözlərin sayı**, dil, görünüş rejimləri, miqyas |
+
+**Word lentinin tabları:** File (Fayl), Home (Əsas), Insert (Daxil et), Design (Dizayn), Layout (Tərtibat), References (İstinadlar), Mailings (Göndərişlər), Review (Rəy), View (Görünüş).
+
+**Fayl əməliyyatları:**
+
+| Düymələr | Əməliyyat |
+| --- | --- |
+| Ctrl + N | yeni sənəd |
+| Ctrl + O | sənədi aç |
+| Ctrl + S | yadda saxla |
+| **F12** | **fərqli yadda saxla** (başqa ad, yer və ya format, məs., PDF) |
+| Ctrl + P | çap |
+| Ctrl + W | sənədi bağla |
+
+Word 2019 sənədinin standart formatı **.docx**-dir.
+
+```nümunə
+S: Word-də sənədi başqa adla və ya başqa formatda saxlamaq üçün hansı düymə istifadə olunur?
+A) F12
+B) Ctrl + S
+C) F2
+D) Ctrl + N
+E) F7
+Cavab: A
+İzah: **F12** “Fərqli yadda saxla” (Save As) pəncərəsini açır: ad, yer və format seçilir. Ctrl + S sənədi mövcud adla saxlayır, Ctrl + N yeni sənəd yaradır, F7 orfoqrafiyanı yoxlayır.
+```
+
+```yoxla
+S: Word pəncərəsində sözlərin sayı və cari səhifənin nömrəsi harada göstərilir?
+A) vəziyyət sətrində
+B) Cəld müraciət panelində
+C) başlıq sətrində
+D) File tabında
+E) xətkeşdə
+Cavab: A
+```
+
+### 26.2. Mətnin daxil edilməsi, redaktəsi və köçürülməsi
+
+**Silmə:** **Backspace** — kursordan **solda**, **Delete** — kursordan **sağda** olan simvolu silir.
+
+**Mətn sahəsində keçidlər:**
+
+| Düymələr | Kursor hara keçir |
+| --- | --- |
+| Home / End | sətrin əvvəlinə / sonuna |
+| **Ctrl + Home / Ctrl + End** | **sənədin** əvvəlinə / sonuna |
+| Ctrl + ← / → | bir söz sola / sağa |
+| Page Up / Page Down | bir ekran yuxarı / aşağı |
+
+**Fraqmentin seçilməsi:**
+
+| Necə | Nə seçilir |
+| --- | --- |
+| sözün üstündə **iki dəfə** klik | söz |
+| **Ctrl** basılı halda klik | **cümlə** |
+| abzasda **üç dəfə** klik | **abzas** |
+| Shift + oxlar | kursordan başlayaraq |
+| Ctrl + A | bütün sənəd |
+
+**Köçürmə və surət:** Ctrl + C, Ctrl + X, Ctrl + V — mübadilə buferi vasitəsilə. **“Drag and Drop”** — seçilmiş fraqmenti siçanla dartıb yeni yerə buraxmaq: adi halda **köçürür**, **Ctrl** basılı halda **surətini** çıxarır.
+
+**Axtarış və əvəzetmə:** Ctrl + F — axtarış (Naviqasiya paneli), **Ctrl + H** — tap və əvəz et.
+
+```nümunə
+S: Word-də kursoru sənədin sonuna keçirmək üçün hansı düymələr birləşməsi istifadə olunur?
+A) Ctrl + End
+B) End
+C) Page Down
+D) Shift + End
+E) Alt + End
+Cavab: A
+İzah: **End** kursoru yalnız **sətrin** sonuna, **Ctrl + End** isə **sənədin** sonuna keçirir. Page Down bir ekran aşağı sürüşdürür, Shift + End sətrin sonunadək mətni seçir.
+```
+
+```yoxla
+S: Word-də abzası tez seçmək üçün nə etmək lazımdır?
+A) abzasın içində siçanla üç dəfə klik etmək
+B) iki dəfə klik etmək
+C) bir dəfə klik etmək
+D) Ctrl + A basmaq
+E) Ctrl + Home basmaq
+Cavab: A
+```
+
+### 26.3. Formatlaşdırma, üslublar, mövzular və səhifə parametrləri
+
+**Simvol formatı** (Home tabı): şrift, ölçü, rəng; **Ctrl + B** — qalın, **Ctrl + I** — kursiv, **Ctrl + U** — altdan xətt.
+
+**Abzasın düzləndirilməsi:**
+
+| Düymələr | Düzləndirmə |
+| --- | --- |
+| Ctrl + L | sola |
+| **Ctrl + E** | **mərkəzə** |
+| Ctrl + R | sağa |
+| **Ctrl + J** | **eninə** (hər iki kənara) |
+
+Abzas üçün həmçinin sətirlərarası interval və girinti təyin olunur.
+
+- **Üslub (Style)** — adı olan hazır format dəsti: Normal, Heading 1 (Başlıq 1), Heading 2... Üslub dəyişəndə həmin üslublu bütün mətn birdən dəyişir.
+- **Mövzu (Theme, Design tabı)** — **bütün sənədin** rəng, şrift və effekt dəsti.
+- **Səhifə parametrləri (Layout tabı):** kənar boşluqlar (Margins), istiqamət — **kitab** (Portrait) və **albom** (Landscape), ölçü (A4), sütunlar. **Ctrl + Enter** — yeni səhifəyə keçid (səhifə ayırıcısı).
+
+```nümunə
+S: Word-də mətni eninə (hər iki kənara) düzləndirmək üçün hansı düymələr birləşməsi istifadə olunur?
+A) Ctrl + J
+B) Ctrl + E
+C) Ctrl + L
+D) Ctrl + R
+E) Ctrl + B
+Cavab: A
+İzah: **Ctrl + J** (justify) mətni eninə düzləndirir. Ctrl + E — mərkəzə, Ctrl + L — sola, Ctrl + R — sağa; Ctrl + B isə mətni qalın edir.
+```
+
+```yoxla
+S: Səhifənin istiqamətini albom (Landscape) vəziyyətinə hansı tabda dəyişmək olar?
+A) Layout (Tərtibat)
+B) Insert (Daxil et)
+C) References (İstinadlar)
+D) Review (Rəy)
+E) Mailings (Göndərişlər)
+Cavab: A
+```
+
+### 26.4. Obyektlər, cədvəllər, görünüş rejimləri, mündəricat və tezaurus
+
+**Insert (Daxil et) tabı:** şəkil, forma, SmartArt, diaqram, **cədvəl**, WordArt, simvol, düstur, yuxarı və aşağı kolontitul (Header, Footer), səhifə nömrəsi.
+
+**Cədvəllər:** Insert → Table. Sətir və sütun əlavə etmək və silmək; xanaları **birləşdirmək (Merge Cells)** və **bölmək (Split Cells)**. Cədvəl seçiləndə **Table Design** və **Layout** tabları görünür.
+
+**Design (Dizayn) tabı — sənədin tərtibatı:** mövzular, su nişanı (Watermark), səhifə rəngi, səhifə haşiyəsi.
+
+**Görünüş rejimləri (View tabı):** Read Mode (oxuma), **Print Layout** (səhifə tərtibatı — **standart rejim**), Web Layout, Outline (struktur), Draft (qaralama).
+
+**Mündəricat:** References → Table of Contents. Word mündəricatı **başlıq üslubları (Heading 1, 2...)** əsasında avtomatik qurur; mətn dəyişəndə **Update Table** ilə yenilənir.
+
+**Review (Rəy) tabı — sənədin yoxlanılması və icmalı:** orfoqrafiya və qrammatika (**F7**), sözlərin sayı (Word Count), **tezaurus** (**Shift + F7** — sinonimlər), qeydlər (Comments), dəyişikliklərin izlənməsi (Track Changes).
+
+```nümunə
+S: Word-də mündəricatı avtomatik yaratmaq üçün başlıqlara nə tətbiq olunmalıdır?
+A) başlıq (Heading) üslubları
+B) qalın şrift
+C) altdan xətt
+D) böyük ölçülü şrift
+E) rəngli fon
+Cavab: A
+İzah: Avtomatik mündəricat **Heading 1, Heading 2...** üslublarına baxır: hər başlıq səviyyəsi mündəricatda öz səviyyəsini alır. Sadəcə qalın və ya böyük şriftlə yazılmış mətn Word üçün başlıq deyil.
+```
+
+```yoxla
+S: Word-də seçilmiş söz üçün sinonimləri göstərən vasitə hansıdır?
+A) tezaurus (Shift + F7)
+B) orfoqrafiya yoxlaması (F7)
+C) sözlərin sayı (Word Count)
+D) qeydlər (Comments)
+E) dəyişikliklərin izlənməsi (Track Changes)
+Cavab: A
+```
+
+### 26.5. PowerPoint 2019: təqdimat, effektlər və nümayiş
+
+**Elektron təqdimat** **slaydlardan** ibarətdir; standart format **.pptx**-dir. Pəncərə Word-dəki kimidir: lent, Cəld müraciət paneli, vəziyyət sətri, solda slaydların miniatürləri.
+
+- **Yeni slayd** — **Ctrl + M** (Home → New Slide); slaydın **maketi** (Layout) mətn və obyektlərin yerini müəyyən edir.
+- **Design** tabı — mövzular və fon.
+- Slayda mətn, şəkil, cədvəl, diaqram, SmartArt, səs və video əlavə olunur (**Insert** tabı).
+
+| Tab | Nəyə aiddir |
+| --- | --- |
+| **Transitions** (Keçidlər) | **slaydlar arasında** keçid effektləri |
+| **Animations** (Animasiyalar) | slaydın **içindəki obyektlərin** effektləri |
+
+**Görünüş rejimləri:** Normal (standart), Outline View (struktur), **Slide Sorter** (bütün slaydlar miniatür şəklində — sıranı dəyişmək üçün), Notes Page (qeydlər), Reading View.
+
+**Nümayiş:** **F5** — **əvvəldən**, **Shift + F5** — **cari slayddan**, **Esc** — nümayişi dayandırmaq.
+
+```nümunə
+S: PowerPoint-də slaydlar arasında keçid effekti hansı tabda təyin olunur?
+A) Transitions
+B) Animations
+C) Insert
+D) Design
+E) Review
+Cavab: A
+İzah: Bir slayddan digərinə **keçidin** necə görünəcəyi **Transitions** tabında seçilir. **Animations** isə slaydın **içindəki** mətn və şəkillərin effektləri üçündür — iki tabı qarışdırma.
+```
+
+```yoxla
+S: PowerPoint-də nümayişi cari slayddan başlatmaq üçün hansı düymələr istifadə olunur?
+A) Shift + F5
+B) F5
+C) Ctrl + F5
+D) Esc
+E) F7
+Cavab: A
+```
+
+```nümunə
+S: PowerPoint-də yeni slayd əlavə etmək üçün hansı düymələr birləşməsi istifadə olunur?
+A) Ctrl + M
+B) Ctrl + N
+C) Ctrl + S
+D) Ctrl + P
+E) Ctrl + D
+Cavab: A
+İzah: **Ctrl + M** cari təqdimata yeni slayd əlavə edir. Ctrl + N yeni **təqdimat** (fayl) yaradır, Ctrl + D seçilmiş slaydın **surətini** çıxarır.
+```
+
+```yoxla
+S: Bütün slaydları miniatür şəklində göstərən və onların sırasını dəyişməyə imkan verən rejim hansıdır?
+A) Slide Sorter
+B) Normal
+C) Notes Page
+D) Reading View
+E) Outline View
+Cavab: A
+```
+
 # V hissə — Müsahibə
