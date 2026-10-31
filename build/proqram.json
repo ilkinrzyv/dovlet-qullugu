@@ -222,7 +222,7 @@
      "Üslublar", "Mövzular", "Səhifə parametrləri", "Obyektlərin əlavə edilməsi", "Cədvəllərlə iş", "Görünüş rejimləri",
      "Sənədin tərtibatı", "Mündəricat", "Sənədin icmalı", "Tezaurus"
     ]},
-   {"num": "8", "title": "Microsoft Excel 2019",
+   {"num": "8", "see": ["c27"], "title": "Microsoft Excel 2019",
     "items": [
      "Təyinatı və əsas xüsusiyyətləri", "Proqram pəncərəsi və komponentləri", "Lent interfeysi, Cəld müraciət paneli, Düstur sətri, Vəziyyət sətri",
      "Elektron cədvəlin komponentləri", "Verilənlərin daxil edilməsi və redaktəsi", "Xanaların və verilənlərin formatlaşdırılması",

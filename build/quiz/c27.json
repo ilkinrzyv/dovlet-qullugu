@@ -1,0 +1,20 @@
+{
+"27": [
+ {"s":"27.1","q":"Excel 2019 iş vərəqində neçə sətir var?","o":["1 048 576","65 536","16 384","1 000 000","256"],"a":0,"e":"Excel 2007-dən başlayaraq vərəqdə 1 048 576 sətir və 16 384 sütun (A–XFD) var."},
+ {"s":"27.1","q":"Ad sahəsində (Name Box) nə göstərilir?","o":["aktiv xananın ünvanı","aktiv xanadakı düstur","iş kitabının adı","seçilmiş ədədlərin cəmi","vərəqin adı"],"a":0,"e":"Ad sahəsi aktiv xananın ünvanını (və ya adını) göstərir; düstur isə Düstur sətrində görünür."},
+ {"s":"27.2","q":"Hansı ünvan mütləqdir?","o":["$B$2","B2","$B2","B$2","B:2"],"a":0,"e":"$B$2-də həm sütun, həm sətir sabitdir — düstur kopyalananda dəyişmir. $B2 və B$2 qarışıq, B2 nisbi ünvandır."},
+ {"s":"27.2","q":"=10/(5-5) düsturunun nəticəsi nədir?","o":["#DIV/0!","0","#VALUE!","#NAME?","10"],"a":0,"e":"Mötərizə: 5 − 5 = 0; 10/0 — sıfıra bölmə, xəta #DIV/0!."},
+ {"s":"27.2","q":"Sütun ədədi göstərmək üçün çox ensiz olduqda xanada nə görünür?","o":["#####","#N/A","#REF!","0","#NAME?"],"a":0,"e":"##### — ədəd sütuna sığmır; sütunu genişləndirəndə ədəd görünür."},
+ {"s":"27.3","q":"A1 = 10, A2 = 20, A3 boş, A4 = 30. =AVERAGE(A1:A4) nəticəsi nədir?","o":["20","15","60","30","10"],"a":0,"e":"AVERAGE boş xananı nəzərə almır: (10 + 20 + 30) / 3 = 20. 15 — boş xananı 0 kimi saymaqdan alınır."},
+ {"s":"27.3","q":"A1:A5 xanalarında 5, 12, 10, 15, 20 var. =COUNTIF(A1:A5;\">10\") nəticəsi nədir?","o":["3","4","2","5","47"],"a":0,"e":"10-dan böyük olanlar: 12, 15, 20 — 3. 10 özü “> 10” şərtinə uyğun deyil."},
+ {"s":"27.3","t":"open","q":"=FACT(4) düsturunun nəticəsini yaz. (rəqəmlə)","a":["24"],"e":"4! = 1 · 2 · 3 · 4 = 24."},
+ {"s":"27.4","q":"=IF(OR(3>5;2<4);\"Bəli\";\"Xeyr\") düsturunun nəticəsi nədir?","o":["Bəli","Xeyr","TRUE","FALSE","#VALUE!"],"a":0,"e":"3 > 5 yalan, 2 < 4 doğrudur; OR üçün biri doğru olsa bəs edir — TRUE. Deməli IF “Bəli” qaytarır."},
+ {"s":"27.4","q":"=TRIM(\"  Bakı   şəhəri \") düsturunun nəticəsi nədir?","o":["Bakı şəhəri","Bakışəhəri","  Bakı   şəhəri ","BAKI ŞƏHƏRİ","Bakı"],"a":0,"e":"TRIM baş və sondakı boşluqları silir, sözlər arasında isə bir boşluq saxlayır."},
+ {"s":"27.4","t":"open","q":"=LEN(\"Excel 2019\") düsturunun nəticəsini yaz. (rəqəmlə)","a":["10"],"e":"“Excel” — 5, boşluq — 1, “2019” — 4: cəmi 10 simvol."},
+ {"s":"27.4","q":"=CONCAT(\"Dövlət\";\" \";\"qulluğu\") düsturunun nəticəsi nədir?","o":["Dövlət qulluğu","Dövlətqulluğu","Dövlət;qulluğu","DÖVLƏT QULLUĞU","#NAME?"],"a":0,"e":"CONCAT arqumentləri ardıcıl birləşdirir; ortadakı \" \" boşluqdur."},
+ {"s":"27.5","q":"Bugünkü tarixi və cari vaxtı qaytaran funksiya hansıdır?","o":["NOW","TODAY","DAYS","WEEKDAY","WORKDAY"],"a":0,"e":"NOW() — tarix və vaxt; TODAY() — yalnız tarix."},
+ {"s":"27.5","t":"open","q":"A1 xanasında 05.01.2026, B1 xanasında 25.01.2026 var. =DAYS(B1;A1) nəticəsini yaz. (rəqəmlə)","a":["20"],"e":"25 − 5 = 20 gün (DAYS: son tarix − başlanğıc tarix)."},
+ {"s":"27.5","q":"Sütundakı verilənləri sətrə (və tərsinə) çevirən funksiya hansıdır?","o":["TRANSPOSE","TEXTJOIN","PROPER","COUNTA","PRODUCT"],"a":0,"e":"TRANSPOSE (Lookup & Reference) diapazonun sətirlərini sütun, sütunlarını sətir edir."},
+ {"s":"27.6","q":"Seçilmiş verilənlərdən ayrı vərəqdə tez diaqram yaratmaq üçün hansı düymə istifadə olunur?","o":["F11","Alt + F1","Shift + F11","F2","Ctrl + 1"],"a":0,"e":"F11 diaqramı ayrıca vərəqdə, Alt + F1 eyni vərəqdə yaradır; Shift + F11 yeni iş vərəqi əlavə edir."}
+]
+}

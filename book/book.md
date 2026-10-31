@@ -5845,4 +5845,357 @@ E) Outline View
 Cavab: A
 ```
 
+## Fəsil 27. Microsoft Excel 2019
+
+Bu fəsil proqramın 8-ci mövzusudur: **Excel 2019 cədvəl prosessoru**. İmtahanda Excel sualları çox vaxt **düsturun nəticəsini** soruşur — ona görə funksiyaları nümunələrlə öyrən və hesabı özün apar.
+
+**Arqumentlərin ayırıcısı haqqında.** Azərbaycan regional parametrlərində (onluq kəsr vergüllə yazılanda) funksiyanın arqumentləri **nöqtəli vergüllə** ayrılır: `=IF(A1>5;"Bəli";"Xeyr")`. İngilis parametrlərində isə vergül işlənir: `=IF(A1>5,"Bəli","Xeyr")`. Bu fəsildə nöqtəli vergül istifadə olunur.
+
+### 27.1. Pəncərə və elektron cədvəlin komponentləri
+
+- **İş kitabı** (fayl, **.xlsx**) **iş vərəqlərindən** ibarətdir.
+- İş vərəqi **sütunlardan** (A, B, ..., XFD — **16 384** sütun) və **sətirlərdən** (1, 2, ..., **1 048 576**) ibarətdir.
+- **Xana** sütun hərfi və sətir nömrəsi ilə adlanır: **A1**, C5. Seçilmiş xana — **aktiv xana**.
+- **Diapazon** — xanalar bloku: **A1:C5** (A1-dən C5-dək düzbucaqlı).
+
+| Komponent | Nədir |
+| --- | --- |
+| **Ad sahəsi** (Name Box) | aktiv xananın ünvanı (və ya adı) |
+| **Düstur sətri** (Formula Bar) | aktiv xananın məzmunu — düstur olduqda **düsturun özü** |
+| Vəziyyət sətri | seçilmiş ədədlərin cəmi, ortası, sayı; görünüş rejimləri, miqyas |
+
+Lentin tabları: File, Home, Insert, Page Layout, **Formulas**, **Data**, Review, View.
+
+**Verilənlər:** ədədlər xanada **sağa**, mətn **sola** düzlənir; tarix Excel-də ədəd kimi saxlanılır; **düstur “=” ilə başlayır**. Xananın sağ aşağı küncündəki **doldurma markeri** ilə ardıcıllıq (1, 2, 3...; yanvar, fevral...) və düsturlar qonşu xanalara yayılır.
+
+**Formatlaşdırma:** Format Cells (**Ctrl + 1**) — Number (ədəd formatı: valyuta, faiz, tarix), Alignment (düzləndirmə, **mətni sətirlərə bölmək — Wrap Text**), Font, Border, Fill. **Merge & Center** — xanaları birləşdirib mərkəzə düzləndirir.
+
+```nümunə
+S: Excel-də xanaya daxil edilən hansı ifadə düstur kimi qəbul edilir?
+A) =A1+B1
+B) A1+B1
+C) 'A1+B1
+D) SUM(A1:B1)
+E) A1:B1
+Cavab: A
+İzah: Excel yalnız **“=”** ilə başlayan ifadəni düstur kimi hesablayır. “=” olmadan yazılanlar mətn kimi qalır, apostrofla (') başlayan isə həmişə mətndir.
+```
+
+```yoxla
+S: B2:D4 diapazonunda neçə xana var?
+A) 9
+B) 6
+C) 8
+D) 12
+E) 3
+Cavab: A
+```
+
+### 27.2. Düsturlar və xana ünvanları
+
+**Operatorlar:** `+ − * /`, qüvvət `^`, mətnləri birləşdirmə `&`, müqayisə `= <> > < >= <=`. **Əməllərin sırası:** əvvəl `^`, sonra `*` və `/`, sonra `+` və `−`; mötərizə sıranı dəyişir.
+
+**Ünvanların növləri** — düstur başqa xanaya kopyalananda necə dəyişir:
+
+| Ünvan | Növ | Kopyalananda |
+| --- | --- | --- |
+| A1 | **nisbi** | həm sütun, həm sətir dəyişir |
+| **$A$1** | **mütləq** | dəyişmir |
+| $A1 | qarışıq | sütun sabit, sətir dəyişir |
+| A$1 | qarışıq | sütun dəyişir, sətir sabit |
+
+**F4** düyməsi ünvanın növünü ardıcıl dəyişir.
+
+**Tipik xətalar:**
+
+| Xəta | Səbəb |
+| --- | --- |
+| **#DIV/0!** | sıfıra bölmə |
+| **#NAME?** | tanınmayan funksiya və ya ad |
+| **#VALUE!** | arqumentin tipi səhvdir (məs., mətnlə hesab) |
+| **#REF!** | silinmiş xanaya istinad |
+| #N/A | qiymət tapılmadı |
+| **#####** | sütun ədədi göstərmək üçün ensizdir |
+
+```nümunə
+S: C1 xanasında =A1+B1 düsturu var. Düstur C2 xanasına kopyalanarsa, C2-də hansı düstur olacaq?
+A) =A2+B2
+B) =A1+B1
+C) =B2+C2
+D) =A1+B2
+E) =$A$2+$B$2
+Cavab: A
+İzah: A1 və B1 **nisbi** ünvanlardır. Düstur bir sətir aşağı köçürüldüyü üçün ünvanlar da bir sətir aşağı sürüşür: **=A2+B2**. Ünvan dəyişməsin deyə mütləq ünvan ($A$1) yazılmalı idi.
+```
+
+```yoxla
+S: D1 xanasındakı =$A$1*B1 düsturu D3 xanasına kopyalanıb. D3-də hansı düstur olacaq?
+A) =$A$1*B3
+B) =$A$3*B3
+C) =$A$1*B1
+D) =A3*B3
+E) =$A$1*D3
+Cavab: A
+```
+
+```nümunə
+S: =2+3*2^2 düsturunun nəticəsi nədir?
+A) 14
+B) 100
+C) 20
+D) 38
+E) 22
+Cavab: A
+İzah: Əvvəl qüvvət: 2^2 = 4. Sonra vurma: 3 · 4 = 12. Sonra toplama: 2 + 12 = **14**. B (100) — soldan sağa hesablamaqdan: (2 + 3) · 2 = 10, 10² = 100.
+```
+
+```yoxla
+S: Excel-də sıfıra bölmə zamanı xanada hansı xəta görünür?
+A) #DIV/0!
+B) #NAME?
+C) #VALUE!
+D) #REF!
+E) #####
+Cavab: A
+```
+
+### 27.3. Funksiyalar: statistik və riyazi
+
+Funksiya yazılışı: **=AD(arqumentlər)**. Funksiyalar kateqoriyalara bölünür (Formulas tabı → Function Library): Statistical, Logical, Math & Trig, Text, Date & Time, Lookup & Reference və s.
+
+| Funksiya | Nə edir | Nümunə |
+| --- | --- | --- |
+| **SUM** | cəm | =SUM(A1:A5) |
+| **AVERAGE** | ədədi orta (**boş və mətn xanaları nəzərə alınmır**) | =AVERAGE(A1:A5) |
+| MAX / MIN | ən böyük / ən kiçik ədəd | =MAX(A1:A5) |
+| **COUNT** | **ədəd** olan xanaların sayı | =COUNT(A1:A5) |
+| **COUNTA** | **boş olmayan** xanaların sayı | =COUNTA(A1:A5) |
+| **COUNTIF** | **şərtə uyğun** xanaların sayı | =COUNTIF(A1:A5;">5") |
+| ABS | modul | =ABS(-7) → 7 |
+| FACT | faktorial | =FACT(4) → 24 |
+| POWER | qüvvət | =POWER(2;5) → 32 |
+| PRODUCT | hasil | =PRODUCT(2;3;4) → 24 |
+
+```nümunə
+S: A1:A5 xanalarında bunlar var: 4, 7, “test”, (boş), 9. =COUNT(A1:A5) nəticəsi nədir?
+A) 3
+B) 4
+C) 5
+D) 2
+E) 20
+Cavab: A
+İzah: COUNT yalnız **ədədləri** sayır: 4, 7, 9 — **3**. “test” mətndir, boş xana da sayılmır. COUNTA olsaydı, boş olmayan 4 xananı sayardı; E (20) isə SUM-ın nəticəsidir.
+```
+
+```yoxla
+S: Eyni xanalar üçün (4, 7, “test”, boş, 9) =COUNTA(A1:A5) nəticəsi nədir? (rəqəmlə yaz)
+Cavab: 4 | dörd
+```
+
+```nümunə
+S: =POWER(2;5)+FACT(3) düsturunun nəticəsi nədir?
+A) 38
+B) 16
+C) 13
+D) 30
+E) 40
+Cavab: A
+İzah: POWER(2;5) = 2⁵ = **32**. FACT(3) = 3! = 1 · 2 · 3 = **6**. Cəm: 32 + 6 = **38**.
+```
+
+```yoxla
+S: =ABS(-7)+PRODUCT(2;3) düsturunun nəticəsi nədir?
+A) 13
+B) -1
+C) 1
+D) 42
+E) 10
+Cavab: A
+```
+
+### 27.4. Funksiyalar: məntiqi və mətn
+
+**Məntiqi funksiyalar:**
+
+| Funksiya | Nə edir |
+| --- | --- |
+| **IF**(şərt; doğrudursa; yalandırsa) | şərtdən asılı olaraq iki qiymətdən birini qaytarır |
+| **AND**(...) | **hamısı** doğru olduqda TRUE |
+| **OR**(...) | **ən azı biri** doğru olduqda TRUE |
+| NOT(...) | qiyməti tərsinə çevirir |
+| TRUE() / FALSE() | doğru / yalan qiyməti |
+
+**Mətn funksiyaları:**
+
+| Funksiya | Nə edir | Nümunə → nəticə |
+| --- | --- | --- |
+| LEFT(mətn; n) | soldan n simvol | =LEFT("Bakı";2) → Ba |
+| RIGHT(mətn; n) | sağdan n simvol | =RIGHT("2025";2) → 25 |
+| **LEN** | simvolların sayı (**boşluqlar da**) | =LEN("Excel 2019") → 10 |
+| UPPER / LOWER | hamısı böyük / kiçik hərf | =UPPER("qələm") → QƏLƏM |
+| PROPER | hər sözün ilk hərfi böyük | =PROPER("ana dili") → Ana Dili |
+| **TRIM** | artıq boşluqları silir (sözlər arasında bir boşluq saxlayır) | =TRIM("  a   b ") → a b |
+| **CONCAT** | mətnləri birləşdirir | =CONCAT("Bakı";" ";"2025") → Bakı 2025 |
+| **TEXTJOIN**(ayırıcı; boşları ötür; ...) | mətnləri **ayırıcı ilə** birləşdirir | =TEXTJOIN(", ";TRUE;"a";"";"b") → a, b |
+
+```nümunə
+S: A1 xanasında 75 var. =IF(A1>=60;"Keçdi";"Kəsildi") düsturunun nəticəsi nədir?
+A) Keçdi
+B) Kəsildi
+C) TRUE
+D) 75
+E) #VALUE!
+Cavab: A
+İzah: Şərt **75 >= 60** doğrudur, ona görə IF **ikinci** arqumenti qaytarır: “Keçdi”. Şərt yalan olsaydı, üçüncü arqument (“Kəsildi”) qaytarılardı.
+```
+
+```yoxla
+S: =AND(5>3;2>4) düsturunun nəticəsi nədir?
+A) FALSE
+B) TRUE
+C) 0
+D) #VALUE!
+E) 2
+Cavab: A
+```
+
+```nümunə
+S: A1 xanasında “Dövlət qulluğu” mətni var. =LEN(A1) nəticəsi nədir?
+A) 14
+B) 13
+C) 2
+D) 12
+E) 15
+Cavab: A
+İzah: LEN **bütün simvolları**, o cümlədən boşluğu sayır: “Dövlət” — 6, boşluq — 1, “qulluğu” — 7. Cəmi 6 + 1 + 7 = **14**. B (13) boşluğu unutmaqdan alınır.
+```
+
+```yoxla
+S: =UPPER(LEFT("qələm dəftər";5)) düsturunun nəticəsi nədir?
+A) QƏLƏM
+B) qələm
+C) DƏFTƏR
+D) Qələm
+E) QƏLƏ
+Cavab: A
+```
+
+### 27.5. Tarix və vaxt funksiyaları, TRANSPOSE
+
+| Funksiya | Nə edir |
+| --- | --- |
+| **TODAY()** | bugünkü **tarix** |
+| **NOW()** | bugünkü tarix **və cari vaxt** |
+| **DAYS**(son tarix; başlanğıc tarix) | iki tarix arasındakı günlərin sayı |
+| **WEEKDAY**(tarix; [tip]) | həftənin gününün nömrəsi: tip 1 (standart) — bazar = 1 ... şənbə = 7; **tip 2 — bazar ertəsi = 1 ... bazar = 7** |
+| **WORKDAY**(başlanğıc; gün sayı; [bayramlar]) | yalnız iş günlərini (şənbə və bazar istisna) sayaraq gələcək tarix |
+| WORKDAY.INTL(başlanğıc; gün sayı; [həftə sonu]; [bayramlar]) | WORKDAY kimi, amma həftə sonu günlərini özün təyin edirsən |
+| **NETWORKDAYS.INTL**(başlanğıc; son; [həftə sonu]; [bayramlar]) | iki tarix arasındakı **iş günlərinin sayı** (hər iki tarix daxil) |
+| **TRANSPOSE** (Lookup & Reference) | diapazonu çevirir: sətirlər sütun, sütunlar sətir olur |
+
+```nümunə
+S: A1 xanasında 01.03.2026, B1 xanasında 10.03.2026 tarixi var. =DAYS(B1;A1) nəticəsi nədir?
+A) 9
+B) 10
+C) 8
+D) 1
+E) -9
+Cavab: A
+İzah: DAYS **birinci** arqumentdən (son tarix) **ikincini** (başlanğıc) çıxır: 10 − 1 = **9** gün. Arqumentlərin yeri dəyişsəydi, nəticə −9 olardı.
+```
+
+```yoxla
+S: A1 xanasında bazar ertəsinə düşən tarix var. =WEEKDAY(A1;2) nəticəsi nədir?
+A) 1
+B) 2
+C) 7
+D) 0
+E) 6
+Cavab: A
+```
+
+```nümunə
+S: A1 xanasında 02.10.2026 (cümə) tarixi var. =WORKDAY(A1;1) hansı tarixi qaytarır?
+A) 05.10.2026
+B) 03.10.2026
+C) 04.10.2026
+D) 01.10.2026
+E) 09.10.2026
+Cavab: A
+İzah: WORKDAY şənbə və bazarı **iş günü saymır**. Cümədən sonrakı ilk iş günü **bazar ertəsi** — 05.10.2026-dır. 03.10 şənbə, 04.10 bazardır.
+```
+
+```yoxla
+S: A1 xanasında bazar ertəsi, B1 xanasında həmin həftənin cüməsi var. =NETWORKDAYS.INTL(A1;B1) nəticəsi nədir? (rəqəmlə yaz)
+Cavab: 5 | beş
+```
+
+### 27.6. Vərəqlər, səhifə, diaqramlar, sıralama, süzgəc və yekun cədvəl
+
+**İş vərəqləri:** yeni vərəq — **Shift + F11** və ya vərəq yarlıqlarının yanındakı “+”; adını dəyişmək — yarlığa iki dəfə klik; silmək, köçürmək, surətini çıxarmaq — yarlığın kontekst menyusu.
+
+**Görünüş (View):** Normal, Page Layout, Page Break Preview; **Freeze Panes** — başlıq sətrini (sütununu) sürüşdürəndə görünən saxlamaq; Zoom — miqyas; iş kitabının pəncərələri: New Window, Arrange All, Split.
+
+**Səhifə parametrləri (Page Layout):** kənar boşluqlar, istiqamət, ölçü, çap sahəsi (Print Area), **fon (Background)** — vərəqə şəkil fonu qoyur (çapda görünmür).
+
+**Diaqramlar (Insert → Charts):**
+
+| Növ | Nə üçün |
+| --- | --- |
+| Sütunlu (Column), zolaqlı (Bar) | qiymətlərin müqayisəsi |
+| Xətti (Line) | zamanla dəyişmə |
+| **Dairəvi (Pie)** | **bütövün hissələri** (paylar, faizlər) |
+| Nöqtəli (Scatter) | iki kəmiyyətin əlaqəsi |
+
+**F11** seçilmiş verilənlərdən **ayrı vərəqdə**, **Alt + F1** isə **eyni vərəqdə** diaqram yaradır.
+
+**Verilənlər siyahısı** — başlıqlı sütunlar, hər sətir bir yazı. **Data** tabında:
+
+- **Sort** — artan və ya azalan sıralama, bir neçə sütun üzrə;
+- **Filter** (**Ctrl + Shift + L**) — şərtə uyğun sətirləri göstərir, qalanlarını **gizlədir** (silmir);
+- verilənlərin analizi — məsələn, **Goal Seek** (istənilən nəticə üçün lazım olan qiyməti tapmaq);
+- **yekun cədvəl (PivotTable, Insert tabı)** — böyük siyahını qruplaşdırıb **ümumiləşdirir**: hər qrup üzrə cəm, say, orta.
+
+```nümunə
+S: Hansı diaqram növü bütövün hissələrini (faizlərlə payları) göstərmək üçün ən uyğundur?
+A) dairəvi (Pie)
+B) xətti (Line)
+C) nöqtəli (Scatter)
+D) sütunlu (Column)
+E) zolaqlı (Bar)
+Cavab: A
+İzah: **Dairəvi** diaqramda bütöv 100% kimi dairədir, hər sektor bir hissənin payını göstərir. Xətti diaqram zamanla dəyişməni, sütunlu və zolaqlı qiymətlərin müqayisəsini daha yaxşı göstərir.
+```
+
+```yoxla
+S: Süzgəc (Filter) tətbiq olunanda şərtə uyğun gəlməyən sətirlərə nə olur?
+A) gizlədilir
+B) silinir
+C) başqa vərəqə köçürülür
+D) qırmızı rəngə boyanır
+E) siyahının sonuna sıralanır
+Cavab: A
+```
+
+```nümunə
+S: Böyük verilənlər siyahısını qruplaşdırıb ümumiləşdirən (məsələn, hər şöbə üzrə maaşların cəmini hesablayan) vasitə hansıdır?
+A) yekun cədvəl (PivotTable)
+B) sıralama (Sort)
+C) Freeze Panes
+D) Wrap Text
+E) Merge & Center
+Cavab: A
+İzah: **PivotTable** siyahıdakı yazıları seçdiyin sütun (məs., şöbə) üzrə qruplaşdırır və hər qrup üçün cəm, say və ya orta hesablayır. Sort yalnız sıranı dəyişir, Freeze Panes başlığı dondurur.
+```
+
+```yoxla
+S: Excel-də yeni iş vərəqi əlavə etmək üçün hansı düymələr birləşməsi istifadə olunur?
+A) Shift + F11
+B) F11
+C) Ctrl + N
+D) Alt + F1
+E) F2
+Cavab: A
+```
+
 # V hissə — Müsahibə
