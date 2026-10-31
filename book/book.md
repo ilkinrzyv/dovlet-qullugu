@@ -1125,6 +1125,238 @@ Qanun 30 sentyabr 2002-ci ildə qəbul edilib (№ 365-IIQ), **dərc olunduğu g
 
 **Məsuliyyət (maddə 19):** qanunu pozan hüquqi, fiziki və vəzifəli şəxslər qanunvericiliyə uyğun məsuliyyət daşıyır.
 
+## Fəsil 9. “İnzibati icraat haqqında” Qanun (I–II fəsillər) {qrup=BA}
+
+Qanun 21 oktyabr 2005-ci ildə qəbul edilib (№ 1036-IIQ) və **İnzibati-Prosessual Məcəllə ilə eyni gündə** qüvvəyə minib. Qanunun məqsədi inzibati orqanların insan hüquq və azadlıqlarına əməl etməsini təmin etmək və **qanunun aliliyinə** nail olmaqdır. Proqrama **yalnız BA** qrupu üçün və yalnız **I fəsil (Ümumi müddəalar, maddə 1–9)** və **II fəsil (Ümumi prinsiplər, maddə 10–19)** daxildir.
+
+### 9.1. Əsas anlayışlar və tətbiq dairəsi
+
+Qanun inzibati aktların **qəbul edilməsi, icrası və ləğvi** ilə bağlı fəaliyyətin hüquqi əsaslarını, prinsiplərini və prosedur qaydalarını müəyyən edir; inzibati orqanların faktiki xarakterli digər hərəkətlərinə də şamil olunur (maddə 1).
+
+| Anlayış | Mənası (maddə 2) |
+| --- | --- |
+| **İnzibati orqan** | İcra hakimiyyəti orqanları, onların yerli qurumları, **bələdiyyələr**, habelə qanunla inzibati akt qəbul etmək səlahiyyəti verilmiş istənilən fiziki və ya hüquqi şəxs |
+| **İnzibati akt** | Publik hüquq sahəsində **konkret məsələni** həll etmək üçün qəbul edilən və ünvanlandığı şəxs üçün hüquqi nəticə yaradan qərar, sərəncam və ya digər hakimiyyət tədbiri |
+| **Maraqlı şəxs** | Orqana müraciət etmiş, barəsində akt qəbul edilmiş və ya hüquqlarına akt birbaşa təsir edən şəxs |
+| **Ərizə** | Maraqlı şəxsin akt qəbul edilməsi və ya hüququnun həyata keçirilməsi üçün **yazılı** müraciəti |
+| **İnzibati şikayət** | Maraqlı şəxsin aktdan, imtinadan və ya hərəkətsizlikdən **subordinasiya baxımından yuxarı** inzibati orqana **yazılı** müraciəti |
+| **İnzibati icraat** | Aktın qəbulu, icrası, dəyişdirilməsi, ləğvi və şikayətlərə baxılması üzrə qanunla müəyyən prosedur daxilində fəaliyyət |
+| **Diskresion səlahiyyətlər** | Qanunla orqana mümkün **qanunauyğun qərarlardan birini seçmək** hüququnun verilməsi |
+| **Qarşılıqlı etimad** | Qanuni hərəkətlərə və ya inzibati praktikaya əsaslanan inam |
+| **Aralıq inzibati akt** | Konkret icraatın təşkili və aparılması ilə bağlı akt |
+| **Əlverişli akt** | Hüquq verən, təsdiq edən və ya vəzifəni götürən akt |
+| **Əlverişsiz (yükləyici) akt** | Hüquqdan məhrum edən, məhdudlaşdıran və ya vəzifə qoyan akt |
+
+**Tətbiq dairəsi (maddə 3).** Qanun inzibati orqan kimi təsnif edilmiş orqanların fəaliyyətinə şamil olunur, amma **şamil olunmur**:
+
+- **cinayət təqibi** üzrə cinayət-prosessual fəaliyyətə;
+- **inzibati xətalara** dair işlər üzrə fəaliyyətə.
+
+Ələt azad iqtisadi zonasında inzibati icraat öz xüsusi qanunu ilə tənzimlənir.
+
+**Aidiyyət (maddə 4).** Orqan səlahiyyətli olub-olmadığını **müstəqil** müəyyən etməyə borcludur. Orqanlar arasında aidiyyət mübahisələrini **yuxarı inzibati orqan** və ya icra hakimiyyəti orqanının yaratdığı **komissiya** həll edir.
+
+### 9.2. Qarşılıqlı hüquqi yardım və sənədlərin təsdiqi
+
+**Hüquqi yardım (maddə 5–8):**
+
+- İnzibati orqan digər orqanın müraciəti ilə ona hüquqi yardım göstərməyə **borcludur**.
+- Yardım müraciət daxil olduğu gündən **15 gün** ərzində göstərilir; əsaslandırılmış yazılı məlumatla **15 günədək** uzadıla bilər.
+- **Tabelik** münasibətində olan orqanların bir-birinə yardımı qarşılıqlı hüquqi yardım **sayılmır**.
+- Yardım istənilə bilər: hərəkəti müstəqil edə bilmədikdə; lazım olan faktları özü müəyyən edə bilmədikdə; sənəd və sübutlar digər orqanda olduqda; özü etsə xərc daha çox olacaqsa.
+
+**İmtina:**
+
+| Orqan imtina edə **bilər** (7.1) | Orqan **borclu deyil** (7.2) |
+| --- | --- |
+| Tədbir onun səlahiyyətinə aid deyil | Başqa orqan daha sadə və ya ucuz kömək edə bilər |
+| Tədbir hüquqazidddir | Yardım yalnız qeyri-mütənasib böyük xərclə mümkündür |
+| Yardım öz vəzifələrinə əhəmiyyətli mane olur | |
+| Tələb olunan məlumat qanunla qorunan sirdir | |
+
+- İmtina barədə müraciət daxil olduğu gündən **3 gün** ərzində yazılı bildirilir.
+- İmtinadan **yuxarı inzibati orqana** müraciət edilir; o, məsələyə **5 gün** ərzində baxır və **qəti qərar** verir.
+- Yardım xərcləri **22 manatdan yuxarı** olduqda müraciət edən orqan onları ödəməlidir (maddə 8).
+
+**Surətlərin təsdiqi (maddə 9):**
+
+- Orqan özünün və ya tabe orqanın aktlarının surətini təsdiq edə bilər; təsdiqlənmiş surət **rəsmi qüvvəyə** malikdir.
+- Məzmunu dəyişdirilmiş və ya bütövlüyü pozulmuş sənəd təsdiq edilmir.
+- Təsdiq vərəqində: sənədin dəqiq adı; **“surəti əslinə düzdür”** qeydi; tarix və yer; məsul şəxsin **imzası** və orqanın **möhürü**.
+- Təsdiqlənmiş surətin **hər səhifəsi** imzalanır və möhürlənir.
+
+### 9.3. Ümumi prinsiplər
+
+Qanunun II fəsli inzibati icraatın **10 ümumi prinsipini** müəyyən edir:
+
+| Maddə | Prinsip | Əsas fikir |
+| --- | --- | --- |
+| 10 | Hüquqi dövlətin ümumi prinsipləri | Hamılıqla qəbul olunmuş prinsiplər **birbaşa tətbiq** olunur |
+| 11 | Qanunçuluq | Hüquq və azadlıqlara yalnız **qanunla nəzərdə tutulmuş hallarda** müdaxilə |
+| 12 | Bərabərlik | Eyni hallara **eyni**, fərqli hallara **fərqli** qərar |
+| 13 | Etimad hüququnun qorunması | Şəxslərin inzibati praktikaya və **yazılı** vədlərə etimadı qorunur |
+| 14 | Diskresion səlahiyyətlərin həyata keçirilməsi | Qanunun hüdudları və səlahiyyətin **məqsədi** daxilində |
+| 15 | Formal tələblərdən sui-istifadənin qadağanı | Formal xırdalığa görə imtina etmək olmaz |
+| 16 | Hüququn tətbiqindən imtinanın qadağanı | Orqan tətbiq etməli olduğu normanı tətbiq etməyə borcludur |
+| 17 | Mütənasiblik | Müdaxilə qanuni məqsədə **mütənasib**, zəruri və yararlı olmalıdır |
+| 18 | Çoxun azı ehtiva etməsi | Artıq görülmüş hərəkətin içində olan hərəkəti yenidən tələb etmək olmaz |
+| 19 | Mötəbərlik prezumpsiyası | Təqdim olunan sənədlər, əksi sübut olunmayınca, **mötəbər** sayılır |
+
+### 9.4. Prinsiplərin təfərrüatı
+
+**Bərabərlik (maddə 12):**
+
+- Eyni mühüm faktiki hallara malik işlər üzrə **müxtəlif** qərarlar qəbul etmək **qadağandır**.
+- Fərqli mühüm faktiki hallara malik işlər üzrə **eyni** qərarlar qəbul etmək **qadağandır**.
+- Diskresion səlahiyyətlər eyni üsulla həyata keçirilir, amma mövcud praktika dəyişdirilə bilər.
+
+**Etimad (maddə 13):**
+
+- Orqan **mövcud inzibati praktikaya** uyğun hərəkət etməyə borcludur. Praktika yalnız **ictimai maraqlar** tələb etdikdə dəyişdirilə bilər; yeni praktika davamlı və ümumi olmalıdır.
+- Orqanın vəd və bəyanatları yalnız **yazılı formada** olduqda etibarlı təminat sayılır.
+- Etimad **qanunsuz hərəkətlərə əsaslana bilməz**.
+
+**Diskresiya (maddə 14).** Qərarlar səlahiyyətin **məqsədinə uyğun** olmalı; hüquq və azadlıqların **əsassız məhdudlaşdırılmasına** yönəlmiş qərarlar qəbul edilə bilməz.
+
+**Formal tələblər (maddə 15):**
+
+- Yalnız formal tələblərə əməl üçün şəxslərə öhdəlik qoymaq **qadağandır** (qanunla məcburi şərtlər istisna).
+- Qanunda birbaşa nəzərdə tutulmayıbsa, formal tələbə əməl olunmaması qərardan **imtina üçün əsas ola bilməz**.
+- Sənəddəki **aşkar və düzəldilə bilən yazı və hesab səhvlərinə** görə sənədi qəbul etməkdən imtina edilə bilməz.
+
+**Hüququn tətbiqi (maddə 16).** Orqan normanı maraqlı şəxsin vəsatəti ilə və ya **öz təşəbbüsü ilə** tətbiq etməyə borcludur. Norma diskresion səlahiyyətə aiddirsə, şəxs səlahiyyətin **düzgün** həyata keçirilməsini tələb edə bilər.
+
+**Mütənasiblik (maddə 17).** Müdaxilə tədbiri qanuni məqsədə mütənasib olmalı, **məzmunu, yeri, vaxtı və əhatə etdiyi şəxslərin dairəsi** baxımından zəruri və yararlı olmalıdır.
+
+**Çoxun azı ehtiva etməsi (maddə 18).** Verilmiş arayış və icazələr məqsədinə uyğun **hissəvi arayış və icazələri də ehtiva edir**.
+
+**Mötəbərlik prezumpsiyası (maddə 19):**
+
+- Şəxslərin təqdim etdiyi sənəd və dəlillər, **həqiqətə uyğun olmadığı sübut edilməyibsə**, mötəbər sayılır.
+- Onların mötəbərliyini təsdiq edən **əlavə sənəd tələb etmək qadağandır**.
+- Əsaslı şübhə olduqda orqan mötəbərliyi **müstəqil və öz hesabına** yoxlayır.
+
+## Fəsil 10. İnsan hüquqları üzrə müvəkkil (Ombudsman) haqqında Konstitusiya Qanunu {qrup=BA}
+
+Konstitusiya Qanunu 28 dekabr 2001-ci ildə qəbul edilib (№ 246-IIKQ). Proqrama **yalnız BA** qrupu üçün və yalnız bu maddələr daxildir: 1, 2, 4 (fəaliyyətin əsasları, seçilmə, səlahiyyət müddəti) və 8–13, 13-1 (şikayətlərə baxılma və milli preventiv mexanizm).
+
+### 10.1. Ombudsmanın fəaliyyətinin əsasları
+
+**Nə üçün təsis edilib (maddə 1.1):** dövlət orqanları, bələdiyyələr, dövlət hüquqi şəxsləri və büdcə təşkilatları və onların vəzifəli şəxsləri tərəfindən **pozulan insan hüquq və azadlıqlarının bərpası** və qanunla nəzərdə tutulmuş hallarda pozuntuların **qarşısının alınması** üçün.
+
+**Ombudsmanın funksiyaları:**
+
+- **Milli preventiv mexanizm** — İşgəncəyə qarşı Konvensiyanın Fakültativ Protokolu üzrə. Saxlanılan şəxslərin **öz iradəsi ilə tərk edə bilmədiyi yerlərə** müntəzəm və ya istənilən vaxt baş çəkir.
+- “**İnformasiya əldə etmək haqqında**” Qanunun tələblərinin yerinə yetirilməsinə **nəzarət**.
+- **Əlilliyi olan şəxslərin** və **uşaq hüquqları** haqqında Konvensiyaların, bərabərlik və ayrı-seçkiliyin qarşısının alınmasının **müstəqil monitorinq mexanizmi**.
+- Beynəlxalq təşkilatlarla əməkdaşlıq, müqavilələr bağlamaq, beynəlxalq qurumlarda təmsil olunmaq.
+
+**Hüdudlar və təkliflər:**
+
+- Ombudsmanın fəaliyyəti digər hüquq müdafiə orqanlarının səlahiyyətlərini **məhdudlaşdırmır və əvəz etmir**.
+- **Prezidentin, deputatların və hakimlərin** fəaliyyətinin yoxlanılması Ombudsmanın səlahiyyətinə **aid deyil**.
+- **Prezidentə** — **əfv, vətəndaşlıq, siyasi sığınacaq** məsələləri üzrə təklif verə bilər.
+- **Milli Məclisə** — qanunların qəbulu, ləğvi, dəyişdirilməsi və **amnistiya** elan edilməsi barədə təklif verə bilər.
+- Məhkəmələrdə **süründürməçilik**, sənədlərin itirilməsi və verilməməsi, məhkəmə qərarlarının icrasının **gecikdirilməsi** ilə bağlı şikayətlərə baxa bilər.
+- **Prinsiplər:** aşkarlıq, şəffaflıq, qanunçuluq, ədalət, qərəzsizlik.
+
+### 10.2. Seçilmə və səlahiyyət müddəti
+
+| Məsələ | Qayda | Maddə |
+| --- | --- | --- |
+| Kim seçir | **Milli Məclis**, Prezidentin təqdim etdiyi **üç namizəd** arasından | 2.1 |
+| Lazım olan səs | **83 səs** çoxluğu | 2.1 |
+| Seçilmədikdə | Prezident **15 gün** ərzində digər üç namizədi təqdim edir | 2.2 |
+| Səlahiyyət müddəti | **7 il** | 4.1 |
+| Təkrar seçilmə | Eyni şəxs **iki dəfədən artıq** seçilə bilməz | 4.2 |
+| Yeni seçki | Müddətin bitməsinə **30 gün** qalmış Prezident üç namizəd təqdim edir; Milli Məclis **15 gün** ərzində qərar qəbul edir | 4.3 |
+
+### 10.3. Şikayətin verilməsi və məzmunu
+
+**Kim şikayət verə bilər (maddə 8):**
+
+- Azərbaycan **vətəndaşları**, **əcnəbilər**, **vətəndaşlığı olmayanlar** və **hüquqi şəxslər**.
+- Hüquqları pozulmuş şəxsin **razılığı ilə** üçüncü şəxslər və vətəndaş cəmiyyəti institutları (QHT-lər, media, həmkarlar ittifaqları, təşəbbüs qrupları, məhəllə komitələri). Razılıq almaq mümkün deyilsə (vəfat, fəaliyyət qabiliyyətinin itirilməsi), razılıqsız da.
+- **Dövlət orqanları Ombudsmana şikayət verə bilməz.**
+
+**Müddət:** şikayət hüququn pozulduğu və ya şəxsə məlum olduğu gündən **bir il** ərzində verilir.
+
+**Saxlanma yerlərindən şikayətlər** (cəzaçəkmə müəssisələri, istintaq təcridxanaları, müvəqqəti saxlama yerləri, hauptvaxtlar və s.) **senzuradan keçirilmədən 24 saat** ərzində Ombudsmana göndərilməlidir.
+
+**Şikayətin məzmunu (maddə 9):** ərizəçinin adı, atasının adı, soyadı, ünvanı; hüquqları pozan qərar və ya hərəkətin mahiyyəti; tərtib yeri, vaxtı və **imza**.
+
+- Bunlar yoxdursa, şikayət **anonim** sayılır və ona baxılmır. **İstisna:** göstərilən hallar **kifayət qədər sübutlu və əsaslı faktlarla** təsdiq edilirsə.
+- **Şifahi** şikayəti aparat işçisi xüsusi blankda qeyd edir, ərizəçi imzalayır.
+- Ərizəçinin xahişi ilə onun barədə məlumatlar **gizli saxlanılır**.
+
+### 10.4. Şikayətə baxılma qaydası
+
+**Qərar (maddə 10):** şikayət ya **baxılmaq üçün qəbul edilir**, ya da baxılmasından **imtina edilir**. İmtina olunduqda ərizəçiyə **10 iş günü** ərzində yazılı əsaslandırılmış cavab verilir.
+
+**İmtina əsasları (maddə 11):**
+
+1. şikayət **bir illik** müddət keçdikdən sonra verilib;
+2. Ombudsmanın səlahiyyətinə aid deyil;
+3. anonimdir (sübutlu faktlar istisna);
+4. şikayətlə bağlı **məhkəmə icraatı** gedir;
+5. təkrar şikayətdə **yeni məlumat, fakt və sübut** yoxdur.
+
+**Araşdırma (maddə 12):**
+
+- Barəsində şikayət verilən orqanın mülahizəsi öyrənilir — **10 iş günü** ərzində təqdim edilməlidir.
+- Ombudsmanın hüquqları:
+  - istənilən vaxt, **maneəsiz və xəbərdarlıq etmədən** dövlət orqanlarına, hərbi hissələrə, polisə, saxlanma yerlərinə daxil olmaq;
+  - saxlanılan şəxslərlə **təkbətək** görüşmək; sənədlərlə tanış olmaq və surət almaq; foto, audio və video qeyd aparmaq;
+  - orqanlardan məlumat və sənədləri **10 iş günü** ərzində almaq;
+  - qanuni qüvvəyə minmiş məhkəmə qərarları ilə tanış olmaq;
+  - yoxlama tapşırmaq — amma **şikayət edilən orqanın özünə yoxlama tapşırıla bilməz**;
+  - ekspert rəyi tapşırmaq; rəhbərlər tərəfindən **təxirə salınmadan qəbul** edilmək; **yerində** araşdırma aparmaq.
+- Ombudsmana məlumat verən şəxsə **təzyiq və təqib yolverilməzdir**.
+- **Öz təşəbbüsü ilə** araşdırma: pozulmuş şəxsin razılığı ilə **xüsusi ictimai əhəmiyyətli** hallarda və ya hüquqlarını müstəqil müdafiə edə bilməyənlərin maraqlarına toxunulduqda.
+- **Baxılma müddəti — 30 gün**; əlavə yoxlama və ya material lazım olduqda **30 günədək** uzadılır.
+
+### 10.5. Baxılmanın nəticələri
+
+- Görülən tədbirlər və nəticələr barədə ərizəçiyə **10 iş günü** ərzində yazılı məlumat verilir (maddə 13.1).
+
+**Pozuntu aşkar edildikdə Ombudsmanın tədbirləri (13.2):**
+
+1. hüquqların **bərpasını tələb etmək** — orqan **10 iş günü** ərzində cavab verməlidir; verməsə — yuxarı orqana müraciət;
+2. cinayət əlamətləri olduqda **cinayət işinin başlanması** üçün müraciət;
+3. **əlavə kassasiya** qaydasında şikayət hüququ olan subyektlərə müraciət;
+4. vəzifəli şəxslərin **intizam məsuliyyətinə** cəlb edilməsi barədə təklif;
+5. yoxlamanın nəticələri ilə **medianı** tanış etmək;
+6. xüsusi ictimai əhəmiyyətli hallarda **Prezidentə** müraciət, **Milli Məclisdə** məruzə;
+7. hüquqların bərpası üçün **məhkəməyə** müraciət;
+8. hüquqları normativ aktla pozulduqda **Konstitusiya Məhkəməsinə** sorğu.
+
+### 10.6. İnformasiya əldə etmək hüququ ilə bağlı şikayətlər
+
+Maddə 13-1-ə görə:
+
+- Şikayət **10 iş günü** ərzində araşdırılır; dəqiqləşdirmə lazım olduqda yazılı məlumatla **daha 10 iş gününə** qədər uzadılır.
+- **Baxılmır:** şikayət konkret informasiya sahibinə aid deyilsə; məhkəmənin qanuni qüvvəyə minmiş qərarı varsa; ərizəçi informasiya sahibinin yaratdığı imkanlardan səmərəli istifadə etməyibsə.
+- Yoxlanılır: sorğunun qeydiyyatı, vaxtında icrası, imtinanın qanuniliyi, ictimai informasiyanın açıqlanması, internet resursu, məhdudiyyətin qanuniliyi.
+- Ombudsman pozuntunun aradan qaldırılmasını tələb edir; informasiya sahibi **10 iş günü** ərzində tədbirlər barədə məlumat verir.
+- Tələb olunan sənədlər Ombudsmana **5 iş günü** ərzində təqdim edilir.
+
+### 10.7. Yadda saxla: rəqəmlər
+
+| Nə | Rəqəm | Maddə |
+| --- | --- | --- |
+| Namizədlər | 3 (Prezident təqdim edir) | 2.1 |
+| Seçki üçün səs | 83 | 2.1 |
+| Səlahiyyət müddəti | 7 il, ən çoxu 2 dəfə | 4.1–4.2 |
+| Yeni namizədlər | müddətin bitməsinə 30 gün qalmış | 4.3 |
+| Şikayət vermə müddəti | 1 il | 8.4 |
+| Saxlanma yerlərindən şikayətin göndərilməsi | 24 saat, senzurasız | 8.5 |
+| İmtina barədə cavab | 10 iş günü | 10.2 |
+| Orqanın mülahizəsi / sənədlər | 10 iş günü | 12.1, 12.2.2 |
+| Baxılma müddəti | 30 gün + 30 gün | 12.6 |
+| Nəticə barədə məlumat | 10 iş günü | 13.1 |
+| İnformasiya şikayəti | 10 + 10 iş günü | 13-1.1 |
+| İnformasiya sahibinin sənəd təqdimi | 5 iş günü | 13-1.6 |
+
 # II hissə — Məntiq {fənn=men}
 
 # III hissə — Azərbaycan dili {fənn=az}
