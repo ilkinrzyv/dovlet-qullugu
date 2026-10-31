@@ -588,6 +588,350 @@ Qanunun 2-ci fəsli **15 qayda** sayır (maddə 4–18):
 - İntizam icraatı başlana bilər: hüquqi və ya fiziki şəxsin **şikayəti** ilə; **mediada** pozuntu barədə məlumat dərc edildikdə; **etik müvəkkil** pozuntunu müəyyən etdikdə.
 - İcraat zamanı **cinayət əlamətləri** aşkar edilsə, orqanın rəhbəri **cinayət təqibi orqanına** məlumat verir.
 
+## Fəsil 4. “Korrupsiyaya qarşı mübarizə haqqında” Qanun
+
+Qanun 13 yanvar 2004-cü ildə qəbul edilib (№ 580-IIQ), **1 yanvar 2005-ci ildən** qüvvədədir. 4 fəsil, 14 maddə. Qanun korrupsiya ilə əlaqədar hüquqpozmaların aşkar edilməsi, qarşısının alınması və nəticələrinin aradan qaldırılmasına yönəlib. Etik davranış qaydaları Qanunu (Fəsil 3) hədiyyə və maraqlar toqquşması məsələlərində bu qanuna istinad edir.
+
+### 4.1. Korrupsiya nədir və kimlər subyektdir
+
+> **Maddə 1.1.1. Korrupsiya** — vəzifəli şəxslərin öz statusundan, təmsil etdiyi orqanın statusundan, vəzifə səlahiyyətlərindən və ya onlardan irəli gələn imkanlardan istifadə etməklə qanunsuz olaraq maddi və sair nemətlər, imtiyazlar və ya güzəştləri **istəməsi və ya alması**, yaxud bu barədə **təklif və ya vədi qəbul etməsi**, habelə fiziki və hüquqi şəxslər tərəfindən belə nemətlərin vəzifəli şəxslərə qanunsuz olaraq **təklif və ya vəd olunması, yaxud verilməsi**.
+
+Yəni korrupsiyanın iki tərəfi var: **alan** (vəzifəli şəxs) və **verən** (fiziki və ya hüquqi şəxs).
+
+Digər anlayışlar:
+
+- **Korrupsiya riski** — korrupsiya hüquqpozmalarının və ya korrupsiyaya şərait yaradan hüquqpozmaların törədilməsi ehtimalı.
+- **Səlahiyyətli struktur bölmə (şəxs)** — korrupsiya barədə məlumatları qəbul edib araşdıran, maraqlar toqquşması və korrupsiyanın qarşısının alınması üzrə **konfidensial məsləhət** verən və riskləri idarə edən bölmə və ya şəxs.
+
+**Subyektlər (maddə 2.1):** dövlət orqanlarına seçilmiş və ya təyin edilmiş şəxslər; xüsusi səlahiyyətlə dövlət orqanlarını təmsil edənlər; **inzibati vəzifə tutan dövlət qulluqçuları**; təşkilati-sərəncamverici və ya inzibati-təsərrüfat funksiyalarını həyata keçirənlər; seçkili vəzifəyə **namizədliyi qeydə alınmış** şəxslər; **bələdiyyə üzvləri**; nüfuzu ilə vəzifəli şəxsin qərarına təsir müqabilində nemət alanlar; vəzifəli şəxsə nemət təklif edən, vəd edən, verən və ya **vasitəçilik edən** şəxslər.
+
+- Siyahının ilk 8 bəndindəkilər (2.1.1–2.1.8) bu qanunun məqsədi üçün **vəzifəli şəxs** sayılır (2.2).
+
+**Tətbiq dairəsi (maddə 3).** Azərbaycan ərazisində **bütün** fiziki (əcnəbilər və vətəndaşlığı olmayanlar daxil) və hüquqi şəxslərə; ərazidən kənarda isə Azərbaycan vətəndaşlarına və Azərbaycanda qeydiyyatdan keçmiş hüquqi şəxslərə — beynəlxalq müqavilələrə uyğun.
+
+**Mübarizə aparan orqanlar (maddə 4):**
+
+- **Bütün** orqanlar və vəzifəli şəxslər öz səlahiyyətləri çərçivəsində mübarizə aparır.
+- Hüquqpozma inzibati və ya cinayət məsuliyyəti yaratdıqda — **hüquq-mühafizə orqanları**.
+- Qarşısının alınması üzrə **ixtisaslaşmış orqan** — **Korrupsiyaya qarşı mübarizə üzrə Komissiya**. Onun tərkibi **icra, qanunvericilik və məhkəmə** hakimiyyəti orqanlarının təyin etdiyi üzvlərdən ibarətdir; səlahiyyətləri qanunla təsdiq edilən Əsasnamə ilə müəyyən olunur.
+
+### 4.2. Korrupsiyanın qarşısının alınması
+
+**Maliyyə xarakterli tələblər (maddə 5.1).** Vəzifəli şəxslər bu məlumatları təqdim etməlidir:
+
+1. **hər il** gəlirləri barədə — mənbəyi, növü və məbləği göstərilməklə;
+2. vergitutma obyekti olan əmlakı barədə;
+3. kredit təşkilatlarındakı əmanətlər, qiymətli kağızlar və digər maliyyə vəsaitləri barədə;
+4. şirkət və fondlarda səhmdar və ya təsisçi kimi iştirakı və payı barədə;
+5. **5 500 manatdan** yuxarı borcu barədə;
+6. **1 100 manatdan** yuxarı maliyyə və əmlak xarakterli digər öhdəlikləri barədə.
+
+**Pozuntuya görə məsuliyyət (maddə 6):** məlumatın üzrsüz səbəbdən vaxtında verilməməsi, qəsdən natamam və ya təhrif edilmiş təqdimi **intizam məsuliyyətinə** səbəb ola bilər. Komissiya belə şəxslər barədə **rəsmi dövlət qəzetində** məlumat dərc etdirə bilər.
+
+**Yaxın qohumların birgə işləməsi (maddə 7):**
+
+- Vəzifəli şəxsin yaxın qohumları **bilavasitə onun tabeliyində** heç bir vəzifə tuta bilməz (seçkili vəzifələr və qanunla nəzərdə tutulmuş hallar istisna).
+- Pozuntu müəyyən edildikdən sonra **30 gün** ərzində könüllü aradan qaldırılmazsa, tabeliyi istisna edən başqa vəzifəyə keçirilir; mümkün olmadıqda **onlardan biri** vəzifədən azad olunur.
+- Bu səbəblə azad olunanlar **digər orqanlarda** vəzifə tuta bilər.
+
+### 4.3. Hədiyyə və korrupsiya riskləri
+
+**Hədiyyə (maddə 8):**
+
+- Qərəzsiz icraya təsir edə bilən və ya mükafat təəssüratı yaradan hədiyyəni **tələb etmək və qəbul etmək olmaz**.
+- İstisna: qərəzsizliyə təsir etməmək şərtilə **kiçik hədiyyələr** və **sadə qonaqpərvərlik**.
+- **Bir il ərzində** hər hansı bir fiziki və ya hüquqi şəxsdən ümumi məbləği **55 manatdan yuxarı** hədiyyə qəbul edilə bilməz. Bu məbləğdən yuxarı hədiyyələr **orqana (quruma) məxsus** sayılır.
+- Qərara gələ bilmədikdə — **səlahiyyətli struktur bölmənin (şəxsin) rəyi** öyrənilir.
+- Mülki-hüquqi əqdlərin bağlanması və icrası zamanı xidməti fəaliyyətlə bağlı güzəşt və imtiyaz əldə etmək **qadağandır**.
+- Qanunsuz nemət təklif olunduqda ondan **imtina edilir**; asılı olmayan səbəblərdən verilibsə — səlahiyyətli bölməyə məlumat verilir, nemət orqana **akt üzrə təhvil verilir**.
+
+**Korrupsiya risklərinin idarə edilməsi (maddə 8-1):**
+
+- Orqanın rəhbəri bunun üçün **səlahiyyətli struktur bölmə (şəxs)** müəyyən edir.
+- Hər il **yanvarın 15-dən aprelin 15-dək** əvvəlki il üzrə risklər müəyyən edilir, təhlil və qiymətləndirilir.
+- Nəzərə alınır: sorğuların nəticələri, müraciətlər və araşdırmalar, media və internetdəki məlumatlar, hüquqi aktlar, audit və maliyyə nəzarəti nəticələri, tez-tez təkrarlanan risk halları, inzibati mübahisələr.
+- Risklər, hədəflər və tədbirlər barədə məlumat hər il **iyunun 1-dək** **Komissiyaya** təqdim edilir və dövri olaraq **ictimaiyyətə açıqlanır**.
+
+### 4.4. Korrupsiya ilə əlaqədar hüquqpozmalar
+
+Maddə 9-a görə hüquqpozmalar iki qrupdur: **bilavasitə korrupsiya hüquqpozmaları** və **korrupsiyaya şərait yaradan hüquqpozmalar**.
+
+**Korrupsiya hüquqpozmaları (9.2) — 7 növ**, o cümlədən:
+
+- xidməti hərəkət və ya hərəkətsizlik müqabilində vəzifəli şəxsin nemət **tələb etməsi, alması**, təklif və ya vədi qəbul etməsi;
+- fiziki və ya hüquqi şəxsin vəzifəli şəxsə nemət **təklif etməsi, vəd etməsi, verməsi**;
+- qanunsuz alınmış əmlakdan mənfəət üçün istifadə;
+- nemətləri **pulsuz** və ya bazar (tənzimlənən) qiymətindən **aşağı** qiymətə əldə etmək;
+- əmanət, qiymətli kağız, renta, royalti və icarədən qanuna zidd gəlir götürmək;
+- vəzifəli şəxsin qərarına təsir göstərə biləcəyini bildirən şəxsə nemət vermək və ya belə şəxsin nemət alması (**nüfuz alveri**).
+
+**Korrupsiyaya şərait yaradan hüquqpozmalar (9.3) — 13 növ**, o cümlədən:
+
+- **elmi, pedaqoji və yaradıcılıq** fəaliyyəti istisna olmaqla, başqa ödənişli vəzifə tutmaq və ya fəaliyyətlə məşğul olmaq;
+- birbaşa və ya **başqa, uydurma şəxslər vasitəsilə sahibkarlıq** fəaliyyəti ilə məşğul olmaq, əvəzçilik üzrə işləmək, şirkətlərin icra orqanlarına daxil olmaq;
+- sahibkarlıqda, subsidiya, kredit almaqda qanunsuz kömək etmək;
+- səlahiyyət dairəsinə daxil olmayan məsələlərdə başqa orqanların işinə qanunsuz müdaxilə;
+- şəxsi maraqlarına aid məsələlərin həllinə təsir etmək;
+- tabe və ya nəzarətdə olan orqanların işi üzrə başqa şəxslərin **nümayəndəsi** olmaq;
+- verilməli olan məlumatı əsassız vermədən imtina etmək, gecikdirmək, natamam və ya təhrif edilmiş vermək;
+- qanunla nəzərdə tutulmayan məlumat və sənədləri **tələb etmək**;
+- orqanın vəsaitini **seçki fonduna** vermək;
+- hüquqların həyata keçirilməsində **süni maneələr** yaratmaq.
+
+### 4.5. Məsuliyyət, məlumatvermə və nəticələrin aradan qaldırılması
+
+**Məsuliyyət (maddə 10–11):**
+
+- Korrupsiya ilə əlaqədar hüquqpozmalar **intizam, mülki-hüquqi, inzibati və ya cinayət** məsuliyyətinə səbəb olur.
+- İnzibati və ya cinayət məsuliyyəti yaratmadıqda — **intizam məsuliyyəti**, xüsusi hallarla:
+  - dövlət orqanlarına seçilmiş şəxslər barədə məlumat **seçildiyi orqana** verilir;
+  - bələdiyyə üzvləri barədə — **seçki komissiyasına**, o da **5 gün** ərzində bələdiyyəyə bildirir;
+  - namizədlər barədə — **Seçki Məcəlləsi** üzrə tədbirlər;
+  - **hakimlər** barədə — **Məhkəmə-Hüquq Şurasına** məlumat verilir.
+- Fiziki şəxslərin hərəkəti cinayət tərkibi yaratmırsa — **inzibati cərimə**; hüquqi şəxslər də **cərimə** edilir.
+
+**Məlumatvermə (maddə 11-1):**
+
+- Hər kəs məlumatı **yazılı (elektron daxil) və ya şifahi** verə bilər.
+- Səlahiyyətli struktur bölmə məlumatı **qeydə alır** və bunu məlumat verənə bildirir; **20 iş günü** ərzində araşdırır və nəticəni bildirir.
+- Səlahiyyətli bölmə **müstəqil** olmalıdır; həvəsləndirmə, intizam tənbehi, kadr məsələləri və attestasiyada iştirak etməməlidir.
+- Barəsində məlumat verilən və ya maraqlı şəxsə araşdırma həvalə edilə bilməz.
+- Məlumat səlahiyyətli bölmənin özü barədədirsə — **orqanın rəhbərinə**; rəhbər barədədirsə — **yuxarı vəzifəli şəxsə** və ya ixtisaslaşmış orqanlara verilir.
+
+**Məlumat verənin müdafiəsi (maddə 11-2):**
+
+- İstəmədikdə kimliyi **açıqlanmır**; yalnız **yazılı razılığı** ilə açıqlanır.
+- Ona və yaxın qohumuna təzyiq, hədə və **qisas** məqsədilə tənbeh, işdən çıxarma, başqa işə keçirmə və s. **qadağandır**.
+- Qisas tədbiri iddia edildikdə dəlilləri təkzib etmək **işəgötürənin** üzərinə düşür.
+- Həyatı və əmlakı üçün real təhlükə olduqda prokurorluğa müraciətlə **dövlət müdafiəsi** (təhlükəsizlik tədbirləri) tətbiq edilir.
+- Belə işçi attestasiyadan keçəndə iclasda **səlahiyyətli bölmənin nümayəndəsi** iştirak etməlidir.
+- Müdafiə **bilə-bilə yalan məlumat** verənlərə və nemət əldə etmək üçün məlumat verənlərə şamil olunmur.
+
+**Nəticələrin aradan qaldırılması (maddə 12–13):**
+
+- Qanunsuz əldə edilmiş əmlak və imtiyazların dəyəri **könüllü olaraq dövlət nəfinə** ödənilir; imtina edildikdə orqanların iddiası ilə **məhkəmə** dövlətin nəfinə tutur.
+- Korrupsiya nəticəsində qəbul olunmuş aktlar orqanın özü və ya məhkəmə tərəfindən **ləğv edilir**.
+
+### 4.6. Yadda saxla: rəqəmlər
+
+| Nə | Rəqəm | Maddə |
+| --- | --- | --- |
+| Qəbul / qüvvəyə minmə | 13.01.2004 / 01.01.2005 | 14 |
+| Bəyan edilən borc | 5 500 manatdan yuxarı | 5.1.5 |
+| Bəyan edilən digər öhdəliklər | 1 100 manatdan yuxarı | 5.1.6 |
+| Qohumların tabeliyi pozuntusunun aradan qaldırılması | 30 gün | 7.2 |
+| İllik hədiyyə həddi (bir şəxsdən) | 55 manat | 8.2 |
+| Risklərin qiymətləndirilməsi | 15 yanvar – 15 aprel | 8-1.2 |
+| Komissiyaya məlumat | iyunun 1-dək | 8-1.4 |
+| Seçki komissiyasının bələdiyyəyə bildirməsi | 5 gün | 10.4.2 |
+| Məlumatın araşdırılması | 20 iş günü | 11-1.5 |
+
+## Fəsil 5. “Məlumat azadlığı haqqında” Qanun {qrup=BA,BB}
+
+Qanun 19 iyun 1998-ci ildə qəbul edilib (№ 505-IQ). Cəmi 15 qısa maddədən ibarətdir. Proqramda yalnız **BA və BB** qrupları üçündür. Sorğuların verilməsi və cavablandırılması qaydası ayrıca — “İnformasiya əldə etmək haqqında” Qanunla tənzimlənir (maddə 11).
+
+### 5.1. Məlumat azadlığı və onun təminatı
+
+> **Maddə 1.** Konstitusiyanın **50-ci maddəsinə** uyğun olaraq hər kəsin istədiyi məlumatı qanuni yolla **axtarmaq, əldə etmək, ötürmək, hazırlamaq və yaymaq** azadlığı vardır.
+
+- **Məlumat** — təqdimat formasından asılı olmayaraq təbiətdə, cəmiyyətdə və dövlətdə baş vermiş hadisələr, proseslər, faktlar və şəxslər haqqında xəbərlər.
+- Hər kəsin məlumat əldə etmək üçün **müraciət etmək hüququ** var (maddə 2).
+- Məlumat azadlığı başqalarının hüquq və mənafelərinin pozulmasına səbəb olmamalıdır.
+- Məlumat azadlığı yalnız **Konstitusiyada nəzərdə tutulmuş hallarda** məhdudlaşdırıla bilər.
+- **Subyektlər** — fiziki və hüquqi şəxslər (maddə 4).
+
+**Əsas prinsiplər (maddə 5) — 6 prinsip:**
+
+1. məlumat azadlığının təmin edilməsi;
+2. məlumatın açıqlığı və mübadiləsinin azadlığı;
+3. məlumatın **obyektivliyi, tamlığı və həqiqiliyi**;
+4. məlumatın axtarılması, əldə edilməsi, istifadəsi, yayılması və qorunmasının qanuniliyi;
+5. hər kəsin **şəxsi və ailə həyatının sirrinin** saxlanması;
+6. şəxsiyyətin, cəmiyyətin və dövlətin **təhlükəsizliyinin** qorunması.
+
+**Təminatlar (maddə 6):** dövlət orqanları və bələdiyyələrin fəaliyyətləri və qərarları barədə məlumat verməsi; **informasiya xidmətlərinin** yaradılması; statistika, kitabxana, arxiv və muzey fondlarından maneəsiz istifadə; həyat və sağlamlığa təhlükə yaradan **fövqəladə hallar** barədə əhaliyə **dərhal** məlumat verilməsi; mediada **dövlət senzurasına yol verilməməsi**; normativ hüquqi aktların əhalinin nəzərinə çatdırılması.
+
+**Məlumat mənbələri (maddə 7):** məlumatı əks etdirən sənədlər və başqa daşıyıcılar, media subyektlərinin məlumatları, **açıq çıxışlar**.
+
+### 5.2. Açıq və məhdudlaşdırılan məlumat
+
+Əldə edilmə qaydasına görə məlumat ikiyə bölünür (maddə 8): **açıq məlumat** və **alınması məhdudlaşdırılan məlumat**.
+
+**Açıq məlumat necə əldə edilir (maddə 9):** internet informasiya ehtiyatları, rəsmi nəşrlər, kütləvi informasiyanın yayılması, kitabxana və ictimai informasiya mərkəzlərində sənədlərlə tanışlıq, fiziki və hüquqi şəxslərə təqdim etmə.
+
+- Məlumat müqavilə ilə də verilə bilər (mülki qanunvericiliyə uyğun). Amma **dövlət orqanları və bələdiyyələr müqavilənin olmamasına görə məlumatı verməkdən imtina edə bilməz**.
+
+**Alınması məhdudlaşdırılan məlumat (maddə 10):**
+
+- dövlət sirri;
+- peşə sirri — **vəkil, notariat, həkim** sirri;
+- qulluq sirri;
+- bank və kommersiya sirri;
+- istintaq və məhkəmə sirri;
+- şəxslərin şəxsi və ailə həyatına aid məlumat;
+- terror aktlarına aid məlumat;
+- ətraf mühitə dair informasiya — **yalnız qanunla müəyyən edilmiş hallarda**.
+
+**Şikayət (maddə 12):** məlumat verilmədikdə **məlumat sahibinin yuxarı orqanına**, **Ombudsmana** və **məhkəməyə** şikayət edilə bilər. Məlumatın verilməməsinin qanuniliyini **cavabdeh** sübut etməlidir.
+
+### 5.3. Şəxsiyyət haqqında məlumat
+
+**Fərdi məlumat (maddə 13)** — şəxsiyyət haqqında sənədləşdirilmiş və ya açıq elan edilmiş xəbər.
+
+- **Dini mənsubiyyət və əqidə** barədə məlumatı dövlət orqanları yalnız şəxs onu **könüllü** təqdim etdikdə toplaya bilər.
+- **Siyasi partiyaya üzvlük** və ya bitərəflik barədə məlumat yalnız **qanunla nəzərdə tutulmuş hallarda** dövlət orqanlarına təqdim edilməlidir.
+
+**Şəxsin hüquqları (maddə 14)** — əməliyyat-axtarış və cinayət istintaqı ilə bağlı məlumatlar istisna olmaqla:
+
+- haqqında toplanan məlumatla **tanış olmaq**;
+- məlumatın **hansı məqsədlə, necə** toplandığını və **kimin** istifadə etdiyini bilmək;
+- məlumatda **dəqiqləşdirmə** tələb etmək.
+
+Qadağalar və qaydalar:
+
+- Məlumatı **aldatma, hədə-qorxu** və başqa qanunsuz yolla toplamaq qadağandır.
+- Dövlət orqanlarının topladığı məlumatı kənar şəxslərin əldə etməsinə yol verilmir.
+- Məlumat qanuni məqsəd üçün **zəruri müddətdən çox** saxlanıla bilməz.
+- Qanunda nəzərdə tutulmayan hallarda gizli texniki vasitələr, poçt göndərişlərinin yoxlanılması, **telefon danışıqlarına qulaq asmaq qadağandır**.
+- Şəxsin xəbəri olmadan və ya etirazına baxmayaraq izlənilməsi, foto-video çəkilişi, səs yazısı (əməliyyat-axtarış istisna) məsuliyyətə səbəb olur.
+
+## Fəsil 6. “Vətəndaşların müraciətləri haqqında” Qanun {qrup=BA,BB}
+
+Qanun 30 sentyabr 2015-ci ildə qəbul edilib (№ 1308-IVQ). Konstitusiyanın **57-ci maddəsinə** (müraciət etmək hüququ) əsaslanır. Köhnə “Vətəndaşların müraciətlərinə baxılması qaydası haqqında” Qanunu əvəz edib. Proqramda yalnız **BA və BB** qrupları üçündür. Müddətlər çoxdur — sonundakı cədvəli əzbərlə.
+
+### 6.1. Müraciət hüququ və növləri
+
+- Vətəndaşlar dövlət və bələdiyyə orqanlarına, dövlət (bələdiyyə) hüquqi şəxslərinə, büdcə təşkilatlarına və onların vəzifəli şəxslərinə **şəxsən və ya nümayəndə vasitəsilə**, **yazılı və ya şifahi**, **fərdi və ya kollektiv** müraciət edə bilər (maddə 1.1).
+- Hüquq **sərbəst və könüllü** həyata keçirilir. İrqinə, dininə, cinsinə, əqidəsinə, partiya mənsubiyyətinə və s. görə məhdudlaşdırmaq **qadağandır**.
+
+**Müraciətin 3 növü (maddə 3):**
+
+| Növ | Nə tələb edir |
+| --- | --- |
+| **Təklif** | Qanunların, orqanların fəaliyyətinin təkmilləşdirilməsi, elm, təhsil, mədəniyyət və s. məsələlərin həlli |
+| **Ərizə** | Hüquq və azadlıqların **həyata keçirilməsi** |
+| **Şikayət** | **Pozulmuş** hüquq və azadlıqların bərpası və müdafiəsi |
+
+Digər anlayışlar:
+
+- **Şifahi müraciət** — fərdi və kollektiv qəbul zamanı, canlı yayımlanan TV və radio proqramlarında, telefon müraciət xidməti ilə.
+- **Elektron müraciət** — elektron ünvana, rəsmi saytdan və ya **Elektron Hökumət İnformasiya Sistemi (EHİS)** üzərindən.
+- **Kollektiv müraciət** — eyni məsələyə dair **iki və daha çox** şəxsin birgə müraciəti.
+- **Təkrar müraciət** — baxılma müddəti ötdükdə və ya cavab verildikdə eyni şəxsin eyni məsələ ilə eyni subyektə növbəti müraciəti.
+- **Anonim müraciət** — adı, soyadı, ünvanı, imzası olmayan yazılı müraciət.
+
+**Prinsiplər (maddə 4) — 7 prinsip:** qanunçuluq; sərbəst və könüllü müraciətə şərait; tələblərin vahidliyi; hüquq və mənafelərin qorunması; **ayrı-seçkiliyə və süründürməçiliyə yol verilməməsi**; şəffaflıq; müraciət hüququ ilə dövlət maraqlarının uzlaşdırılması.
+
+### 6.2. Qanun hansı müraciətlərə şamil edilmir
+
+Qanun bütün müraciətlərə şamil edilir, amma bu hallar **başqa qanunlarla** tənzimlənir (maddə 5):
+
+| Müraciət | Tənzimləyən akt |
+| --- | --- |
+| Məhkəmə və ya inzibati icraat çərçivəsində | Bu Qanun şamil edilmir |
+| Hərbi qulluqçuların rəislərinə | Daxili Xidmət və İntizam Nizamnamələri |
+| Seçki və referendumla bağlı | Seçki Məcəlləsi |
+| Ombudsmana şikayət | Ombudsman haqqında Konstitusiya Qanunu |
+| İnformasiya sorğusu | “İnformasiya əldə etmək haqqında” Qanun |
+| Məişət zorakılığı (cinayət əlaməti yoxdursa) | “Məişət zorakılığının qarşısının alınması haqqında” Qanun |
+
+- Təhsil, səhiyyə, mədəniyyət və sosial sahədə xidmət göstərən **özəl** hüquqi şəxslərə və fərdi sahibkarlara müraciətlər isə **bu Qanunla** tənzimlənir.
+- Qanun **əcnəbilərin**, vətəndaşlığı olmayanların və xarici hüquqi şəxslərin müraciətlərinə də şamil edilir.
+
+### 6.3. Yazılı müraciətə tələblər və anonim müraciət
+
+**Yazılı müraciətdə göstərilir (maddə 6.3):** müraciət edilən subyektin və ya vəzifəli şəxsin adı; müraciət edənin adı, atasının adı, soyadı və ünvanı (hüquqi şəxsin adı və hüquqi ünvanı); nümayəndə varsa onun məlumatları; cavabın alınma üsulu (elektron, poçt və ya EHİS); EHİS ilə cavab üçün **FİN** (hüquqi şəxs — **VÖEN**).
+
+- Kağız müraciəti **imzalanmalı və tarix** qoyulmalıdır.
+- Nümayəndə vasitəsilə verilibsə, səlahiyyətini təsdiq edən sənədin surəti əlavə olunur.
+- Elektron sənəd formasında müraciət **təkmil sertifikatlı gücləndirilmiş elektron imza** ilə təsdiq olunur.
+- Mətn **oxunaqlı** olmalı, tələb aydın yazılmalı, **təhqir və böhtana** yol verilməməlidir.
+
+**Anonim müraciətlər qəbul edilmir və onlara baxılmır** (6.4). İstisna: hüquqi şəxsin firma blankında göndərilən və ya fiziki şəxsin ən azı bir əlaqə məlumatı göstərilən müraciət anonim sayılmır.
+
+### 6.4. Qəbul, qeydiyyat və baxılma qaydası
+
+- Qanuna uyğun verilən yazılı müraciəti **qəbul etməkdən imtina qadağandır** (7.1).
+- Müraciətə **daxilolma tarixi və qeydiyyat nömrəsi** qoyulur; tələb olunarsa icraçı barədə məlumat verilir.
+- Məsələyə baxılıb vətəndaşa (kollektiv müraciətdə — **birinə**) **əsaslandırılmış cavab** verildikdə müraciət baxılmış sayılır. Cavab **dövlət dilində** verilir.
+- Baxılmamış saxlama, qismən təmin və ya rədd qərarında cavab məktubunda **şikayət qaydası izah edilir**.
+- Əlavə məlumat üçün göndərilən sorğuya **7 iş günündən** gec olmayaraq cavab verilir.
+- Məsələ subyektin səlahiyyətinə aid deyilsə, müraciət **3 iş günü** ərzində aidiyyəti üzrə göndərilir və vətəndaşa bildirilir.
+- Müraciəti **şikayət edilən orqanın və ya şəxsin özünə** göndərmək **qadağandır** (7.13). Bu səbəbdən göndərmək mümkün olmadıqda vətəndaşa **məhkəməyə müraciət hüququ** izah olunur.
+- Məsələ **dövlət sirrinə** aiddirsə, mahiyyəti üzrə cavab verməyin mümkünsüzlüyü bildirilir.
+
+**Baxılmamış saxlama (maddə 8)** — hallar:
+
+- müraciət üçün başqa qayda nəzərdə tutulub (maddə 5);
+- tələblərə (nümayəndə sənədi, elektron imza, oxunaqlılıq, təhqir) cavab vermir;
+- məsələ üzrə **qanuni qüvvəyə minmiş məhkəmə qərarı** var;
+- təkrar müraciətə **bir il ərzində 3 dəfə** əsaslandırılmış cavab verilib və yeni məlumat yoxdur;
+- müraciəti göndərmək və ya həll etmək üçün məlumat kifayət deyil;
+- vətəndaş baxılmanın **dayandırılması** barədə ərizə verib.
+
+Səbəb göstərilməklə **5 iş günü** ərzində (şifahi müraciətdə — **dərhal**) bildirilir.
+
+### 6.5. Baxılma müddətləri
+
+| Müraciət | Müddət | Maddə |
+| --- | --- | --- |
+| Adi müraciət | ən geci **15 iş günü** | 10.1 |
+| Əlavə öyrənilmə və yoxlama tələb edən | ən geci **30 iş günü** | 10.1 |
+| Müddətin uzadılması (əlavə məlumat lazım olduqda) | ən çoxu **30 iş günü** | 10.2 |
+| Hərbi qulluqçuların və ailə üzvlərinin müraciəti | ən geci **15 iş günü** | 10.3 |
+| Gecikdikdə əhəmiyyətini itirə bilən məlumat | **dərhal**, mümkün olmadıqda **24 saat** | 10.4 |
+
+Müddət müraciətin subyektə **daxil olduğu gündən** başlayır.
+
+**Korrupsiya barədə müraciətlər (maddə 9):**
+
+- Dövlət orqanının rəhbəri **xidməti araşdırma** təyin edir, onu **daxili nəzarət xidməti** aparır.
+- Araşdırma **20 iş günü** ərzində bitməlidir; rəhbər müddəti **10 iş günü** uzada bilər.
+- Rəhbərin qərarları: cinayət əlaməti varsa sənədlər **Baş Prokurorluğa** göndərilir; mülki və ya inzibati məsuliyyət əlaməti varsa — Mülki və İnzibati Xətalar məcəllələri üzrə tədbir; əsaslıdır, amma bu məsuliyyətlər yoxdursa — **intizam məsuliyyəti**; əsassızdırsa — icraata xitam.
+- Qərardan **yuxarı orqana** və **məhkəməyə** şikayət edilə bilər.
+- Dövlət orqanı olmayan subyektlərdə belə müraciətlərə **20 iş günü** ərzində baxılır.
+
+### 6.6. Vətəndaşların qəbulu, vəzifələr və hüquqlar
+
+**Qəbul (maddə 11):**
+
+- Subyektlər vətəndaşları cədvələ uyğun **ayda bir dəfədən az olmayaraq** qəbul edir — rəhbərlər və ya digər vəzifəli şəxslər.
+- Təxirəsalınmaz hallarda **dərhal** qəbul edilir.
+- Qəbula şəxsiyyət vəsiqəsi ilə, rəsmi saytda və ya EHİS-də **elektron imza** ilə yazılırlar.
+- Şifahi müraciət **qeydiyyat-nəzarət vərəqəsində** qeyd olunur; araşdırma tələb etmirsə vətəndaşın razılığı ilə yerində şifahi cavablandırılır.
+- **Səyyar və videoqəbullar**, onlayn konfranslar keçirilə bilər.
+
+**Vəzifələr və qadağalar (maddə 12):**
+
+- Müraciətə **obyektiv, hərtərəfli və vaxtında** baxmaq, nəticəni **yazılı** bildirmək, təmin edilmədikdə səbəbini göstərmək və şikayət qaydasını izah etmək.
+- Tənqidlə bağlı və ya hüquqların müdafiəsi üçün edilən müraciətə görə vətəndaşı **təqib etmək qadağandır**.
+- Müraciətdən əldə olunan məlumatları yaymaq, məsələ ilə bağlı olmayan fərdi məlumatları toplamaq **qadağandır**.
+- Prokurorluğa daxil olan, amma onun səlahiyyətinə aid olmayan müraciətlər **5 iş günü** ərzində qaytarılır. **Baş prokuror** nəticələr barədə **altı ayda bir dəfədən az olmayaraq** məlumat verir.
+
+**Vətəndaşın hüquqları (maddə 14):** əlavə sənəd təqdim etmək; baxılmanın **dayandırılması** barədə ərizə vermək; materiallarla tanış olmaq; qeydiyyat nömrəsi və tarixi barədə məlumat almaq; yazılı cavab almaq; qərardan **inzibati və (və ya) məhkəmə** qaydasında şikayət vermək; şəxsi, ailə, peşə və kommersiya sirrinin məxfiliyini tələb etmək.
+
+**Canlı yayım (maddə 15).** Araşdırma tələb etməyən şifahi müraciəti subyektin proqramdakı nümayəndəsi **qeydiyyat aparmadan** canlı yayımda cavablandıra bilər.
+
+**Məsuliyyət (maddə 16):** Mülki, İnzibati Xətalar və Cinayət məcəllələrinə uyğun.
+
+### 6.7. Yadda saxla: müddətlər
+
+| Nə | Müddət | Maddə |
+| --- | --- | --- |
+| Adi müraciət | 15 iş günü | 10.1 |
+| Əlavə yoxlama tələb edən | 30 iş günü | 10.1 |
+| Uzatma | ən çoxu 30 iş günü | 10.2 |
+| Hərbi qulluqçular və ailələri | 15 iş günü | 10.3 |
+| Təcili məlumat | dərhal, ən geci 24 saat | 10.4 |
+| Aidiyyəti üzrə göndərmə | 3 iş günü | 7.10 |
+| Sorğuya cavab | 7 iş günü | 7.9 |
+| Baxılmamış saxlama barədə bildiriş | 5 iş günü | 8.2 |
+| Təkrar müraciətdə cavab həddi | ildə 3 dəfə | 8.1.4 |
+| Korrupsiya araşdırması | 20 + 10 iş günü | 9.2 |
+| Vətəndaşların qəbulu | ayda ən azı 1 dəfə | 11.1 |
+| Prokurorluğun aid olmayan müraciəti qaytarması | 5 iş günü | 12.6 |
+| Baş prokurorun məlumatı | 6 ayda ən azı 1 dəfə | 12.7 |
+
 # II hissə — Məntiq {fənn=men}
 
 # III hissə — Azərbaycan dili {fənn=az}
