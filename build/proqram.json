@@ -263,9 +263,9 @@
      "Müəlliflik hüququ (Copyright)", "Axtarış sistemləri", "Kütləvi kommunikasiya sistemləri", "Sosial şəbəkələr",
      "Dövlət və bələdiyyə orqanlarının internet saytları"
     ]},
-   {"num": "15", "title": "Elektron dövlət",
+   {"num": "15", "see": ["c30s1", "c30s2"], "title": "Elektron dövlət",
     "items": ["Elektron dövlət anlayışı və elementləri", "Rəqəmsal İnkişaf Konsepsiyası", "Elektron Hökumət İnformasiya Sistemi"]},
-   {"num": "16", "title": "İnformasiya təhlükəsizliyi",
+   {"num": "16", "see": ["c30s3", "c30s4", "c30s5"], "title": "İnformasiya təhlükəsizliyi",
     "items": [
      "İnformasiya təhlükəsizliyi anlayışı", "İnformasiyanın təhlükəsiz idarə edilməsi", "Zərərli proqram təminatı",
      "Eyniləşdirmə, autentifikasiya, avtorizasiya", "Korporativ kibergigiyena", "Fərdi məlumatların qorunması", "Şifrə təhlükəsizliyi",

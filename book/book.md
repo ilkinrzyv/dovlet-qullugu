@@ -6682,4 +6682,265 @@ E) Opera
 Cavab: A
 ```
 
+## Fəsil 30. Elektron dövlət və informasiya təhlükəsizliyi
+
+Bu fəsil İnformatikanın son iki mövzusunu əhatə edir: **elektron dövlət** (Rəqəmsal İnkişaf Konsepsiyası, Elektron Hökumət İnformasiya Sistemi) və **informasiya təhlükəsizliyi** (fərdi məlumatlar, şifrələr, sosial mühəndislik, kibergigiyena). Hüquqi faktlar e-qanun.az-dakı rəsmi mətnlərdən götürülüb.
+
+### 30.1. Elektron dövlət və Rəqəmsal İnkişaf Konsepsiyası
+
+**Elektron dövlət (hökumət)** — dövlət orqanlarının fəaliyyətinin və vətəndaşlara, biznesə göstərilən xidmətlərin informasiya-kommunikasiya texnologiyaları vasitəsilə həyata keçirilməsidir. Qarşılıqlı əlaqənin formaları:
+
+| Qısaltma | Kim — kimlə |
+| --- | --- |
+| **G2C** | dövlət — **vətəndaş** |
+| **G2B** | dövlət — **biznes** |
+| **G2G** | dövlət — **dövlət** (qurumlar arası) |
+| **G2E** | dövlət — **dövlət qulluqçusu** (işçi) |
+
+Elektron xidmətlər **“bir pəncərə” prinsipi** ilə göstərilir: vətəndaş bir yerə müraciət edir, qurumlar arasında məlumat mübadiləsini dövlət özü təmin edir.
+
+**“Azərbaycan Respublikasında Rəqəmsal İnkişaf Konsepsiyası”** — Prezidentin **2025-ci il 16 yanvar tarixli 287 nömrəli Fərmanı** ilə təsdiq edilib.
+
+- **Rəqəmsal hökumət, rəqəmsal iqtisadiyyat və rəqəmsal cəmiyyət** prinsipləri əsasında hazırlanıb.
+- Məqsəd: “elektron hökumət”dən (eGov) **“rəqəmsal hökumət”ə (GovTech)** keçid, kağız daşıyıcılardan imtina, süni intellekt, bulud texnologiyaları, “Hökumət buludu”, açıq məlumatlar, 5G.
+- Tədbirlərin **əlaqələndirilməsi və icrasına nəzarət** — **Nazirlər Kabineti**.
+- **Rəqəmsal İnkişaf Operatorunun** funksiyaları — **Rəqəmsal İnkişaf və Nəqliyyat Nazirliyi**.
+
+**Prioritet istiqamətlər (3):**
+
+1. Dövlət idarəetməsinin rəqəmsallaşdırılması.
+2. Rəqəmsal etimad və inkişaf üçün hazırlıq, kadr potensialının gücləndirilməsi.
+3. Özəl sektorda rəqəmsallaşmanın dəstəklənməsi.
+
+**Hədəf istiqamətləri:** rəqəmsal iqtisadiyyatın inkişafı; texnologiya tətbiqlərinin genişləndirilməsi; rəqəmsallaşdırma proseslərinin optimallaşdırılması; istifadəçiyönümlü rəqəmsal xidmətlər; insan resurslarının inkişafı; dövlət-vətəndaş əlaqələrinin yaxşılaşdırılması.
+
+```nümunə
+S: Dövlətin vətəndaşlara elektron xidmət göstərməsi hansı qısaltma ilə ifadə olunur?
+A) G2C
+B) G2B
+C) G2G
+D) G2E
+E) B2B
+Cavab: A
+İzah: **G** — government (dövlət), **C** — citizen (vətəndaş): **G2C**. G2B — dövlət və biznes, G2G — dövlət qurumları arası, G2E — dövlət və onun işçiləri; B2B isə biznesin biznes ilə əlaqəsidir.
+```
+
+```yoxla
+S: “Azərbaycan Respublikasında Rəqəmsal İnkişaf Konsepsiyası” hansı aktla təsdiq edilib?
+A) Prezidentin 2025-ci il 16 yanvar tarixli 287 nömrəli Fərmanı
+B) Prezidentin 2025-ci il 12 avqust tarixli 472 nömrəli Fərmanı
+C) Nazirlər Kabinetinin qərarı
+D) Milli Məclisin qanunu
+E) Prezidentin 2001-ci il 9 avqust tarixli Fərmanı
+Cavab: A
+```
+
+```nümunə
+S: Konsepsiyaya görə Rəqəmsal İnkişaf Operatorunun funksiyalarını hansı qurum həyata keçirir?
+A) Rəqəmsal İnkişaf və Nəqliyyat Nazirliyi
+B) Nazirlər Kabineti
+C) Maliyyə Nazirliyi
+D) Mərkəzi Bank
+E) Dövlət İmtahan Mərkəzi
+Cavab: A
+İzah: Fərmanın 2.2-ci bəndinə görə operator funksiyalarını **Rəqəmsal İnkişaf və Nəqliyyat Nazirliyi** həyata keçirir. **Nazirlər Kabineti** isə Konsepsiyanın tədbirlərini əlaqələndirir və icrasına nəzarət edir — iki rolu qarışdırma.
+```
+
+```yoxla
+S: Konsepsiyada nəzərdə tutulan tədbirlərin əlaqələndirilməsini və icrasına nəzarəti kim həyata keçirir?
+A) Nazirlər Kabineti
+B) Rəqəmsal İnkişaf və Nəqliyyat Nazirliyi
+C) Milli Məclis
+D) Hesablama Palatası
+E) bələdiyyələr
+Cavab: A
+```
+
+### 30.2. Elektron Hökumət İnformasiya Sistemi (EHİS)
+
+**EHİS haqqında Əsasnamə** Prezidentin **2025-ci il 12 avqust tarixli 472 nömrəli Fərmanı** ilə təsdiq edilib.
+
+- EHİS mərkəzi və yerli icra orqanlarının, dövlət şirkətlərinin, publik hüquqi şəxslərin, büdcə təşkilatlarının və bələdiyyələrin fəaliyyətinin **operativliyini, səmərəliliyini və şəffaflığını** təmin edir.
+- Elektron xidmətləri **“bir pəncərə prinsipi”** ilə göstərir; sənəd mübadiləsini, açıq informasiyaya çıxışı, vətəndaşların qanunvericilik təşəbbüsü və ictimai iştirakçılıq imkanlarını təmin edir.
+- **Sahibi** — **Rəqəmsal İnkişaf və Nəqliyyat Nazirliyi**; **operatoru** — Nazirliyin tabeliyindəki **İnnovasiya və Rəqəmsal İnkişaf Agentliyi** (“Vahid Kommunal Xidmətlər” altsistemi üzrə — Energetika Nazirliyi).
+- EHİS-də yaradılan və toplanan informasiya və elektron sənədlər **Azərbaycan Respublikasının mülkiyyətidir**.
+
+**EHİS-in 9 altsistemi:** Vahid Kommunal Xidmətlər; Rəqəmsal Razılıq; Rəqəmsal İcra Hakimiyyəti; Yerli icra hakimiyyəti başçılarının qeyri-normativ hüquqi aktlarının reyestri; Rəqəmsal Sənəd Dövriyyəsi; Dövlət informasiya ehtiyatlarının, sistemlərinin və elektron xidmətlərin vahid reyestri; Rəqəmsal Məlumat Mübadiləsi; Vahid Giriş; Elektron iştirakçılıq.
+
+```nümunə
+S: EHİS-in sahibi funksiyalarını hansı qurum həyata keçirir?
+A) Rəqəmsal İnkişaf və Nəqliyyat Nazirliyi
+B) İnnovasiya və Rəqəmsal İnkişaf Agentliyi
+C) Energetika Nazirliyi
+D) Nazirlər Kabineti
+E) Dövlət İmtahan Mərkəzi
+Cavab: A
+İzah: Əsasnamənin 1.4-cü bəndinə görə **sahib** — Rəqəmsal İnkişaf və Nəqliyyat Nazirliyi, **operator** — onun tabeliyindəki İnnovasiya və Rəqəmsal İnkişaf Agentliyidir. Energetika Nazirliyi yalnız “Vahid Kommunal Xidmətlər” altsisteminin operatorudur.
+```
+
+```yoxla
+S: EHİS vasitəsilə elektron xidmətlər hansı prinsip əsasında göstərilir?
+A) “bir pəncərə” prinsipi
+B) növbəlilik prinsipi
+C) yalnız kağız sənəd əsasında
+D) yalnız şəxsən müraciətlə
+E) yalnız ödənişli
+Cavab: A
+```
+
+### 30.3. İnformasiya təhlükəsizliyi: anlayış və giriş nəzarəti
+
+**İnformasiya təhlükəsizliyi** — informasiyanın üç xassəsinin qorunmasıdır:
+
+| Xassə | Mənası |
+| --- | --- |
+| **Məxfilik** (konfidensiallıq) | informasiyanı yalnız icazəsi olanlar görür |
+| **Tamlıq** (bütövlük) | informasiya icazəsiz dəyişdirilmir və ya silinmir |
+| **Əlçatanlıq** | icazəli istifadəçi informasiyanı lazım olanda əldə edə bilir |
+
+**Təhlükəsiz idarəetmə:** hər işçiyə yalnız işi üçün **lazım olan qədər** giriş hüququ vermək; mütəmadi **ehtiyat surəti** (backup); proqramların **yenilənməsi**; şifrələmə; hadisələrin qeydə alınması və izlənməsi. Zərərli proqramların növləri Fəsil 24.5-dədir.
+
+**Sistemə giriş üç addımdır:**
+
+| Addım | Sual | Nümunə |
+| --- | --- | --- |
+| **Eyniləşdirmə** (identifikasiya) | “Sən kimsən?” — istifadəçi özünü təqdim edir | istifadəçi adı, e-poçt |
+| **Autentifikasiya** | “Doğrudan da sənsən?” — iddia yoxlanılır | parol, SMS kodu, barmaq izi |
+| **Avtorizasiya** | “Nə edə bilərsən?” — hüquqlar verilir | hansı qovluğu açmaq, sənədi dəyişmək olar |
+
+**İki faktorlu autentifikasiya (2FA)** iki fərqli növ sübut tələb edir: **bildiyin** (parol), **sahib olduğun** (telefon, SİM-kart, açar) və ya **özün olduğun** (barmaq izi, üz).
+
+```nümunə
+S: İstifadəçinin daxil etdiyi parolun yoxlanması hansı mərhələdir?
+A) autentifikasiya
+B) eyniləşdirmə
+C) avtorizasiya
+D) şifrələmə
+E) arxivləşdirmə
+Cavab: A
+İzah: İstifadəçi adı ilə özünü **təqdim edir** (eyniləşdirmə), parol isə bu iddianı **sübut edir** — parolun yoxlanması **autentifikasiyadır**. Hansı hüquqların veriləcəyi bundan sonra — avtorizasiyada müəyyən olunur.
+```
+
+```yoxla
+S: Bank hesabındakı məlumatların icazəsiz dəyişdirilməməsi informasiya təhlükəsizliyinin hansı xassəsidir?
+A) tamlıq
+B) məxfilik
+C) əlçatanlıq
+D) anonimlik
+E) sürətlilik
+Cavab: A
+```
+
+### 30.4. Fərdi məlumatların qorunması
+
+**“Fərdi məlumatlar haqqında” Qanun** — 2010-cu il 11 may, № 998-IIIQ.
+
+- **Fərdi məlumat** — şəxsin kimliyini **birbaşa və ya dolayısı ilə** müəyyənləşdirməyə imkan verən **istənilən** məlumat (maddə 2.1.1).
+- **Subyekt** — barəsində fərdi məlumatlar toplanan, işlənilən və mühafizə edilən fiziki şəxs.
+- **Xüsusi kateqoriyalı** fərdi məlumatlar — irqi və ya milli mənsubiyyət, **ailə həyatı**, **dini etiqad və əqidə**, **səhhət**, **məhkumluq** (maddə 2.1.6).
+
+**Kateqoriyalar (maddə 5):**
+
+- **konfidensial** — qanunla müəyyən hallar istisna olmaqla, üçüncü şəxslərə yalnız **subyektin razılığı** ilə verilir;
+- **açıq** — adsızlaşdırılmış, subyektin özünün açıq elan etdiyi məlumatlar. **Şəxsin adı, soyadı və atasının adı daimi açıq fərdi məlumatdır.**
+
+**Razılıq (maddə 8):** qanunla məcburi toplanma halları istisna olmaqla, məlumatlar subyektin **yazılı razılığı** (o cümlədən gücləndirilmiş elektron imzalı sənədlə) əsasında toplanır.
+
+**Subyektin hüquqları (maddə 7), o cümlədən:** özü barəsində məlumatların mövcudluğu və mülkiyyətçisi haqqında məlumat almaq; onlarla tanış olmaq; dəqiqləşdirilməsini və məhv edilməsini tələb etmək; toplanmasına qadağa qoyulmasını və mühafizəsini tələb etmək.
+
+```nümunə
+S: “Fərdi məlumatlar haqqında” Qanuna görə hansı məlumat daimi açıq fərdi məlumatdır?
+A) şəxsin adı, soyadı və atasının adı
+B) səhhəti haqqında məlumat
+C) məhkumluğu haqqında məlumat
+D) dini etiqadı
+E) ailə həyatı haqqında məlumat
+Cavab: A
+İzah: Qanunun 5.3-cü maddəsinə görə **ad, soyad və ata adı daimi açıq** fərdi məlumatdır. Səhhət, məhkumluq, dini etiqad və ailə həyatı isə **xüsusi kateqoriyalı** məlumatlardır.
+```
+
+```yoxla
+S: Hansı məlumat xüsusi kateqoriyalı fərdi məlumat deyil?
+A) e-poçt ünvanı
+B) səhhət haqqında məlumat
+C) dini etiqad
+D) məhkumluq
+E) milli mənsubiyyət
+Cavab: A
+```
+
+### 30.5. Kibergigiyena: şifrələr, sosial mühəndislik və təhlükəsiz istifadə
+
+**Şifrə təhlükəsizliyi:**
+
+- uzun şifrə (ən azı 12 simvol), böyük və kiçik hərf, rəqəm və xüsusi simvol;
+- doğum tarixi, ad, “123456”, “qwerty” kimi asan təxmin edilən şifrələrdən istifadə etmə;
+- hər hesab üçün **ayrı** şifrə; mümkün olan yerdə **2FA**;
+- şifrəni **heç kimə** demə, kağıza yazıb monitora yapışdırma.
+
+**Sosial mühəndislik** — texniki “sındırma” yox, **insanın inamından və tələskənliyindən** istifadə edərək məlumat ələ keçirmək:
+
+| Üsul | Necə |
+| --- | --- |
+| **Fişinq** | saxta e-poçt və saxta sayt (bankın saytına oxşar) |
+| **Vişinq** | telefon zəngi (“bank əməkdaşı”, “polis”) |
+| **Smişinq** | SMS mesajı |
+| Bəhanə (pretexting) | uydurma əhvalatla məlumat istəmək |
+
+**Əlamətlər:** təcili tələb (“hesabınız 1 saata bağlanacaq”), gözlənilməz uduş, şübhəli link, SMS kodu və ya kart məlumatı istənilməsi. **Heç bir bank SMS kodunu və kartın arxasındakı kodu telefonla soruşmur.**
+
+**İnternetdən təhlükəsiz istifadə:** saytın ünvanını və **HTTPS**-i yoxla; proqramları yalnız rəsmi mənbələrdən yüklə; ƏS-ni və proqramları **yenilə**; antivirus istifadə et.
+
+**Mobil cihazlar:** tətbiqləri yalnız rəsmi mağazalardan yüklə; tətbiqin istədiyi **icazələrə** diqqət et; ekran kilidi qoy; cihaz itəndə onu uzaqdan bloklamaq və məlumatları silmək imkanını aktivləşdir.
+
+**Wi-Fi və şəbəkə:** routerin **zavod parolunu dəyiş**, **WPA2/WPA3** şifrələməsini aktiv et; **ictimai** Wi-Fi-da internet-bank kimi həssas əməliyyatlardan çəkin və ya VPN istifadə et.
+
+**Sosial media:** məxfilik parametrlərini tənzimlə; ünvan, səyahət planları, sənəd şəkilləri kimi şəxsi məlumatları paylaşma; tanımadığın şəxslərin göndərdiyi linkləri açma.
+
+**Korporativ kibergigiyena:** işçilərin mütəmadi maarifləndirilməsi; iş və şəxsi hesabların ayrılması; ehtiyat surətləri; yalnız lazımi giriş hüquqları; kompüterdən uzaqlaşanda onu kilidləmək (**Win + L**); naməlum USB daşıyıcılardan istifadə etməmək; şübhəli hadisəni dərhal məsul şəxsə bildirmək.
+
+**Şantaj proqramları (WannaCry, Petya, 2017):** qorunmanın əsas yolları — ƏS-nin **yeniləmələrini** vaxtında quraşdırmaq, faylların **ehtiyat surətini** ayrıca saxlamaq, şübhəli e-poçt əlavələrini açmamaq.
+
+```nümunə
+S: Hansı şifrə ən etibarlıdır?
+A) T7#kLq9!vR2m
+B) 123456
+C) Ali1990
+D) password
+E) qwerty
+Cavab: A
+İzah: A uzundur (12 simvol) və böyük-kiçik hərfləri, rəqəmləri, xüsusi simvolları qarışdırır — təxmin etmək çox çətindir. B, D, E ən çox işlənən zəif şifrələrdir, C isə ad və doğum ilindən ibarətdir.
+```
+
+```yoxla
+S: Özünü bank əməkdaşı kimi təqdim edən şəxs zəng edib kartınıza gələn SMS kodunu istəyir. Bu nədir?
+A) sosial mühəndislik (vişinq)
+B) antivirus yoxlaması
+C) avtorizasiya
+D) ehtiyat surəti
+E) bulud xidməti
+Cavab: A
+```
+
+```nümunə
+S: Ev routerinin təhlükəsizliyi üçün ilk növbədə nə etmək lazımdır?
+A) zavod parolunu dəyişmək və WPA2/WPA3 şifrələməsini aktiv etmək
+B) şifrələməni söndürmək
+C) şəbəkəni parolsuz qoymaq
+D) şəbəkənin adını telefon nömrəsi etmək
+E) routerin yeniləmələrini söndürmək
+Cavab: A
+İzah: Zavod parolları hamıya məlumdur — dəyişdirilməsə, kənar şəxs routerin idarəsini ələ keçirə bilər. **WPA2/WPA3** şəbəkədəki trafiki şifrələyir. Digər variantlar təhlükəni artırır.
+```
+
+```yoxla
+S: WannaCry kimi şantaj proqramlarından qorunmanın ən təsirli yolu hansıdır?
+A) əməliyyat sistemini vaxtında yeniləmək və faylların ehtiyat surətini saxlamaq
+B) fidyəni ödəmək
+C) antivirusu söndürmək
+D) bütün e-poçt əlavələrini açmaq
+E) şifrəni həmkarlara bildirmək
+Cavab: A
+```
+
 # V hissə — Müsahibə
