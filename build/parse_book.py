@@ -108,6 +108,8 @@ def inline_q(kind, src, where, subj):
             err(f'{where}: Cavab must be one of the option letters')
             ans = 'A'
         q.update(t='mc', o=opts, a=LETTERS.index(ans))
+        if opts == list(LETTERS[:len(opts)]):
+            q['fix'] = True  # the options are the figure's labels: the app shows a row of letter buttons
     else:
         acc = [x.strip() for x in ans.split('|') if x.strip()]
         if not acc:

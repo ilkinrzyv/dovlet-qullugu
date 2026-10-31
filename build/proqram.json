@@ -136,7 +136,7 @@
      "Anaqramlar: fərqli sözün seçilməsi, uyğunluq, yarımçıq sözlərin tamamlanması",
      "Mətn və cümlə: məntiqi tamamlama, məntiqi təhlil, şərtə görə nəticə, mətnin məzmunu üzrə sual"
     ]},
-   {"num": "2", "title": "Fiqurlarla bağlı test tapşırıqları",
+   {"num": "2", "see": ["c16"], "title": "Fiqurlarla bağlı test tapşırıqları",
     "items": [
      "Analogiyaya görə şəklin seçilməsi",
      "Şəklin məntiqi tamamlanması, sıranın davam etdirilməsi",

@@ -2796,6 +2796,357 @@ S: “Sinifdə 30 şagird var. Hər şagird şahmat və ya futbol dərnəyinə (
 Cavab: 8 | səkkiz
 ```
 
+## Fəsil 16. Fiqurlarla bağlı test tapşırıqları
+
+Bu fəsildə tapşırıqlar şəkillərlə verilir: analogiya, sıranın davamı, fiqurların sayılması və birləşdirilməsi, kubun açılışı, simmetriya və şifrlər. Şəkildəki variantlar **A–E** hərfləri ilə işarələnib — cavabı hərf düyməsi ilə seçirsən.
+
+**Fiqurlarda dəyişə bilən əlamətlər** — hər tapşırıqda bunları bir-bir yoxla:
+
+| Əlamət | Nəyə bax |
+| --- | --- |
+| Forma | dairə, kvadrat, üçbucaq... |
+| Ölçü | böyük – kiçik |
+| Rəng | ağ – qara – ştrixli |
+| Say | elementlərin, tərəflərin, nöqtələrin sayı |
+| Mövqe | element harada yerləşir |
+| Dönmə | hansı istiqamətdə və neçə dərəcə |
+| Güzgü əksi | sağ-sol və ya yuxarı-aşağı yer dəyişib |
+
+### 16.1. Fiqur analogiyası və fərqlənən şəkil
+
+**Analogiya.** Birinci cütdə **nəyin dəyişdiyini** sözlə sadala (“ölçü kiçildi, rəng qaraldı”) və **nəyin dəyişmədiyini** qeyd et (“forma eyni qaldı”). Sonra eyni dəyişikliyi üçüncü fiqura tətbiq et.
+
+```nümunə
+S: Sual işarəsinin yerinə hansı fiqur gəlməlidir?
+Şəkil: men/16-1a.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: C
+İzah: Birinci cütdə dairə **kiçildi** və **qaraldı**, forması isə dəyişmədi. Kvadrata eyni dəyişikliyi tətbiq edirik: **kiçik qara kvadrat** — C. A qaradır, amma böyükdür; B kiçikdir, amma ağdır; D-də forma dəyişib; E heç dəyişməyib.
+```
+
+```yoxla
+S: Sual işarəsinin yerinə hansı fiqur gəlməlidir?
+Şəkil: men/16-1b.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: D
+```
+
+**Fərqlənən şəkil.** Dörd fiquru birləşdirən **ortaq qaydanı** axtar. Göz önündə olan əlamət (forma) çox vaxt tələdir — say, iç və çöl fiqurun uyğunluğu, simmetriya kimi gizli əlamətlərə bax.
+
+```nümunə
+S: Hansı fiqur digərlərindən fərqlənir?
+Şəkil: men/16-1c.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: D
+İzah: Formalar müxtəlifdir, deməli qayda formada deyil. Nöqtələri sayaq: kvadratda 4, beşbucaqlıda 5, üçbucaqda 3, altıbucaqlıda 6 — nöqtələrin sayı **tərəflərin sayına** bərabərdir. D-də kvadratın içində 3 nöqtə var, qayda pozulub.
+```
+
+```yoxla
+S: Hansı fiqur digərlərindən fərqlənir?
+Şəkil: men/16-1d.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: B
+```
+
+### 16.2. Sıranın davamı və matrisin tamamlanması
+
+**Sıra.** Hər addımda **eyni dəyişiklik** təkrarlanır: dönmə (eyni bucaqla), hərəkət (bir xana və ya bir künc irəli), say (+1, ×2), növbələşmə (ağ – qara – ağ). Qonşu fiqurları cüt-cüt müqayisə et, dəyişikliyi yaz, sonra növbəti addımı özün qur.
+
+```nümunə
+S: Sıranı davam etdir: sual işarəsinin yerinə hansı fiqur gəlməlidir?
+Şəkil: men/16-2a.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: D
+İzah: Nöqtə hər addımda kvadratın küncləri üzrə **saat əqrəbi istiqamətində** bir künc irəliləyir: sol yuxarı → sağ yuxarı → sağ aşağı. Növbəti künc — **sol aşağı**, yəni D.
+```
+
+```yoxla
+S: Sıranı davam etdir: sual işarəsinin yerinə hansı fiqur gəlməlidir?
+Şəkil: men/16-2b.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: B
+```
+
+**Matris (3×3).** Əvvəlcə tam doldurulmuş sətirlərdə qaydanı tap, sonra sütunlarla yoxla. Ən çox rast gəlinən qaydalar:
+
+1. Hər sətirdə və hər sütunda hər element **bir dəfə** gəlir.
+2. Üçüncü fiqur = birinci fiqur ilə ikinci fiqurun **üst-üstə qoyulması**.
+3. Sətir boyu say və ya ölçü eyni qayda ilə dəyişir.
+
+```nümunə
+S: Matrisdə sual işarəsinin yerinə hansı fiqur gəlməlidir?
+Şəkil: men/16-2c.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: C
+İzah: Hər sətirdə və hər sütunda dairə, kvadrat və üçbucaq bir dəfə gəlir; nöqtələrin sayı (1, 2, 3) də hər sətirdə və sütunda bir dəfə gəlir. Üçüncü sətirdə üçbucaq (2 nöqtə) və dairə (3 nöqtə) var — çatışmayan **kvadrat** və **1 nöqtə**dir. Üçüncü sütunla yoxlayırıq: üçbucaq (3), dairə (2) — yenə kvadrat və 1 nöqtə. Cavab C.
+```
+
+```yoxla
+S: Matrisdə sual işarəsinin yerinə hansı fiqur gəlməlidir?
+Şəkil: men/16-2d.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: E
+```
+
+### 16.3. Fiqurları saymaq, birləşdirmək və ayırmaq
+
+**Saymaq.** Gözlə “təxmin etmə” — **sistemli say**: əvvəlcə ən kiçik hissələri, sonra iki hissədən ibarət olanları, sonra üç hissədən... və nəhayət bütöv fiquru.
+
+Üçbucağın təpəsindən əsasına xətlər çəkilibsə, qısa yol var: əsasda (kənar nöqtələr də daxil) **k** nöqtə varsa, hər iki nöqtə təpə ilə bir üçbucaq yaradır, deməli üçbucaqların sayı **k · (k − 1) / 2**-dir.
+
+```nümunə
+S: Şəkildə neçə üçbucaq var?
+Şəkil: men/16-3a.svg
+A) 3
+B) 4
+C) 5
+D) 6
+E) 7
+Cavab: D
+İzah: Ən kiçik üçbucaqlar — 3. İki qonşu kiçik üçbucaqdan ibarət olanlar — 2. Üçündən (böyük üçbucaq) — 1. Cəmi 3 + 2 + 1 = **6**. Qısa yol: əsasda 4 nöqtə var, 4 · 3 / 2 = 6.
+```
+
+```yoxla
+S: Şəkildə neçə üçbucaq var?
+Şəkil: men/16-3b.svg
+A) 4
+B) 6
+C) 8
+D) 10
+E) 12
+Cavab: C
+```
+
+**Birləşdirmək və ayırmaq.** Hissələrdən fiqur yığılırsa:
+
+- hissələrin **ümumi sahəsi** alınan fiqurun sahəsinə bərabər olmalıdır;
+- tərəflərin uzunluğu və bucaqlar uyğun gəlməlidir;
+- bu bölmənin tapşırıqlarında hissələri **döndərmək olar**.
+
+```nümunə
+S: Yuxarıdakı iki eyni üçbucağı (döndərmək olar) birləşdirib hansı fiquru düzəltmək **olmaz**?
+Şəkil: men/16-3c.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: D
+İzah: İki üçbucağın ümumi sahəsi bir kvadratın (A) sahəsinə bərabərdir. Üçbucaqları uzun tərəfləri ilə birləşdirsək kvadrat (A), qısa tərəfləri ilə birləşdirsək böyük üçbucaq (B) və ya paraleloqram (C) alınır; E — A-dakı kvadratın döndərilmiş vəziyyətidir. D-dəki düzbucaqlının sahəsi isə **iki dəfə böyükdür** — iki üçbucaq onu örtə bilməz.
+```
+
+```yoxla
+S: 4 eyni kvadratdan (tərəfləri tam üst-üstə düşməklə) hansı fiquru düzəltmək **olmaz**?
+Şəkil: men/16-3d.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: D
+```
+
+### 16.4. Fəza münasibətləri: kubun açılışı
+
+Kubun **6 üzü** var. Açılış — kubun tilləri boyu kəsilib müstəviyə açılmış formasıdır.
+
+**Qarşı üzlər:**
+
+- Açılışda bir düz sırada **arasında bir üz olan** iki üz kubda qarşı-qarşıya olur.
+- Qarşı üzlər açılışda heç vaxt **yanaşı** olmur.
+
+**Açılış kub vermir**, əgər:
+
+- açılışda **2×2 blok** varsa (dörd üz bir küncdə görüşür);
+- bir sırada **4-dən çox** üz varsa;
+- qatlayanda iki üz **eyni yerə** düşürsə.
+
+**Yoxlama üsulu:** bir üzü “döşəmə” seç və qonşularını divar kimi xəyalən qaldır. Hər üz kubda öz yerini tutmalıdır.
+
+```nümunə
+S: Açılışdan kub qatlanır. 1 rəqəmli üzün qarşısında hansı rəqəm olacaq?
+Şəkil: men/16-4a.svg
+A) 2
+B) 3
+C) 4
+D) 5
+E) 6
+Cavab: B
+İzah: Şaquli sırada 1, 2, 3, 4 ardıcıl gəlir. 1 ilə 3-ün arasında bir üz (2) var — onlar kubda **qarşı-qarşıyadır**. Eyni qayda ilə 2 ilə 4, üfüqi sırada isə 5 ilə 6 qarşı-qarşıyadır. Deməli 1-in qarşısında **3**.
+```
+
+```yoxla
+S: Açılışdan kub qatlanır. 2 rəqəmli üzün qarşısında hansı rəqəm olacaq? (rəqəmlə yaz)
+Şəkil: men/16-4b.svg
+Cavab: 5 | beş
+```
+
+```nümunə
+S: Hansı açılışdan kub qatlamaq **olmaz**?
+Şəkil: men/16-4c.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: C
+İzah: C-də altı kvadrat **2×3 blok** yaradır: qatlayanda bəzi üzlər üst-üstə düşür, ona görə kubun ən azı bir üzü açıq qalır. A (xaç), B, D (pilləkən) və E kubun düzgün açılışlarıdır — hər birində üzləri bir-bir qaldıranda heç biri eyni yerə düşmür.
+```
+
+```yoxla
+S: Hansı açılışdan kub qatlamaq **olmaz**?
+Şəkil: men/16-4d.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: E
+```
+
+### 16.5. Simmetriya: güzgü əksi və qatlanmış kağız
+
+**Güzgü əksi.** Hər nöqtə simmetriya xəttinə perpendikulyar istiqamətdə, xəttdən eyni məsafədə o biri tərəfə keçir:
+
+- **şaquli** güzgüdə sağ ilə sol yer dəyişir, yuxarı-aşağı dəyişmir;
+- **üfüqi** güzgüdə (su əksi) yuxarı ilə aşağı yer dəyişir, sağ-sol dəyişmir.
+
+**Tələ:** güzgü əksini **dönmə** ilə qarışdırma. 180° dönmədə həm sağ-sol, həm yuxarı-aşağı yer dəyişir.
+
+```nümunə
+S: Fiqur sağdakı şaquli güzgüdə necə görünəcək?
+Şəkil: men/16-5c.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: C
+İzah: Şaquli güzgüdə sağ ilə sol yer dəyişir: F-in şaquli xətti **sağa** keçir, üfüqi xətlər **sola** baxır, yuxarıdakı uzun xətt isə yuxarıda qalır — C. A fiqurun özüdür, B 180° dönmədir (yuxarı-aşağı da dəyişib), D üfüqi güzgü əksidir, E 90° dönmədir.
+```
+
+```yoxla
+S: Fiqurun aşağıdakı üfüqi xəttə görə (suda) əksi hansıdır?
+Şəkil: men/16-5d.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: B
+```
+
+**Qatlanmış kağız.** Deşik qatların hamısından keçir. Kağızı açanda deşiklər hər qat xəttinə görə **güzgü kimi əks olunur**. Sonuncu qatdan başlayaraq geri aç. Kağız n dəfə yarıya qatlanıbsa, bir deşik (qat xəttinin üstündə deyilsə) **2ⁿ** deşik verir.
+
+```nümunə
+S: Kvadrat kağızın əvvəlcə sağ yarısı sol yarısının üstünə, sonra yuxarı yarısı aşağı yarısının üstünə qatlanır. Sonra şəkildəki yerdə deşik açılır (qırıq xətt — kağızın əvvəlki sərhədi). Kağız açılanda necə görünəcək?
+Şəkil: men/16-5a.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: B
+İzah: Geri açırıq. Sonuncu qatı (yuxarı yarını) açanda deşik **üfüqi qat xəttinə** görə əks olunur: aşağıdakı deşiyin üstündə ikinci deşik yaranır. Sonra birinci qatı (sağ yarını) açırıq: hər iki deşik **şaquli qat xəttinə** görə sağa əks olunur. 2 qat → 4 deşik, kağızın ortasına yaxın iki cərgədə — B. C-də deşiklər küncdədir, D-də isə qat xəttinə görə deyil, kiçik hissənin içində əks olunub.
+```
+
+```yoxla
+S: Kvadrat kağızın yuxarı yarısı aşağı yarısının üstünə qatlanır və şəkildəki yerdə deşik açılır. Kağız açılanda necə görünəcək?
+Şəkil: men/16-5b.svg
+A) A
+B) B
+C) C
+D) D
+E) E
+Cavab: D
+```
+
+### 16.6. Şifrlər və təlimata uyğun tapşırıqlar
+
+**Söz – kod.** Sözlər rəqəmlərlə (və ya simvollarla) şifrələnir; kodların sırası çox vaxt **qarışıq** verilir. Üsul: sözlərdə **ortaq hərfləri**, kodlarda **ortaq rəqəmləri** tap və yerlərini tutuşdur. Hamısında eyni yerdə duran hərfdən başla.
+
+```nümunə
+S: DAM, DAŞ və ŞAM sözləri rəqəmlərlə şifrələnib, kodlar qarışıq verilib: **213, 412, 413**. Hər hərf həmişə eyni rəqəmlə yazılır. ŞAD sözü necə şifrələnir?
+A) 214
+B) 241
+C) 412
+D) 124
+E) 213
+Cavab: A
+İzah: A hərfi hər üç sözün ortasındadır, kodlarda da orta rəqəm hər yerdə 1-dir → **A = 1**. DAM və DAŞ D ilə başlayır, iki kod da 4 ilə başlayır (412, 413) → **D = 4**. Qalan kod ŞAM-ındır: 213 → **Ş = 2, M = 3**. Yoxlama: DAŞ = 412 ✓. ŞAD = Ş, A, D = **214**.
+```
+
+```yoxla
+S: SAZ, SAL və ZAL sözləri rəqəmlərlə şifrələnib, kodlar qarışıq verilib: **825, 628, 625**. L hərfinə hansı rəqəm uyğundur?
+A) 2
+B) 5
+C) 6
+D) 8
+E) 1
+Cavab: B
+```
+
+**Əlifba sürüşməsi.** Hər hərf əlifbada eyni sayda yer irəli (və ya geri) sürüşdürülür. Azərbaycan əlifbasının 32 hərfi:
+
+> A B C Ç D E Ə F G Ğ H X I İ J K Q L M N O Ö P R S Ş T U Ü V Y Z
+
+**Diqqət:** sıra ingilis əlifbasından fərqlidir: **X** — H ilə I arasında, **Q** — K ilə L arasında gəlir.
+
+**Təlimata uyğun tapşırıqlar** da belə həll olunur: şərti addım-addım tətbiq et və hər addımın nəticəsini yaz.
+
+```nümunə
+S: Hər hərf Azərbaycan əlifbasında özündən sonrakı hərflə əvəz olunub (A → B, B → C, ...). “CBH” hansı sözün şifridir?
+A) BAĞ
+B) BAŞ
+C) CAN
+D) BAL
+E) DAĞ
+Cavab: A
+İzah: Açmaq üçün hər hərfi **bir yer geri** sürüşdürürük: C → B, B → A, H → **Ğ** (əlifbada H-dan əvvəl Ğ gəlir). Söz **BAĞ**dır.
+```
+
+```yoxla
+S: Eyni qayda ilə (hər hərf özündən sonrakı hərflə əvəz olunur) “QAR” sözü necə şifrələnir?
+A) LBS
+B) KBS
+C) LBR
+D) RBS
+E) LBŞ
+Cavab: A
+```
+
 # III hissə — Azərbaycan dili {fənn=az}
 
 # IV hissə — İnformatika {fənn=inf}

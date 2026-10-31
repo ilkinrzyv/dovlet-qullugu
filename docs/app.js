@@ -313,6 +313,7 @@ function inlineQ(box, s, c, q, i) {
     return;
   }
   const st = { tried: [], val: '', bad: false, show: false }; // this visit only; a solved check is saved
+  const letters = q.fix && q.o.every((x, k) => x === 'ABCDEF'[k]); // options are the figure's labels
   const draw = () => {
     const done = !!S.chk[id], open = done || st.show;
     box.className = 'iq chk card' + (done ? ' solved' : '');
@@ -320,9 +321,9 @@ function inlineQ(box, s, c, q, i) {
       ? `${fig}<div class="row iqopen">
           <input class="oa${done ? ' right' : st.bad ? ' wrong' : ''}" type="text" autocomplete="off" aria-label="Cavab" placeholder="Cavabı yaz" value="${esc(done ? q.a[0] : st.val)}"${open ? ' disabled' : ''}>
           ${open ? '' : '<button type="button" class="btn primary" data-act="iqcheck">Yoxla</button>'}</div>`
-      : `${fig}<div class="opts">${order.map((oi, k) => {
+      : `${fig}<div class="opts${letters ? ' letters' : ''}">${order.map((oi, k) => {
           const cls = open && oi === q.a ? ' right' : st.tried.includes(oi) ? ' wrong' : open ? ' dim' : '';
-          return `<button type="button" class="opt${cls}" data-oi="${oi}"${open || st.tried.includes(oi) ? ' disabled' : ''}><span class="ol">${'ABCDEF'[k]}</span><span>${esc(q.o[oi])}</span></button>`;
+          return `<button type="button" class="opt${cls}" data-oi="${oi}"${open || st.tried.includes(oi) ? ' disabled' : ''}><span class="ol">${'ABCDEF'[k]}</span>${letters ? '' : `<span>${esc(q.o[oi])}</span>`}</button>`;
         }).join('')}</div>`;
     const msg = done ? `<p class="iqmsg ok">${icon('check')} Düzdür</p>`
       : st.show ? `<p class="iqmsg">Düz cavab: <b>${esc(q.t === 'open' ? q.a[0] : ansLabel(q, order, q.a))}</b></p>`

@@ -2,7 +2,7 @@
    Loaded before app.js; app.js finds it as window.DQ_PWA (absent when the page is opened some other way). */
 (function () {
 'use strict';
-const VERSION = '2026.10.31-e41505b';
+const VERSION = '2026.10.31-c17bf87';
 const ASSET_COUNT = 44;
 const CACHE = 'dq-kitab-' + VERSION;
 
