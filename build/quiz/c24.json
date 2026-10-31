@@ -1,0 +1,15 @@
+{
+"24": [
+ {"s":"24.1","q":"İnteqral sxemlər hansı nəsil EHM-lərin element bazasıdır?","o":["III","I","II","IV","V"],"a":0,"e":"I nəsil — elektron lampalar, II — tranzistorlar, III — inteqral sxemlər, IV — böyük inteqral sxemlər və mikroprosessorlar."},
+ {"s":"24.1","t":"open","q":"Fon Neyman prinsiplərinə görə kompüterdə informasiya hansı say sistemində kodlaşdırılır? (bir sözlə yaz)","a":["ikilik","ikilik say sistemi","binar"],"e":"İkilik kodlaşdırma prinsipi: bütün informasiya 0 və 1 ilə təsvir olunur."},
+ {"s":"24.2","q":"Hesab-məntiq qurğusu və idarəetmə qurğusu kompüterin hansı hissəsinə daxildir?","o":["prosessor","operativ yaddaş","sərt disk","monitor","ana platanın BIOS-u"],"a":0,"e":"Prosessor (CPU) hesab-məntiq qurğusundan (hesablamalar) və idarəetmə qurğusundan (əmrlərin icrasını idarə edir) ibarətdir."},
+ {"s":"24.2","q":"Kompüterin işə salınma proqramları (BIOS/UEFI) hansı yaddaşda saxlanılır?","o":["daimi yaddaşda (ROM)","operativ yaddaşda (RAM)","keşdə","DVD diskdə","mübadilə buferində"],"a":0,"e":"BIOS/UEFI enerjidən asılı olmayan daimi yaddaşda (ROM) saxlanılır, ona görə kompüter söndürüləndə silinmir."},
+ {"s":"24.2","t":"open","q":"Bir qatlı Blu-ray diskin standart tutumu neçə GB-dır? (rəqəmlə yaz)","a":["25"],"e":"CD ≈ 700 MB, DVD ≈ 4,7 GB, Blu-ray ≈ 25 GB (bir qatlı)."},
+ {"s":"24.3","q":"Hansı printer lazer şüası və toner ilə çap edir?","o":["lazer printer","matris printer","şırnaqlı printer","plotter","3D printer"],"a":0,"e":"Lazer printer təsviri lazer şüası ilə barabana köçürür və toner tozu ilə çap edir. Şırnaqlı printer mürəkkəb damcıları, matris printer iynələrin zərbəsi ilə çap edir."},
+ {"s":"24.3","q":"Hansı qurğu çıxış qurğusudur?","o":["proyektor","skaner","mikrofon","klaviatura","veb-kamera"],"a":0,"e":"Proyektor təsviri kompüterdən ekrana çıxarır. Skaner, mikrofon, klaviatura və veb-kamera giriş qurğularıdır."},
+ {"s":"24.4","q":"Hansı proqram tətbiqi proqram təminatına aiddir?","o":["Microsoft Word","Windows 11","drayver","kompilyator","BIOS"],"a":0,"e":"Word istifadəçinin konkret işini (mətn hazırlamaq) görür — tətbiqi proqramdır. Windows 11 və drayver sistem, kompilyator instrumental proqram təminatıdır."},
+ {"s":"24.4","q":"Proqramı sətir-sətir tərcümə edib dərhal icra edən proqram necə adlanır?","o":["interpretator","kompilyator","drayver","arxivator","antivirus"],"a":0,"e":"İnterpretator sətir-sətir işləyir, kompilyator isə proqramı bütövlükdə tərcümə edib icra olunan fayl yaradır."},
+ {"s":"24.5","q":"Şəbəkə ilə özü-özünü yayan zərərli proqram necə adlanır?","o":["qurd (worm)","troyan","makrovirus","reklam proqramı","arxivator"],"a":0,"e":"Qurdlar başqa fayla yoluxmadan şəbəkə ilə özləri yayılır. Troyan faydalı proqram kimi görünür, makrovirus sənədlərdə yayılır."},
+ {"s":"24.5","q":"Hansı proqram arxivator deyil?","o":["Paint","WinRAR","7-Zip","WinZip","PeaZip"],"a":0,"e":"Paint — qrafik redaktordur. WinRAR, 7-Zip, WinZip, PeaZip faylları sıxlaşdıran arxivatorlardır."}
+]
+}

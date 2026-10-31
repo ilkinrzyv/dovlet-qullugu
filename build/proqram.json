@@ -191,13 +191,13 @@
      "Kodlaşdırma anlayışı", "Simvolların kodlaşdırılması: ASCII və UNICODE", "İnformasiya miqdarının ölçü vahidləri",
      "Müxtəlif tip informasiyaların kodlaşdırılması"
     ]},
-   {"num": "2", "title": "Kompüter və onun texniki təminatı (hardware)",
+   {"num": "2", "see": ["c24s1", "c24s2", "c24s3"], "title": "Kompüter və onun texniki təminatı (hardware)",
     "items": [
      "EHM-lərin yaranması və inkişaf mərhələləri", "EHM-lərin arxitekturası və quruluş prinsipləri", "EHM-lərin təsnifatı",
      "Fərdi kompüterin əsas xarakteristikaları", "FK-nın təsnifatı və xüsusiyyətləri", "FK-nın əsas qurğuları və iş prinsipi",
      "Daxili və xarici yaddaş qurğuları", "Periferiya qurğuları"
     ]},
-   {"num": "4", "title": "Proqram təminatı (software)",
+   {"num": "4", "see": ["c24s4", "c24s5"], "title": "Proqram təminatı (software)",
     "items": [
      "Sistem proqram təminatı və təsnifatı", "Tətbiqi proqram təminatı və təsnifatı", "İnstrumental proqram təminatı və təsnifatı",
      "Proqramlaşdırma vasitələri", "Kompüter virusları və təsnifatı", "Antivirus proqramları", "Verilənlərin sıxlaşdırılması"

@@ -5147,4 +5147,224 @@ E) 2
 Cavab: A
 ```
 
+## Fəsil 24. Kompüterin texniki və proqram təminatı
+
+Bu fəsil proqramın 2-ci (texniki təminat — **hardware**) və 4-cü (proqram təminatı — **software**) mövzularını əhatə edir: EHM-lərin tarixi və quruluşu, fərdi kompüterin qurğuları, proqram növləri, viruslar və sıxlaşdırma.
+
+### 24.1. EHM-lərin tarixi, quruluş prinsipləri və təsnifatı
+
+**EHM-lərin nəsilləri** element bazasına görə fərqlənir:
+
+| Nəsil | Dövr | Element bazası |
+| --- | --- | --- |
+| I | 1940–1950-ci illər | **elektron lampalar** (ENIAC, 1946) |
+| II | 1950–1960-cı illər | **tranzistorlar** |
+| III | 1960–1970-ci illər | **inteqral sxemlər** |
+| IV | 1970-ci illərdən | böyük və çox böyük inteqral sxemlər, **mikroprosessor**, fərdi kompüter |
+| V | — | süni intellekt istiqaməti |
+
+**Fon Neyman prinsipləri** — müasir kompüterlərin əsası:
+
+1. **İkilik kodlaşdırma** — bütün informasiya 0 və 1 ilə təsvir olunur.
+2. **Proqramla idarəetmə** — kompüter yaddaşdakı əmrləri ardıcıl icra edir.
+3. **Yaddaşın bircinsliyi** — proqramlar və verilənlər **eyni yaddaşda** saxlanılır.
+4. **Ünvanlılıq** — yaddaş nömrələnmiş (ünvanlı) xanalardan ibarətdir.
+
+Bu arxitekturada kompüter **prosessordan** (hesab-məntiq qurğusu + idarəetmə qurğusu), **yaddaşdan** və **giriş-çıxış qurğularından** ibarətdir.
+
+**Təsnifat** (hesablama gücünə görə): superkompüterlər, meynfreymlər (böyük EHM-lər), mini-EHM-lər və mikro-EHM-lər — **fərdi kompüterlər** (stolüstü, noutbuk, planşet).
+
+```nümunə
+S: Elektron lampalar əsasında qurulan EHM-lər hansı nəslə aiddir?
+A) I
+B) II
+C) III
+D) IV
+E) V
+Cavab: A
+İzah: Birinci nəsil EHM-lərin (məsələn, 1946-cı ildə yaradılan ENIAC) element bazası **elektron lampalar** idi. II nəsil tranzistorlar, III nəsil inteqral sxemlər, IV nəsil mikroprosessorlar üzərində qurulub.
+```
+
+```yoxla
+S: Proqramların və verilənlərin eyni yaddaşda saxlanması fon Neymanın hansı prinsipidir?
+A) yaddaşın bircinsliyi
+B) ikilik kodlaşdırma
+C) ünvanlılıq
+D) proqramla idarəetmə
+E) paralel emal
+Cavab: A
+```
+
+### 24.2. Fərdi kompüterin əsas qurğuları və yaddaş
+
+- **Ana plata** — bütün qurğuları birləşdirən əsas lövhə.
+- **Prosessor (CPU)** — hesablamaları aparır; **hesab-məntiq qurğusu** və **idarəetmə qurğusundan** ibarətdir. Əsas göstəriciləri: **takt tezliyi** (GHz), **nüvələrin sayı**, keş yaddaş.
+
+**Daxili yaddaş:**
+
+| Yaddaş | Xüsusiyyəti |
+| --- | --- |
+| **Operativ (RAM)** | işləyən proqramlar və verilənlər burada; kompüter **söndürüləndə silinir** |
+| **Daimi (ROM)** | yalnız oxunur, enerjidən asılı deyil; kompüterin işə salınma proqramları (**BIOS/UEFI**) burada |
+| **Keş** | prosessorla RAM arasında çox sürətli kiçik bufer |
+
+**Xarici yaddaş:**
+
+| Daşıyıcı | Xüsusiyyəti |
+| --- | --- |
+| **HDD** (sərt disk) | maqnit lövhələr, hərəkətli hissələr, böyük həcm |
+| **SSD** | flash yaddaş, **hərəkətli hissəsi yoxdur**, HDD-dən sürətli |
+| USB flash, yaddaş kartı | portativ flash yaddaş |
+| Optik disklər | CD ≈ **700 MB**, DVD (bir qatlı) ≈ **4,7 GB**, Blu-ray (bir qatlı) ≈ **25 GB** |
+
+```nümunə
+S: Kompüter söndürüldükdə hansı yaddaşdakı informasiya itir?
+A) operativ yaddaş (RAM)
+B) daimi yaddaş (ROM)
+C) SSD
+D) HDD
+E) USB flash
+Cavab: A
+İzah: **RAM** enerjidən asılı yaddaşdır: elektrik kəsiləndə içindəki informasiya silinir. Ona görə sənədi diskdə **yadda saxlamaq** lazımdır. ROM, SSD, HDD və flash yaddaş informasiyanı enerjisiz də saxlayır.
+```
+
+```yoxla
+S: Hansı daşıyıcıda hərəkətli mexaniki hissə yoxdur?
+A) SSD
+B) HDD
+C) DVD sürücüsü
+D) CD sürücüsü
+E) maqnit lent sürücüsü
+Cavab: A
+```
+
+```nümunə
+S: Prosessorun sürətini xarakterizə edən əsas göstərici hansıdır?
+A) takt tezliyi
+B) ekranın diaqonalı
+C) diskin həcmi
+D) piksellərin sayı
+E) printerin sürəti
+Cavab: A
+İzah: **Takt tezliyi** (GHz) prosessorun saniyədə neçə takt icra etdiyini göstərir. Nüvələrin sayı və keş də vacibdir. Diaqonal monitorun, həcm diskin, sürət printerin göstəricisidir.
+```
+
+```yoxla
+S: Bir qatlı DVD diskin standart tutumu təxminən nə qədərdir?
+A) 4,7 GB
+B) 700 MB
+C) 25 GB
+D) 1,44 MB
+E) 1 TB
+Cavab: A
+```
+
+### 24.3. Periferiya qurğuları
+
+| Qrup | Qurğular |
+| --- | --- |
+| **Giriş** | klaviatura, siçan, sensor panel (touchpad), skaner, mikrofon, veb-kamera |
+| **Çıxış** | monitor, printer, dinamik, qulaqlıq, proyektor |
+| **Giriş və çıxış** | sensor ekran, modem, çoxfunksiyalı qurğu (printer + skaner) |
+
+**Printerlər:** **matris** (iynəli, zərbə ilə), **şırnaqlı** (mürəkkəb damcıları ilə), **lazer** (lazer şüası və toner ilə — sürətli və keyfiyyətli). **Monitor:** diaqonal **düymlə**, təsvirin ölçüsü (rezolyusiya) piksellərlə ölçülür (məs., 1920 × 1080).
+
+```nümunə
+S: Hansı qurğu informasiyanın kompüterə daxil edilməsi üçündür?
+A) skaner
+B) printer
+C) monitor
+D) dinamik
+E) proyektor
+Cavab: A
+İzah: **Skaner** kağızdakı təsviri rəqəmsal formaya salıb kompüterə **daxil edir** — giriş qurğusudur. Printer, monitor, dinamik və proyektor informasiyanı kompüterdən **çıxarır**.
+```
+
+```yoxla
+S: Hansı qurğu həm giriş, həm də çıxış qurğusudur?
+A) sensor ekran
+B) klaviatura
+C) siçan
+D) printer
+E) dinamik
+Cavab: A
+```
+
+### 24.4. Proqram təminatının növləri
+
+| Növ | Nə üçündür | Nümunələr |
+| --- | --- | --- |
+| **Sistem** | kompüterin işini təmin edir | əməliyyat sistemi, **drayverlər**, utilitlər (diskin yoxlanması, təmizlənməsi) |
+| **Tətbiqi** | istifadəçinin konkret işini görür | mətn redaktoru (Word), cədvəl prosessoru (Excel), brauzer, mühasibat proqramı, oyunlar |
+| **İnstrumental** | proqram yaratmaq üçündür | proqramlaşdırma dilləri, **kompilyator**, **interpretator**, redaktor, sazlayıcı (debugger), inteqrasiya olunmuş mühit (IDE) |
+
+**Kompilyator** proqramı **bütövlükdə** maşın koduna çevirib icra olunan fayl yaradır. **İnterpretator** proqramı **sətir-sətir** tərcümə edib dərhal icra edir.
+
+**Drayver** — əməliyyat sisteminin konkret qurğu (printer, videokart) ilə işləməsini təmin edən sistem proqramıdır.
+
+```nümunə
+S: Drayver hansı proqram təminatına aiddir?
+A) sistem
+B) tətbiqi
+C) instrumental
+D) oyun
+E) ofis
+Cavab: A
+İzah: Drayver istifadəçinin konkret işini görmür, **qurğunun əməliyyat sistemi ilə işləməsini** təmin edir — bu, sistem proqram təminatıdır.
+```
+
+```yoxla
+S: Proqramı bütövlükdə maşın koduna çevirib icra olunan fayl yaradan proqram necə adlanır?
+A) kompilyator
+B) interpretator
+C) drayver
+D) brauzer
+E) arxivator
+Cavab: A
+```
+
+### 24.5. Viruslar, antiviruslar və verilənlərin sıxlaşdırılması
+
+**Kompüter virusu** — özünü çoxaldan, digər fayllara və sistemlərə yoluxan zərərli proqramdır.
+
+| Növ | Xüsusiyyəti |
+| --- | --- |
+| Fayl virusları | icra olunan fayllara yoluxur |
+| Yükləmə (boot) virusları | diskin yükləmə sahəsinə yoluxur |
+| **Makroviruslar** | Word, Excel sənədlərinin makroslarında yayılır |
+| **Qurdlar (worm)** | şəbəkə ilə **özü-özünü** yayır |
+| **Troyanlar** | faydalı proqram kimi görünür, gizli zərərli iş görür |
+| Casus proqramlar (spyware) | istifadəçi haqqında məlumat toplayır |
+| **Şantaj proqramları (ransomware)** | faylları **şifrələyib** açmaq üçün pul tələb edir (məs., WannaCry, Petya) |
+
+**Antivirus proqramları:** **skanerlər** diskdəki faylları yoxlayır, **monitorlar** real vaxtda izləyir, “həkim” proqramlar yoluxmuş faylı təmizləyir. Antivirusun **virus bazası** mütəmadi yenilənməlidir.
+
+**Sıxlaşdırma** faylın həcmini kiçildir:
+
+- **itkisiz** — açılanda fayl tam bərpa olunur: arxivlər (**ZIP, RAR, 7z**), PNG;
+- **itkili** — keyfiyyətin bir hissəsi atılır: **JPEG, MP3, MP4**.
+
+Arxivatorlar: WinRAR, 7-Zip, WinZip.
+
+```nümunə
+S: Faylları şifrələyib açılması üçün pul tələb edən zərərli proqram necə adlanır?
+A) şantaj proqramı (ransomware)
+B) reklam proqramı (adware)
+C) casus proqram (spyware)
+D) makrovirus
+E) antivirus
+Cavab: A
+İzah: **Ransomware** faylları şifrələyir və “fidyə” tələb edir — 2017-ci ildə yayılan WannaCry və Petya belə proqramlar idi. Casus proqram məlumat oğurlayır, adware reklam göstərir, makrovirus sənədlərdə yayılır.
+```
+
+```yoxla
+S: Hansı fayl formatı itkili sıxlaşdırma ilə yaradılır?
+A) MP3
+B) ZIP
+C) RAR
+D) 7z
+E) TXT
+Cavab: A
+```
+
 # V hissə — Müsahibə
