@@ -1355,22 +1355,15 @@ function bindApp() {
 function refreshApp() { const box = $('#set-app'); if (box) { box.innerHTML = appRow(); bindApp(); } }
 if (PWA) ['sw', 'install', 'net'].forEach(t => PWA.on(t, refreshApp));
 
+// export/import live in the offline app only: claude.ai lets a page neither download nor keep files
 async function exportData() {
   const name = `dovlet-qullugu-${new Date().toISOString().slice(0, 10)}.json`;
   const text = JSON.stringify({ app: 'dovlet-qullugu', v: 1, at: new Date().toISOString(), data: S }, null, 1);
-  if (PWA) { const r = await PWA.saveFile(name, text); if (r !== 'cancelled') toast('Fayl hazırdır'); return; }
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(new Blob([text], { type: 'application/json' })); a.download = name;
-  document.body.appendChild(a); a.click(); a.remove();
+  const r = await PWA.saveFile(name, text);
+  if (r !== 'cancelled') toast('Fayl hazırdır');
 }
 async function importData() {
-  let text = null;
-  if (PWA) text = await PWA.pickFile();
-  else text = await new Promise(res => {
-    const inp = document.createElement('input'); inp.type = 'file'; inp.accept = '.json,application/json';
-    inp.onchange = () => { const f = inp.files[0]; if (!f) return res(null); f.text().then(res, () => res(null)); };
-    inp.click();
-  });
+  const text = await PWA.pickFile();
   if (!text) return;
   let j = null; try { j = JSON.parse(text); } catch (e) { j = null; }
   if (!j || j.app !== 'dovlet-qullugu' || !j.data || typeof j.data !== 'object') { toast('Bu fayl bu kitabın ixracı deyil.'); return; }
