@@ -1,0 +1,57 @@
+{
+ "id": "./",
+ "name": "Dövlət Qulluğu — İmtahana Hazırlıq",
+ "short_name": "Dövlət Qulluğu",
+ "description": "Dövlət qulluğu imtahanlarına hazırlıq: 1 fəsil, 2 test sualı. Offline işləyir.",
+ "lang": "az",
+ "dir": "ltr",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "background_color": "#F5F3EC",
+ "theme_color": "#F5F3EC",
+ "categories": [
+  "education",
+  "books"
+ ],
+ "icons": [
+  {
+   "src": "icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "icons/maskable-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "maskable"
+  },
+  {
+   "src": "icons/maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ],
+ "shortcuts": [
+  {
+   "name": "Testlər",
+   "short_name": "Testlər",
+   "description": "Fəsil testləri, qarışıq test, səhvlərim",
+   "url": "./#testler"
+  },
+  {
+   "name": "Axtarış",
+   "short_name": "Axtarış",
+   "description": "Bütün mətndə axtarış",
+   "url": "./#axtar"
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+# LF everywhere: build_pwa.py hashes the copied libs and icons, so CRLF checkouts change the version
+* text=auto eol=lf
+*.png binary
+*.woff2 binary

@@ -1,0 +1,102 @@
+// PWA check: service worker precache, installability, reading + test flow, offline reload with the host gone.
+const { chromium } = require('playwright');
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+fs.mkdirSync(path.join(__dirname, 'shots'), { recursive: true });
+const ROOT = path.resolve(__dirname, '..', 'docs');
+const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json', '.webmanifest': 'application/manifest+json', '.png': 'image/png', '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.md': 'text/markdown; charset=utf-8', '.txt': 'text/plain; charset=utf-8' };
+
+function serve(port) {
+  const srv = http.createServer((req, res) => {
+    let p = decodeURIComponent(req.url.split('?')[0]);
+    if (p.endsWith('/')) p += 'index.html';
+    const f = path.join(ROOT, p);
+    if (!f.startsWith(ROOT) || !fs.existsSync(f) || fs.statSync(f).isDirectory()) { res.writeHead(404); res.end('nf'); return; }
+    res.writeHead(200, { 'content-type': TYPES[path.extname(f)] || 'application/octet-stream', 'cache-control': 'max-age=600' });
+    fs.createReadStream(f).pipe(res);
+  });
+  return new Promise(r => srv.listen(port, '127.0.0.1', () => r(srv)));
+}
+
+(async () => {
+  const PORT = 8766;
+  const srv = await serve(PORT);
+  const browser = await chromium.launch();
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, hasTouch: true });
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', e => errors.push('pageerror: ' + e.message));
+  page.on('console', m => { if (m.type() === 'error') errors.push('console: ' + m.text()); });
+  const out = {};
+  const book = JSON.parse(fs.readFileSync(path.join(__dirname, 'book.json'), 'utf-8'));
+  const firstCh = book.chapters.find(c => c.kind === 'chapter');
+
+  await page.goto(`http://127.0.0.1:${PORT}/`);
+  await page.waitForFunction(() => window.DQ_PWA && window.DQ_PWA.sw.ready === true, null, { timeout: 30000 });
+  out.version = await page.evaluate(() => DQ_PWA.VERSION);
+  out.controller = await page.evaluate(async () => { await navigator.serviceWorker.ready; return !!navigator.serviceWorker.controller; });
+  const cdp = await ctx.newCDPSession(page);
+  try { out.installErrors = (await cdp.send('Page.getInstallabilityErrors')).installabilityErrors; } catch (e) { out.installErrors = 'n/a: ' + e.message; }
+  try { out.manifestErrors = (await cdp.send('Page.getAppManifest')).errors; } catch (e) { out.manifestErrors = 'n/a'; }
+  out.homeChapters = await page.$$eval('.chrow', els => els.length);
+  await page.screenshot({ path: path.join(__dirname, 'shots', 'home.png'), fullPage: true });
+
+  // read the first section and mark it
+  await page.click(`a.chrow[href="#${firstCh.id}"]`);
+  await page.waitForSelector('.secrow');
+  await page.click('.secrow');
+  await page.waitForSelector('article.prose');
+  await page.click('[data-act="read"]');
+  out.readSaved = await page.evaluate(() => Object.keys(JSON.parse(localStorage.getItem('dq-kitab:v1')).read).length);
+  await page.screenshot({ path: path.join(__dirname, 'shots', 'section.png'), fullPage: true });
+
+  // chapter test: answer every question with the first option shown
+  if (book.quizzes[firstCh.id]) {
+    await page.goto(`http://127.0.0.1:${PORT}/#test-${firstCh.id}`);
+    for (let i = 0; i < book.quizzes[firstCh.id].length; i++) {
+      await page.click('.opt[data-oi]');
+      await page.waitForSelector('.expl');
+      if (i === 0) await page.screenshot({ path: path.join(__dirname, 'shots', 'quiz.png'), fullPage: true });
+      await page.click('[data-act="next"]');
+    }
+    await page.waitForSelector('[data-act="again"]');
+    out.quizSaved = await page.evaluate(id => JSON.parse(localStorage.getItem('dq-kitab:v1')).quiz[id], firstCh.id);
+  }
+
+  // search folds Azerbaijani letters
+  await page.goto(`http://127.0.0.1:${PORT}/#axtar`);
+  await page.fill('#q', 'cedvel');
+  out.searchHits = await page.$$eval('.hit', els => els.length);
+
+  await page.goto(`http://127.0.0.1:${PORT}/#ayarlar`);
+  out.appRow = await page.$eval('#set-app', el => el.innerText.replace(/\s+/g, ' '));
+  await page.click('[data-theme="dark"]');
+  out.dark = await page.evaluate(() => document.documentElement.getAttribute('data-theme'));
+  await page.screenshot({ path: path.join(__dirname, 'shots', 'settings-dark.png'), fullPage: true });
+
+  // ---- host gone + offline: reload and use the book ----
+  await new Promise(r => { srv.close(r); srv.closeAllConnections(); });
+  await ctx.setOffline(true);
+  await page.goto(`http://127.0.0.1:${PORT}/#${firstCh.id}`);
+  await page.waitForSelector('.secrow', { timeout: 15000 });
+  out.offlineSections = await page.$$eval('.secrow', els => els.length);
+  out.offlineReadKept = await page.$$eval('.secrow.done', els => els.length);
+  out.offlineFont = await page.evaluate(async () => { await document.fonts.ready; return document.fonts.check('16px Literata', 'ə'); });
+
+  await browser.close();
+  const fail = [];
+  if (!out.controller) fail.push('no service worker controller');
+  if (Array.isArray(out.installErrors) && out.installErrors.length) fail.push('installability: ' + JSON.stringify(out.installErrors));
+  if (Array.isArray(out.manifestErrors) && out.manifestErrors.length) fail.push('manifest: ' + JSON.stringify(out.manifestErrors));
+  if (out.readSaved !== 1) fail.push('read mark not saved');
+  if (book.quizzes[firstCh.id] && !(out.quizSaved && typeof out.quizSaved.best === 'number')) fail.push('quiz result not saved');
+  if (!out.searchHits) fail.push('search found nothing for “cedvel”');
+  if (out.dark !== 'dark') fail.push('theme switch');
+  if (out.offlineSections !== firstCh.sections.length) fail.push('offline chapter view');
+  if (out.offlineReadKept !== 1) fail.push('offline progress lost');
+  if (!out.offlineFont) fail.push('fonts not cached');
+  out.errors = errors.concat(fail);
+  console.log(JSON.stringify(out, null, 1));
+  process.exit(out.errors.length ? 1 : 0);
+})();

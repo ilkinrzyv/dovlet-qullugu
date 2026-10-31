@@ -1,0 +1,12 @@
+{
+  "name": "dovlet-qullugu-build",
+  "private": true,
+  "description": "Build helpers and Playwright checks for Dövlət Qulluğu",
+  "scripts": {
+    "icons": "node make_icons.js",
+    "test:pwa": "node tp1.js"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}
