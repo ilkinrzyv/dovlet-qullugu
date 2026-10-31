@@ -14,7 +14,8 @@ python build/parse_book.py   # → build/book.json (gitignored); must print "err
 python build/build_pwa.py    # → docs/ and dist/dovlet-qullugu-offline.zip; prints the new version
 cd build && npm ci && npx playwright install chromium
 npm run test:pwa             # real build: service worker, install, offline reload, programme page offline
-npm run test:app             # fixture book (build/test/): BA/BB filter, open + figure questions, mock exam, time-up
+npm run test:app             # fixture book (build/test/): BA/BB filter, open + figure questions, inline nümunə/yoxla,
+                             # Claude links, virtual teacher, mock exam, time-up
 ```
 
 Both checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build/icons/`. Screenshots land in
@@ -28,6 +29,11 @@ Both checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build
   `qrup` limits a part/chapter/section to some groups (inherited downwards, never wider than the parent), `fənn`
   ties a part or chapter to a subject (`qan`, `men`, `az`, `inf`). Chapter numbers run through the whole book.
   Rendered to HTML at build time with markdown-it (`html: False`), so no markdown library ships.
+- Questions inside a section: fenced blocks ` ```nümunə ` (worked example: `S:`, `A)`…, `Cavab: B`, `İzah:`) and
+  ` ```yoxla ` (check: same without `İzah:`; the reader asks Claude instead). No options = open question,
+  `Cavab: 7 | yeddi`; `Şəkil:` = SVG under `build/fig/`. The parser cuts them into `section.qs` and leaves
+  `<div class="iq" data-i>` placeholders; options keep the author's order. In `fənn=men` chapters every section must
+  follow the pattern (nümunə, yoxla+)+ — the owner wants each explanation followed by a worked example and a check.
 - `build/proqram.json` — DİM's four test programmes, BA/BB topics only, with the programme's own numbering (so gaps
   such as 2.1 → 2.3 are real), `g` for BA-only topics and `see` = chapter/section ids that teach a topic (checked by
   the parser). `exam` holds the exam shape (40/30/15/15, BA open counts 8/6/3/3, 1 and 2 points, 180 minutes) and the
@@ -38,10 +44,15 @@ Both checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build
   (inlined; no scripts, handlers or external links), `fix: true` keeps option order when options are the figure's
   letters. Optional `g`. Quiz ids are positional (`c1q3`): new questions go at the end of a chapter's list.
 - `build/app.js` — the whole UI in one IIFE: hash router (`#home`, `#c1`, `#c1s2`, `#proqram[-qan]`, `#testler`,
-  `#test-c1` / `test-mix` / `test-wrong` / `test-f-qan`, `#imtahan`, `#imtahan-netice`, `#axtar=...`, `#ayarlar`).
-  `vis()` filters everything by `S.group`. State in localStorage `dq-kitab:v1` (`read`, `last`, `quiz`, `wrong`,
-  `theme`, `fs`, `group`, `exam` = the running mock exam with its start time, `exams` = history, `examLast`).
-  Export/import as JSON with `app: "dovlet-qullugu"`.
+  `#test-c1` / `test-mix` / `test-wrong` / `test-f-qan`, `#imtahan`, `#imtahan-netice`, `#muellim[-men]`,
+  `#axtar=...`, `#ayarlar`). `vis()` filters everything by `S.group`. State in localStorage `dq-kitab:v1` (`read`,
+  `last`, `quiz`, `wrong`, `chk` = solved inline checks keyed `cNsKkI`, `theme`, `fs`, `group`, `exam` = the running
+  mock exam with its start time, `exams` = history, `examLast`). Export/import as JSON with `app: "dovlet-qullugu"`.
+- Claude help (`app.js` section 2b, virtual teacher in section 10): links are `https://claude.ai/new?q=<prompt>`, so
+  they open in whatever Claude account the phone is signed into. Never put a model in the link — the owner wants the
+  reader to choose. `?q=` is undocumented, so a tap also copies the prompt. Prompts are Azerbaijani, instructions
+  first, material after (`PROMPT_MAX` cuts only the material); check questions ask for a hint, not the answer. No
+  Claude links inside a running mock exam.
 - `build/pwa.js` — `window.DQ_PWA`: service-worker registration, update bar, install prompt, file save/pick.
   Present only in the PWA build; guard its use with `if (PWA)`.
 - `build/sw.template.js` — cache-first service worker; `build_pwa.py` injects VERSION (content hash) and the precache
@@ -61,4 +72,5 @@ key — third-party material: use as a model of question types only, never copy 
 - Never edit `docs/` by hand: change the sources, rebuild, and commit `docs/` together with the source change.
 - Law text comes from e-qanun.az (current edition); cover only the articles the programme lists. Facts about laws and
   exam rules must come from the owner or an official source; do not invent article numbers.
-- Run both checks before pushing and say what could not be verified.
+- Run both checks before pushing and say what could not be verified. The owner wants every finished piece of work
+  committed and pushed to `main` without asking first.

@@ -73,6 +73,7 @@ function serve(port) {
       const item = BOOK.quizzes.c1.find(x => x.q === q);
       await page.click(`.opt[data-oi="${item.a}"]`);
     }
+    if (i === 0) out.quizClaude = await page.$$eval('.expl a[data-claude]', els => els.length);
     await page.click('[data-act="next"]');
   }
   out.bbC1Score = (await state()).quiz.c1;
@@ -85,6 +86,44 @@ function serve(port) {
   await page.click('.opt[data-oi="1"]');
   out.figRight = await page.$eval('.expl > b', el => el.textContent);
   await shot('t1-figure');
+
+  // ---- questions inside the text (Məntiq): worked examples, checks without a solution, Claude help ----
+  const claudeQ = href => { const u = new URL(href); return { host: u.host, path: u.pathname, params: [...u.searchParams.keys()], q: u.searchParams.get('q') }; };
+  await go('c3s1');
+  out.iq = await page.$$eval('.iq', els => els.map(e => e.className.replace(/\b(iq|card)\b/g, '').trim()));
+  out.exRight = await page.$eval('.iq.ex .opt.right .ol', el => el.textContent);
+  out.exSolution = await page.$$eval('.iq.ex .iqe', els => els.length);
+  const hint = claudeQ(await page.$eval('.iq.chk a[data-claude]', a => a.href));
+  out.hintLink = { host: hint.host, path: hint.path, params: hint.params, hint: hint.q.includes('Cavabı dərhal demə'), question: hint.q.includes('3, 5, 7') };
+  const c0 = page.locator('.iq.chk').nth(0), c1 = page.locator('.iq.chk').nth(1);
+  await c0.locator('.opt[data-oi="0"]').click();
+  out.chkWrong = await c0.locator('.iqmsg.bad').count();
+  out.chkShowBtn = await c0.locator('[data-act="iqshow"]').count();
+  out.chkNoSolution = await page.locator('.iq.chk .iqe').count();
+  await c0.locator('.opt[data-oi="2"]').click();
+  out.chkSolved = (await c0.locator('.iqmsg.ok').textContent()).trim();
+  await c1.locator('.oa').fill('Yeddi');
+  await c1.locator('[data-act="iqcheck"]').click();
+  out.chkOpen = await c1.locator('.iqmsg.ok').count();
+  out.chkSaved = Object.keys((await state()).chk || {}).sort();
+  await shot('t1-inline');
+  await page.reload();
+  await page.waitForSelector('.iq.chk');
+  out.chkKept = await page.locator('.iq.chk.solved').count();
+  out.sectionClaude = claudeQ(await page.$eval('.claudebox a[data-claude]', a => a.href)).q.includes('Fəsil 3. Məntiq fəsli');
+
+  // ---- virtual teacher ----
+  await go('muellim');
+  out.teacherTab = await page.$eval('.tab[aria-current="true"] span', el => el.textContent);
+  out.teacherTopics = await page.$$eval('#t-explain .list a[data-claude]', els => els.length);
+  out.teacherEmpty = await page.$$eval('#t-explain a.claude.primary.off', els => els.length);
+  await page.fill('#tq', 'Sillogizm nədir?');
+  const tq = claudeQ(await page.$eval('#t-explain a.claude.primary', a => a.href));
+  out.teacherAsk = { params: tq.params, text: tq.q.includes('Sillogizm nədir?'), subj: tq.q.includes('Fənn: Məntiq') };
+  await page.click('[data-tsubj="inf"]');
+  out.teacherSwitch = { hash: await page.evaluate(() => location.hash), kept: await page.$eval('#tq', el => el.value) };
+  out.adviceCtx = claudeQ(await page.$eval('#t-advice .row a[data-claude]', a => a.href)).q.includes('İmtahan (BB qrupu)');
+  await shot('t1-teacher');
 
   // search follows the group
   await go('axtar');
@@ -101,6 +140,7 @@ function serve(port) {
   await page.waitForSelector('h1.h1');
   out.bbTimeUp = await state().then(s => ({ hash: null, last: s.examLast && { pts: s.examLast.pts, max: s.examLast.max, timeUp: s.examLast.timeUp }, running: !!s.exam }));
   out.bbTimeUp.hash = await page.evaluate(() => location.hash);
+  out.bbMissClaude = await page.$$eval('.miss a[data-claude]', els => els.length);
 
   // ---- mock exam, BA: answer everything right ----
   await setGroup('BA');
@@ -114,7 +154,7 @@ function serve(port) {
     const q = qOf(ex.items[i].id);
     if (q.t === 'open') await page.fill('#oa', q.a[0]);
     else await page.click(`.opt[data-oi="${q.a}"]`);
-    if (i === 0) await shot('t1-exam');
+    if (i === 0) { await shot('t1-exam'); out.examNoClaude = await page.$$eval('a[data-claude]', els => els.length); }
     if (i + 1 < ex.items.length) await page.click('[data-act="next"]');
   }
   await page.click('.qgrid summary');
@@ -148,6 +188,19 @@ function serve(port) {
   eq('baResult', { pts: 11, max: 11, pct: 100, n: 9 });
   eq('gridAnswered', 9);
   eq('passChips', 4);
+  eq('quizClaude', 1);
+  eq('iq', ['ex', 'chk', 'chk', 'ex', 'chk']);
+  eq('exRight', 'B'); eq('exSolution', 2);
+  eq('hintLink', { host: 'claude.ai', path: '/new', params: ['q'], hint: true, question: true });
+  eq('chkWrong', 1); eq('chkShowBtn', 1); eq('chkNoSolution', 0); eq('chkSolved', 'Düzdür'); eq('chkOpen', 1);
+  eq('chkSaved', ['c3s1k1', 'c3s1k2']); eq('chkKept', 2); eq('sectionClaude', true);
+  eq('teacherTab', 'Müəllim');
+  eq('teacherTopics', BOOK.prog.subjects.find(s => s.id === 'men').topics.filter(t => t.g.includes('BB')).length);
+  eq('teacherEmpty', 1);
+  eq('teacherAsk', { params: ['q'], text: true, subj: true });
+  eq('teacherSwitch', { hash: '#muellim-inf', kept: 'Sillogizm nədir?' });
+  eq('adviceCtx', true);
+  eq('bbMissClaude', 5); eq('examNoClaude', 0);
   out.errors = errors.concat(fail);
   console.log(JSON.stringify(out, null, 1));
   process.exit(out.errors.length ? 1 : 0);
