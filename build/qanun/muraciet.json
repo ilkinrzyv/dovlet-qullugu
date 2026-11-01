@@ -1,0 +1,260 @@
+{
+ "key": "muraciet",
+ "id": 31281,
+ "title": "Vətəndaşların müraciətləri haqqında",
+ "num": "1308-IVQ",
+ "date": "30.09.2015",
+ "status": "Qüvvədədir",
+ "url": "https://e-qanun.az/framework/31281",
+ "fetched": "2026-11-01",
+ "pre": [
+  "Bu Qanun Azərbaycan Respublikası Konstitusiyasının 57-ci maddəsinə və 94-cü maddəsinin I hissəsinin 1-ci bəndinə uyğun olaraq, Azərbaycan Respublikası vətəndaşlarının müraciət etmək hüququnun həyata keçirilməsi ilə bağlı münasibətləri tənzimləyir, vəzifəli şəxslərin müraciətlərə baxması qaydasını müəyyən edir."
+ ],
+ "units": [
+  {
+   "k": "m",
+   "n": "1",
+   "t": "Müraciət etmək hüququ",
+   "p": [
+    "1.1. Azərbaycan Respublikası vətəndaşlarının dövlət və bələdiyyə orqanlarına, dövlət və ya bələdiyyə mülkiyyətində olan və ya paylarının (səhmlərinin) nəzarət zərfi dövlətə və ya bələdiyyəyə məxsus olan hüquqi şəxslərə və büdcə təşkilatlarına və ya onların vəzifəli şəxslərinə şəxsən və ya nümayəndə vasitəsilə yazılı və ya şifahi formada, fərdi və ya kollektiv şəkildə müraciət etmək hüququ vardır.",
+    "1.2. Vətəndaşlar müraciət etmək hüququnu sərbəst və könüllü həyata keçirirlər. Vətəndaşın öz müraciət hüququnu həyata keçirməsi digər şəxslərin hüquqlarını və azadlıqlarını pozmamalıdır.",
+    "1.3. İrqinə, milliyyətinə, dininə, dilinə, cinsinə, mənşəyinə, əmlak vəziyyətinə, qulluq mövqeyinə, əqidəsinə, siyasi partiyalara, həmkarlar ittifaqlarına və digər ictimai birliklərə mənsubiyyətinə görə şəxsin müraciət etmək hüququnu məhdudlaşdırmaq qadağandır."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "2",
+   "t": "Vətəndaşların müraciətləri haqqında qanunvericilik",
+   "p": [
+    "Vətəndaşların müraciətləri haqqında qanunvericilik Azərbaycan Respublikasının Konstitusiyasından, Azərbaycan Respublikasının tərəfdar çıxdığı beynəlxalq müqavilələrdən, bu Qanundan və Azərbaycan Respublikasının digər normativ hüquqi aktlarından ibarətdir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "3",
+   "t": "Əsas anlayışlar",
+   "p": [
+    "3.0. Bu Qanunun məqsədləri üçün aşağıdakı əsas anlayışlardan istifadə edilir:",
+    "3.0.1. müraciət edən şəxs – fiziki və ya hüquqi şəxs;",
+    "3.0.2. müraciət – müraciətə baxan subyektə və ya onun vəzifəli şəxsinə şəxsən və ya nümayəndə vasitəsilə yazılı (o cümlədən elektron) formada göndərilən (təqdim edilən) və ya şifahi formada edilən fərdi və ya kollektiv təklif, ərizə, şikayət;",
+    "3.0.3. təklif – qanunların və digər normativ hüquqi aktların təkmilləşdirilməsi, dövlət və bələdiyyə orqanlarının və digər müraciətə baxan subyektlərin fəaliyyətinin yaxşılaşdırılması, elm, təhsil, mədəniyyət, hüquq, sosial-iqtisadi, yaradıcılıq və başqa sahələrlə bağlı məsələlərin həlli barədə edilən müraciət;",
+    "3.0.4. ərizə – hüquq və azadlıqların həyata keçirilməsi ilə bağlı tələbləri nəzərdə tutan müraciət;",
+    "3.0.5. şikayət – pozulmuş hüquq və azadlıqların bərpası və müdafiəsi ilə bağlı tələbləri nəzərdə tutan müraciət;",
+    "3.0.6. müraciətə baxan subyekt – fiziki və hüquqi şəxslərin müraciətlərinə baxmaq və qərar qəbul etmək səlahiyyəti olan dövlət və bələdiyyə orqanları, dövlət və ya bələdiyyə mülkiyyətində olan və ya paylarının (səhmlərinin) nəzarət zərfi dövlətə və ya bələdiyyəyə məxsus olan hüquqi şəxslər və büdcə təşkilatları;",
+    "3.0.7. müraciətə baxan subyektin canlı yayımlanan televiziya və radio proqramındakı nümayəndəsi – müraciətə baxan subyektin razılığı ilə onu həmin proqramda təmsil edən vəzifəli şəxs;",
+    "3.0.8. müraciətə baxan subyektin vəzifəli şəxsi – müraciətə baxan subyektin rəhbəri, dövlət orqanında inzibati vəzifə tutan və hakimiyyət səlahiyyətləri olan şəxs, digər müraciətə baxan subyektlərdə təşkilati-sərəncamverici və ya inzibati-təsərrüfat vəzifələrində daimi və ya müvəqqəti işləyən və ya həmin vəzifələri xüsusi səlahiyyət əsasında həyata keçirən şəxslər;",
+    "3.0.9. şifahi müraciət – vətəndaşların fərdi və kollektiv qəbulu zamanı və ya müraciətə baxan subyektin nümayəndəsinin iştirakı ilə canlı yayımlanan televiziya və radio proqramları zamanı, habelə telefon müraciət xidməti vasitəsilə edilən müraciət;",
+    "3.0.10. telefon müraciət xidməti – müraciət edənin şifahi müraciətinin qəbulunu, texniki vasitələrin köməyi ilə qeydiyyatını və cavablandırılmasını həyata keçirmək üçün yaradılmış rabitə xidməti;",
+    "3.0.11. yazılı müraciət – kağız üzərində və ya elektron formada tərtib edilmiş müraciət;",
+    "3.0.12. elektron müraciət – müraciətə baxan subyektin və ya onun vəzifəli şəxsinin elektron ünvanına göndərilən və ya rəsmi internet informasiya ehtiyatı vasitəsilə daxil edilən, yaxud Elektron Hökumət İnformasiya Sistemi (bundan sonra – EHİS) üzərindən təqdim olunan müraciət;",
+    "3.0.13. kollektiv müraciət – eyni məsələyə dair iki və daha çox şəxsin birgə müraciəti, yaxud ictimai iştirakçılığın həyata keçirilməsi ilə əlaqədar olan müraciətlər;",
+    "3.0.14. təkrar müraciət – müraciətin bu Qanunla müəyyən edilmiş baxılması müddəti ötdükdə və ya həmin müraciət cavablandırıldıqda eyni şəxsin eyni məsələ ilə bağlı eyni müraciətə baxan subyektə və ya onun vəzifəli şəxsinə göndərdiyi növbəti müraciət;",
+    "3.0.15. anonim müraciət – müraciətə baxan subyektə və ya onun vəzifəli şəxsinə vətəndaşın soyadı, adı, atasının adı, ünvanı, şəxsi və ya elektron imzası (hüquqi şəxslərə münasibətdə hüquqi şəxsin adı və hüquqi ünvanı, onun rəhbərinin imzası) olmadan yazılı formada göndərilən müraciət."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "4",
+   "t": "Vətəndaşların müraciətlərinə baxılmasının əsas prinsipləri",
+   "p": [
+    "4.0. Vətəndaşların müraciətlərinə baxılmasının əsas prinsipləri aşağıdakılardır:",
+    "4.0.1. qanunçuluq;",
+    "4.0.2. vətəndaşların müraciət hüququnun sərbəst və könüllü həyata keçirməsinə şərait yaradılması;",
+    "4.0.3. müraciətlərə dair tələblərin vahidliyi;",
+    "4.0.4. fiziki və hüquqi şəxslərin hüquqlarının və qanuni mənafelərinin qorunması;",
+    "4.0.5. müraciətlərə baxılmasında ayrı-seçkiliyə və süründürməçiliyə yol verilməməsi;",
+    "4.0.6. müraciətə baxan subyektlərin və onların vəzifəli şəxslərinin fəaliyyətində şəffaflığın təmin edilməsi;",
+    "4.0.7. vətəndaşların müraciət etmək hüququ ilə dövlət maraqlarının uzlaşdırılması."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "5",
+   "t": "Bu Qanunun tətbiq dairəsi",
+   "p": [
+    "5.1. Azərbaycan Respublikasının Konstitusiya qanunlarında, başqa qanunlarda, onların əsasında qəbul edilmiş digər normativ hüquqi aktlarda, habelə Azərbaycan Respublikasının tərəfdar çıxdığı beynəlxalq müqavilələrdə başqa qayda nəzərdə tutulmayıbsa, bu Qanunun müddəaları vətəndaşların bütün müraciətlərinə şamil edilir.",
+    "5.2. Bu Qanunun müddəaları vətəndaşların məhkəmə icraatı və ya inzibati icraat çərçivəsində etdikləri müraciətlərə şamil edilmir.",
+    "5.3. Hərbi qulluqçuların xidmətlə əlaqədar bilavasitə rəislərinə və ya böyük rəislərinə müraciət etmə və onlara baxılması qaydası Azərbaycan Respublikası Silahlı Qüvvələrinin Daxili Xidmət Nizamnaməsi və İntizam Nizamnaməsi ilə tənzimlənir.",
+    "5.4. Referendumun və seçkilərin bilavasitə təşkili və keçirilməsi ilə əlaqədar müraciətlərin edilməsi və onlara baxılması qaydası Azərbaycan Respublikasının Seçki Məcəlləsi ilə tənzimlənir.",
+    "5.4-1. Vətəndaşların qanunvericilik təşəbbüsü hüququndan istifadə etməsi ilə bağlı yaradılmış təşəbbüs qrupunun və Azərbaycan Respublikası Milli Məclisinin müzakirəsinə təqdim edilməsi təklif olunan qanun (qərar) layihəsinin qeydiyyata alınması məqsədilə ərizələrin verilməsi və bu ərizələrə baxılması qaydası “Azərbaycan Respublikası vətəndaşlarının qanunvericilik təşəbbüsü hüququndan istifadə etməsi qaydası haqqında” Azərbaycan Respublikasının Qanunu ilə tənzimlənir.",
+    "5.5. Azərbaycan Respublikasının İnsan hüquqları üzrə müvəkkilinə (ombudsmana) insan hüquqlarının pozulmasına dair şikayətlərin verilməsi və bu şikayətlərə baxılması qaydası “Azərbaycan Respublikasının İnsan hüquqları üzrə müvəkkili (ombudsman) haqqında” Azərbaycan Respublikasının Konstitusiya Qanunu ilə tənzimlənir.",
+    "5.6. İnformasiya əldə edilməsi üçün sorğunun verilməsi və informasiya əldə edilməsi haqqında sorğuya baxılması qaydası “İnformasiya əldə etmək haqqında” Azərbaycan Respublikasının Qanunu ilə tənzimlənir.",
+    "5.7. Məişət zorakılığı barədə şikayətdə cinayət tərkibinin əlamətləri olmadıqda şikayətlərə baxılması qaydası “Məişət zorakılığının qarşısının alınması haqqında” Azərbaycan Respublikasının Qanunu ilə tənzimlənir.",
+    "5.8. Siyahısı müvafiq icra hakimiyyəti orqanı tərəfindən təsdiq olunan ictimai əhəmiyyətli funksiyaları yerinə yetirən hüquqi şəxslərə, habelə normativ hüquqi aktlar və ya müqavilə əsasında təhsil, səhiyyə, mədəniyyət və sosial sahələrdə xidmət göstərən özəl hüquqi şəxslərə və fərdi sahibkarlara müraciət edilməsi və həmin müraciətlərə baxılması qaydası bu Qanunla tənzimlənir.",
+    "5.9. Azərbaycan Respublikasının tərəfdar çıxdığı beynəlxalq müqavilələrdə başqa qayda nəzərdə tutulmayıbsa, bu Qanunun müddəaları əcnəbilərin, vətəndaşlığı olmayan şəxslərin və xarici hüquqi şəxslərin müraciətlərinə şamil edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "6",
+   "t": "Vətəndaşların müraciətlərinə dair tələblər",
+   "p": [
+    "6.1. Vətəndaşlar müraciətlərini həmin məsələyə baxılmasını bilavasitə təmin etməli olan müraciətə baxan subyektlərə və ya onların vəzifəli şəxslərinə yazılı formada təqdim edir və ya şifahi formada bildirirlər.",
+    "6.2. Yazılı müraciətlər şəxsən və ya nümayəndə vasitəsilə təqdim edilir və ya poçt, telefaks, yaxud bu Qanunun 6.7-ci maddəsində göstərilən qaydada göndərilir.",
+    "6.3. Yazılı müraciətdə aşağıdakılar göstərilir:",
+    "6.3.1. müraciətə baxan subyektin adı və ya onun vəzifəli şəxsinin adı, soyadı, vəzifəsi (vəzifəli şəxsin elektron ünvanına göndərilən müraciətlər istisna olmaqla);",
+    "6.3.2. müraciət edən fiziki şəxsin adı, atasının adı, soyadı və ünvanı (yaxud işlədiyi yer), hüquqi şəxsin adı və hüquqi ünvanı;",
+    "6.3.3. müraciət nümayəndə vasitəsilə təqdim edildikdə, nümayəndənin adı, soyadı, atasının adı və ünvanı;",
+    "6.3.4. müraciət edən şəxsin müraciətin cavablandırılması üsuluna dair seçimi (elektron və ya poçt ünvanı, yaxud EHİS vasitəsilə);",
+    "6.3.5. müraciətin (EHİS üzərindən təqdim olunmuş müraciətlər istisna olmaqla) EHİS üzərindən cavablandırılması istənildiyi halda müraciət edən fiziki şəxsin fərdi identifikasiya nömrəsi (FİN), hüquqi şəxsin vergi ödəyicisinin eyniləşdirmə nömrəsi (VÖEN);",
+    "6.3.6. müraciətin elektron ünvan vasitəsilə cavablandırılması istənildiyi halda cavabın göndəriləcəyi elektron ünvan.",
+    "6.4. Müraciət hüquqi şəxslərin firma rekvizitləri olan blankda göndərildiyi, yaxud fiziki şəxsin əlaqə məlumatlarından ən azı birinin göstərildiyi hallar istisna olmaqla, bu Qanunun 6.3.1–6.3.3-cü, 6.5-ci və 6.8-ci maddələrinin tələblərinə cavab vermədikdə anonim sayılır. Anonim müraciətlər müraciətə baxan subyektlər və onların vəzifəli şəxsləri tərəfindən qəbul edilmir və onlara baxılmır.",
+    "6.5. Kağız üzərində yazılı müraciəti fiziki şəxs və ya hüquqi şəxsin rəhbəri, yaxud onların səlahiyyətli nümayəndəsi imzalamalı və tarix qoymalıdır.",
+    "6.6. Yazılı müraciət nümayəndə vasitəsilə təqdim edildikdə müraciətə nümayəndənin səlahiyyətlərini təsdiqləyən sənədin surəti əlavə olunmalıdır.",
+    "6.7. Elektron müraciət həmin müraciətə baxan subyektin rəsmi internet informasiya ehtiyatına daxil edilir, həmin subyektin və ya onun vəzifəli şəxsinin elektron ünvanına göndərilir, yaxud EHİS üzərindən təqdim olunur.",
+    "6.8. Elektron sənəd formasında göndərilən müraciət təkmil sertifikatlı gücləndirilmiş elektron imza ilə təsdiq olunmalıdır.",
+    "6.9. Müraciətin mətni oxunaqlı olmalı, müraciətdə edilən təklif və ya tələb aydın ifadə edilməlidir. Müraciətin mətnində təhqir və böhtana yol verilməməlidir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "7",
+   "t": "Vətəndaşların yazılı müraciətlərinin qəbulu, qeydiyyatı və onlara baxılması qaydası",
+   "p": [
+    "7.1. Müraciətə baxan subyektlər və onların vəzifəli şəxsləri bu Qanunla müəyyən edilmiş qaydada verilən yazılı müraciətləri mütləq qəbul etməli, qeydiyyata almalı və onlara baxılmasını təmin etməlidirlər. Bu Qanunun tələblərinə uyğun olaraq verilən müraciəti qəbul etməkdən imtina qadağandır.",
+    "7.2. Vətəndaşların müraciətləri ilə bağlı kargüzarlıq müvafiq icra hakimiyyəti orqanının müəyyən etdiyi qaydada aparılır və müraciətə baxan subyektin rəhbəri tərəfindən təmin edilir.",
+    "7.4. Vətəndaşın müraciətinə onun daxilolma tarixi və qeydiyyat nömrəsi qoyulur. Müraciət edən şəxsin tələbi ilə ona müraciətin qeydiyyat nömrəsi, tarixi və onun icraçısına dair məlumat bildirilir.",
+    "7.5. Müraciətdə göstərilən məsələyə baxıldıqda və bu barədə vətəndaşa (kollektiv müraciətlərdə - müraciət edən şəxslərdən birinə) əsaslandırılmış cavab verildikdə müraciət baxılmış hesab olunur. Müraciətə dövlət dilində cavab verilir.",
+    "7.6. Elektron müraciətlərə müraciətə baxan subyekt və ya onun vəzifəli şəxsi tərəfindən müraciət edən şəxsin seçimi əsasında elektron və ya poçt ünvanı, yaxud EHİS vasitəsilə yazılı cavab verilməklə baxılır. Elektron müraciətdə (EHİS üzərindən təqdim olunmuş müraciətlər istisna olmaqla) bu Qanunun 6.3.5-ci və 6.3.6-cı maddələrində nəzərdə tutulan məlumatlar göstərilmədikdə müraciətə poçt vasitəsilə yazılı cavab verilir.",
+    "7.7. Vətəndaşın müraciətinə baxılmasına dair cavab məktubunda müraciətdə göstərilən məsələlərin araşdırılması və görülən tədbirlər və ya həmin məsələlərlə bağlı aidiyyəti üzrə müraciət edilməli subyekt göstərilməlidir.",
+    "7.8. Müraciətin baxılmamış saxlanılması, qismən təmin edilməsi və ya rədd edilməsi barədə qərar qəbul olunduqda, müraciət edənə cavab məktubunda həmin qərardan şikayət verilməsi qaydası izah edilir.",
+    "7.9. Müraciətə baxan subyekt və ya onun vəzifəli şəxsi müraciətdə göstərilən məsələnin həlli ilə əlaqədar əlavə məlumatların öyrənilməsi üçün aidiyyəti üzrə sorğu göndərdikdə həmin sorğuya yeddi iş günündən gec olmayaraq cavab verilməlidir.",
+    "7.10. Müraciətə baxan subyektlər və ya onların vəzifəli şəxsləri müraciətdə irəli sürülən məsələlərin həlli onların səlahiyyətinə aid olmadıqda, müraciəti üç iş günündən gec olmayaraq aidiyyəti üzrə göndərir və müraciət edənə bu barədə məlumat verir. Müraciətdə göstərilən məsələ bir neçə müraciətə baxan subyektin səlahiyyətinə aid edildikdə müraciətin surəti üç iş günündən gec olmayaraq həmin subyektlərə göndərilir.",
+    "7.11. Yuxarı dövlət orqanı vətəndaşların müraciətlərini baxılmaq üçün aidiyyəti dövlət və bələdiyyə orqanlarına və ya digər müraciətə baxan subyektə göndərdikdə həmin müraciətə baxılmanın nəticəsi barədə yuxarı dövlət orqanının tələbi ilə müraciətə baxan subyektin rəhbəri tərəfindən ona məlumat verilməlidir.",
+    "7.12. Vətəndaşın müraciətində göstərilən məsələlər “Dövlət sirri haqqında” Azərbaycan Respublikasının Qanununa uyğun olaraq dövlət sirri təşkil edən məlumatlara və ya qanunla qorunan digər məlumatlara aid edildikdə müraciətin bu səbəbdən mahiyyəti üzrə cavablandırılmasının mümkünsüzlüyü barədə müraciət edənə məlumat verilir.",
+    "7.13. Vətəndaşların müraciətlərini aidiyyəti üzrə baxılmaq üçün qanunazidd hərəkətindən (hərəkətsizliyindən) şikayət edilən müraciətə baxan subyektə və ya onun vəzifəli şəxslərinə göndərmək qadağandır.",
+    "7.14. Bu Qanunun 7.13-cü maddəsi ilə müəyyən edilmiş qadağaya görə vətəndaşın müraciətini aidiyyəti üzrə göndərmək mümkün olmadıqda vətəndaşa qanunla müəyyən edilmiş qaydada məhkəməyə müraciət etmək hüququ izah olunur."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "8",
+   "t": "Müraciətin baxılmamış saxlanılması",
+   "p": [
+    "8.1. Müraciət aşağıdakı hallarda baxılmamış saxlanılır:",
+    "8.1.1. bu Qanunun 5-ci maddəsinə uyğun olaraq müraciətin edilməsi və ona baxılması üçün başqa qayda nəzərdə tutulduqda;",
+    "8.1.2. müraciət bu Qanunun 6.6-cı, 6.7-ci və 6.9-cu maddələrində göstərilən tələblərə cavab vermədikdə;",
+    "8.1.3. müraciətdə göstərilən məsələ ilə əlaqədar məhkəmənin qanuni qüvvəyə minmiş qərarı olduqda;",
+    "8.1.4. vətəndaşın təkrar müraciətlərinə bir il ərzində 3 dəfə mahiyyəti üzrə əsaslandırılmış cavab verildikdə və təkrar müraciətdə məsələnin həlli üçün yeni məlumatlar olmadıqda;",
+    "8.1.5. bu Qanunun 7.9-cu maddəsində göstərilən hallarda müraciətin aidiyyəti üzrə göndərilməsi mümkün olmadıqda və ya müraciətdə olan məlumatlar onun həlli və ya aidiyyəti üzrə göndərilməsi üçün kifayət etmədikdə;",
+    "8.1.6. müraciət etmiş şəxs bu Qanunun 14.0.2-ci maddəsinə uyğun olaraq ərizə ilə müraciət etdikdə.",
+    "8.2. Bu Qanunun 8.1-ci maddəsində göstərilən hallarda müraciətə baxan subyekt və ya onun vəzifəli şəxsi müraciət edən şəxsə səbəblər göstərilməklə müraciətin (anonim müraciət istisna olmaqla) baxılmamış saxlanılması barədə beş iş günündən gec olmayaraq, şifahi müraciətin baxılmamış saxlanılması üçün əsas olduqda isə dərhal məlumat verir.",
+    "8.3. Müraciətin baxılmamış saxlanmasına əsas verən hallar aradan qaldırıldıqda müraciətə baxan subyekt ona baxılmanı təmin etməlidir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "9",
+   "t": "Korrupsiya ilə əlaqədar hüquqpozmalar barədə müraciətlərə baxılmasının xüsusiyyətləri",
+   "p": [
+    "9.1. Dövlət orqanlarında korrupsiya ilə əlaqədar hüquqpozmalar barədə müraciətlərə, bu maddənin xüsusiyyətləri nəzərə alınmaqla, bu Qanuna müvafiq olaraq baxılır.",
+    "9.2. Korrupsiya ilə əlaqədar hüquqpozmalar barədə müraciət daxil olduqda dövlət orqanının rəhbəri müraciət üzrə xidməti araşdırma təyin edir. Xidməti araşdırmanı müvafiq dövlət orqanında daxili nəzarət xidməti aparır. Xidməti araşdırma 20 iş günü müddətində başa çatdırılmalı və nəticəsi barədə məlumat dövlət orqanının rəhbərinə təqdim olunmalıdır. Əlavə materialların və məlumatların əldə edilməsi tələb olunduqda dövlət orqanı rəhbərinin bu müddəti 10 iş günü uzatmaq hüququ vardır.",
+    "9.2-1. Barəsində məlumat verilən şəxsə, həmçinin araşdırmanın nəticəsində birbaşa və ya dolayısı ilə maraqlı olan şəxslərə korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumatın araşdırılması həvalə edilə bilməz.",
+    "9.3. Dövlət orqanının rəhbəri xidməti araşdırmanın nəticəsi barədə məlumatı aldıqdan sonra müraciət üzrə aşağıdakı qərarlardan birini qəbul edir:",
+    "9.3.1. müraciətin əsaslı olduğu təsdiq edildikdə, eyni zamanda əməldə mülki-hüquqi və ya inzibati məsuliyyəti yaradacaq əlamətlər olduqda Azərbaycan Respublikasının Mülki Məcəlləsinə və Azərbaycan Respublikasının İnzibati Xətalar Məcəlləsinə uyğun olaraq tədbirlər görülməsi, cinayət əlamətləri olan hüquqpozmalar aşkar edildikdə, müvafiq sənədlərin Azərbaycan Respublikasının Baş Prokurorluğuna göndərilməsi barədə;",
+    "9.3.2. müraciətin əsaslı olması təsdiq edildikdə, lakin əməldə mülki-hüquqi, inzibati və ya cinayət məsuliyyəti yaradacaq əlamətlər olmadıqda aidiyyəti şəxslərin intizam məsuliyyətinə cəlb edilməsi barədə;",
+    "9.3.3. müraciətin əsaslı olduğu təsdiq edilmədikdə şikayət üzrə icraata xitam verilməsi barədə.",
+    "9.4. Müraciət etmiş şəxsə qəbul olunmuş qərar haqqında əsaslandırılmış cavab verilməklə həmin qərardan şikayət etmək hüququ izah olunur.",
+    "9.5. Vətəndaşın dövlət orqanı rəhbərinin qərarından yuxarı dövlət orqanına şikayət vermək hüququ vardır. Bu müddəa vətəndaşın dövlət orqanı rəhbərinin qərarından məhkəməyə şikayət vermək hüququnu məhdudlaşdırmır.",
+    "9.6. Dövlət orqanları istisna olmaqla, digər müraciətə baxan subyektlərdə korrupsiya ilə əlaqədar hüquqpozmalar barədə müraciətlərə bu Qanunun 7-ci maddəsində müəyyən edilmiş qaydada 20 iş günü müddətində baxılır."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "10",
+   "t": "Müraciətə baxılması müddəti",
+   "p": [
+    "10.1. Bu Qanunun 9.2-ci, 9.6-cı və 10.2-10.4-cü maddələrində göstərilən hallar istisna olmaqla, vətəndaşların müraciətlərinə ən geci 15 iş günü, əlavə öyrənilmə və yoxlanılma tələb edən müraciətlərə isə ən geci 30 iş günü müddətində baxılır.",
+    "10.2. Bu Qanunun 9.2-ci, 9.6-cı, 10.3-cü və 10.4-cü maddələrində göstərilən hallar istisna olmaqla, müraciətə baxılması üçün əlavə məlumatların əldə edilməsi və ya aidiyyəti üzrə sorğu göndərilməsi tələb edildikdə, müraciətə baxan subyektin vəzifəli şəxsinin müraciətə baxılması müddətini ən çoxu 30 iş günü uzatmaq hüququ vardır. Bu barədə müraciət edən vətəndaşa, habelə müraciəti baxılmaq üçün bu Qanunun 7.11-ci maddəsinə uyğun olaraq digər müraciətə baxan subyektə göndərmiş yuxarı dövlət orqanına onun tələbi ilə məlumat verilməlidir.",
+    "10.3. Hərbi qulluqçuların və onların ailə üzvlərinin müraciətlərinə daxil olduğu gündən etibarən ən geci 15 iş günü ərzində baxılır.",
+    "10.4. Əgər məlumatın verilməsi barədə müraciətə yuxarıda göstərilən müddətlərdə baxılması nəticəsində lazım olan məlumat öz əhəmiyyətini itirə bilərsə, həmin müraciətə dərhal, bu mümkün olmadıqda, müraciətin daxil olduğu andan 24 saat keçənədək baxılmalıdır.",
+    "10.5. Bu Qanunun 10.1-10.3-cü maddələrində göstərilən müddətlərin axımı müraciətin müraciətə baxan subyektə daxil olduğu gündən başlanır."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "11",
+   "t": "Vətəndaşların qəbul edilməsi qaydası",
+   "p": [
+    "11.1. Müraciətə baxan subyektlər vətəndaşların qəbul edilməsini vətəndaşların qəbulu cədvəlinə uyğun olaraq ayda bir dəfədən az olmamaqla təmin etməlidirlər.",
+    "11.2. Vətəndaşları müraciətə baxan subyektlərin rəhbərləri və ya digər vəzifəli şəxsləri qəbul edirlər.",
+    "11.3. Vətəndaşlar əvvəlcədən məlumat verilən günlərdə və saatlarda qəbul edilməlidirlər. Vətəndaşın müraciəti ilə əlaqədar təxirəsalınmaz tədbirlərin görülməsi tələb edildikdə müraciətə baxan subyektin rəhbəri və ya digər vəzifəli şəxsləri onları dərhal qəbul etməlidirlər.",
+    "11.4. Vətəndaşlar şəxsiyyətini təsdiq edən sənədlə müraciət etmək və ya müraciətə baxan subyektin rəsmi internet informasiya ehtiyatında, yaxud EHİS üzərindən elektron imza vasitəsilə qeydiyyatdan keçmək yolu ilə qəbula yazılırlar. Hər üç qaydada qəbula yazılmış vətəndaş qəbul günü şəxsiyyət vəsiqəsini, müraciət edən vətəndaşın adından qəbula onun nümayəndəsi gəldikdə isə onun səlahiyyətlərini təsdiq edən sənədi təqdim etməlidir.",
+    "11.5. Qəbul zamanı təqdim edilmiş yazılı müraciət bu Qanunun 7-ci maddəsinə uyğun olaraq qəbul edilir, qeydiyyata alınır və ona baxılır.",
+    "11.6. Vətəndaşın şifahi müraciəti ilə bağlı qəbula dair qeydiyyat-nəzarət vərəqəsində qeyd aparılır. Şifahi müraciətdəki məsələlərin həlli əlavə araşdırma aparılmasını tələb etmədikdə vətəndaşın razılığı ilə müraciət qəbul zamanı şifahi qaydada cavablandırılır. Qəbul zamanı vətəndaşın müraciətini şifahi qaydada cavablandırmaq mümkün olmadıqda müraciət yazılı şəkildə təqdim olunur. Belə müraciətin qəbul edilməsi, qeydiyyatı və ona baxılması qaydası bu Qanunun 11.5-ci maddəsinə uyğun olaraq həyata keçirilir.",
+    "11.7. Vətəndaşın qəbulu zamanı onun müraciətində qaldırılan məsələnin digər müraciətə baxan subyektlərin və onların vəzifəli şəxslərinin səlahiyyətinə aid olduğu aşkar edilərsə, müraciət edən şəxsə aidiyyəti üzrə müraciət etmə qaydası izah olunur.",
+    "11.8. Müraciətə baxan subyektlərin rəhbərlərinin və digər vəzifəli şəxslərinin səyyar və videoqəbullar, o cümlədən onlayn konfranslar keçirmək hüququ vardır. Bu cür qəbul zamanı təqdim edilən müraciətlərin qəbul edilməsi, qeydiyyatı və ona baxılması qaydası bu maddəyə uyğun olaraq həyata keçirilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "12",
+   "t": "Müraciətə baxan subyektlərin və onların vəzifəli şəxslərinin vəzifələri",
+   "p": [
+    "12.1. Müraciətə baxan subyektlər və onların vəzifəli şəxsləri Azərbaycan Respublikasının Konstitusiyası və qanunları ilə müəyyən edilən və təminat verilən qaydada vətəndaşların yazılı və şifahi formada təkliflər vermək, ərizə ilə müraciət etmək, vəzifəli şəxslərin qanunazidd hərəkətlərindən (hərəkətsizliyindən) şikayət etmək hüquqlarının sərbəst həyata keçirilməsi üçün şərait yaradılmasını təmin etməlidirlər.",
+    "12.2. Müraciətə baxan subyektlər və onların vəzifəli şəxsləri vətəndaşların təkliflərini, ərizə və şikayətlərini qəbul etməli, onlara bu Qanunla müəyyən olunmuş qaydada və müddətlərdə baxmalı və cavab verməlidirlər.",
+    "12.3. Müraciətə baxan subyektlərin vəzifəli şəxsləri vətəndaşların müraciətlərinə baxarkən:",
+    "12.3.1. müraciətə obyektiv, hərtərəfli və vaxtında baxılmasını təmin etməlidirlər;",
+    "12.3.2. məsələnin mahiyyətini öyrənməli və onun həlli üçün lazımi sənədləri tələb etməlidirlər;",
+    "12.3.3. müraciətə baxılmasının nəticəsi haqqında vətəndaşlara yazılı formada məlumat verməli, müraciət təmin edilmədikdə bunun səbəblərini göstərməli, şikayət vermək qaydasını izah etməlidirlər;",
+    "12.3.4. müraciətlər barəsində əsaslandırılmış qərarların qəbul edilməsini və bu qərarların vaxtında və düzgün yerinə yetirilməsini təmin etməlidirlər.",
+    "12.4. Dövlət orqanlarının və onların vəzifəli şəxslərinin, siyasi partiyaların, həmkarlar ittifaqlarının və digər ictimai birliklərin, habelə ayrı-ayrı vətəndaşların fəaliyyətinin və ya işinin tənqid edilməsi ilə bağlı, yaxud vətəndaşın və ya digər şəxslərin hüquq və azadlıqlarının bərpası və müdafiəsi məqsədi ilə edilən müraciətə görə vətəndaşı təqib etmək qadağandır.",
+    "12.5. Müraciətlərə baxılması zamanı müraciətə baxan subyektlərin və onların vəzifəli şəxslərinin müraciətdəki məsələlərin həlli ilə əlaqədar əldə olunmuş məlumatları, o cümlədən dövlət sirri təşkil edən və qanunla qorunan digər məlumatları yayması (yazılı müraciətin aidiyyəti üzrə baxılması üçün digər müraciətə baxan subyektlərə və onların vəzifəli şəxslərinə göndərilməsi istisna olmaqla), eləcə də müraciətin həlli ilə bağlı olmayan fərdi məlumatların, o cümlədən xüsusi kateqoriyalı fərdi məlumatların toplanılması, saxlanılması, istifadəsi və yayılması qadağandır.",
+    "12.6. Dövlət orqanının (və ya onun vəzifəli şəxsinin) qanunazidd hərəkəti (hərəkətsizliyi) barədə prokurorluq orqanlarına daxil olmuş müraciətlərə bu Qanuna və “Prokurorluq haqqında” Azərbaycan Respublikasının Qanununa uyğun olaraq baxılır. Bu cür müraciətlər prokurorluq orqanlarının səlahiyyətlərinə aid olmadıqda onlar beş iş günü müddətində müraciət edən şəxsə qaytarılır. Vətəndaşın müraciəti müraciətə baxan subyekt (və ya onun vəzifəli şəxsi) tərəfindən aidiyyəti üzrə baxılması üçün prokurorluq orqanına göndərildikdə həmin subyektə (və ya onun vəzifəli şəxsinə) onun xahişi ilə baxılmanın nəticəsi barədə məlumat verilir.",
+    "12.7. Azərbaycan Respublikasının Baş prokuroru bu Qanunun 12.6-cı maddəsində göstərilən müraciətlərə baxılmasının nəticələri barədə altı ayda bir dəfədən az olmayaraq müvafiq icra hakimiyyəti orqanına məlumat verir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "13",
+   "t": "Nəzarətin həyata keçirilməsi",
+   "p": [
+    "13.1. Dövlət orqanlarında, dövlət mülkiyyətində olan və paylarının (səhmlərinin) nəzarət zərfi dövlətə məxsus olan hüquqi şəxslərdə və büdcə təşkilatlarında kargüzarlıq işinin aparılmasına nəzarəti müvafiq icra hakimiyyəti orqanı həyata keçirir.",
+    "13.2. Bu Qanunun 13.1-ci maddəsində nəzərdə tutulmuş nəzarətin həyata keçirilməsi qaydasını müvafiq icra hakimiyyəti orqanı müəyyən edir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "14",
+   "t": "Müraciətlərə baxılması zamanı vətəndaşların hüquqları",
+   "p": [
+    "14.0. Müraciətinə baxılan vətəndaşın aşağıdakı hüquqları vardır:",
+    "14.0.1. müraciətin tam və hərtərəfli araşdırılması üçün əlavə sənəd və materiallar təqdim etmək və ya bu sənədlərin əldə edilməsini (o cümlədən elektron formada) müraciətə baxan subyektdən xahiş etmək;",
+    "14.0.2. müraciətə baxılmasının dayandırılması barədə ərizə ilə müraciət etmək;",
+    "14.0.3. təkrar yazılı müraciətə ilkin müraciətə baxılmasının nəticəsi barədə sənədləri əlavə etmək;",
+    "14.0.4. ictimai informasiya və fərdi məlumatların əldə edilməsi məqsədi ilə sorğu vermək;",
+    "14.0.5. müraciətə baxılmasına dair sənədlərin və materialların digər şəxslərin hüquqlarına və qanuni mənafelərinə toxunmaması və ya qanunla dövlət sirri təşkil edən məlumatlara və ya qanunla qorunan digər məlumatlara aid edilməməsi şərti ilə həmin sənəd və materiallarla tanış olmaq;",
+    "14.0.6. müraciətin qeydiyyat nömrəsi və daxilolma tarixi barədə, müraciət aidiyyəti üzrə göndərildikdə həmin məktubun qeydiyyat nömrəsi və göndərilmə tarixi barədə məlumat almaq;",
+    "14.0.7. müraciətə baxılması barədə yazılı cavab və ya müraciətin aidiyyəti üzrə göndərilməsinə dair məlumat almaq;",
+    "14.0.8. müraciət barəsində qəbul edilmiş qərarla razılaşmadıqda həmin qərardan inzibati və (və ya) məhkəmə qaydasında şikayət vermək;",
+    "14.0.9. müraciətin məzmununda vətəndaşın ailə və şəxsi həyatına aid sirr olan, habelə peşə və ya kommersiya sirri olan sənədlərin və ya məlumatların məxfiliyinin təmin olunmasını tələb etmək."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "15",
+   "t": "Canlı yayımlanan televiziya və radio proqramları və ya telefon müraciət xidməti vasitəsilə edilən şifahi müraciətlərin xüsusiyyətləri",
+   "p": [
+    "15.1. Canlı yayımlanan televiziya və radio proqramları vasitəsilə edilən şifahi müraciət üzrə əlavə araşdırma aparmadan izah verilməsi mümkün olduqda müraciətə baxan subyektin həmin proqramda iştirak edən nümayəndəsinin qeydiyyat aparmadan müraciəti canlı yayımda cavablandırmaq hüququ vardır.",
+    "15.2. Vətəndaşların canlı yayımlanan televiziya və radio proqramları zamanı edilən müraciətlərinin dərhal cavablandırılması mümkün olmadıqda müraciətin qəbul edilməsi, qeydiyyatı və ona baxılması qaydası bu Qanunun 7-ci maddəsinə uyğun olaraq həyata keçirilir.",
+    "15.3. Telefon müraciət xidməti vasitəsilə şifahi müraciətlərin edilməsi, qəbulu, qeydiyyatı və cavablandırılması bu Qanunun tələbləri nəzərə alınmaqla müvafiq icra hakimiyyəti orqanının müəyyən etdiyi qaydada həyata keçirilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "16",
+   "t": "Bu Qanunun pozulmasına görə məsuliyyət",
+   "p": [
+    "Bu Qanunun tələblərini pozan şəxslər Azərbaycan Respublikasının Mülki, İnzibati Xətalar və Cinayət məcəllələrinə uyğun olaraq məsuliyyət daşıyırlar."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "17",
+   "t": "Yekun müddəa",
+   "p": [
+    "“Vətəndaşların müraciətlərinə baxılması qaydası haqqında” Azərbaycan Respublikasının Qanunu (Azərbaycan Respublikasının Qanunvericilik Toplusu, 1997, № 5, maddə 417; 1998, № 7, maddə 444; 1999, № 10, maddə 570; 2001, № 3, maddə 151, № 11, maddə 697, № 12, maddə 736; 2002, № 8, maddə 463; 2004, № 1, maddə 10; 2006, № 5, maddə 390, № 12, maddə 1005; 2007, № 11, maddə 1053; 2010, № 3, maddə 173; 2011, № 7, maddə 615) ləğv edilsin."
+   ]
+  }
+ ]
+}

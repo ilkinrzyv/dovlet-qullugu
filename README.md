@@ -17,6 +17,7 @@ Quraşdırma və məlumatların ixracı haqqında: [docs/README.md](docs/README.
 | `build/fig/` | Şəkilli suallar üçün SVG fiqurlar |
 | `build/figs_men.py` | Məntiq fiqurlarını çəkir (`build/fig/men/`), cavablarını hesablayıb yoxlayır və `answers.json`-a yazır — parser hər şəkilli sualın cavabını onunla tutuşdurur |
 | `build/proqram.json` | DİM-in 4 fənn üzrə proqramı (BA və BB mövzuları), imtahanın quruluşu və keçid balları |
+| `build/qanun.py`, `build/qanun/*.json` | Qanunvericilik hissəsinin mətni: skript qanunları e-qanun.az-dan endirir və maddələrə bölür (ləğv olunmuş mətn atılır) |
 | `build/parse_book.py` | `book.md` + testlər + proqram → `build/book.json` |
 | `build/build_pwa.py` | `build/book.json` → `docs/` (sayt) |
 | `build/app.js`, `build/app.css` | Tətbiqin interfeysi |
@@ -38,8 +39,6 @@ Fəslin girişi (istəyə görə).
 ### 1.1. Bölmənin adı
 
 Mətn, **qalın**, *kursiv*, siyahılar, cədvəllər.
-
-> **Maddə 5.** Qanundan sitat.
 
 ## Fəsil 7. Yalnız BA proqramında olan mövzu {qrup=BA}
 ```
@@ -70,6 +69,33 @@ Testlər `build/quiz/` qovluğunda, fəslin nömrəsi ilə:
   Tətbiq variantları hər dəfə qarışdırır.
 - Açıq sual (`"t": "open"`): `a` — qəbul olunan cavablar. Böyük-kiçik hərf, artıq boşluq və sondakı nöqtə nəzərə alınmır.
 - Şəkilli sual: `img` — `build/fig/`-dəki SVG fayl. Variantlar şəkildəki hərflərdirsə, `"fix": true` yaz — sıra qarışmasın.
+
+### Qanun mətni: `qanun` bloku
+
+Qanunvericilik fəsillərində qanunun mətni əl ilə yazılmır: `qanun` bloku hansı maddələrin göstəriləcəyini deyir,
+mətni isə parser `build/qanun/<akt>.json`-dan (e-qanun.az-dakı rəsmi mətn) olduğu kimi götürür:
+
+````markdown
+```qanun konstitusiya
+mənbə
+preambula
+maddə 1–6
+```
+
+```qanun nha
+maddə 1: 1.0 1.0.1–1.0.4
+maddə 17–20
+```
+````
+
+- Hər sətir bir seçimdir: `maddə 5`, `maddə 5–9` (aralıq uzun tire ilə; `13-1` bir maddənin nömrəsidir),
+  `maddə 1: 1.0.1 1.0.3` (maddədən yalnız bu bəndlər), `bənd 33–34`, `hissə 1–3` (Təlimatın hissələri),
+  `fərman bənd 3`, `preambula`, `keçid müddəaları`, `mənbə` (mətnin mənbəyi və tarixi).
+- Bölmə, fəsil və hissə başlıqları seçim onlardan başlayanda özü əlavə olunur; ləğv olunmuş maddə “çıxarılıb” kimi
+  göstərilir.
+- Aktların siyahısı (`konstitusiya`, `dovlet-qullugu`, `nha` və s.) `build/qanun.py`-dakı `ACTS`-dadır.
+- Qanuna dəyişiklik ediləndə: `python build/qanun.py` — mətnlər yenidən endirilir; `git diff build/qanun` nəyin
+  dəyişdiyini göstərir. Sonra testlərin və “Yadda saxla” cədvəllərinin hələ də düz olduğunu yoxla.
 
 ### Mətnin içində suallar: nümunə və yoxlama
 
@@ -132,6 +158,7 @@ yenidən dərc et.
 
 ```bash
 pip install -r requirements.txt
+python build/qanun.py          # yalnız qanunlar dəyişəndə: rəsmi mətnlər e-qanun.az-dan → build/qanun/
 python build/parse_book.py     # book.md + testlər → build/book.json; "errors 0" olmalıdır
 python build/build_pwa.py      # → docs/ (sayt) və dist/dovlet-qullugu-offline.zip
 ```
@@ -141,7 +168,7 @@ Yoxlama (Playwright, Chromium):
 ```bash
 cd build && npm ci && npx playwright install chromium
 npm run test:pwa    # real sayt: offline, quraşdırma, oxu, axtarış
-npm run test:app    # yoxlama kitabı ilə: BA/BB süzgəci, proqram, açıq və şəkilli suallar, nümunə/yoxla blokları, Claude (API açarı ilə), sınaq imtahanı
+npm run test:app    # yoxlama kitabı ilə: BA/BB süzgəci, proqram, açıq və şəkilli suallar, nümunə/yoxla blokları, Claude (API açarı ilə), sınaq imtahanı, qanun mətni
 npm run test:page   # claude.ai versiyası: #ai-… keçidləri cavabı özü başladır, model seçimi
 ```
 

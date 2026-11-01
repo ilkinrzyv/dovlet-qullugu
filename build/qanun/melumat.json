@@ -1,0 +1,168 @@
+{
+ "key": "melumat",
+ "id": 3420,
+ "title": "Məlumat azadlığı haqqında",
+ "num": "505-IQ",
+ "date": "19.06.1998",
+ "status": "Qüvvədədir",
+ "url": "https://e-qanun.az/framework/3420",
+ "fetched": "2026-11-01",
+ "pre": [],
+ "units": [
+  {
+   "k": "m",
+   "n": "1",
+   "t": "Məlumat azadlığı",
+   "p": [
+    "Azərbaycan Respublikası Konstitusiyasının 50-ci maddəsinə uyğun olaraq hər kəsin istədiyi məlumatı qanuni yolla axtarmaq, əldə etmək, ötürmək, hazırlamaq və yaymaq azadlığı vardır.",
+    "Bu Qanunun məqsədləri üçün məlumat dedikdə təqdimat formasından asılı olmayaraq təbiətdə, cəmiyyətdə və dövlətdə baş vermiş hadisələr, proseslər, faktlar və şəxslər haqqında xəbərlər nəzərdə tutulur."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "2",
+   "t": "Məlumat azadlığının təminatı",
+   "p": [
+    "Hər kəsin məlumat əldə etmək üçün müraciət etmək hüququ vardır.",
+    "Məlumat azadlığının həyata keçirilməsi fiziki və hüquqi şəxslərin hüquq və mənafelərinin pozulmasına səbəb olmamalıdır.",
+    "Məlumat azadlığının məhdudlaşdırılmasına yalnız Azərbaycan Respublikasının Konstitusiyasında nəzərdə tutulmuş hallarda yol verilir. Məlumat azadlığından istifadə edilməsi qaydası Azərbaycan Respublikasının Konstitusiyası və ona müvafiq olaraq Azərbaycan Respublikasının qanunları ilə müəyyən edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "3",
+   "t": "Qanunun təyinatı",
+   "p": [
+    "Bu Qanun məlumat azadlığının həyata keçirilməsi ilə əlaqədar yaranan münasibətləri tənzimləyir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "4",
+   "t": "Məlumat münasibətlərinin subyektləri",
+   "p": [
+    "Məlumat münasibətlərinin subyektləri fiziki və hüquqi şəxslərdir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "5",
+   "t": "Məlumat azadlığının həyata keçirilməsinin əsas prinsipləri",
+   "p": [
+    "Məlumat azadlığının həyata keçirilməsinin əsas prinsipləri aşağıdakılardır:",
+    "məlumat azadlığının təmin edilməsi;",
+    "məlumatın açıqlığı və onun mübadilə edilməsinin azadlığı;",
+    "məlumatın obyektivliyi, tamlığı və həqiqiliyi;",
+    "məlumatın axtarılmasının, əldə edilməsinin, istifadə olunmasının, yayılmasının və qorunmasının qanuniliyi;",
+    "hər kəsin şəxsi və ailə həyatının sirrinin saxlanması;",
+    "şəxsiyyətin, cəmiyyətin və dövlətin təhlükəsizliyinin qorunması."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "6",
+   "t": "Məlumatın əldə edilməsi üçün təminatlar",
+   "p": [
+    "Məlumatın əldə edilməsi aşağıdakı yollarla təmin edilir:",
+    "dövlət hakimiyyəti orqanlarının və bələdiyyələrin öz fəaliyyətləri və qəbul olunmuş qərarları barədə məlumatlar vermələri yolu ilə;",
+    "dövlət hakimiyyəti orqanlarında məlumatın əldə edilməsi üçün informasiya xidmətlərinin yaradılması ilə;",
+    "statistik məlumatlardan, kitabxanaların, arxivlərin və muzeylərin fondlarından, habelə informasiya sistemlərindən maneəsiz istifadə edilməsi ilə;",
+    "vətəndaşların həyatı və sağlamlığı üçün təhlükə yaradan fövqəladə hallar, təbii fəlakətlər və qəzalar barədə əhaliyə dərhal məlumat verilməsi ilə;",
+    "dövlətin təhlükəsizliyinə xətər yaradan fövqəladə hallar barədə əhaliyə dərhal məlumat verilməsi ilə;",
+    "mediada, o cümlədən mətbuatda dövlət senzurasına yol verilməməsi ilə;",
+    "normativ-hüquqi aktların qanunvericilikdə nəzərdə tutulmuş qaydada əhalinin nəzərinə çatdırılması ilə."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "7",
+   "t": "Məlumat mənbələri",
+   "p": [
+    "Qanunvericilikdə nəzərdə tutulmuş qaydada məlumatları əks etdirən sənədlər və başqa daşıyıcılar, media subyektlərinin məlumatları, açıq çıxışlar məlumat mənbələri hesab edilirlər."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "8",
+   "t": "Məlumatın əldə edilməsi",
+   "p": [
+    "Məlumatın əldə edilməsi müvafiq qanunvericiliklə müəyyən edilmiş qaydada və üsullarla həyata keçirilir.",
+    "Əldə edilməsi qaydasına görə məlumat açıq məlumata və alınması məhdudlaşdırılan məlumata bölünür."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "9",
+   "t": "Açıq məlumatın əldə edilməsi",
+   "p": [
+    "Açıq məlumatın əldə edilməsi aşağıdakı yollarla təmin edilir:",
+    "internet informasiya ehtiyatları vasitəsilə;",
+    "rəsmi nəşrlərlə;",
+    "kütləvi informasiyanın yayılması ilə;",
+    "kitabxanalar, ictimai informasiya mərkəzləri, kütləvi istifadənin mümkün olduğu digər yerlərdə sənədlərlə tanış olmaq üçün şərait yaradılması yolu ilə;",
+    "fiziki və hüquqi şəxslərə təqdim edilməsi ilə;",
+    "qanunvericiliklə nəzərdə tutulan başqa üsullarla.",
+    "Açıq məlumatın alınması qaydası və şərtləri bu Qanunla, “İnformasiya əldə etmək haqqında” Azərbaycan Respublikasının Qanunu, digər qanunvericilik aktları və ya müqavilə ilə (məlumatın verilməsi müqavilə əsasında həyata keçirilirsə) müəyyən olunur. Məlumatın verilməsi barədə müqavilə mülki qanunvericiliyə uyğun bağlanır. Dövlət hakimiyyəti orqanları, bələdiyyələr müqavilənin olmamasına görə məlumatı verməkdən imtina edə bilməzlər."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "10",
+   "t": "Alınması məhdudlaşdırılan məlumat",
+   "p": [
+    "Alınması məhdudlaşdırılan məlumatlara – dövlət, peşə (vəkil, notariat, həkim), qulluq, bank, kommersiya, istintaq və məhkəmə sirləri, şəxslərin şəxsi və ailə həyatına, terror aktlarına aid olan məlumatlar aiddirlər. Ətraf mühitə dair informasiya müvafiq qanunvericiliklə müəyyən edilmiş hallarda alınması məhdudlaşdırılan məlumata aid edilir.",
+    "Dövlət, peşə (vəkil, notariat, həkim), qulluq, bank, kommersiya, istintaq və məhkəmə sirləri, şəxslərin şəxsi və ailə həyatına, terror aktlarına, ətraf mühitə aid olan məlumatlarla bağlı yaranan münasibətlər müvafiq qanunvericiliklə tənzimlənir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "11",
+   "t": "Məlumatın əldə edilməsi barədə müraciət",
+   "p": [
+    "Məlumatın əldə edilməsi üçün sorğunun verilməsi və məlumat əldə edilməsi haqqında sorğuya baxılması “İnformasiya əldə etmək haqqında” Azərbaycan Respublikasının Qanunu ilə tənzimlənir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "12",
+   "t": "Məlumatın əldə edilməsi ilə əlaqədar şikayət etmək hüququ",
+   "p": [
+    "Məlumatın verilməməsi barədə məlumat sahibinin yuxarı orqanına və Azərbaycan Respublikasının İnsan hüquqları üzrə müvəkkilinə (ombudsmana), habelə məhkəməyə şikayət edilə bilər.",
+    "Məlumatın verilməməsinin qanuniliyinin sübuta yetirilməsi vəzifəsi cavabdehin üzərinə düşür."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "13",
+   "t": "Şəxsiyyət haqqında məlumat (fərdi məlumat)",
+   "p": [
+    "Şəxsiyyət haqqında sənədləşdirilmiş və ya açıq elan edilmiş xəbər şəxsiyyət barədə məlumata aiddir. Şəxsiyyət haqqında sənədləşdirilmiş məlumat mənbəyi onun adına verilmiş, onun tərəfindən imzalanmış sənədlər və öz səlahiyyətləri çərçivəsində orqanlar tərəfindən şəxsiyyət haqqında toplanmış məlumatlardır. Şəxsiyyətin dini mənsubiyyəti və əqidəsi barədə məlumat yalnız onun tərəfindən könüllü təqdim edildikdə dövlət orqanları tərəfindən toplana bilər. Şəxsiyyətin siyasi partiyaya üzvlüyü və ya bitərəf olması barədə məlumat yalnız qanunla nəzərdə tutulmuş hallarda dövlət orqanlarına təqdim edilməlidir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "14",
+   "t": "Şəxsiyyətin onun haqqında toplanmış məlumatla tanış olmaq hüququ",
+   "p": [
+    "Şəxsiyyət haqqında məlumat qanunla müəyyən edilmiş qaydada toplanır, işlənir və mühafizə olunur. Məlumatın aldatma, hədə-qorxu və başqa qanunsuz vasitələrlə toplanması qadağandır.",
+    "Qanunla müəyyən edilmiş qaydada əməliyyat-axtarış fəaliyyəti zamanı əldə edilən məlumatlar, habelə cinayət işinin istintaqı ilə əlaqədar toplanılan məlumatlar istisna olmaqla, şəxsiyyətin onun haqqında məlumatın toplanması ilə əlaqədar aşağıdakı hüquqları vardır:",
+    "onun haqqında toplanan məlumatla tanış olmaq;",
+    "məlumat toplanması vaxtı onun haqqında toplanan məlumatın hansı məqsədlə və necə, həmin məlumatın kim tərəfindən istifadə olunmasını bilmək;",
+    "məlumatda dəqiqləşdirmələr aparılmasını tələb etmək.",
+    "Şəxsiyyətin onun haqqında məlumatların toplanılması ilə bağlı “Fərdi məlumatlar haqqında” Azərbaycan Respublikasının Qanununa müvafiq digər hüquqları da vardır.",
+    "Qanunvericiliyə müvafiq surətdə dövlət orqanlarının topladığı məlumatların kənar şəxslər tərəfindən əldə etməsinə yol verilmir.",
+    "Şəxslər haqqında məlumatın saxlanılması qanuni məqsədlər üçün qanunvericiliklə müəyyən edilmiş zəruri olan müddətdən çox ola bilməz.",
+    "Qanunvericilikdə nəzərdə tutulmamış hallarda gizli şəkildə məlumatın alınması üçün nəzərdə tutulan texniki vasitələrdən istifadə etmək, poçt və teleqraf göndərişlərini yoxlamaq, telefon danışıqlarına qulaq asmaq qadağandır.",
+    "Əməliyyat-axtarış tədbirləri keçirilən hallar istisna olmaqla, şəxsin onun xəbəri olmadan və ya etirazına baxmayaraq media subyektlərinin nümayəndələri və başqa şəxslər tərəfindən izlənilməsi, video və foto çəkilişinə, səs yazısına və digər bu cür hərəkətlərə məruz qalması qanunvericiliklə müəyyən edilmiş məsuliyyətə səbəb olur."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "15",
+   "t": "Bu Qanunun tələblərinin pozulmasına görə məsuliyyət",
+   "p": [
+    "Bu Qanunun tələblərini pozan şəxslər qanunvericiliyə müvafiq olaraq məsuliyyət daşıyırlar."
+   ]
+  }
+ ]
+}

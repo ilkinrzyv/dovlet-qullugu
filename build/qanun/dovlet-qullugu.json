@@ -1,0 +1,947 @@
+{
+ "key": "dovlet-qullugu",
+ "id": 4481,
+ "title": "Dövlət qulluğu haqqında",
+ "num": "926-IQ",
+ "date": "21.07.2000",
+ "status": "Qüvvədədir",
+ "url": "https://e-qanun.az/framework/4481",
+ "fetched": "2026-11-01",
+ "pre": [
+  "Bu Qanun Azərbaycan Respublikası Konstitusiyasının 94-cü maddəsinin I hissəsinin 19-cu bəndinə uyğun olaraq Azərbaycan Respublikasında dövlət qulluğunun hüquqi, təşkilati və maliyyə-iqtisadi əsaslarını müəyyən edir."
+ ],
+ "units": [
+  {
+   "k": "f",
+   "n": "I fəsil",
+   "t": "Ümumi müddəalar"
+  },
+  {
+   "k": "m",
+   "n": "1",
+   "t": "Əsas anlayışlar",
+   "p": [
+    "1.1. Bu Qanunda istifadə olunan əsas anlayışlar aşağıdakı mənaları ifadə edir:",
+    "1.1.1. dövlət qulluğu – Azərbaycan Respublikasının Konstitusiyasına və digər normativ hüquqi aktlarına uyğun olaraq dövlətin məqsəd və funksiyalarının həyata keçirilməsi sahəsində dövlət qulluğu vəzifəsində xidmət;",
+    "1.1.2. dövlət qulluğunun xüsusi növü – xüsusi, hərbi və ya diplomatik rütbə nəzərdə tutulan vəzifələrdə dövlət qulluğu keçmə;",
+    "1.1.3. dövlət qulluqçusu – yalnız bu Qanunun 1.1.4-cü maddəsində nəzərdə tutulan mənbələrdən dövlət məvacibi alan, bu Qanunla müəyyən edilmiş qaydada inzibati və ya yardımçı dövlət qulluğu vəzifəsini tutan və ixtisas dərəcəsi verilən, inzibati vəzifə üzrə ilk dəfə daimi dövlət qulluğuna qəbul edilərkən Azərbaycan Respublikasına sadiq olacağına and içən, Azərbaycan Respublikasının vətəndaşı olan dövlət orqanının işçisi;",
+    "1.1.4. dövlət orqanı – Azərbaycan Respublikasının Konstitusiyası və Azərbaycan Respublikasının qanunları ilə müəyyən edilmiş hüdudlarda dövlətin məqsədini və funksiyalarını həyata keçirən, Azərbaycan Respublikasının dövlət büdcəsindən, Naxçıvan Muxtar Respublikasının büdcəsindən və qanunla müəyyən edilən hallarda əlavə olaraq büdcədənkənar vəsaitlər hesabına maliyyələşdirilən, Azərbaycan Respublikasının Konstitusiyasına və Azərbaycan Respublikasının qanunlarına uyğun olaraq yaradılan və bu Qanunun 7-ci maddəsində nəzərdə tutulan struktura malik olan dövlət təsisatı;",
+    "1.1.5. dövlət orqanlarının kateqoriyası (təsnifatı) – dövlət orqanlarının statusu, iyerarxiyası və yurisdiksiyası (ölkə, regional və yerli səviyyədə) nəzərə alınmaqla təsnifləşdirilməsi;",
+    "1.1.6. dövlət məvacibi – dövlət qulluqçusuna pul formasında nağdsız qaydada ödənilən aylıq haqq;",
+    "1.1.7. dövlət qulluğu vəzifəsi – dövlət orqanının Azərbaycan Respublikasının Konstitusiyası və Azərbaycan Respublikasının qanunları ilə müəyyən edilən səlahiyyətlərini icra etmək məqsədilə həmin orqanın strukturuna müvafiq olaraq ştat cədvəlində müəyyən edilən ştat vahidi;",
+    "1.1.8. inzibati və yardımçı vəzifələrin təsnifatı – dövlət orqanlarında inzibati və yardımçı vəzifələrin aid olduqları dövlət orqanlarının kateqoriyası nəzərə alınmaqla təsnifləşdirilməsi;",
+    "1.1.9. dövlət qulluğunun inzibati vəzifəsi – dövlət orqanının struktur bölməsinin fəaliyyət istiqamətinə uyğun olaraq həmin bölmənin səlahiyyətlərini bilavasitə həyata keçirən, dövlət orqanının strukturuna müvafiq olaraq ştat cədvəlində müəyyən edilən ştat vahidi;",
+    "1.1.10. dövlət qulluğunun yardımçı vəzifəsi – dövlət orqanının struktur bölməsinin fəaliyyətini təmin edən, dövlət orqanının strukturuna müvafiq olaraq ştat cədvəlində müəyyən edilən ştat vahidi;",
+    "1.1.11. inzibati və yardımçı vəzifələrin təsnifat toplusu – inzibati və yardımçı vəzifələrin adlarını, təsnifatlarını və dövlət qulluqçularının ixtisas dərəcələrini özündə əks etdirən, dövlət orqanlarında ştat cədvəllərinin hazırlanması üçün əsas olan və müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqan (qurum) tərəfindən təsdiq edilən siyahı;",
+    "1.1.12. dövlət qulluqçusunun ixtisas dərəcəsi – dövlət qulluqçusunun tutduğu vəzifəyə uyğun olaraq ona verilən ixtisas səviyyəsi;",
+    "1.1.13. dövlət orqanının strukturu – dövlət orqanının fəaliyyətini təmin edən struktur qurumlarının normativ hüquqi aktlarla müəyyən edilmiş sistemi;",
+    "1.1.14. dövlət orqanının aparatı – özündə struktur bölmələri (şöbə və sektor) birləşdirən və dövlət orqanına həvalə edilmiş səlahiyyətlərin həyata keçirilməsini bilavasitə təşkil və təmin edən dövlət orqanının struktur qurumu;",
+    "1.1.15. dövlət orqanının struktur bölməsi – dövlət orqanının rəhbərinin qərarı ilə yaradılan və həmin dövlət orqanının əsasnaməsinə uyğun olaraq ona həvalə edilmiş səlahiyyətləri həyata keçirən dövlət orqanının struktur vahidi;",
+    "1.1.16. rotasiya – inzibati vəzifə tutan dövlət qulluqçularının bu Qanunun 31-1-ci maddəsinə uyğun olaraq bir vəzifədən başqa vəzifəyə keçirilməsi;",
+    "1.1.17. bilavasitə rəhbər – dövlət qulluqçusunun birbaşa tabe olduğu vəzifəli şəxs;",
+    "1.1.18. xidməti fəaliyyət – dövlət qulluqçusunun qanunla müəyyən edilmiş hüquq və vəzifələrinin həyata keçirilməsi ilə əlaqədar fəaliyyəti;",
+    "1.1.19. dövlət qulluqçusunun xidməti fəaliyyətinin qiymətləndirilməsi – dövlət qulluqçusunun dövlət məvacibinin məbləğinin müəyyənləşdirilməsi, cari fəaliyyətinə nəzarətin həyata keçirilməsi, onun potensial imkanlarının aşkara çıxarılması və həmin imkanlardan səmərəli istifadə edilməsi, dövlət qulluqçusunun peşə səriştəliyini artırmağa stimullaşdırılması və onun əlavə təhsilə və ya təlimə ehtiyacının, habelə tutduğu vəzifəyə uyğun gəlib-gəlmədiyinin, işçinin vəzifədə irəli çəkilməsi üçün potensialının müəyyənləşdirilməsi məqsədilə keçirilən dövlət qulluqçusunun hər təqvim ilinin sonunda fəaliyyətinin yoxlanılması;",
+    "1.1.20. şöbə – dövlət orqanının bir və ya bir neçə fəaliyyət istiqaməti üzrə səlahiyyətlərini həyata keçirən struktur bölməsi;",
+    "1.1.21. sektor – dövlət orqanının şöbə daxilində və ya müstəqil şəkildə yaradılan struktur bölməsi;",
+    "1.1.22. vəzifə təlimatı – dövlət qulluğu vəzifəsinin adının, qulluq funksiyalarının və həmin vəzifənin tutulması şərtlərinin əks olunduğu və dövlət orqanının rəhbəri tərəfindən təsdiq olunan sənəd;",
+    "1.1.23. mərkəzi icra hakimiyyəti orqanı – səlahiyyətləri Azərbaycan Respublikası Konstitusiyasının 113-cü maddəsi ilə müəyyən edilən fəaliyyət istiqamətlərinə uyğun sahələrdə dövlət siyasətini və tənzimlənməsini həyata keçirən dövlət orqanı;",
+    "1.1.24. mərkəzi icra hakimiyyəti orqanlarının yanında yaradılan dövlət agentlikləri və dövlət xidmətləri – mərkəzi icra hakimiyyəti orqanının yanında yaradılan və sahəvi qanunlarla müəyyən edilən səlahiyyətlərini ölkə səviyyəsində həyata keçirən struktur qurumu;",
+    "1.1.25. mərkəzi icra hakimiyyəti orqanlarının yerli bölmələri – mərkəzi icra hakimiyyəti orqanının yerlərdə (rayon, şəhər və region üzrə) fəaliyyətinin təmin edilməsi məqsədilə yaradılan struktur qurumu;",
+    "1.1.26. intizam məsuliyyəti – dövlət qulluqçusuna həvalə olunmuş vəzifələrin yerinə yetirilməməsi və ya lazımi şəkildə yerinə yetirilməməsinə (intizam xətasına), habelə bu Qanunla müəyyən edilmiş məhdudiyyətlərə əməl olunmamasına görə bu Qanunda nəzərdə tutulmuş intizam tənbehinin tətbiqini nəzərdə tutan hüquqi məsuliyyət növü;",
+    "1.1.27. müsabiqə – inzibati vəzifələrin tutulması məqsədilə namizədlərin vakant vəzifələrə uyğunluğunu qiymətləndirmək üçün keçirilən test imtahanından və müsahibədən ibarət proses;",
+    "1.1.28. daxili müsahibə – 1–5-ci kateqoriya dövlət orqanlarında inzibati vəzifələrin birinci-yeddinci təsnifatlarına uyğun olan vakant vəzifənin tutulması üçün keçirilən, həmin dövlət orqanlarında inzibati vəzifələrdə qulluq keçən və inzibati vəzifələrin təsnifatına uyğun ixtisas dərəcəsi olan dövlət qulluqçularının, habelə bu Qanunun 28.12-ci maddəsinin ikinci hissəsində müəyyən edilmiş vəzifələrə iddia edən şəxslərin iştirakını nəzərdə tutan müsahibə;",
+    "1.1.29. ümumi müsahibə – 1–5-ci kateqoriya dövlət orqanlarında inzibati vəzifələrin dördüncü-yeddinci təsnifatlarına uyğun olan vakant vəzifənin həmin dövlət orqanında və ya digər dövlət orqanında inzibati vəzifələrdə qulluq keçən və inzibati vəzifələrin təsnifatına uyğun ixtisas dərəcəsi olan dövlət qulluqçuları, habelə azı 5 il qulluq stajı olan və dövlət orqanında inzibati vəzifələrdə çalışmış, həmçinin bu Qanunun 29.3-cü maddəsinin birinci hissəsində nəzərdə tutulmuş digər şəxslər tərəfindən tutulması məqsədilə keçirilən müsahibə.",
+    "1.2. Bu Qanunda istifadə olunan digər anlayışlar Azərbaycan Respublikasının normativ hüquqi aktları ilə müəyyən edilmiş mənaları ifadə edir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "2",
+   "t": "Qanunun tətbiq dairəsi",
+   "p": [
+    "2.1. Bu Qanun dövlət orqanlarının struktur qurumlarında qulluq keçən dövlət qulluqçularına şamil edilir.",
+    "2.2. Bu Qanunda başqa hal nəzərdə tutulmamışdırsa, bu Qanun Azərbaycan Respublikasının Prezidentinə, Azərbaycan Respublikasının Birinci vitse-prezidentinə və vitse-prezidentlərinə, Azərbaycan Respublikasının Baş nazirinə və onun müavinlərinə, Azərbaycan Respublikası Milli Məclisinin deputatlarına, Azərbaycan Respublikası məhkəmələrinin hakimlərinə, Azərbaycan Respublikasının İnsan hüquqları üzrə müvəkkilinə (ombudsmana), Azərbaycan Respublikası mərkəzi icra hakimiyyəti orqanlarının rəhbərlərinə və onların müavinlərinə, Azərbaycan Respublikası Mərkəzi Seçki Komissiyasının sədrinə, sədr müavininə, katiblərinə və digər üzvlərinə, Azərbaycan Respublikası Hesablama Palatasının sədrinə, sədr müavininə və auditorlarına, yerli icra hakimiyyəti orqanlarının rəhbərlərinə (başçılarına), Azərbaycan Respublikasının Media və Yayım Şurasının sədrinə, sədr müavinlərinə və digər üzvlərinə, Naxçıvan Muxtar Respublikası Ali Məclisinin deputatlarına, Naxçıvan Muxtar Respublikasının Baş nazirinə və onun müavinlərinə, Naxçıvan Muxtar Respublikasında Azərbaycan Respublikası Prezidentinin səlahiyyətli nümayəndəsinə və onun müavinlərinə, Naxçıvan Muxtar Respublikası Mərkəzi Seçki Komissiyasının sədrinə, Naxçıvan Muxtar Respublikası mərkəzi icra hakimiyyəti orqanlarının rəhbərlərinə, Naxçıvan Muxtar Respublikasının Bakı şəhərində Daimi Nümayəndəliyinin rəhbərinə və hərbi qulluqçulara şamil olunmur.",
+    "2.3. Dövlət qulluğunun xüsusi növündə çalışan şəxslərin qulluq (xidmət) keçməsi bu Qanunun Azərbaycan Respublikası vətəndaşlarının dövlət qulluğuna qəbul edilmək hüququna, dövlət qulluğuna qəbulun şəffaflıq əsasında müsabiqə və müsahibə yolu ilə həyata keçirilməsinə, dövlət qulluqçularının xidməti fəaliyyətinin qiymətləndirilməsinə və dövlət qulluğunun digər prinsiplərinə aid müddəaları, həmçinin bu Qanunun 15-1-ci maddəsi nəzərə alınmaqla, Azərbaycan Respublikasının başqa qanunları ilə tənzimlənir. Dövlət qulluğunun xüsusi növü nəzərdə tutulan dövlət orqanlarında çalışan və xüsusi, hərbi və ya diplomatik rütbəsi olmayan şəxslərə (dövlət qulluqçusu olmayan digər işçilər istisna olmaqla) bu Qanun şamil edilir.",
+    "2.4. Bu Qanun dövlət orqanlarının tabeliyində olan hüquqi şəxslərin işçilərinə şamil edilmir. Bu işçilərin əmək münasibətləri Azərbaycan Respublikasının Əmək Məcəlləsi ilə tənzimlənir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "3",
+   "t": "Dövlət qulluğunun əsas vəzifələri",
+   "p": [
+    "3.0. Dövlət qulluğunun əsas vəzifələri aşağıdakılardır:",
+    "3.0.1. Azərbaycan Respublikasının Konstitusiyası və digər qanunvericilik aktları əsasında vətəndaşların hüquq və azadlıqlarının təmin edilməsi;",
+    "3.0.2. dövlət orqanlarının səlahiyyəti hüdudlarında qərarların hazırlanması, qəbul edilməsi, icrası və onların icrasına nəzarət edilməsi;",
+    "3.0.3. dövlət orqanlarının səmərəli fəaliyyətinin və dövlət qulluqçuları tərəfindən qulluq funksiyalarının icrasının təmin edilməsi."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "4",
+   "t": "Dövlət qulluğunun prinsipləri",
+   "p": [
+    "4.1. Dövlət qulluğu aşağıdakı prinsiplərə əsaslanır:",
+    "4.1.1. qanunçuluq;",
+    "4.1.2. Azərbaycan Respublikasında qanunvericilik, icra və məhkəmə hakimiyyəti orqanlarının səlahiyyət hüdudlarının müəyyən edilməsi;",
+    "4.1.3. dövlət orqanlarına və dövlət qulluqçularına nəzarət və onların hesabat verməsi;",
+    "4.1.4. yuxarı kateqoriya dövlət orqanlarının və vəzifəli şəxslərin öz səlahiyyətləri hüdudlarında qəbul etdikləri qərarların aşağı kateqoriya dövlət orqanları və vəzifəli şəxslər tərəfindən yerinə yetirilməsinin məcburiliyi;",
+    "4.1.5. bütün vətəndaşların və vəzifəli şəxslərin dövlət qulluqçularının qanuni tələblərini icra etməyə və qanuni hərəkətlərini müdafiə etməyə borclu olması;",
+    "4.1.6. dövlət qulluğuna qəbulun şəffaflığı;",
+    "4.1.7. vətəndaşların dövlət qulluğuna müsabiqə və müsahibə əsasında qəbul edilməsi;",
+    "4.1.8. vətəndaşların öz qabiliyyətlərinə, xidməti nailiyyətlərinə və peşə hazırlığına uyğun olaraq dövlət qulluğunun hər hansı vəzifəsini tutmaqda hüquq bərabərliyi;",
+    "4.1.9. irqindən, etnik mənsubiyyətindən, dinindən, dilindən, cinsindən, sosial mənşəyindən, ailə, əmlak və qulluq mövqeyindən, yaşayış yerindən, əqidəsindən, həmkarlar ittifaqlarına və ya ictimai birliklərə mənsubiyyətindən, habelə dövlət qulluqçusunun xidməti fəaliyyətinə aid olmayan başqa səbəblərdən asılı olmayaraq dövlət qulluqçularının hüquq bərabərliyi;",
+    "4.1.10. dövlət qulluqçularının potensialının səmərəli istifadəsi və peşəkarlıq səviyyəsinin artırılması məqsədilə onların rotasiyası;",
+    "4.1.11. dövlət qulluqçularının sosial və hüquqi müdafiəsi, onların özləri və ailələri üçün layiqli həyat səviyyəsinin təmin edilməsi;",
+    "4.1.12. dövlət orqanlarının və ya onların vəzifəli şəxslərinin qanunsuz hərəkətləri (hərəkətsizliyi) nəticəsində vurulmuş zərərə görə dövlət orqanlarının məsuliyyət daşıması.",
+    "4.2. Dövlət orqanlarında siyasi partiyaların və ictimai birliklərin strukturları yaradılmır.",
+    "4.3. Dövlət qulluqçuları vəzifə borclarını yerinə yetirərkən Azərbaycan Respublikası Konstitusiyasını, qanunlarını və onlara müvafiq olaraq qəbul edilmiş digər qanunvericilik aktlarını rəhbər tuturlar ."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "5",
+   "t": "Dövlət qulluğunu idarəetmə orqanları",
+   "p": [
+    "5.1. Azərbaycan Respublikasında bu Qanunun tətbiqinə nəzarəti, dövlət qulluğunun normativ-metodiki təminatını Azərbaycan Respublikasının Dövlət Qulluğunu İdarəetmə Şurası həyata keçirir (bundan sonra - Şura). Şura 18 nəfər üzvdən ibarətdir. Şuranın 6 üzvü Azərbaycan Respublikasının Prezidenti tərəfindən, 6 üzvü Azərbaycan Respublikası Milli Məclisinin sədri tərəfindən, 6 üzvü isə Azərbaycan Respublikası Konstitusiya Məhkəməsinin sədri tərəfindən təyin edilir. Şuranın səlahiyyətləri qanunla təsdiq edilən Əsasnamə ilə müəyyən edilir.",
+    "5.2. Şura dövlət orqanı deyil və onun üzvləri öz səlahiyyətlərini ictimai əsaslarla həyata keçirirlər. Şuranın fəaliyyətinin təşkilini müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqan (qurum) tərəfindən yaradılan Katiblik həyata keçirir.",
+    "5.3. Şuranın qəbul etdiyi qərarların məcburiliyi müvafiq dövlət qulluqçuları üçün müvafiq olaraq Azərbaycan Respublikasının Prezidenti, Azərbaycan Respublikası Milli Məclisinin sədri və Azərbaycan Respublikası Konstitusiya Məhkəməsinin sədri tərəfindən təmin edilir.",
+    "5.4. Şuranın qəbul etdiyi qərarlar icra edilməsi üçün 3 (üç) iş günü müddətində müvafiq dövlət orqanlarına göndərilir. Dövlət orqanlarının rəhbərləri tərəfindən həmin qərarın icra vəziyyəti barədə hesabat 30 (otuz) gün müddətində Şuraya təqdim edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "6",
+   "t": "Dövlət qulluğu haqqında qanunvericilik",
+   "p": [
+    "Dövlət qulluğu haqqında qanunvericilik Azərbaycan Respublikasının Konstitusiyasından, bu Qanundan, Azərbaycan Respublikasının tərəfdar çıxdığı beynəlxalq müqavilələrdən, Azərbaycan Respublikasının dövlət qulluğunu hüquqi cəhətdən tənzim edən və dövlət qulluqçularının hüquqi vəziyyətinin xüsusiyyətlərini müəyyən edən digər qanunvericilik aktlarından ibarətdir."
+   ]
+  },
+  {
+   "k": "f",
+   "n": "II fəsil",
+   "t": "Dövlət orqanları"
+  },
+  {
+   "k": "m",
+   "n": "7",
+   "t": "Dövlət orqanlarının struktur qurumlarında struktur bölmələrinin növləri və yaradılması qaydası",
+   "p": [
+    "7.1. Dövlət orqanlarının struktur qurumlarında işçilərin müəyyən edilmiş say həddi daxilində şöbə, onun tərkibində və ya müstəqil olmaqla sektor yaradıla bilər.",
+    "7.2. Dövlət orqanlarının struktur qurumlarında struktur bölmənin rəhbəri də daxil olmaqla, şöbə yaradılması üçün minimum 8 ştat vahidi (dövlət sirrinin mühafizəsi üzrə struktur bölmələrdə 3 ştat vahidi), sektor yaradılması üçün minimum 3 ştat vahidi müəyyən edilir.",
+    "7.3. Dövlət orqanlarının struktur qurumlarında struktur bölmələrin onlara həvalə edilmiş funksiyalar nəzərə alınmaqla təminedici və yardımçı struktur bölmələr kimi təsnifləşdirilməsi müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqan (qurum) tərəfindən təsdiq edilmiş siyahı əsasında həyata keçirilir.",
+    "7.4. Ali kateqoriya dövlət orqanlarında bu Qanunun 7.1-ci maddəsində nəzərdə tutulanlardan başqa struktur bölmələr də yaradıla bilər."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "8",
+   "t": "Dövlət orqanlarının təsnifatı",
+   "p": [
+    "8.1. Dövlət orqanları onların statusu, iyerarxiyası və yurisdiksiyası (ölkə, regional və yerli səviyyədə) nəzərə alınmaqla aşağıdakı kateqoriyalar üzrə təsnifatlaşdırılır:",
+    "8.1.1. əsas səlahiyyətləri Azərbaycan Respublikası Konstitusiyasının 7-ci maddəsinin III hissəsinə əsasən müəyyən edilən Azərbaycan Respublikasının qanunvericilik, icra və məhkəmə hakimiyyətinin ən yüksək dövlət orqanları, Azərbaycan Respublikası Prezidentinin Administrasiyası, habelə Azərbaycan dövlətinin başçısının fəaliyyətini bilavasitə təmin edən digər orqanlar və icra səlahiyyətlərini həyata keçirən orqan, Azərbaycan Respublikasının Milli Məclisi, Ali konstitusiya ədalət mühakiməsi səlahiyyətlərini həyata keçirən Azərbaycan Respublikasının Konstitusiya Məhkəməsi, ümumi və ixtisaslaşdırılmış məhkəmələrin icraatına aid edilən işlər üzrə ali məhkəmə orqanı olan Azərbaycan Respublikasının Ali Məhkəməsi (Ali kateqoriya dövlət orqanları);",
+    "8.1.2. əsas səlahiyyətləri Azərbaycan Respublikasının Konstitusiyası, habelə Azərbaycan Respublikasının Konstitusiya qanunları və Azərbaycan Respublikasının qanunları və ya Azərbaycan Respublikası Konstitusiyasının 113-cü maddəsi ilə müəyyən edilən dövlət orqanları – Naxçıvan Muxtar Respublikasının Ali Məclisi, Naxçıvan Muxtar Respublikasının müvafiq icra hakimiyyəti orqanı, Naxçıvan Muxtar Respublikasında Azərbaycan Respublikası Prezidentinin səlahiyyətli nümayəndəliyi, müvafiq icra hakimiyyəti orqanlarının aparatları, Azərbaycan Respublikasının Baş Prokurorluğu, Azərbaycan Respublikasının Hesablama Palatası, Məhkəmə-Hüquq Şurasının Aparatı, Azərbaycan Respublikasının İnsan hüquqları üzrə müvəkkilinin (ombudsmanın) Aparatı (1-ci kateqoriya dövlət orqanları);",
+    "8.1.3. əsas səlahiyyətləri Azərbaycan Respublikasının Konstitusiyası, Azərbaycan Respublikasının Konstitusiya qanunları, Azərbaycan Respublikasının qanunları ilə və Azərbaycan Respublikasının Konstitusiyasının 113-cü maddəsi ilə müəyyən edilən dövlət orqanları – Naxçıvan Muxtar Respublikasının Ali Məhkəməsi, Azərbaycan Respublikasının Hərbi Prokurorluğu, Naxçıvan Muxtar Respublikasının Prokurorluğu, Azərbaycan Respublikasının apellyasiya məhkəmələri, Azərbaycan Respublikası Mərkəzi Seçki Komissiyasının Katibliyi, Azərbaycan Respublikasının Korrupsiyaya qarşı mübarizə üzrə Komissiyasının Katibliyi, müvafiq icra hakimiyyəti orqanları, Azərbaycan Respublikasının Media və Yayım Şurasının Aparatı, Naxçıvan Muxtar Respublikasının Bakı şəhərində Daimi Nümayəndəliyi, müvafiq icra hakimiyyəti orqanları yanında yaradılan, rəhbəri və rəhbərinin müavinləri müvafiq icra hakimiyyəti orqanı tərəfindən vəzifəyə təyin və vəzifədən azad edilən dövlət agentlikləri və dövlət xidmətləri (2-ci kateqoriya dövlət orqanları);",
+    "8.1.4. əsas səlahiyyətləri Azərbaycan Respublikası Konstitusiyasının 113-cü və 124-cü maddələri ilə və qanunla müəyyən edilən dövlət orqanları – müvafiq icra hakimiyyəti orqanlarının yanında yaradılan dövlət agentlikləri və dövlət xidmətləri, Azərbaycan Respublikasının xarici ölkələrdə ticarət nümayəndələrinin aparatları, Azərbaycan Respublikasının İnsan hüquqları üzrə müvəkkilinin (ombudsmanın) regional mərkəzləri, Naxçıvan Muxtar Respublikasının Mərkəzi Seçki Komissiyasının Aparatı, Naxçıvan Muxtar Respublikasının müvafiq icra hakimiyyəti orqanları, ağır cinayətlər məhkəmələri, inzibati məhkəmələr, kommersiya məhkəmələri, hərbi məhkəmələr, Bakı şəhər prokurorluğu (3-cü kateqoriya dövlət orqanları);",
+    "8.1.5. əsas səlahiyyətləri Azərbaycan Respublikası Konstitusiyasının 113-cü, 120-ci və 124-cü maddələri ilə və qanunla müəyyən edilən dövlət orqanları – müvafiq icra hakimiyyəti orqanları, müvafiq icra hakimiyyəti orqanlarının yerli bölmələri, müvafiq icra hakimiyyəti orqanlarının yanında, tabeliyində olan orqanlar, rayon (şəhər) məhkəmələri, rayon (şəhər) prokurorluqları və hərbi prokurorluqları (4-cü kateqoriya dövlət orqanları);",
+    "8.1.6. əsas səlahiyyətləri Azərbaycan Respublikası Konstitusiyasının 113-cü və 124-cü maddələri ilə müəyyən edilən dövlət orqanları – müvafiq icra hakimiyyəti orqanlarının yanında yaradılan dövlət agentliklərinin və dövlət xidmətlərinin, müvafiq icra hakimiyyəti orqanlarının yanında, tabeliyində olan orqanların yerli bölmələri, müvafiq icra hakimiyyəti orqanlarının yanında olan orqanlar, inzibati ərazi dairələri üzrə nümayəndəlikləri və sahə inzibati ərazi dairələri üzrə nümayəndəlikləri (5-ci kateqoriya dövlət orqanları).",
+    "."
+   ]
+  },
+  {
+   "k": "f",
+   "n": "III fəsil",
+   "t": "Dövlət qulluğu vəzifəsi"
+  },
+  {
+   "k": "m",
+   "n": "9",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "m",
+   "n": "10",
+   "t": "Dövlət orqanlarında vəzifələrin təsnifatı",
+   "p": [
+    "10.1. Dövlət orqanlarında vəzifələr həmin vəzifələrin funksiyalarının məzmunundan, səlahiyyətlərinin mənbəyindən və tutulması üsullarından asılı olaraq inzibati və yardımçı vəzifələrə bölünür.",
+    "10.4. Siyasi vəzifələri tutan şəxslərin hüquqi statusu başqa qanunvericilik aktları ilə müəyyən olunur və bu Qanunda başqa hal nəzərdə tutulmayıbsa, bu Qanunun qüvvəsi onlara şamil edilmir.",
+    "10.5. İnzibati vəzifələr Ali - 5-ci kateqoriya dövlət orqanlarının strukturuna daxil olan struktur qurumların və struktur bölmələrin rəhbərlərinin, onların müavinlərinin, habelə dövlət qulluğunda çalışan mütəxəssislərin vəzifələridir. İnzibati vəzifə tutan şəxsin hüquqi statusu müvafiq orqanın səlahiyyətlərini müəyyən edən qanunvericilik aktları ilə, habelə vəzifə təlimatları ilə müəyyən edilir.",
+    "10.6. Yardımçı vəzifələr Ali - 5-ci kateqoriya dövlət orqanlarında texniki işləri həyata keçirən dövlət qulluqçularının (kargüzar, makinaçı, kuryer, arxiv qeydiyyatçısı, liftçi, sürücü və sair işçilərin) vəzifələridir. Yardımçı vəzifə tutan şəxsin hüquqi statusu müvafiq orqanın səlahiyyətlərini müəyyən edən qanunvericilik aktları ilə, habelə vəzifə təlimatları ilə müəyyən edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "11",
+   "t": "İnzibati və yardımçı vəzifələrin təsnifatı",
+   "p": [
+    "11.1. İnzibati vəzifələrin aşağıdakı təsnifatları vardır:",
+    "11.1.1. inzibati vəzifələrin ali təsnifatı:",
+    "11.1.1.1. Azərbaycan Respublikası Prezidenti Administrasiyasının rəhbəri;",
+    "11.1.1.2. Azərbaycan Respublikası Prezidentinin Administrasiyasında Azərbaycan Respublikası Birinci vitse-prezidentinin fəaliyyətini təmin edən struktur bölmənin rəhbəri;",
+    "11.1.1.3. Azərbaycan dövlətinin başçısının fəaliyyətini bilavasitə təmin edən digər orqanların rəhbərləri;",
+    "11.1.1.4. Azərbaycan dövlətinin başçısının icra səlahiyyətlərini həyata keçirən orqanın Aparatının rəhbəri;",
+    "11.1.1.5. Azərbaycan Respublikası Milli Məclisi Aparatının rəhbəri;",
+    "11.1.1.6. Azərbaycan Respublikası Konstitusiya Məhkəməsi Aparatının rəhbəri və Azərbaycan Respublikası Ali Məhkəməsi Aparatının rəhbəri;",
+    "11.1.2. inzibati vəzifələrin birinci təsnifatı:",
+    "11.1.2.1. Azərbaycan Respublikası Prezidentinin köməkçisi – Azərbaycan Respublikası Prezidentinin Administrasiyasında şöbə və ya ona bərabər tutulan digər struktur bölmə rəhbəri;",
+    "11.1.2.2. Azərbaycan Respublikası Prezidentinin köməkçisi;",
+    "11.1.2.3. Azərbaycan Respublikası Prezidentinin Administrasiyasında şöbə və ya ona bərabər tutulan digər struktur bölmə rəhbəri;",
+    "11.1.2.4. Azərbaycan Respublikası Prezidentinin xüsusi tapşırıqlar üzrə nümayəndəsi;",
+    "11.1.2.6. Azərbaycan Respublikası Prezidentinin xüsusi nümayəndəsi;",
+    "11.1.2.6-1. Azərbaycan Respublikası Prezidentinin iqlim məsələləri üzrə nümayəndəsi;",
+    "11.1.2.7. Azərbaycan Respublikası Prezidentinin Administrasiyasında Azərbaycan Respublikası Birinci vitse-prezidentinin fəaliyyətini təmin edən struktur bölmə rəhbərinin müavini;",
+    "11.1.2.8. Azərbaycan Respublikası Birinci vitse-prezidentinin köməkçisi;",
+    "11.1.2.9. Azərbaycan Respublikası vitse-prezidentinin köməkçisi;",
+    "11.1.2.10. Azərbaycan dövlətinin başçısının fəaliyyətini bilavasitə təmin edən digər orqanların rəhbərlərinin müavinləri;",
+    "11.1.2.11. Azərbaycan Respublikası Prezidentinin Administrasiyasında şöbə və ya ona bərabər tutulan digər struktur bölmə rəhbərinin müavini;",
+    "11.1.2.13. Azərbaycan Respublikası Prezidentinin xüsusi nümayəndəsinin müavini;",
+    "11.1.2.14. Azərbaycan dövlətinin başçısının icra səlahiyyətlərini həyata keçirən orqanın Aparatı rəhbərinin müavini və həmin orqanın Aparatında şöbə və ya ona bərabər tutulan digər struktur bölmə rəhbəri;",
+    "11.1.2.15. Azərbaycan Respublikası Milli Məclisi Aparatı rəhbərinin müavini və Azərbaycan Respublikası Milli Məclisinin Aparatında şöbə və ya ona bərabər tutulan digər struktur bölmə rəhbəri;",
+    "11.1.2.16. Azərbaycan Respublikası Konstitusiya Məhkəməsinin və Azərbaycan Respublikası Ali Məhkəməsinin aparatları rəhbərlərinin müavinləri, habelə həmin dövlət orqanlarının aparatlarında şöbə və ya ona bərabər tutulan digər struktur bölmə rəhbəri;",
+    "11.1.2.17. 1-ci kateqoriya dövlət orqanları aparatlarının rəhbərləri;",
+    "11.1.3. inzibati vəzifələrin ikinci təsnifatı:",
+    "11.1.3.1. Azərbaycan Respublikası Prezidenti Administrasiyası rəhbərinin köməkçisi;",
+    "11.1.3.2. Azərbaycan dövlətinin başçısının fəaliyyətini bilavasitə təmin edən digər orqanlarda struktur bölmə (şöbə) rəhbəri və onun müavini;",
+    "11.1.3.3. Azərbaycan dövlətinin başçısının icra səlahiyyətlərini həyata keçirən orqanın Aparatında şöbə və ya ona bərabər tutulan digər struktur bölmə rəhbərinin müavini;",
+    "11.1.3.4. Azərbaycan Respublikası Milli Məclisinin Aparatında şöbə və ya ona bərabər tutulan digər struktur bölmə rəhbərinin müavini;",
+    "11.1.3.5. Azərbaycan Respublikası Konstitusiya Məhkəməsinin və Azərbaycan Respublikası Ali Məhkəməsinin aparatlarında şöbə və ya ona bərabər tutulan digər struktur bölmə rəhbərinin müavini;",
+    "11.1.3.6. 1-ci kateqoriya dövlət orqanlarının aparatları rəhbərlərinin müavinləri və həmin orqanların aparatlarında struktur bölmə (şöbə) rəhbəri;",
+    "11.1.3.7. Azərbaycan Respublikası Baş nazirinin müşaviri, köməkçisi;",
+    "11.1.3.8. Azərbaycan Respublikası Milli Məclisi sədrinin müşaviri, köməkçisi;",
+    "11.1.3.9. Azərbaycan Respublikası Konstitusiya Məhkəməsi və Azərbaycan Respublikası Ali Məhkəməsi sədrlərinin müşavirləri, köməkçiləri;",
+    "11.1.3.10. Naxçıvan Muxtar Respublikasında 2-ci kateqoriya dövlət orqanları aparatlarının rəhbərləri;",
+    "11.1.3.11. Azərbaycan Respublikası apellyasiya məhkəmələri, Azərbaycan Respublikası müvafiq icra hakimiyyəti orqanları, Azərbaycan Respublikası Media və Yayım Şurası aparatlarının, Azərbaycan Respublikası Mərkəzi Seçki Komissiyası Katibliyinin rəhbərləri, Azərbaycan Respublikasının Korrupsiyaya qarşı mübarizə üzrə Komissiyasının katibi;",
+    "11.1.3.12. müvafiq icra hakimiyyəti orqanları yanında yaradılan dövlət agentliklərinin və dövlət xidmətlərinin rəhbərləri;",
+    "11.1.3.13. Azərbaycan Respublikasının xarici ölkədə ticarət nümayəndəsi;",
+    "11.1.3.14. müvafiq icra hakimiyyəti orqanı rəhbərinin müavini;",
+    "11.1.4. inzibati vəzifələrin üçüncü təsnifatı:",
+    "11.1.4.1. Azərbaycan Respublikası Prezidentinin Administrasiyasında mütəxəssis;",
+    "11.1.4.3. Azərbaycan Respublikası Prezidentinin xüsusi nümayəndəliyində mütəxəssis;",
+    "11.1.4.4. Azərbaycan dövlətinin başçısının fəaliyyətini bilavasitə təmin edən digər orqanlarda mütəxəssis;",
+    "11.1.4.5. Azərbaycan dövlətinin başçısının icra səlahiyyətlərini həyata keçirən orqanda mütəxəssis;",
+    "11.1.4.6. Azərbaycan Respublikası Baş naziri müavininin köməkçisi;",
+    "11.1.4.7. Azərbaycan Respublikası Milli Məclisinin Aparatında mütəxəssis;",
+    "11.1.4.8. Azərbaycan Respublikası Milli Məclisi sədri müavininin köməkçisi;",
+    "11.1.4.9. Azərbaycan Respublikası Konstitusiya Məhkəməsinin və Azərbaycan Respublikası Ali Məhkəməsinin aparatlarında mütəxəssis;",
+    "11.1.4.10. 1-ci kateqoriya dövlət orqanlarında struktur bölmə (şöbə) rəhbərinin müavini;",
+    "11.1.4.11. 2-ci kateqoriya dövlət orqanları aparatlarının rəhbərləri (bu Qanunun 11.1.3.11-ci, 11.1.4.17-ci və 11.1.5.5-ci maddələri nəzərə alınmaqla) və onların müavinləri, həmin orqanların aparatlarında struktur bölmə (şöbə) rəhbərləri;",
+    "11.1.4.12. Naxçıvan Muxtar Respublikasında 2-ci kateqoriya dövlət orqanları aparatları rəhbərlərinin müavinləri və həmin dövlət orqanlarında struktur bölmə (şöbə) rəhbəri;",
+    "11.1.4.13. müvafiq icra hakimiyyəti orqanları yanında yaradılan dövlət agentliklərinin və dövlət xidmətlərinin rəhbərlərinin müavinləri;",
+    "11.1.4.14. müvafiq icra hakimiyyəti orqanları yanında yaradılan dövlət agentliklərinin və dövlət xidmətlərinin rəhbərləri ;",
+    "11.1.4.15. Azərbaycan Respublikası Hesablama Palatası sədrinin və Azərbaycan Respublikası İnsan hüquqları üzrə müvəkkilinin (ombudsmanın) müşavirləri, köməkçiləri;",
+    "11.1.4.16. Naxçıvan Muxtar Respublikası Ali Məclisi sədrinin, Naxçıvan Muxtar Respublikası Baş nazirinin, müvafiq icra hakimiyyəti orqanları rəhbərlərinin müşavirləri, köməkçiləri;",
+    "11.1.4.16-1. Naxçıvan Muxtar Respublikasında Azərbaycan Respublikası Prezidentinin səlahiyyətli nümayəndəsinin köməkçisi;",
+    "11.1.4.17. müvafiq icra hakimiyyəti orqanları yanında yaradılan, rəhbəri və rəhbərinin müavinləri müvafiq icra hakimiyyəti orqanı tərəfindən vəzifəyə təyin və vəzifədən azad edilən dövlət agentlikləri və dövlət xidmətləri aparatlarının rəhbərləri və onların müavinləri;",
+    "11.1.5. inzibati vəzifələrin dördüncü təsnifatı:",
+    "11.1.5.1. 1-ci kateqoriya dövlət orqanlarında mütəxəssis;",
+    "11.1.5.2. 2-ci kateqoriya dövlət orqanlarının aparatlarında struktur bölmə (şöbə) rəhbərinin müavini (bu Qanunun 11.1.5.5-ci və 11.1.5.9-cu maddələri nəzərə alınmaqla);",
+    "11.1.5.3. Naxçıvan Muxtar Respublikasının Bakı şəhərində Daimi Nümayəndəliyi rəhbərinin müavini;",
+    "11.1.5.4. müvafiq icra hakimiyyəti orqanları yanında yaradılan dövlət agentlikləri və dövlət xidmətləri rəhbərlərinin müavinləri ;",
+    "11.1.5.5. müvafiq icra hakimiyyəti orqanları yanında yaradılan, rəhbəri və rəhbərinin müavinləri müvafiq icra hakimiyyəti orqanı tərəfindən vəzifəyə təyin və vəzifədən azad edilən dövlət agentlikləri və dövlət xidmətləri aparatlarında struktur bölmə (şöbə) rəhbərləri və onların müavinləri, həmin orqanların rəhbərlərinin müşavirləri və köməkçiləri;",
+    "11.1.5.6. Naxçıvan Muxtar Respublikasında 2-ci kateqoriya dövlət orqanlarının aparatlarında struktur bölmə (şöbə) rəhbərinin müavini;",
+    "11.1.5.7. müvafiq icra hakimiyyəti orqanları rəhbərlərinin müşavirləri, köməkçiləri;",
+    "11.1.5.8. Azərbaycan Respublikası Media və Yayım Şurası sədrinin köməkçisi;",
+    "11.1.5.9. Azərbaycan Respublikası apellyasiya məhkəmələrinin, Azərbaycan Respublikası müvafiq icra hakimiyyəti orqanlarının, Azərbaycan Respublikası Media və Yayım Şurasının aparatlarında, Azərbaycan Respublikası Mərkəzi Seçki Komissiyasının Katibliyində struktur bölmə (şöbə) rəhbərlərinin müavinləri;",
+    "11.1.5.10. Azərbaycan Respublikası İnsan hüquqları üzrə müvəkkilinin (ombudsmanın) regional mərkəzinin rəhbəri və onun müavini;",
+    "11.1.5.11. müvafiq icra hakimiyyəti orqanı rəhbərinin müavini;",
+    "11.1.5.12. müvafiq icra hakimiyyəti orqanları yanında yaradılan dövlət agentlikləri və dövlət xidmətləri aparatlarında struktur bölmə (şöbə) rəhbərləri;",
+    "11.1.6. inzibati vəzifələrin beşinci təsnifatı:",
+    "11.1.6.1. 2-ci kateqoriya dövlət orqanlarında mütəxəssis;",
+    "11.1.6.3. Naxçıvan Muxtar Respublikasında 3-cü kateqoriya müvafiq icra hakimiyyəti orqanları aparatlarının rəhbərləri;",
+    "11.1.6.4. 3-cü kateqoriya dövlət orqanlarında struktur bölmə (şöbə) rəhbəri və onun müavini (bu Qanunun 11.1.5.12-ci və 11.1.6.4-1-ci maddələri nəzərə alınmaqla);",
+    "11.1.6.4-1. müvafiq icra hakimiyyəti orqanları yanında yaradılan dövlət agentlikləri və dövlət xidmətləri aparatlarında struktur bölmə (şöbə) rəhbərlərinin müavinləri;",
+    "11.1.6.5. 4-cü kateqoriya dövlət orqanlarının – müvafiq icra hakimiyyəti orqanlarının yerli bölmələrinin, müvafiq icra hakimiyyəti orqanları yanında, tabeliyində olan orqanların, müvafiq icra hakimiyyəti orqanının tabeliyində olan orqanların rəhbərləri;",
+    "11.1.7. inzibati vəzifələrin altıncı təsnifatı:",
+    "11.1.7.1. 3-cü kateqoriya dövlət orqanlarında mütəxəssis;",
+    "11.1.7.2. 4-cü kateqoriya müvafiq icra hakimiyyəti orqanının Aparatında struktur bölmə (şöbə) rəhbəri və onun müavini;",
+    "11.1.7.3. 4-cü kateqoriya dövlət orqanlarının – müvafiq icra hakimiyyəti orqanlarının yerli bölmələrinin, müvafiq icra hakimiyyəti orqanları yanında, tabeliyində olan orqanların, müvafiq icra hakimiyyəti orqanının tabeliyində olan orqanların rəhbərlərinin müavinləri;",
+    "11.1.7.4. 5-ci kateqoriya dövlət orqanlarının – müvafiq icra hakimiyyəti orqanlarının yanında yaradılan dövlət agentliklərinin və dövlət xidmətlərinin, onların yanında, tabeliyində olan orqanların yerli bölmələrinin rəhbərləri və onların müavinləri;",
+    "11.1.8. inzibati vəzifələrin yeddinci təsnifatı:",
+    "11.1.8.1. 4-cü və 5-ci kateqoriya dövlət orqanlarının – müvafiq icra hakimiyyəti orqanının, müvafiq icra hakimiyyəti orqanlarının yerli bölmələrinin, müvafiq icra hakimiyyəti orqanları yanında, tabeliyində olan orqanların, rayon (şəhər) məhkəmələrinin, rayon (şəhər) prokurorluqlarının və hərbi prokurorluqlarının, müvafiq icra hakimiyyəti orqanının tabeliyində olan orqanların, müvafiq icra hakimiyyəti orqanları yanında yaradılan dövlət agentliklərinin və dövlət xidmətlərinin, onların yanında, tabeliyində olan orqanların yerli bölmələrində mütəxəssis;",
+    "11.1.8.2. müvafiq icra hakimiyyəti orqanları yanında olan orqanların rəhbərləri, onların müavinləri və həmin orqanlarda mütəxəssis, müvafiq icra hakimiyyəti orqanlarının inzibati ərazi dairələri üzrə nümayəndələri və sahə inzibati ərazi dairələri nümayəndələrivə mütəxəssislər.",
+    "11.2. Yardımçı vəzifələrin aşağıdakı təsnifatları vardır:",
+    "11.2.1. yardımçı vəzifələrin birinci təsnifatı – ali kateqoriya dövlət orqanlarında texniki vəzifələr;",
+    "11.2.2. yardımçı vəzifələrin ikinci təsnifatı – 1-ci kateqoriya dövlət orqanlarında texniki vəzifələr;",
+    "11.2.3. yardımçı vəzifələrin üçüncü təsnifatı – 2-ci və 3-cü kateqoriya dövlət orqanlarında texniki vəzifələr;",
+    "11.2.4. yardımçı vəzifələrin dördüncü təsnifatı – 4-cü və 5-ci kateqoriya dövlət orqanlarında texniki vəzifələr.",
+    "11.3. Dövlət orqanları aparatlarının və digər struktur qurumlarının adları müvafiq icra hakimiyyəti orqanı tərəfindən müəyyən edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "12",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "m",
+   "n": "13",
+   "t": "İnzibati və yardımçı vəzifələrə aid ixtisas tələbləri",
+   "p": [
+    "13.1. İnzibati və yardımçı vəzifələrə aid ixtisas tələbləri vəzifə iddiasında olan şəxsin həmin vəzifənin öhdəsindən gəlməsi üçün kifayət qədər səriştəsinin olmasını təmin edir.",
+    "13.2. İnzibati vəzifə iddiasında olan şəxsin müvafiq ali təhsili olmalıdır. Həmin şəxsin başqa ali təhsili olduqda, o, ixtisasını dəyişdirib iddiasında olduğu inzibati vəzifənin profilini öyrənməlidir.",
+    "13.3. Yardımçı vəzifə iddiasında olan şəxsin tam orta təhsili olmalıdır.",
+    "13.4. İnzibati və yardımçı vəzifələri tutmaq üçün əlavə tələblər qanunvericiliklə və vəzifə təlimatları ilə müəyyən edilir.",
+    "13.5. Ali kateqoriya dövlət orqanlarında inzibati və yardımçı vəzifələr tutan dövlət qulluqçularının həmin dövlət orqanlarının fəaliyyətini, dövlət qulluğu vəzifəsinin adını, qulluq funksiyalarını və vəzifənin tutulması şərtlərini özündə əks etdirən vəzifə təlimatları həmin orqanların rəhbərləri tərəfindən təsdiq edilir. 1 – 5-ci kateqoriya dövlət orqanlarında inzibati vəzifələrin birinci–yeddinci təsnifatlarına uyğun olan vəzifələr üzrə vəzifə təlimatları müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqanın (qurumun) müəyyən etdiyi ümumi şərtlərə uyğun olaraq müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqanla (qurumla) razılaşdırılmaqla, müvafiq dövlət orqanlarının rəhbərləri tərəfindən təsdiq edilir."
+   ]
+  },
+  {
+   "k": "f",
+   "n": "IV fəsil",
+   "t": "Dövlət qulluqçusu"
+  },
+  {
+   "k": "m",
+   "n": "14",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "m",
+   "n": "15",
+   "t": "Dövlət qulluqçusunun andı",
+   "p": [
+    "15.1. And Azərbaycan Respublikası ilə dövlət qulluqçusu arasında açıq hüquqi borc və sədaqət münasibətlərini təsdiq edir.",
+    "15.2. İlk dəfə daimi dövlət qulluğuna qəbul edilmiş vətəndaş vəzifəsinin icrasına başlamamışdan əvvəl aşağıdakı məzmunda and içir:",
+    "«Azərbaycan Respublikasına sadiq olacağıma, onun Konstitusiyasına dönmədən əməl edəcəyimə, dövlət sirrini və xidməti sirri qoruyacağıma, dövlət qulluğunun mənə verdiyi hüquqları və üzərimə qoyduğu vəzifələri qərəzsiz, vicdanla, ancaq qanunauyğun surətdə, var gücümlə və vətənin mənafeyi naminə həyata keçirəcəyimə and içirəm».",
+    "15.3. Andiçmə təntənəli şəraitdə Azərbaycan Respublikasının Dövlət bayrağı altında Azərbaycan Respublikasının Konstitusiyasına əl basmaqla həyata keçirilir.",
+    "15.4. Andiçmə bir dəfə olur. And içən dövlət qulluqçusu andın mətnini imzalayır və bu sənəd onun şəxsi işində saxlanılır.",
+    "15.5. Dövlət qulluğunun ayrı-ayrı növlərində andın status xüsusiyyətləri Azərbaycan Respublikasının qanunvericilik aktlarında müəyyən edilir.",
+    "15.6. Yardımçı dövlət qulluğu vəzifəsinə qəbul edilənlər and içmirlər."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "15-1",
+   "t": "Dövlət qulluqçusunun şəxsi işi",
+   "p": [
+    "15-1.1. Dövlət qulluqçusunun dövlət qulluğu keçdiyi dövr ərzində yalnız bir şəxsi işi tərtib edilir və aparılır.",
+    "15-1.2. Dövlət qulluqçusunun şəxsi işinə bu Qanunun 15-1.3-cü maddəsinə əsasən müəyyən olunan qaydalarda nəzərdə tutulmuş sənədlər və məlumatlar daxil edilir.",
+    "15-1.3. Dövlət qulluqçusunun şəxsi işinin aparılması qaydaları müvafiq icra hakimiyyəti orqanı tərəfindən müəyyən olunur.",
+    "15-1.4. Dövlət qulluqçusunun şəxsi işinin aparılması ilə bağlı tələblərin pozulmasında təqsirli olan şəxslər Azərbaycan Respublikasının İnzibati Xətalar Məcəlləsində nəzərdə tutulmuş qaydada məsuliyyət daşıyırlar."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "15-2",
+   "t": "Dövlət qulluqçusunun xidməti vəsiqəsi",
+   "p": [
+    "15-2.1. Dövlət qulluqçusuna qulluq keçdiyi dövlət orqanında xidməti vəsiqə verilir.",
+    "15-2.2. Xidməti vəsiqə dövlət qulluqçusunun tutduğu dövlət qulluğu vəzifəsini və ona verilmiş ixtisas dərəcəsini təsdiq edən rəsmi sənəddir.",
+    "15-2.3. Xidməti vəsiqənin nümunəsi müvafiq icra hakimiyyəti orqanı tərəfindən müəyyən edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "15-3",
+   "t": "Dövlət qulluqçularının reyestri",
+   "p": [
+    "15-3.1. Dövlət qulluqçularının reyestri dövlət qulluqçuları (o cümlədən stajçı kimi və sınaq müddəti ilə qulluğa qəbul edilmiş şəxslər, habelə dövlət qulluğuna xitam verilmiş şəxslər də daxil olmaqla) barədə məlumatlardan ibarət dövlət informasiya ehtiyatıdır.",
+    "15-3.2. Dövlət qulluqçularının reyestri müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqan (qurum) tərəfindən aparılır.",
+    "15-3.3. Dövlət qulluqçuları reyestrinin aparılması qaydası müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqan (qurum) tərəfindən müəyyən edilir.",
+    "15-3.4. Bu Qanunun 15-3.3-cü maddəsində nəzərdə tutulan qaydanın tələblərinin pozulması qanunla nəzərdə tutulmuş hallarda məsuliyyətə səbəb olur."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "16",
+   "t": "Dövlət qulluqçularının ixtisas dərəcələri",
+   "p": [
+    "16.2. İnzibati vəzifələrin təsnifatına uyğun olaraq dövlət qulluqçularına aşağıdakı ixtisas dərəcələri verilir:",
+    "16.2.1. inzibati vəzifələrin ali təsnifatı üzrə – həqiqi dövlət müşaviri, 1-ci dərəcə dövlət müşaviri və 2-ci dərəcə dövlət müşaviri;",
+    "16.2.2. inzibati vəzifələrin birinci təsnifatı üzrə – 1-ci dərəcə dövlət müşaviri, 2-ci dərəcə dövlət müşaviri və 3-cü dərəcə dövlət müşaviri;",
+    "16.2.3. inzibati vəzifələrin ikinci təsnifatı üzrə – 2-ci dərəcə dövlət müşaviri, 3-cü dərəcə dövlət müşaviri və dövlət qulluğunun baş müşaviri;",
+    "16.2.4. inzibati vəzifələrin üçüncü təsnifatı üzrə – dövlət qulluğunun baş müşaviri, dövlət qulluğunun müşaviri və dövlət qulluğunun kiçik müşaviri;",
+    "16.2.5. inzibati vəzifələrin dördüncü təsnifatı üzrə – dövlət qulluğunun müşaviri, dövlət qulluğunun kiçik müşaviri və 1-ci dərəcə dövlət qulluqçusu;",
+    "16.2.6. inzibati vəzifələrin beşinci təsnifatı üzrə – dövlət qulluğunun kiçik müşaviri, 1-ci dərəcə dövlət qulluqçusu və 2-ci dərəcə dövlət qulluqçusu;",
+    "16.2.7. inzibati vəzifələrin altıncı təsnifatı üzrə – 1-ci dərəcə dövlət qulluqçusu, 2-ci dərəcə dövlət qulluqçusu və 3-cü dərəcə dövlət qulluqçusu;",
+    "16.2.8. inzibati vəzifələrin yeddinci təsnifatı üzrə – 2-ci dərəcə dövlət qulluqçusu, 3-cü dərəcə dövlət qulluqçusu və kiçik dövlət qulluqçusu.",
+    "16.3. Yardımçı vəzifələrin təsnifatına uyğun olaraq dövlət qulluqçularına aşağıdakı ixtisas dərəcələri verilir:",
+    "16.3.1. yardımçı vəzifələrin birinci təsnifatı üzrə – dövlət qulluğunun baş referenti, dövlət qulluğunun böyük referenti və dövlət qulluğunun 1-ci dərəcə referenti;",
+    "16.3.2. yardımçı vəzifələrin ikinci təsnifatı üzrə – dövlət qulluğunun böyük referenti, dövlət qulluğunun 1-ci dərəcə referenti və dövlət qulluğunun 2-ci dərəcə referenti;",
+    "16.3.3. yardımçı vəzifələrin üçüncü təsnifatı üzrə – dövlət qulluğunun 1-ci dərəcə referenti, dövlət qulluğunun 2-ci dərəcə referenti və dövlət qulluğunun 3-cü dərəcə referenti;",
+    "16.3.4. yardımçı vəzifələrin dördüncü təsnifatı üzrə – dövlət qulluğunun 2-ci dərəcə referenti, dövlət qulluğunun 3-cü dərəcə referenti və dövlət qulluğunun kiçik referenti."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "17",
+   "t": "İxtisas dərəcələrinin verilməsi və onlardan məhrum edilməsi",
+   "p": [
+    "17.1. İxtisas dərəcələri bu Qanunun 16-cı maddəsinə müvafiq olaraq dövlət qulluqçusunun tutduğu vəzifəyə, qulluq stajına və ixtisas dərəcəsində qulluq müddətinə uyğun olaraq, habelə əvvəllər verilmiş ixtisas dərəcəsi nəzərə alınmaqla ardıcıl verilir.",
+    "İlk dəfə daimi dövlət qulluğuna qəbul olunmuş şəxsə tutduğu vəzifənin inzibati təsnifatı üçün müəyyən edilmiş ən kiçik ixtisas dərəcəsi verilir.",
+    "17.2. 3-cü dərəcə dövlət müşaviri və ondan yuxarı olan ixtisas dərəcələri Azərbaycan Respublikası Konstitusiyasının 109-cu maddəsinin 32-ci bəndinə uyğun olaraq verilir. Bu ixtisas dərəcələri alan dövlət qulluqçusuna müvafiq hüquqi akt və vəsiqə verilir.",
+    "Dövlət qulluğunun baş müşaviri və ondan aşağı olan ixtisas dərəcələri müvafiq dövlət orqanının rəhbəri tərəfindən verilir.",
+    "17.3. İnzibati vəzifələrin ali təsnifatı istisna olmaqla, birinci-ikinci təsnifat inzibati vəzifələri tutan dövlət qulluqçusunun həmin təsnifat üzrə ixtisas dərəcəsi alması üçün dövlət qulluğunda azı 5 il qulluq stajı, həmin təsnifatlara daxil olan vəzifələrdə azı 3 il qulluq stajı olmalıdır.",
+    "Bu maddənin birinci hissəsində müəyyən edilmiş hər hansı tələbə cavab verməyən dövlət qulluqçusuna, habelə təyin olunduğu inzibati vəzifənin təsnifatına uyğun ixtisas dərəcəsinə malik olmayan dövlət qulluqçusuna tutduğu vəzifənin inzibati təsnifatı üçün müəyyən edilmiş ən kiçik ixtisas dərəcəsi verilir.",
+    "İxtisas dərəcəsi verilərkən dövlət qulluqçusunun peşəkarlığı və idarəçilik təcrübəsi nəzərə alınır.",
+    "17.4. Müvafiq inzibati vəzifələr üçün müəyyən edilmiş ixtisas dərəcələri çərçivəsində növbəti ixtisas dərəcəsi almaq üçün aşağıdakılar vacibdir:",
+    "üçüncü-beşinci təsnifat vəzifələri üçün – ixtisas dərəcəsində qulluq müddəti 3 il təşkil etməlidir;",
+    "altıncı-yeddinci təsnifat vəzifələri üçün – ixtisas dərəcəsində qulluq müddəti 2 il təşkil etməlidir.",
+    "Müvafiq yardımçı vəzifələr üçün müəyyən edilmiş ixtisas dərəcələri çərçivəsində növbəti ixtisas dərəcəsi almaq üçün aşağıdakılar vacibdir:",
+    "birinci-ikinci təsnifat vəzifələri üçün – ixtisas dərəcəsində qulluq müddəti ardıcıl olaraq 2 il təşkil etməlidir;",
+    "üçüncü-dördüncü təsnifat vəzifələri üçün – ixtisas dərəcəsində qulluq müddəti ardıcıl olaraq 1 il təşkil etməlidir.",
+    "17.4-1. Dövlət qulluqçusuna bu Qanunun 17.3-cü maddəsinin birinci hissəsində və 17.4-cü maddəsində müəyyən edilmiş tələblər nəzərə alınmadan daha yüksək (növbəti) ixtisas dərəcəsi aşağıdakı hallarda verilə bilər:",
+    "17.4-1.1. xidməti fəaliyyətin qiymətləndirilməsinin nəticəsinə uyğun olaraq qulluq funksiyalarını nümunəvi icra etdiyinə və işindəki yüksək nailiyyətlərinə görə;",
+    "17.4-1.2. yuxarı təsnifat dövlət qulluğu vəzifəsinə təyin edildikdə.",
+    "17.4-2. Bu Qanunun 17.4-1-ci maddəsində nəzərdə tutulmuş qaydada dövlət qulluqçusuna vaxtından əvvəl ixtisas dərəcəsi onun malik olduğu ixtisas dərəcəsində qulluq müddətinin ən azı yarısı keçdikdən sonra verilə bilər.",
+    "Bu Qanunun 17.4-1.1-ci maddəsində nəzərdə tutulmuş halda vaxtından əvvəl ixtisas dərəcəsinin verilməsinə dövlət qulluqçusunun dövlət qulluğunda qulluq etdiyi müddətdə yalnız bir dəfə yol verilir.",
+    "Bu Qanunun 17.4-1.2-ci maddəsi dövlət qulluqçusunun tutduğu inzibati vəzifədən bir təsnifat yuxarı inzibati vəzifəyə təyin edildiyi hallarda tətbiq oluna bilər.",
+    "17.4-3. Dövlət qulluqçularına ixtisas dərəcələri verilərkən onların xüsusi, hərbi və diplomatik rütbələri nəzərə alınır. Xüsusi, hərbi, diplomatik rütbələrin və ixtisas dərəcələrinin qarşılıqlı olaraq uyğunlaşdırılması müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqanın (qurumun) müəyyən etdiyi qaydada həyata keçirilir.",
+    "17.5. Dövlət orqanlarında dövlət qulluqçularına ixtisas dərəcələrinin verilməsi qaydaları müvafiq icra hakimiyyəti orqanı tərəfindən müəyyən edilir.",
+    "17.6. Bu Qanunun 33.1.7-ci maddəsində nəzərdə tutulmuş hallarda dövlət qulluqçusu ona verilmiş ixtisas dərəcəsindən məhrum edilir .",
+    "17.7. Bu Qanunun 25.2-ci maddəsinə əsasən intizam tənbehi qaydasında dövlət qulluqçusunun ixtisas dərəcəsi (bu Qanunun 17.2-ci maddəsinin birinci hissəsinə uyğun olaraq verilmiş ixtisas dərəcələri istisna olmaqla) bir pillə aşağı salına bilər. İntizam tənbehinin tətbiqi qaydasında dövlət qulluqçusunun ixtisas dərəcəsi təqvim ili ərzində yalnız bir dəfə aşağı salına bilər. Bu qaydada aşağı salınmış ixtisas dərəcəsində qulluq müddəti həmin intizam tənbehinin verilməsi haqqında əmrin imzalandığı gündən hesablanır.",
+    "17.8. İxtisas dərəcəsinin verilməsi, aşağı salınması və ixtisas dərəcəsindən məhrum etmə tətbiq olunarkən dövlət qulluqçusunun şəxsi işində və Azərbaycan Respublikası Əmək Məcəlləsinin 7-ci maddəsinin 2-1-ci hissəsində müəyyən edilmiş hallarda əmək kitabçasında müvafiq qeydlər edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "18",
+   "t": "Dövlət qulluqçusunun əsas vəzifələri",
+   "p": [
+    "18.0. Dövlət qulluqçuları vəzifədə olaraq aşağıdakıları etməlidirlər:",
+    "18.0.1. qanunvericiliyi və dövlət orqanlarının qəbul etdikləri başqa normativ hüquqi aktları həyata keçirməli;",
+    "18.0.2. rəhbərlərin öz səlahiyyəti hüdudunda verdikləri əmrləri, sərəncamları və göstərişləri yerinə yetirməli;",
+    "18.0.3. dövlət orqanında müəyyən edilmiş qulluq reqlamentinə riayət etməli;",
+    "18.0.4. başqa dövlət qulluqçularının işini çətinləşdirən, yaxud qulluq keçdiyi dövlət orqanının nüfuzunu aşağı sala biləcək hərəkətlərə yol verməməli;",
+    "18.0.5. vətəndaşların, müəssisə, idarə və təşkilatların müraciətlərinə vaxtında baxmalı və öz səlahiyyətləri hüdudunda onları qərəzsiz həll etməli;",
+    "18.0.6. lazım gəldikdə öz ixtisası hüdudunda rəhbərin göstərişi ilə əlavə iş görməli;",
+    "18.0.7. dövlət sirrini və qanunla mühafizə edilən digər sirri həmişə, o cümlədən dövlət qulluğuna xitam verildikdən sonra da saxlamalı;",
+    "18.0.8. vəzifə borcunun yerinə yetirilməsi vaxtı daxil olan və vətəndaşların şəxsi və ailə həyatı, şərəfi və ləyaqəti ilə bağlı məlumatları gizli saxlamalı və qanunla nəzərdə tutulmuş hallar istisna edilməklə, belə məlumatların verilməsini tələb etməməli;",
+    "18.0.9. qulluq keçdiyi orqanın rəhbərinə hər il öz gəlirləri və əmlak vəziyyəti haqqında maliyyə hesabatı verməli, orada əlavə gəlirlərin mənbəyini, növünü və məbləğini göstərməli;",
+    "18.0.10. qanunvericilikdə müəyyən edilmiş hallarda və qaydada müvəqqəti olaraq başqa yaşayış yerinə keçməli, başqa yerdə qulluq keçməli və ya başqa vəzifələri icra etməli;",
+    "18.0.11. qanunvericilikdə müəyyən edilmiş hallarda və qaydada öz fiziki və əqli qabiliyyətinin və ya tapşırılan funksiyaların icrasına yararlı olmasının müəyyən edilməsi üçün tibbi komissiyalarda müayinə keçməli;",
+    "18.0.12. etik davranış qaydalarına əməl etməlidir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "19",
+   "t": "Dövlət qulluqçusunun əsas hüquqları",
+   "p": [
+    "19.0. Dövlət qulluqçusu aşağıdakı hüquqlara malikdir:",
+    "19.0.1. vəzifə borcunu yerinə yetirmək üçün dövlət orqanlarından, ictimai birliklərdən, müəssisə, idarə və təşkilatlardan müəyyən edilmiş qaydada lazımi informasiya və materiallar tələb etmək və almaq;",
+    "19.0.2. dövlət qulluqçusunu vəzifəyə təyin və vəzifədən azad etmək hüququna malik olan vəzifəli şəxsdən öz qulluq vəzifələrinin yazılı surətdə təsbit edilməsini və onların icrası üçün şərait yaradılmasını tələb etmək;",
+    "19.0.3. dövlət məvacibi almaq;",
+    "19.0.4. əlavə təhsili və qulluq vəzifələrinin yerinə yetirilməsinə münasibəti nəzərə alınmaqla qulluqda irəli çəkilmək və ya dövlət məvacibinin məbləğinin artırılması iddiasında olmaq;",
+    "19.0.5. elmi və yaradıcılıq fəaliyyəti ilə məşğul olmaq, qulluq keçdiyi dövlət orqanı rəhbərinin icazəsi ilə pedaqoji fəaliyyətlə məşğul olmaq;",
+    "19.0.6. əmanətlərdən (depozitlərdən), qiymətli kağızlardan, rentadan və icarədən gəlir götürmək;",
+    "19.0.7. ilk tələbdən öz şəxsi işinin bütün materialları ilə, şəxsi işə tikilməli olan rəylər və digər sənədlərlə tanış olmaq, habelə öz izahatlarının şəxsi işə tikilməsini tələb etmək;",
+    "19.0.8. şərəf və ləyaqətinə xələl gətirən məlumatları təkzib etmək üçün xidməti araşdırma aparılmasını tələb etmək;",
+    "19.0.9. müvafiq orqanlarda və məhkəmədə öz qanuni hüquqlarını və mənafeyini müdafiə etmək;",
+    "19.0.10. həmkarlar ittifaqlarında birləşmək;",
+    "19.0.11. qulluq keçdiyi dövlət orqanının rəhbərindən aldığı icrası məcburi olan göstəriş və ya əmrin qanuniliyi və ya dürüstlüyü dövlət qulluqçusunda şübhə doğurursa, həmin göstərişin və ya əmrin yazılı şəkildə ona verilməsini tələb etmək;",
+    "19.0.12. qanunvericilikdə başqa hal nəzərdə tutulmayıbsa və bu, dövlət qulluqçusu funksiyalarının icrası ilə bir araya sığmayan deyilsə, ictimai birliklərdə üzv olmaq;",
+    "19.0.13. qanunvericilikdə nəzərdə tutulmuş qaydada dövlət vəsaiti hesabına təhsil almaq və müvafiq təlim keçmək, habelə təhsil məqsədilə məzuniyyət almaq;",
+    "19.0.14. qanunvericilikdə nəzərdə tutulmuş hallarda və qaydada məzuniyyətlər (sosial məzuniyyətlər, özünün və ya ailə üzvlərinin müalicəsi ilə əlaqədar və yaradıcılıq məzuniyyətləri), özünün və ya ailə üzvlərinin əlilliyi ilə əlaqədar pensiyalar və müavinətlər almaq."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "20",
+   "t": "Dövlət qulluğu ilə əlaqədar məhdudiyyətlər",
+   "p": [
+    "20.1. Dövlət qulluqçusunun aşağıdakılara ixtiyarı yoxdur:",
+    "20.1.1. əlavə ödənişli (əmək qanunvericiliyində nəzərdə tutulmuş qaydada müvəqqəti əvəz edilməsi halları istisna olmaqla), heç bir seçkili və ya təyinatlı vəzifə tutmağa;",
+    "20.1.2. elmi və yaradıcılıq fəaliyyəti istisna olmaqla, qulluq keçdiyi dövlət orqanı rəhbərinin icazəsi olmadan pedaqoji fəaliyyətlə məşğul olmağa;",
+    "20.1.3. dövlət orqanının və ya yerli özünüidarə orqanının işləri üzrə üçüncü şəxslərin nümayəndəsi olmağa;",
+    "20.1.4. dövlət qulluğuna xitam verildikdən sonra Azərbaycan Respublikasının qanunvericiliyi ilə müəyyən edilmiş müddət ərzində öz qulluq fəaliyyətinə aid olan və dövlət sirri və ya qanunla mühafizə edilən digər sirr olan məsələlər barədə informasiyadan üçüncü şəxslərin xeyrinə istifadə etməyə;",
+    "20.1.5. qulluq keçdiyi dövlət orqanı rəhbərinə bildirmədən xarici ölkənin vəsaiti hesabına oraya getməyə;",
+    "20.1.6. qulluq vəzifələrini icra etdiyi dövrdə siyasi partiyaların fəaliyyətində iştirak etməyə;",
+    "20.1.7. tətillərdə və dövlət orqanlarının işini pozan digər hərəkətlərdə iştirak etməyə;",
+    "20.1.8. dini təbliğ etmək üçün dövlət qulluqçusunun statusundan istifadə etməyə və dövlət orqanlarının tabeliyindəki obyektlərdə dini mərasimlərin keçirilməsinə rəsmi xarakter verməyə.",
+    "20.2. Seçki komissiyasının həlledici səs hüquqlu üzvü dövlət qulluğunda ola bilməz.",
+    "20.3. Dövlət qulluqçusu bu maddənin tələblərinə zidd hərəkət etdikdə, əgər qanunvericilikdə ayrı qayda nəzərdə tutulmayıbsa, xəbərdarlıq aldıqdan sonra otuz gün ərzində o, dövlət qulluğuna, yoxsa başqa fəaliyyətə üstünlük verdiyini özü üçün müəyyən edərək gəldiyi qərar barəsində qulluq keçdiyi dövlət orqanının rəhbərinə məlumat verməlidir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "21",
+   "t": "Dövlət qulluqçuları üçün təminatlar",
+   "p": [
+    "21.1. Dövlət qulluqçuları üçün aşağıdakılara təminat verilir:",
+    "21.1.1. dövlət qulluqçusunun layiqli həyat səviyyəsini təmin edən dövlət məvacibi və digər ödənişlər;",
+    "21.1.2. lazımi qulluq şəraiti;",
+    "21.1.3. haqqı ödənilən məzuniyyət;",
+    "21.1.4. dövlət qulluqçularının icbari tibbi sığortası;",
+    "21.1.5. müvafiq istiqamət üzrə əlavə təhsilalma;",
+    "21.1.6. dövlət orqanları ləğv edilərsə və ya ştatlar ixtisara düşərsə, vəzifə maaşına və ixtisasa uyğun işə düzəlmə və ya dövlət orqanlarında tutduğu vəzifəyə uyğun vəzifə tutmaqda üstünlük;",
+    "21.1.7. pensiya təminatı və dövlət sosial sığortası;",
+    "21.1.8. qulluq vəzifələrinin icrası ilə əlaqədar olaraq qanunla müəyyən edilmiş qaydada sığorta;",
+    "21.1.9. icra edilən vəzifə öhdəliklərinin xarakteri nəzərə alınmaqla xidməti nəqliyyat və ya müvafiq kompensasiya almaq;",
+    "21.1.10. dövlət qulluqçusunun vəzifə öhdəliklərinin icrası ilə əlaqədar olaraq ona və onun ailə üzvlərinə qarşı törədilən zorakılıqdan, hədələrdən və təhqirlərdən dövlət qulluqçusunun və onun ailə üzvlərinin müdafiəsi.",
+    "21.3. Dövlət qulluqçusu bu Qanunda nəzərdə tutulmuş hallardan başqa, yalnız öz razılığı ilə aşağı maaşlı vəzifəyə keçirilə bilər.",
+    "21.4. Dövlət hakimiyyəti orqanlarının, habelə dövlət orqanları rəhbərliyinin tərkibinin dəyişməsi dövlət qulluğuna xitam verilməsi üçün əsas deyildir.",
+    "21.6. Azərbaycan Respublikasının xarici ölkələrdə ticarət nümayəndələrinə və onların aparatlarının işçilərinə dövlət məvacibi (əməkhaqqı), təminat və kompensasiyaların verilməsi “Diplomatik xidmət haqqında” Azərbaycan Respublikası Qanununun 12.5-ci və 13.15-ci maddələrinə uyğun olaraq müəyyən edilir. Bu Qanunun dövlət qulluqçularına aid edilən digər təminatlar ilə bağlı müddəaları Azərbaycan Respublikasının xarici ölkələrdə ticarət nümayəndələrinə və onların aparatlarının işçilərinə şamil edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "22",
+   "t": "Dövlət qulluğunda qulluq stajı",
+   "p": [
+    "22.1. Dövlət qulluqçusunun dövlət qulluğunda qulluq stajı hesablanarkən aşağıdakı dövrlər nəzərə alınır:",
+    "22.1.1. dövlət qulluqçusunun tutduğu vəzifədə qulluq stajı;",
+    "22.1.2. bu Qanunun 2.3-cü maddəsində nəzərdə tutulan dövlət qulluğunun xüsusi növündə qulluq stajı;",
+    "22.1.3. dövlət qulluqçusu digər dövlət qulluğu vəzifəsinə keçirildikdə və qəbul edildikdə əvvəlki dövlət qulluğu vəzifəsindəki qulluq stajı;",
+    "22.1.4. dövlət qulluqçusunun əlavə təhsil müddəti;",
+    "22.1.5. məhkəmə və ya müvafiq səlahiyyətli orqan tərəfindən müəyyən edilmiş dövlət qulluqçusunun məcburi işburaxma dövrü;",
+    "22.1.6. dövlət qulluğu vəzifəsində staj və sınaq müddəti;",
+    "22.1.7. dövlət qulluğu vəzifəsinin və orta əməkhaqqının saxlanılması şərtilə dövlət qulluqçusunun dövlət qulluğundan ayrıldığı müddət;",
+    "22.1.8. əmək qabiliyyətinin müvəqqəti itirildiyi müddət;",
+    "22.1.9. ödənişli məzuniyyət dövrləri, o cümlədən uşağa qulluq etmək üçün qismən ödənişli sosial məzuniyyət müddəti;",
+    "22.1.10. müddətli həqiqi hərbi xidmətə çağırılmazdan əvvəl dövlət qulluğu vəzifəsində qulluq etmiş və ehtiyata buraxıldıqdan sonra bilavasitə yenidən dövlət qulluğu vəzifəsinə təyin edilmiş dövlət qulluqçusunun müddətli həqiqi hərbi xidmətdə olduğu müddət.",
+    "22.2. Dövlət qulluqçusunun qulluq stajının hesablanması onun qulluq etdiyi dövlət orqanı tərəfindən həyata keçirilir.",
+    "22.3. Dövlət qulluqçusunun qulluq stajı müəyyənləşdirilərkən onun qulluq stajına bu Qanun qüvvəyə minənədək qanunvericilik, icra və məhkəmə hakimiyyəti orqanlarında (o cümlədən Azərbaycan Respublikasının ərazisindən kənarda), habelə 1991-ci il oktyabrın 18-dək dövlət, sovet və partiya orqanlarında iş müddəti də daxil edilir.",
+    "22.4. Dövlət qulluğunda qulluq stajı müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqanın (qurumun) informasiya sisteminə və (və ya) Dövlət qulluqçularının reyestrinə əsasən, Azərbaycan Respublikası Əmək Məcəlləsinin 7-ci maddəsinin 2-1-ci hissəsi ilə müəyyən edilmiş hallarda, eləcə də 2014-cü ilin iyulun 1-dək xitam verilmiş əmək müqavilələrinə münasibətdə isə əmək kitabçasına əsasən müəyyən edilir.",
+    "22.5. Dövlət qulluqçusunun bu Qanunun 2.3-cü maddəsində nəzərdə tutulan dövlət qulluğunun xüsusi növündə qulluq (xidmət) illəri onun dövlət qulluğu stajına və dövlət qulluğu stajı onun bu Qanunun 2.3-cü maddəsində nəzərdə tutulan dövlət qulluğunun xüsusi növündə qulluq (xidmət) illərinə daxil edilir.",
+    "22.6. Qulluğun (xidmətin) xüsusiyyətləri nəzərə alınaraq, dövlət qulluğunun xüsusi növündə qulluq (xidmət) illərinin dövlət qulluğu stajına və dövlət qulluğu stajının dövlət qulluğunun xüsusi növündə qulluq (xidmət) illərinə daxil edilməsi qaydasını və şərtlərini müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqan (qurum) təsdiq edir.",
+    "22.7. Bu Qanunun 22.1-ci və 22.3-cü maddələrinin tətbiqi zamanı yaranmış fikir ayrılığı Şura tərəfindən aradan qaldırılır."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "22-1",
+   "t": "Dövlət qulluqçusunun əlavə təhsili",
+   "p": [
+    "22-1.1. Dövlət qulluqçusunun əlavə təhsili fasiləsiz təhsilin və peşə hazırlığının tərkib hissəsi olmaqla, ali, orta ixtisas və peşə təhsili pillələrinin hər hansı birini bitirmək haqqında dövlət sənədi olan hər bir dövlət qulluqçusunun (o cümlədən stajçı kimi və sınaq müddətinə qəbul edilmiş şəxslərin) fasiləsiz təhsil almaq imkanını təmin edir.",
+    "22-1.3. Dövlət qulluqçusunun əlavə təhsil alması üçün aşağıdakılar əsasdır:",
+    "22-1.3.1. dövlət qulluğunda daha yüksək vəzifəyə təyin edilməsi;",
+    "22-1.3.2. dövlət qulluğunun ehtiyat kadrlarının siyahısına daxil edilməsi;",
+    "22-1.3.3. dövlət qulluqçusunun xidməti fəaliyyətinin qiymətləndirilməsinin nəticəsi;",
+    "22-1.3.4. dövlət qulluqçusunun şəxsi təşəbbüsü.",
+    "22-1.4. Dövlət qulluqçusunun əlavə təhsil alması həmin dövlət orqanının rəhbəri tərəfindən müəyyən edilir.",
+    "22-1.5. Dövlət qulluqçusunun əlavə təhsili ixtisasartırma və yenidənhazırlanma qurumlarında, təhsil müəssisələrində yaradılmış müvafiq strukturlarda, stajkeçmə və peşə hazırlığı kurslarında və bu sahə üzrə fəaliyyətinə xüsusi razılıq verilmiş digər müəssisələrdə qanunvericiliklə müəyyən olunmuş istiqamətlərdə həyata keçirilir.",
+    "22-1.6. Dövlət qulluqçusu əlavə təhsil almaq üçün xarici ölkələrə ezam edilə bilər.",
+    "22-1.7. Dövlət qulluqçusunun əlavə təhsili qulluqkeçmədən ayrılmaqla, qismən ayrılmaqla və ya ayrılmamaqla həyata keçirilir.",
+    "22-1.8. Dövlət qulluqçusunun əlavə təhsilinin növü, forması, müddəti və maliyyə təminatı müvafiq icra hakimiyyəti orqanı tərəfindən təsdiq edilən qaydalarla tənzimlənir.",
+    "22-1.9. Azərbaycan Respublikası Konstitusiya Məhkəməsinin, Azərbaycan Respublikası Ali Məhkəməsinin, Azərbaycan Respublikası Məhkəmə-Hüquq Şurasının və Azərbaycan Respublikası İnsan hüquqları üzrə müvəkkilinin (ombudsmanın) aparatlarında, habelə 2-ci-5-ci kateqoriya dövlət orqanlarında ali hüquq təhsili tələb edən vəzifələrdə qulluq keçən dövlət qulluqçuları mütəmadi olaraq müvafiq icra hakimiyyəti orqanının tədris-elm müəssisəsində peşə hazırlığına və ixtisasının artırılmasına cəlb edilirlər."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "23",
+   "t": "Dövlət qulluqçularının pensiya təminatı",
+   "p": [
+    "23.1. Dövlət qulluqçusunun və onun ailə üzvlərinin pensiya təminatı “Əmək pensiyaları haqqında” Azərbaycan Respublikasının Qanununa uyğun olaraq həyata keçirilir.",
+    "23.2. Dövlət qulluqçusunun pensiyasının məbləği dövlət qulluğu vəzifəsində qulluq stajından və dövlət məvacibinin məbləğindən asılıdır. Dövlət qulluqçusuna “Əmək pensiyaları haqqında” Azərbaycan Respublikası Qanununa uyğun olaraq qulluq stajına görə əmək pensiyasına əlavələr təyin edilməsi üçün dövlət qulluğu vəzifəsində minimum 15 il (bu Qanunun 23.2-1-ci maddəsində nəzərdə tutulan hal istisna olmaqla) qulluq stajı tələb olunur.",
+    "23.2-1. Dövlət orqanının əsasında müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqan (qurum) tərəfindən publik hüquqi şəxsin yaradılması ilə əlaqədar dövlət qulluqçularının dövlət qulluğuna xitam verildiyi tarixə “Əmək pensiyaları haqqında” Azərbaycan Respublikasının Qanununda nəzərdə tutulmuş əmək pensiyası yaşına çatmasına ən çoxu 2 il qalmış dövlət qulluqçusu kimi əmək pensiyasına əlavə almaq hüququ onların dövlət qulluğu vəzifəsində minimum 13 il qulluq stajı olduğu halda yaranır.",
+    "23.3. Müvafiq qanunvericiliyə uyğun olaraq pensiya yaşına çatmasına, əlilliyinə görə könüllü işdən çıxmış, dövlət qulluğu vəzifəsində bu Qanunun 23.2-ci maddəsi ilə müəyyən edilmiş minimum qulluq stajına (bu Qanunun 23.2-1-ci maddəsində nəzərdə tutulan hal istisna olmaqla) və əmək pensiyası almaq hüququna malik olmayan dövlət qulluqçusuna qanunvericiliklə müəyyən edilmiş miqdarda ömürlük müavinət təyin edilir.",
+    "23.4. Dövlət qulluqçusunun müavinətinin məbləği fəaliyyətdə olan dövlət qulluqçusunun dövlət məvacibinin məbləğində olan sonrakı artımlara uyğun olaraq, müvafiq icra hakimiyyəti orqanı tərəfindən müəyyən edilən qaydada yenidən hesablanır."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "24",
+   "t": "Dövlət qulluqçularının həvəsləndirilməsi",
+   "p": [
+    "24.1. Dövlət qulluqçularının fəaliyyətində səmərəliliyin artırılması məqsədilə həvəsləndirmə tədbirləri həyata keçirilir.",
+    "24.2. Dövlət qulluqçularının xidmətdə peşəkarlıq səviyyəsinin artması və vəzifə borcuna və andına sədaqəti dövlət tərəfindən qiymətləndirilməlidir. Onun xidmətlərinin dövlət tərəfindən təsdiq edilməsi «Vətənə xidmətə görə» ordeninin üç dərəcəsi, «Dövlət qulluğunda fərqlənməyə görə» medalı ilə, digər orden və medallarla təltif olunmasından, habelə Azərbaycan Respublikasının fəxri adlarını almasından ibarətdir. Dövlət qulluqçularının orden və medallarla təltif olunması və onlara fəxri adların verilməsi haqqında əsasnamələr və qaydalar qanunvericiliklə müəyyən edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "25",
+   "t": "Dövlət qulluqçusunun məsuliyyəti",
+   "p": [
+    "25.1. Dövlət qulluqçusuna həvalə olunmuş vəzifələrin yerinə yetirilməməsi və ya lazımi şəkildə yerinə yetirilməməsi, habelə bu Qanunla müəyyən edilmiş məhdudiyyətlərə əməl olunmaması, qanunda başqa qayda nəzərdə tutulmayıbsa, intizam məsuliyyətinə səbəb olur.",
+    "25.2. Dövlət qulluqçusu bu Qanunun 18-ci, 20-ci və ya 25.11-ci maddələrində nəzərdə tutulmuş tələbləri pozduqda, onun barəsində aşağıdakı intizam tənbeh tədbirlərindən biri tətbiq edilə bilər:",
+    "25.2.1. töhmət;",
+    "25.2.2. bir il müddətinədək vəzifə maaşının 5 faizindən 30 faizinədək azaldılması;",
+    "25.2.3. həmin təsnifatdan olan, lakin vəzifə maaşı aşağı olan vəzifəyə keçirilməsi;",
+    "25.2.4. daha aşağı təsnifatdan olan vəzifəyə keçirilməsi;",
+    "25.2.5. ixtisas dərəcəsinin bir pillə aşağı salınması;",
+    "25.2.6. dövlət qulluğundan azad edilməsi.",
+    "25.3. Bu Qanunun 25.2-ci maddəsinə uyğun olaraq intizam tənbehinin tətbiqinə əsaslar olduqda, müvafiq dövlət orqanı rəhbərinin əmri ilə araşdırma aparılır, dövlət qulluqçusundan yazılı izahat alınır. Zərurət olduqda, müvafiq dövlət orqanının rəhbəri xidməti yoxlama təyin edir. Dövlət qulluqçusunun yazılı izahat verməkdən imtina etməsi rəsmiləşdirilir və bu, intizam tənbehinin tətbiqinə mane olmur.",
+    "25.4. Xidməti yoxlamanın aparılması qaydası müvafiq icra hakimiyyəti orqanı tərəfindən müəyyən edilir.",
+    "25.5. Dövlət qulluqçularına intizam tənbehi bu Qanunun 25.2-ci maddəsində nəzərdə tutulmuş əsaslar aşkar edildiyi gündən bir ay keçənədək verilə bilər. Dövlət qulluqçusunun məzuniyyətdə, ezamiyyətdə olduğu, əmək qabiliyyətini müvəqqəti itirdiyi, habelə barəsində xidməti yoxlama və ya cinayət işinin istintaqı aparıldığı vaxt həmin müddətə daxil edilmir.",
+    "25.6. Bu Qanunun 25.2.6-cı maddəsində nəzərdə tutulmuş intizam tənbeh tədbiri vəzifələrin icrası zamanı kobud və ya mütəmadi olaraq pozuntulara yol verildikdə və ya bu Qanunun 20-ci maddəsində nəzərdə tutulmuş məhdudiyyətlərə əməl edilmədikdə tətbiq oluna bilər.",
+    "25.7. Bu Qanunun 25.2.1-25.2.6-cı maddələrində nəzərdə tutulmuş intizam tənbeh tədbirləri dövlət qulluqçusunun qulluq keçdiyi dövlət orqanının rəhbəri tərəfindən, 25.2.1-ci maddəsində nəzərdə tutulmuş intizam tənbeh tədbiri isə, habelə dövlət qulluqçusunun qulluq keçdiyi dövlət orqanının rəhbəri tərəfindən səlahiyyət verilmiş vəzifəli şəxs (şəxslər) tərəfindən tətbiq oluna bilər.",
+    "25.8. İntizam tənbeh tədbirinin tətbiq edilməsi barədə əmrdən, onun imzalandığı gündən 7 iş günü müddətində müvafiq icra hakimiyyəti orqanına şikayət vermək olar. Bu zaman həmin orqan tərəfindən intizam tənbeh tədbiri 10 iş günü müddətində ləğv olunmalı və ya qüvvədə saxlanılmalıdır. Tətbiq olunmuş intizam tənbeh tədbirindən şikayət verilməsi qaydası Azərbaycan Respublikasının müvafiq qanunvericiliyi ilə müəyyən edilir.",
+    "25.9. Dövlət qulluqçusu qanunvericiliklə müəyyən edilmiş hallarda və qaydada inzibati və cinayət məsuliyyətinə cəlb oluna bilər.",
+    "25.10. Dövlət qulluqçusu onun təqsiri üzündən dəymiş zərər üçün qanunvericiliklə müəyyən edilmiş qaydada maddi məsuliyyət daşıyır. Dövlət qulluqçusunun qanuna uyğun hərəkətləri nəticəsində dəymiş zərərin əvəzi tam həcmdə Azərbaycan Respublikasının dövlət büdcəsinin və Naxçıvan Muxtar Respublikasının büdcəsinin vəsaiti hesabına ödənilir.",
+    "25.11. Dövlət qulluqçusu “Korrupsiyaya qarşı mübarizə haqqında” Azərbaycan Respublikası Qanununun 5.1-ci maddəsində müəyyən edilmiş tələblərə əməl etmədikdə və ya həmin Qanunun 9-cu maddəsində göstərilən hüquqpozmaları törətdikdə (onlar inzibati və ya cinayət məsuliyyəti yaratmadıqda) intizam məsuliyyətinə cəlb olunur."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "26",
+   "t": "Qanunsuz göstərişin yerinə yetirilməsi üstündə dövlət qulluqçusunun məsuliyyəti",
+   "p": [
+    "26.1. Dövlət qulluqçusu öz hərəkətlərinin qanuniliyi üçün cavabdehdir.",
+    "26.2. Rəhbər işçinin göstərişini qanunsuz sayan dövlət qulluqçusunun etirazına baxmayaraq, həmin rəhbər işçi öz göstərişini qüvvədə saxlayırsa və ondan yuxarı vəzifəli rəhbər işçi həmin göstərişi ləğv etmirsə, dövlət qulluqçusu məsuliyyətdən azad olunur."
+   ]
+  },
+  {
+   "k": "f",
+   "n": "V fəsil",
+   "t": "Dövlət qulluğu keçmə"
+  },
+  {
+   "k": "m",
+   "n": "27",
+   "t": "Dövlət qulluğuna qəbul edilmək hüququ",
+   "p": [
+    "27.1. Azərbaycan Respublikasının 16 yaşına çatmış, irqindən, etnik mənsubiyyətindən, dinindən, dilindən, cinsindən, sosial mənşəyindən, əmlak vəziyyətindən, yaşayış yerindən, əqidəsindən, ictimai və digər birliklərə mənsubiyyətindən asılı olmayaraq, müvafiq vəzifənin tələblərinə uyğun peşə hazırlığına malik olan və Azərbaycan Respublikasının dövlət dilini sərbəst bilən vətəndaşlarının dövlət qulluğuna qəbul edilmək hüququ vardır.",
+    "27.2. Hər hansı şəxs dövlət qulluğuna aşağıdakı hallarda qəbul edilə bilməz:",
+    "27.2.1. onun fəaliyyət qabiliyyətinə malik olmaması və ya məhdud fəaliyyət qabiliyyətinə malik olması məhkəmənin qərarı ilə təsdiq edilərsə;",
+    "27.2.2. məhkumluğu ödənilməmiş və ya götürülməmişsə;",
+    "27.2.3. bilavasitə tabeliyində və ya nəzarəti altında işləyəcəyi dövlət qulluqçusu ilə yaxın qohumluq və ya qudalıq (ər-arvadlar, onların valideynləri, qardaşları, bacıları, övladları) əlaqəsi olduqda;",
+    "27.2.4. barəsində tibbi xarakterli məcburi tədbirlərin tətbiqinə dair məhkəmənin qanuni qüvvəyə minmiş qərarı olarsa;",
+    "27.2.5. qanunvericiliklə müəyyən edilmiş başqa hallarda.",
+    "27.3. Dövlət orqanında dövlət qulluğuna qəbul edilmək üçün müraciət etmiş şəxsin dövlət qulluğuna qəbul edilməsinin mümkün olub-olmaması qabaqcadan yoxlanılır. Yoxlamanın qaydası müvafiq icra hakimiyyəti orqanı tərəfindən müəyyən edilir. Şəxsi (ailə) həyatın təfsilatı yoxlanmamalıdır."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "28",
+   "t": "Dövlət qulluğuna qəbul",
+   "p": [
+    "28.1. Dövlət qulluğuna qəbul müsabiqə əsasında aparılır. Müsabiqə test imtahanından və müsahibədən ibarətdir.",
+    "28.2. Müvafiq icra hakimiyyəti orqanının yaratdığı qurum inzibati və yardımçı vəzifələrin təsnifat toplusuna uyğun olaraq inzibati vəzifələr üzrə dövlət qulluğuna qəbul üçün ayda bir dəfədən az olmayaraq test imtahanları təşkil edir.",
+    "Test nümunələrinin hazırlanması, ekspertizası, təsdiqi, test imtahanının təşkili, keçirilməsi, qiymətləndirmənin aparılması qaydasını müvafiq icra hakimiyyəti orqanı müəyyən edir.",
+    "Test imtahanında iştirak etmək üçün ödənişin məbləğini müvafiq icra hakimiyyəti orqanı müəyyən edir.",
+    "28.3. Müvafiq icra hakimiyyəti orqanının yaratdığı qurum test imtahanından keçən şəxsə inzibati və yardımçı vəzifələrin təsnifat toplusuna uyğun olaraq inzibati vəzifə üzrə test imtahanından keçdiyini təsdiq edən “Dövlət qulluğu sertifikatı” (bundan sonra – sertifikat) verir. Forması müvafiq icra hakimiyyəti orqanı tərəfindən müəyyən edilən sertifikatın qüvvədəolma müddəti beş ildir. Şəxs dövlət qulluğu vəzifələri üzrə, bu Qanuna uyğun olaraq bir neçə sertifikat ala bilər.",
+    "28.4. Müsahibəni dövlət qulluğu vəzifəsinin aid olduğu dövlət orqanı təşkil edir.",
+    "Müsahibənin keçirilməsi haqqında elan, sənədlərin qəbulu üçün müəyyən edilmiş son müddət göstərilməklə, müvafiq icra hakimiyyəti orqanının yaratdığı qurumun, dövlət qulluğu vəzifəsinin aid olduğu dövlət orqanının internet saytında və mediada verilir.",
+    "28.5. Dövlət qulluğuna qəbul üçün test imtahanından keçdiyini təsdiq edən sertifikatı olan şəxs həmin sertifikatın qüvvədə olma müddətinin hər ili ərzində beş müsahibədə iştirak etmək üçün ödənişsiz müraciət edə bilər. Beşdən artıq müsahibədə iştirak ödənişlidir və müsahibədə iştirak etmək üçün ödənişin məbləğini müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqan (qurum) müəyyən edir.",
+    "Müsahibədə iştirak etmək istəyən şəxs müsahibənin keçirilməsi elan edildiyi gündən 30 gün müddətində dövlət qulluğu vəzifəsinin aid olduğu dövlət orqanına müraciət edir. Müraciətə əlavə edilməli sənədlərin siyahısı və sənədlərin qəbulu qaydası müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqan (qurum) tərəfindən müəyyən edilir.",
+    "28.6. Müsahibə sənədlərin qəbulu başa çatdıqdan sonra 30 gün ərzində keçirilir.",
+    "Dövlət qulluğu vəzifəsinin aid olduğu dövlət orqanı müsahibənin keçirilməsi üçün müsahibə komissiyası yaradır. Müsahibə komissiyası 3 nəfərdən ibarət tərkibdə, müvafiq icra hakimiyyəti orqanının yaratdığı qurumun 1 nümayəndəsi və 1 müstəqil ekspert daxil edilməklə yaradılır. Müsahibə komissiyası üzvünün müsahibənin nəticələri barədə xüsusi rəyi müsahibənin nəticələrinin araşdırılması üçün əsasdır.",
+    "Müsahibə komissiyasının reqlamenti, o cümlədən müsahibə komissiyası tərkibinin formalaşdırılması, müsahibənin keçirilməsi, qiymətləndirmənin aparılması, müsahibənin nəticələrinin araşdırılması qaydası və keçid balları müvafiq icra hakimiyyəti orqanı tərəfindən müəyyən edilir.",
+    "28.7. Müsabiqədən müvəffəqiyyətlə keçmiş namizədlər vakant dövlət qulluğu vəzifəsinə təyin edilmək üçün 5 iş günü müddətində dövlət orqanının rəhbərinə təqdim olunurlar. Dövlət orqanının rəhbəri təqdim olunmuş namizədlərdən birini seçərək, altı ay müddətinə stajçı kimi qulluğa qəbul etməli və vakant dövlət qulluğu vəzifəsinə təyin etməlidir. Staj dövründə dövlət orqanı rəhbərinin təyin etdiyi kurator stajçının işini istiqamətləndirir, fəaliyyətinə nəzarət edir və staj müddəti qurtardıqdan sonra stajçının sınaq müddəti ilə dövlət qulluğuna qəbul edilməsinin məqsədəuyğun olub-olmadığı barədə tövsiyə təqdim edir. Tövsiyə müsbət olarsa, stajçı əmək müqaviləsi bağlamaq yolu ilə üç ay sınaq müddəti ilə dövlət qulluğuna qəbul edilir. Əmək müqaviləsində sınaq müddəti ərzində qulluq keçmənin şərtləri müəyyənləşdirilir. Sınaq müddəti ilə dövlət qulluğuna qəbul edilən şəxslə bağlanan əmək müqaviləsinin nümunəsi müvafiq icra hakimiyyəti orqanı tərəfindən müəyyən edilir. Sınaq müddəti ərzində əmək müqaviləsi pozulmayıbsa, həmin müddət qurtardıqdan sonra dövlət orqanının rəhbəri müqavilənin şərtlərinə uyğun olaraq, həmin şəxsin daimi dövlət qulluğuna qəbul edilməsi haqqında əmr verir və onunla müvafiq əmək müqaviləsi bağlayır. Daimi dövlət qulluğuna qəbul edilən şəxslə bağlanan əmək müqaviləsinin nümunəsi müvafiq icra hakimiyyəti orqanı tərəfindən müəyyən edilir.",
+    "28.7-1. Dövlət orqanının rəhbəri tərəfindən bu Qanunun 28.7-ci maddəsinə uyğun olaraq təqdim olunmuş namizədlər sırasından seçim edilərkən müsabiqədə daha yüksək nəticə əldə etmiş namizədlərə, müsabiqə nəticələri bərabər olduqda ali təhsil pilləsinin daha yüksək səviyyəsini bitirənlərə, təhsil səviyyəsi eyni olduqda isə təhsil müəssisəsini fərqlənmə ilə bitirənlərə və xarici dil bilənlərə üstünlük verilir.",
+    "28.8. Stajçı kimi qulluğa qəbul edilmiş şəxs həmin müddətdə bu Qanunun 28-ci maddəsinə uyğun olaraq yenidən müsabiqədən keçərək yeni vəzifəyə təyin edildikdə, əvvəlki vəzifədəki staj müddəti nəzərə alınır. Sınaq müddəti ilə dövlət qulluğuna qəbul edilmiş şəxs bu Qanunun 28-ci maddəsinə uyğun olaraq yenidən müsabiqədən keçdikdə, əvvəlki sınaq müddəti nəzərə alınmamaqla, yenidən sınaq müddəti ilə vəzifəyə təyin edilir.",
+    "28.8-1. Bu Qanunun 28.7-ci maddəsində nəzərdə tutulmuş staj və sınaq müddəti müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqanda (qurumda) inzibati vəzifələrin beşinci – yeddinci təsnifatlarına uyğun olan vakant vəzifələr üzrə müsahibə əsasında ilk dəfə dövlət qulluğuna qəbul edilən şəxslərə də şamil edilir.",
+    "28.9. Daimi dövlət qulluğuna qəbul edilmiş və bu Qanunun 33.1-ci maddəsinə uyğun olaraq dövlət qulluğuna xitam verilmiş şəxslər (yardımçı vəzifə tutmuş şəxslər istisna olmaqla) yenidən dövlət qulluğuna qəbul edildikdə, habelə bu Qanunun 2.3-cü maddəsində nəzərdə tutulan dövlət qulluğunun xüsusi növündə qulluq (xidmət) keçən və ya əvvəllər qulluq (xidmət) keçmiş (kiçik rəis heyəti və sıravi heyət vəzifələrini tutan və ya əvvəllər tutmuş şəxslər istisna olmaqla) və xüsusi (hərbi, diplomatik) rütbəyə malik olan şəxslər dövlət qulluğuna qəbul edildikdə, onlar barəsində bu Qanunun 28.7-ci maddəsində nəzərdə tutulmuş staj və sınaq müddəti tətbiq edilmir.",
+    "28.10. Daimi dövlət qulluğuna qəbul Azərbaycan Respublikasının adından müvafiq dövlət orqanının sənədi ilə təsdiq edilir.",
+    "28.11. Vakant vəzifəyə təyin olunmaq üçün dövlət orqanının rəhbərinə təqdim olunmuş, lakin vakant vəzifəyə təyin edilməmiş namizədlər iki il müddətində həmin dövlət orqanında ehtiyat kadr kimi saxlanılır. Bu müddət ərzində həmin dövlət orqanında analoji vakant vəzifə olduqda, namizədlərin razılığı ilə onlar həmin vəzifələrə təyin edilirlər, yaxud digər dövlət orqanında analoji vakant vəzifə olduqda, müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqan (qurum) tərəfindən həmin vəzifəyə təyin edilmə məsələlərinə baxılması üçün namizədlər bu dövlət orqanının rəhbərinə təqdim olunurlar. Həmin müddət ərzində inzibati vəzifələrə təyin edilən namizəd ehtiyat kadrlar siyahısından çıxarılır. Şəxsin bir dövlət orqanında ehtiyat kadr kimi saxlanılması digər dövlət orqanında dövlət qulluğuna qəbul üzrə keçirilən müsahibədə iştirakını məhdudlaşdırmır.",
+    "Dövlət orqanında inzibati və yardımçı vəzifələrin təsnifat toplusuna uyğun olaraq müvafiq vakant inzibati vəzifə üzrə ehtiyat kadr olduğu halda, həmin inzibati vəzifənin müsabiqəyə və ümumi müsahibəyə çıxarılmasına yol verilmir.",
+    "28.12. Bu Qanunun 28-ci maddəsinin müddəaları ali kateqoriya dövlət orqanlarında inzibati vəzifələrin ali, birinci, ikinci və üçüncü təsnifatı vəzifələrinə, Azərbaycan Respublikasının xarici ölkələrdə ticarət nümayəndələri vəzifələrinə, yerli icra hakimiyyəti orqanlarının rəhbərlərinin müavinləri vəzifələrinə dövlət qulluğuna qəbula və bu Qanunun 2.3-cü maddəsində nəzərdə tutulmuş dövlət qulluğunun xüsusi növünə qəbula şamil edilmir. Bu Qanunun 2.3-cü maddəsində nəzərdə tutulmuş dövlət orqanlarında qulluğa (xidmətə) qəbul qaydaları Azərbaycan Respublikasının dövlət qulluğunun xüsusi növünü tənzimləyən qanunları ilə müəyyən edilir.",
+    "1–3-cü kateqoriya dövlət orqanlarında inzibati vəzifələrin birinci - üçüncü təsnifatlarına uyğun olan vəzifələrə (yerli icra hakimiyyəti orqanlarının rəhbərlərinin müavinləri və Azərbaycan Respublikasının xarici ölkələrdə ticarət nümayəndələri istisna olmaqla), habelə 2-ci kateqoriya dövlət orqanlarına aid müvafiq icra hakimiyyəti orqanında inzibati vəzifələrin dördüncü təsnifatına uyğun olan vəzifələrə (struktur bölmə rəhbərləri və həmin dövlət orqanı rəhbərinin müşavirləri, köməkçiləri) qəbul bu Qanunun 29.3-cü maddəsinin ikinci hissəsinə uyğun olaraq daxili müsahibə əsasında həyata keçirilir.",
+    "Dövlət qulluğu vəzifəsinin tutulması üçün nəzərdə tutulan təhsil tələbi (istiqaməti) üzrə elmlər doktoru elmi dərəcəsi olan şəxslər, dövlət orqanlarında (qurumlarında) siyahısı müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqan (qurum) tərəfindən təsdiq edilən vəzifələrdə azı 10 il iş stajı olan şəxslər inzibati vəzifə üzrə dövlət qulluğuna qəbul olunarkən müsabiqənin yalnız müsahibə mərhələsində iştirak edirlər.",
+    "28.13. Azərbaycan gənclərinin xarici ölkələrdə təhsili üzrə müvafiq icra hakimiyyəti orqanı tərəfindən təsdiq olunmuş dövlət proqramı çərçivəsində xaricdə təhsil almış şəxslərin dövlət qulluğuna qəbulu ilə bağlı bu Qanunun 28.1-ci maddəsi tətbiq edilmir. Həmin şəxs vakant dövlət qulluğu vəzifəsinin aid olduğu dövlət orqanına müraciət edərək, tələb olunan sənədləri təqdim etməlidir. Sənədlər təqdim edildikdən sonra həmin şəxs 5 iş günü müddətində dövlət orqanının rəhbərinə təqdim olunur. Dövlət orqanının rəhbəri həmin şəxsi stajçı kimi qulluğa qəbul etməli və vakant dövlət qulluğu vəzifəsinə təyin etməlidir. Həmin şəxsin stajçı kimi qulluğu, habelə onun sınaq müddəti ərzində qulluq keçməsi və daimi dövlət qulluğuna qəbul edilməsi ilə bağlı məsələlər bu Qanunun 28.7-ci maddəsi ilə tənzimlənir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "28-1",
+   "t": "Dövlət qulluğunda fəaliyyətin davam etdirilməsi",
+   "p": [
+    "28-1.1. Dövlət qulluqçusu kimi fəaliyyətini davam etdirmək istəyən şəxs sertifikatın qüvvədə olma müddətinin son ilində, lakin həmin sertifikatın qüvvədə olma müddətinin bitmə tarixindən gec olmayaraq növbəti sertifikat almaq üçün müvafiq icra hakimiyyəti orqanının yaratdığı qurum tərəfindən keçirilən imtahanlarda iştirak etməli və yenidən sertifikat almalıdır.",
+    "28-1.2. Sertifikat alaraq dövlət qulluğuna qəbul edilən şəxs sonradan iki dəfə sertifikat aldıqda, sonuncu sertifikat şəxsə müddətsiz verilir və həmin şəxs dövlət qulluqçusu kimi fəaliyyətini davam etdirməsi üçün hər hansı bir imtahana cəlb oluna bilməz.",
+    "28-1.3. Dövlət qulluğunda fəaliyyətin davam etdirilməsi üzrə keçirilən test imtahanının məzmunu Şuranın təklifləri əsasında müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqan (qurum) tərəfindən müəyyən edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "29",
+   "t": "İnzibati vəzifələrin tutulması",
+   "p": [
+    "29.1. Ali kateqoriya dövlət orqanlarında inzibati vəzifələrin ali-üçüncü təsnifatlarına uyğun olan vəzifələrin tutulması müsahibə keçirilməklə və ya qulluqda yüksəliş yolu ilə həyata keçirilir.",
+    "29.2. 1–5-ci kateqoriya dövlət orqanlarında (yerli icra hakimiyyəti orqanlarının rəhbərlərinin müavinləri vəzifələri və Azərbaycan Respublikasının xarici ticarət nümayəndələri vəzifələri istisna olmaqla) inzibati vəzifələrin birinci-yeddinci təsnifatlarına uyğun olan vəzifələrin tutulması həmin dövlət orqanı rəhbərinin qərarı əsasında bu Qanunun 28-ci maddəsində nəzərdə tutulmuş qaydada müsabiqə və ya bu Qanunun 29.3-29.9-cu maddələrinə uyğun olaraq müsahibə yolu ilə həyata keçirilir. 1–5-ci kateqoriya dövlət orqanının rəhbəri inzibati vəzifələrin birinci-yeddinci təsnifatlarına uyğun olan vakant vəzifə yarandığı gündən bir ay ərzində müsabiqənin, ümumi müsahibənin və ya daxili müsahibənin keçirilməsi barədə qərar qəbul etməlidir. Müvafiq icra hakimiyyəti orqanının yaratdığı qurum və müsabiqə (müsahibə) barədə qərar qəbul edən müvafiq dövlət orqanı həmin müsabiqə və müsahibələrin ədalətli, şəffaf və operativ keçirilməsini təmin etməlidirlər.",
+    "Dövlət qulluqçusu (iki il müddətində bu Qanunun 28.12-ci maddəsinin ikinci hissəsinə uyğun olaraq dövlət qulluğu vəzifələrini tutan dövlət qulluqçuları istisna olmaqla) qulluq keçdiyi orqanda öz razılığı ilə aşağı vəzifəyə keçirilərkən, habelə tutduğu inzibati vəzifə təsnifatına uyğun olan, vəzifənin adı eyni olan vəzifəyə keçirilərkən bu maddənin müddəaları həmin dövlət qulluqçusu barəsində tətbiq edilmir.",
+    "Dövlət qulluqçusu (bu Qanunun 28.12-ci maddəsinin ikinci hissəsinə uyğun olaraq dövlət qulluğu vəzifələrini tutan dövlət qulluqçuları istisna olmaqla) bu maddənin müddəaları tətbiq edilmədən digər dövlət orqanında tutduğu inzibati vəzifə ilə eyni təsnifatdan və ya aşağı təsnifatdan olan vəzifəyə həmin dövlət orqanları rəhbərlərinin qarşılıqlı razılığı ilə keçirilə bilər.",
+    "Yerli icra hakimiyyəti orqanlarının rəhbərlərinin müavinləri vəzifələrinin tutulması müsahibə keçirilməklə və ya qulluqda yüksəliş yolu ilə bu Qanunun 29.13-cü maddəsinin müddəaları nəzərə alınmaqla həyata keçirilir.",
+    "Azərbaycan Respublikasının xarici ölkələrdə ticarət nümayəndəsi vəzifəsinin tutulması müsahibə keçirilməklə və ya qulluqda yüksəliş yolu ilə bu Qanunun 29.12-ci maddəsinin müddəaları nəzərə alınmaqla həyata keçirilir.",
+    "29.3. 1–5-ci kateqoriya dövlət orqanlarında inzibati vəzifələrin dördüncü-yeddinci təsnifatlarına (2-ci kateqoriya dövlət orqanlarına aid müvafiq icra hakimiyyəti orqanında inzibati vəzifələrin dördüncü təsnifatına uyğun olan vəzifələr (struktur bölmə (şöbə) rəhbərləri və həmin dövlət orqanı rəhbərinin müşavirləri, köməkçiləri) istisna olmaqla) uyğun olan vəzifələrin həmin dövlət orqanında və ya digər dövlət orqanında inzibati vəzifələrdə qulluq keçən və inzibati vəzifələrin təsnifatına uyğun ixtisas dərəcəsi olan dövlət qulluqçuları, habelə azı 5 il qulluq stajı olan və dövlət orqanında inzibati vəzifələrdə çalışmış, eləcə də bu Qanunun 2.3-cü maddəsində nəzərdə tutulan dövlət qulluğunun xüsusi növündə qulluq (xidmət) keçən və xüsusi (hərbi, diplomatik) rütbəsi olan, habelə həmin orqanlarda azı 5 il qulluq (xidmət) stajı olan və xüsusi (hərbi, diplomatik) rütbə nəzərdə tutulan vəzifələrdə çalışmış şəxslər tərəfindən tutulması ümumi müsahibə yolu ilə həyata keçirilir. . Dövlət qulluğu vəzifəsinin tutulması üçün nəzərdə tutulan təhsil tələbi (istiqaməti) üzrə elmlər doktoru elmi dərəcəsi olan şəxslər, dövlət orqanlarında (qurumlarında) siyahısı müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqan (qurum) tərəfindən təsdiq edilən vəzifələrdə azı 10 il iş stajı olan şəxslər inzibati vəzifələrin tutulması üçün keçirilən ümumi müsahibədə iştirak edə bilərlər.",
+    "1–5-ci kateqoriya dövlət orqanlarında inzibati vəzifələrin dördüncü – yeddinci (2-ci kateqoriya dövlət orqanlarına aid müvafiq icra hakimiyyəti orqanında inzibati vəzifələrin dördüncü təsnifatına uyğun olan vəzifələr (struktur bölmə (şöbə) rəhbərləri və həmin dövlət orqanı rəhbərinin müşavirləri, köməkçiləri) istisna olmaqla) təsnifatlarına uyğun olan vəzifələrin tutulması məqsədi ilə dövlət orqanı rəhbərinin qərarı əsasında, ilk növbədə, həmin dövlət orqanında inzibati vəzifələrdə qulluq keçən və inzibati vəzifələrin təsnifatına uyğun ixtisas dərəcəsi olan dövlət qulluqçularının, habelə bu Qanunun 28.12-ci maddəsinin ikinci hissəsində müəyyən edilmiş vəzifələrə iddia edən şəxslərin iştirakını nəzərdə tutan daxili müsahibə keçirilə bilər. Müsahibə bu Qanunun 29.4-29.9-cu maddələrinin tələbləri nəzərə alınmaqla, bu Qanunun 29.6-cı maddəsində nəzərdə tutulmuş qaydada keçirilir.",
+    "Bu maddənin ikinci hissəsinə uyğun olaraq keçirilən müsahibə nəticəsində müvafiq inzibati vəzifə tutulmadıqda, dövlət orqanı rəhbərinin müvafiq qərarı əsasında bu Qanunun 29.4-29.9-cu maddələrinə uyğun olaraq bu maddənin birinci hissəsində nəzərdə tutulmuş digər şəxslərin iştirakını nəzərdə tutan ümumi müsahibə və ya bu Qanunun 28-ci maddəsində nəzərdə tutulmuş qaydada müsabiqə (bu Qanunun 28.12-ci maddəsinin ikinci hissəsində müəyyən edilmiş vəzifələr istisna olmaqla) keçirilə bilər.",
+    "Bu maddəyə uyğun olaraq müvafiq inzibati vəzifənin müsahibə yolu ilə tutulması həyata keçirildikdə qanunvericiliklə müəyyən edilmiş vakant vəzifələrin tutulmasının ümumi şərtlərinin tələbləri gözlənilməlidir.",
+    "1–5-ci kateqoriya dövlət orqanlarında inzibati vəzifələrin birinci – yeddinci təsnifatlarına uyğun olan vəzifələrin tutulması məqsədilə keçirilən müsahibədən müvəffəqiyyətlə keçmiş, lakin vakant vəzifəyə təyin edilməmiş namizədlər iki il müddətində həmin dövlət orqanında ehtiyat kadr kimi saxlanılır. Həmin namizədlərin vakant inzibati vəzifələrə təyin olunması və ehtiyat kadrlar siyahısından çıxarılması ilə bağlı məsələlər bu Qanunun 28.11-ci maddəsinə uyğun olaraq tənzimlənir.",
+    "Dövlət orqanının ləğvi, dövlət qulluqçularının sayının və ya ştatların ixtisarı ilə əlaqədar ehtiyat kadrlar siyahısına daxil edilən şəxs bu Qanunun 29.2-ci maddəsinin birinci hissəsinə uyğun olaraq keçirilən ümumi müsahibədə və ehtiyat kadr kimi saxlanıldığı dövlət orqanında bu Qanunun 29.3-cü maddəsinin ikinci hissəsinə uyğun olaraq keçirilən daxili müsahibədə iştirak edə bilər.",
+    "29.4. Bu Qanunun 29.3-cü maddəsinin ikinci hissəsində nəzərdə tutulmuş hal istisna olmaqla, müsahibə barədə elan müvafiq dövlət orqanının müraciəti əsasında müvafiq icra hakimiyyəti orqanının yaratdığı qurum tərəfindən mediada müsahibənin keçirilməsi tarixinə bir ay qalmış verilir.",
+    "Müsahibənin bu Qanunun 29.3-cü maddəsinin ikinci hissəsinə uyğun keçirilməsi barədə dövlət orqanı rəhbərinin qərarı müsahibənin keçirilməsi tarixinə bir ay qalmış həmin dövlət orqanında rəsmi elan olunur, dövlət orqanının və müvafiq icra hakimiyyəti orqanının yaratdığı qurumun rəsmi internet saytlarında yerləşdirilir.",
+    "29.5. Müsahibədə barəsində müsahibə elan edilən vəzifənin təsnifatından ən çoxu iki təsnifat aşağı inzibati vəzifələrdə qulluq keçən dövlət qulluqçuları, habelə ən çoxu iki təsnifat aşağı inzibati vəzifələrdə qulluq keçmiş şəxslər iştirak edə bilərlər.",
+    "Barələrində intizam tənbehi tətbiq edilmiş dövlət qulluqçuları altı ay ərzində müsahibəyə və müsabiqəyə buraxılmırlar.",
+    "Bu maddənin birinci hissəsi bu Qanunun 28.12-ci maddəsinin ikinci hissəsində müəyyən edilmiş vəzifələrin tutulmasına, habelə məhkəmə hakimiyyəti orqanlarında inzibati vəzifələrin beşinci-yeddinci təsnifatlarına uyğun olan vəzifələrin həmin orqanlarda qulluq keçən şəxslərin iştirakı ilə tutulmasına şamil olunmur. KMQ1",
+    "29.6. Müsahibə müvafiq dövlət orqanı rəhbərinin yaratdığı komissiya tərəfindən müvafiq icra hakimiyyəti orqanının müəyyən etdiyi qaydada keçirilir.",
+    "29.7. Bu Qanunun 29.6-cı maddəsində nəzərdə tutulmuş komissiya bu Qanunun 28.12-ci maddəsinin ikinci hissəsində müəyyən edilmiş vəzifələrin tutulması ilə bağlı müsahibə zamanı yalnız həmin dövlət orqanının nümayəndələri daxil edilməklə, digər hallarda isə müvafiq icra hakimiyyəti orqanının yaratdığı qurumun 1 nümayəndəsi və 1 müstəqil ekspert daxil edilməklə, 3 nəfərdən ibarət tərkibdə yaradılır.",
+    "29.8. Müsahibə zamanı müsahibədə iştirak edən şəxsin bilik səviyyəsi, peşə hazırlığı, ümumi dünyagörüşü, barəsində müsahibə elan edilən vəzifə üçün zəruri olan keyfiyyətləri yoxlanılmaqla, müvafiq vəzifəyə yararlılığı müəyyən edilir.",
+    "29.9. Müsahibə zamanı aşağıdakı göstəricilər nəzərə alınmalıdır:",
+    "29.9.1. ixtisas dərəcəsi;",
+    "29.9.3. müvafiq vəzifənin tələblərinə uyğun olaraq əlavə təhsilalma.",
+    "29.10. Müsahibənin nəticələrinə görə müvafiq inzibati vəzifənin tutulması barədə qərar qəbul edilir.",
+    "29.11. Müsahibə nəticəsində müvafiq inzibati vəzifə (bu Qanunun 28.12-ci maddəsinin ikinci hissəsində müəyyən edilmiş vəzifələr istisna olmaqla) tutulmadıqda, dövlət orqanı rəhbərinin həmin vəzifənin müsabiqə əsasında tutulması barədə qərarı əsasında bu Qanunun 28-ci maddəsində nəzərdə tutulmuş qaydada müsabiqə keçirilir.",
+    "29.12. Azərbaycan Respublikasının xarici ölkələrdə ticarət nümayəndələri müvafiq icra hakimiyyəti orqanının rəhbəri tərəfindən müvafiq icra hakimiyyəti orqanı ilə razılaşdırılmaqla təyin olunur.",
+    "29.13. Yerli icra hakimiyyəti orqanlarının rəhbərlərinin müavinləri müvafiq icra hakimiyyəti orqanı tərəfindən müvafiq icra hakimiyyəti orqanı ilə razılaşdırılmaqla təyin olunur."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "29-1",
+   "t": "Müsahibənin nəticələrinə yenidən baxılması",
+   "p": [
+    "Namizədlər müsahibənin nəticələrindən inzibati qaydada müvafiq icra hakimiyyəti orqanının yaratdığı quruma (məhkəmə hakimiyyəti orqanlarının və Məhkəmə-Hüquq Şurasının aparatlarında dövlət qulluğuna qəbulla bağlı keçirilən müsahibənin nəticələrindən Məhkəmə-Hüquq Şurasının Apellyasiya Şurasına), Şuraya və məhkəməyə şikayət verə bilərlər."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "30",
+   "t": "Dövlət qulluğunun şərtləri",
+   "p": [
+    "30.1. Dövlət qulluğunda iş vaxtı həftədə 40 saatdır. Dövlət qulluqçularının ayrı-ayrı kateqoriyaları üçün qanunla müddəti qısaldılmış iş vaxtı müəyyən edilə bilər.",
+    "30.2. Qulluq üçün zəruri olduqda dövlət orqanının rəhbəri müstəsna hallarda iş vaxtını ayda əvəzi ödənilmədən 5 saata qədər artıra bilər. İş vaxtı 5 saatdan çox artırılanda işlədiyi hər saata görə dövlət qulluqçusuna əlavə haqq ödənilməlidir.",
+    "30.3. İnzibati vəzifə tutan dövlət qulluqçusuna ildə bir dəfə 30 təqvim günü müddətində haqqı ödənilən əsas məzuniyyət verilir. Uzun illər işləməyə görə haqqı ödənilən əlavə məzuniyyət aşağıdakı qaydada verilir:",
+    "30.3.1. 5 ildən 10 ilədək əmək stajına görə —2 təqvim günü;",
+    "30.3.2. 10 ildən 15 ilədək əmək stajına görə—4 təqvim günü;",
+    "30.3.3. 15 ildən çox əmək stajına görə —6 təqvim günü;",
+    "Dövlət qulluqçusu öz arzusu ilə və dövlət orqanı rəhbərinin razılığı ilə ödənişsiz məzuniyyətə göndərilə bilər.",
+    "30.4. Xidməti ezamiyyətə göndərilən dövlət qulluqçusu aşağıdakılarla təmin olunur:",
+    "30.4.1. mehmanxanada və ya xidməti yaşayış sahəsində yer, altı aydan çox müddətə ezamiyyətə göndəriləndə isə ayrıca xidməti mənzil sahəsi;",
+    "30.4.2. iş yeri, rabitə vasitələrindən istifadə etmək imkanı;",
+    "30.4.3. digər zəruri texniki xidmətlər və sosial-məişət xidmətləri, o cümlədən onu göndərən orqanın vəsaiti hesabına xidmətlər.",
+    "30.5. Müvəqqəti olaraq başqa yerə qulluğa keçirilən dövlət qulluqçusunun ailəsini özü ilə aparmağa ixtiyarı vardır. Ona müəyyən edilmiş yaşayış normalarına uyğun gələn məişət ləvazimatı ilə komplektləşdirilmiş xidməti mənzil verilir, habelə əvvəl qulluq keçdiyi yerdəki yaşayış sahəsi saxlanılır. Dövlət qulluqçusunun ailə üzvlərinə işə və ya təhsil müəssisəsinə düzəlməkdə kömək göstərilir, məktəbəqədər təhsil müəssisələrində yer verilir və lazım gəldikdə, onu göndərən orqanın vəsaiti hesabına haqqı ödənilən tibbi xidmət göstərilir. Müvəqqəti olaraq başqa yerə qulluğa keçirilməklə bağlı olan digər məsələlər Azərbaycan Respublikasının Əmək Məcəlləsi ilə tənzim olunur.",
+    "30.6. Yardımçı vəzifələr tutan dövlət qulluqçularının əmək münasibətləri bu Qanunun müddəaları nəzərə alınmaqla Azərbaycan Respublikasının Əmək Məcəlləsi ilə tənzimlənir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "30-1",
+   "t": "Dövlət qulluqçularının xidməti fəaliyyətinin qiymətləndirilməsi",
+   "p": [
+    "30-1.1. İnzibati vəzifə tutan dövlət qulluqçularının xidməti fəaliyyətinin qiymətləndirilməsi hər təqvim ilinin sonunda həyata keçirilir.",
+    "30-1.2. Ali kateqoriya dövlət orqanlarında inzibati vəzifələrin ali-üçüncü təsnifatlarına uyğun dövlət qulluğu vəzifələrini tutan dövlət qulluqçularının, stajçı kimi və sınaq müddəti ilə dövlət qulluğuna qəbul edilmiş şəxslərin, habelə təqvim ilinin sonunadək müvafiq vəzifədə faktiki olaraq 6 aydan az müddətdə qulluq keçən dövlət qulluqçularının xidməti fəaliyyəti qiymətləndirilmir.",
+    "30-1.3. Dövlət qulluqçusunun xidməti fəaliyyətinin qiymətləndirilməsi onun bilavasitə rəhbəri tərəfindən həyata keçirilir.",
+    "30-1.4. Dövlət qulluqçusunun xidməti fəaliyyətinin qiymətləndirilməsi qiymətləndirilmə forması əsasında aparılır. Qiymətləndirilmə forması dövlət qulluqçusunun təqvim ili ərzində yerinə yetirməli olduğu tapşırıqlar (hədəflər) və bu Qanunun 30-1.6-cı və 30-1.7-ci maddələrində göstərilən meyarlar, habelə əmək intizamı nəzərə alınmaqla tərtib edilir. Tapşırıqların (hədəflərin) və meyarların mühümlük dərəcəsi bilavasitə rəhbər tərəfindən müəyyən edilir.",
+    "30-1.5. Tapşırıqlar (hədəflər) dövlət qulluqçusunun il ərzində icra etməli olduğu mühüm işlərdir. Tapşırıqlar (hədəflər) dövlət qulluqçusunun qulluq keçdiyi struktur bölmənin fəaliyyət istiqamətlərinə uyğun və dövlət qulluqçusunun qulluq funksiyaları çərçivəsində olmalıdır. Tapşırıqların (hədəflərin) icra müddəti dəqiq müəyyən edilməli, ölçülə və yerinə yetirilə bilən olmalıdır. Hər bir tapşırığın (hədəfin) icra edilməsindən gözlənilən nəticə müəyyən edilməlidir.",
+    "30-1.6. Dövlət qulluqçusunun il ərzində xidməti fəaliyyəti aşağıdakı meyarlar əsasında qiymətləndirilir:",
+    "30-1.6.1. peşə bilikləri;",
+    "30-1.6.2. qulluq (xidməti) vəzifələrinə münasibəti;",
+    "30-1.6.3. təhlil aparmaq, problem həll etmək və qərar vermək bacarığı;",
+    "30-1.6.4. yaradıcılıq və təşəbbüskarlıq;",
+    "30-1.6.5. iş təcrübəsi və onu bölüşmə;",
+    "30-1.6.6. kollektivdə işləmək və ünsiyyət bacarığı.",
+    "30-1.7. Rəhbər vəzifə tutan dövlət qulluqçularının fəaliyyəti bu Qanunun 30-1.6-cı maddəsində göstərilənlərə əlavə olaraq aşağıdakı meyarlar əsasında qiymətləndirilir:",
+    "30-1.7.1. proqnozlaşdırma;",
+    "30-1.7.2. idarəetmə;",
+    "30-1.7.3. kollektiv daxilində nüfuz və ruhlandırmaq bacarığı;",
+    "30-1.7.4. komanda qurmaq bacarığı.",
+    "30-1.8. Dövlət qulluqçusunun xidməti fəaliyyəti aşağıdakı şəkildə qiymətləndirilir:",
+    "30-1.8.1. əla;",
+    "30-1.8.2. yaxşı;",
+    "30-1.8.3. kafi;",
+    "30-1.8.4. qeyri-kafi.",
+    "30-1.9. Dövlət qulluqçusunun xidməti fəaliyyətinə verilən yekun qiymətin 50 faizi tapşırıqların (hədəflərin) icra səviyyəsinin qiymətləndirilməsinə, 40 faizi meyarlar əsasında qiymətləndirilməyə, 10 faizi isə əmək intizamı əsasında qiymətləndirməyə əsaslanır.",
+    "30-1.10. Dövlət qulluqçusunun xidməti fəaliyyətinin qiymətləndirilməsinin nəticələri xidməti fəaliyyətin qiymətləndirilməsi barədə sənədlə rəsmiləşdirilir. Dövlət qulluqçusunun fəaliyyəti bütün tapşırıqlar (hədəflər), meyarlar, eləcə də əmək intizamı üzrə qiymətləndirilir və verilmiş qiymətlər əsaslandırılır. Dövlət qulluqçusu xidməti fəaliyyətinin qiymətləndirilməsi nəticəsi ilə razılaşmadıqda xidməti fəaliyyətin qiymətləndirilməsi barədə sənədə onun rəyi əlavə edilir. Dövlət qulluqçusunun xidməti fəaliyyətinin qiymətləndirilməsinin nəticələri onun şəxsi işində saxlanılır.",
+    "30-1.11. Dövlət qulluqçusunun xidməti fəaliyyəti üzrə yekun qiymət müəyyən edildikdən sonra onunla müsahibə keçirilir. Müsahibə zamanı dövlət qulluqçusunun xidməti fəaliyyətinə verilən qiymət və şərhlər müzakirə olunur. Müsahibə zamanı növbəti qiymətləndirilmə ili üçün tapşırıqlar (hədəflər) və onların mühümlük dərəcəsi müəyyən edilə bilər.",
+    "30-1.12. Dövlət orqanının rəhbəri tərəfindən dövlət qulluqçusunun xidməti fəaliyyətinin qiymətləndirilməsinin nəticəsi əsasında onun barəsində aşağıdakı tədbirlərdən biri görülə bilər:",
+    "30-1.12.2. dövlət qulluqçusuna vaxtından əvvəl ixtisas dərəcəsinin verilməsi;",
+    "30-1.12.3. dövlət qulluqçusunun fəaliyyətinin və bacarıqlarının daha da təkmilləşdirilməsi məqsədilə əlavə təhsilə və ya xüsusi təlimlərə cəlb edilməsi;",
+    "30-1.12.4. dövlət qulluqçusunun bilik və bacarıqlarına uyğun digər analoji vəzifəyə keçirilməsi;",
+    "30-1.12.5. dövlət qulluqçusunun aşağı inzibati vəzifəyə keçirilməsi.",
+    "30-1.13. Dövlət qulluqçusunun xidməti fəaliyyətinin qiymətləndirilməsi qaydası və qiymətləndirilmə forması müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqan (qurum) tərəfindən müəyyən edilir.",
+    "30-1.14. Dövlət qulluqçusu xidməti fəaliyyətinin qiymətləndirilməsinin nəticəsi ilə razılaşmadıqda inzibati qaydada və məhkəmə qaydasında şikayət etmək hüququna malikdir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "31",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "m",
+   "n": "31-1",
+   "t": "Dövlət qulluqçusunun rotasiyası",
+   "p": [
+    "31-1.1. Dövlət qulluqçusunun rotasiyası onun qulluq keçdiyi dövlət orqanının rəhbərinin qərarı ilə müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqanın (qurumun) müəyyən etdiyi qaydada həyata keçirilir.",
+    "31-1.2. Bu Qanunun 31-1.1-ci maddəsində nəzərdə tutulan qaydada siyahısı müəyyən edilən dövlət qulluqçuları rotasiya qaydasında başqa vəzifəyə təyin edilərkən onun qulluq keçdiyi inzibati vəzifənin təsnifatı, ixtisası, xidməti fəaliyyətinin qiymətləndirilməsinin nəticəsi, qulluq stajı, habelə yaşı, ailə və sağlamlıq vəziyyəti nəzərə alınır.",
+    "31-1.3. Müvafiq vəzifədə beş ildən az qulluq keçən dövlət qulluqçuları rotasiya olunmur.",
+    "31-1.4. Rotasiya qaydasında yaşadığı inzibati ərazi vahidindən kənarda vəzifəyə təyin olunan dövlət qulluqçularına müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqanın (qurumun) müəyyən etdiyi qaydada kompensasiya və birdəfəlik ödəniş verilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "32",
+   "t": "Dövlət qulluğunda irəli çəkilmək hüququ",
+   "p": [
+    "32.1 Dövlət qulluqçusu bu Qanunla müəyyən edilmiş qaydada qulluqda yüksəliş yolu ilə, habelə müsahibə və ya müsabiqə nəticəsində dövlət qulluğunda irəli çəkilə bilər.",
+    "32.2. Dövlət qulluğunda irəli çəkilmək hüququ dövlət qulluqçularının öz vəzifələrini müvəffəqiyyətlə və vicdanla yerinə yetirməsi, vakant vəzifə olması, habelə vakant vəzifənin tələblərinə uyğun olaraq əlavə təhsilalmanın nəticələri nəzərə alınmaqla həyata keçirilir. Bu zaman rotasiya olunmuş inzibati vəzifə tutan dövlət qulluqçularına üstünlük verilir.",
+    "32.5. Dövlət qulluqçusunun potensialından düzgün istifadə edilərək hərtərəfli inkişafına şərait yaratmaq, onun dövlət qulluğunda irəli çəkilməsi və motivasiyasının təmin edilməsi və dövlət qulluğunda insan resurslarından daha səmərəli istifadə edilməklə dövlət orqanının kadr tələbatına olan ehtiyacını vaxtında ödəmək məqsədilə dövlət qulluqçusunun karyerası planlaşdırılır. Dövlət qulluqçularının karyerasının planlaşdırılması üçün dövlət orqanları tərəfindən müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqanın (qurumun) müəyyən etdiyi qaydada dövlət qulluqçusunun karyera inkişaf planı hazırlanır."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "32-1",
+   "t": "Dövlət qulluğunda olmanın yaş həddi",
+   "p": [
+    "32-1.1. Dövlət qulluqçusunun dövlət qulluğunda olmasının yaş həddi 65-dir.",
+    "32-1.2. 65 yaşına çatmış dövlət qulluqçusunun dövlət qulluğunda olma müddəti müvafiq dövlət orqanının rəhbəri tərəfindən hər dəfə 1 ildən çox olmayaraq uzadıla bilər. Dövlət qulluqçusunun dövlət qulluğunda olma müddətinin 5 ildən çox uzadılmasına yol verilmir.",
+    "32-1.3. İnzibati vəzifələrin ali-üçüncü təsnifatına aid vəzifələrdə qulluq keçən dövlət qulluqçusunun dövlət qulluğunda olma müddəti müvafiq dövlət orqanının razılığı əsasında bu Qanunun 32-1.2-ci maddəsində nəzərdə tutulmuş müddətdən artıq uzadıla bilər.",
+    "32-1.4. Bu Qanunun 32-1.2-ci maddəsinə uyğun olaraq dövlət orqanına aid edilən sahədə dövlət qulluğunda olma müddəti uzadılmış dövlət qulluqçularının sayı həmin dövlət orqanının vahid sistemini təşkil edən qurumların işçilərinin ümumi sayının 15 faizindən artıq ola bilməz.",
+    "32-1.5. Dövlət orqanının aparatının və digər struktur qurumunun çalışma müddəti uzadılmış işçilərinin sayı müvafiq olaraq onun aparatının və digər struktur qurumunun işçilərinin sayının 2 faizindən artıq ola bilməz.",
+    "32-1.6. Dövlət orqanının aparatında və ya digər struktur qurumunda dövlət qulluqçularının sayı 100 nəfərdən az olduqda, çalışma müddəti uzadılmış işçilərin sayı iki ştat vahidinə qədər yuvarlaqlaşdırılır.",
+    "32-1.7. Dövlət qulluqçusunun dövlət qulluğunda olma müddətinin uzadılmasına onun razılığı əsasında yol verilir.",
+    "32-1.8. Bu Qanunun 32-1.2-ci maddəsi tətbiq edilərkən aşağıdakılar nəzərə alınır:",
+    "32-1.8.1. dövlət qulluğunda intizam tənbeh tədbirlərinin tətbiq edilməməsi;",
+    "32-1.8.2. elmi dərəcənin və ya elmi adın olması;",
+    "32-1.8.3. dövlət təltifi ilə təltif edilmə;",
+    "32-1.8.4. attestasiyadan üç dəfə müvəffəqiyyətlə keçmə."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "33",
+   "t": "Dövlət qulluğuna xitam verilməsi",
+   "p": [
+    "33.1. Dövlət qulluğuna aşağıdakı əsaslarla xitam verilə bilər:",
+    "33.1.1. dövlət qulluqçusunun öz arzusu ilə;",
+    "33.1.2. dövlət orqanı ləğv edildikdə;",
+    "33.1.3. dövlət qulluqçularının sayı və ya ştatları ixtisar edildikdə;",
+    "33.1.4. qanunvericiliyin tələbləri pozularaq işə qəbul edildikdə;",
+    "33.1.5. dövlət qulluqçusunun aldığı sertifikatın qüvvədəolma müddəti bitdikdə və dövlət qulluqçusu növbəti sertifikat ala bilmədikdə;",
+    "33.1.6. Bu Qanunun 25.2.6-cı maddəsinə uyğun olaraq dövlət qulluğundan azad edildikdə;",
+    "33.1.7. Azərbaycan Respublikası vətəndaşlığına xitam verildikdə;",
+    "33.1.8. qanunvericilik və ya yerli özünüidarə orqanlarına seçildikdə, habelə hakim təyin edildikdə, əgər onlar həmin vəzifələrdən imtina etmədikdə;",
+    "33.1.9. qanunvericilikdə daha uzun müddət müəyyən edilməyibsə, əmək qabiliyyətinin fasiləsiz olaraq altı aydan çox müddətə tam itirilməsi ilə əlaqədar dövlət qulluqçusu əmək funksiyasını yerinə yetirə bilmədikdə;",
+    "33.1.10. məhkəmənin qanuni qüvvəyə minmiş ittiham hökmü və ya tibbi xarakterli məcburi tədbirlərin tətbiqinə dair qanuni qüvvəyə minmiş qərarı olduqda;",
+    "33.1.11. dövlət qulluqçusu vəfat etdikdə, habelə məhkəmə tərəfindən xəbərsiz itkin düşmüş hesab edildikdə və ya ölmüş elan edildikdə;",
+    "33.1.12. dövlət qulluğunda olmanın yaş həddinə çatdıqda;",
+    "33.1.13. dövlət qulluqçusu müddətli həqiqi hərbi və ya alternativ xidmətə çağırıldıqda.",
+    "33.2. Dövlət qulluqçusunun “Əmək pensiyaları haqqında” Azərbaycan Respublikasının Qanununa uyğun olaraq pensiya yaşına çatmasına görə öz arzusu ilə və ya dövlət qulluğunda olmanın yaş həddinə çatdığı üçün dövlət qulluğuna xitam verildikdə, digər pensiya növünün təyin edilməsindən asılı olmayaraq, ona öz seçimi ilə dövlət qulluğunun son 24 ayı və ya istənilən ardıcıl gələn 60 ayı ərzindəki orta aylıq dövlət məvacibinin altı misli miqdarında birdəfəlik haqq verilir və bu məbləğdən vergi, məcburi dövlət sosial sığorta haqqı və digər icbari ödənişlər tutulmur.",
+    "33.2-1. Dövlət qulluğuna bu Qanunun 33.1.11-ci maddəsi ilə xitam verildikdə dövlət qulluqçusunun vərəsələrinə orta aylıq dövlət məvacibinin dörd misli miqdarında müavinət ödənilir.",
+    "33.2-2. Dövlət qulluğuna bu Qanunun 33.1.13-cü maddəsi ilə xitam verildikdə dövlət qulluqçusuna orta aylıq dövlət məvacibinin üç misli miqdarında müavinət ödənilir.",
+    "Dövlət orqanının ləğvi istisna olmaqla, müddətli həqiqi hərbi xidmətə çağırılanadək müvafiq dövlət orqanında qulluq keçmiş şəxslər, hərbi xidmətdən buraxıldıqdan ən geci 60 təqvim günü keçənədək əvvəlki vəzifəsini tutmaq üçün müraciət etdikdə həmin orqanda əvvəlki və ya analoji vəzifəyə təyin edilirlər.",
+    "Müddətli həqiqi hərbi xidmətə çağırılmazdan bilavasitə əvvəl dövlət qulluğu vəzifəsində qulluq keçmiş və ehtiyata buraxıldıqdan bilavasitə sonra yenidən dövlət qulluğu vəzifəsinə təyin edilmiş dövlət qulluqçularının müddətli həqiqi hərbi xidmətdə olduqları müddət onların qulluq stajı hesablanarkən nəzərə alınır.",
+    "33.2-3. Bu Qanunun 33.2-1-ci və 33.2-2-ci maddələrində nəzərdə tutulmuş dövlət qulluqçusunun orta aylıq dövlət məvacibinin məbləği Azərbaycan Respublikası Əmək Məcəlləsinin 177-ci maddəsinin 2-ci, 3-cü, 3-1-ci və 6-cı hissələrinə uyğun olaraq müəyyən edilir.",
+    "33.3. Dövlət orqanı rəhbərinin dövlət qulluğunu davam etdirmək barədə qərarı olarsa, dövlət qulluqçusu öz arzusu ilə dövlət qulluğundan çıxmaq barədə ərizəni verdiyi gündən 1 ay ərzində dövlət qulluğunu davam etdirməlidir. Zərurət olduqda, həmin müddət dövlət orqanının rəhbəri tərəfindən əlavə olaraq 1 ay müddətinədək uzadıla bilər."
+   ]
+  },
+  {
+   "k": "f",
+   "n": "VI fəsil",
+   "t": "Dövlət qulluqçularının əməyinin ödənilməsi sistemi"
+  },
+  {
+   "k": "m",
+   "n": "33-1",
+   "t": "Əməyin ödənilməsi sisteminin tətbiqi və idarə edilməsi",
+   "p": [
+    "33-1.1. Dövlət qulluqçularının əməyinin ödənilməsi sistemi rəqabətqabiliyyətlilik, mütənasiblik, motivasiya, çeviklik və uyğunlaşma amilləri nəzərə alınmaqla bu Qanun və əmək qanunvericiliyi ilə tənzimlənir.",
+    "33-1.2. Dövlət orqanları dövlət büdcəsində bu məqsədlər üçün nəzərdə tutulmuş vəsait, müəyyən edilmiş işçilərinin ümumi say həddi və struktur bölmələrin yaradılması üçün işçilərin say həddi çərçivəsində ştat cədvəlində struktur bölmələrin və struktur bölmələrdə işçilərin sayının müəyyənləşdirilməsində sərbəstdirlər.",
+    "33-1.3. Bu Qanunun 33-1.1-ci maddəsində “rəqabətqabiliyyətlilik” dedikdə dövlət qulluqçularının dövlət məvacibinin səviyyəsinin özəl sektorda analoji vəzifələrin əməkhaqqı səviyyələri ilə qulluq funksiyalarının mürəkkəbliyi və məsuliyyəti baxımından balanslaşdırılması, “mütənasiblik” dedikdə dövlət qulluqçularının dövlət məvacibinin dövlət orqanının kateqoriyasına, dövlət qulluğu vəzifəsinin təsnifatına, əməyin ödəniş səviyyəsinə, qulluq stajına və xidməti fəaliyyətinin qiymətləndirilməsinin nəticəsinə uyğun olaraq müəyyən edilməsi, “motivasiya” dedikdə dövlət qulluqçusunun vəzifədə yüksəlişi ilə yanaşı tutduğu vəzifədə fərdi peşəkarlıq və yüksək səriştəlilik keyfiyyətlərinin artırılması ilə əlaqədar əməyinin ödənilməsi sistemi üzrə həvəsləndirilməsi, “çeviklik və uyğunlaşma” dedikdə dövlət qulluqçularının dövlət məvacibinin səviyyəsinin iqtisadiyyatın inkişaf səviyyəsinə uyğunlaşdırılmasının təmin edilməsi başa düşülür."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "33-2",
+   "t": "Dövlət məvacibi",
+   "p": [
+    "33-2.1. Dövlət qulluqçusunun məvacibinə daxildir:",
+    "33-2.1.1. aylıq vəzifə maaşı;",
+    "33-2.1.2. ixtisas dərəcəsinə görə əlavə haqq;",
+    "33-2.1.3. qulluq üçün zəruri olan hallarda aylıq iş vaxtı norması 5 saatdan çox artırılanda işlədiyi hər saata görə ödənilən əlavə haqq;",
+    "33-2.1.4. əmək qanunvericiliyinə əsasən əmək şəraiti ilə əlaqədar dövlət qulluqçularına şamil edilən əlavələr (qulluq şəraitinin ağır və zərərliliyinə, iqlim şəraitinə və s.).",
+    "33-2.2. Dövlət qulluqçusunun aylıq vəzifə maaşı mütənasiblik amili nəzərə alınmaqla əməyinin ödəniş səviyyəsinə və pilləsinə uyğun olaraq müəyyən edilir.",
+    "33-2.3. Dövlət qulluqçularına dövlət büdcəsindən ödənilən dövlət məvacibi yalnız bu Qanunla müəyyən edilir.",
+    "33-2.4. Bu Qanunun 33-2.1.4-cü maddəsində nəzərdə tutulan əlavələr müvafiq qaydada hesablanan məbləğin 50 faizi məbləğində tətbiq edilir.",
+    "Qeyd: Dövlət qulluğunun inzibati vəzifəsinə qəbul həyata keçirilənədək bu vəzifədə müvəqqəti işləyən, dövlət qulluqçusu olmayan işçinin aylıq vəzifə maaşı minimum əməkhaqqından aşağı olmamaqla həmin vəzifənin 1-ci ödəniş pilləsi üzrə vəzifə maaşının 50 faizi məbləğində müəyyən edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "33-3",
+   "t": "Əməyin ödəniş səviyyələri və pillələri",
+   "p": [
+    "33-3.1. Dövlət qulluqçularının baza aylıq vəzifə maaşları (birinci ödəniş pilləsi) şaquli istiqamətdə dövlət orqanlarının kateqoriyasından, vəzifələrin təsnifatından, səlahiyyət həcmindən və iyerarxiyasından asılı olaraq inzibati vəzifələrin 35 və yardımçı vəzifələrin 17 ödəniş səviyyələri üzrə müəyyən edilir.",
+    "33-3.2. Dövlət qulluğunun inzibati və yardımçı vəzifələri üzrə aylıq vəzifə maaşının minimum məbləğindən başlayaraq ödəniş səviyyələri üzrə baza aylıq vəzifə maaşları hər növbəti səviyyə üzrə əvvəlki baza aylıq vəzifə maaşına artım faizləri tətbiq edilməklə hesablanır.",
+    "33-3.3. Dövlət qulluğunun inzibati vəzifələri üçün müəyyən edilən minimum vəzifə maaşı yardımçı vəzifələrin ən yüksək səviyyə üzrə baza aylıq vəzifə maaşından az ola bilməz.",
+    "33-3.4. Dövlət qulluğu stajından və xidməti fəaliyyətinin qiymətləndirilməsi nəticəsindən və ya bu Qanunla müəyyən edilən hallarda yalnız dövlət qulluğu stajından asılı olaraq dövlət qulluqçusunun aylıq vəzifə maaşı üfüqi istiqamətdə 1-7-ci pillələr üzrə hər növbəti pillə üzrə baza aylıq vəzifə maaşına artım faizi tətbiq edilməklə müəyyən edilir.",
+    "33-3.5. Dövlət qulluğunun inzibati və yardımçı vəzifələri üzrə aylıq vəzifə maaşının minimum məbləğləri, əməyin ödəniş səviyyələri üzrə vəzifələr, səviyyə və pillələr üzrə artım faizləri və aylıq vəzifə maaşlarının məbləğləri müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqan (qurum) tərəfindən müəyyən edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "33-4",
+   "t": "Aylıq vəzifə maaşının müəyyən edilməsi şərtləri",
+   "p": [
+    "33-4.1. Dövlət qulluqçusunun qulluq keçdiyi tarixə aylıq vəzifə maaşının məbləği, eləcə də dövlət məvacibinə daxil edilən digər ödənişlər bu Qanuna və əmək qanunvericiliyinə əsasən müəyyən edilərək dövlət orqanının rəhbərinin əmri (sərəncamı) ilə rəsmiləşdirilir.",
+    "33-4.2. Dövlət qulluğuna staj və sınaq müddətinə qəbul edilmiş şəxslərin və ilk dəfə daimi dövlət qulluğuna qəbul edilən dövlət qulluqçularının aylıq vəzifə maaşları təyin edildiyi vəzifəyə müvafiq olaraq 1-ci ödəniş pilləsi üzrə müəyyən edilir.",
+    "33-4.3. Ali kateqoriya dövlət orqanlarında inzibati vəzifələrin ali-üçüncü təsnifatları üzrə inzibati vəzifə tutan dövlət qulluqçusunun və bütün təsnifatlar üzrə yardımçı vəzifə tutan dövlət qulluqçusunun əməyinin ödəniş pilləsi dövlət qulluğunda qulluq stajının müddətindən asılı olaraq aşağıdakı kimi müəyyən edilir:",
+    {
+     "table": [
+      [
+       "Qulluq stajı (il)",
+       "Əməyin ödəniş pilləsi"
+      ],
+      [
+       "1 ilədək",
+       "1-ci"
+      ],
+      [
+       "1 ildən 5 ilədək",
+       "2-ci"
+      ],
+      [
+       "5 ildən 10 ilədək",
+       "3-cü"
+      ],
+      [
+       "10 ildən 15 ilədək",
+       "4-cü"
+      ],
+      [
+       "15 ildən 20 ilədək",
+       "5-ci"
+      ],
+      [
+       "20 ildən 25 ilədək",
+       "6-cı"
+      ],
+      [
+       "25 ildən yuxarı",
+       "7-ci"
+      ]
+     ]
+    },
+    "33-4.4. Bu Qanunun 33-4.3-cü maddəsində göstərilən inzibati vəzifələr istisna olmaqla, digər inzibati vəzifə tutan dövlət qulluqçusunun əməyinin ödəniş pilləsi qulluq stajına və dövlət qulluqçusunun xidməti fəaliyyətinin qiymətləndirilməsinin nəticəsinə, habelə aşağıdakı hər hala əsasən 2-ci pillədən başlayaraq tutduğu pillədən bir pillə yuxarı müəyyən edilir:",
+    "33-4.4.1. qulluq stajına görə:",
+    "33-4.4.1.1. 1 ildən 5 ilədək;",
+    "33-4.4.1.2. 5 ildən 15 ilədək;",
+    "33-4.4.1.3. 15 ildən yuxarı;",
+    "33-4.4.2. qiymətləndirmənin nəticəsinə görə:",
+    "33-4.4.2.1. “əla” qiymətləndirildikdə;",
+    "33-4.4.2.2. iki il ərzində ardıcıl “yaxşı” qiymətləndirildikdə.",
+    "33-4.5. Xidməti fəaliyyəti qiymətləndirilən dövlət qulluqçularının qulluq etdiyi dövlət orqanında eyni vəzifədə xidməti fəaliyyətinin qiymətləndirilməsinin nəticəsinə görə qulluq stajına görə tutduğu pillədən daha yüksək pillə tutmasına 3 dəfə yol verilir. Bundan sonra dövlət qulluqçusunun həmin vəzifədə əməyinin ödəniş pilləsinin artırılmasına qiymətləndirmənin nəticələrinə görə əvvəlki yüksəliş pillələri nəzərə alınmaqla yalnız staja görə yol verilir.",
+    "33-4.6. Xidməti fəaliyyəti qiymətləndirilən dövlət qulluqçularının xidməti fəaliyyətinin qiymətləndirilməsinin nəticəsinə görə əməyinin ödəniş pilləsi növbəti il yanvarın 20-dək müəyyən edilir və fevralın 1-dən dövlət orqanının ştat cədvəlində nəzərə alınır.",
+    "33-4.7. Dövlət orqanı üzrə qiymətləndirmə aparılan tarixə xidməti fəaliyyəti “əla” və ya “yaxşı” qiymətləndirilən inzibati vəzifə tutan dövlət qulluqçularının sayı hər bir qiymət üzrə həmin dövlət orqanı üzrə inzibati vəzifədə qiymətləndirilməsi aparılan dövlət qulluqçularının ümumi sayının 10 faizdən artıq olmamalıdır.",
+    "33-4.8. Dövlət qulluqçusunun qulluq keçdiyi dövlət orqanında başqa dövlət qulluğu vəzifəsinə keçməsi və ya digər dövlət orqanında dövlət qulluğuna qəbul edilməsi ilə əlaqədar əməyinin ödəniş pilləsi Azərbaycan Respublikasının Əmək Məcəlləsində müəyyən edilmiş qaydada əmək müqaviləsi və ya ona edilən dəyişikliklər qüvvəyə mindiyi gündən müəyyən edilir və əməyin ödəniş pilləsinə uyğun olaraq dövlət məvacibi həmin gündən hesablanır.",
+    "33-4.9. Dövlət qulluqçusu digər dövlət orqanında və ya qulluq keçdiyi dövlət orqanında daha yüksək ödəniş səviyyəsi üzrə dövlət qulluğu vəzifəsinə keçdikdə, əməyinin ödəniş pilləsi əvvəlki vəzifə maaşına ən yaxın yüksək vəzifə maaşına uyğun pillə üzrə, lakin dövlət qulluğu stajına görə müəyyən edilən pillədən aşağı olmayaraq müəyyən edilir. Dövlət qulluğuna xitam verildikdən sonra dövlət orqanında daha yüksək ödəniş səviyyəsi üzrə dövlət qulluğu vəzifəsinə təyin edilən dövlət qulluqçusuna bu maddədə müəyyən edilən qayda tətbiq edilmir, həmin dövlət qulluqçusunun əməyinin ödəniş pilləsi yalnız dövlət qulluğu stajına uyğun olaraq müəyyən edilir.",
+    "33-4.10. Dövlət qulluqçusu eyni təsnifatdan və ödəniş səviyyəsindən olan digər dövlət qulluğu vəzifəsinə təyin edildikdə əməyinin ödəniş pilləsi dəyişmir, aylıq vəzifə maaşı yeni dövlət qulluğu vəzifəsinə və əvvəlki ödəniş pilləsinə uyğun olaraq vəzifəyə təyin edildiyi tarixdən müəyyən edilir.",
+    "33-4.11. Eyni təsnifatdan olan, lakin vəzifə maaşı aşağı olan vəzifəyə keçirilməsi, daha aşağı təsnifatdan olan vəzifəyə keçirilməsi intizam tənbeh tədbirlərindən biri tətbiq edilmiş dövlət qulluqçusu başqa dövlət qulluğu vəzifəsinə keçdikdə əməyinin ödəniş pilləsi dəyişmir və aylıq vəzifə maaşı keçirildiyi dövlət qulluğu vəzifəsinə uyğun olaraq müəyyən edilir.",
+    "33-4.12. Xidməti fəaliyyətinin qiymətləndirilməsi aparılan inzibati vəzifə tutan dövlət qulluqçusunun intizam tənbehinin qüvvədə olduğu dövrdə əməyinin ödəniş pilləsi xidməti fəaliyyətinin qiymətləndirilməsinin nəticəsinə görə artırılmır. İntizam tənbehi götürüldüyü və ya qüvvədən düşdüyü vaxtdan həmin inzibati vəzifə tutan dövlət qulluqçusunun əməyinin ödəniş pilləsi xidməti fəaliyyətinin qiymətləndirilməsinin nəticəsi nəzərə alınmaqla müəyyən edilir.",
+    "33-4.13. Dövlət qulluğuna xitam verilərkən sonuncu qiymətləndirilməsi “qeyri-kafi” olmuş dövlət qulluqçusu digər dövlət orqanında dövlət qulluğuna qəbul edildikdə əməyinin ödəniş pilləsi qulluq stajına görə müəyyən edilir.",
+    "33-4.14. Dövlət qulluqçularının qulluq stajına və xidməti fəaliyyətinin qiymətləndirilməsinə görə aylıq vəzifə maaşının artırılması bütün hallarda dövlət orqanının rəhbərinin əmri (sərəncamı) ilə rəsmiləşdirilir və əmək müqaviləsində göstərilir.",
+    "33-4.15. Bu Qanuna uyğun olaraq müəyyən edilən vəzifə maaşları əsasında əməkhaqqı fondunun formalaşdırılması məqsədilə dövlət orqanlarının saxlanılması xərclərinin tərkibində hər il dövlət büdcəsində vəzifə maaşlarının 1-ci ödəniş pilləsi üzrə hesablanan illik əməkhaqqı fondu və onun 7,5 faizi miqdarında əlavə vəsait nəzərdə tutulur.",
+    "Qeyd: Azərbaycan Respublikasının Birinci vitse-prezidenti və vitse-prezidentləri, Azərbaycan Respublikasının Baş naziri və onun müavinləri, Naxçıvan Muxtar Respublikasının Baş naziri və onun müavinləri, Naxçıvan Muxtar Respublikasında Azərbaycan Respublikası Prezidentinin səlahiyyətli nümayəndəsi və onun müavinləri, Azərbaycan Respublikası mərkəzi icra hakimiyyəti orqanının rəhbəri və onun müavinləri, Naxçıvan Muxtar Respublikası mərkəzi icra hakimiyyəti orqanının rəhbəri və onun müavinləri, yerli icra hakimiyyəti orqanının rəhbəri (başçısı) vəzifələrini tutan şəxslərə münasibətdə onların əmək stajı, hərbi qurumlarda, hüquq-mühafizə və prokurorluq orqanlarında ali hərbi və ali xüsusi rütbələr nəzərdə tutulan rəhbər və onun müavinləri vəzifələrini, Naxçıvan Muxtar Respublikasında hərbi qurumlarda, hüquq-mühafizə və prokurorluq orqanlarında ali hərbi və ali xüsusi rütbələr nəzərdə tutulan rəhbər və onun müavinləri vəzifələrini və diplomatik orqanın diplomatik rütbə nəzərdə tutulan rəhbər və onun müavinləri vəzifələrini tutan şəxslərə münasibətdə isə onların xidmət illəri nəzərə alınmaqla əməyinin ödəniş pilləsi bu Qanunun 33-4.3-cü maddəsinə uyğun olaraq müvafiq icra hakimiyyəti orqanı tərəfindən müəyyən edilir. Qeyd edilən vəzifələr üzrə bu Qanunun 33-2.1.4-cü maddəsində nəzərdə tutulan əlavələr müvafiq qaydada hesablanan məbləğin 50 faizi məbləğində tətbiq edilir."
+   ]
+  },
+  {
+   "k": "f",
+   "n": "VII fəsil",
+   "t": "Yekun müddəalar"
+  },
+  {
+   "k": "m",
+   "n": "34",
+   "t": "Dövlət qulluğu keçmənin digər məsələləri",
+   "p": [
+    "Bu Qanunda və ona uyğun qəbul edilmiş qanunvericilik aktlarında tənzimlənməyən dövlət qulluğu keçmə ilə bağlı digər məsələlər Azərbaycan Respublikasının əmək qanunvericiliyi ilə tənzimlənir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "35",
+   "t": "Qanunun qüvvəyə minməsi",
+   "p": [
+    "Bu Qanun 2001-ci il sentyabrın 1-dən qüvvəyə minir."
+   ]
+  }
+ ]
+}

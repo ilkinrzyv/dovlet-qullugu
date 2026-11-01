@@ -10,13 +10,15 @@ service worker.
 
 ```bash
 pip install -r requirements.txt
+python build/qanun.py        # only when laws change: official texts from e-qanun.az → build/qanun/*.json (committed)
 python build/parse_book.py   # → build/book.json (gitignored); must print "errors 0"
 python build/build_pwa.py    # → docs/ and dist/dovlet-qullugu-offline.zip; prints the new version
 python build/build_page.py   # → dist/dovlet-qullugu.html, the claude.ai version (see Claude below)
 cd build && npm ci && npx playwright install chromium
 npm run test:pwa             # real build: service worker, install + install banner, offline reload, programme page
 npm run test:app             # fixture book (build/test/): BA/BB filter, open + figure questions, inline nümunə/yoxla,
-                             # Claude with a mocked API key + handoff links, teacher chat, mock exam, time-up
+                             # Claude with a mocked API key + handoff links, teacher chat, mock exam, time-up,
+                             # law text from ```qanun blocks, old read marks on law sections dropped
 npm run test:page            # fixture book as the claude.ai page, `sample` mocked: #ai-… links answer by themselves
 ```
 
@@ -30,7 +32,25 @@ All checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build/
   ids, so a section inserted later carries its own id. Heading attributes in braces: `{#c3x1 qrup=BA fənn=qan}` —
   `qrup` limits a part/chapter/section to some groups (inherited downwards, never wider than the parent), `fənn`
   ties a part or chapter to a subject (`qan`, `men`, `az`, `inf`). Chapter numbers run through the whole book.
-  Rendered to HTML at build time with markdown-it (`html: False`), so no markdown library ships.
+  `####` and deeper stay inside a section. Rendered to HTML at build time with markdown-it (`html: False`), so no
+  markdown library ships.
+- Law text (Qanunvericilik, chapters 1–14) is the official text, never typed or summarised by hand — the owner found
+  the old bullet summaries tiring and wants the maddələr in full and in order, as in a printed code. A ` ```qanun <act> `
+  block lists what to show, one line each: `mənbə` (e-qanun link + text date, used in chapter leads), `preambula`,
+  `maddə 5–9` (en dash; `13-1`, `98¹` are single numbers), `maddə 1: 1.0 1.0.1–1.0.4` (only those points),
+  `bənd 33–34`, `hissə 1–3`, `fərman bənd 3`, `keçid müddəaları`. `parse_book.py` expands it from
+  `build/qanun/<act>.json`: bölmə/fəsil/hissə captions (h5) come along when a selection starts after them, maddə
+  headings are h4, a maddə or bənd removed whole shows as “çıxarılıb”; `app.js` gives qan sections `.prose.law`.
+  Sections follow the law's own order (a fəsil, or a 5–12k-character run of maddələr); the programme decides which
+  maddələr appear at all. “Yadda saxla” tables at chapter ends are the only summaries left.
+- `build/qanun.py` — downloads each act in `ACTS` (key → e-qanun id) through `api.e-qanun.az/downloadWord/<id>`, which
+  points at the Word file on `frameworks.e-qanun.az` (plain requests work there; `e-qanun.az/frameworks/…` answers
+  403), and cuts it into units. In those files struck-through text is text an amendment removed (the endnotes say
+  “çıxarılmışdır/ləğv edilmişdir”) — it is dropped, as are the endnotes; Word's automatic numbering is rendered;
+  Cyrillic look-alike letters are mapped to Latin. Rerun it when a law changes, read `git diff build/qanun`, then check
+  the questions and “Yadda saxla” rows that cite the changed points. The old summaries (before 2026-11-01) had kept
+  some removed provisions (attestasiya, maddə 31 of the civil service law; the flag's Pantone colours; the 35-year age
+  limit for President); the questions on them were replaced in place.
 - Questions inside a section: fenced blocks ` ```nümunə ` (worked example: `S:`, `A)`…, `Cavab: B`, `İzah:`) and
   ` ```yoxla ` (check: same without `İzah:`; the reader asks Claude instead). No options = open question,
   `Cavab: 7 | yeddi`; `Şəkil:` = SVG under `build/fig/`. The parser cuts them into `section.qs` and leaves
@@ -51,7 +71,9 @@ All checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build/
 - `build/quiz/*.json` — `{"<chapter number>": [...]}`. Closed: `{s, q, o, a, e}`, option count must match the subject
   (`qan` 4, others 5). Open: `{t: "open", s, q, a: [accepted answers], e}`. Figure: `img` = SVG under `build/fig/`
   (inlined; no scripts, handlers or external links), `fix: true` keeps option order when options are the figure's
-  letters. Optional `g`. Quiz ids are positional (`c1q3`): new questions go at the end of a chapter's list.
+  letters. Optional `g`. Quiz ids are positional (`c1q3`): new questions go at the end of a chapter's list, and an
+  outdated question is replaced in place, not deleted. `s` is the section number (`1.4`), so restructuring sections
+  means remapping `s` (legislation questions: by the maddə their `e` cites).
 - `build/app.js` — the whole UI in one IIFE: hash router (`#home`, `#c1`, `#c1s2`, `#proqram[-qan]`, `#testler`,
   `#test-c1` / `test-mix` / `test-wrong` / `test-f-qan` / `test-s-c1s2` (one section), `#imtahan`, `#imtahan-men` (one
   subject's part: its question count, its share of the time), `#imtahan-netice`, `#statistika`, `#sual-c1q3`,
@@ -60,7 +82,9 @@ All checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build/
   exams (the statistics page: accuracy per subject, weak sections = under 80% with 2+ answers), `chk` = solved inline
   checks keyed `cNsKkI` (I = index in `section.qs`), `aiModel`, `theme` (default light, the owner's choice; `themeV`
   marks a state saved after that, so an older `auto` opens light once; `build/look.js`, inlined at the top of both
-  pages, applies it before paint), `fs`, `group`, `exam` = the running mock exam with its start time (`subj` set for a
+  pages, applies it before paint), `lawV` (marks a state saved after the law text replaced the summaries; `upgrade()`
+  drops older read marks on qan sections, also for imported files), `fs`, `group`, `exam` = the running mock exam with
+  its start time (`subj` set for a
   one-subject exam), `exams` = history (entries with `subj` are subject exams; whole-exam views filter them out),
   `examLast`). Export/import as JSON with `app: "dovlet-qullugu"` (offline app only).
 - Claude (`app.js` section 2b; teacher chat in section 10) answers inside the book, under the button, like the QA book.
@@ -100,7 +124,8 @@ key — third-party material: use as a model of question types only, never copy 
 
 - Reader-facing text is Azerbaijani (Latin script).
 - Never edit `docs/` by hand: change the sources, rebuild, and commit `docs/` together with the source change.
-- Law text comes from e-qanun.az (current edition); cover only the articles the programme lists. Facts about laws and
-  exam rules must come from the owner or an official source; do not invent article numbers.
+- Law text comes from e-qanun.az (current edition) through `build/qanun.py`; cover only the articles the programme
+  lists. Facts about laws and exam rules must come from the owner or an official source; do not invent article numbers,
+  and check a question's facts against `build/qanun/*.json` (the current text), not against older summaries.
 - Run both checks before pushing and say what could not be verified. The owner wants every finished piece of work
   committed and pushed to `main` without asking first.

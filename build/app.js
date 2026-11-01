@@ -317,13 +317,17 @@ function runPending() {
    ========================================================= */
 const KEY = 'dq-kitab:v1';
 // themeV: saved after light became the default look (2026-10-31); before that "auto" (Sistem) was only the default
-const blank = () => ({ read: {}, last: '', quiz: {}, wrong: {}, ans: {}, chk: {}, aiModel: 'auto', theme: 'light', themeV: 1, fs: 'm', group: GROUPS[0], exam: null, exams: [], examLast: null });
-let S = blank();
-try {
-  const saved = JSON.parse(localStorage.getItem(KEY) || '{}');
+// lawV: saved after the Qanunvericilik chapters became the full law text (2026-11-01); read marks from before were
+// set on the old summary sections, which no longer line up with the new ones
+const blank = () => ({ read: {}, last: '', quiz: {}, wrong: {}, ans: {}, chk: {}, aiModel: 'auto', theme: 'light', themeV: 1, lawV: 1, fs: 'm', group: GROUPS[0], exam: null, exams: [], examLast: null });
+// A state an older version saved (on this device or in an exported file), brought up to date
+function upgrade(saved) {
   if (saved.theme === 'auto' && !saved.themeV) saved.theme = 'light';   // the same rule as look.js
-  S = Object.assign(blank(), saved);
-} catch (e) { S = blank(); }
+  if (saved.read && !saved.lawV) Object.keys(saved.read).forEach(id => { if (secCh[id] && chById[secCh[id]].subj === 'qan') delete saved.read[id]; });
+  return Object.assign(blank(), saved);
+}
+let S = blank();
+try { S = upgrade(JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) { S = blank(); }
 if (!GROUPS.includes(S.group)) S.group = GROUPS[0];
 function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { toast('Yadda saxlamaq alınmadı — brauzerin yaddaşı doludur və ya bağlıdır.'); } }
 
@@ -488,7 +492,7 @@ function vSection(id) {
     <h1 class="h1">${esc(s.title)}</h1>
     <div class="row meta muted">${icon('clock')} ${s.mins} dəq oxu ${onlyFor(s)}</div>
     ${groupNote(vis(c) ? s : c)}
-    <article class="prose">${s.html}</article>
+    <article class="prose${c.subj === 'qan' ? ' law' : ''}">${s.html}</article>
     ${c.kind === 'chapter' ? `<div class="card claudebox"><span class="muted small">Aydın olmayan yer var? Virtual müəllim izah etsin.</span>${aiBox('sec', s.id, 'Claude-dan izah istə')}</div>` : ''}
     <button type="button" class="btn ${S.read[id] ? 'done' : 'primary'} readbtn" data-act="read">${S.read[id] ? icon('check') + ' Oxunub' : 'Oxudum'}</button>
     <nav class="prevnext">${nav(prev, 'prev')}${nav(next, 'next')}</nav>`;
@@ -1363,7 +1367,7 @@ async function importData() {
   if (!text) return;
   let j = null; try { j = JSON.parse(text); } catch (e) { j = null; }
   if (!j || j.app !== 'dovlet-qullugu' || !j.data || typeof j.data !== 'object') { toast('Bu fayl bu kitabın ixracı deyil.'); return; }
-  S = Object.assign(blank(), j.data);
+  S = upgrade(j.data);
   if (!GROUPS.includes(S.group)) S.group = GROUPS[0];
   save(); applyLook(); vSettings(); toast('İdxal olundu');
 }

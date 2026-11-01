@@ -1,4 +1,4 @@
-// App check on the fixture book (build/test/): BA/BB filtering, programme map, open and figure questions, mock exam.
+// App check on the fixture book (build/test/): BA/BB filtering, programme map, open and figure questions, mock exam, law text.
 // Run `python build/parse_book.py --src build/test/book.md --quiz build/test/quiz --fig build/test/fig --out build/test/book.json` first.
 const { chromium } = require('playwright');
 const http = require('http');
@@ -311,6 +311,22 @@ function serve(port) {
   await go('test-c3');
   await shot('t1-figure-dark');
 
+  // ---- law text from ```qanun blocks: bölmə/fəsil captions, maddə headings, a removed maddə, chosen points ----
+  await setGroup('BA');
+  await go('c2s1');
+  out.law = await page.$eval('article.prose', a => ({ law: a.classList.contains('law'), h5: a.querySelectorAll('h5').length,
+    h4: [...a.querySelectorAll('h4')].map(h => h.textContent.slice(0, 8)), removed: a.textContent.includes('Bu maddə qanundan çıxarılıb'),
+    points: [...a.querySelectorAll('p')].filter(p => /^1\.0\.\d/.test(p.textContent)).map(p => p.textContent.slice(0, 6)) }));
+  await shot('t1-law');
+  // a state saved before the law text came: its read marks on law sections go, the others stay
+  await page.evaluate(() => localStorage.setItem('dq-kitab:v1', JSON.stringify({ read: { c1s1: 1, c3s1: 1 }, theme: 'light', themeV: 1 })));
+  await page.reload();
+  await page.waitForSelector('#view > *');
+  await go('c1');
+  out.lawRead = [await page.$$eval('.secrow.done', els => els.length)];
+  await go('c3');
+  out.lawRead.push(await page.$$eval('.secrow.done', els => els.length));
+
   await browser.close();
   srv.close();
   const eq = (k, v) => { if (JSON.stringify(out[k]) !== JSON.stringify(v)) fail.push(`${k}: expected ${JSON.stringify(v)}, got ${JSON.stringify(out[k])}`); };
@@ -363,6 +379,8 @@ function serve(port) {
   eq('lightDefault', ['light', 'rgb(245, 243, 236)']);
   eq('oldSystem', ['light', 'light']);
   eq('systemKept', [null, 'rgb(17, 19, 23)']);
+  eq('law', { law: true, h5: 4, h4: ['Maddə 1.', 'Maddə 2.', 'Maddə 9', 'Maddə 1.'], removed: true, points: ['1.0.1.'] });
+  eq('lawRead', [0, 1]);
   out.errors = errors.concat(fail);
   console.log(JSON.stringify(out, null, 1));
   process.exit(out.errors.length ? 1 : 0);

@@ -1,0 +1,264 @@
+{
+ "key": "korrupsiya",
+ "id": 5809,
+ "title": "Korrupsiyaya qarşı mübarizə haqqında",
+ "num": "580-IIQ",
+ "date": "13.01.2004",
+ "status": "Qüvvədədir",
+ "url": "https://e-qanun.az/framework/5809",
+ "fetched": "2026-11-01",
+ "pre": [
+  "Bu Qanun korrupsiya ilə əlaqədar hüquqpozmaların aşkar edilməsi, qarşısının alınması və nəticələrinin aradan qaldırılmasına, sosial ədalətin, insan və vətəndaş hüquqlarının və azadlıqlarının müdafiə olunmasına, iqtisadiyyatın inkişafı üçün əlverişli şəraitin yaradılmasına, dövlət və yerli özünüidarəetmə orqanlarının, dövlət və ya bələdiyyə mülkiyyətində olan və ya paylarının (səhmlərinin) nəzarət zərfi dövlətə və ya bələdiyyəyə məxsus olan hüquqi şəxslərin, publik hüquqi şəxslərin və büdcə təşkilatlarının (bundan sonra – orqanlar (qurumlar), vəzifəli şəxslərin fəaliyyətinin qanuniliyinin, şəffaflığının və səmərəliliyinin təmin edilməsinə yönəlmişdir.",
+  "Bu Qanun, habelə orqanlara (qurumlara) əhalinin etimadının möhkəmləndirilməsi, peşəkar kadrların orqanlarda (qurumlarda) qulluğa (işə) girməyə həvəsləndirilməsi, həmin şəxslərin korrupsiya ilə əlaqədar hüquqpozma törətməsini istisna edən şəraitin yaradılması məqsədini daşıyır."
+ ],
+ "units": [
+  {
+   "k": "f",
+   "n": "I fəsil",
+   "t": "Ümumi müddəalar"
+  },
+  {
+   "k": "m",
+   "n": "1",
+   "t": "Əsas anlayışlar",
+   "p": [
+    "1.1. Bu Qanunda istifadə olunan əsas anlayışlar aşağıdakı mənaları ifadə edir:",
+    "1.1.1. korrupsiya – vəzifəli şəxslərin öz statusundan, təmsil etdiyi orqanın (qurumun) statusundan, vəzifə səlahiyyətlərindən və ya həmin status və səlahiyyətlərdən irəli gələn imkanlardan istifadə etməklə qanunsuz olaraq maddi və sair nemətlər, imtiyazlar və ya güzəştləri istəməsi və ya alması, yaxud bu barədə təklif və ya vədi qəbul etməsi, habelə fiziki və hüquqi şəxslər tərəfindən qeyd edilən maddi və sair nemətlərin, imtiyazların və ya güzəştlərin qanunsuz olaraq vəzifəli şəxslərə təklif və ya vəd olunması, yaxud verilməsi;",
+    "1.1.2. korrupsiya riski – korrupsiya hüquqpozmalarının və ya korrupsiyaya şərait yaradan hüquqpozmaların törədilməsi ehtimalı;",
+    "1.1.3. korrupsiya risklərinin idarə edilməsi – korrupsiya risklərini azaltmaq məqsədilə korrupsiya risklərinin və həmin risklərə uyğun olaraq hədəflərin müəyyən edilməsi, eləcə də həmin risklərin təhlili, qiymətləndirilməsi və qarşısının alınması üzrə tədbirlər görülməsi;",
+    "1.1.4. səlahiyyətli struktur bölmə (şəxs) – korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumatların qəbul edilməsi və araşdırılması, maraqlar toqquşması və korrupsiyanın qarşısının alınması məsələləri üzrə konfidensial məsləhət verilməsi və korrupsiya risklərinin idarə edilməsi funksiyalarını həyata keçirən bir və ya bir neçə səlahiyyətli struktur bölmə və ya səlahiyyətli şəxs."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "2",
+   "t": "Korrupsiya ilə əlaqədar hüquqpozmaların subyektləri",
+   "p": [
+    "2.1. Aşağıdakı şəxslər korrupsiya ilə əlaqədar hüquqpozmaların subyektləridirlər:",
+    "2.1.1. Azərbaycan Respublikasının Konstitusiyası və qanunları ilə müəyyən olunmuş qaydada dövlət orqanlarına seçilmiş və ya təyin edilmiş şəxslər;",
+    "2.1.2. xüsusi səlahiyyət əsasında dövlət orqanlarını təmsil edən şəxslər;",
+    "2.1.3. inzibati vəzifə tutan dövlət qulluqçuları;",
+    "2.1.4. dövlət orqanlarının müvafiq struktur vahidlərində, dövlət idarə, müəssisə və təşkilatlarında, habelə dövlətin nəzarət səhm zərfinə sahib olduğu təsərrüfat subyektlərində təşkilati-sərəncamverici və ya inzibati-təsərrüfat funksiyalarını həyata keçirən şəxslər;",
+    "2.1.5. Azərbaycan Respublikasının dövlət orqanlarında seçkili vəzifələrə namizədliyi qanunla müəyyən olunmuş qaydada qeydə alınmış şəxslər;",
+    "2.1.6. Azərbaycan Respublikasının qanunvericiliyi ilə müəyyən edilmiş qaydada yerli özünüidarəetmə orqanlarına seçilmiş şəxslər;",
+    "2.1.7. yerli özünüidarəetmə orqanlarında təşkilati-sərəncamverici və ya inzibati-təsərrüfat funksiyalarını həyata keçirən şəxslər;",
+    "2.1.7-1. orqanların (qurumların) rəhbərləri və işçiləri, o cümlədən orqanlarda (qurumlarda) xüsusi səlahiyyət üzrə təşkilati-sərəncamverici və ya inzibati-təsərrüfat funksiyalarını həyata keçirən şəxslər;",
+    "2.1.8. qanunla müəyyən edilmiş hallarda dövlət orqanlarının səlahiyyətlərini yerinə yetirən qeyri-dövlət orqanlarında təşkilati-sərəncamverici və ya inzibati-təsərrüfat funksiyalarını həyata keçirən şəxslər;",
+    "2.1.9. öz nüfuzundan və ya əlaqələrindən istifadə edərək vəzifəli şəxsin qərarına qanunsuz təsir göstərmək müqabilində maddi və sair nemətlər, imtiyazlar və ya güzəştlər əldə edən şəxslər;",
+    "2.1.10. vəzifəli şəxsə qanunsuz olaraq maddi və sair nemətlər, imtiyazlar və ya güzəştlər təklif edən və ya vəd edən, yaxud verən fiziki və hüquqi şəxslər və ya belə hərəkətlərdə vasitəçilik etmiş şəxslər.",
+    "2.2. Bu Qanunun 2.1.1-2.1.8-ci maddələrində göstərilənlər bu Qanunun məqsədi üçün vəzifəli şəxs hesab edilirlər."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "3",
+   "t": "Qanunun tətbiq dairəsi",
+   "p": [
+    "Bu Qanun Azərbaycan Respublikasının ərazisində bütün fiziki (o cümlədən əcnəbilər və vətəndaşlığı olmayan şəxslər) və hüquqi şəxslər barəsində, onun ərazisindən kənarda isə Azərbaycan Respublikasının vətəndaşları və Azərbaycan Respublikasında qeydiyyatdan keçmiş hüquqi şəxslər barəsində Azərbaycan Respublikasının tərəfdar çıxdığı beynəlxalq müqavilələrə uyğun olaraq tətbiq edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "4",
+   "t": "Korrupsiyaya qarşı mübarizəni həyata keçirən orqanlar (qurumlar)",
+   "p": [
+    "4.1. Bütün orqanlar (qurumlar) və vəzifəli şəxslər səlahiyyətləri çərçivəsində korrupsiyaya qarşı mübarizəni həyata keçirirlər. Korrupsiya ilə əlaqədar hüquqpozmaların törədilməsi inzibati və ya cinayət məsuliyyəti yaratdıqda, korrupsiyaya qarşı mübarizəni qanunvericiliklə müəyyən edilmiş qaydada hüquq-mühafizə orqanları həyata keçirirlər.",
+    "4.2. Korrupsiyanın qarşısının alınması sahəsində ixtisaslaşmış orqan funksiyalarını Azərbaycan Respublikasının Korrupsiyaya qarşı mübarizə üzrə Komissiyası (bundan sonra “Komissiya”) həyata keçirir.",
+    "4.3. Komissiyanın tərkibi icra, qanunvericilik və məhkəmə hakimiyyəti orqanları tərəfindən təyin edilən üzvlərdən ibarətdir. Komissiyanın səlahiyyətləri qanunla təsdiq edilən Əsasnamə ilə müəyyən olunur."
+   ]
+  },
+  {
+   "k": "f",
+   "n": "II fəsil",
+   "t": "Korrupsiyanın qarşısının alınması"
+  },
+  {
+   "k": "m",
+   "n": "5",
+   "t": "Maliyyə xarakterli tələblər",
+   "p": [
+    "5.1. Vəzifəli şəxslər qanunvericiliklə müəyyən edilmiş qaydada aşağıdakı məlumatları təqdim etməlidirlər:",
+    "5.1.1. mənbəyini, növünü və məbləğini göstərməklə hər il öz gəlirləri barədə;",
+    "5.1.2. vergitutma obyekti olan əmlakı barədə;",
+    "5.1.3. kredit təşkilatlarındakı əmanətləri, qiymətli kağızları və digər maliyyə vəsaitləri barədə;",
+    "5.1.4. şirkətlərin, fondların və sair təsərrüfat subyektlərinin fəaliyyətində səhmdar və ya təsisçi kimi iştirakı, bu müəssisələrdə öz mülkiyyət payı barədə;",
+    "5.1.5. beş min beş yüz manatdan yuxarı olan borcu barədə;",
+    "5.1.6. min yüz manatdan yuxarı maliyyə və əmlak xarakterli digər öhdəlikləri barədə.",
+    "5.2. Bu Qanunun 5.1-ci maddəsində göstərilən məlumatlar qanunvericiliklə müəyyən edilmiş qaydada tələb edilə bilər."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "6",
+   "t": "Maliyyə xarakterli tələblərin pozulmasına görə məsuliyyət",
+   "p": [
+    "6.1. Vəzifəli şəxslər və ya vəzifə tutmaq istəyən şəxslər bu Qanunun 5.1-ci maddəsində nəzərdə tutulmuş tələblər və bu tələblərə əməl olunmamasının hüquqi nəticələri barədə qanunvericiliklə müəyyən edilmiş qaydada xəbərdar edilirlər.",
+    "6.2. Bu Qanunun 5.1-ci maddəsində müəyyən edilmiş tələblərə əməl olunmasına nəzarətin həyata keçirilməsi qaydaları qanunvericiliklə müəyyən edilir.",
+    "6.3. Vəzifəli şəxslər tərəfindən bu Qanunun 5.1-ci maddəsində müəyyən edilmiş tələblərə əməl olunmaması, yəni bu maddədə nəzərdə tutulmuş məlumatların üzrsüz səbəbdən vaxtında təqdim edilməməsi və ya qəsdən natamam, yaxud təhrif edilmiş məlumatların təqdim olunması həmin şəxslərin intizam məsuliyyətinə cəlb olunmasına səbəb ola bilər. Azərbaycan Respublikasının Konstitusiyası və qanunları ilə barələrində intizam məsuliyyətinə cəlb olunmanın xüsusi qaydası nəzərdə tutulmuş şəxslər intizam məsuliyyətinə həmin qaydalara riayət edilməklə cəlb oluna bilərlər.",
+    "6.4. Komissiya bu Qanunun 5.1-ci maddəsində müəyyən edilmiş tələblərə əməl etməyən şəxslər barəsində rəsmi dövlət qəzetində məlumat dərc etdirə bilər."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "7",
+   "t": "Yaxın qohumların birgə işləməsinə yol verilməməsi",
+   "p": [
+    "7.1. Vəzifəli şəxslərin yaxın qohumları, seçkili vəzifələr və qanunvericiliklə nəzərdə tutulan digər hallar istisna olmaqla, bilavasitə onun tabeliyində olan heç bir vəzifə tuta bilməzlər.",
+    "7.2. Bu Qanunun 7.1-ci maddəsinin tələblərini pozan şəxslər həmin tələblərin pozulması müəyyən edildikdən sonra 30 gün müddətində həmin pozuntunu könüllü olaraq aradan qaldırmadıqları halda tabeliyi istisna edən başqa vəzifəyə keçirilməli, bu mümkün olmadıqda isə həmin şəxslərdən biri tutduğu vəzifədən azad olunmalıdır.",
+    "7.3. Bu Qanunun 7.2-ci maddəsində göstərilən əsaslar üzrə vəzifədən azad olunmuş şəxslər digər orqanlarda (qurumlarda) vəzifə tuta bilərlər."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "8",
+   "t": "Hədiyyə alma ilə əlaqədar məhdudiyyətlər",
+   "p": [
+    "8.1. Vəzifəli şəxs xidməti vəzifələrinin qərəzsiz icrasına təsir edə bilən və ya bu cür təsir təəssüratı yaradan, və ya onun vəzifələrinin icrası müqabilində mükafat qismində verilən və ya bu cür mükafat təəssüratı yaradan hədiyyələri özü və ya digər şəxslər üçün tələb edə və ya qəbul edə bilməz. Bu qayda xidməti vəzifələrinin qərəzsiz icrasına təsir etməmək şərtilə bu Qanunun 8.2-ci maddəsində nəzərdə tutulan kiçik hədiyyələrin qəbul edilməsi və sadə qonaqpərvərlikdən istifadə hallarına şamil olunmur.",
+    "8.2. Vəzifəli şəxs xidməti vəzifələrinin icrası ilə əlaqədar bir il ərzində hər hansı fiziki və ya hüquqi şəxsdən ümumi məbləği əlli beş manatdan yuxarı olan bir və ya bir neçə hədiyyəni qəbul edə bilməz. Həmin məbləğdən yuxarı olan hədiyyələr şəxsin xidməti vəzifəsini həyata keçirdiyi orqana (quruma) məxsus hesab edilir.",
+    "8.3. Vəzifəli şəxs hədiyyənin qəbul edilməsi və ya sadə qonaqpərvərlikdən istifadə ilə bağlı qərara gələ bilmədiyi hallarda bu məsələ barədə səlahiyyətli struktur bölmənin (şəxsin) rəyini öyrənməlidir.",
+    "8.4. Fiziki və hüquqi şəxslərlə mülki-hüquqi əqdlərin bağlanması və ya onların icrası zamanı vəzifəli şəxslər tərəfindən xidməti fəaliyyəti ilə əlaqədar olaraq hər hansı güzəştlərin və ya imtiyazların əldə edilməsi qadağan olunur.",
+    "8.5. Vəzifəli şəxsə qanunsuz maddi və sair nemətlər, imtiyazlar və ya güzəştlər təklif olunduğu hallarda, vəzifəli şəxs onlardan imtina etməlidir. Maddi və sair nemətlər, imtiyazlar və ya güzəştlər vəzifəli şəxsə ondan asılı olmayan səbəblərdən verilərsə, o, bu barədə səlahiyyətli struktur bölməyə (şəxsə) məlumat verməli və maddi və sair nemətlər, imtiyazlar və ya güzəştlər vəzifəli şəxsin işlədiyi orqana (quruma) akt üzrə təhvil verilməlidir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "8-1",
+   "t": "Orqanların (qurumların) fəaliyyətində korrupsiya risklərinin idarə edilməsi",
+   "p": [
+    "8-1.1. Orqanın (qurumun) rəhbəri korrupsiya risklərinin idarə edilməsi məqsədilə səlahiyyətli struktur bölmə (şəxs) müəyyən edir. Korrupsiya risklərinin idarə edilməsi prosesinə xüsusi bilik tələb edən sahələr üzrə mütəxəssislər cəlb edilə bilər.",
+    "8-1.2. Orqanda (qurumda) hər il yanvarın 15-dən aprelin 15-dək əvvəlki ili əhatə edən korrupsiya risklərinin müəyyən edilməsi, təhlili və qiymətləndirilməsi aparılır. Korrupsiya ilə əlaqədar hüquqpozmalar haqqında daxil olan müraciətlərin ümumiləşdirilməsinin nəticələrinə əsasən fəaliyyətindən daha çox şikayətlərin daxil olduğu struktur bölmədə və ya tabeliyində olan qurumda orqanın (qurumun) rəhbərinin qərarına əsasən digər müddətlərdə də risklərin müəyyən edilməsi, təhlili və qiymətləndirilməsi keçirilə bilər.",
+    "8-1.3. Korrupsiya risklərinin müəyyən edilməsi, təhlili və qiymətləndirilməsi həyata keçirilərkən aşağıdakı məlumatlar nəzərə alınır:",
+    "8-1.3.1. hüquqi və fiziki şəxslər arasında keçirilən sorğuların nəticələri;",
+    "8-1.3.2. korrupsiya ilə əlaqədar hüquqpozmalar haqqında daxil olan müraciətlər və həmin müraciətlər əsasında aparılan araşdırmaların nəticələri;",
+    "8-1.3.3. mediada, həmçinin internet informasiya ehtiyatlarında və ya informasiya-telekommunikasiya şəbəkələrində yayılan informasiya və korrupsiya risklərinin müəyyən edilməsi üçün mənbəyi məlum olan digər məlumatlar;",
+    "8-1.3.4. orqanın (qurumun) fəaliyyətini tənzimləyən hüquqi aktlar;",
+    "8-1.3.5. dövlət maliyyə nəzarəti tədbirlərinin, kənar dövlət maliyyə nəzarəti tədbirlərinin, yaxud məcburi və ya könüllü auditin nəticələri;",
+    "8-1.3.6. orqanın (qurumun) fəaliyyəti üçün xarakterik olan, mütəmadi olaraq baş verən korrupsiyaya şərait yaradan hallar;",
+    "8-1.3.7. orqanın (qurumun) fəaliyyətinə dair inzibati məhkəmə icraatında baxılan inzibati mübahisələrin sayı, predmeti və bunlarla bağlı müvafiq qərarlar.",
+    "8-1.4. Korrupsiya riskləri, həmin risklərə uyğun olaraq müəyyən edilən hədəflər, eləcə də risklərin qiymətləndirilməsinin nəticələri və bununla əlaqədar cari il üçün müəyyən edilən tədbirlər, həmçinin əvvəlki il üzrə müəyyən edilmiş tədbirlərə dair görülmüş işlər barədə məlumatlar hər il iyunun 1-dək Komissiyaya təqdim edilməlidir. Korrupsiya riskləri, həmin risklərə uyğun olaraq müəyyən edilən hədəflər, eləcə də risklərin qiymətləndirilməsinin nəticələri və görülmüş işlər barədə məlumatlar dövri olaraq ictimaiyyətə açıqlanır.",
+    "8-1.5. Komissiya bu Qanunun 8-1.4-cü maddəsinə uyğun olaraq ona təqdim edilən məlumatların təhlili əsasında müvafiq orqana (quruma) korrupsiya risklərinin idarə edilməsinə dair tövsiyələr, həmçinin korrupsiyaya qarşı mübarizə haqqında qanunvericiliyin təkmilləşdirilməsi ilə bağlı təkliflər verə bilər.",
+    "8-1.6. Orqanların (qurumların) fəaliyyətində korrupsiya risklərinin idarə edilməsi qaydaları müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqan (qurum) tərəfindən müəyyən edilir."
+   ]
+  },
+  {
+   "k": "f",
+   "n": "III fəsil",
+   "t": "Korrupsiya ilə əlaqədar hüquqpozmalar və bu hüquqpozmalara görə məsuliyyət"
+  },
+  {
+   "k": "m",
+   "n": "9",
+   "t": "Korrupsiya ilə əlaqədar hüquqpozmalar",
+   "p": [
+    "9.1. Korrupsiya ilə əlaqədar hüquqpozmalar bilavasitə korrupsiya hüquqpozmalarından və korrupsiyaya şərait yaradan hüquqpozmalardan ibarətdir.",
+    "9.1. Korrupsiya hüquqpozmaları aşağıdakılardır:",
+    "9.2.1. vəzifəli şəxsin xidməti vəzifəsinin (səlahiyyətlərinin) icrası ilə əlaqədar hər hansı hərəkətin edilməsi və ya belə hərəkətin edilməsindən imtina olunması müqabilində özü və yaxud üçüncü şəxslər üçün birbaşa və ya dolayı yolla maddi və sair nemətlər, imtiyazlar və ya güzəştlər tələb etməsi, əldə etməsi və ya belə maddi və sair nemətlərin, imtiyazların və ya güzəştlərin verilməsi ilə bağlı təklifi və ya vədi qəbul etməsi;",
+    "9.2.2. xidməti vəzifəsinin (səlahiyyətlərinin) icrası ilə əlaqədar hər hansı hərəkətin edilməsi və ya belə hərəkətin edilməsindən imtina olunması müqabilində vəzifəli şəxsə onun özü və ya üçüncü şəxslər üçün fiziki və ya hüquqi şəxs tərəfindən birbaşa və ya dolayı yolla maddi və sair nemətlər, imtiyazlar və ya güzəştlər təklif olunması, vəd edilməsi və ya verilməsi;",
+    "9.2.3. vəzifəli şəxs tərəfindən xidməti vəzifəsinin (səlahiyyətlərinin) icrası ilə əlaqədar hər hansı hərəkətin edilməsi və ya belə hərəkətin edilməsindən imtina olunması müqabilində qanunsuz olaraq alınmış əmlakdan özü və ya üçüncü şəxslər üçün mənfəət əldə etmək məqsədilə istifadə edilməsi;",
+    "9.2.4. vəzifəli şəxs tərəfindən xidməti vəzifəsinin (səlahiyyətlərinin) icrası ilə əlaqədar maddi və sair nemətləri, imtiyazları və ya güzəştləri haqqı ödənilmədən və ya bazar qiymətlərindən və ya dövlət tərəfindən tənzimlənən qiymətlərdən aşağı qiymətə (tarifə) əldə edilməsi;",
+    "9.2.5. vəzifəli şəxsin xidməti vəzifəsinin (səlahiyyətlərinin) icrası ilə əlaqədar əmanətlərdən (depozitlərdən), qiymətli kağızlardan, rentadan, royaltidən və ya icarədən Azərbaycan Respublikasının qanunvericiliyinə zidd olaraq gəlir götürməsi;",
+    "9.2.6. müəyyən mükafat müqabilində vəzifəli şəxsin qərarına qanunsuz təsir göstərmək imkanına malik olduğunu bildirən hər hansı şəxsə birbaşa və ya dolayı yolla maddi və sair nemətlərin, imtiyazların və ya güzəştlərin təklif olunması, vəd edilməsi və ya verilməsi;",
+    "9.2.7. müəyyən mükafat müqabilində vəzifəli şəxsin qərarına qanunsuz təsir göstərmək imkanına malik olduğunu bildirən şəxs tərəfindən maddi və sair nemətlərin, imtiyazların və ya güzəştlərin qəbul edilməsi və ya belə maddi və sair nemətlərin, imtiyazların və ya güzəştlərin verilməsi ilə bağlı təklifin və ya vədin qəbul edilməsi.",
+    "9.3. Vəzifəli şəxsin aşağıdakı hərəkətləri korrupsiyaya şərait yaradan hüquqpozmalar sayılır:",
+    "9.3.1. xidməti vəzifəsini (səlahiyyətlərini) icra etdiyi dövrdə elmi, pedaqoji və yaradıcılıq fəaliyyəti istisna olmaqla, digər ödənişli vəzifə tutmaq və ya fəaliyyət növü ilə məşğul olmaq;",
+    "9.3.2. statusundan, təmsil etdiyi orqanın (qurumun) statusundan, vəzifə səlahiyyətlərindən və ya həmin status və səlahiyyətlərdən irəli gələn imkanlardan istifadə etməklə maddi və sair nemətlərin, imtiyazların və ya güzəştlərin əldə edilməsi məqsədilə fiziki və hüquqi şəxslərə sahibkarlıq fəaliyyətini həyata keçirməkdə, eləcə də subsidiyalar, subvensiyalar, dotasiyalar, kreditlər və digər güzəştlər alınmasında qanunsuz kömək etmək;",
+    "9.3.3. bilavasitə, başqa və ya uydurma şəxslər vasitəsilə sahibkarlıq fəaliyyəti ilə məşğul olmaq, əvəzçilik üzrə işləmək (elmi, pedaqoji və yaradıcılıq fəaliyyəti istisna olmaqla), habelə sahibkarlıq fəaliyyətini həyata keçirən təsərrüfat subyektlərinin və maliyyə-kredit müəssisələrinin icra orqanlarının tərkibinə daxil olmaq;",
+    "9.3.4. statusundan, təmsil etdiyi orqanın (qurumun) statusundan, vəzifə səlahiyyətlərindən və ya həmin status və səlahiyyətlərdən irəli gələn imkanlardan istifadə etməklə onun səlahiyyət dairəsinə daxil olmayan məsələlər üzrə digər orqanların (qurumların) fəaliyyətinə qanunsuz müdaxilə etmək;",
+    "9.3.5. statusundan, təmsil etdiyi orqanın (qurumun) statusundan, vəzifə səlahiyyətlərindən və ya həmin status və səlahiyyətlərdən irəli gələn imkanlardan istifadə etməklə şəxsi maraqlarına aid məsələlərin həllinə təsir etmək;",
+    "9.3.6. normativ hüquqi aktların və digər qərarların qəbul edilməsi zamanı fiziki və ya hüquqi şəxslərə onların təyinatına uyğun olmayan üstünlüklər vermək;",
+    "9.3.7. vəzifə tutduğu və ya ona tabe olan, onun nəzarətində olan, habelə ona hesabat verən orqanların (qurumların) işi üzrə fiziki və ya hüquqi şəxslərin nümayəndəsi qismində iştirak etmək;",
+    "9.3.8. qanunla və ya digər normativ hüquqi aktlarla verilməsi nəzərdə tutulmuş məlumatların fiziki və ya hüquqi şəxslərə verilməsindən əsassız imtina etmək, belə məlumatların verilməsini gecikdirmək və yaxud natamam və ya təhrif olunmuş məlumatlar vermək;",
+    "9.3.9. qanunla və ya digər normativ hüquqi aktlarla verilməsi nəzərdə tutulmayan məlumatları və sənədləri fiziki və hüquqi şəxslərdən tələb etmək;",
+    "9.3.10. orqanların (qurumların) maddi və maliyyə vəsaitlərini qanunsuz olaraq namizədlərin, qeydə alınmış namizədlərin, siyasi partiyaların, siyasi partiya bloklarının, referendum üzrə təşəbbüs qruplarının seçki fonduna vermək;",
+    "9.3.11. qanunvericiliklə başqa hal nəzərdə tutulmamışdırsa, dövlət fondlarına, orqanların (qurumların) təsərrüfat subyektlərinə məxsus olan maddi və maliyyə ehtiyatlarını qeyri-dövlət strukturlarına vermək;",
+    "9.3.12. fiziki və ya hüquqi şəxslərə hüquqlarının və qanuni mənafelərinin həyata keçirilməsində süni maneələr yaratmaq;",
+    "9.3.13. sahibkarlıq fəaliyyətinin dövlət tərəfindən tənzimlənməsi ilə bağlı səlahiyyətləri belə fəaliyyəti həyata keçirən fiziki və hüquqi şəxslərə qanunsuz olaraq vermək.",
+    "9.4. Bu Qanunda nəzərdə tutulan hallardan başqa, vəzifəli şəxslərin fəaliyyətini tənzimləyən və ya statusunu müəyyən edən qanunvericilik aktlarında korrupsiya ilə əlaqədar digər hüquqpozmalar müəyyən edilə bilər."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "10",
+   "t": "Korrupsiya ilə əlaqədar hüquqpozmalara görə vəzifəli şəxslərin məsuliyyəti",
+   "p": [
+    "10.1. Korrupsiya ilə əlaqədar hüquqpozmalar qanunvericiliklə müəyyən edilmiş qaydada intizam, mülki-hüquqi, inzibati və ya cinayət məsuliyyətinə səbəb olur.",
+    "10.2. Vəzifəli şəxs tərəfindən bu Qanunun 9-cu maddəsində nəzərdə tutulmuş hüquqpozmaların törədilməsi mülki-hüquqi, inzibati və ya cinayət məsuliyyəti yaratdıqda, vəzifəli şəxsin məsuliyyətə cəlb edilməsi Azərbaycan Respublikasının müvafiq qanunvericiliyinə uyğun həyata keçirilir.",
+    "10.3. Korrupsiya ilə əlaqədar hüquqpozmalara görə intizam məsuliyyəti tədbirləri bu Qanunla və digər qanunvericilik aktları ilə tənzimlənir.",
+    "10.4. Bu Qanunun 9-cu maddəsində nəzərdə tutulmuş hüquqpozmaların törədilməsi inzibati və ya cinayət məsuliyyəti yaratmadıqda, aşağıdakı xüsusi hallara riayət edilməklə qanunvericiliklə müəyyən edilmiş qaydada intizam məsuliyyətinə səbəb olur:",
+    "10.4.1. Azərbaycan Respublikasının Konstitusiyası və qanunları ilə müəyyən olunmuş qaydada dövlət orqanlarına seçilmiş şəxslər bu Qanunun 9-cu maddəsində göstərilən hüquqpozmaları törətdikdə, korrupsiyaya qarşı mübarizə aparan orqan bu barədə vəzifəli şəxsin seçildiyi dövlət orqanlarına məlumat verir.",
+    "10.4.2. Azərbaycan Respublikasının qanunvericiliyi ilə müəyyən edilmiş qaydada yerli özünüidarəetmə orqanlarına seçilmiş şəxslər bu Qanunun 9-cu maddəsində göstərilən hüquqpozmaları törətdikdə, korrupsiyaya qarşı mübarizə aparan orqan bu barədə müvafiq seçki komissiyasına məlumat verir. Həmin seçki komissiyası isə bu barədə materiallar ona daxil olduğu gündən beş gün ərzində şəxsin yol verdiyi hüquqpozma barədə onun seçildiyi yerli özünüidarəetmə orqanına məlumat verir.",
+    "10.4.3. Azərbaycan Respublikasının dövlət orqanlarında seçkili vəzifələrə namizədliyi qanunla müəyyən olunmuş qaydada qeydə alınmış şəxslər bu Qanunun 9-cu maddəsində göstərilən hüquqpozmaları törətdikdə, onlar barəsində Azərbaycan Respublikası Seçki Məcəlləsində nəzərdə tutulmuş tədbirlər görülür.",
+    "10.4.4. Hakimlər bu Qanunun 9-cu maddəsində göstərilən hüquqpozmaları törətdikdə, korrupsiyaya qarşı mübarizə aparan orqan intizam tənbehinin tətbiqi məsələsinə baxılması üçün bu barədə Məhkəmə-Hüquq Şurasına məlumat verir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "11",
+   "t": "Korrupsiya hüquqpozmalarına görə fiziki və ya hüquqi şəxslərin məsuliyyəti",
+   "p": [
+    "11.1. Qanunvericiliklə müəyyən edilmiş korrupsiya hüquqpozmalarını törətmiş fiziki şəxslərin hərəkətləri cinayət tərkibi yaratmadıqda, onlar inzibati qaydada cərimə edilirlər.",
+    "11.2. Cinayət tərkibi yaratmayan korrupsiya hüquqpozması törətmiş hüquqi şəxslər qanunla müəyyən edilmiş qaydada cərimə edilir. Cinayət tərkibi yaradan korrupsiya hüquqpozmasına görə hüquqi şəxslər barəsində qanunla müəyyən edilmiş qaydada cərimə və ya digər cinayət-hüquqi tədbirlər tətbiq edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "11-1",
+   "t": "Korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumatvermə",
+   "p": [
+    "11-1.1. Korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumat hər bir şəxs tərəfindən yazılı (o cümlədən elektron) və ya şifahi formada verilə bilər.",
+    "11-1.1-1. Orqanların (qurumların) rəhbərləri korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumatların idarədaxili qaydada verilməsi mexanizmini müəyyən etməli, işçilərin və iş görən və ya xidmət göstərən digər şəxslərin (bundan sonra – işçilərin) korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumatları qəbul etmək səlahiyyətinə malik subyektlər, bu subyektlərə və korrupsiyaya qarşı mübarizə sahəsində ixtisaslaşmış orqanlara müraciət etmə qaydaları, müraciətə baxılmanın nəticəsi və korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumat verən şəxslərin hüquqları ilə tanış olmalarını təşkil etməlidirlər.",
+    "11-1.2. Orqanların (qurumların) rəhbərləri həmin orqanın (qurumun) strukturu, işçilərinin say həddi, fəaliyyət istiqamətləri, iş həcmi nəzərə alınmaqla korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumatların qəbul edilməsi və araşdırılması üçün səlahiyyətli struktur bölmə (şəxs) müəyyən edirlər.",
+    "11-1.3. Orqanlarda (qurumlarda) çalışan işçilər korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumatları səlahiyyətli struktur bölməyə (şəxsə) verə bilərlər. Səlahiyyətli struktur bölmə (şəxs) öz funksiyalarını səmərəli yerinə yetirmək üçün fəaliyyətinə qanunsuz müdaxilələri istisna edən zəruri müstəqilliyə malik olmalıdır. Səlahiyyətli struktur bölmə (şəxs) işçilər barədə həvəsləndirmə və intizam tənbehi tədbirlərinin tətbiq edilməsi, insan resurslarının idarə olunması və işçilərin qiymətləndirilməsində (attestasiyasında) birbaşa və ya dolayı yolla iştirak etməməlidir. Səlahiyyətli struktur bölmə (şəxs) orqanların (qurumların) rəhbərləri qarşısında hesabatlılıq və qərəzsizlik tələblərinə uyğun fəaliyyət göstərməlidir.",
+    "11-1.4. Səlahiyyətli struktur bölmə (şəxs) korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumatı qəbul etdikdən sonra qeydə almalı və məlumatın qeydə alınmasını məlumatı verən şəxsə bildirməlidir.",
+    "11-1.5. Səlahiyyətli struktur bölmə (şəxs) korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumat qeydə alındığı gündən 20 iş günü müddətində məlumatı araşdırmalı və araşdırmanın nəticəsini məlumat verən şəxsə bildirməlidir. Araşdırma “Vətəndaşların müraciətləri haqqında” Azərbaycan Respublikasının Qanunu ilə müəyyən edilmiş korrupsiya ilə əlaqədar hüquqpozmalarla bağlı müraciətlərə baxılması xüsusiyyətlərinə uyğun aparılır.",
+    "11-1.6. Barəsində məlumat verilən şəxsə, həmçinin araşdırmanın nəticəsində birbaşa və ya dolayısı ilə maraqlı olan şəxslərə korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumatın araşdırılması həvalə edilə bilməz.",
+    "11-1.7. Korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumat səlahiyyətli struktur bölmə (şəxs) ilə əlaqədar olduqda, məlumatı verən şəxs həmin məlumatı müvafiq orqanın (qurumun) rəhbərinə təqdim etmək hüququna malikdir. Orqanın (qurumun) rəhbəri belə məlumatların qəbul edilməsini, qeydə alınmasını və bu Qanunda nəzərdə tutulan müvafiq tədbirlərin həyata keçirilməsini təmin etməlidir.",
+    "11-1.8. Korrupsiya ilə əlaqədar hüquqpozmalar barədə məlumat orqanın (qurumun) rəhbəri ilə bağlı olduqda, məlumat verən şəxs həmin məlumatı orqanın (qurumun) rəhbərindən yuxarı vəzifəli şəxsə və ya korrupsiyaya qarşı mübarizə sahəsində ixtisaslaşmış orqanlara təqdim etmək hüququna malikdir. Həmin orqanlar bu məlumatın qəbul edilməsini, qeydə alınmasını və bu Qanunda nəzərdə tutulan müvafiq tədbirlərin həyata keçirilməsini təmin etməlidirlər."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "11-2",
+   "t": "Korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumat verən şəxsin dövlət müdafiəsi",
+   "p": [
+    "11-2.1. Korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumat verən şəxs özü barədə məlumatın açıqlanmasını istəmədiyi halda, səlahiyyətli struktur bölmə (şəxs), orqanın (qurumun) rəhbəri və korrupsiyaya qarşı mübarizə sahəsində ixtisaslaşmış orqanlar onun konfidensiallığını təmin etməlidirlər. Bu məlumat korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumat verən şəxsin yazılı razılığı olduqda açıqlanır. Korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumat verən şəxsin konfidensiallığının pozulmasında təqsiri olan şəxslər qanunla müəyyən edilmiş qaydada məsuliyyət daşıyırlar.",
+    "11-2.2. Korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumat verən şəxsə və ya onun yaxın qohumuna hədə-qorxu gəlmək, onları təzyiqlərə məruz qoymaq, maddi və ya mənəvi ziyan vurmaq, təhqir və təhdid etmək, şərəf və ya ləyaqətini alçaltmaq qadağandır. Korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumat verən işçiyə belə məlumat verdiyinə görə birbaşa və ya dolayı yolla qisas almaq məqsədilə tənbeh tətbiq etmə, əmək müqaviləsinə xitam vermə, vəzifədən azad etmə, başqa işə keçirmə, əməkhaqqından qanunsuz tutulmalar aparma, vəzifədə irəli çəkilməyə və ya həvəsləndirilməyə aktiv və ya passiv formada maneçilik törətmə, mənfi cəhətdən xarakterizə etmə və digər bu cür tədbirlər tətbiq edilə bilməz. Korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumat verən şəxs ona qisas almaq məqsədilə hər hansı tədbirlərin tətbiqinə dair dəlillər irəli sürdükdə həmin dəlillərin təkzib edilməsi işəgötürənin üzərinə düşür.",
+    "11-2.2-1. Orqanın (qurumun) rəhbəri müvafiq orqan (qurum) daxilində bu Qanunun 11-2.2-ci maddəsinin tələblərinə riayət olunmasını təmin edir və həmin maddənin tələblərinin pozulması məsuliyyətə səbəb olur.",
+    "11-2.2-2. Bu Qanunun 11-2.2-ci maddəsində nəzərdə tutulmuş tədbirə məruz qaldığını iddia edən şəxs pozulmuş hüquqlarının bərpası üçün aidiyyəti üzrə yuxarı vəzifəli şəxsə və məhkəməyə müraciət edə bilər.",
+    "11-2.3. Korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumat verən şəxs və ya onun yaxın qohumu barəsində öldürməklə hədənin icra ediləcəyi, zor tətbiq ediləcəyi, əmlakının məhv ediləcəyi və ya ona ziyan vurulacağı qorxusunun mövcudluğu barədə real əsaslar olduğu təqdirdə, korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumat verən şəxsin prokurorluğa müraciəti əsasında “Cinayət prosesində iştirak edən şəxslərin dövlət müdafiəsi haqqında” Azərbaycan Respublikasının Qanunu ilə müəyyən edilmiş qaydada təhlükəsizlik tədbirləri tətbiq edilir.",
+    "11-2.5. Orqanlar (qurumlar), səlahiyyətli struktur bölmə (şəxs) və korrupsiyaya qarşı mübarizə sahəsində ixtisaslaşmış orqanlar tərəfindən bu Qanunun 11-1-ci və 11-2-ci maddələrinin tələbləri pozulduqda, korrupsiya ilə əlaqədar hüquqpozmalarla bağlı məlumat verən şəxs inzibati qaydada və (və ya) məhkəməyə şikayət verə bilər.",
+    "11-2.6. Bu Qanunun 11-2-ci maddəsində nəzərdə tutulmuş müdafiə korrupsiya ilə əlaqədar hüquqpozmalarla bağlı bilə-bilə yalan məlumatvermə, həmçinin özü və ya digər şəxslər üçün qanunsuz olaraq maddi və digər nemətlər, imtiyazlar və güzəştlər əldə etmək məqsədi ilə məlumatvermə hallarında tətbiq olunmur."
+   ]
+  },
+  {
+   "k": "f",
+   "n": "IV fəsil",
+   "t": "Korrupsiya ilə əlaqədar hüquqpozmaların nəticələrinin aradan qaldırılması"
+  },
+  {
+   "k": "m",
+   "n": "12",
+   "t": "Qanunsuz əldə edilmiş əmlakın götürülməsi və qanunsuz əldə edilmiş imtiyaz və ya güzəştlərin dəyərinin ödənilməsi",
+   "p": [
+    "12.1. Vəzifəli şəxslər tərəfindən qanunsuz əldə edilmiş əmlak və qanunsuz əldə edilmiş imtiyazlar və ya güzəştlərin dəyəri könüllü olaraq dövlət nəfinə ödənilir. Vəzifəli şəxslər qanunsuz əldə edilmiş əmlakı könüllü olaraq qaytarmaqdan və ya onun dəyərini, habelə qanunsuz əldə edilmiş imtiyaz və ya güzəştlərin dəyərini könüllü olaraq ödəməkdən imtina etdikdə, qanunsuz əldə edilmiş əmlak və ya onun dəyəri, qanunsuz əldə edilmiş güzəşt və ya imtiyazların dəyəri müvafiq orqanların (qurumların) iddiası əsasında məhkəmə tərəfindən dövlətin nəfinə ödənilir.",
+    "12.2. İşə məhkəmədə baxılana qədər iddianın təmin edilməsi üçün məhkəmə tərəfindən cavabdehin əmlakı barədə mülki prosessual qanunvericiliklə müəyyən edilmiş qaydada tədbirlər görülə bilər."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "13",
+   "t": "Korrupsiya ilə əlaqədar hüquqpozmalar nəticəsində qəbul olunmuş aktların ləğv edilməsi",
+   "p": [
+    "Korrupsiya ilə əlaqədar hüquqpozmalar nəticəsində qəbul olunmuş aktlar müvafiq orqanlar (qurumlar) tərəfindən və yaxud müvafiq dövlət orqanlarının və ya digər şəxslərin müraciəti əsasında məhkəmə tərəfindən ləğv edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "14",
+   "t": "Qanunun qüvvəyə minməsi",
+   "p": [
+    "Bu Qanun 2005-ci il yanvar ayının 1-dən qüvvəyə minir."
+   ]
+  }
+ ]
+}

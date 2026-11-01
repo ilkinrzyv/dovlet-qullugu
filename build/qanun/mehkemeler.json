@@ -1,0 +1,1604 @@
+{
+ "key": "mehkemeler",
+ "id": 3933,
+ "title": "Məhkəmələr və hakimlər haqqında",
+ "num": "310-IQ",
+ "date": "10.06.1997",
+ "status": "Qüvvədədir",
+ "url": "https://e-qanun.az/framework/3933",
+ "fetched": "2026-11-01",
+ "pre": [
+  "Bu Qanun Azərbaycan Respublikasında ədalət mühakiməsinin həyata keçirilməsini təmin etmək məqsədilə Azərbaycan Respublikası Konstitusiyasında təsbit olunmuş müstəqil məhkəmə hakimiyyəti yaratmağa yönəlmişdir."
+ ],
+ "units": [
+  {
+   "k": "b",
+   "n": "Birinci",
+   "t": "Məhkəmələr"
+  },
+  {
+   "k": "f",
+   "n": "I fəsil",
+   "t": "Məhkəmə hakimiyyəti"
+  },
+  {
+   "k": "m",
+   "n": "1",
+   "t": "Azərbaycan Respublikasında məhkəmələrin təsis olunması",
+   "p": [
+    "Azərbaycan Respublikasında Azərbaycan Respublikasının qanunları ilə təsis edilmiş Azərbaycan Respublikası məhkəmələri fəaliyyət göstərirlər. Azərbaycan Respublikası Konstitusiyasının 125-ci maddəsinin VI hissəsinə uyğun olaraq məhkəmələrin səlahiyyətlərinin dəyişdirilməsi məqsədi ilə müəyyən olunmamış hüquqi üsulların tətbiq edilməsi və fövqəladə məhkəmələrin, eləcə də xarici dövlətlərin, yaxud bu Qanunla nəzərdə tutulmayan qaydada məhkəmələrin yaradılması qadağandır.",
+    "Azərbaycan Respublikası Konstitusiya Məhkəməsinin (bundan sonra — Konstitusiya Məhkəməsi) fəaliyyəti və hakimlərinin statusu “Konstitusiya Məhkəməsi haqqında” Azərbaycan Respublikasının Qanunu ilə müəyyən olunur."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "2",
+   "t": "Məhkəmələr və hakimlər haqqında qanunvericilik",
+   "p": [
+    "Məhkəmələr və hakimlər haqqında Azərbaycan Respublikasının qanunvericiliyi Azərbaycan Respublikasının Konstitusiyasından, bu Qanundan, Azərbaycan Respublikasının digər qanunvericilik aktlarından və tərəfdar çıxdığı beynəlxalq müqavilələrdən ibarətdir.",
+    "Ələt azad iqtisadi zonasında mübahisələrin həlli zamanı “Ələt azad iqtisadi zonası haqqında” Azərbaycan Respublikası Qanununun tələbləri nəzərə alınır."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "3",
+   "t": "Məhkəmələrin vəzifələri",
+   "p": [
+    "Azərbaycan Respublikası məhkəmələrinin fəaliyyəti yalnız ədalət mühakiməsinin və qanunvericiliklə müəyyən edilmiş hallarda və qaydada məhkəmə nəzarətinin həyata keçirilməsinə yönəldilmişdir.",
+    "Məhkəmələr ədalət mühakiməsini həyata keçirərkən Azərbaycan Respublikası Konstitusiyasında təsbit edilmiş insan və vətəndaş hüquqlarını və azadlıqlarını, mülkiyyət formasından asıla olmayaraq bütün müəssisə, idarə və təşkilatların, siyasi partiyaların, ictimai birliklərin, digər hüquqi şəxslərin hüquqlarını və qanuni mənafelərini hər cür qəsdlərdən və qanun pozuntularından müdafiə edir, Azərbaycan Respublikasının Konstitusiyasında və bu Qanunda nəzərdə tutulmuş digər vəzifələri həyata keçirirlər.",
+    "Məhkəmələrin üzərinə başqa vəzifələr qoyulması yolverilməzdir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "4",
+   "t": "Məhkəmələrdə işlərə baxılması",
+   "p": [
+    "Məhkəmələrdə işlərə birinci instansiya, apellyasiya və kassasiya instansiyaları üzrə baxılır.",
+    "Azərbaycan Respublikası qanunvericiliyində nəzərdə tutulmuş hallarda və qaydada Azərbaycan Respublikası məhkəmələrində işlərə kollegial və hakim tərəfindən təkbaşına: birinci instansiya məhkəməsində işlərə təkbaşına və ya üç hakimdən ibarət tərkibdə, appelyasiya və kassasiya instansiyası məhkəməsində üç və ya daha çox hakimdən ibarət tərkibdə baxılır.",
+    "Məhkəmələr işlərə baxarkən Azərbaycan Respublikasının Konstitusiyasını, qanunlarını və digər qanunvericilik aktlarını, eləcə də Azərbaycan Respublikasının tərəfdar çıxdığı beynəlxalq müqavilələri rəhbər tuturlar.",
+    "Məhkəmələrdə işlərə baxılarkən məhkəmə iclasının protokolu aparılır. Məhkəmə iclasının gedişini və məhkəmə istintaqı zamanı aparılan prosessual hərəkətləri qeyd etmək üçün texniki vasitələrdən istifadə edilə bilər."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "5",
+   "t": "Məhkəmələrin qərarları",
+   "p": [
+    "Məhkəmələr baxılmış işlər üzrə Azərbaycan Respublikası adından qətnamələr, hökmlər, qərardadlar və qərarlar (bundan sonra — qərarlar) çıxarırlar.",
+    "Məhkəmələrin bütün qərarları qəbul olunduğu gündən bir aydan gec olmayaraq anonimləşdirilməklə elektron qaydada yayılmalıdır.",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə müəyyən edilmiş qaydada qanuni qüvvəyə minmiş bu qərarlar Azərbaycan Respublikası ərazisində bütün fiziki və hüquqi şəxslər tərəfindən mütləq, vaxtında və dəqiq icra olunmalıdır.",
+    "Qanuni qüvvəyə minmiş məhkəmə qərarlarının icra edilməməsi Azərbaycan Respublikası qanunvericiliyi ilə nəzərdə tutulmuş məsuliyyətə səbəb olur."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "6",
+   "t": "Məhkəmə hakimiyyətinin rəmzləri",
+   "p": [
+    "Azərbaycan Respublikasında məhkəmə hakimiyyətinin rəmzləri Azərbaycan Respublikasının Dövlət bayrağından, Dövlət gerbindən və ədalət mühakiməsinin rəsmi emblemlərindən ibarətdir.",
+    "Azərbaycan Respublikası məhkəmələrinin bütün hakimləri məhkəmə iclaslarını xüsusi geyimdə aparırlar.",
+    "Ədalət mühakiməsinin rəsmi emblemlərinin və hakimlərin xüsusi geyim formasının təsviri Azərbaycan Respublikası Konstitusiyasının 94-cü maddəsinin 5-ci bəndinə uyğun olaraq Azərbaycan Respublikasının qanunu ilə müəyyən edilir."
+   ]
+  },
+  {
+   "k": "f",
+   "n": "II fəsil",
+   "t": "Ədalət mühakiməsinin həyata keçirilməsinə dair əsas müddəalar"
+  },
+  {
+   "k": "m",
+   "n": "7",
+   "t": "Hər kəsin qanun və məhkəmə qarşısında hüquq bərabərliyi",
+   "p": [
+    "Azərbaycan Respublikası Konstitusiyasının 25-ci maddəsinə uyğun olaraq Azərbaycan Respublikasında ədalət mühakiməsi irqindən, milliyyətindən, dinindən, dilindən, cinsindən, mənşəyindən, əmlak vəziyyətindən, qulluq mövqeyindən, əqidəsindən, siyasi partiyalara, həmkarlar ittifaqına və digər ictimai birliklərə mənsubiyyətindən asılı olmayaraq hər bir şəxsin qanun və məhkəmə qarşısında hüquq bərabərliyi əsasında həyata keçirilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "8",
+   "t": "Ədalət mühakiməsinin hakimlərin müstəqilliyi təmin edilməklə, heç bir məhdudiyyət qoyulmadan, faktlara əsasən, qərəzsiz, ədalətlə və qanunlara müvafiq həyata keçirilməsi",
+   "p": [
+    "Ədalət mühakiməsi hakimlərin müstəqilliyi təmin edilməklə, heç bir məhdudiyyət qoyulmadan, faktlara əsasən, qərəzsiz, ədalətlə və qanunlara müvafiq həyata keçirilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "9",
+   "t": "Məhkəmə icraatına müdaxilənin və məhkəməyə hörmətsizlik göstərilməsinin yolverilməzliyi",
+   "p": [
+    "Hər hansı bir şəxs tərəfindən, hər hansı bir səbəbdən bilavasitə, yaxud dolayı yolla məhkəmə icraatına məhdudiyyət qoyulması, təsir, hədə və müdaxilə edilməsi, habelə məhkəməyə hörmətsizlik göstərilməsi, yaxud aşkar etinasızlıq göstərildiyini bildirən hərəkətlər edilməsi yolverilməzdir və Azərbaycan Respublikasının qanunvericiliyinə müvafiq surətdə məsuliyyətə səbəb olur."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "10",
+   "t": "Müdafiə hüquqlarının təmin edilməsi",
+   "p": [
+    "Azərbaycan Respublikası vətəndaşlarının, onun ərazisində yaşayan xarici vətəndaşların, habelə vətəndaşlığı olmayan şəxslərin Azərbaycan Respublikasının Konstitusiyasında və digər qanunlarda nəzərdə tutulmuş hüquq və azadlıqlarının, hüquqi şəxslərin qanuni mənafelərinin hər cür qəsdlərdən və qanun pozuntularından məhkəmə icraatının istənilən mərhələsində məhkəmə müdafiəsi hüququ təmin olunur. Heç kəs məhkəmə müdafiəsi hüququndan məhrum edilə bilməz.",
+    "Şübhə edilən, təqsirləndirilən şəxsin Azərbaycan Respublikası qanunvericiliyində nəzərdə tutulmuş vasitələrlə müdafiə hüququna, o cümlədən tutulduğu, həbsə alındığı, cinayət törədilməsində ittiham olunduğu andan müdafiəçinin köməyindən istifadə etmək hüququna təminat verilir.",
+    "Azərbaycan Respublikası Konstitusiyasının 61-ci maddəsinin II hissəsinə uyğun olaraq qanunla nəzərdə tutulmuş hallarda hüquqi yardım ödənişsiz, dövlət hesabına göstərilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "11",
+   "t": "Təqsirsizlik prezumpsiyasının təmin edilməsi",
+   "p": [
+    "Ədalət mühakiməsi həyata keçirilərkən Azərbaycan Respublikası Konstitusiyasının 63-cü maddəsində nəzərdə tutulmuş təqsirsizlik prezumpsiyası prinsipinə riayət olunması təmin edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "12",
+   "t": "Məhkəmə icraatının açıq aparılması",
+   "p": [
+    "Azərbaycan Respublikası Konstitusiyasının 127-ci maddəsinin V hissəsinə əsasən işlərə məhkəmənin qapalı iclaslarında baxılması halları istisna olmaqla, bütün məhkəmələrdə işlərin icraatı açıq aparılır.",
+    "Qanunda nəzərdə tutulmuş hallar istisna olmaqla, cinayət işlərinin qiyabi məhkəmə icraatına yol verilmir.",
+    "Bütün hallarda məhkəmələrin qərarları açıq elan edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "13",
+   "t": "Məhkəmə icraatının çəkişmə prinsipi əsasında həyata keçirilməsi",
+   "p": [
+    "Azərbaycan Respublikasında məhkəmə icraatı tərəflərin hüquq bərabərliyi təmin olunmaqla Azərbaycan Respublikası Konstitusiyasının 127-ci maddəsinin VII hissəsinə uyğun olaraq çəkişmə prinsipi əsasında həyata keçirilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "14",
+   "t": "Məhkəmə icraatının aparıldığı dil",
+   "p": [
+    "Məhkəmə icraatının aparıldığı dil Azərbaycan Respublikası Konstitusiyasının 127-ci maddəsinin X hissəsində müəyyən edilir. Məhkəmə icraatının aparıldığı dili bilməyən şəxslərin hüquqlarının hər hansı şəkildə məhdudlaşdırılması yolverilməzdir.",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə nəzərdə tutulmuş hallarda hər kəsin tərcüməçinin xidmətlərindən pulsuz istifadə etmək hüququ təmin edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "15",
+   "t": "Məhkəmə aidiyyətinə riayət edilməsi",
+   "p": [
+    "İşlərin Azərbaycan Respublikası qanunvericiliyi ilə müəyyən edilmiş məhkəmə aidiyyətinin dəyişdirilməsi və ya əsassız olaraq qanuni hakimin icraatından alınması qadağandır."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "16",
+   "t": "Hakimin məhkəmə baxışında iştirakının məhdudlaşdırılması",
+   "p": [
+    "Birinci instansiya, appelyasiya və ya kassasiya instansiyası məhkəməsində işə baxılmasında iştirak etmiş hakimin həmin işə təkrar məhkəmə baxışında iştirakı yolverilməzdir.",
+    "Azərbaycan Respublikası qanunvericiliyində nəzərdə tutulmuş hallarda hakimlərin qərəzsizliyinə şübhə doğuran hallar yarandıqda hakim həmin işə baxılmasından çəkinməli, yaxud kənarlaşdırılmalıdır."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "17",
+   "t": "Məhkəmə icraatında qeyri-prosessual münasibətlərin yolverilməzliyi",
+   "p": [
+    "Məhkəmə tərkibi ilə məhkəmə iştirakçıları arasında, yaxud işlərə baxılması ilə əlaqədar birinci instansiya, appelyasiya və kassasiya instansiyası məhkəmələri arasında qanunda nəzərdə tutulmamış qeyri-prosessual münasibətlər yolverilməzdir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "18",
+   "t": "Ədalət mühakiməsinin həyata keçirilməsinin zəruri şərtləri",
+   "p": [
+    "Azərbaycan Respublikasının məhkəmələri ədalət mühakiməsinin məhkəmə hakimiyyətinin yüksək statusuna uyğun olan, bütün prosessual tələblərin yerinə yetirilməsinə imkan verən, hakimlərin öz iradəsini ifadə etmək azadlığına təsiri istisna edən şəraitdə həyata keçirirlər.",
+    "Ədalət mühakiməsinin həyata keçirilməsinə dair müddəaların pozulması qanunda nəzərdə tutulmuş hüquqi nəticələrə səbəb olur."
+   ]
+  },
+  {
+   "k": "f",
+   "n": "III fəsil",
+   "t": "Azərbaycan Respublikasının məhkəmə sistemi"
+  },
+  {
+   "k": "m",
+   "n": "19",
+   "t": "Ədalət mühakiməsini həyata keçirən məhkəmələr",
+   "p": [
+    "Azərbaycan Respublikasında ədalət mühakiməsini Azərbaycan Respublikasının məhkəmə sisteminə daxil olan aşağıdakı məhkəmələr həyata keçirirlər:",
+    "rayon (şəhər) məhkəmələri;",
+    "ağır cinayətlər məhkəmələri;",
+    "Naxçıvan Muxtar Respublikasının ağır cinayətlər məhkəməsi;",
+    "hərbi məhkəmələr;",
+    "inzibati məhkəmələr;",
+    "kommersiya məhkəmələri;",
+    "Naxçıvan Muxtar Respublikasının Ali Məhkəməsi;",
+    "apellyasiya məhkəmələri;",
+    "(Çıxarılıb)",
+    "Azərbaycan Respublikasının Ali Məhkəməsi (bundan sonra — Ali Məhkəmə).",
+    "Azərbaycan Respublikasının məhkəmə sistemi daxilində qanunla müəyyən edilmiş qaydada digər məhkəmələr da yaradıla bilər.",
+    "Azərbaycan Respublikasının məhkəmə sisteminə daxil olan məhkəmələrin hakimlərinin ümumi sayı Azərbaycan Respublikası Konstitusiyasının 109-cu maddəsinin 32-ci bəndinə uyğun olaraq müəyyənləşdirilir.",
+    "Azərbaycan Respublikasının hər bir məhkəməsi müstəqil hüquqi şəxsdir və onun Azərbaycan Respublikası Dövlət gerbinin təsviri olan möhürü vardır."
+   ]
+  },
+  {
+   "k": "f",
+   "n": "IV fəsil",
+   "t": "Rayon (şəhər) məhkəmələri"
+  },
+  {
+   "k": "m",
+   "n": "20",
+   "t": "Rayon (şəhər) məhkəməsi və onun səlahiyyətləri",
+   "p": [
+    "Rayon (şəhər) məhkəməsi birinci instansiya məhkəməsi kimi qanunla səlahiyyətlərinə aid edilmiş mülki, cinayət işlərinə, inzibati xətalara dair və digər işlərə baxır.",
+    "Rayon (şəhər) məhkəməsi məhkəmə statistikasını təhlil edir, məhkəmə fəaliyyətinin təşkili vəziyyətini, məhkəmə təcrübəsini öyrənir və ümumiləşdirir, Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "21",
+   "t": "Rayon (şəhər) məhkəməsinin təşkili",
+   "p": [
+    "Rayon (şəhər) məhkəməsi Azərbaycan Respublikasının rayonlarında, şəhərlərində (rayon tabeli şəhərlərdən başqa), şəhərdəki rayonlarında təşkil edilir və onun yurisdiksiyası Azərbaycan Respublikasının müvafiq rayonuna, şəhərinə və ya şəhərdəki rayonuna şamil edilir.",
+    "Rayon (şəhər) məhkəməsinin təşkili və olduğu yer Məhkəmə-Hüquq Şurasının təklifi nəzərə alınmaqla Azərbaycan Respublikası Konstitusiyasının 109-cu maddəsinin 32-ci bəndinə uyğun olaraq müəyyənləşdirilir.",
+    "Bir rayonda (şəhərdə) yalnız bir rayon (şəhər) məhkəməsi təşkil edilə bilər."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "22",
+   "t": "Rayon (şəhər) məhkəməsinin tərkibi",
+   "p": [
+    "Rayon (şəhər) məhkəməsi bir hakimdən ibarətdirsə, həmin hakim eyni zamanda bu məhkəmənin sədri təyin olunur.",
+    "Rayon (şəhər) məhkəməsi sədrdən və hakimlərdən ibarətdir. Tərkibində 12 və daha çox hakim olan rayon (şəhər) məhkəməsində sədr müavini vəzifəsi təsis edilir.",
+    "Rayon (şəhər) məhkəməsi hakimlərinin sayı Məhkəmə-Hüquq Şurası tərəfindən müəyyənləşdirilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "23",
+   "t": "Rayon (şəhər) məhkəməsi sədrinin səlahiyyətləri",
+   "p": [
+    "Rayon (şəhər) məhkəməsinin sədri:",
+    "məhkəmədə işin təşkilinə və məhkəmə aparatının işinə rəhbərlik edir, məhkəmədə əmək və icra intizamına əməl olunmasını təmin edir;",
+    "məhkəmə iclaslarına sədrlik edir, işlərin kargüzarlıq qaydalarına uyğun bölüşdürülməsinə nəzarət edir;",
+    "məhkəmə aparatı işlərinin işə qəbul və işdən azad edilməsi, mükafatlandırılması və intizam qaydasında cəzalandırılması məsələlərini həll edir;",
+    "Ali Məhkəmənin Plenumunda və müvafiq apellyasiya instansiyası məhkəməsinin Rəyasət Heyətində rayon (şəhər) məhkəməsində ədalət mühakiməsinin həyata keçirilməsi vəziyyətinə dair məlumat verir;",
+    "məhkəmə fəaliyyətinin təşkili vəziyyətinin, məhkəmə təcrübəsinin öyrənilməsinə və ümumiləşdirməsinə, məhkəmə statistikasının aparılmasına rəhbərlik edir;",
+    "şəxslərin qəbulu, təklif, ərizə və şikayətlərə baxılması sahəsində məhkəmənin işini təşkil edir;",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "23-1",
+   "t": "Rayon (şəhər) məhkəməsi sədrinin müavininin səlahiyyətləri",
+   "p": [
+    "Rayon (şəhər) məhkəməsi sədrinin müavini məhkəmə iclaslarına sədrlik edir, rayon (şəhər) məhkəməsinin sədri tərəfindən müəyyən edilmiş məsələləri həll edir, sədrin tapşırığı ilə onun ayrı-ayrı səlahiyyətlərini həyata keçirir, sədr olmadıqda və ya öz vəzifələrini yerinə yetirə bilmədiyi müddətdə onu əvəz edir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "24",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "f",
+   "n": "V fəsil",
+   "t": "Ağır cinayətlər məhkəmələri"
+  },
+  {
+   "k": "m",
+   "n": "25",
+   "t": "ağır cinayətlər məhkəməsi və onun səlahiyyətləri",
+   "p": [
+    "Ağır cinayətlər məhkəməsi birinci instansiya məhkəməsi kimi qanunla səlahiyyətlərinə aid edilmiş cinayət işlərinə baxır.",
+    "Ağır cinayətlər məhkəməsi Azərbaycan Respublikasının qanunvericiliyi ilə müəyyən edilmiş qaydada cinayət törətmiş şəxslərin verilməsi (ekstradisiya) məsələsini həll edir, məhkəmə statistikasını təhlil edir, məhkəmə fəaliyyətinin təşkili vəziyyətini, məhkəmə təcrübəsini öyrənir və ümumiləşdirir, Azərbaycan Respublikası qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "26",
+   "t": "Ağır cinayətlər məhkəməsinin təşkili",
+   "p": [
+    "Ağır cinayətlər məhkəməsinin təşkili və olduğu yer Məhkəmə-Hüquq Şurasının təklifi nəzərə alınmaqla Azərbaycan Respublikası Konstitusiyasının 109-cu maddəsinin 32-ci bəndinə uyğun olaraq müəyyən olunur, ərazi yurisdiksiyası isə Məhkəmə-Hüquq Şurası tərəfindən müəyyənləşdirilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "27",
+   "t": "Ağır cinayətlər məhkəməsinin tərkibi",
+   "p": [
+    "Ağır cinayətlər məhkəməsi sədrdən və hakimlərdən ibarətdir. Tərkibində 12 və daha çox hakim olan ağır cinayətlər məhkəməsində sədr müavini vəzifəsi təsis edilir.",
+    "Ağır cinayətlər məhkəməsi hakimlərinin sayı Məhkəmə-Hüquq Şurası tərəfindən müəyyənləşdirilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "28",
+   "t": "Ağır cinayətlər məhkəməsi sədrinin səlahiyyətləri",
+   "p": [
+    "Ağır cinayətlər məhkəməsinin sədri:",
+    "məhkəmədə işin təşkilinə və məhkəmə aparatının işinə rəhbərlik edir, məhkəmədə əmək və icra intizamına əməl olunmasını təmin edir;",
+    "məhkəmə iclaslarına sədrlik edir, işlərin kargüzarlıq qaydalarına uyğun bölüşdürülməsinə nəzarət edir;",
+    "məhkəmə aparatı işçilərinin işə qəbul və işdən azad edilməsi, mükafatlandırılması və intizam qaydasında cəzalandırılması məsələlərini həll edir;",
+    "Ali Məhkəmənin Plenumunda və müvafiq apellyasiya instansiyası məhkəməsinin Rəyasət Heyətində Ağır cinayətlər məhkəməsiтdə ədalət mühakiməsinin həyata keçirilməsi vəziyyətinə dair məlumat verir;",
+    "məhkəmə fəaliyyətinin təşkili vəziyyətinin, məhkəmə təcrübəsinin öyrənilməsinə və ümumiləşdirilməsinə, məhkəmə statistikasının aparılmasına rəhbərlik edir;",
+    "şəxslərin qəbulu, təklif, ərizə və şikayətlərə baxılması sahəsində məhkəmənin işini təşkil edir;",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "29",
+   "t": "Ağır cinayətlər məhkəməsinin sədr müavininin səlahiyyətləri",
+   "p": [
+    "Ağır cinayətlər məhkəməsinin sədr müavini:",
+    "məhkəmə iclaslarında sədrlik edir, Ağır cinayətlər məhkəməsi sədri tərəfindən müəyyən edilmiş məsələləri həll edir, sədrin tapşırığı ilə onun ayrı-ayrı səlahiyyətlərini həyata keçirir, sədr olmadıqda və ya öz vəzifələrini yerinə yetirə bilmədikdə onu əvəz edir;",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "30",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "m",
+   "n": "30-1",
+   "t": "Naxçıvan Muxtar Respublikasının ağır cinayətlər məhkəməsi və onun səlahiyyətləri",
+   "p": [
+    "Naxçıvan Muxtar Respublikasının ağır cinayətlər məhkəməsi birinci instansiya məhkəməsi kimi qanunla səlahiyyətlərinə aid edilmiş cinayət işlərinə baxır.",
+    "Naxçıvan Muxtar Respublikasının ağır cinayətlər məhkəməsi məhkəmə statistikasını təhlil edir, məhkəmə fəaliyyətinin təşkili vəziyyətini, məhkəmə təcrübəsini öyrənir və ümumiləşdirir, Azərbaycan Respublikası qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "30-2",
+   "t": "Naxçıvan Muxtar Respublikası Ağır cinayətlər məhkəməsinin təşkili",
+   "p": [
+    "Naxçıvan Muxtar Respublikasının ağır cinayətlər məhkəməsi Naxçıvan Muxtar Respublikasının paytaxtı Naxçıvan şəhərində təşkil edilir, onun yurisdiksiyası Naxçıvan Muxtar Respublikasının bütün ərazisinə şamil edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "30-3",
+   "t": "Naxçıvan Muxtar Respublikası Ağır cinayətlər məhkəməsinin tərkibi",
+   "p": [
+    "Naxçıvan Muxtar Respublikasının ağır cinayətlər məhkəməsi sədrdən və hakimlərdən ibarətdir.",
+    "Naxçıvan Muxtar Respublikası Ağır cinayətlər məhkəməsinin hakimlərinin sayı Məhkəmə-Hüquq Şurası tərəfindən müəyyənləşdirilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "30-4",
+   "t": "Naxçıvan Muxtar Respublikası Ağır cinayətlər məhkəməsinin sədrinin səlahiyyətləri",
+   "p": [
+    "Naxçıvan Muxtar Respublikası Ağır cinayətlər məhkəməsinin sədri:",
+    "məhkəmədə işin təşkilinə və məhkəmə aparatının işinə rəhbərlik edir, məhkəmədə əmək və icra intizamına əməl olunmasını təmin edir;",
+    "məhkəmə iclaslarına sədrlik edir, işlərin kargüzarlıq qaydalarına uyğun bölüşdürülməsinə nəzarət edir;",
+    "məhkəmə aparatı işçilərinin işə qəbul və işdən azad edilməsi, mükafatlandırılması və intizam qaydasında cəzalandırılması məsələlərini həll edir;",
+    "Ali Məhkəmənin Plenumunda və Naxçıvan Muxtar Respublikası Ali Məhkəməsinin Rəyasət Heyətində Naxçıvan Muxtar Respublikasının ağır cinayətlər məhkəməsində ədalət mühakiməsinin həyata keçirilməsi vəziyyətinə dair məlumat verir;",
+    "məhkəmə fəaliyyətinin təşkili vəziyyətinin, məhkəmə təcrübəsinin öyrənilməsinə və ümumiləşdirilməsinə, məhkəmə statistikasının aparılmasına rəhbərlik edir;",
+    "şəxslərin qəbulu, təklif, ərizə və şikayətlərə baxılması sahəsində məhkəmənin işini təşkil edir;",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "f",
+   "n": "VI fəsil",
+   "t": "Hərbi məhkəmələr"
+  },
+  {
+   "k": "m",
+   "n": "31",
+   "t": "Hərbi məhkəmə və onun səlahiyyətləri",
+   "p": [
+    "Hərbi məhkəmə birinci instansiya məhkəməsi kimi qanunla səlahiyyətlərinə aid edilmiş cinayət işlərinə, inzibati xətalara dair və digər işlərə baxır.",
+    "Hərbi məhkəmə məhkəmə statistikasını təhlil edir, məhkəmə fəaliyyətinin təşkili vəziyyətini, məhkəmə təcrübəsini öyrənir və ümumiləşdirir, Azərbaycan Respublikası qanunvericiliyində nəzərdə tutulmuş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "32",
+   "t": "Hərbi məhkəmənin təşkili",
+   "p": [
+    "Hərbi məhkəmə Azərbaycan Respublikasının Silahlı Qüvvələri və başqa silahlı birləşmələri hərbi hissələrinin sayı nəzərə alınmaqla onların yerləşdikləri inzibati ərazi vahidləri üzrə yaradılır.",
+    "Hərbi məhkəmənin təşkili və olduğu yer Məhkəmə-Hüquq Şurasının təklifi nəzərə alınmaqla Azərbaycan Respublikası Konstitusiyasının 109-cu maddəsinin 32-ci bəndinə uyğun olaraq müəyyən olunur, ərazi yurisdiksiyası isə Məhkəmə-Hüquq Şurası tərəfindən müəyyənləşdirilir.",
+    "Naxçıvan Muxtar Respublikasının Hərbi Məhkəməsi Naxçıvan Muxtar Respublikasının paytaxtı Naxçıvan şəhərində təşkil edilir və onun yurisdiksiyası Naxçıvan Muxtar Respublikasının bütün ərazisinə şamil edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "33",
+   "t": "Hərbi məhkəmənin tərkibi",
+   "p": [
+    "Hərbi məhkəmə sədrdən və hakimlərdən ibarətdir. Tərkibində 12 və daha çox hakim olan hərbi məhkəmədə sədr müavini vəzifəsi təsis edilir.",
+    "Hərbi məhkəmə hakimlərinin sayı Məhkəmə-Hüquq Şurası tərəfindən müəyyənləşdirilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "34",
+   "t": "Hərbi məhkəmə sədrinin səlahiyyətləri",
+   "p": [
+    "Hərbi məhkəmənin sədri:",
+    "məhkəmədə işin təşkilinə və məhkəmə aparatının işinə rəhbərlik edir, məhkəmədə əmək və icra intizamına əməl olunmasını təmin edir;",
+    "məhkəmə iclaslarına sədrlik edir, işlərin kargüzarlıq qaydalarına uyğun bölüşdürülməsinə nəzarət edir;",
+    "məhkəmə aparatı işlərinin işə qəbul və işdən azad edilməsi, mükafatlandırılması və intizam qaydasında cəzalandırılması məsələlərini həll edir;",
+    "Ali Məhkəmənin Plenumunda və müvafiq apellyasiya instansiyası məhkəməsinin Rəyasət Heyətində hərbi məhkəmədə ədalət mühakiməsinin həyata keçirilməsi vəziyyətinə dair məlumat verir;",
+    "məhkəmə fəaliyyətinin təşkili vəziyyətinin, məhkəmə təcrübəsinin öyrənilməsinə və ümumiləşdirilməsinə, məhkəmə statistikasının aparılmasına rəhbərlik edir;",
+    "şəxslərin qəbulu, təklif, ərizə və şikayətlərə baxılması sahəsində məhkəmənin işini təşkil edir;",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "34-1",
+   "t": "Hərbi məhkəmə sədrinin müavininin səlahiyyətləri",
+   "p": [
+    "Hərbi məhkəmə sədrinin müavini məhkəmə iclaslarına sədrlik edir, hərbi məhkəmənin sədri tərəfindən müəyyən edilmiş məsələləri həll edir, sədrin tapşırığı ilə onun ayrı-ayrı səlahiyyətlərini həyata keçirir, sədr olmadıqda və ya öz vəzifələrini yerinə yetirə bilmədiyi müddətdə onu əvəz edir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "35",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "m",
+   "n": "36",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "m",
+   "n": "37",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "m",
+   "n": "38",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "m",
+   "n": "39",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "m",
+   "n": "40",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "m",
+   "n": "41",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "f",
+   "n": "VIII fəsil",
+   "t": "İnzibati məhkəmələr"
+  },
+  {
+   "k": "m",
+   "n": "42",
+   "t": "İnzibati məhkəmə və onun səlahiyyətləri",
+   "p": [
+    "İnzibati məhkəmə birinci instansiya məhkəməsi kimi qanunla səlahiyyətlərinə aid edilmiş inzibati mübahisələrə dair işlərə baxır.",
+    "İnzibati məhkəmə məhkəmə statistikasını təhlil edir, məhkəmə fəaliyyətinin təşkili vəziyyətini, məhkəmə təcrübəsini öyrənir və ümumiləşdirir, Azərbaycan Respublikası qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "43",
+   "t": "İnzibati məhkəmənin təşkili",
+   "p": [
+    "İnzibati məhkəmə Azərbaycan Respublikasının inzibati ərazi vahidləri üzrə təşkil edilir.",
+    "İnzibati məhkəmənin təşkili və olduğu yer Məhkəmə-Hüquq Şurasının təklifi nəzərə alınmaqla Azərbaycan Respublikası Konstitusiyasının 109-cu maddəsinin 32-ci bəndinə uyğun olaraq müəyyən olunur, ərazi yurisdiksiyası isə Məhkəmə-Hüquq Şurası tərəfindən müəyyən olunur.",
+    "Naxçıvan Muxtar Respublikasının İnzibati Məhkəməsi Naxçıvan Muxtar Respublikasının paytaxtı Naxçıvan şəhərində təşkil edilir və onun yurisdiksiyası Naxçıvan Muxtar Respublikasının bütün ərazisinə şamil edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "44",
+   "t": "İnzibati məhkəmənin tərkibi",
+   "p": [
+    "İnzibati məhkəmə sədrdən və hakimlərdən ibarətdir. Tərkibində 12 və daha çox hakim olan inzibati məhkəmədə sədr müavini vəzifəsi təsis edilir.",
+    "İnzibati məhkəmə hakimlərinin sayı Məhkəmə-Hüquq Şurası tərəfindən müəyyənləşdirilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "45",
+   "t": "İnzibati məhkəmə sədrinin səlahiyyətləri",
+   "p": [
+    "İnzibati məhkəmənin sədri:",
+    "məhkəmədə işin təşkilinə və məhkəmə aparatının işinə rəhbərlik edir, məhkəmədə əmək və icra intizamına əməl olunmasını təmin edir;",
+    "məhkəmə iclaslarına sədrlik edir, işlərin kargüzarlıq qaydalarına uyğun bölüşdürülməsinə nəzarət edir;",
+    "məhkəmə aparatının işçilərinin işə qəbul və işdən azad edilməsi, mükafatlandırılması və intizam qaydasında cəzalandırılması məsələlərini həll edir;",
+    "Ali Məhkəmənin Plenumunda və müvafiq apellyasiya instansiyası məhkəməsinin Rəyasət heyətində inzibati məhkəmədə ədalət mühakiməsinin həyata keçirilməsi vəziyyətinə dair məlumat verir;",
+    "məhkəmə fəaliyyətinin təşkili vəziyyətinin, məhkəmə təcrübəsinin öyrənilməsinə və ümumiləşdirilməsinə, məhkəmə statistikasının aparılmasına rəhbərlik edir;",
+    "şəxslərin qəbulu, təklif, ərizə və şikayətlərə baxılması sahəsində məhkəmənin işini təşkil edir;",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "45-1",
+   "t": "İnzibati məhkəmə sədrinin müavininin səlahiyyətləri",
+   "p": [
+    "İnzibati məhkəmə sədrinin müavini məhkəmə iclaslarına sədrlik edir, inzibati məhkəmənin sədri tərəfindən müəyyən edilmiş məsələləri həll edir, sədrin tapşırığı ilə onun ayrı-ayrı səlahiyyətlərini həyata keçirir, sədr olmadıqda və ya öz vəzifələrini yerinə yetirə bilmədiyi müddətdə onu əvəz edir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "46",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "m",
+   "n": "46-1",
+   "t": "Kommersiya məhkəməsi və onun səlahiyyətləri",
+   "p": [
+    "Kommersiya məhkəməsi birinci instansiya məhkəməsi kimi qanunla səlahiyyətlərinə aid edilmiş kommersiya mübahisələrinə dair işlərə baxır.",
+    "Kommersiya məhkəməsi məhkəmə statistikasını təhlil edir, məhkəmə fəaliyyətinin təşkili vəziyyətini, məhkəmə təcrübəsini öyrənir və ümumiləşdirir, Azərbaycan Respublikasının qanunları ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "46-2",
+   "t": "Kommersiya məhkəməsinin təşkili",
+   "p": [
+    "Kommersiya məhkəməsi Azərbaycan Respublikasının inzibati ərazi vahidləri üzrə təşkil edilir.",
+    "Kommersiya məhkəməsinin təşkili və olduğu yer Məhkəmə-Hüquq Şurasının təklifi nəzərə alınmaqla Azərbaycan Respublikası Konstitusiyasının 109-cu maddəsinin 32-ci bəndinə uyğun olaraq müəyyən olunur, ərazi yurisdiksiyası isə Məhkəmə-Hüquq Şurası tərəfindən müəyyən olunur.",
+    "Naxçıvan Muxtar Respublikasının Kommersiya Məhkəməsi Naxçıvan Muxtar Respublikasının paytaxtı Naxçıvan şəhərində təşkil edilir və onun yurisdiksiyası Naxçıvan Muxtar Respublikasının bütün ərazisinə şamil edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "46-3",
+   "t": "Kommersiya məhkəməsinin tərkibi",
+   "p": [
+    "Kommersiya məhkəməsi sədrdən və hakimlərdən ibarətdir. Tərkibində 12 və daha çox hakim olan kommersiya məhkəməsində sədr müavini vəzifəsi təsis edilir.",
+    "Kommersiya məhkəməsi hakimlərinin sayı Məhkəmə-Hüquq Şurası tərəfindən müəyyənləşdirilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "46-4",
+   "t": "Kommersiya məhkəməsi sədrinin səlahiyyətləri",
+   "p": [
+    "Kommersiya məhkəməsinin sədri:",
+    "məhkəmədə işin təşkilinə və məhkəmə aparatının işinə rəhbərlik edir, məhkəmədə əmək və icra intizamına əməl olunmasını təmin edir;",
+    "məhkəmə iclaslarına sədrlik edir, işlərin kargüzarlıq qaydalarına uyğun bölüşdürülməsinə nəzarət edir;",
+    "məhkəmə aparatının işçilərinin işə qəbul və işdən azad edilməsi, mükafatlandırılması və intizam qaydasında cəzalandırılması məsələlərini həll edir;",
+    "Ali Məhkəmənin Plenumunda və müvafiq apellyasiya instansiyası məhkəməsinin Rəyasət heyətində kommersiya məhkəməsində ədalət mühakiməsinin həyata keçirilməsi vəziyyətinə dair məlumat verir;",
+    "məhkəmə fəaliyyətinin təşkili vəziyyətinin, məhkəmə təcrübəsinin öyrənilməsinə və ümumiləşdirilməsinə, məhkəmə statistikasının aparılmasına rəhbərlik edir;",
+    "şəxslərin qəbulu, təklif, ərizə və şikayətlərə baxılması sahəsində məhkəmənin işini təşkil edir;",
+    "Azərbaycan Respublikasının qanunları ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "46-5",
+   "t": "Kommersiya məhkəməsi sədrinin müavininin səlahiyyətləri",
+   "p": [
+    "Kommersiya məhkəməsi sədrinin müavini məhkəmə iclaslarına sədrlik edir, kommersiya məhkəməsinin sədri tərəfindən müəyyən edilmiş məsələləri həll edir, sədrin tapşırığı ilə onun ayrı-ayrı səlahiyyətlərini həyata keçirir, sədr olmadıqda və ya öz vəzifələrini yerinə yetirə bilmədiyi müddətdə onu əvəz edir.",
+    "(Çıxarılıb)"
+   ]
+  },
+  {
+   "k": "f",
+   "n": "X fəsil",
+   "t": "Naxçıvan Muxtar Respublikasının Ali Məhkəməsi"
+  },
+  {
+   "k": "m",
+   "n": "52",
+   "t": "Naxçıvan Muxtar Respublikasının Ali Məhkəməsi",
+   "p": [
+    "Naxçıvan Muxtar Respublikasının Ali Məhkəməsi Naxçıvan Respublikasının ali məhkəmə orqanı olmaqla qanunla müəyyən edilmiş qaydada ədalət mühakiməsini həyata keçirir.",
+    "Naxçıvan Muxtar Respublikasının Ali Məhkəməsi qanunla səlahiyyətlərinə aid edilmiş işlər üzrə apellyasiya instansiyası məhkəməsidir.",
+    "Naxçıvan Muxtar Respublikasının Ali Məhkəməsi Naxçıvan Muxtar Respublikasının paytaxtı Naxçıvan şəhərində təşkil edilir, onun yurisdiksiyası Naxçıvan Muxtar Respublikasının bütün ərazisinə şamil edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "53",
+   "t": "Naxçıvan Muxtar Respublikası Ali Məhkəməsinin tərkibi",
+   "p": [
+    "Naxçıvan Muxtar Respublikasının Ali Məhkəməsi Rəyasət Heyətindən, mülki kollegiyadan, kommersiya kollegiyasından, inzibati kollegiyadan və cinayət kollegiyasından ibarətdir.",
+    "Naxçıvan Muxtar Respublikasının Ali Məhkəməsi kollegiyalarında işlərə baxmaq üçün məhkəmə tərkibləri yaradılır.",
+    "Naxçıvan Muxtar Respublikası Ali məhkəməsi hakimlərinin tərkibinə məhkəmənin sədri, onun müavini, məhkəmə kollegiyalarının sədrləri və hakimləri daxildirlər.",
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsi hakimlərinin sayı Məhkəmə-Hüquq Şurası tərəfindən müəyyənləşdirilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "54",
+   "t": "Naxçıvan Muxtar Respublikası Ali Məhkəməsinin Rəyasət Heyətinin tərkibi və səlahiyyətləri",
+   "p": [
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsinin Rəyasət Heyəti məhkəmənin sədrindən, onun müavinindən və kollegiya sədrlərindən ibarət tərkibdə fəaliyyət göstərir.",
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsi Rəyasət Heyətinin tərkibinə daxil olan şəxslərin öz səlahiyyətləri daxilində bərabər hüquqları vardır.",
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsi Rəyasət Heyəti:",
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsinin hakimləri sırasından məhkəmə kollegiyalarını və müvafiq məhkəmə tərkiblərini təşkil edir;",
+    "Naxçıvan Muxtar Respublikasının Ali Məhkəməsi sədrinin təqdimatına əsasən Naxçıvan Muxtar Respublikasının Ali Məhkəməsi yanında Elmi-məsləhət şurasının Əsasnaməsini və tərkibini təsdiq edir;",
+    "qanunla müəyyən edilmiş qaydada qanunvericilik və digər normativ aktların Azərbaycan Respublikasının Konstitusiyasına və qanunlarına uyğunsuzluğu barədə Konstitusiya Məhkəməsinə sorğu verilməsi üçün Ali Məhkəməyə müraciət edir;",
+    "Azərbaycan Respublikası qanunvericiliyinin tətbiqinin məhkəmə təcrübəsinə dair məsələləri üzrə və Naxçıvan Muxtar Respublikasında ədalət mühakiməsinin həyata keçirilməsi vəziyyətinə dair Naxçıvan Muxtar Respublikası Ali Məhkəməsi sədrinin, onun müavininin, kollegiya sədrlərinin, Naxçıvan Muxtar Respublikası Ali Məhkəməsinin ərazi yurisdiksiyasına aid edilmiş birinci instansiya məhkəmələrinin sədrlərinin məlumatlarını dinləyir;",
+    "məhkəmə təcrübəsinin ümumiləşdirilməsi və məhkəmə statistikasının təhlili barədə materiallara baxır;",
+    "qanunvericilik aktlarının düzgün tətbiq edilməsi barədə Naxçıvan Muxtar Respublikası Ali Məhkəməsinin ərazi yurisdiksiyasına aid edilmiş birinci instansiya məhkəmələrinə metodik kömək göstərir;",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "55",
+   "t": "Naxçıvan Muxtar Respublikası Ali Məhkəməsi Rəyasət Heyətinin iş qaydası",
+   "p": [
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsinin Rəyasət Heyətinin iclasları üç ayda bir dəfədən az olmayaraq keçirilir. Naxçıvan Muxtar Respublikası Ali Məhkəməsinin sədri Rəyasət Heyətinin iclaslarına sədrlik edir.",
+    "Naxçıvan Muxtar Respublikasının prokuroru, Naxçıvan Muxtar Respublikası müvafiq icra hakimiyyəti orqanının rəhbəri və digər şəxslər Məhkəmənin Rəyasət Heyətinin iclaslarına dəvət oluna bilərlər. Rəyasət Heyəti iclasının keçirilməsi vaxtı və müzakirəyə çıxarılan məsələlər barədə Rəyasət Heyətinin üzvlərinə iclasa ən geci 10 gün qalmış məlumat verilir, qərar layihələri və başqa materiallar onlara təqdim olunur. Rəyasət Heyətinin azı üç üzvü iştirak etdikdə Rəyasət Heyətinin iclası səlahiyyətli sayılır.",
+    "Rəyasət Heyətinin qərarları açıq səsvermə yolu ilə, səsvermədə iştirak edən Rəyasət Heyəti üzvlərinin səs çoxluğu ilə qəbul olunur.",
+    "Məhkəmənin Rəyasət Heyətinə sədrlik edən başqa hakimlərlə yanaşı səsvermədə iştirak edir və axırıncı səs verir.",
+    "Rəyasət Heyətinin qərarlarını və iclas protokollarını iclasda sədrlik edən imzalayır.",
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsinin aparatı Rəyasət Heyəti iclaslarının hazırlanmasına dair təşkilati işləri həyata keçirir, protokolun aparılmasını təmin edir, Rəyasət Heyətinin qəbul etdiyi qərarların icrası üçün digər zəruri işlər görür."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "56",
+   "t": "Naxçıvan Muxtar Respublikası Ali Məhkəməsi kollegiyalarının səlahiyyətləri",
+   "p": [
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsinin kollegiyaları apellyasiya instansiyası məhkəməsi kimi Naxçıvan Muxtar Respublikası Ali Məhkəməsinin ərazi yurisdiksiyasına aid edilmiş birinci instansiya məhkəmələri tərəfindən baxılmış işlər üzrə qərarlardan verilmiş apellyasiya şikayətləri və apellyasiya protestləri üzrə işlərə baxırlar.",
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsinin kollegiyası Azərbaycan Respublikası qanunvericilik aktlarının düzgün tətbiq edilməsi üçün tədbirlər görür, məhkəmə statistikasını təhlil edir, məhkəmə təcrübəsini öyrənir və ümumiləşdirir, Naxçıvan Muxtar Respublikası Ali Məhkəməsinin ərazi yurisdiksiyasına aid edilmiş birinci instansiya məhkəmələrinə metodik kömək göstərir, Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "57",
+   "t": "Naxçıvan Muxtar Respublikası Ali Məhkəməsi sədrinin səlahiyyətləri",
+   "p": [
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsinin sədri:",
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsinin işinin təşkilinə və məhkəmə aparatının işinə rəhbərlik edir, məhkəmədə əmək və icra intizamına əməl olunmasını təmin edir;",
+    "Məhkəmə kollegiyalarının iclaslarına sədrlik edir, işlərin kargüzarlıq qaydalarına uyğun bölüşdürülməsinə nəzarət edir;",
+    "Məhkəmə kollegiyalarının tərkiblərinin təşkil edilməsinə dair Naxçıvan Muxtar Respublikası Ali Məhkəməsinin Rəyasət Heyətinə təkliflər verir;",
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsi aparatı işçilərinin işə qəbul və işdən azad edilməsi, mükafatlandırılması və intizam qaydasında cəzalandırılması məsələlərini həll edir;",
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsi aparatının strukturunu, ştat cədvəlini, xərc smetasını müəyyən edir;",
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsinin və onun ərazi yurisdiksiyasına aid edilmiş birinci instansiya məhkəmələrinin hakimlərinin mükafatlandırılması barədə Məhkəmə-Hüquq Şurasına təklif verir;",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə müəyyən edilmiş hallarda və qaydada Naxçıvan Muxtar Respublikası Ali Məhkəməsinin və onun ərazi yurisdiksiyasına aid edilmiş birinci instansiya məhkəmələrinin hakimlərinin intizam məsuliyyətinə cəlb edilməsi barədə Məhkəmə-Hüquq Şurasına müraciət edir;",
+    "Naxçıvan Muxtar Respublikasının Ali Məhkəməsini təmsil edir;",
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsinin Rəyasət Heyəti iclaslarını çağırır, onun vaxtını və gündəliyini müəyyən edir və bu iclaslara sədrlik edir, Rəyasət Heyətinin qərarlarını və iclas protokollarını imzalayır;",
+    "Ali Məhkəmənin Plenumunda iştirak edir, Naxçıvan Muxtar Respublikası Ali Məhkəməsinin ərazi yurisdiksiyasına aid edilmiş birinci instansiya məhkəmələrində və Naxçıvan Muxtar Respublikasının Ali Məhkəməsində ədalət mühakiməsinin həyata keçirilməsi vəziyyətinə dair məlumat verir;",
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsinin hakimlərinin və aparatı işçilərinin ixtisasının artırılması işini təşkil edir;",
+    "qanunvericilik aktlarının düzgün tətbiq edilməsi üçün məhkəmələrə metodik kömək göstərir;",
+    "məhkəmə statistikasının təhlili, məhkəmə təcrübəsinin öyrənilməsi və ümumiləşdirilməsi işini təşkil edir;",
+    "məhkəmə təcrübəsinin öyrənilməsi və ümumiləşdirilməsi ilə əlaqədar Naxçıvan Muxtar Respublikası Ali Məhkəməsinin ərazi yurisdiksiyasına aid edilmiş birinci instansiya məhkəmələrindən işləri tələb edir;",
+    "şəxslərin qəbulu, təklif, ərizə və şikayətlərə baxılması sahəsində məhkəmənin işini təşkil edir;",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "58",
+   "t": "Naxçıvan Muxtar Respublikası Ali Məhkəməsi sədr müavininin səlahiyyətləri",
+   "p": [
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsinin sədr müavini:",
+    "məhkəmə iclaslarında sədrlik edir, Naxçıvan Muxtar Respublikası Ali Məhkəməsinin sədri tərəfindən müəyyən edilmiş məsələləri həll edir, sədrin tapşırığı ilə onun ayrı-ayrı səlahiyyətlərini həyata keçirir, sədr olmadıqda və ya öz vəzifələrini yerinə yetirə bilmədikdə onu əvəz edir;",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "59",
+   "t": "Naxçıvan Muxtar Respublikası Ali Məhkəməsi kollegiyaları sədrlərinin səlahiyyətləri",
+   "p": [
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsi kollegiyasının sədri:",
+    "müvafiq məhkəmə kollegiyasının iclaslarına sədrlik edir, məhkəmə kollegiyasının işinin təşkilinə rəhbərlik edir;",
+    "məhkəmə statistikasının təhlili, məhkəmə təcrübəsinin öyrənilməsi və ümumiləşdirilməsi işini təşkil edir;",
+    "məhkəmə təcrübəsinin öyrənilməsi və ümumiləşdirilməsi ilə əlaqədar Naxçıvan Muxtar Respublikası Ali Məhkəməsinin ərazi yurisdiksiyasına aid edilmiş birinci instansiya məhkəmələrindən işləri tələb edir;",
+    "şəxslərin qəbulu, təklif, ərizə və şikayətlərə baxılması sahəsində məhkəmə kollegiyalarının işini təşkil edir;",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "60",
+   "t": "Naxçıvan Muxtar Respublikası Ali Məhkəməsi sədr müavininin və kollegiya sədrlərinin əvəz edilməsi",
+   "p": [
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsi sədrinin müavini vəzifələrini yerinə yetirə bilmədikdə və ya onun səlahiyyət müddəti bitdikdə onun vəzifələrinin icrası Naxçıvan Muxtar Respublikası Ali Məhkəməsi sədrinin sərəncamı ilə müvəqqəti olaraq həmin məhkəmə kollegiya sədrlərindən birinə həvalə edilir.",
+    "Məhkəmə kollegiyasının sədri vəzifələrini yerinə yetirə bilmədikdə və ya onun səlahiyyət müddəti bitdikdə onun vəzifələrinin icrası Naxçıvan Muxtar Respublikası Ali Məhkəməsi sədrinin sərəncamı ilə müvəqqəti olaraq həmin kollegiyanın hakimlərindən birinə həvalə edilir."
+   ]
+  },
+  {
+   "k": "f",
+   "n": "XI fəsil",
+   "t": "Apellyasiya məhkəmələri"
+  },
+  {
+   "k": "m",
+   "n": "61",
+   "t": "Apellyasiya məhkəməsi",
+   "p": [
+    "Azərbaycan Respublikası Konstitusiyasının 132-ci maddəsinin I hissəsinə müvafiq olaraq apellyasiya məhkəməsi mülki, kommersiya və inzibati mübahisələrə dair, cinayət və inzibati xətalara dair işlər üzrə yuxarı instansiya məhkəməsidir.",
+    "Apellyasiya məhkəməsinin təşkili və olduğu yer Məhkəmə-Hüquq Şurasının təklifi nəzərə alınmaqla Azərbaycan Respublikası Konstitusiyasının 109-cu maddəsinin 32-ci bəndinə uyğun olaraq müəyyən olunur, ərazi yurisdiksiyası isə Məhkəmə-Hüquq Şurası tərəfindən müəyyənləşdirilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "62",
+   "t": "Apellyasiya məhkəməsinin tərkibi",
+   "p": [
+    "Apellyasiya məhkəməsi Rəyasət Heyətindən, mülki kollegiyadan, kommersiya kollegiyasından, inzibati kollegiyadan və cinayət kollegiyasından ibarətdir. Apellyasiya məhkəməsinin kollegiyalarında işlərə baxmaq üçün məhkəmə tərkibləri yaradılır.",
+    "Apellyasiya məhkəməsi hakimlərinin tərkibinə məhkəmənin sədri, onun müavini, məhkəmə kollegiyalarının sədrləri və hakimləri daxildirlər.",
+    "Apellyasiya məhkəməsi hakimlərinin sayı Məhkəmə-Hüquq Şurası tərəfindən müəyyənləşdirilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "63",
+   "t": "Apellyasiya məhkəməsinin Rəyasət Heyətinin tərkibi və səlahiyyətləri",
+   "p": [
+    "Apellyasiya məhkəməsinin Rəyasət Heyəti məhkəmənin sədrindən, onun müavinindən və kollegiya sədrlərindən ibarət tərkibdə fəaliyyət göstərir.",
+    "Apellyasiya məhkəməsi Rəyasət Heyətinin tərkibinə daxil olan şəxslərin öz səlahiyyətləri daxilində bərabər hüquqları vardır.",
+    "Apellyasiya məhkəməsinin Rəyasət Heyəti:",
+    "apellyasiya məhkəməsinin hakimləri sırasından məhkəmə kollegiyalarını və müvafiq məhkəmə tərkiblərini təşkil edir;",
+    "qanunla müəyyən edilmiş qaydada qanunvericilik və digər normativ aktların Azərbaycan Respublikasının Konstitusiyasına və qanunlarına uyğunsuzluğu barədə Konstitusiya Məhkəməsinə sorğu verilməsi üçün Ali Məhkəməyə müraciət edir;",
+    "Azərbaycan Respublikası qanunvericiliyinin tətbiqinin məhkəmə təcrübəsinə dair məsələləri üzrə apellyasiya məhkəməsi kollegiya sədrlərinin və həmin apellyasiya məhkəməsinin ərazi yurisdiksiyasına aid edilmiş birinci instansiya məhkəmələri sədrlərinin, məlumatlarını dinləyir;",
+    "apellyasiya məhkəməsində baxılan işlər üzrə məhkəmə təcrübəsinin ümumiləşdirilməsi və məhkəmə statistikasının təhlili barədə materiallara baxır;",
+    "qanunvericilik aktlarının düzgün tətbiq edilməsi barədə həmin apellyasiya məhkəməsinin ərazi yurisdiksiyasına aid edilmiş birinci instansiya məhkəmələrinə metodik kömək göstərir;",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "64",
+   "t": "Apellyasiya məhkəməsi Rəyasət Heyətinin iş qaydası",
+   "p": [
+    "Apellyasiya məhkəməsi Rəyasət Heyətinin iclasları üç ayda bir dəfədən az olmayaraq keçirilir. Apellyasiya məhkəməsinin sədri Rəyasət Heyətinin iclaslarına sədrlik edir.",
+    "Azərbaycan Respublikası Prokurorluğunun və müvafiq icra hakimiyyəti orqanının nümayəndələri, habelə digər şəxslər apellyasiya məhkəməsinin Rəyasət Heyətinin iclaslarına dəvət oluna bilərlər.",
+    "Rəyasət Heyəti iclasının keçirilməsi vaxtı və müzakirəyə çıxarılan məsələlər barədə Rəyasət Heyətinin üzvlərinə iclasa ən geci 10 gün qalmış məlumat verilir, qərar layihələri və başqa materiallar onlara təqdim olunur.",
+    "Rəyasət Heyətinin azı üç üzvü iştirak etdikdə Rəyasət Heyətinin iclası səlahiyyətli sayılır.",
+    "Rəyasət Heyətinin qərarları açıq səsvermə yolu ilə, səsvermədə iştirak edən Rəyasət Heyəti üzvlərinin səs çoxluğu ilə qəbul olunur.",
+    "Məhkəmənin Rəyasət Heyətinə sədrlik edən başqa hakimlərlə yanaşı səsvermədə iştirak edir və axırıncı səs verir.",
+    "Rəyasət Heyətinin qərarlarını və iclas protokollarını iclasda sədrlik edən imzalayır.",
+    "Apellyasiya məhkəməsinin aparatı Rəyasət Heyəti iclaslarının hazırlanmasına dair təşkilati işləri həyata keçirir, protokolun aparılmasını təmin edir, Rəyasət Heyətinin qəbul etdiyi qərarların icrası üçün digər zəruri tədbirlər görür."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "65",
+   "t": "Apellyasiya məhkəməsi kollegiyalarının səlahiyyətləri",
+   "p": [
+    "Apellyasiya məhkəməsinin kollegiyaları:",
+    "apellyasiya instansiyası məhkəməsi kimi həmin apellyasiya məhkəməsinin ərazi yurisdiksiyasına aid edilmiş birinci instansiya məhkəmələri tərəfindən baxılmış işlər üzrə qərarlardan verilmiş apellyasiya şikayətləri və apellyasiya protestləri üzrə işlərə baxırlar.",
+    "Apellyasiya məhkəməsinin kollegiyası məhkəmə statistikasını təhlil edir, məhkəmə təcrübəsini öyrənir və ümumiləşdirir, qanunvericilik aktlarının düzgün tətbiq edilməsi üçün həmin apellyasiya məhkəməsinin ərazi yurisdiksiyasına aid edilmiş birinci instansiya məhkəmələrinə metodik kömək göstərir. Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "66",
+   "t": "Apellyasiya məhkəməsi sədrinin səlahiyyətləri",
+   "p": [
+    "Apellyasiya məhkəməsinin sədri:",
+    "apellyasiya məhkəməsinin işinin təşkilinə və məhkəmə aparatının işinə rəhbərlik edir, məhkəmədə əmək və icra intizamına əməl olunmasını təmin edir;",
+    "Məhkəmə kollegiyalarının iclaslarına sədrlik edir, işlərin kargüzarlıq qaydalarına uyğun bölüşdürülməsinə nəzarət edir;",
+    "Məhkəmə kollegiyalarının tərkiblərinin təşkil edilməsinə dair apellyasiya məhkəməsinin Rəyasət Heyətinə təkliflər verir;",
+    "apellyasiya məhkəməsi aparatı işçilərinin işə qəbul və işdən azad edilməsi, mükafatlandırılması və intizam qaydasında cəzalandırılması məsələlərini həll edir;",
+    "apellyasiya məhkəməsi aparatının strukturunu, ştat cədvəlini, xərc smetasını müəyyən edir;",
+    "apellyasiya məhkəməsi və həmin apellyasiya məhkəməsinin ərazi yurisdiksiyasına aid edilmiş birinci instansiya məhkəmələri hakimlərinin mükafatlandırılması barədə Məhkəmə-Hüquq Şurasına təklif verir;",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə müəyyən edilmiş hallarda və qaydada həmin apellyasiya məhkəməsinin ərazi yurisdiksiyasına aid edilmiş birinci instansiya məhkəmələri hakimlərinin və apellyasiya məhkəməsi hakimlərinin intizam məsuliyyətinə cəlb edilməsi barədə Məhkəmə-Hüquq Şurasına müraciət edir;",
+    "apellyasiya məhkəməsini təmsil edir;",
+    "apellyasiya məhkəməsinin Rəyasət Heyəti iclaslarını çağırır, onun vaxtını və gündəliyini müəyyən edir və bu iclaslara sədrlik edir, Rəyasət Heyətinin qərarlarını və iclas protokollarını imzalayır;",
+    "Ali Məhkəmənin Plenumunda iştirak edir, həmin apellyasiya məhkəməsinin ərazi yurisdiksiyasına aid edilmiş birinci instansiya məhkəmələrində və apellyasiya məhkəməsində ədalət mühakiməsinin həyata keçirilməsi vəziyyətinə dair məlumat verir;",
+    "apellyasiya məhkəməsi hakimlərinin və aparatı işçilərinin ixtisasının artırılması işini təşkil edir;",
+    "qanunvericilik aktlarının düzgün tətbiq edilməsi üçün məhkəmələrə metodik kömək göstərir;",
+    "məhkəmə statistikasının təhlili, apellyasiya məhkəməsində baxılmış işlər üzrə məhkəmə təcrübəsindən öyrənilməsi və ümumiləşdirilməsi işini təşkil edir;",
+    "məhkəmə təcrübəsinin öyrənilməsi və ümumiləşdirilməsi ilə əlaqədar həmin apellyasiya məhkəməsinin ərazi yurisdiksiyasına aid edilmiş birinci instansiya məhkəmələrindən işləri tələb edir;",
+    "şəxslərin qəbulu, təklif, ərizə və şikayətlərə baxılması sahəsində məhkəmənin işini təşkil edir;",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "67",
+   "t": "Apellyasiya məhkəməsi sədr müavininin səlahiyyətləri",
+   "p": [
+    "Apellyasiya məhkəməsinin sədr müavini:",
+    "məhkəmə iclaslarında sədrlik edir, apellyasiya məhkəməsinin sədri tərəfindən müəyyən edilmiş məsələləri həll edir, sədrin tapşırığı ilə onun ayrı-ayrı səlahiyyətlərini həyata keçirir, sədr olmadıqda və ya öz vəzifələrini yerinə yetirə bilmədikdə onu əvəz edir;",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "68",
+   "t": "Apellyasiya məhkəməsi kollegiyaları sədrlərinin səlahiyyətləri",
+   "p": [
+    "Apellyasiya məhkəməsi kollegiyasının sədri:",
+    "müvafiq məhkəmə kollegiyasının iclaslarına sədrlik edir, məhkəmə kollegiyasının işinin təşkilinə rəhbərlik edir;",
+    "məhkəmə statistikasının təhlili, apellyasiya məhkəmələrində baxılmış işlər üzrə məhkəmə təcrübəsinin öyrənilməsi və ümumiləşdirilməsi işini təşkil edir;",
+    "məhkəmə təcrübəsinin öyrənilməsi və ümumiləşdirilməsi ilə əlaqədar məhkəmələrdən işləri tələb edir;",
+    "şəxslərin qəbulu, təklif, ərizə və şikayətlərə baxılması sahəsində məhkəmə kollegiyasının işini təşkil edir;",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "69",
+   "t": "Apellyasiya məhkəməsi sədr müavininin və kollegiya sədrlərinin əvəz edilməsi",
+   "p": [
+    "Apellyasiya məhkəməsi sədrinin müavini vəzifələrini yerinə yetirə bilmədikdə və ya onun səlahiyyət müddəti bitdikdə onun vəzifələrinin icrası apellyasiya məhkəməsi sədrinin sərəncamı ilə müvəqqəti olaraq həmin məhkəmə kollegiya sədrlərindən birinə həvalə edilir.",
+    "Apellyasiya məhkəməsinin kollegiya sədri vəzifələrini yerinə yetirə bilmədikdə və ya onun səlahiyyət müddəti bitdikdə onun vəzifələrinin icrası Apellyasiya Məhkəməsi sədrinin sərəncamı ilə müvəqqəti olaraq həmin kollegiyanın hakimlərindən birinə həvalə edilir.",
+    "(Çıxarılıb)"
+   ]
+  },
+  {
+   "k": "f",
+   "n": "XIII fəsil",
+   "t": "Ali Məhkəmə"
+  },
+  {
+   "k": "m",
+   "n": "77",
+   "t": "Ali Məhkəmə",
+   "p": [
+    "Azərbaycan Respublikası Konstitusiyasının 131-ci maddəsinə uyğun olaraq Ali Məhkəmə ümumi və ixtisaslaşdırılmış məhkəmələrin icraatına aid olan mülki (o cümlədən kommersiya və inzibati mübahisələrə dair), cinayət işləri və digər işlər üzrə ali məhkəmə orqanıdır.",
+    "Ali Məhkəmə kassasiya instansiyası məhkəməsi kimi qanunla müəyyən edilmiş prosessual qaydada ədalət mühakiməsini həyata keçirir.",
+    "Ali Məhkəmə Azərbaycan Respublikasının paytaxtı Bakı şəhərində təşkil edilir, onun yurisdiksiyası Azərbaycan Respublikasının bütün ərazisinə şamil edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "78",
+   "t": "Ali Məhkəmənin tərkibi",
+   "p": [
+    "Ali Məhkəmənin tərkibinə Ali Məhkəmənin sədri, onun müavini, kollegiya sədrləri və hakimləri daxildirlər.",
+    "Ali Məhkəmə Plenumdan və kassasiya kollegiyasından ibarətdir.",
+    "Ali Məhkəmədə mülki kollegiya, kommersiya kollegiyası, inzibati kollegiya və cinayət kollegiyası təşkil edilir.",
+    "Ali Məhkəmə hakimlərinin sayı Məhkəmə-Hüquq Şurası tərəfindən olaraq müəyyənləşdirilir.",
+    "Qanunların düzgün tətbiq olunması, qanunvericiliyin təkmilləşdirilməsi və elmi təkliflərin hazırlanması məqsədilə Ali Məhkəmənin yanında Elmi-məsləhət şurası fəaliyyət göstərir.",
+    "(Çıxarılıb)"
+   ]
+  },
+  {
+   "k": "m",
+   "n": "79",
+   "t": "Ali Məhkəmənin Plenumu və onun səlahiyyətləri",
+   "p": [
+    "Ali Məhkəmənin plenumu Ali Məhkəmənin sədrindən, onun müavinindən, kollegiya sədrlərindən və hakimlərindən ibarət tərkibdə fəaliyyət göstərir.",
+    "Ali Məhkəmənin Plenumunun tərkibinə daxil olan şəxslərin öz səlahiyyətləri daxilində bərabər hüquqları vardır.",
+    "Ali Məhkəmənin Plenumu:",
+    "Azərbaycan Respublikası məhkəmələrində qanunvericiliyin tətbiqinin məhkəmə təcrübəsinə dair məsələləri üzrə məhkəmə sədrlərinin məlumatlarını dinləyir və ədalət mühakiməsinin həyata keçirilməsi vəziyyətinə dair Ali Məhkəmə sədrinin, onun müavininin və kollegiya sədrlərinin, apellyasiya məhkəmələri sədrlərinin, Naxçıvan Muxtar Respublikası Ali Məhkəməsi sədrinin və digər ümumi və ixtisaslaşdırılmış məhkəmə sədrlərinin məlumatlarını dinləyir, işlər üzrə məhkəmə təcrübəsinin ümumiləşdirilməsi və məhkəmə statistikasının təhlili barədə materiallara baxır;",
+    "Ali Məhkəmə sədrinin təklifinə əsasən Ali Məhkəmənin hakimləri sırasından məhkəmə kollegiyalarını və müvafiq məhkəmə tərkiblərini təşkil edir;",
+    "Ali Məhkəmə sədrinin təqdimatına əsasən Ali Məhkəmə yanında Elmi-məsləhət şurasının Əsasnaməsini və tərkibini təsdiq edir;",
+    "Azərbaycan Respublikası Konstitusiyasının 130-cu maddəsinə uyğun olaraq Konstitusiya Məhkəməsinə sorğu verir;",
+    "Azərbaycan Respublikası Konstitusiyasının 128-ci maddəsinə müvafiq olaraq Azərbaycan Respublikası hakimlərinin vəzifədən kənarlaşdırılması barədə Azərbaycan Respublikası Prezidentinin sorğusuna baxır və müvafiq rəyi sorğu verildikdən sonra 30 gün müddətində Azərbaycan Respublikası Prezidentinə təqdim edir;",
+    "Azərbaycan Respublikası Konstitusiyasının 131-ci maddəsinə uyğun olaraq məhkəmə təcrübəsinə dair məsələlər üzrə məhkəmələrə izahlar verir, verilmiş izahların aktuallığını təmin etmək məqsədilə onların yenilənməsini təşkil edir;",
+    "qanunla müəyyən edilmiş hallarda və qaydada Ali Məhkəmə sədrinin təqdimatı, Azərbaycan Respublikası Baş prokurorunun protesti və ya müdafiə tərəfinin şikayəti əsasında əlavə kassasiya işlərinə və yaxud hüquq və azadlıqların pozulması ilə bağlı yeni hallar və yeni açılmış hallar üzrə işlərə baxır;",
+    "Azərbaycan Respublikası Konstitusiyasının 96-cı maddəsinə uyğun olaraq Azərbaycan Respublikası Milli Məclisinə qanunvericilik təşəbbüsü ilə müraciət etmək barədə məsələlərə baxır və qərar qəbul edir;",
+    "Azərbaycan Respublikası hakimlərinin andını qəbul edir;",
+    "qanunvericiliklə müəyyən edilmiş hallarda Məhkəmə-Hüquq Şurasının qərarlarından verilmiş şikayətlərə baxır;",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "79-1",
+   "t": "Ali Məhkəmə tərəfindən vahid məhkəmə təcrübəsinin formalaşdırılması",
+   "p": [
+    "Vahid məhkəmə təcrübəsi məhkəmələrin hüquqi məsələlərin həllinə yanaşmasının sabitliyini və ədalət mühakiməsi həyata keçirilərkən maddi və prosessual hüquq normalarının eyni cür tətbiq edilməsini təmin etmək məqsədilə formalaşdırılır.",
+    "Ali Məhkəmə hüququn tətbiqi üzrə vahid məhkəmə təcrübəsini baxdığı işlər üzrə məhkəmə kollegiyalarının və Ali Məhkəmənin Plenumunun qərarları, habelə Ali Məhkəmənin Plenumunun məhkəmə təcrübəsinə dair verdiyi izahlar vasitəsilə formalaşdırır.",
+    "Məhkəmə təcrübəsinin ümumiləşdirilməsi nəticəsində məhkəmələr tərəfindən maddi və prosessual hüquq normalarının tətbiqində sistemli xarakter daşıyan nöqsanlar müəyyən edildikdə Ali Məhkəmənin Plenumu məsələyə baxır və belə nöqsanlara yol verilməməsi üçün müvafiq izahı nəzərdə tutan qərar qəbul edir.",
+    "Ali Məhkəmə Plenumunun məhkəmələr tərəfindən maddi və prosessual hüquq normalarının tətbiqində sistemli xarakter daşıyan nöqsanlarla bağlı qərarı qəbul edildikdən sonra nöqsanların müəyyən edildiyi sahədə məhkəmələrin fəaliyyətinin monitorinqi təşkil edilir. Monitorinq ən azı 1 il müddətində həyata keçirilir. Monitorinqin aparılması qaydasını Ali Məhkəmənin təklifləri əsasında Məhkəmə-Hüquq Şurası müəyyən edir.",
+    "Monitorinqin nəticələri hakimlərin fəaliyyətinin Məhkəmə-Hüquq Şurası tərəfindən qiymətləndirilməsi zamanı nəzərə alınır."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "80",
+   "t": "Ali Məhkəmənin Plenumunun iş qaydası",
+   "p": [
+    "Ali Məhkəmənin Plenumu üç ayda bir dəfədən az olmayaraq çağırılır. Ali Məhkəmənin sədri Ali Məhkəmənin Plenumunun iclaslarına sədrlik edir.",
+    "Ali Məhkəmənin Plenumunun iclaslarında apellyasiya məhkəmələrinin sədrləri, Naxçıvan Muxtar Respublikası Ali Məhkəməsinin sədri, Azərbaycan Respublikasının Baş prokuroru və müvafiq icra hakimiyyəti orqanın rəhbəri iştirak edirlər. Ali Məhkəmənin Plenumunun iclaslarında əlavə kassasiya qaydasında və ya hüquq və azadlıqların pozulması ilə bağlı yeni hallar və yeni açılmış hallar üzrə işlərin baxılmasında müdafiə tərəfin iştirakı təmin edilir. Ali Məhkəmənin Plenumunun iclaslarına digər şəxslər də dəvət oluna bilərlər.",
+    "Ali Məhkəmənin Plenumunun çağırılması vaxtı və müzakirə çıxarılan məsələlər barədə Plenumun üzvlərinə və Plenumda iştirak edən digər şəxslərə Plenuma ən geci 10 gün qalmış məlumat verilir, qərar layihələri və başqa materiallar onlara təqdim olunur.",
+    "Ali Məhkəmənin Plenumu üzvlərinin üçdə iki hissəsi iştirak etdikdə Plenumun iclası səlahiyyətli sayılır.",
+    "Ali Məhkəmənin Plenumunun qərarları açıq səsvermə yolu ilə səsvermədə iştirak edənlərin səs çoxluğu ilə qəbul olunur. Ali Məhkəmənin Plenumunun üzvləri məhkəmə işləri üzrə səsvermədə bitərəf qala bilməzlər.",
+    "Ali Məhkəmənin Plenumuna sədrlik edən başqa hakimlərlə yanaşı səsvermədə iştirak edir və axırıncı səs verir.",
+    "Ali Məhkəmənin Plenumunun işində iştirak edən digər şəxslər, həmçinin Ali Məhkəmənin sədri məhkəmə qərarlarından əlavə kassasiya qaydasında və yeni açılmış hallara görə Ali Məhkəmənin Plenumuna verdiyi təqdimatlarla əlaqədar baxılan işlər üzrə səsvermədə iştirak etmirlər. Plenum baxılan məsələlər üzrə qərarlar qəbul edir. Plenumun qərarlarını və iclas protokollarını iclasa sədrlik edən imzalayır.",
+    "Ali Məhkəmənin aparatı Plenumun iclaslarının hazırlanmasına dair təşkilati işləri həyata keçirir, protokolun aparılmasını təmin edir, Plenumun qəbul etdiyi qərarların icrası üçün digər zəruri işlər görür.",
+    "Məhkumun vəziyyətini ağırlaşdıran əsaslara görə məhkəmə qərarları, bəraət hökmü, bəraətverici əsaslarla cinayət işinin icraatına xitam verilməsi haqqında məhkəmə qərarları səsvermədə iştirak edən Plenum iştirakçılarının üçdə iki səs çoxluğu ilə ləğv edilə bilər.",
+    "Ali Məhkəmənin Plenumu onun sonuncu iclasından ötən dövr ərzində Azərbaycan Respublikası Cinayət-Prosessual, Mülki Prosessual və İnzibati Prosessual məcəllələrində müəyyən edilmiş qaydada müvafiq kollegiyaların bütün hakimlərindən ibarət tərkibdə qəbul etdiyi qərarları (qərardadları) nəzərdən keçirir və Ali Məhkəmənin Plenumunun məhkəmə təcrübəsinə dair məsələlər üzrə mövcud izahına dəyişikliklər edir və ya yeni izah verir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "81",
+   "t": "Ali Məhkəmə kollegiyalarının səlahiyyətləri",
+   "p": [
+    "Ali Məhkəmənin kollegiyalarında aşağıdakı işlərə baxılır:",
+    "apellyasiya məhkəmələrinin baxdığı işlərə dair qərarlardan verilmiş kassasiya şikayətləri və kassasiya protestləri üzrə işlərə;",
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsinin baxdığı işlərə dair qərarlardan verilmiş kassasiya şikayətləri və kassasiya protestləri üzrə işlərə;",
+    "qanunla müəyyən edilmiş hallarda digər ümumi və ixtisaslaşdırılmış məhkəmələrinin baxdığı işlərə dair qərarlardan verilmiş kassasiya şikayətləri və kassasiya protestləri üzrə işlərə;",
+    "qanunla müəyyən edilmiş qaydada və hallarda Ali Məhkəmə sədrinin kassasiya qaydasında verdiyi təqdimatlar üzrə işlərə.",
+    "Ali Məhkəmənin kollegiyaları məhkəmə statistikasını təhlil edir, məhkəmə təcrübəsini öyrənir və ümumiləşdirir, Azərbaycan Respublikasının məhkəmələrinə metodik kömək göstərir, Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "82",
+   "t": "Ali Məhkəmə kollegiyalarının iş qaydası",
+   "p": [
+    "Ali Məhkəmə səlahiyyətinə aid edilmiş işlərə Azərbaycan Respublikasının qanunvericiliyində nəzərdə tutulmuş qaydada və hədlərdə kollegiyaların iclaslarında baxır.",
+    "Məhkəmə kollegiyalarında işlərə baxmaq üçün məhkəmə tərkibləri yaradılır.",
+    "Məhkəmə kollegiyalarının işinə rəhbərliyi kollegiyanın sədrləri həyata keçirirlər.",
+    "(Çıxarılıb)"
+   ]
+  },
+  {
+   "k": "m",
+   "n": "83",
+   "t": "Ali Məhkəmə sədrinin səlahiyyətləri",
+   "p": [
+    "Ali Məhkəmənin sədri:",
+    "Ali Məhkəmənin işinin təşkilinə və onun katibliyinin işinə rəhbərlik edir, Ali Məhkəmədə əmək və icra intizamına əməl olunmasını təmin edir;",
+    "Ali Məhkəmə kollegiyalarının iclaslarına sədrlik edir, işlərin kollegiyalar arasında kargüzarlıq qaydasına uyğun bölüşdürülməsinə nəzarət edir, başqa vəzifələri bölüşdürür;",
+    "Ali Məhkəmənin hakimlərinin kollegiyalar üzrə müəyyən edilməsinə dair Ali Məhkəmənin Plenumuna təkliflər verir;",
+    "aidiyyətə dair mübahisələrə baxılması üçün Ali Məhkəmənin müvafiq kollegiyalarının hakimlərindən ibarət qarışıq tərkibləri müəyyən edir;",
+    "Ali Məhkəmə aparatının işçilərinin işə qəbul və işdən azad edilməsi, mükafatlandırılması və intizam qaydasında cəzalandırılması məsələlərini həll edir;",
+    "Ali Məhkəmə aparatının strukturunu, ştat cədvəlini, xərc smetasını müəyyən edir;",
+    "Azərbaycan Respublikası hakimlərinin mükafatlandırılması barədə Məhkəmə-Hüquq Şurasına təklif verir;",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə müəyyən edilmiş hallarda və qaydada Azərbaycan Respublikası məhkəmələri hakimlərinin intizam məsuliyyətinə cəlb edilməsi, habelə onların səlahiyyətlərinə xitam verilməsi barədə Məhkəmə-Hüquq Şurasına müraciət edir;",
+    "məhkəmələrdən işləri tələb edir;",
+    "qanunla müəyyən edilmiş hallarda və qaydada məhkəmə qərarlarından Ali Məhkəmənin Plenumuna əlavə kassasiya qaydasında təqdimatlar verir;",
+    "qanunla müəyyən edilmiş hallarda və qaydada yeni açılmış hallar üzrə Ali Məhkəmənin Plenumuna təqdimatlar verir;",
+    "Ali Məhkəməni təmsil edir;",
+    "Ali Məhkəmənin Plenumunun iclaslarını çağırır, onun vaxtını, gündəliyini müəyyən edir və bu iclaslara sədrlik edir, Plenumun qərarlarını və iclas protokollarını imzalayır;",
+    "Ali Məhkəmənin Plenumunda Azərbaycan Respublikasının ümumi və ixtisaslaşdırılmış məhkəmələrində ədalət mühakiməsinin həyata keçirilməsi vəziyyətinə dair məlumat verir;",
+    "Ali Məhkəmənin hakimlərinin və aparatı işçilərinin ixtisasının artırılması işini təşkil edir;",
+    "məhkəmə statistikasının təhlili, məhkəmə təcrübəsinin öyrənilməsi və ümumiləşdirilməsi işini təşkil edir;",
+    "qanunvericilik aktlarının düzgün tətbiq edilməsi üçün məhkəmələrə metodik kömək göstərir;",
+    "şəxslərin qəbulu, təklif, ərizə və şikayətlərə baxılması sahəsində məhkəmənin işini təşkil edir;",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "84",
+   "t": "Ali Məhkəmənin sədr müavininin səlahiyyətləri",
+   "p": [
+    "Ali Məhkəmənin sədr müavini:",
+    "məhkəmə iclaslarında sədrlik edir, Ali Məhkəmənin sədri tərəfindən müəyyən edilmiş məsələləri həll edir, sədrin tapşırığı ilə onun ayrı-ayrı səlahiyyətlərini həyata keçirir, sədr olmadıqda və ya öz vəzifələrini yerinə yetirə bilmədikdə onu əvəz edir;",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "84-1",
+   "t": "Ali Məhkəmənin kollegiya sədrinin səlahiyyətləri",
+   "p": [
+    "Ali Məhkəmə kollegiyasının sədri:",
+    "müvafiq məhkəmə kollegiyasının iclaslarında sədrlik edir, məhkəmə kollegiyasının işinin təşkilinə rəhbərlik edir;",
+    "işlərin kargüzarlıq qaydalarına uyğun bölüşdürülməsinə nəzarət edir, başqa vəzifələri bölüşdürür;",
+    "məhkəmə statistikasının təhlili, məhkəmə təcrübəsinin öyrənilməsi və ümumiləşdirilməsi işini təşkil edir;",
+    "məhkəmə təcrübəsinin öyrənilməsi və ümumiləşdirilməsi ilə əlaqədar məhkəmələrdən işləri tələb edir;",
+    "Ali Məhkəmənin Plenumunda kollegiyalarda ədalət mühakiməsinin həyata keçirilməsi vəziyyətinə dair məlumat verir;",
+    "qanunvericilik aktlarının düzgün tətbiq edilməsi üçün məhkəmələrə metodik kömək göstərir;",
+    "şəxslərin qəbulu, təklif, ərizə və şikayətlərinə baxılması sahəsində kollegiyanın işini təşkil edir;",
+    "Azərbaycan Respublikasının qanunvericiliyi ilə ona aid edilmiş digər səlahiyyətləri həyata keçirir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "85",
+   "t": "Ali Məhkəmənin sədr müavininin və kollegiya sədrlərinin əvəz edilməsi",
+   "p": [
+    "Ali Məhkəmə sədrinin müavini vəzifələrini yerinə yetirə bilmədikdə və ya onun səlahiyyət müddəti bitdikdə onun vəzifələrinin icrası Ali Məhkəmə sədrinin sərəncamı ilə müvəqqəti olaraq həmin məhkəmənin kollegiya sədrlərinin birinə həvalə edilir.",
+    "Ali Məhkəmənin kollegiya sədri vəzifələrini yerinə yetirə bilmədikdə və ya onun səlahiyyət müddəti bitdikdə onun vəzifələrinin icrası Ali Məhkəmə sədrinin sərəncamı ilə müvəqqəti olaraq həmin kollegiyanın hakimlərindən birinə həvalə edilir."
+   ]
+  },
+  {
+   "k": "f",
+   "n": "XIV fəsil",
+   "t": "Azərbaycan Respublikası məhkəmələrinin fəaliyyətinin təşkilati təminatı"
+  },
+  {
+   "k": "m",
+   "n": "86",
+   "t": "Məhkəmələrin fəaliyyətinin təşkili",
+   "p": [
+    "Müvafiq icra hakimiyyəti orqanı Azərbaycan Respublikasının qanunvericiliyi ilə müəyyənləşdirilmiş qaydada hakimlərin müstəqilliyinə ciddi əməl etməklə Ali Məhkəmənin hakimləri istisna olmaqla, hakimlərin peşə hazırlığının artırılması (Məhkəmə-Hüquq Şurasının müraciətinə əsasən), birinci instansiya məhkəmələrinin fəaliyyəti üçün zəruri şərait yaradılması məsələləri ilə məşğul olur, onların maliyyə və digər maddi-texniki təminatını həyata keçirir.",
+    "Məhkəmə-Hüquq Şurası məhkəmə statistikasının aparılması, məhkəmələrdə kargüzarlığın təşkil edilməsi, hakimlərin əmək və sosial hüquqlarının təmin edilməsi, məhkəmələrdə icra və əmək intizamına riayət edilməsi üçün tədbirlər görür. Məhkəmə-Hüquq Şurası birinci və apellyasiya instansiyası məhkəmələrində bu sahələr üzrə işin təşkili vəziyyətini yoxlamaq, habelə birinci instansiya məhkəmələrində sədr və sədr müavini öz vəzifələrini yerinə yetirə bilmədikdə və ya sədr və sədr müavini vəzifələri vakant olduqda onların vəzifələrinin icrasını müvəqqəti olaraq həmin məhkəmənin hakimlərindən birinə həvalə etmək hüququna malikdir.",
+    "Məhkəmə-Hüquq Şurası bu Qanunun 19-cu maddəsinin birinci hissəsində göstərilən məhkəmələrdə kargüzarlığın aparılması, o cümlədən işlərin təsadüfi və avtomatik şəkildə elektron qaydada bölüşdürülməsi və elektron qaydada yayılan məhkəmə qərarlarının anonimləşdirilməsi qaydalarını müəyyən edir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "87",
+   "t": "Məhkəmələrin fəaliyyətinə dair statistika",
+   "p": [
+    "Azərbaycan Respublikasının məhkəmələri Azərbaycan Respublikası qanunvericiliyi ilə müəyyən olunmuş qaydada hər yarım ildə bir dəfədən az olmayaraq statistika hesabatı tərtib edirlər. Müvafiq məhkəmə sədrləri statistika hesabatlarında göstərilən məlumatların düzgünlüyünə məsuldurlar.",
+    "Məhkəmə-Hüquq Şurası məhkəmə fəaliyyətinə dair statistika hesabatının formalarını müəyyənləşdirir və bu hesabatları dərc edir.",
+    "Məhkəmə-Hüquq Şurası məhkəmə fəaliyyətinə dair statistika hesabatlarını ümumiləşdirir, məhkəmələr tərəfindən məhkəmə fəaliyyətinin təşkilinə dair aparılmış ümumiləşdirmələri öyrənir və təhlil edir.",
+    "Məhkəmə statistikası, həmçinin “Elektron məhkəmə” informasiya sistemi vasitəsilə elektron qaydada aparılır."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "88",
+   "t": "Məhkəmələrin aparatları",
+   "p": [
+    "Məhkəmələrin fəaliyyətinin hüquqi, təşkilati, informasiya, maddi-texniki, maliyyə və təsərrüfat təminatını həyata keçirmək məqsədilə Ali Məhkəmə, apellyasiya məhkəmələri və Naxçıvan Muxtar Respublikası Ali Məhkəməsində və digər məhkəmələrdə məhkəmə aparatları fəaliyyət göstərir.",
+    "Məhkəmələrin aparatları təşkil edilərkən hər hakim üçün məhkəmə katibi və köməkçi nəzərdə tutulmalı, məhkəmələrdə dəftərxana, kitabxana, arxiv, təsərrüfat xidməti fəaliyyət göstərməli, şəxslərin qəbulu, qanunvericiliyin sistemləşdirilməsi və kodifikasiyası, məhkəmə təcrübəsinin ümumiləşdirilməsi və məhkəmə statistikasının aparılması ilə məşğul olan məsləhətçilər olmalı, kargüzarlığın, məhkəmə tərəfindən çıxarılmış qərarların və onlarla bağlı yuxarı instansiya məhkəmələrinin qərarlarının uçotunun aparılması təmin edilməlidir.",
+    "Məhkəmə aparatları məhkəmələrdə şəxslərin qəbulunu həyata keçirirlər. Məhkəmə icraatının təşkilati məsələləri ilə bağlı qəbul müvafiq hakimin məhkəmə katibi tərəfindən həyata keçirilir.",
+    "Ali Məhkəmə, apellyasiya məhkəmələri və Naxçıvan Muxtar Respublikası Ali Məhkəməsi aparatlarının strukturunu, ştat cədvəlini, xərc smetasını müvafiq olaraq Ali Məhkəmənin, apellyasiya məhkəmələrinin və Naxçıvan Muxtar Respublikası Ali Məhkəməsinin sədrləri, digər məhkəmə aparatlarının strukturunu, ştat cədvəlini Məhkəmə-Hüquq Şurası, xərc smetasını isə müvafiq icra hakimiyyəti orqanı müəyyən edir.",
+    "Məhkəmə aparatının işçiləri mütəmadi olaraq müvafiq icra hakimiyyəti orqanının tədris-elm müəssisəsində peşə hazırlığına və ixtisasının artırılmasına cəlb edilirlər. Məhkəmə aparatı işçilərinin peşə hazırlığına və ixtisasının artırılmasına cəlb edilməsi Məhkəmə-Hüquq Şurasının müraciəti əsasında həyata keçirilir.",
+    "(Çıxarılıb)"
+   ]
+  },
+  {
+   "k": "m",
+   "n": "89",
+   "t": "Məhkəmələrdə hüquq qaydalarına əməl edilməsi",
+   "p": [
+    "Məhkəmələrdə hüquq qaydalarına əməl edilməsi, məhkəmələrin binalarının, əmlakının və məhkəmə icraatı ilə bağlı sənədlərinin mühafizəsi Azərbaycan Respublikasının qanunvericiliyi ilə müəyyən edilmiş qaydada həyata keçirilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "90",
+   "t": "Məhkəmələrin maddi-texniki bazası və fəaliyyətinin maliyyələşdirilməsi",
+   "p": [
+    "Məhkəmələr tərəfindən ədalət mühakiməsinin prosessual qanunvericiliyinin tələblərinə uyğun həyata keçirilməsinə lazımi şərait yaradılmasından ötrü hər bir məhkəmə:",
+    "xüsusi təchiz edilmiş binalarla, məhkəmə hakimiyyətinin rəmzləri (Azərbaycan Respublikasının Dövlət bayrağı, Dövlət gerbi və ədalət mühakiməsinin rəsmi emblemi) və hakimlərin xüsusi geyimləri ilə, zəruri nəqliyyat vasitələri və təşkilati-texniki qurğularla;",
+    "blanklar, ştamplar, məhkəmənin adı və dövlət gerbi həkk olunmuş möhürlə təmin edilir.",
+    "Məhkəmələrin fəaliyyəti, maddi-texniki təchizatı dövlət büdcəsi hesabına həyata keçirilir.",
+    "Azərbaycan Respublikası dövlət büdcəsinin ayrıca maddəsində məhkəmələrin fəaliyyətinin maliyyələşdirilməsi və maddi-texniki bazasının möhkəmləndirilməsi üçün vəsait ayrılması nəzərdə tutulur.",
+    "Müvafiq icra hakimiyyəti orqanları Azərbaycan Respublikasının dövlət büdcəsi ilə müəyyən edilmiş hədlərdə məhkəmələrin fəaliyyətinin maliyyə və maddi-texniki təminatını vaxtında həyata keçirmək üçün zəruri tədbirlər görürlər.",
+    "Birinci instansiya və apellyasiya məhkəmələrinin maliyyə təminatı üçün nəzərdə tutulan xərclər barədə təkliflər müvafiq icra hakimiyyəti orqanına təqdim edilməzdən əvvəl Məhkəmə-Hüquq Şurasının rəyi alınır."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "91",
+   "t": "Məhkəmələrin beynəlxalq əlaqələri",
+   "p": [
+    "Azərbaycan Respublikasının qanunvericiliyində və beynəlxalq müqavilələrdə başqa qayda nəzərdə tutulmayıbsa, Azərbaycan Respublikasının məhkəmələri xarici dövlətlərin məhkəmələri və beynəlxalq təşkilatlarla əlaqələrini Məhkəmə-Hüquq Şurası vasitəsilə, Ali Məhkəmə isə birbaşa həyata keçirir."
+   ]
+  },
+  {
+   "k": "b",
+   "n": "İkinci",
+   "t": "Hakimlər"
+  },
+  {
+   "k": "f",
+   "n": "XV fəsil",
+   "t": "Hakimlərin statusu"
+  },
+  {
+   "k": "m",
+   "n": "92",
+   "t": "Hakimlər və onların statusunun eyniliyi",
+   "p": [
+    "Hakimlər ədalət mühakiməsini həyata keçirmək üçün qanunla müəyyən edilmiş səlahiyyətlərə malik şəxslərdir.",
+    "Azərbaycan Respublikasının bütün hakimləri (məhkəmələrin sədrləri, sədr müavinləri, kollegiya sədrləri və hakimləri) işlərə baxarkən eyni statusa, hüquq və vəzifələrə malikdirlər və bir-birindən yalnız təyin olunma qaydasına, səlahiyyətlərinə və səlahiyyət müddətlərinə görə fərqlənirlər. Azərbaycan Respublikası Ali Məhkəməsinin Plenumunda qəbul olunmuş qərarlardan başqa bütün digər kollegial məhkəmə qərarlarına görə onların qəbul olunmasında iştirak etmiş hər bir hakim (qərar qəbul edilərkən xüsusi rəy və ya belə qərarın əleyhinə səs vermiş hakim istisna olmaqla) eyni dərəcədə məsuldur."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "92-1",
+   "t": "Hakimin xidməti vəsiqəsi",
+   "p": [
+    "Hakimə nümunəsi Məhkəmə-Hüquq Şurası tərəfindən təsdiq edilən xidməti vəsiqə verilir. Hakimə xidməti vəsiqə Məhkəmə-Hüquq Şurasının sədri tərəfindən təqdim edilir. Hakimin xidməti vəsiqəsi onun statusunu və vəzifəsini təsdiq edən sənəddir.",
+    "Hakim səlahiyyət müddəti ərzində xidməti vəsiqədən istifadə edir. Hakimin soyadı, adı, atasının adı, vəzifəsi dəyişdikdə və ya xidməti vəsiqənin etibarlılıq müddəti qurtardıqda, habelə xidməti vəsiqə itirildikdə və ya yararsız hala düşdükdə ona yeni xidməti vəsiqə verilir.",
+    "Hakimin səlahiyyətlərinə xitam verildikdə xidməti vəsiqə Məhkəmə-Hüquq Şurasına qaytarılır."
+   ]
+  },
+  {
+   "k": "f",
+   "n": "XVI fəsil",
+   "t": "Hakimlərin təyin edilməsi"
+  },
+  {
+   "k": "m",
+   "n": "93",
+   "t": "Hakim vəzifəsinə namizədlərə aid tələblər",
+   "p": [
+    "Azərbaycan Respublikası Konstitusiyasının 126-cı maddəsinin birinci hissəsinə uyğun olaraq seçkilərdə iştirak etmək hüququna malik olan, ali hüquq təhsilli, hüquqşünas ixtisası üzrə 5 ildən artıq işləyən Azərbaycan Respublikası vətəndaşları hakim ola bilərlər.",
+    "İkili vətəndaşlığı, digər dövlətlər qarşısında öhdəlikləri olanlar, din xadimləri, fəaliyyət qabiliyyətsizliyi və ya məhdud fəaliyyət qabiliyyəti məhkəmə tərəfindən təsdiq edilmiş, tibbi rəyə əsasən fiziki və əqli pozuntularına görə hakim səlahiyyətlərini yerinə yetirməyə qadir olmayan, cinayət törətməyə görə əvvəllər məhkum olunmuş, barəsində cinayət təqibinə bəraətverici əsaslar olmadan xitam verilmiş, hakim vəzifəsindən intizam qaydasında azad edilmiş şəxslər hakim ola bilməzlər."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "93-1",
+   "t": "Məhkəmə-Hüquq Şurası",
+   "p": [
+    "Məhkəmə-Hüquq Şurası Azərbaycan Respublikasında məhkəmə sisteminin təşkilinin, hakimlərin və məhkəmə sisteminin müstəqilliyinin təmin edilməsi, hakim vəzifəsinə namizədlərin seçilməsinin təşkili, hakimlərin fəaliyyətinin qiymətləndirilməsi, onların iş yerinin dəyişdirilməsi, vəzifədə irəli çəkilməsi, intizam məsuliyyətinə cəlb edilməsi, habelə məhkəmələr və hakimlərlə bağlı digər məsələləri səlahiyyəti daxilində həll edən məhkəmə hakimiyyətinin özünüidarə funksiyalarını həyata keçirən orqandır.",
+    "Məhkəmə-Hüquq Şurasının təşkili, fəaliyyətinin hüquqi əsasları və səlahiyyətləri bu qanunla və “Məhkəmə-Hüquq Şurası haqqında” Azərbaycan Respublikasının Qanunu ilə müəyyən olunur."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "93-2",
+   "t": "Hakimlərin Seçki Komitəsi",
+   "p": [
+    "Hakimlərin Seçki Komitəsi Məhkəmə-Hüquq Şurası tərəfindən formalaşdırılan və hakim vəzifəsinə namizədlərin seçimini həyata keçirən orqandır.",
+    "Hakimlərin Seçki Komitəsinin fəaliyyəti bu Qanunla, “Məhkəmə-Hüquq Şurası haqqında” Azərbaycan Respublikasının Qanunu ilə, habelə Məhkəmə-Hüquq Şurası tərəfindən qəbul edilən Hakimlərin Seçki Komitəsi haqqında Əsasnamə ilə tənzimlənir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "93-3",
+   "t": "Hakim vəzifəsinə namizədlərin seçilməsi",
+   "p": [
+    "Hakim vəzifəsinə namizədlər test imtahanı, yazılı imtahan və müsahibə əsasında seçilirlər. İmtahanlar və müsahibə Hakimlərin Seçki Komitəsi tərəfindən təşkil edilir.",
+    "İmtahanların və müsahibənin nəticələri Hakimlərin Seçki Komitəsi tərəfindən qiymətləndirilir. Hakimlərin Seçki Komitəsi bu işə özünün formalaşdırdığı ad hoc komissiyanı cəlb edə bilər.",
+    "Hakimlərin Seçki Komitəsi imtahanlardan və müsahibədən müvəffəqiyyətlə keçmiş namizədləri topladıqları ballara uyğun sıralayır.",
+    "Namizədlərin qiymətləndirilməsinin nəticələri Məhkəmə-Hüquq Şurasına təqdim olunur. Məhkəmə-Hüquq Şurası namizədlərin vakant hakim vəzifələrinin sayına müvafiq olaraq hakim vəzifəsinə təyin edilmələri barədə müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqana (quruma) təqdimat verir.",
+    "Bu Qanunun 96-cı maddəsinin birinci hissəsində nəzərdə tutulmuş qiymətləndirmə nəticəsində səlahiyyətləri uzadılmamış şəxslər 5 il müddətində hakim vəzifəsinə namizədlərin seçilməsi üçün imtahanlarda və müsahibədə iştirak edə bilməzlər.",
+    "Vakant hakim vəzifələrinə namizədlərin seçilməsi qaydaları Məhkəmə-Hüquq Şurası tərəfindən müəyyən edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "93-4",
+   "t": "Hakim vəzifəsinə təyin edilmənin xüsusi qaydası",
+   "p": [
+    "Azərbaycan Respublikası Konstitusiyasının 126-cı maddəsinin I hissəsinin tələblərinə cavab verən, hüquq sahəsində nüfuza, hüquqşünas ixtisası üzrə 20 illik iş təcrübəsinə, yüksək mənəvi keyfiyyətlərə malik olan şəxslər bu Qanunun 93-3-cü maddəsində nəzərdə tutulmuş prosedurlardan kənar Məhkəmə-Hüquq Şurasının təklifinə əsasən qanunvericiliklə müəyyən edilmiş qaydada yüksək hakim vəzifələrinə təyin edilə bilərlər.",
+    "Bu maddənin birinci hissəsində nəzərdə tutulmuş qaydada yüksək hakim vəzifələrinə təyin edilmiş hakimlərin hüquqşünas ixtisası üzrə dövlət orqanlarında (qurumlarında) iş stajı, habelə hüquq sahəsində elmi və pedaqoji fəaliyyət müddəti onların hakimlik stajına hesablanır.",
+    "Hakim vəzifəsindən öz arzusu ilə azad olunaraq ədliyyə orqanlarında inzibati vəzifəyə və ya prokurorluq işçisi kimi prokurorluğa qulluğa qəbul edilmiş şəxslər Məhkəmə-Hüquq Şurasında müsahibədən keçirilməklə, bu Qanunun 94-cü maddəsi ilə müəyyən edilmiş qaydada yenidən hakim vəzifəsinə təyin edilə bilərlər."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "94",
+   "t": "Hakimlərin, məhkəmələrin sədrlərinin, sədr müavinlərinin və məhkəmə kollegiyalarının sədrlərinin təyin edilməsi",
+   "p": [
+    "Azərbaycan Respublikası Konstitusiyasının 109-cu maddəsinin 9-cu bəndinə uyğun olaraq Azərbaycan Respublikası məhkəmələrinin hakimlərini Azərbaycan Respublikasının Prezidenti təyin edir.",
+    "Azərbaycan Respublikası Konstitusiyasının 109-cu maddəsinin 9-cu bəndinə və 95-ci maddəsinin 10-cu bəndinə uyğun olaraq Ali Məhkəmənin, Naxçıvan Muxtar Respublikası Ali Məhkəməsinin və apellyasiya məhkəmələrinin hakimlərini Azərbaycan Respublikası Prezidentinin təqdimatı əsasında Azərbaycan Respublikasının Milli Məclisi təyin edir.",
+    "Yuxarı instansiya məhkəmələrin hakimi vəzifələrinə bir qayda olaraq ən azı 5 il birinci instansiya məhkəmələrinin hakimi işləmiş şəxslər təyin oluna bilərlər.",
+    "Azərbaycan Respublikası məhkəmələrinin sədrləri, sədr müavinləri və məhkəmə kollegiyalarının sədrləri müvafiq məhkəmələrin hakimləri sırasından 5 il müddətinə təyin edilirlər . Azərbaycan Respublikası Ali Məhkəməsinin və Naxçıvan Muxtar Respublikası Ali Məhkəməsinin sədrlərinin vəzifəyə təyin edilməsi Azərbaycan Respublikası Konstitusiyasının 109-cu maddəsinin 32-ci bəndinə uyğun olaraq həll edilir. Azərbaycan Respublikası Ali Məhkəməsinin və Naxçıvan Muxtar Respublikası Ali Məhkəməsinin sədrləri istisna olmaqla, Azərbaycan Respublikası məhkəmələrinin sədrlərinin, sədr müavinlərinin və məhkəmə kollegiyaları sədrlərinin təyinatı Məhkəmə-Hüquq Şurasının təklifinə əsasən Azərbaycan Respublikası Konstitusiyasının 109-cu maddəsinin 32-ci bəndinə uyğun olaraq aparılır."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "95",
+   "t": "Hakimlərin andı",
+   "p": [
+    "Təyin olunmuş hakimlər vəzifələrinin icrasına başlamazdan əvvəl Ali Məhkəmənin Plenumunun iclasında Azərbaycan Respublikasının Dövlət bayrağı önündə aşağıdakı məzmunda and içirlər:",
+    "“Ədalət mühakiməsini Azərbaycan Respublikasının Konstitusiyasına və qanunlarına tam uyğun olaraq, qərəzsiz, ədalətlə həyata keçirəcəyimə, hakimin müstəqilliyini və ləyaqətini qoruyub saxlayacağıma, yüksək hakim adına hörmət ruhunda davranmağıma and içirəm”.",
+    "Andiçmə dövlətin, vətəndaşın və ədalət mühakiməsinin qarşısında hakimlərin məsuliyyətinin təcəssümüdür.",
+    "Hakimlərin səlahiyyətləri and içdiyi vaxtdan başlayır.",
+    "Hakimlər andın mətninə imza edir və bu sənəd hakimlərin şəxsi işində saxlanılır."
+   ]
+  },
+  {
+   "k": "f",
+   "n": "XVII fəsil",
+   "t": "Hakimlərin səlahiyyətləri"
+  },
+  {
+   "k": "m",
+   "n": "96",
+   "t": "Hakimlərin səlahiyyət müddəti",
+   "p": [
+    "Hakim vəzifəsinə hakimlər ilk dəfə üç il müddətinə təyin olunurlar. Təyin olunduqdan dərhal sonra onlar peşə hazırlığı məqsədilə müvafiq icra hakimiyyəti orqanının tədris-elm müəssisəsində Məhkəmə-Hüquq Şurası tərəfindən müəyyən edilmiş qaydada təlimə cəlb edilirlər. 3 illik müddətin sonunda hakimlərin fəaliyyəti qiymətləndirilir. Qiymətləndirmə nəticəsində hakimin fəaliyyətində peşəkar çatışmazlıq aşkar edilməzsə Məhkəmə-Hüquq Şurasının təklifi ilə onun səlahiyyətləri son yaş həddinədək uzadılır.",
+    "Ali Məhkəmənin hakimləri üçün son yaş həddi 68, digər instansiya məhkəmələrinin hakimləri üçün 66 yaşdır.",
+    "Qiymətləndirmə nəticəsində hakimin fəaliyyətində peşəkar çatışmazlıq aşkar edilərsə onun səlahiyyətləri uzadılmır.",
+    "Hakimin fəaliyyətinin qiymətləndirilməsi “Məhkəmə-Hüquq Şurası haqqında” Azərbaycan Respublikası Qanununun 13-cü maddəsinə müvafiq həyata keçirilir.",
+    "İşə baxılan zaman hakimlərin səlahiyyət müddəti başa çatarsa, onların səlahiyyəti həmin işə baxılıb qurtaranadək davam edir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "96-1",
+   "t": "Hakimlərin Qiymətləndirilməsi Komitəsi",
+   "p": [
+    "Hakimlərin Qiymətləndirilməsi Komitəsi Məhkəmə-Hüquq Şurası tərəfindən hakimlərin fəaliyyətinin qiymətləndirilməsi və onların peşə hazırlığının artırılması üzrə ehtiyacların müəyyən edilməsi işinin aparılması məqsədilə formalaşdırılan orqandır.",
+    "Hakimlərin Qiymətləndirilməsi Komitəsinin fəaliyyəti bu Qanunla, “Məhkəmə-Hüquq Şurası haqqında” Azərbaycan Respublikasının Qanunu ilə, habelə Məhkəmə-Hüquq Şurasının qəbul etdiyi Hakimlərin Qiymətləndirilməsi Komitəsi haqqında Əsasnamə və hakimlərin fəaliyyətinin qiymətləndirilməsinin qaydaları və metodologiyası ilə tənzimlənir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "97",
+   "t": "Hakimlərin dəyişilməzliyi",
+   "p": [
+    "Azərbaycan Respublikası Konstitusiyasının 127-ci maddəsinin birinci hissəsinə uyğun olaraq hakimlər səlahiyyət müddətində dəyişilməzdirlər.",
+    "Hakimlər öz razılığı olmadan başqa vəzifəyə dəyişdirilə bilməz.",
+    "Bu qanunla müəyyən edilmiş əsaslar istisna olmaqla, hakimlər vəzifədən kənarlaşdırıla və onların səlahiyyətlərinə xitam verilə bilməz."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "97-1",
+   "t": "Hakimlərin ezam edilməsi",
+   "p": [
+    "Hakimlər öz razılığı ilə Məhkəmə-Hüquq Şurasının qərarına əsasən 1 ilədək müddətə Məhkəmə-Hüquq Şurasının Aparatına ezam edilə bilərlər. Zərurət olduqda bu müddət ezam edilmiş hakimin razılığı ilə yenidən 1 ilədək uzadıla bilər.",
+    "Məhkəmə-Hüquq Şurasının Aparatına ezam edilmiş hakimin hakimlik stajı davam edir, hakimlərin statusundan irəli gələn maddi və sosial təminatları və imtiyazları saxlanılır.",
+    "Ezam edilmiş hakim özünün və ya ezam edildiyi qurumun təşəbbüsü ilə Məhkəmə-Hüquq Şurasının qərarı ilə əvvəl işlədiyi vəzifəyə qaytarılır.",
+    "Birinci instansiya məhkəməsinin hakimi öz vəzifələrini yerinə yetirə bilmədikdə və ya hakim vəzifəsi vakant olduqda, Məhkəmə-Hüquq Şurası həmin məhkəməyə digər müvafiq məhkəmənin hakimini onun razılığı ilə 1 ilədək müddətə ezam edə bilər."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "98",
+   "t": "Hakimlərin hüquqları",
+   "p": [
+    "Ədalət mühakiməsinin həyata keçirilməsi üçün hakimlər bu Qanunla müəyyən edilmiş səlahiyyətlərə malikdirlər.",
+    "Hakimlər müstəqillik, dəyişməzlik, toxunulmazlıq, öz mənafelərini təmsil edən təşkilatlarda birləşmək, eləcə də dövlət tərəfindən təhlükəsizliyinin, mülkiyyətinin qorunması və sosial müdafiə hüquqlarına malikdirlər.",
+    "Hakimlər həmçinin aşağıdakı hüquqlara malikdirlər:",
+    "qanunla üzərilərinə qoyulmuş vəzifələrin həyata keçirilməsi ilə əlaqədar öz sərəncamlarının yerinə yetirilməsini vəzifəli şəxslərdən, fiziki və hüquqi şəxslərdən tələb etmək;",
+    "qanun pozuntularının törədilməsinə kömək göstərən səbəb və şəraitin aradan qaldırılması haqqında dövlət orqanlarına, digər təşkilatlara və vəzifəli şəxslərə təqdimatlar vermək;",
+    "ədalət mühakiməsinin həyata keçirilməsi ilə əlaqədar vəzifəli və digər şəxslərdən məlumatlar almaq;",
+    "intizam məsuliyyətinə cəlb edilməsi ilə əlaqədar şikayət etmək;",
+    "öz xahişi ilə tutduğu vəzifədən azad olunması barədə ərizə vermək.",
+    "Hakimlər Azərbaycan Respublikasının prosessual qanunvericiliyində nəzərdə tutulmuş digər hüquqlara da malikdirlər.",
+    "Dövlət orqanları, idarə, müəssisə və təşkilatlar, hüquqi şəxslər, habelə vəzifəli şəxslər hakimlərin ədalət mühakiməsinin həyata keçirilməsi ilə bağlı tələblərini və sərəncamlarını yerinə yetirməyə borcludurlar. Bu tələb və sərəncamların yerinə yetirilməməsi qanunvericilikdə nəzərdə tutulmuş məsuliyyətə səbəb olur."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "99",
+   "t": "Hakimlərin vəzifələri",
+   "p": [
+    "Hakimlər aşağıdakı vəzifələri yerinə yetirməlidirlər:",
+    "ədalət mühakiməsini həyata keçirərkən qanunların tələblərinə dəqiq və dönmədən əməl etmək, məhkəmə fəaliyyətinin mənəvi və tərbiyəvi təsirini təmin etmək, ədalətli və qərəzsiz olmaq;",
+    "müşavirə otağının sirrini qorumaq, qapalı məhkəmə iclaslarında müəyyən olunmuş məlumatları gizli saxlamaq;",
+    "ədalət mühakiməsinin nüfuzuna, hakimin yüksək adına, şərəf və ləyaqətinə xələl gətirən hər hansı hərəkətdən çəkinmək.",
+    "Hakimlərin digər vəzifələri Azərbaycan Respublikasının qanunvericiliyi ilə müəyyən edilir.",
+    "Hakim ədalət mühakiməsini həyata keçirərkən baxılan məsələ üzrə yekun qərar qəbul edilənədək həmin qərara dair fikir bildirməməlidir. Hakimlər məhkəmə icraatına hazırlıq dövründə və məhkəmə icraatı zamanı işlə bağlı şəxslərin qəbulunu həyata keçirmirlər."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "99-1",
+   "t": "Hakimlərin Etik Davranış Kodeksi",
+   "p": [
+    "Hakimlərin Etik Davranış Kodeksi hakimlik fəaliyyətinin etika prinsiplərinin və standartlarının toplusudur. Kodeks hakimlər üçün spesifik əxlaq və ədəb tələblərini, onların peşəkar etika məsələlərini, iş fəaliyyətindən kənar davranışını nizamlayır, peşə fəaliyyətinə münasibətini müəyyən edir.",
+    "Hakimlərin Etik Davranış Kodeksi Məhkəmə-Hüquq Şurası tərəfindən təsdiq edilir."
+   ]
+  },
+  {
+   "k": "f",
+   "n": "XVIII fəsil",
+   "t": "Hakimlərin müstəqilliyi"
+  },
+  {
+   "k": "m",
+   "n": "100",
+   "t": "Hakimlərin müstəqilliyi",
+   "p": [
+    "Azərbaycan Respublikası Konstitusiyasının 127-ci maddəsinin birinci hissəsinə uyğun olaraq hakimlər müstəqildirlər və yalnız Azərbaycan Respublikasının Konstitusiyasına və qanunlarına tabedirlər.",
+    "Hakimlərin müstəqilliyi onların səlahiyyəti dövründə siyasətsizləşdirilməsi, dəyişilməzliyi və toxunulmazlığı ilə, vəzifəyə təyin olunmasının, məsuliyyətə cəlb edilməsinin, vəzifədən kənarlaşdırılmasının və səlahiyyətlərinə xitam verilməsinin məhdudlaşdırılması ilə, məhkəmə hakimiyyətinin müstəqil fəaliyyət göstərməsi və ədalət mühakiməsinin qanunda nəzərdə tutulmuş qaydada həyata keçirilməsi ilə, məhkəmə icraatına hər hansı şəxs tərəfindən məhdudiyyət qoyulmasının və müdaxilə edilməsinin yolverilməzliyi ilə, hakimlərin şəxsi təhlükəsizliyinin təmin edilməsi yolu ilə həyata keçirilir və onlara vəzifələrinə uyğun maddi və sosial təminatlar verilir.",
+    "Məhkəmə qərarları hakimlərin sərbəst daxili inamına və məhkəmə araşdırmasının nəticələrinə əsaslanmalıdır.",
+    "Hakimin fəaliyyətinə kənar müdaxilə olduqda, o, bu barədə Məhkəmə-Hüquq Şurasına müraciət etməlidir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "101",
+   "t": "Hakimlərin toxunulmazlığı",
+   "p": [
+    "Azərbaycan Respublikası Konstitusiyasının 128-ci maddəsinin I hissəsinə uyğun olaraq hakimlər toxunulmazdır. Cinayət başında yaxalanması halları istisna olunmaqla, hakim tutula və ya həbs edilə, şəxsi axtarış və müayinəyə məruz qala, Məhkəmə-Hüquq Şurasının razılığı olmadan barəsində cinayət təqibi həyata keçirilə bilməz.",
+    "Hakimlərin toxunulmazlığı, həmçinin onların mənzillərinə, xidməti otaqlarına, nəqliyyat və rabitə vasitələrinə, poçt-teleqraf yazışmalarına, şəxsi əmlakına və sənədlərinə də şamil olunur.",
+    "Hakimi cinayət başında tutmuş cinayət təqibi orqanı bu barədə dərhal Azərbaycan Respublikasının Baş prokuroruna məlumat verir. Azərbaycan Respublikasının Baş prokuroru hakim barəsində cinayət təqibinin həyata keçirilməsi üçün əsaslar müəyyən etdikdə dərhal Məhkəmə-Hüquq Şurasına bu barədə təqdimat verir. Məhkəmə-Hüquq Şurası hakimin tutulduğu andan 24 saat müddətində onun barəsində cinayət təqibinin həyata keçirilməsinə dair təqdimata Azərbaycan Respublikası Baş prokurorunun və ya onun müavininin iştirakı ilə baxır, həmin təqdimatın təmin və ya rədd edilməsi haqqında qərar qəbul edir. Bu qərar dərhal Azərbaycan Respublikasının Baş prokuroruna təqdim edilir.",
+    "Məhkəmə-Hüquq Şurasının razılığı olduqda cinayət başında tutulmuş hakim barəsində cinayət təqibi Azərbaycan Respublikasının cinayət-prosessual qanunvericiliyinə uyğun olaraq davam etdirilir. Belə razılıq olmadıqda cinayət başında tutulmuş hakim dərhal azad edilir.",
+    "Digər hallarda hakim haqqında cinayət təqibinin həyata keçirilməsinə razılıq verilməsi barədə Azərbaycan Respublikası Baş prokurorunun təqdimatına daxil olduğu gündən 72 saat müddətində baxılır. Məhkəmə-Hüquq Şurasının razılığı olduqda hakim barəsində cinayət təqibi Azərbaycan Respublikasının cinayət-prosessual qanunvericiliyinə uyğun olaraq həyata keçirilir.",
+    "Haqqında cinayət təqibinin həyata keçirilməsinə razılıq verilmiş hakim həmin andan səlahiyyətlərinin icrasına buraxılmır. Səlahiyyətlərinin icrasına müvəqqəti buraxılmayan hakimə əmək haqqı ödənilməsi davam etdirilir.",
+    "Səlahiyyətlərinin icrasına müvəqqəti buraxılmayan hakim barəsində bəraət hökmü çıxarıldıqda və ya cinayət-prosessual qanunvericiliyi ilə müəyyən edilmiş hallarda cinayət təqibinə bəraətverici əsaslarla xitam verildikdə o, yenidən səlahiyyətlərinin icrasına buraxılır.",
+    "Cinayət təqibini istisna edən digər hallarda, habelə barəsində məhkəmənin ittiham hökmü və ya tibbi xarakterli məcburi tədbirlərin tətbiqinə dair məhkəmə qərarı qanuni qüvvəyə mindiyi halda hakim vəzifəsindən kənarlaşdırılır.",
+    "Hakimin vəzifəsindən kənarlaşdırılması Azərbaycan Respublikası Konstitusiyasının 128-ci maddəsinin IV və V hissələrində nəzərdə tutulmuş qaydada həyata keçirilir.",
+    "Vəzifəsindən kənarlaşdırılmış hakimin səlahiyyətləri xitam edilmiş hesab olunur.",
+    "Məhkəmə səhvləri nəticəsində proses iştirakçısına, yaxud işdə iştirak edən şəxsə dəymiş ziyana görə hakimlər öz xüsusi əmlakları ilə məsuliyyət daşımırlar. Bu ziyan qanunla müəyyən olunmuş hallarda və qaydada dövlət tərəfindən ödənilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "102",
+   "t": "Hakimlərin təhlükəsizliyi",
+   "p": [
+    "Hakimlərin təhlükəsizliyini təmin etmək məqsədi ilə onlara Azərbaycan Respublikasının qanunvericiliyi ilə müəyyən edilmiş qaydada xidməti silah verilə bilər. Hakimlərin öz səlahiyyətlərini icra etdikləri bütün müddət ərzində qanunvericiliklə nəzərdə tutulmuş qaydada və hallarda xidməti silahı saxlamaq, gəzdirmək və təyinatı üzrə istifadə etmək hüququ vardır, zəruri hallarda onların təhlükəsizliyi təmin edilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "103",
+   "t": "Hakimlərin hərbi çağırışdan və hərbi toplanışdan azad olunması",
+   "p": [
+    "Hakimlər səlahiyyət müddətində hərbi çağırışdan və hərbi toplanışdan azad olunurlar."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "104",
+   "t": "Hakimliklə bir araya sığmayan fəaliyyət",
+   "p": [
+    "Azərbaycan Respublikası Konstitusiyasının 126-cı maddəsinin II hissəsinə uyğun olaraq hakimlər heç bir seçkili və ya təyinatlı vəzifələr tuta bilməz, elmi, pedaqoji və yaradıcılıq fəaliyyətindən başqa heç bir sahibkarlıq, kommersiya və digər ödənişli fəaliyyətlə məşğul ola bilməzlər, siyasi fəaliyyətlə məşğul ola bilməz və siyasi partiyalara üzv ola bilməzlər, vəzifə maaşından, elmi, pedaqoji və yaradıcılıq fəaliyyətinə görə aldığı vəsaitdən başqa məvacib ala bilməzlər."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "105",
+   "t": "Hakimlərin siyasətsizləşdirilməsi",
+   "p": [
+    "Hakim vəzifəsinə təyin olunmuş şəxslər andiçmədən qabaq siyasi partiyanın və ya digər siyasi təşkilatların üzvlüyündən çıxmalıdır. Bu barədə verilmiş ərizə hakimlərin şəxsi işlərinə əlavə edilir.",
+    "Hakim vəzifəsinə təyin olunmuş şəxslər siyasi partiyanın və ya başqa siyasi təşkilatın üzvlüyündən çıxmadan hakim vəzifəsinin icrasına buraxılmırlar."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "105-1",
+   "t": "Hakimlərin ictimai birlikləri (assosiasiyaları)",
+   "p": [
+    "Hakimlər ümumi maraqlar əsasında birləşərək, könüllülük və üzvlərin hüquq bərabərliyi prinsipləri əsasında öz ictimai birliklərini təsis edə bilərlər.",
+    "Hakimlərin ictimai birliklərinin fəaliyyətinin əsas məqsədləri hakimləri birləşdirməkdən, onların müstəqilliyinin möhkəmləndirilməsindən, məhkəmə-hüquq islahatlarının dərinləşdirilməsinə kömək etməkdən ibarətdir."
+   ]
+  },
+  {
+   "k": "f",
+   "n": "XIX fəsil",
+   "t": "Hakimlərin maddi və sosial təminatı"
+  },
+  {
+   "k": "m",
+   "n": "106",
+   "t": "Hakimlərin maddi təminatı",
+   "p": [
+    "Hakimlərin aşağıdakı məbləğdə aylıq vəzifə maaşları müəyyən edilir və onlara bir aylıq vəzifə maaşı həcmində vəzifə maaşına əlavə ödənilir:",
+    "Ali Məhkəmənin sədrinə 3550 manat həcmində;",
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsinin və apellyasiya məhkəmələrinin sədrlərinə ali məhkəmə sədrinin vəzifə maaşının 90 faizi həcmində;",
+    "ağır cinayətlər məhkəmələrinin, Naxçıvan Muxtar Respublikası ağır cinayətlər məhkəməsinin, hərbi məhkəmələrin, inzibati məhkəmələrin və kommersiya məhkəmələrinin sədrlərinə Ali Məhkəmə sədrinin vəzifə maaşının 80 faizi həcmində;",
+    "digər məhkəmələrin sədrlərinə Ali məhkəmə sədrinin vəzifə maaşının 70 faizi həcmində;",
+    "bütün məhkəmələrin sədr müavinlərə müvafiq məhkəmə sədrinin vəzifə maaşlarının 90 faizi həcmində;",
+    "Ali Məhkəmənin, Naxçıvan Muxtar Respublikası Ali Məhkəməsinin və apellyasiya məhkəmələrinin kollegiya sədrlərinə müvafiq məhkəmə sədrinin vəzifə maaşının 85 faizi həcmində;",
+    "bütün məhkəmələrin hakimlərinə müvafiq məhkəmə sədrinin vəzifə maaşlarının 80 faizi həcmində müəyyən edilir.",
+    "Hakimlik stajının hər 5 ilinə görə, həmçinin elmi dərəcəyə görə hakimlərə hər ay vəzifə maaşlarının 15 faizi həcmində (45 faizdən çox olmamaq şərti ilə) əlavə haqq verilir. Hakim vəzifəsinə təyin edilmiş prokurorluq işçilərinin prokurorluq orqanlarındakı xidmətinin hər 5 ilinə görə eyni həcmdə əlavə haqq verilir. KMQ1",
+    "Səlahiyyətlərin yerinə yetirilməsi ilə bağlı xərclərin ödənilməsi üçün hakimlərə vəzifə maaşının 25 faizi miqdarında vergidən azad olunan aylıq pul təminatı verilir.",
+    "İlk dəfə hakim vəzifəsinə təyin olunan şəxslərə hakimlik fəaliyyətinin birinci ilində bir dəfə aylıq vəzifə maaşının iki misli, sonrakı dörd il ərzində ildə bir dəfə bir aylıq vəzifə maaşı məbləğində birdəfəlik yardım ödənilir.",
+    "Hakimin fəaliyyəti dövründə onun əmək haqqının məbləği aşağı salına bilməz."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "107",
+   "t": "Hakimlərin məzuniyyət müddəti və haqqı",
+   "p": [
+    "Hakimlərə hər il qırx təqvim günü müddətində məzuniyyət verilir. Hakimlərə məzuniyyətə çıxdığı vaxt məzuniyyət haqqı verilir. Məzuniyyət haqqının hesablanması qaydası müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqan (qurum) tərəfindən təsdiq edilir.",
+    "İllik məzuniyyət Azərbaycan Respublikası Ali Məhkəməsinin, apellyasiya məhkəmələrinin və Naxçıvan Muxtar Respublikası Ali Məhkəməsinin hakimlərinə müvafiq məhkəmə sədri tərəfindən, digər məhkəmələrin hakimlərinə isə Məhkəmə-Hüquq Şurası tərəfindən verilir.",
+    "Hakim illik məzuniyyətindən istənilən səbəbdən istifadə etmədikdə, ona həmin il (illər) üçün istifadə edilməmiş məzuniyyətə görə müəyyən olunmuş qaydada və məbləğdə kompensasiya ödənilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "108",
+   "t": "Hakimlərin mənzillə təmin edilməsi",
+   "p": [
+    "Təyin olunduğu yer üzrə mənzilə, həmçinin mənzil şəraitini yaxşılaşdırmağa ehtiyacı olan hakimlər bu vəzifəyə təyin olunduğu gündən 6 ay müddətində müvafiq icra hakimiyyəti orqanı tərəfindən mənzillə təmin edilməlidirlər.",
+    "(Çıxarılıb)"
+   ]
+  },
+  {
+   "k": "m",
+   "n": "109",
+   "t": "Hakimlərin sosial müdafiəsi KMQ2",
+   "p": [
+    "Hakimlərin həyatı və sağlamlığı dövlət büdcəsi hesabına onların 5 illik əmək haqqı məbləğində sığorta edilir. Xidməti vəzifələrinin icrası ilə əlaqədar hakimlər həlak olduqda (vəfat etdikdə) və ya onlar xidmətin davam etdirilməsinə imkan verməyən dərəcədə xəstələndikdə, xəsarət (yaralanma, travma, kontuziya) aldıqda qanunvericilikdə nəzərdə tutulmuş qaydada və məbləğdə birdəfəlik müavinət ödənilir.",
+    "Hakimlərə məxsus əmlakın xidməti fəaliyyəti ilə əlaqədar məhv olması və ya zədələnməsi nəticəsində vurulan ziyan hakimlərə və ya onların ailə üzvlərinə tam həcmdə ödənilir.",
+    "Bu maddədə nəzərdə tutulmuş ziyan qanunla müəyyən olunmuş qaydada sonradan təqsirkar şəxslərdən tutulmaqla Azərbaycan Respublikasının dövlət büdcəsindən ödənilir.",
+    "Hakimlər dövlət tibb xidmətilə təmin olunurlar.",
+    "Hakimlərin, sabiq hakimlərin və onların ailə üzvlərinin pensiya təminatı “Əmək pensiyaları haqqında” Azərbaycan Respublikasının Qanununa uyğun olaraq həyata keçirilir.",
+    "Bu maddənin beşinci hissəsinin müddəaları bu qanuna uyğun keçirilmiş təyinatlardan əvvəl hakim işləmiş və pensiya yaşına çatmış sabiq hakimlərə də şamil edilir."
+   ]
+  },
+  {
+   "k": "f",
+   "n": "XX fəsil",
+   "t": "Hakimlərin həvəsləndirilməsi, səlahiyyətlərinə xitam verilməsi və intizam məsuliyyəti"
+  },
+  {
+   "k": "m",
+   "n": "110",
+   "t": "Hakimlərin həvəsləndirilməsi",
+   "p": [
+    "Hakimlər vəzifələrini nümunəvi yerinə yetirdikdə, uzun müddət və qüsursuz işlədikdə, habelə öz fəaliyyəti ilə ədalət mühakiməsinin səmərəliliyinin artırılmasına əhəmiyyətli töhfələr verdikdə Məhkəmə-Hüquq Şurası onlar barədə aşağıdakı həvəsləndirmə tədbirləri görür:",
+    "qiymətli hədiyyə ilə mükafatlandırmaq;",
+    "fəxri fərman ilə təltif etmək;",
+    "fəxri döş nişanı ilə təltif etmək;",
+    "hakimin təltif olunmasına dair müvafiq icra hakimiyyəti orqanına təklif vermək."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "111",
+   "t": "Hakimlər barəsində intizam icraatının başlanılmasına dair müraciət üçün səbəblər",
+   "p": [
+    "Hakimlər barəsində intizam icraatının başlanılmasına dair müraciət aşağıda göstərilən səbəblərdən biri və ya bir neçəsi olduqda edilir:",
+    "fiziki və hüquqi şəxslərin şikayətləri;",
+    "mediada dərc olunmuş məlumatlar;",
+    "işlərə apellyasiya və ya kassasiya instansiyası məhkəmələrində baxılarkən aşkar edilmiş qanun pozuntuları və hakimlər haqqında bu məhkəmələrin çıxardığı xüsusi qərarlar;",
+    "İnsan hüquqları üzrə Avropa Məhkəməsinin və Azərbaycan Respublikasının Konstitusiya Məhkəməsinin qərarlarında əks etdirilmiş qanun pozuntuları;",
+    "hakimlərin fəaliyyətinin qiymətləndirilməsi zamanı və məhkəmə təcrübəsinin ümumiləşdirilməsi nəticəsində aşkara çıxan qanun pozuntuları;",
+    "intizam icraatının başlanılması barədə müraciət hüququ olan şəxslərin əldə etdikləri digər məlumatlar."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "111-1",
+   "t": "Hakimlərin intizam məsuliyyətinə cəlb edilməsinin əsasları",
+   "p": [
+    "Hakimlər yalnız aşağıdakı əsaslara görə intizam məsuliyyətinə cəlb edilir:",
+    "işlərə baxarkən qanunvericiliyin tələblərini dəfələrlə və ya kobudcasına pozduqda;",
+    "hakim etikasını pozduqda;",
+    "əmək və icra intizamı haqqında qanunvericiliyin tələblərini pozduqda;",
+    "“Korrupsiyaya qarşı mübarizə haqqında” Azərbaycan Respublikası Qanununun 5.1-ci maddəsi ilə müəyyən edilmiş maliyyə xarakterli tələblərə əməl etmədikdə;",
+    "“Korrupsiyaya qarşı mübarizə haqqında” Azərbaycan Respublikası Qanununun 9-cu maddəsində göstərilən hüquqpozmaları törətdikdə;",
+    "hakim adına ləkə gətirən hərəkətə yol verdikdə."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "112",
+   "t": "Hakimlərin intizam məsuliyyətinə cəlb edilməsi qaydası",
+   "p": [
+    "Hakimlər barəsində intizam icraatını yalnız Məhkəmə-Hüquq Şurası başlaya bilər. Bu Qanunla müəyyən edilmiş səbəblər və intizam məsuliyyətinə cəlb edilmə əsaslarının əlamətləri olduqda Məhkəmə-Hüquq Şurası öz təşəbbüsü ilə intizam icraatını başlamalı, Ali Məhkəmənin, apellyasiya məhkəmələrinin və Naxçıvan Muxtar Respublikası Ali Məhkəməsinin sədrləri isə intizam icraatının başlanılması barədə Məhkəmə-Hüquq Şurasına müraciət etməlidirlər.",
+    "Fiziki və hüquqi şəxslər hakimlər tərəfindən bu Qanunun 111-1-ci maddəsinin altıncı abzasında hakimlər üçün müəyyən edilmiş intizam məsuliyyətinə cəlb edilmə əsasının əlamətləri haqqında məlumatlar olduqda Məhkəmə-Hüquq Şurasına müraciət edə bilərlər.",
+    "Məhkəmə-Hüquq Şurası öz təşəbbüsü ilə birinci, apellyasiya və kassasiya instansiyaları məhkəmələrinin hakimləri haqqında intizam icraatına başlayır.",
+    "Azərbaycan Respublikası Ali Məhkəməsinin sədri birinci, apellyasiya və kassasiya instansiyaları məhkəmələrinin hakimləri haqqında intizam icraatının başlanılması barədə Məhkəmə-Hüquq Şurasına müraciət edir.",
+    "Apellyasiya məhkəmələrinin sədrləri müvafiq apellyasiya məhkəmələrinin hakimləri, habelə həmin məhkəmələrin ərazi yurisdiksiyasına aid edilmiş birinci instansiya məhkəmələrinin hakimləri haqqında intizam icraatının başlanılması barədə Məhkəmə-Hüquq Şurasına müraciət edirlər.",
+    "Naxçıvan Muxtar Respublikası Ali Məhkəməsinin sədri həmin məhkəmənin hakimləri və Naxçıvan Muxtar Respublikası Ali Məhkəməsinin ərazi yurisdiksiyasına aid edilmiş birinci instansiya məhkəmələrinin hakimləri haqqında intizam icraatının başlanılması barədə Məhkəmə-Hüquq Şurasına müraciət edir.",
+    "Hakimlər haqqında intizam icraatı intizam pozuntusunun aşkar edildiyi gündən bir il və törədildiyi gündən üç il müddətində başlana bilər.",
+    "Hakimlər yalnız Məhkəmə-Hüquq Şurasının qərarına əsasən intizam məsuliyyətinə cəlb edilirlər.",
+    "Məhkəmə-Hüquq Şurası intizam icraatı üzrə aşağıdakı qərarlardan birini qəbul edir:",
+    "hakimə irad tutulması haqqında;",
+    "hakimə töhmət verilməsi haqqında;",
+    "hakimin vəzifədə aşağı salınması barədə Azərbaycan Respublikasının müvafiq icra hakimiyyəti orqanına təklif verilməsi haqqında;",
+    "hakimin iş yerinin dəyişdirilməsi barədə Azərbaycan Respublikasının müvafiq icra hakimiyyəti orqanına təklif verilməsi haqqında;",
+    "hakimin səlahiyyətlərinə xitam verilməsi barədə Azərbaycan Respublikasının müvafiq icra hakimiyyəti orqanına təklif verilməsi haqqında;",
+    "intizam icraatına xitam verilməsi haqqında.",
+    "İntizam məsuliyyətinə cəlb edilmə haqqında qərardan şikayət verilməmişsə, o, qəbul edildiyi vaxtdan iyirmi gün sonra qüvvəyə minir.",
+    "Həmin müddət ərzində intizam məsuliyyətinə cəlb edilmə haqqında Məhkəmə-Hüquq Şurasının qərarından Ali Məhkəmənin Plenumuna şikayət verilə bilər.",
+    "Ali Məhkəmənin Plenumu üç ay müddətində şikayətə baxıb Məhkəmə-Hüquq Şurasının qərarını qüvvədə saxlayır, ləğv edir və ya ona dəyişikliklər edir və öz qərarını Şuraya təqdim edir. Ali Məhkəmənin Plenumunun qərarı qətidir. İntizam məsuliyyətinə cəlb edilmə haqqında Məhkəmə-Hüquq Şurasının qərarlarından verilmiş şikayətlərə Ali Məhkəmənin Plenumunda baxılarkən həmin qərarlarla bağlı Məhkəmə-Hüquq Şurasının iclaslarında səsvermədə iştirak etmiş Şuranın üzvləri Plenumun iclaslarında səsvermədə iştirak etmirlər.",
+    "Hakimlər cəza verildiyi gündən bir il ərzində yenidən intizam məsuliyyətinə cəlb edilməmişsə, intizam məsuliyyətinə cəlb edilməmiş sayılırlar.",
+    "Hakimlərin intizam məsuliyyəti məsələsinə bu Qanunla və “Məhkəmə-Hüquq Şurası haqqında” Azərbaycan Respublikasının Qanunu ilə müəyyən edilmiş qaydada baxılır."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "112-1",
+   "t": "İntizam məsuliyyəti məsələsinə baxılan hakimin öz arzusu ilə vəzifəsindən çıxmaq barədə yazılı ərizəsinə baxılması",
+   "p": [
+    "Barəsində intizam icraatı başlanılmış (bu maddənin ikinci hissəsində nəzərdə tutulmuş icraat istisna olmaqla) hakim tutduğu vəzifədən çıxmaq barədə ərizə verdikdə, hakim barəsindəki intizam icraatına və onun səlahiyyətlərinə xitam verilməsi barədə qərar qəbul edilir.",
+    "İntizam icraatı bu Qanunun 113-cü maddəsinin ikinci hissəsinin 10-cu və 11-ci bəndlərində nəzərdə tutulmuş əsaslara görə başlanılmışdırsa, hakimin tutduğu vəzifədən çıxmaq barədə ərizəsinə icraatının materialları ilə eyni vaxtda baxılır və qərar qəbul edilir.",
+    "Hakimin intizam icraatının başlanılmasına əsas olmuş hərəkətlərində cinayət əməlinin əlamətləri olduğu hallarda onun ərizəsi nəzərə alınmaqla səlahiyyətlərinə xitam verilir və toplanılmış sənədlər Azərbaycan Respublikasının Baş Prokurorluğuna göndərilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "113",
+   "t": "Hakimlərin səlahiyyətlərinə xitam verilməsinin əsasları",
+   "p": [
+    "Hakimlərin səlahiyyətlərinə onların səlahiyyət müddəti (uzadılmış səlahiyyət müddəti) qurtardıqda Məhkəmə-Hüquq Şurası tərəfindən xitam verilir.",
+    "Hakimlərin səlahiyyətlərinə aşağıdakı əsaslara görə vaxtından əvvəl xitam verilə bilər:",
+    "1) öz arzusu ilə vəzifəsindən çıxmaq barədə yazılı ərizə verdikdə;",
+    "2) hakim vəzifəsindən kənarlaşdırıldıqda;",
+    "3) fəaliyyət qabiliyyətsizliyi və ya məhdud fəaliyyət qabiliyyəti məhkəmə tərəfindən müəyyən edildikdə;",
+    "4) vəfat etdikdə;",
+    "5) məhkəmə tərəfindən ölmüş elan edildikdə və ya itkin düşmüş hesab edildikdə;",
+    "6) bu Qanunla hakim vəzifəsinə namizədlər üçün müəyyən edilmiş tələblərə uyğun gəlmədiyi aşkar edildikdə;",
+    "7) tutduğu vəzifə ilə bir araya sığmayan fəaliyyətlə məşğul olduqda;",
+    "8) Azərbaycan Respublikası vətəndaşlığına xitam verildikdə, başqa dövlətin vətəndaşlığını qəbul etdikdə və ya digər dövlət qarşısında öhdəlik götürdükdə;",
+    "9) əmək qabiliyyətinin fasiləsiz olaraq altı aydan çox müddətə tam itirilməsi ilə əlaqədar vəzifəsini yerinə yetirə bilmədikdə;",
+    "10) bu Qanunun 111-1-ci maddəsində nəzərdə tutulmuş əsaslara görə təqvim ili ərzində iki dəfə intizam cəzası verildikdə",
+    "11) işlərə baxarkən qanunvericiliyin tələblərini dəfələrlə kobudcasına pozduqda;",
+    "12) “Məhkəmə-Hüquq Şurası haqqında” Azərbaycan Respublikasının Qanununda nəzərdə tutulmuş təkrar qiymətləndirmə nəticəsində hakimin (ilk dəfə hakim təyin edilmiş şəxslər istisna olmaqla) fəaliyyətində yenidən peşəkar çatışmazlıqlar aşkar edildikdə.",
+    "Əmək qabiliyyətinin tam itirilməsi müvafiq icra hakimiyyəti orqanının rəyi ilə müəyyən edilir. Əmək qabiliyyətinin tam itirilməsi dedikdə, müvafiq icra hakimiyyəti orqanının müəyyən etdiyi orqanın (qurumun) qərarı ilə hakimə onun orqanizminin funksiyalarının pozulması faizinə uyğun əlillik müəyyən edilməklə ən azı bir il müddətinə əmək qabiliyyətsiz hesab edilməsi başa düşülür."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "114",
+   "t": "Hakimlərin səlahiyyətlərinə vaxtından əvvəl xitam verilməsi qaydası",
+   "p": [
+    "Bu Qanunun 113-cü maddəsinin ikinci hissəsinin 6-cı, 7-ci, 8-ci (hakimin başqa dövlətin vətəndaşlığını qəbul etməsi və ya digər dövlət qarşısında öhdəlik götürməsi hallarında), 10-cu və ya 11-ci bəndlərində nəzərdə tutulmuş əsaslar olduqda hakimin səlahiyyətlərinə vaxtından əvvəl xitam verilməsi üçün Məhkəmə-Hüquq Şurası öz təşəbbüsü ilə intizam icraatına başlayır, Ali Məhkəmənin sədri isə intizam icraatının başlanılması haqqında Məhkəmə-Hüquq Şurasına müraciət edir.",
+    "İntizam icraatı nəticəsində bu Qanunun 113-cü maddəsinin ikinci hissəsinin 6-cı, 7-ci, 8-ci (hakimin başqa dövlətin vətəndaşlığını qəbul etməsi və ya digər dövlət qarşısında öhdəlik götürməsi hallarında), 10-cu və ya 11-ci bəndlərində nəzərdə tutulmuş əsasların mövcudluğu müəyyən edildikdə, habelə bu Qanunun 113-cü maddəsinin ikinci hissəsinin 12-ci bəndində nəzərdə tutulmuş əsas olduqda, Məhkəmə-Hüquq Şurası hakimin səlahiyyətlərinə xitam verilməsi barədə müvafiq icra hakimiyyəti orqanına təklif verilməsi haqqında qərar qəbul edir. Hakimin səlahiyyətlərinə onu təyin etmiş orqan tərəfindən vaxtından əvvəl xitam verilir.",
+    "Bu Qanunun 113-cü maddəsinin ikinci hissəsinin 1-ci, 3–5-ci, 8-ci (hakimin Azərbaycan Respublikası vətəndaşlığına xitam verilməsi halında) və ya 9-cu bəndlərində nəzərdə tutulmuş əsaslar olduqda hakimin səlahiyyətlərinə Məhkəmə-Hüquq Şurası tərəfindən vaxtından əvvəl xitam verilir."
+   ]
+  },
+  {
+   "k": "m",
+   "n": "115",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "m",
+   "n": "116",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "m",
+   "n": "117",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "m",
+   "n": "118",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "m",
+   "n": "119",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "m",
+   "n": "120",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "m",
+   "n": "121",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "m",
+   "n": "122",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "m",
+   "n": "123",
+   "t": "",
+   "p": [],
+   "x": 1
+  },
+  {
+   "k": "k",
+   "n": "keçid",
+   "t": "Keçid müddəaları",
+   "p": [
+    "1. Bu Qanun dərc edildiyi gündən qüvvəyə minir.",
+    "2. Bu Qanun qüvvəyə mindiyi gündən onun qəbul edilməsindən əvvəl seçilmiş hakimlərin maddi və sosial təminatı barədə müddəalar istisna edilməklə məhkəmə quruluşuna və hakimlərin statusuna dair qüvvədə olan Azərbaycan Respublikasının qanunvericilik aktları qüvvədən düşür.",
+    "3. Azərbaycan Respublikasının rayon (şəhər) xalq məhkəmələri və hərbi qarnizon tribunalları bu Qanunun qüvvəyə mindiyi gündən müvafiq olaraq Azərbaycan Respublikasının rayon (şəhər) məhkəmələri və hərbi məhkəmələr adlandırılır.",
+    "4. Azərbaycan Respublikasında fəaliyyət göstərən məhkəmələr bu Qanunda nəzərdə tutulmuş məhkəmələr təşkil edilənədək və yeni prosessual qanunlar qəbul edilənədək qüvvədə olan qanunvericiliklə müəyyən edilmiş səlahiyyətləri həyata keçirirlər.",
+    "5. Bu Qanun qəbul edilənədək seçilmiş Azərbaycan Respublikası məhkəmələri hakimlərinin səlahiyyət müddəti həmin məhkəmələrə yeni hakimlərin təyin olunduğu gündən, işə baxılan müddətdə isə işə baxılıb qurtardığı gündən bitmiş hesab olunur.",
+    "KMQ3",
+    "7. Bu Qanunun 96-cı maddəsinin müddəaları 2005-ci il 1 yanvar tarixinədək hakim vəzifəsinə təyin edilmiş hakimlərə şamil edilmir və onlar səlahiyyətlərinin icrasını davam etdirirlər. Bu şəxslərin səlahiyyət müddətləri başa çatdıqdan sonra yenidən hakim vəzifəsinə təyin edilməsi onların fəaliyyətinin qiymətləndirilməsi əsasında həyata keçirilir. Fəaliyyəti məqbul qiymətləndirilmiş hakimlər aşağıdakı müddətə yenidən hakim vəzifəsinə təyin edilirlər:",
+    "15 ilə qədər hakimlik stajı olanlar - 10 il müddətinə, lakin son yaş həddini - 65 yaşı keçməmək şərti ilə;",
+    "15 il və daha çox hakimlik stajı olanlar - son yaş həddinə - 65 yaşınadək.",
+    "Səlahiyyəti 10 il müddətinə uzadılmış hakimlərin səlahiyyət müddəti başa çatdıqdan sonra onların səlahiyyətlərinin yenidən uzadılması qiymətləndirmə əsasında bu Qanunla müəyyən edilmiş ümumi qaydada həyata keçirilir.",
+    "Son yaş həddinə çatmış hakimin peşəkarlığından istifadə edilməsinə ehtiyac olduqda Məhkəmə-Hüquq Şurasının təklifi ilə onun səlahiyyət müddəti 70 yaşınadək artırıla bilər.",
+    "8. Müəyyən müddətə hakim vəzifəsinə təyin edilmiş şəxsin digər hakim vəzifəsinə keçirilməsi onun səlahiyyət müddətini artırmır. Hakimlərin iş yerinin dəyişdirilməsi onların təyin olunduqları səlahiyyət müddəti hüdudlarında həyata keçirilir."
+   ]
+  }
+ ]
+}

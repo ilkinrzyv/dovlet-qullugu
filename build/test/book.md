@@ -26,6 +26,18 @@ Bu bölmə BB-də görünməməlidir.
 
 Mətn.
 
+```qanun konstitusiya
+maddə 1–2
+```
+
+```qanun dovlet-qullugu
+maddə 9
+```
+
+```qanun nha
+maddə 1: 1.0.1
+```
+
 # II hissə — Məntiq {fənn=men}
 
 ## Fəsil 3. Məntiq fəsli

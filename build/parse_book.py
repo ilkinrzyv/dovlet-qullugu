@@ -16,6 +16,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument('--src', default=os.path.join(BASE, '..', 'book', 'book.md'))
 ap.add_argument('--quiz', default=os.path.join(BASE, 'quiz'))
 ap.add_argument('--fig', default=os.path.join(BASE, 'fig'))
+ap.add_argument('--qanun', default=os.path.join(BASE, 'qanun'))
 ap.add_argument('--out', default=os.path.join(BASE, 'book.json'))
 args = ap.parse_args()
 for stream in (sys.stdout, sys.stderr):
@@ -41,9 +42,9 @@ for i, t in enumerate(tokens):
         heads.append((t.map[0], int(t.tag[1]), tokens[i + 1].content.strip()))
 
 def body(k):
-    """Markdown between heading k and the next heading."""
+    """Markdown between heading k and the next part, chapter or section heading (#### stays inside)."""
     start = heads[k][0] + 1
-    end = heads[k + 1][0] if k + 1 < len(heads) else len(lines)
+    end = next((heads[j][0] for j in range(k + 1, len(heads)) if heads[j][1] <= 3), len(lines))
     return '\n'.join(lines[start:end]).strip('\n')
 
 def html(src):
@@ -154,6 +155,129 @@ def inline_blocks(src, sid, subj):
         return f'\n\nIQ{len(qs) - 1}IQ\n\n'
     return BLOCK_RE.sub(cut, src), qs
 
+# ---------- law texts: ```qanun <act> blocks pull the official text from build/qanun/<act>.json (qanun.py) ----------
+# One selection per line: `mənbə` (where and as of when the text was taken), `preambula`, `maddə 5`, `maddə 5–9`
+# (en dash; 13-1 is one number), `maddə 1: 1.0 1.0.1–1.0.4` (only those numbered points of the maddə), `bənd 3`,
+# `bənd 33–34`, `hissə 1–3` (every bənd of those hissələr), `fərman bənd 3` (the decree before an instruction),
+# `keçid müddəaları`. Bölmə, fəsil and hissə headings come along when a selection starts right after them.
+LAW_RE = re.compile(r'^```qanun[ \t]+(\S+)[ \t]*\n(.*?)\n```[ \t]*$', re.M | re.S)
+laws = {}
+
+def md_text(s):
+    """Law text as markdown that shows it as it is: no lists, emphasis or links made out of it. A line break inside
+    the paragraph stays a line break, and each line is guarded, since a list may start after one."""
+    s = s.replace('\\', '\\\\')
+    s = re.sub(r'([*_`\[\]<>&|#~])', r'\\\1', s)
+    s = re.sub(r'^([-+=])', r'\\\1', s, flags=re.M)
+    s = re.sub(r'^(\d+)([.)])(\s|$)', r'\1\\\2\3', s, flags=re.M)
+    return s.replace('\n', '\\\n')
+
+def md_block(x):
+    if isinstance(x, str):
+        return md_text(x)
+    rows = [[md_text(c).replace('\\\n', ' ') for c in r] for r in x['table']]
+    if len(rows) == 1:  # a layout sample (a signature, a stamp): its cells one under another
+        return '\\\n'.join(c for c in rows[0] if c)
+    n = max(len(r) for r in rows)
+    rows = [r + [''] * (n - len(r)) for r in rows]
+    return '\n'.join(['| ' + ' | '.join(rows[0]) + ' |', '|' + ' --- |' * n] + ['| ' + ' | '.join(r) + ' |' for r in rows[1:]])
+
+def law_head(u):
+    if u['k'] == 'b':
+        return f'##### {u["n"]} bölmə. {u["t"]}'
+    return f'##### {u["n"]}. {u["t"]}' if u['t'] else f'##### {u["n"]}'
+
+def law_unit(u, keep=None):
+    out = []
+    if u['k'] == 'm':
+        out.append(f'#### Maddə {u["n"]}' + (f'. {u["t"]}' if u['t'] and not u.get('x') else ''))
+        if u.get('x'):
+            out.append('*Bu maddə qanundan çıxarılıb.*')
+    elif u['k'] == 'k':
+        out.append(f'##### {u["t"]}')
+    elif u.get('x'):
+        out.append(f'{u["n"]}\\. *Çıxarılıb.*')
+    out += [md_block(x) for i, x in enumerate(u['p']) if keep is None or i in keep]
+    return out
+
+def law_points(u, spec, where):
+    """Indices of the paragraphs of maddə u that `1.0 1.0.1–1.0.4` names, with the unnumbered ones under each."""
+    nums = [(i, re.match(r'^(\d+(?:[.-]\d+)*)\.\s', x).group(1)) for i, x in enumerate(u['p'])
+            if isinstance(x, str) and re.match(r'^(\d+(?:[.-]\d+)*)\.\s', x)]
+    pos = {n: k for k, (_, n) in enumerate(nums)}
+    keep = set()
+    for tok in spec.split():
+        a, _, b = tok.partition('–')
+        if a not in pos or (b and b not in pos):
+            err(f'{where}: maddə {u["n"]} has no point {tok}')
+            continue
+        for k in range(pos[a], pos[b or a] + 1):
+            i = nums[k][0]
+            end = nums[k + 1][0] if k + 1 < len(nums) else len(u['p'])
+            keep.update(range(i, end))
+    return keep
+
+def law_md(key, spec, where):
+    if key not in laws:
+        p = os.path.join(args.qanun, key + '.json')
+        laws[key] = json.load(open(p, encoding='utf-8')) if os.path.isfile(p) else None
+    act = laws[key]
+    if not act:
+        err(f'{where}: no law text {key} (run build/qanun.py)')
+        return ''
+    units, out, pick = act['units'], [], {}
+    def find(kind, n, among=units):
+        hit = [i for i, u in enumerate(among) if u['k'] == kind and u['n'] == n]
+        if not hit:
+            err(f'{where}: {key} has no {kind} {n}')
+        return hit[0] if hit else None
+    for line in [x.strip() for x in spec.split('\n') if x.strip()]:
+        m = re.fullmatch(r'(maddə|bənd|hissə|fərman bənd)\s+(\S+?)(?:–(\S+?))?(?::\s*(.+))?', line)
+        if line == 'mənbə':
+            y, mo, d = act['fetched'].split('-')
+            out.append(f'> Mətn [e-qanun.az]({act["url"]}) saytındakı rəsmi mətndən olduğu kimi götürülüb '
+                       f'({d}.{mo}.{y} tarixindəki redaksiya).')
+        elif line == 'preambula':
+            out += [md_block(x) for x in act.get('pre', [])]
+        elif line == 'keçid müddəaları':
+            i = find('k', 'keçid')
+            if i is not None:
+                pick[i] = None
+        elif m and m.group(1) == 'fərman bənd':  # comes first in the act, so it goes out as it is read
+            dec = act.get('decree', [])
+            a, b = find('p', m.group(2), dec), find('p', m.group(3) or m.group(2), dec)
+            if a is not None and b is not None:
+                for u in dec[a:b + 1]:
+                    out += law_unit(u)
+        elif m:
+            kind = {'maddə': 'm', 'bənd': 'p', 'hissə': 'h'}[m.group(1)]
+            a, b = find(kind, m.group(2)), find(kind, m.group(3) or m.group(2))
+            if a is None or b is None:
+                continue
+            if b < a:
+                err(f'{where}: {line}: the range runs backwards')
+            if kind == 'h':  # every bənd up to the next hissə after b
+                b = next((i for i in range(b + 1, len(units)) if units[i]['k'] == 'h'), len(units)) - 1
+            for i in range(a, b + 1):
+                if units[i]['k'] in 'mpk':
+                    pick[i] = law_points(units[i], m.group(4), where) if m.group(4) else None
+        else:
+            err(f'{where}: qanun {key}: cannot read {line!r}')
+    pending = []
+    for i, u in enumerate(units):
+        if u['k'] in 'bfh':
+            pending.append(u)
+            continue
+        if i in pick:
+            out += [law_head(h) for h in pending] + law_unit(u, pick[i])
+        pending = []
+    if not out:
+        err(f'{where}: qanun {key}: nothing selected')
+    return '\n\n'.join(out)
+
+def law_blocks(src, where):
+    return LAW_RE.sub(lambda m: '\n\n' + law_md(m.group(1), m.group(2), where) + '\n\n', src)
+
 ATTR_RE = re.compile(r'\s*\{([^{}]*)\}\s*$')
 NUM_RE = re.compile(r'^(\d+(?:\.\d+)*)\.\s+(.*)$')
 CH_RE = re.compile(r'^Fəsil\s+(\d+)\.\s*(.+)$')
@@ -205,7 +329,7 @@ for k, (_, level, raw) in enumerate(heads):
             cid, n, kind = f'x{extras}', None, 'extra'
         cid = at.get('id') or cid
         inherit = part if (part and kind == 'chapter') else None
-        chapter = {'id': cid, 'n': n, 'kind': kind, 'title': title, 'lead': html(body(k)), 'sections': [],
+        chapter = {'id': cid, 'n': n, 'kind': kind, 'title': title, 'lead': html(law_blocks(body(k), cid)), 'sections': [],
                    'g': at.get('g', inherit['g'] if inherit else GROUPS),
                    'subj': at.get('subj', inherit['subj'] if inherit else None)}
         if inherit:
@@ -221,7 +345,7 @@ for k, (_, level, raw) in enumerate(heads):
         nm = NUM_RE.match(title)
         num, name = (nm.group(1), nm.group(2)) if nm else ('', title)
         sid = at.get('id') or f'{chapter["id"]}s{len(chapter["sections"]) + 1}'
-        src, qs = inline_blocks(body(k), sid, chapter['subj'])
+        src, qs = inline_blocks(law_blocks(body(k), sid), sid, chapter['subj'])
         g = at.get('g', chapter['g'])
         if not set(g) <= set(chapter['g']):
             err(f'{sid}: groups {g} wider than its chapter')
