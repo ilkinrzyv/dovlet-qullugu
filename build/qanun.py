@@ -62,35 +62,44 @@ def on(rpr, tag):
 
 
 class Numbering:
-    """Word's automatic numbering (some laws number their points this way): the label each paragraph shows."""
+    """Word's automatic numbering (some laws number their points this way): the label each paragraph shows. As in
+    Word, lists that share an abstract definition share one count; a list with a startOverride restarts it where that
+    list is first used (korrupsiya 9.1 → 9.2 → 9.3 runs over three lists)."""
     def __init__(self, z):
-        self.lists, self.count = {}, {}
+        self.lists, self.count, self.started = {}, {}, set()
         if 'word/numbering.xml' not in z.namelist():
             return
         root = ET.fromstring(z.read('word/numbering.xml'))
-        abstract = {}
-        for a in root.iter(W + 'abstractNum'):
+        def level_defs(parent):
             levels = {}
-            for lv in a.iter(W + 'lvl'):
+            for lv in parent.iter(W + 'lvl'):
                 def val(tag, lv=lv):
                     e = lv.find(W + tag)
                     return e.get(W + 'val') if e is not None else None
                 levels[int(lv.get(W + 'ilvl'))] = {'fmt': val('numFmt'), 'text': val('lvlText') or '',
                                                    'start': int(val('start') or 1)}
-            abstract[a.get(W + 'abstractNumId')] = levels
+            return levels
+        abstract = {a.get(W + 'abstractNumId'): level_defs(a) for a in root.iter(W + 'abstractNum')}
         for n in root.iter(W + 'num'):
-            levels = {k: dict(v) for k, v in abstract.get(n.find(W + 'abstractNumId').get(W + 'val'), {}).items()}
+            aid = n.find(W + 'abstractNumId').get(W + 'val')
+            levels = {k: dict(v) for k, v in abstract.get(aid, {}).items()}
+            restart = {}
             for o in n.iter(W + 'lvlOverride'):
+                k = int(o.get(W + 'ilvl'))
+                levels.update({lk: dict(lv) for lk, lv in level_defs(o).items()})  # a redefined level, same count
                 s = o.find(W + 'startOverride')
-                if s is not None and int(o.get(W + 'ilvl')) in levels:
-                    levels[int(o.get(W + 'ilvl'))]['start'] = int(s.get(W + 'val'))
-            self.lists[n.get(W + 'numId')] = levels
+                if s is not None:
+                    restart[k] = int(s.get(W + 'val'))
+            self.lists[n.get(W + 'numId')] = (aid, levels, restart)
 
     def label(self, num_id, level):
-        levels = self.lists.get(num_id)
-        if not levels or level not in levels:
+        aid, levels, restart = self.lists.get(num_id, (None, {}, {}))
+        if level not in levels:
             return ''
-        c = self.count.setdefault(num_id, {})
+        c = self.count.setdefault(aid, {})
+        if level in restart and (num_id, level) not in self.started:
+            self.started.add((num_id, level))
+            c[level] = restart[level] - 1
         c[level] = c.get(level, levels[level]['start'] - 1) + 1
         for deeper in [k for k in c if k > level]:
             del c[deeper]
@@ -358,15 +367,22 @@ def convert(key, docx, kind):
 
 
 def check(key, act):
-    """Numbered points inside a maddə carry its number (5.1, 5.1.2): a wrong one means the numbering was misread."""
+    """Numbered points inside a maddə carry its number (5.1, 5.1.2) and none repeats: anything else means the
+    numbering was misread."""
     bad = []
     for u in act['units']:
         if u['k'] != 'm' or not re.fullmatch(r'\d+(?:-\d+)?', u['n']):
             continue
+        seen = set()
         for x in u['p']:
             m = re.match(r'^(\d+(?:-\d+)?)\.\d', x) if isinstance(x, str) else None
             if m and m.group(1) != u['n']:
                 bad.append(f'maddə {u["n"]}: {x[:60]}')
+            lab = re.match(r'^(\d+(?:[.-]\d+)+)\.\s', x) if isinstance(x, str) else None
+            if lab:
+                if lab.group(1) in seen:
+                    bad.append(f'maddə {u["n"]}: {lab.group(1)} twice')
+                seen.add(lab.group(1))
     for b in bad[:8]:
         print(f'  WARN {key} {b}')
     return len(bad)

@@ -50,7 +50,8 @@ All checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build/
   Cyrillic look-alike letters are mapped to Latin. Rerun it when a law changes, read `git diff build/qanun`, then check
   the questions and “Yadda saxla” rows that cite the changed points. The old summaries (before 2026-11-01) had kept
   some removed provisions (attestasiya, maddə 31 of the civil service law; the flag's Pantone colours; the 35-year age
-  limit for President); the questions on them were replaced in place.
+  limit for President); the questions on them were replaced in place. On 2026-11-01 all 503 legislation questions
+  were then checked one by one against the current text (answer, distractors, cited point).
 - Questions inside a section: fenced blocks ` ```nümunə ` (worked example: `S:`, `A)`…, `Cavab: B`, `İzah:`) and
   ` ```yoxla ` (check: same without `İzah:`; the reader asks Claude instead). No options = open question,
   `Cavab: 7 | yeddi`; `Şəkil:` = SVG under `build/fig/`. The parser cuts them into `section.qs` and leaves

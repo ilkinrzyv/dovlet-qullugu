@@ -4,7 +4,7 @@ Bu qovluq dövlət qulluğu imtahanlarına hazırlıq kitabının **offline tət
 internetlə açandan sonra kitab, testlər və irəliləyiş **internetsiz** işləyir. Telefonda ana ekrana adi tətbiq
 kimi quraşdırılır.
 
-Versiya: `2026.11.01-715862d` · cihazda tutduğu yer: təxminən 3,2 MB.
+Versiya: `2026.11.01-7e0b24c` · cihazda tutduğu yer: təxminən 3,2 MB.
 
 ## Telefona quraşdır
 
