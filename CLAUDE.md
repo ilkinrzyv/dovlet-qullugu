@@ -15,10 +15,12 @@ python build/parse_book.py   # → build/book.json (gitignored); must print "err
 python build/build_pwa.py    # → docs/ and dist/dovlet-qullugu-offline.zip; prints the new version
 python build/build_page.py   # → dist/dovlet-qullugu.html, the claude.ai version (see Claude below)
 cd build && npm ci && npx playwright install chromium
-npm run test:pwa             # real build: service worker, install + install banner, offline reload, programme page
+npm run test:pwa             # real build: service worker, install + install banner, offline reload, programme page,
+                             # the longest law section's maddə list, a law explanation's links
 npm run test:app             # fixture book (build/test/): BA/BB filter, open + figure questions, inline nümunə/yoxla,
                              # Claude with a mocked API key + handoff links, teacher chat, mock exam, time-up,
-                             # law text from ```qanun blocks, old read marks on law sections dropped
+                             # law text from ```qanun blocks, old read marks on law sections dropped, maddə list,
+                             # explanation → maddə → back to the test, bookmarks, resume, programme tabs
 npm run test:page            # fixture book as the claude.ai page, `sample` mocked: #ai-… links answer by themselves
 ```
 
@@ -41,6 +43,9 @@ All checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build/
   `bənd 33–34`, `hissə 1–3`, `fərman bənd 3`, `keçid müddəaları`. `parse_book.py` expands it from
   `build/qanun/<act>.json`: bölmə/fəsil/hissə captions (h5) come along when a selection starts after them, maddə
   headings are h4, a maddə or bənd removed whole shows as “çıxarılıb”; `app.js` gives qan sections `.prose.law`.
+  Every maddə heading and bənd paragraph gets an id — `<act>-m<n>`, `<act>-b<n>`, a Təlimat's decree `<act>-f<n>`
+  (`98¹` → `konstitusiya-m98-1`) — so a maddə may be shown in one section only (the parser fails otherwise). `#<id>`
+  opens its section there, marked; a law section with 3+ maddələr (bəndlər in the Təlimat) opens with their list.
   Sections follow the law's own order (a fəsil, or a 5–12k-character run of maddələr); the programme decides which
   maddələr appear at all. “Yadda saxla” tables at chapter ends are the only summaries left.
 - `build/qanun.py` — downloads each act in `ACTS` (key → e-qanun id) through `api.e-qanun.az/downloadWord/<id>`, which
@@ -75,11 +80,19 @@ All checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build/
   letters. Optional `g`. Quiz ids are positional (`c1q3`): new questions go at the end of a chapter's list, and an
   outdated question is replaced in place, not deleted. `s` is the section number (`1.4`), so restructuring sections
   means remapping `s` (legislation questions: by the maddə their `e` cites).
-- `build/app.js` — the whole UI in one IIFE: hash router (`#home`, `#c1`, `#c1s2`, `#proqram[-qan]`, `#testler`,
-  `#test-c1` / `test-mix` / `test-wrong` / `test-f-qan` / `test-s-c1s2` (one section), `#imtahan`, `#imtahan-men` (one
+- `build/app.js` — the whole UI in one IIFE: hash router (`#home`, `#c1`, `#c1s2`, `#konstitusiya-m72` (a law id),
+  `#elfecinler` (bookmarks), `#proqram[-qan]` (one subject at a time; its tabs are a second top-bar row), `#testler`,
+  `#test-c1` / `test-mix` / `test-wrong` / `test-f-qan` / `test-s-c1s2` (one section; each section ends with a link to
+  it), `#imtahan`, `#imtahan-men` (one
   subject's part: its question count, its share of the time), `#imtahan-netice`, `#statistika`, `#sual-c1q3`,
-  `#muellim[-men]`, `#axtar=...`, `#ayarlar`). `vis()` filters everything by `S.group`. State in localStorage
-  `dq-kitab:v1` (`read`, `last`, `quiz`, `wrong`, `ans` = per test question `[right, tries, last 1/0]` from practice and
+  `#muellim[-men]`, `#axtar=...`, `#ayarlar`). `vis()` filters everything by `S.group`. Law questions' explanations
+  (`lawLinks`): “Maddə 72.III”, “109-cu maddəsinin”, “Bənd 25” link to the law id; a law's name before a reference
+  (Konstitusiyanın, Bayraq/Gerb/Himn qanununun, Fərman 435/614, Fərmanın = the Təlimat's decree) picks the act until
+  the next name, else the act of the question's section, then of its chapter — so write explanations as “Maddə N…” and
+  name any other law. A link (or “Bölməni oxu”) from a test keeps the test (`quizRun`, `RET`) and the book shows
+  “Testə qayıt”. State in localStorage
+  `dq-kitab:v1` (`read`, `last`, `at` = [section, block index] where reading stopped, used by “Davam et”, `marks` =
+  bookmarks (section id or law id → time; “Sıfırla” keeps them), `quiz`, `wrong`, `ans` = per test question `[right, tries, last 1/0]` from practice and
   exams (the statistics page: accuracy per subject, weak sections = under 80% with 2+ answers), `chk` = solved inline
   checks keyed `cNsKkI` (I = index in `section.qs`), `aiModel`, `theme` (default light, the owner's choice; `themeV`
   marks a state saved after that, so an older `auto` opens light once; `build/look.js`, inlined at the top of both

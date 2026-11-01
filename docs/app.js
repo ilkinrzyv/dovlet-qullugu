@@ -8,8 +8,21 @@
 const BOOK = window.DQ_BOOK || JSON.parse(document.getElementById('book-data').textContent);
 const PWA = window.DQ_PWA || null; // offline app build only
 const CHAPTERS = BOOK.chapters;
-const chById = {}, secById = {}, secCh = {};
-CHAPTERS.forEach(c => { chById[c.id] = c; c.sections.forEach(s => { secById[s.id] = s; secCh[s.id] = c.id; }); });
+const chById = {}, secById = {}, secCh = {}, secAt = {}; // secAt: a section's place in the book
+CHAPTERS.forEach(c => { chById[c.id] = c; c.sections.forEach(s => { secById[s.id] = s; secCh[s.id] = c.id; secAt[s.id] = Object.keys(secById).length; }); });
+// Law text: every maddə heading and bənd paragraph has an id (konstitusiya-m72, karguzarliq-b25, a decree's bənd -f3).
+// #<id> opens its section at that place; test explanations and bookmarks point there.
+const ANCH = {};     // id → { s: section id, t: heading or the bənd's text, i: book order }
+const SEC_ACTS = {}; // section id → the acts its law text comes from, in order
+const deTag = h => h.replace(/<[^>]+>/g, '').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+let anchors = 0;
+CHAPTERS.forEach(c => c.sections.forEach(s => {
+  for (const m of s.html.matchAll(/<(h4|p) id="([\w-]+)">([\s\S]*?)<\/\1>/g)) {
+    ANCH[m[2]] = { s: s.id, t: deTag(m[3]).replace(/\s+/g, ' ').trim(), i: anchors++ };
+    const act = m[2].replace(/-[mbf]\d[\w-]*$/, ''), list = SEC_ACTS[s.id] || (SEC_ACTS[s.id] = []);
+    if (!list.includes(act)) list.push(act);
+  }
+}));
 const QUIZ = BOOK.quizzes || {};
 const qById = {};
 Object.keys(QUIZ).forEach(ch => QUIZ[ch].forEach(q => { qById[q.id] = Object.assign({ ch }, q); }));
@@ -63,7 +76,9 @@ const ICONS = {
   flag: '<path d="M5 21V4h11l-1.5 4L16 12H5"/>',
   chat: '<path d="M4 5h16v11H10l-4.5 3.5V16H4z"/><path d="M8 9.5h8M8 12.5h5"/>',
   chart: '<path d="M3 20h18"/><path d="M6 20v-6M11 20V6M16 20v-9M21 20V9" transform="translate(-1.5 0)"/>',
-  copy: '<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4h-9A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H8"/>'
+  copy: '<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4h-9A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H8"/>',
+  star: '<path d="M12 3.6l2.55 5.2 5.7.83-4.13 4.03.98 5.69L12 16.66 6.9 19.35l.98-5.69-4.13-4.03 5.7-.83z"/>',
+  up: '<path d="M12 19V5M6 11l6-6 6 6"/>'
 };
 const icon = (n, cls) => `<svg class="i${cls ? ' ' + cls : ''}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n] || ''}</svg>`;
 
@@ -319,7 +334,9 @@ const KEY = 'dq-kitab:v1';
 // themeV: saved after light became the default look (2026-10-31); before that "auto" (Sistem) was only the default
 // lawV: saved after the Qanunvericilik chapters became the full law text (2026-11-01); read marks from before were
 // set on the old summary sections, which no longer line up with the new ones
-const blank = () => ({ read: {}, last: '', quiz: {}, wrong: {}, ans: {}, chk: {}, aiModel: 'auto', theme: 'light', themeV: 1, lawV: 1, fs: 'm', group: GROUPS[0], exam: null, exams: [], examLast: null });
+// at: [section, block] — where in the last section the reader stopped (“Davam et” opens it there)
+// marks: bookmarks, a section id or a law anchor (konstitusiya-m72) → when it was marked
+const blank = () => ({ read: {}, last: '', at: null, marks: {}, quiz: {}, wrong: {}, ans: {}, chk: {}, aiModel: 'auto', theme: 'light', themeV: 1, lawV: 1, fs: 'm', group: GROUPS[0], exam: null, exams: [], examLast: null });
 // A state an older version saved (on this device or in an exported file), brought up to date
 function upgrade(saved) {
   if (saved.theme === 'auto' && !saved.themeV) saved.theme = 'light';   // the same rule as look.js
@@ -365,25 +382,71 @@ const onlyFor = x => x && x.g && x.g.length < GROUPS.length ? `<span class="chip
 const TABS = [['home', 'Kitab', 'book'], ['testler', 'Testlər', 'checklist'], ['muellim', 'Müəllim', 'chat'], ['axtar', 'Axtarış', 'search'], ['ayarlar', 'Ayarlar', 'sliders']];
 let tab = 'home';
 let examTimer = null;
+// a view sets `after` to say where to scroll once it is on screen (default: the top)
+let after = null, curSec = null;
+// A test's explanation opened the book (a maddə, or the question's section): the test waits — quizRun is kept — and the
+// book offers the way back. { h: the test's route, y: where it was scrolled, n: book pages opened since, label }
+let RET = null;
+let RESUME = false; // “Davam et” was tapped: the last section opens where the reader stopped
 
-function topbar(kicker, name, back, extra) {
+function topbar(kicker, name, back, extra, sub) {
   $('#topbar .wrap').innerHTML = `
-    ${back ? `<a class="ibtn" href="#${esc(back)}" aria-label="Geri">${icon('back')}</a>` : ''}
+    ${back ? `<a class="ibtn" href="#${esc(back)}" aria-label="Geri"${RET && back === RET.h ? ' data-retgo' : ''}>${icon('back')}</a>` : ''}
     <div class="tb-title">${kicker ? `<span class="tb-kicker">${esc(kicker)}</span>` : ''}<span class="tb-name">${esc(name)}</span></div>
     ${extra || ''}<div class="readbar"><i></i></div>`;
+  // a second row that stays on screen with the bar (the programme's subject tabs)
+  let row = $('#topbar .tb-sub');
+  if (sub && !row) { row = document.createElement('div'); row.className = 'wrap tb-sub'; $('#topbar').appendChild(row); }
+  if (sub) row.innerHTML = sub; else if (row) row.remove();
 }
 function tabbar() {
   $('#tabbar').innerHTML = `<div class="wrap">${TABS.map(([id, label, ic]) =>
     `<a class="tab" href="#${id}" aria-current="${tab === id}">${icon(ic)}<span>${label}</span></a>`).join('')}</div>`;
 }
+// home: the bar shows the book's name only once the big title has scrolled away
+let heroWatch = null;
+function quietTitle(el) {
+  const bar = $('#topbar'), watch = !!(el && window.IntersectionObserver);
+  if (heroWatch) { heroWatch.disconnect(); heroWatch = null; }
+  bar.classList.toggle('quiet', watch);
+  if (!watch) return;
+  heroWatch = new IntersectionObserver(([e]) => bar.classList.toggle('quiet', e.isIntersecting), { rootMargin: '-56px 0px 0px 0px' });
+  heroWatch.observe(el);
+}
+
+document.addEventListener('click', e => {
+  const t = e.target;
+  if (!t || !t.closest) return;
+  if (t.closest('a.lawref, a[data-ret]')) {
+    const h = decodeURIComponent(location.hash.slice(1));
+    const label = h.startsWith('sual-') ? 'Suala qayıt' : h === 'imtahan-netice' || (quizRun && quizRun.i >= quizRun.items.length) ? 'Nəticəyə qayıt' : 'Testə qayıt';
+    RET = { h, y: window.scrollY, n: 0, label };
+    return;
+  }
+  if (t.closest('[data-retgo]') && RET) { // straight back when the test is the page before this one
+    e.preventDefault();
+    if (RET.n === 1) history.back(); else location.hash = '#' + RET.h;
+    return;
+  }
+  if (t.closest('[data-resume]')) RESUME = true;
+  const mk = t.closest('[data-mark]');
+  if (mk) toggleMark(mk.dataset.mark);
+});
 
 function route() {
   const h = decodeURIComponent(location.hash.slice(1)) || 'home';
   const ai = /^ai-(sec|hint|iq|q|topic|adv|chat)(?:-([\w.]+))?$/.exec(h);
   if (ai) { PENDING = { act: ai[1], ref: ai[2] || '' }; location.replace('#' + aiTarget(ai[1], ai[2] || '')); return; }
   clearInterval(examTimer); examTimer = null;
-  if (!h.startsWith('test-')) quizRun = null;
-  if (secById[h]) { tab = 'home'; vSection(h); }
+  const sec = ANCH[h] ? ANCH[h].s : secById[h] ? h : null;
+  const back = RET && h === RET.h ? RET : null;
+  if (back || (RET && !sec)) RET = null; else if (RET) RET.n++;
+  if (!h.startsWith('test-') && !RET) quizRun = null;
+  const resume = RESUME;
+  RESUME = false; after = null; curSec = null; toTop.hidden = true;
+  quietTitle(null);
+  if (sec) { tab = 'home'; vSection(sec, ANCH[h] ? h : null, resume); }
+  else if (h === 'elfecinler') { tab = 'home'; vMarks(); }
   else if (h.startsWith('sual-') && qById[h.slice(5)]) { tab = 'testler'; vQuestion(h.slice(5)); }
   else if (chById[h]) { tab = 'home'; vChapter(h); }
   else if (h === 'proqram' || h.startsWith('proqram-')) { tab = 'home'; vProgram(h.slice(8)); }
@@ -398,7 +461,9 @@ function route() {
   else if (h === 'ayarlar') { tab = 'ayarlar'; vSettings(); }
   else { tab = 'home'; vHome(); }
   tabbar();
-  if (!h.startsWith('axtar')) window.scrollTo(0, 0);
+  if (after) after();
+  else if (back) window.scrollTo(0, back.y);
+  else if (!h.startsWith('axtar')) window.scrollTo(0, 0);
   $('#view').focus({ preventScroll: true });
   if (PENDING) AI.ready.then(runPending);
 }
@@ -432,6 +497,11 @@ function vHome() {
   const nq = pool().length;
   const cov = PROG.subjects.map(s => coverage(s.id)).reduce((a, b) => [a[0] + b[0], a[1] + b[1]], [0, 0]);
   const best = S.exams.filter(r => r.group === S.group && !r.subj).reduce((m, r) => Math.max(m, r.pct), -1);
+  const marks = Object.keys(S.marks).filter(k => markInfo(k)).length;
+  const parts = BOOK.parts.filter(vis).map(p => {
+    const chs = p.chapters.map(id => chById[id]).filter(vis), secs = chs.flatMap(visSections);
+    return { p, chs, secs, read: secs.filter(s => S.read[s.id]).length, name: p.title.split(/\s+[—–-]\s+/).pop() };
+  });
   $('#view').innerHTML = `
     <section class="hero">
       <span class="kicker">İmtahana hazırlıq · ${esc(S.group)} qrupu</span>
@@ -442,7 +512,7 @@ function vHome() {
         ${bar(done, all.length)}
         <a class="statlink" href="#statistika">${icon('chart')} Statistika: düzgünlük, zəif mövzular</a>
       </div>
-      ${nextSec ? `<a class="card cont" href="#${next}">
+      ${nextSec ? `<a class="card cont" href="#${next}" data-resume>
         <span class="kicker">${S.last ? 'Davam et' : 'Başla'}</span>
         <b>${esc((nextSec.num ? nextSec.num + '. ' : '') + nextSec.title)}</b>
         <span class="muted">${esc(chById[secCh[next]].title)}</span>${icon('arrow')}</a>` : ''}
@@ -450,52 +520,72 @@ function vHome() {
         <a class="card tile" href="#proqram">${icon('map')}<b>Proqram</b><span class="muted">${cov[0]}/${cov[1]} mövzu kitabda</span></a>
         <a class="card tile" href="#imtahan">${icon('timer')}<b>Sınaq imtahanı</b><span class="muted">${S.exam ? 'davam edir' : best >= 0 ? `ən yaxşı: ${best}%` : `${EXAM.blocks.reduce((a, b) => a + b.n, 0)} sual`}</span></a>
       </div>
+      <nav class="row subjnav" aria-label="Fənlər">${parts.filter(x => x.chs.length).map(x =>
+        `<button type="button" class="btn sm" data-part="${esc(x.p.id)}">${esc(x.name)}</button>`).join('')}</nav>
     </section>
-    ${extras.length ? `<section class="block"><div class="list">${extras.map(chRow).join('')}</div></section>` : ''}
-    ${BOOK.parts.filter(vis).map(p => {
-      const chs = p.chapters.map(id => chById[id]).filter(vis);
-      return `<section class="block">
-        <div class="block-h"><h2>${esc(p.title)}</h2></div>
+    <section class="block"><div class="list">
+      <a class="chrow" href="#elfecinler"><span class="chn">${icon('star')}</span>
+        <span class="cht"><b>Əlfəcinlər</b><span class="chm">${marks ? `${marks} qeyd` : 'Vacib bölmə və maddələri ulduzla qeyd et'}</span></span>${icon('chev')}</a>
+      ${extras.map(chRow).join('')}</div></section>
+    ${parts.map(({ p, chs, secs, read }) => `<section class="block" id="part-${esc(p.id)}">
+        <div class="block-h ph"><h2>${esc(p.title)}</h2>${secs.length ? `<span>${read}/${secs.length} bölmə</span>` : ''}</div>
+        ${secs.length ? bar(read, secs.length) : ''}
         ${chs.length ? `<div class="list">${chs.map(chRow).join('')}</div>`
           : `<p class="card muted empty">Hazırlanır.${p.subj ? ` Mövzular <a href="#proqram-${p.subj}">Proqram</a> səhifəsindədir.` : ''}</p>`}
-      </section>`;
-    }).join('')}`;
+      </section>`).join('')}`;
+  $$('[data-part]').forEach(b => b.addEventListener('click', () => $('#part-' + b.dataset.part).scrollIntoView({ behavior: 'smooth' })));
+  quietTitle($('.hero .h1'));
 }
 
 function vChapter(id) {
   const c = chById[id];
   const kicker = c.kind === 'chapter' ? `Fəsil ${c.n}` : 'Giriş';
   topbar(kicker, c.title, 'home');
-  const q = chQuiz(id), best = S.quiz[id];
+  const q = chQuiz(id), best = S.quiz[id], tests = secTests();
+  // under each section: reading time, its checks solved so far, its test questions
+  const meta = s => {
+    const chk = (s.qs || []).map((x, i) => x.k === 'chk' ? `${s.id}k${i}` : '').filter(Boolean);
+    return [`${s.mins} dəq`, chk.length ? `${chk.filter(k => S.chk[k]).length}/${chk.length} tapşırıq` : '',
+      tests[s.id] ? `${tests[s.id]} test sualı` : ''].filter(Boolean).join(' · ');
+  };
   $('#view').innerHTML = `
     <span class="kicker">${esc(kicker)}</span>
     <h1 class="h1">${esc(c.title)}</h1>
     ${groupNote(c)}
     ${c.lead ? `<div class="prose lead">${c.lead}</div>` : ''}
+    ${q.length ? `<a class="card quizcta block" href="#test-${id}">
+      ${icon('checklist')}<span><b>Fəsil testi</b><span class="muted">${q.length} sual${best ? ` · ən yaxşı nəticə ${best.best}%` : ''}</span></span>${icon('arrow')}</a>` : ''}
     <div class="list block">${visSections(c).map(s => `<a class="secrow${S.read[s.id] ? ' done' : ''}" href="#${s.id}">
       <span class="tick">${S.read[s.id] ? icon('check') : ''}</span>
-      <span class="sect"><b>${esc((s.num ? s.num + '. ' : '') + s.title)}</b><span class="muted">${s.mins} dəq ${onlyFor(s)}</span></span>
-      ${icon('chev')}</a>`).join('')}</div>
-    ${q.length ? `<a class="card quizcta block" href="#test-${id}">
-      ${icon('checklist')}<span><b>Fəsil testi</b><span class="muted">${q.length} sual${best ? ` · ən yaxşı nəticə ${best.best}%` : ''}</span></span>${icon('arrow')}</a>` : ''}`;
+      <span class="sect"><b>${esc((s.num ? s.num + '. ' : '') + s.title)}</b><span class="muted">${meta(s)} ${onlyFor(s)}</span></span>
+      ${icon('chev')}</a>`).join('')}</div>`;
 }
+// test questions per section, for the chosen group
+function secTests() { const n = {}; pool().forEach(id => { const s = qById[id].s; if (s) n[s] = (n[s] || 0) + 1; }); return n; }
 
-function vSection(id) {
-  const s = secById[id], c = chById[secCh[id]];
+// anchor: a maddə (bənd) to open the section at; resume: open it where the reader stopped (“Davam et”)
+function vSection(id, anchor, resume) {
+  const s = secById[id], c = chById[secCh[id]], law = c.subj === 'qan';
   const ord = order(), i = ord.indexOf(id), prev = i > 0 ? ord[i - 1] : null, next = i >= 0 ? ord[i + 1] : null;
   const kicker = c.kind === 'chapter' ? `Fəsil ${c.n}${s.num ? ' · ' + s.num : ''}` : c.title;
-  topbar(kicker, s.title, c.id);
+  topbar(kicker, s.title, RET ? RET.h : c.id, markBtn(id, 'ibtn mark', 'Bölməni əlfəcinlərə əlavə et'));
+  curSec = id;
   if (S.last !== id) { S.last = id; save(); }
+  const nq = secTests()[id] || 0, best = S.quiz['s-' + id];
   const nav = (sid, dir) => sid ? `<a class="pn ${dir}" href="#${sid}"><span class="muted">${dir === 'prev' ? 'Əvvəlki' : 'Növbəti'}</span><b>${esc(secById[sid].title)}</b></a>` : '<span></span>';
   $('#view').innerHTML = `
     <span class="kicker">${esc(kicker)}</span>
     <h1 class="h1">${esc(s.title)}</h1>
     <div class="row meta muted">${icon('clock')} ${s.mins} dəq oxu ${onlyFor(s)}</div>
     ${groupNote(vis(c) ? s : c)}
-    <article class="prose${c.subj === 'qan' ? ' law' : ''}">${s.html}</article>
+    <article class="prose${law ? ' law' : ''}">${s.html}</article>
     ${c.kind === 'chapter' ? `<div class="card claudebox"><span class="muted small">Aydın olmayan yer var? Virtual müəllim izah etsin.</span>${aiBox('sec', s.id, 'Claude-dan izah istə')}</div>` : ''}
     <button type="button" class="btn ${S.read[id] ? 'done' : 'primary'} readbtn" data-act="read">${S.read[id] ? icon('check') + ' Oxunub' : 'Oxudum'}</button>
-    <nav class="prevnext">${nav(prev, 'prev')}${nav(next, 'next')}</nav>`;
+    ${nq ? `<a class="card quizcta secq" href="#test-s-${id}">${icon('checklist')}<span><b>Bu bölmə üzrə test</b>
+      <span class="muted">${nq} sual${best ? ` · ən yaxşı nəticə ${best.best}%` : ''}</span></span>${icon('arrow')}</a>` : ''}
+    <nav class="prevnext">${nav(prev, 'prev')}${nav(next, 'next')}</nav>
+    <div class="fabspace"></div>
+    ${RET ? `<a class="retpill" href="#${esc(RET.h)}" data-retgo>${icon('back')} ${esc(RET.label)}</a>` : ''}`;
   $('[data-act="read"]').addEventListener('click', e => {
     if (S.read[id]) delete S.read[id]; else S.read[id] = Date.now();
     save();
@@ -504,6 +594,71 @@ function vSection(id) {
     b.innerHTML = S.read[id] ? icon('check') + ' Oxunub' : 'Oxudum';
   });
   (s.qs || []).forEach((q, i) => { const box = $(`.iq[data-i="${i}"]`); if (box) inlineQ(box, s, c, q, i); });
+  if (law) {
+    lawToc();
+    $$('article.prose h4[id]').forEach(h => h.insertAdjacentHTML('beforeend', markBtn(h.id, 'hmark', 'Maddəni əlfəcinlərə əlavə et')));
+  }
+  if (anchor) after = () => showAnchor(anchor);
+  else if (resume && S.at && S.at[0] === id && S.at[1] > 0) after = () => {
+    const el = $('article.prose').children[S.at[1]];
+    if (el) el.scrollIntoView(); else window.scrollTo(0, 0);
+  };
+}
+
+// a long law section starts with its maddələr (bəndlər for the Təlimat); each opens its place, marked
+function lawToc() {
+  const art = $('article.prose.law');
+  let items = $$('h4[id]', art), what = 'maddələr';
+  if (!items.length) { items = $$('p[id]', art); what = 'bəndlər'; }
+  if (items.length < 3) return;
+  const row = el => {
+    const m = /^(?:Maddə\s+)?([^\s.]+)\.?\s*(.*)$/.exec(ANCH[el.id] ? ANCH[el.id].t : el.textContent) || ['', '', ''];
+    const nx = el.nextElementSibling, name = m[2] || (nx && /çıxarılıb/.test(nx.textContent) ? 'çıxarılıb' : '');
+    return `<li><a href="#${el.id}"><span class="tn">${esc(m[1])}</span><span>${esc(clip(name, 160))}</span></a></li>`;
+  };
+  const d = document.createElement('details');
+  d.className = 'card toc';
+  d.innerHTML = `<summary>Bu bölmədəki ${what} <span class="muted">${items.length}</span></summary><ol>${items.map(row).join('')}</ol>`;
+  art.parentNode.insertBefore(d, art);
+}
+// a maddə (bənd) opened from a link: scrolled to, and marked through the end of its text
+function showAnchor(id) {
+  const el = document.getElementById(id);
+  if (!el) { window.scrollTo(0, 0); return; }
+  let x = el;
+  do { x.classList.add('hl'); x = x.nextElementSibling; } while (x && !/^H[45]$/.test(x.tagName) && !(el.tagName === 'P' && x.id));
+  el.scrollIntoView({ block: 'start' });
+}
+
+/* bookmarks: a section (the star in the top bar) or a maddə (the star by its heading) */
+const markBtn = (k, cls, label) => `<button type="button" class="${cls}${S.marks[k] ? ' on' : ''}" data-mark="${esc(k)}" aria-pressed="${!!S.marks[k]}" aria-label="${esc(label)}" title="${esc(label)}">${icon('star')}</button>`;
+function toggleMark(k) {
+  const on = !S.marks[k];
+  if (on) S.marks[k] = Date.now(); else delete S.marks[k];
+  save();
+  $$(`[data-mark="${k}"]`).forEach(b => { b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
+  if (location.hash !== '#elfecinler') toast(on ? 'Əlfəcinlərə əlavə olundu' : 'Əlfəcinlərdən çıxarıldı');
+}
+// what a bookmark points at, if it is still in the book and in the chosen group's programme
+function markInfo(k) {
+  const a = ANCH[k], sid = a ? a.s : secById[k] ? k : null;
+  const s = sid && secById[sid], c = s && chById[secCh[sid]];
+  if (!s || !vis(s) || !vis(c)) return null;
+  return { k, s, c, title: a ? a.t : secName(s), at: secAt[sid] * 1e4 + (a ? a.i + 1 : 0) };
+}
+function vMarks() {
+  topbar('Kitab', 'Əlfəcinlər', 'home');
+  const list = Object.keys(S.marks).map(markInfo).filter(Boolean).sort((x, y) => x.at - y.at);
+  $('#view').innerHTML = `
+    <span class="kicker">${esc(S.group)} qrupu</span>
+    <h1 class="h1">Əlfəcinlər</h1>
+    <p class="muted">Bölməni yuxarıdakı ulduzla, qanun maddəsini başlığının yanındakı ulduzla qeyd et — hamısı burada, kitabdakı sırası ilə.</p>
+    ${list.length ? `<div class="list block">${list.map(x => `<div class="secrow mk">
+        <a class="sect" href="#${esc(x.k)}"><span class="kicker">${esc(x.c.kind === 'chapter' ? `Fəsil ${x.c.n}${ANCH[x.k] && x.s.num ? ' · ' + x.s.num : ''}` : x.c.title)}</span>
+          <b>${esc(clip(x.title, 120))}</b></a>
+        <button type="button" class="ibtn" data-unmark="${esc(x.k)}" aria-label="Əlfəcindən çıxar" title="Əlfəcindən çıxar">${icon('x')}</button></div>`).join('')}</div>`
+      : '<p class="card muted empty block">Hələ əlfəcin yoxdur.</p>'}`;
+  $$('[data-unmark]').forEach(b => b.addEventListener('click', () => { delete S.marks[b.dataset.unmark]; save(); const y = scrollY; vMarks(); window.scrollTo(0, y); }));
 }
 
 /* questions inside the text: a worked example (answer and solution shown) or a check (no solution, Claude helps) */
@@ -566,38 +721,58 @@ function inlineQ(box, s, c, q, i) {
   draw();
 }
 
-/* reading progress line under the top bar */
+/* in a section: the reading progress line under the top bar, a “Yuxarı” button on long pages, and the place the
+   reader has got to (kept for “Davam et”) */
+const toTop = document.createElement('button');
+toTop.type = 'button'; toTop.className = 'fab'; toTop.hidden = true;
+toTop.setAttribute('aria-label', 'Yuxarı'); toTop.title = 'Yuxarı'; toTop.innerHTML = icon('up');
+toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+document.body.appendChild(toTop);
+let placeTimer = null;
 window.addEventListener('scroll', () => {
-  const i = $('.readbar i');
-  if (!i) return;
-  const max = document.documentElement.scrollHeight - innerHeight;
-  i.style.width = (secById[location.hash.slice(1)] && max > 0 ? Math.min(100, scrollY * 100 / max) : 0) + '%';
+  const i = $('.readbar i'), max = document.documentElement.scrollHeight - innerHeight;
+  if (i) i.style.width = (curSec && max > 0 ? Math.min(100, scrollY * 100 / max) : 0) + '%';
+  toTop.hidden = !(curSec && scrollY > innerHeight * 1.5);
+  if (curSec) { clearTimeout(placeTimer); placeTimer = setTimeout(keepPlace, 500); }
 }, { passive: true });
+// S.at = [section, the first block of its text still on screen]
+function keepPlace() {
+  const art = $('article.prose');
+  if (!art || !curSec) return;
+  const top = $('#topbar').getBoundingClientRect().bottom + 8, kids = art.children;
+  let k = 0;
+  while (k < kids.length - 1 && kids[k].getBoundingClientRect().bottom < top) k++;
+  if (!k && S.at && S.at[0] === curSec) return; // opened at the top again: keep how far it was read
+  if (!S.at || S.at[0] !== curSec || S.at[1] !== k) { S.at = [curSec, k]; save(); }
+}
 
 /* =========================================================
    6. Programme map: every DİM topic of the chosen group, and where the book teaches it
    ========================================================= */
+// one subject at a time; its tabs stay on screen under the top bar (#proqram-men opens that one)
+let progTab = null;
 function vProgram(focus) {
-  topbar('DİM', 'Proqram', 'home');
-  const block = EXAM.blocks.reduce((m, b) => { m[b.subj] = b; return m; }, {});
+  const cur = SUBJ[focus] ? focus : SUBJ[progTab] ? progTab : PROG.subjects[0].id, s = SUBJ[cur];
+  progTab = cur;
+  topbar('DİM', 'Proqram', 'home', '', `<nav class="ptabs" role="tablist" aria-label="Fənlər">${PROG.subjects.map(x =>
+    `<a role="tab" href="#proqram-${x.id}" aria-selected="${x.id === cur}" data-tab="${x.id}">${esc(x.title)}</a>`).join('')}</nav>`);
+  const b = EXAM.blocks.find(x => x.subj === cur), [have, total] = coverage(cur);
   $('#view').innerHTML = `
     <span class="kicker">${esc(S.group)} qrupu</span>
     <h1 class="h1">Test imtahanı proqramı</h1>
     <p class="muted">DİM-in proqramında ${esc(S.group)} qrupuna düşən mövzular. Hər mövzunun yanında onu öyrədən fəsil görünür.</p>
-    <div class="row subnav">${PROG.subjects.map(s => `<button type="button" class="btn sm" data-go="${s.id}">${esc(s.title)}</button>`).join('')}</div>
-    ${PROG.subjects.map(s => {
-      const [have, total] = coverage(s.id), b = block[s.id];
-      return `<section class="block" id="pr-${s.id}">
-        <div class="block-h"><h2>${esc(s.title)}${b ? ` · ${b.n} sual` : ''}</h2></div>
-        <div class="card stack">
-          <div class="row cov"><span><b>${have}/${total}</b> mövzu kitabda</span>${bar(have, total)}</div>
-          ${s.note ? `<p class="muted small">${esc(s.note)}</p>` : ''}
-        </div>
-        <div class="list ptopics">${s.topics.filter(vis).map(t => topicRow(s, t)).join('')}</div>
-      </section>`;
-    }).join('')}`;
-  $$('[data-go]').forEach(b => b.addEventListener('click', () => $('#pr-' + b.dataset.go).scrollIntoView({ behavior: 'smooth' })));
-  if (focus && $('#pr-' + focus)) $('#pr-' + focus).scrollIntoView();
+    <section class="block" id="pr-${cur}">
+      <div class="block-h"><h2>${esc(s.title)}${b ? ` · ${b.n} sual` : ''}</h2></div>
+      <div class="card stack">
+        <div class="row cov"><span><b>${have}/${total}</b> mövzu kitabda</span>${bar(have, total)}</div>
+        ${s.note ? `<p class="muted small">${esc(s.note)}</p>` : ''}
+      </div>
+      <div class="list ptopics">${s.topics.filter(vis).map(t => topicRow(s, t)).join('')}</div>
+    </section>`;
+  // switching tabs replaces the page in the history: Back leaves the programme
+  $$('#topbar [data-tab]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); location.replace('#proqram-' + a.dataset.tab); }));
+  const tabs = $('#topbar .ptabs'), on = $('[aria-selected="true"]', tabs); // scrolled only as far as the chosen tab needs
+  if (on) tabs.scrollLeft = Math.max(0, on.offsetLeft + on.offsetWidth - tabs.clientWidth + 12);
 }
 function topicRow(s, t) {
   const where = (t.see || []).filter(x => vis(chById[x] || secById[x]));
@@ -622,6 +797,36 @@ const isRight = (q, v) => q.t === 'open' ? v != null && q.a.some(x => norm(x) ==
 const optOrder = q => q.t === 'open' ? null : (q.fix ? q.o.map((_, i) => i) : shuffle(q.o.map((_, i) => i)));
 const answerText = (q, v) => q.t === 'open' ? (v == null || v === '' ? '—' : v) : (v == null ? '—' : q.o[v]);
 const rightText = q => q.t === 'open' ? q.a[0] : q.o[q.a];
+
+/* A law question's explanation with its references linked to the book: “Maddə 72.III”, “109-cu maddəsinin”, “Bənd 25”.
+   A law's name before a reference picks the act (and holds until another name: “Konstitusiyanın 57-ci və 94-cü
+   maddəsi”); otherwise it is the act of the question's section, then the others of its chapter. A bare “32-ci bənd”
+   is a point of some maddə and stays text; “Bənd 1.0.10” of a law (not the Təlimat) is a point of maddə 1. */
+const REF_NUM = String.raw`\d+(?:¹|-\d+)?(?:\.(?:\d+(?:-\d+)?|[IVX]+))*`, REF_SUF = String.raw`-?(?:cü|ci|cı|cu|ü|i|ı|u)\s+`;
+const REF = new RegExp(String.raw`(Konstitusiyan[ıi]n|[Bb]ayraq qanununun|[Gg]erb(?: və himn)? qanun(?:unun|larının)|[Hh]imn qanununun|Fərman (435|614)|Fərmanın|Qanunun|Təlimatın)`
+  + String.raw`|([Mm]addə\p{L}*\s+(${REF_NUM})|(${REF_NUM})${REF_SUF}maddə\p{L}*)|([Bb]ənd\p{L}*\s+(${REF_NUM})|(${REF_NUM})${REF_SUF}bənd\p{L}*)`, 'gu');
+function lawLinks(q) {
+  const e = String(q.e || ''), c = chById[q.ch];
+  if (!c || c.subj !== 'qan') return esc(e);
+  const own = (SEC_ACTS[q.s] || []).slice();
+  c.sections.forEach(s => (SEC_ACTS[s.id] || []).forEach(a => { if (!own.includes(a)) own.push(a); }));
+  let cur = null, at = 0, out = '';
+  for (const m of e.matchAll(REF)) {
+    if (m[1]) { // a law's name: Fərmanın = the decree that approved this chapter's Təlimat
+      cur = m[2] ? 'ferman-' + m[2] : m[1] === 'Fərmanın' ? '*'
+        : ({ kons: 'konstitusiya', bayr: 'bayraq', gerb: 'gerb', himn: 'himn' })[m[1].slice(0, 4).toLowerCase()] || null;
+      continue;
+    }
+    const num = m[4] || m[5] || m[7] || m[8], dotted = num.includes('.');
+    const n = num.split('.')[0].replace('¹', '-1'), acts = cur && cur !== '*' ? [cur] : own;
+    const find = k => acts.map(a => `${a}-${k}${n}`).find(x => ANCH[x]);
+    const id = m[3] ? find('m') : cur === '*' ? find('f') : find('b') || (dotted ? find('m') : null);
+    if (!id) continue;
+    out += esc(e.slice(at, m.index)) + `<a class="lawref" href="#${id}">${esc(m[0])}</a>`;
+    at = m.index + m[0].length;
+  }
+  return out + esc(e.slice(at));
+}
 
 // reveal: show right / wrong marks (practice after answering, never during the exam)
 function qBody(q, order, picked, reveal) {
@@ -723,8 +928,8 @@ function vQuiz(key) {
     ${answered ? `<div class="card expl ${ok ? 'ok' : 'bad'}">
       <b>${ok ? 'Düzdür' : 'Səhvdir'}</b>
       ${!ok ? `<p>Düz cavab: <b>${esc(rightText(q))}</b></p>` : ''}
-      ${q.e ? `<p>${esc(q.e)}</p>` : ''}
-      ${q.s && secById[q.s] ? `<a href="#${q.s}">Bölməni oxu: ${esc(secById[q.s].num)}. ${esc(secById[q.s].title)}</a>` : ''}
+      ${q.e ? `<p>${lawLinks(q)}</p>` : ''}
+      ${q.s && secById[q.s] ? `<a href="#${q.s}" data-ret>Bölməni oxu: ${esc(secById[q.s].num)}. ${esc(secById[q.s].title)}</a>` : ''}
       ${aiBox('q', it.id, 'Claude-dan ətraflı izah', { o: it.order, p: picked })}
     </div>
     <button type="button" class="btn primary wide" data-act="next">${quizRun.i + 1 < n ? 'Növbəti sual' : 'Nəticəni gör'} ${icon('arrow')}</button>` : ''}`;
@@ -758,8 +963,8 @@ function vQuestion(id) {
     <h1 class="qtext">${esc(q.q)}</h1>
     ${q.t === 'open' ? `${q.img ? `<figure class="qfig">${q.img}</figure>` : ''}<p class="iqmsg ok">Düz cavab: ${esc(q.a[0])}</p>` : qBody(q, order, q.a, true)}
     <div class="card expl ok"><b>Düz cavab: ${esc(rightText(q))}</b>
-      ${q.e ? `<p>${esc(q.e)}</p>` : ''}
-      ${q.s && secById[q.s] ? `<a href="#${q.s}">Bölməni oxu: ${esc(secById[q.s].num)}. ${esc(secById[q.s].title)}</a>` : ''}
+      ${q.e ? `<p>${lawLinks(q)}</p>` : ''}
+      ${q.s && secById[q.s] ? `<a href="#${q.s}" data-ret>Bölməni oxu: ${esc(secById[q.s].num)}. ${esc(secById[q.s].title)}</a>` : ''}
       ${aiBox('q', id, 'Claude-dan ətraflı izah')}
     </div>`;
 }
@@ -771,7 +976,7 @@ function missedList(items, picks) {
       ${x.q.img ? `<figure class="qfig sm">${x.q.img}</figure>` : ''}
       <p class="no">${icon('x')} ${esc(answerText(x.q, x.p))}</p>
       <p class="yes">${icon('check')} ${esc(rightText(x.q))}</p>
-      ${x.q.e ? `<p class="muted">${esc(x.q.e)}</p>` : ''}
+      ${x.q.e ? `<p class="muted">${lawLinks(x.q)}</p>` : ''}
       ${aiBox('q', x.q.id, 'Claude ilə izah', { o: x.order, p: x.p })}
     </div>`).join('')}</div>` : '<p class="card expl ok"><b>Bütün cavablar düzdür.</b></p>';
 }
@@ -1307,7 +1512,7 @@ function vSettings() {
     $('[data-act="import"]').addEventListener('click', importData);
   }
   $('[data-act="reset"]').addEventListener('click', e => askHere(e.currentTarget.parentNode, 'Bütün irəliləyiş və test nəticələri silinsin?', 'Bəli, sil', () => {
-    S = Object.assign(blank(), { theme: S.theme, fs: S.fs, group: S.group, aiModel: S.aiModel }); save(); toast('Sıfırlandı');
+    S = Object.assign(blank(), { theme: S.theme, fs: S.fs, group: S.group, aiModel: S.aiModel, marks: S.marks }); save(); toast('Sıfırlandı');
   }));
 }
 // model choice (every build) and, in the offline app, the reader's own API key

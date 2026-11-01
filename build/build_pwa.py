@@ -178,7 +178,7 @@ Ayarlar → Tətbiq bölməsində “Offline hazırdır” yazısı görünənd�
 
 ## Məlumatların
 
-- İrəliləyiş və test nəticələri yalnız bu cihazda saxlanılır.
+- İrəliləyiş, test nəticələri və əlfəcinlər yalnız bu cihazda saxlanılır.
 - Ehtiyat nüsxə: Ayarlar → Məlumatlar → “İxrac et” (.json fayl). Yeni cihazda “İdxal et”.
 - Brauzerin sayt məlumatlarını silsən, irəliləyiş də silinir — əvvəlcə ixrac et.
 

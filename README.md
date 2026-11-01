@@ -1,8 +1,8 @@
 # Dövlət Qulluğu — İmtahana Hazırlıq
 
 Dövlət qulluğuna qəbulun test imtahanı (BA və BB qrupları) üçün interaktiv kitab: DİM proqramına uyğun fəsillər,
-izahlı testlər, taymerli sınaq imtahanı, səhvlərin təkrarı, axtarış və irəliləyiş. Telefonda tətbiq kimi quraşdırılır
-və internetsiz işləyir.
+qanunların tam rəsmi mətni, izahlı testlər (izahdakı maddə kitabda açılır), taymerli sınaq imtahanı, səhvlərin təkrarı,
+əlfəcinlər, axtarış və irəliləyiş. Telefonda tətbiq kimi quraşdırılır və internetsiz işləyir.
 
 - **Offline tətbiq:** https://ilkinrzyv.github.io/dovlet-qullugu/ — telefonda aç və ana ekrana əlavə et.
 
@@ -93,6 +93,10 @@ maddə 17–20
   `fərman bənd 3`, `preambula`, `keçid müddəaları`, `mənbə` (mətnin mənbəyi və tarixi).
 - Bölmə, fəsil və hissə başlıqları seçim onlardan başlayanda özü əlavə olunur; ləğv olunmuş maddə “çıxarılıb” kimi
   göstərilir.
+- Hər maddənin (Təlimatda bəndin) kitabda öz ünvanı var: `#konstitusiya-m72`, `#karguzarliq-b25`. Ona görə bir maddə
+  yalnız bir bölmədə göstərilə bilər — parser bunu yoxlayır. Uzun qanun bölməsinin başında maddələrin siyahısı çıxır.
+- Test izahında “Maddə 72.III”, “Konstitusiyanın 109-cu maddəsi”, “Bənd 25” yazılanda tətbiq onu həmin maddəyə
+  keçidə çevirir. Qanunun adı yazılmayıbsa, sualın öz bölməsinin qanunu götürülür; kitabda olmayan maddə keçidsiz qalır.
 - Aktların siyahısı (`konstitusiya`, `dovlet-qullugu`, `nha` və s.) `build/qanun.py`-dakı `ACTS`-dadır.
 - Qanuna dəyişiklik ediləndə: `python build/qanun.py` — mətnlər yenidən endirilir; `git diff build/qanun` nəyin
   dəyişdiyini göstərir. Sonra testlərin və “Yadda saxla” cədvəllərinin hələ də düz olduğunu yoxla.
@@ -167,8 +171,8 @@ Yoxlama (Playwright, Chromium):
 
 ```bash
 cd build && npm ci && npx playwright install chromium
-npm run test:pwa    # real sayt: offline, quraşdırma, oxu, axtarış
-npm run test:app    # yoxlama kitabı ilə: BA/BB süzgəci, proqram, açıq və şəkilli suallar, nümunə/yoxla blokları, Claude (API açarı ilə), sınaq imtahanı, qanun mətni
+npm run test:pwa    # real sayt: offline, quraşdırma, oxu, axtarış, maddə siyahısı və izahdakı keçidlər
+npm run test:app    # yoxlama kitabı ilə: BA/BB süzgəci, proqram və onun sekmələri, açıq və şəkilli suallar, nümunə/yoxla blokları, Claude (API açarı ilə), sınaq imtahanı, qanun mətni, izahdan maddəyə keçid və testə qayıtma, əlfəcinlər, qaldığın yerdən davam
 npm run test:page   # claude.ai versiyası: #ai-… keçidləri cavabı özü başladır, model seçimi
 ```
 

@@ -42,8 +42,9 @@ function serve(port) {
   const qOf = id => { for (const k in BOOK.quizzes) for (const q of BOOK.quizzes[k]) if (q.id === id) return q; return null; };
 
   // ---- BA (default): everything visible ----
+  const chapterRows = '.chrow:not([href="#elfecinler"])';
   await go('home');
-  out.baChapters = await page.$$eval('.chrow', els => els.length);
+  out.baChapters = await page.$$eval(chapterRows, els => els.length);
   await shot('t1-home-ba');
   await go('c1');
   out.baC1Sections = await page.$$eval('.secrow', els => els.length);
@@ -54,7 +55,7 @@ function serve(port) {
   // ---- BB: BA-only chapter, section and questions disappear ----
   await setGroup('BB');
   await go('home');
-  out.bbChapters = await page.$$eval('.chrow', els => els.length);
+  out.bbChapters = await page.$$eval(chapterRows, els => els.length);
   await go('c1');
   out.bbC1Sections = await page.$$eval('.secrow', els => els.length);
   await go('proqram');
@@ -327,6 +328,63 @@ function serve(port) {
   await go('c3');
   out.lawRead.push(await page.$$eval('.secrow.done', els => els.length));
 
+  // ---- reading aids: the maddə list, links from explanations and the way back, bookmarks, resume, programme tabs ----
+  await go('c2s1');
+  out.toc = await page.$$eval('.toc li a', els => els.map(a => a.getAttribute('href')));
+  await go('sual-c2q1');
+  out.lawrefs = await page.$$eval('.expl a.lawref', els => els.map(a => [a.textContent, a.getAttribute('href')]));
+  await page.click('.expl a.lawref');
+  await page.waitForSelector('#dovlet-qullugu-m9.hl');
+  out.lawrefOpen = { hl: await page.$eval('#dovlet-qullugu-m9', el => el.classList.contains('hl')), pill: (await page.textContent('.retpill')).trim() };
+  await page.click('.retpill');
+  await page.waitForFunction(() => location.hash === '#sual-c2q1');
+  await go('test-c1');                                  // a practice test waits while its section is read
+  const first = BOOK.quizzes.c1.find(x => x.q === 'Q1 hamı üçün');
+  await page.click(`.opt[data-oi="${first.a}"]`);
+  await page.click('.expl a[data-ret]');
+  await page.waitForSelector('.retpill');
+  out.retTest = (await page.textContent('.retpill')).trim();
+  await page.click('.retpill');
+  await page.waitForSelector('.expl');
+  out.backInTest = { hash: await page.evaluate(() => location.hash), q: await page.$eval('.qhead .kicker', el => el.textContent), right: await page.$eval('.expl > b', el => el.textContent) };
+
+  await go('c2s1');                                     // bookmarks: a section and a maddə
+  await page.click('#topbar [data-mark="c2s1"]');
+  await page.click('h4#konstitusiya-m2 .hmark');
+  await go('elfecinler');
+  out.marks = await page.$$eval('.mk a.sect', els => els.map(a => a.getAttribute('href')));
+  await page.click('[data-unmark="c2s1"]');
+  out.marksLeft = await page.$$eval('.mk a.sect', els => els.map(a => a.getAttribute('href')));
+  await shot('t1-marks');
+
+  await go('c1s1');                                     // a section's own test; a chapter's test above its sections
+  out.secTest = await page.$eval('a.quizcta.secq', a => [a.getAttribute('href'), a.querySelector('.muted').textContent.trim()]);
+  await go('c3');
+  out.chapterPage = await page.$eval('#view', v => ({ testFirst: !!(v.querySelector('.quizcta').compareDocumentPosition(v.querySelector('.list')) & Node.DOCUMENT_POSITION_FOLLOWING),
+    meta: v.querySelector('.secrow .sect .muted').textContent.trim() }));
+  await go('home');
+  out.homeNav = { parts: await page.$$eval('.subjnav [data-part]', els => els.map(b => b.textContent)), quiet: await page.$eval('#topbar', el => el.classList.contains('quiet')),
+    progress: await page.$eval('#part-p1 .ph span', el => el.textContent), marks: await page.$eval('a.chrow[href="#elfecinler"] .chm', el => el.textContent) };
+
+  await page.setViewportSize({ width: 390, height: 360 });  // “Davam et” opens the last section where reading stopped
+  await go('c2s1');
+  await page.evaluate(() => document.querySelectorAll('article.prose > *')[6].scrollIntoView());
+  await page.waitForTimeout(900);
+  out.at = (await state()).at;
+  await go('home');
+  await page.click('a.cont[data-resume]');
+  await page.waitForSelector('article.prose');
+  await page.waitForTimeout(200);
+  out.resumed = await page.evaluate(() => { const r = document.querySelectorAll('article.prose > *')[6].getBoundingClientRect(); return window.scrollY > 0 && r.top < innerHeight; });
+  await page.setViewportSize({ width: 390, height: 844 });
+
+  await go('proqram');                                  // the programme: one subject at a time, tabs under the bar
+  out.tabs = await page.$$eval('#topbar .ptabs [role="tab"]', els => els.map(a => a.getAttribute('aria-selected')));
+  await page.click('#topbar [data-tab="men"]');
+  await page.waitForSelector('#pr-men');
+  out.tabMen = await page.$$eval('section[id^="pr-"]', els => els.map(e => e.id));
+  await shot('t1-programme-tabs');
+
   await browser.close();
   srv.close();
   const eq = (k, v) => { if (JSON.stringify(out[k]) !== JSON.stringify(v)) fail.push(`${k}: expected ${JSON.stringify(v)}, got ${JSON.stringify(out[k])}`); };
@@ -381,6 +439,18 @@ function serve(port) {
   eq('systemKept', [null, 'rgb(17, 19, 23)']);
   eq('law', { law: true, h5: 4, h4: ['Maddə 1.', 'Maddə 2.', 'Maddə 9', 'Maddə 1.'], removed: true, points: ['1.0.1.'] });
   eq('lawRead', [0, 1]);
+  eq('toc', ['#konstitusiya-m1', '#konstitusiya-m2', '#dovlet-qullugu-m9', '#nha-m1']);
+  eq('lawrefs', [['Maddə 9', '#dovlet-qullugu-m9'], ['2-ci maddəsi', '#konstitusiya-m2']]);
+  eq('lawrefOpen', { hl: true, pill: 'Suala qayıt' });
+  eq('retTest', 'Testə qayıt');
+  eq('backInTest', { hash: '#test-c1', q: 'Sual 1 / 4', right: 'Düzdür' });
+  eq('marks', ['#c2s1', '#konstitusiya-m2']); eq('marksLeft', ['#konstitusiya-m2']);
+  eq('secTest', ['#test-s-c1s1', '3 sual']);
+  eq('chapterPage', { testFirst: true, meta: '1 dəq · 0/3 tapşırıq · 2 test sualı' });
+  eq('homeNav', { parts: ['Qanunvericilik', 'Məntiq', 'Azərbaycan dili', 'İnformatika'], quiet: true, progress: '0/3 bölmə', marks: '1 qeyd' });
+  if (!out.at || out.at[0] !== 'c2s1' || out.at[1] < 4) fail.push('reading place not kept: ' + JSON.stringify(out.at));
+  eq('resumed', true);
+  eq('tabs', ['true', 'false', 'false', 'false']); eq('tabMen', ['pr-men']);
   out.errors = errors.concat(fail);
   console.log(JSON.stringify(out, null, 1));
   process.exit(out.errors.length ? 1 : 0);

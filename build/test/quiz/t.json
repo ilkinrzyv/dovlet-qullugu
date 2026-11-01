@@ -6,7 +6,7 @@
  {"s":"1.1","t":"open","q":"Q4 açıq: 2+3 neçədir?","a":["5","beş"],"e":"2 + 3 = 5"}
 ],
 "2": [
- {"q":"Q5 BA fəsli","o":["düz","səhv 1","səhv 2","səhv 3"],"a":0}
+ {"s":"2.1","q":"Q5 BA fəsli","o":["düz","səhv 1","səhv 2","səhv 3"],"a":0,"e":"Maddə 9 qanundan çıxarılıb; Konstitusiyanın 2-ci maddəsi isə qalır."}
 ],
 "3": [
  {"s":"3.1","q":"Q6 fiqur: hansı kvadratdır?","img":"f1.svg","fix":true,"o":["A","B","C","D","E"],"a":1,"e":"B kvadratdır."},

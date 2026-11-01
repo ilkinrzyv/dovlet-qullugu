@@ -47,14 +47,18 @@ def body(k):
     end = next((heads[j][0] for j in range(k + 1, len(heads)) if heads[j][1] <= 3), len(lines))
     return '\n'.join(lines[start:end]).strip('\n')
 
+# A law unit's markdown starts with ⁅id⁆ (see law_unit); it becomes the id of its heading or first paragraph.
+ANCHOR_RE = re.compile(r'<(h4|p)>⁅([\w-]+)⁆')
+
 def html(src):
     h = md.render(src)
+    h = ANCHOR_RE.sub(r'<\1 id="\2">', h)
     h = h.replace('<table>', '<div class="tbl"><table>').replace('</table>', '</table></div>')
     return h.strip()
 
 def plain(src):
     h = md.render(src)
-    h = re.sub(r'<[^>]+>', ' ', h)
+    h = re.sub(r'⁅[\w-]+⁆|<[^>]+>', ' ', h)
     h = h.replace('&quot;', '"').replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>').replace('&#39;', "'")
     return re.sub(r'\s+', ' ', h).strip()
 
@@ -160,6 +164,7 @@ def inline_blocks(src, sid, subj):
 # (en dash; 13-1 is one number), `maddə 1: 1.0 1.0.1–1.0.4` (only those numbered points of the maddə), `bənd 3`,
 # `bənd 33–34`, `hissə 1–3` (every bənd of those hissələr), `fərman bənd 3` (the decree before an instruction),
 # `keçid müddəaları`. Bölmə, fəsil and hissə headings come along when a selection starts right after them.
+# Every maddə heading and bənd paragraph gets an id (anchor()); a maddə may appear in one section only.
 LAW_RE = re.compile(r'^```qanun[ \t]+(\S+)[ \t]*\n(.*?)\n```[ \t]*$', re.M | re.S)
 laws = {}
 
@@ -187,18 +192,32 @@ def law_head(u):
         return f'##### {u["n"]} bölmə. {u["t"]}'
     return f'##### {u["n"]}. {u["t"]}' if u['t'] else f'##### {u["n"]}'
 
-def law_unit(u, keep=None):
+def anchor(key, kind, n):
+    """The id a maddə (m), bənd (b) or decree bənd (f) gets in the book: konstitusiya-m98-1, karguzarliq-b25.
+    Links from test explanations and bookmarks point at it, so it must not depend on how sections are cut."""
+    n = n.replace('¹', '-1').replace('²', '-2').replace('³', '-3')
+    return f'{key}-{kind}' + re.sub(r'[^\w-]', '-', n)
+
+def law_unit(u, key, keep=None, decree=False):
     out = []
+    tag = f'⁅{anchor(key, "f" if decree else "m" if u["k"] == "m" else "b", u["n"])}⁆' if u['k'] in 'mp' else ''
     if u['k'] == 'm':
-        out.append(f'#### Maddə {u["n"]}' + (f'. {u["t"]}' if u['t'] and not u.get('x') else ''))
+        out.append(f'#### {tag}Maddə {u["n"]}' + (f'. {u["t"]}' if u['t'] and not u.get('x') else ''))
         if u.get('x'):
             out.append('*Bu maddə qanundan çıxarılıb.*')
+        tag = ''
     elif u['k'] == 'k':
         out.append(f'##### {u["t"]}')
     elif u.get('x'):
-        out.append(f'{u["n"]}\\. *Çıxarılıb.*')
-    out += [md_block(x) for i, x in enumerate(u['p']) if keep is None or i in keep]
-    return out
+        out.append(f'{tag}{u["n"]}\\. *Çıxarılıb.*')
+        tag = ''
+    paras = [md_block(x) for i, x in enumerate(u['p']) if keep is None or i in keep]
+    if tag:  # a bənd: the id goes on its first paragraph (a paragraph of its own if the bənd opens with a table)
+        if paras and isinstance(u['p'][0], str) and (keep is None or 0 in keep):
+            paras[0] = tag + paras[0]
+        else:
+            paras.insert(0, tag)
+    return out + paras
 
 def law_points(u, spec, where):
     """Indices of the paragraphs of maddə u that `1.0 1.0.1–1.0.4` names, with the unnumbered ones under each."""
@@ -248,7 +267,7 @@ def law_md(key, spec, where):
             a, b = find('p', m.group(2), dec), find('p', m.group(3) or m.group(2), dec)
             if a is not None and b is not None:
                 for u in dec[a:b + 1]:
-                    out += law_unit(u)
+                    out += law_unit(u, key, decree=True)
         elif m:
             kind = {'maddə': 'm', 'bənd': 'p', 'hissə': 'h'}[m.group(1)]
             a, b = find(kind, m.group(2)), find(kind, m.group(3) or m.group(2))
@@ -269,7 +288,7 @@ def law_md(key, spec, where):
             pending.append(u)
             continue
         if i in pick:
-            out += [law_head(h) for h in pending] + law_unit(u, pick[i])
+            out += [law_head(h) for h in pending] + law_unit(u, key, pick[i])
         pending = []
     if not out:
         err(f'{where}: qanun {key}: nothing selected')
@@ -305,7 +324,7 @@ def attrs(title, where):
     return ATTR_RE.sub('', title), out
 
 book = {'title': '', 'parts': [], 'chapters': []}
-part, chapter, extras, seen = None, None, 0, set()
+part, chapter, extras, seen, anchors = None, None, 0, set(), {}
 for k, (_, level, raw) in enumerate(heads):
     if level > 3:
         continue  # #### and deeper stay inside the section text
@@ -353,6 +372,12 @@ for k, (_, level, raw) in enumerate(heads):
         if chapter['subj'] == 'men' and not re.fullmatch(r'(ec+)+', ''.join(q['k'][0] for q in qs)):
             err(f'{sid}: Məntiq: after each explanation put a ```nümunə block, then at least one ```yoxla block')
         h = html(src)
+        if '⁅' in h:
+            err(f'{sid}: a law unit starts inside a table or list, its anchor is lost')
+        for a in re.findall(r'<(?:h4|p) id="([^"]+)"', h):  # one place per maddə: links and bookmarks need it
+            if a in anchors:
+                err(f'{sid}: {a} is already shown in {anchors[a]}')
+            anchors[a] = sid
         for i in range(len(qs)):
             if f'<p>IQ{i}IQ</p>' not in h:
                 err(f'{sid}: question block {i + 1} must stand on its own, outside lists and quotes')

@@ -74,6 +74,18 @@ function serve(port) {
   await page.fill('#q', 'kecid');
   out.searchHits = await page.$$eval('.hit', els => els.length);
 
+  // law text: a long section lists its maddələr; a test explanation links to the maddə it cites
+  const lawSec = book.chapters.filter(c => c.subj === 'qan').flatMap(c => c.sections).sort((a, b) => b.html.split('<h4 id=').length - a.html.split('<h4 id=').length)[0];
+  await page.goto(`http://127.0.0.1:${PORT}/#${lawSec.id}`);
+  await page.waitForSelector('article.prose.law');
+  out.lawToc = [await page.$$eval('.toc li', els => els.length), lawSec.html.split('<h4 id=').length - 1];
+  const lawQ = book.quizzes.c1 && book.quizzes.c1.find(q => /^Maddə \d+/.test(q.e || ''));
+  if (lawQ) {
+    await page.goto(`http://127.0.0.1:${PORT}/#sual-${lawQ.id}`);
+    await page.waitForSelector('.expl');
+    out.lawLinks = await page.$$eval('.expl a.lawref', els => els.map(a => a.getAttribute('href').slice(1)));
+  }
+
   await page.goto(`http://127.0.0.1:${PORT}/#ayarlar`);
   out.appRow = await page.$eval('#set-app', el => el.innerText.replace(/\s+/g, ' '));
   await page.click('[data-theme="dark"]');
@@ -156,6 +168,9 @@ function serve(port) {
   if (out.readSaved !== 1) fail.push('read mark not saved');
   if (book.quizzes[firstCh.id] && !(out.quizSaved && typeof out.quizSaved.best === 'number')) fail.push('quiz result not saved');
   if (!out.searchHits) fail.push('search found nothing for “kecid”');
+  if (out.lawToc[0] !== out.lawToc[1]) fail.push('maddə list of the longest law section: ' + JSON.stringify(out.lawToc));
+  const ids = new Set(book.chapters.flatMap(c => c.sections).flatMap(s => [...s.html.matchAll(/ id="([^"]+)"/g)].map(m => m[1])));
+  if (!out.lawLinks || !out.lawLinks.length || !out.lawLinks.every(id => ids.has(id))) fail.push('explanation links: ' + JSON.stringify(out.lawLinks));
   if (!out.offlineTopics) fail.push('offline programme page');
   if (out.dark !== 'dark') fail.push('theme switch');
   const wantInstall = { desktopNone: 0, prompted: 1, ios: 'ios', iosLater: true, iosAfterClose: 0, iosChrome: 'iosother', iosInstalled: 0, android: 'android', androidLater: 'prompt' };
