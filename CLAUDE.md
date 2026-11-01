@@ -82,8 +82,8 @@ All checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build/
   means remapping `s` (legislation questions: by the maddə their `e` cites).
 - `build/app.js` — the whole UI in one IIFE: hash router (`#home`, `#c1`, `#c1s2`, `#konstitusiya-m72` (a law id),
   `#elfecinler` (bookmarks), `#proqram[-qan]` (one subject at a time; its tabs are a second top-bar row), `#testler`,
-  `#test-c1` / `test-mix` / `test-wrong` / `test-f-qan` / `test-s-c1s2` (one section; each section ends with a link to
-  it), `#imtahan`, `#imtahan-men` (one
+  `#test-c1` / `test-mix` / `test-wrong` / `test-f-qan` / `test-s-c1s2` (one section; linked at the top of the section,
+  as the chapter test is at the top of its chapter), `#imtahan`, `#imtahan-men` (one
   subject's part: its question count, its share of the time), `#imtahan-netice`, `#statistika`, `#sual-c1q3`,
   `#muellim[-men]`, `#axtar=...`, `#ayarlar`). `vis()` filters everything by `S.group`. Law questions' explanations
   (`lawLinks`): “Maddə 72.III”, “109-cu maddəsinin”, “Bənd 25” link to the law id; a law's name before a reference

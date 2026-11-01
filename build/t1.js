@@ -358,7 +358,8 @@ function serve(port) {
   await shot('t1-marks');
 
   await go('c1s1');                                     // a section's own test; a chapter's test above its sections
-  out.secTest = await page.$eval('a.quizcta.secq', a => [a.getAttribute('href'), a.querySelector('.muted').textContent.trim()]);
+  out.secTest = await page.$eval('a.quizcta.secq', a => [a.getAttribute('href'), a.querySelector('.muted').textContent.trim(),
+    !!(a.compareDocumentPosition(document.querySelector('article.prose')) & Node.DOCUMENT_POSITION_FOLLOWING)]);
   await go('c3');
   out.chapterPage = await page.$eval('#view', v => ({ testFirst: !!(v.querySelector('.quizcta').compareDocumentPosition(v.querySelector('.list')) & Node.DOCUMENT_POSITION_FOLLOWING),
     meta: v.querySelector('.secrow .sect .muted').textContent.trim() }));
@@ -445,7 +446,7 @@ function serve(port) {
   eq('retTest', 'Testə qayıt');
   eq('backInTest', { hash: '#test-c1', q: 'Sual 1 / 4', right: 'Düzdür' });
   eq('marks', ['#c2s1', '#konstitusiya-m2']); eq('marksLeft', ['#konstitusiya-m2']);
-  eq('secTest', ['#test-s-c1s1', '3 sual']);
+  eq('secTest', ['#test-s-c1s1', '3 sual', true]);
   eq('chapterPage', { testFirst: true, meta: '1 dəq · 0/3 tapşırıq · 2 test sualı' });
   eq('homeNav', { parts: ['Qanunvericilik', 'Məntiq', 'Azərbaycan dili', 'İnformatika'], quiet: true, progress: '0/3 bölmə', marks: '1 qeyd' });
   if (!out.at || out.at[0] !== 'c2s1' || out.at[1] < 4) fail.push('reading place not kept: ' + JSON.stringify(out.at));

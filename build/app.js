@@ -578,11 +578,11 @@ function vSection(id, anchor, resume) {
     <h1 class="h1">${esc(s.title)}</h1>
     <div class="row meta muted">${icon('clock')} ${s.mins} dəq oxu ${onlyFor(s)}</div>
     ${groupNote(vis(c) ? s : c)}
+    ${nq ? `<a class="card quizcta secq" href="#test-s-${id}">${icon('checklist')}<span><b>Bu bölmə üzrə test</b>
+      <span class="muted">${nq} sual${best ? ` · ən yaxşı nəticə ${best.best}%` : ''}</span></span>${icon('arrow')}</a>` : ''}
     <article class="prose${law ? ' law' : ''}">${s.html}</article>
     ${c.kind === 'chapter' ? `<div class="card claudebox"><span class="muted small">Aydın olmayan yer var? Virtual müəllim izah etsin.</span>${aiBox('sec', s.id, 'Claude-dan izah istə')}</div>` : ''}
     <button type="button" class="btn ${S.read[id] ? 'done' : 'primary'} readbtn" data-act="read">${S.read[id] ? icon('check') + ' Oxunub' : 'Oxudum'}</button>
-    ${nq ? `<a class="card quizcta secq" href="#test-s-${id}">${icon('checklist')}<span><b>Bu bölmə üzrə test</b>
-      <span class="muted">${nq} sual${best ? ` · ən yaxşı nəticə ${best.best}%` : ''}</span></span>${icon('arrow')}</a>` : ''}
     <nav class="prevnext">${nav(prev, 'prev')}${nav(next, 'next')}</nav>
     <div class="fabspace"></div>
     ${RET ? `<a class="retpill" href="#${esc(RET.h)}" data-retgo>${icon('back')} ${esc(RET.label)}</a>` : ''}`;
