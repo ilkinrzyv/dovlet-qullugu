@@ -289,7 +289,7 @@ function serve(port) {
   await go('imtahan');
   out.fullHist = await page.$$eval('.hist .secrow', els => els.length);
   await go('home');
-  out.homeBest = await page.$eval('a.night[href="#imtahan"] .muted', el => el.textContent);
+  out.homeExam = { links: await page.$$eval('#view a[href="#imtahan"]', els => els.length), last: await page.$eval('a.kpi:nth-child(3) b', el => el.textContent) };
   await go('statistika');
   out.statSubjEx = await page.$$eval('.sx', els => els.map(e => e.getAttribute('href') + ' ' + e.querySelector('.chn').textContent));
   out.statTrendAfter = await page.$$eval('#trend .pt', els => els.length);
@@ -422,7 +422,7 @@ function serve(port) {
   eq('adviceCtx', true);
   eq('oldLink', { tab: 'Müəllim', kept: 2 });
   eq('bbMissClaude', 5); eq('examNoClaude', 0);
-  eq('statLink', 1);
+  eq('statLink', 2);
   eq('statTop', ['76%', '9', '100%', '2']);
   eq('statSubj', ['qan 67% · orta', 'men 100% · yaxşı', 'az 100% · yaxşı', 'inf 100% · yaxşı']);
   eq('weak', ['c1s2 50%', 'c1s1 67%']);
@@ -433,7 +433,7 @@ function serve(port) {
   eq('menPlan', { h1: 'Məntiq sınağı', rows: 1 });
   eq('menExam', { subj: 'men', n: 2, secs: 300, kicker: 'Məntiq sınağı · BA' });
   eq('menResult', { h1: '2 / 3 bal · 67%', passChips: 0, again: '#imtahan-men', saved: 'men' });
-  eq('fullHist', 2); eq('homeBest', '100 sual · 3 saat · ən yaxşı: 100%');
+  eq('fullHist', 2); eq('homeExam', { links: 0, last: '100%' });
   eq('statSubjEx', ['#imtahan-men 67%']); eq('statTrendAfter', 2);
   eq('lightDefault', ['light', 'rgb(245, 246, 251)']);
   eq('oldSystem', ['light', 'light']);

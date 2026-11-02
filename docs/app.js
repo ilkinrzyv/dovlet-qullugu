@@ -534,14 +534,13 @@ function vHome() {
   const extras = CHAPTERS.filter(c => c.kind === 'extra' && vis(c));
   const T = tally(pool());
   const full = S.exams.filter(r => r.group === S.group && !r.subj);
-  const best = full.reduce((m, r) => Math.max(m, r.pct), -1);
   const marks = Object.keys(S.marks).filter(k => markInfo(k)).length;
   const parts = BOOK.parts.filter(vis).map(p => {
     const chs = p.chapters.map(id => chById[id]).filter(vis), secs = chs.flatMap(visSections), subj = p.subj || '';
     const t = tally(pool().filter(id => (qById[id].subj || '') === subj));
     return { p, chs, secs, subj, read: secs.filter(s => S.read[s.id]).length, name: p.title.split(/\s+[—–-]\s+/).pop(), acc: t.n ? pct(t.r, t.n) : null };
   });
-  const hours = EXAM.minutes % 60 ? `${EXAM.minutes} dəq` : `${EXAM.minutes / 60} saat`;
+  // the mock exam is started from Testlər only (the owner's wish); its last result is one of the figures here
   $('#view').innerHTML = `
     ${nextSec ? `<a class="hero cont" href="#${next}" data-resume>
       <span class="pill">${S.last ? 'Davam et' : 'Başla'} · ${nextSec.mins} dəq</span>
@@ -551,7 +550,7 @@ function vHome() {
     <div class="kpis">
       <a class="kpi" href="#proqram"><span class="sic">${icon('book')}</span><b>${pct(done, all.length)}%</b><span>kitab oxunub</span></a>
       <a class="kpi" href="#statistika"><span class="sic ok">${icon('check')}</span><b>${T.n ? pct(T.r, T.n) + '%' : '—'}</b><span>düz cavab</span></a>
-      <a class="kpi" href="#imtahan"><span class="sic warm">${icon('timer')}</span><b>${full.length ? full[0].pct + '%' : '—'}</b><span>son sınaq</span></a>
+      <a class="kpi" href="#statistika"><span class="sic warm">${icon('timer')}</span><b>${full.length ? full[0].pct + '%' : '—'}</b><span>son sınaq</span></a>
     </div>
     <section class="block">
       <div class="block-h"><h2>Fənlər</h2><a href="#proqram">Proqram</a></div>
@@ -559,9 +558,6 @@ function vHome() {
         <span class="subj-top">${sicon(x.subj)}${ring(pct(x.read, x.secs.length), 40, 5)}</span>
         <span><b>${esc(x.name)}</b><span class="muted">${x.read}/${x.secs.length} bölmə${x.acc != null ? ` · ${x.acc}% düz` : ''}</span></span></button>`).join('')}</nav>
     </section>
-    <a class="night" href="#imtahan"><span class="sic">${icon('timer')}</span>
-      <span><b>Sınaq imtahanı</b><span class="muted">${S.exam ? 'davam edir' : `${FULL} sual · ${hours}${best >= 0 ? ` · ən yaxşı: ${best}%` : ''}`}</span></span>
-      <span class="go">${S.exam ? 'Davam et' : 'Başla'}</span></a>
     <section class="block"><div class="list">
       <a class="chrow" href="#elfecinler"><span class="chn star">${icon('star')}</span>
         <span class="cht"><b>Əlfəcinlər</b><span class="chm">${marks ? `${marks} qeyd` : 'Vacib bölmə və maddələri ulduzla qeyd et'}</span></span>${icon('chev')}</a>
