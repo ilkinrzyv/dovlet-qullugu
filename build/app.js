@@ -592,7 +592,7 @@ function vChapter(id) {
     ${groupNote(c)}
     ${c.lead ? `<div class="prose lead">${c.lead}</div>` : ''}
     ${q.length ? `<a class="card quizcta block" href="#test-${id}">
-      ${icon('checklist')}<span><b>Fəsil testi</b><span class="muted">${q.length} sual${best ? ` · ən yaxşı nəticə ${best.best}%` : ''}</span></span>${icon('arrow')}</a>` : ''}
+      <span class="sic">${icon('checklist')}</span><span><b>Fəsil testi</b><span class="muted">${q.length} sual${best ? ` · ən yaxşı nəticə ${best.best}%` : ''}</span></span>${icon('arrow')}</a>` : ''}
     <div class="list block">${visSections(c).map(s => `<a class="secrow${S.read[s.id] ? ' done' : ''}" href="#${s.id}">
       <span class="tick">${S.read[s.id] ? icon('check') : ''}</span>
       <span class="sect"><b>${esc((s.num ? s.num + '. ' : '') + s.title)}</b><span class="muted">${meta(s)} ${onlyFor(s)}</span></span>
@@ -616,13 +616,16 @@ function vSection(id, anchor, resume) {
     <div class="chips">
       <span class="chip">${icon('clock')} ${s.mins} dəq</span>
       ${nmad ? `<span class="chip">${nmad} maddə</span>` : ''}
-      ${nq ? `<a class="quizcta secq" href="#test-s-${id}">${icon('checklist')}<span>Test · <span class="muted">${nq} sual${best ? ` · ən yaxşı ${best.best}%` : ''}</span></span>${icon('arrow')}</a>` : ''}
       ${onlyFor(s)}
     </div>
     <h1 class="h1">${esc(s.title)}</h1>
     <p class="muted small secof">${esc(c.kind === 'chapter' ? `Fəsil ${c.n} · ${c.title}` : c.title)}</p>
     ${groupNote(vis(c) ? s : c)}
+    ${nq ? `<a class="card quizcta secq" href="#test-s-${id}"><span class="sic">${icon('checklist')}</span>
+      <span><b>Bu bölmə üzrə test</b><span class="muted">${nq} sual${best ? ` · ən yaxşı nəticə ${best.best}%` : ''}</span></span>${icon('arrow')}</a>` : ''}
     <article class="prose${law ? ' law' : ''}">${s.html}</article>
+    ${nq ? `<a class="card quizcta endq" href="#test-s-${id}"><span class="sic">${icon('checklist')}</span>
+      <span><b>Oxudun? Özünü yoxla</b><span class="muted">Bu bölmə üzrə ${nq} sual${best ? ` · ən yaxşı nəticə ${best.best}%` : ''}</span></span>${icon('arrow')}</a>` : ''}
     ${c.kind === 'chapter' ? `<div class="card claudebox"><span class="muted small">Aydın olmayan yer var? Virtual müəllim izah etsin.</span>${aiBox('sec', s.id, 'Claude-dan izah istə')}</div>` : ''}
     <nav class="prevnext">${nav(prev, 'prev')}${nav(next, 'next')}</nav>
     <div class="fabspace"></div>

@@ -240,18 +240,19 @@ svg.i{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-widt
 .tick.acc{width:40px;height:40px;border:0;border-radius:13px;background:var(--sc-soft,var(--accent-soft));color:var(--sc,var(--accent))}
 .tick.acc svg.i{stroke-width:2;width:19px;height:19px}
 .secrow.off{opacity:.55;pointer-events:none}
-.quizcta{display:flex;align-items:center;gap:14px;border-color:var(--accent-line);background:var(--accent-soft);color:var(--accent)}
-.quizcta>span{flex:1;display:flex;flex-direction:column;color:var(--ink)}
-.quizcta>span .muted{font-size:13px}
-.quizcta>svg.i{color:var(--accent)}
-.quizcta>svg.i:first-child{width:22px;height:22px}
-/* a section's own test: a pill among the section's facts */
+/* a chapter's or a section's own test: a card above the text; a section has one more, filled, under it */
+.quizcta{display:flex;align-items:center;gap:14px;padding:14px 16px 14px 14px;border-color:var(--accent-line);background:var(--accent-soft);color:var(--accent)}
+.quizcta .sic{background:var(--surface);color:var(--accent)}
+.quizcta>span:not(.sic){flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;color:var(--ink)}
+.quizcta b{font-size:15.5px;font-weight:800}
+.quizcta .muted{font-size:13px}
+.quizcta>svg.i{flex:none;color:var(--accent)}
+.quizcta.secq{margin:16px 0 6px}
+.quizcta.endq{margin-top:26px;background:var(--accent);border-color:var(--accent)}
+.quizcta.endq>span:not(.sic),.quizcta.endq>svg.i{color:var(--accent-ink)}
+.quizcta.endq .muted{color:inherit;opacity:.85}
+.quizcta.endq .sic{background:rgba(255,255,255,.2);color:var(--accent-ink)}
 .chips{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
-a.quizcta.secq{display:inline-flex;gap:6px;min-height:30px;padding:4px 12px;border:0;border-radius:999px;font-size:12.5px;font-weight:800;text-decoration:none}
-.secq>span{display:inline;color:inherit}
-.secq .muted{color:inherit;font-size:inherit}
-.secq svg.i{width:15px;height:15px}
-.secq svg.i:first-child{width:15px;height:15px}
 .mk{gap:10px;padding-right:8px}
 .mk .sect{color:inherit;text-decoration:none;gap:2px}
 .mk .sect:hover b{color:var(--accent)}
