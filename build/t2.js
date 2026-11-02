@@ -155,7 +155,7 @@ const MOCK = () => {
   eq('opus', { model: 'claude-opus-5-5', meta: true });
   eq('reset', { chk: 0, model: 'claude-opus-5-5' });
   eq('bare', 'Claude bu görünüşdə əlçatan deyil.');
-  eq('look', ['light', 'light', 'rgb(245, 243, 236)']);
+  eq('look', ['light', 'light', 'rgb(245, 246, 251)']);
   eq('lookSystem', 'dark');
   out.errors = errors.concat(fail);
   console.log(JSON.stringify(out, null, 1));

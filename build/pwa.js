@@ -117,11 +117,14 @@ const clearKey = () => { ls.del(K_KEY); emit('key'); };
 /* ---------- service worker: offline cache + updates ---------- */
 // A new version is looked for without the reader asking: when the app opens, each time it comes back to the screen
 // (phones keep an installed app in memory, so it rarely opens afresh — iOS above all), when the network returns, and
-// every half hour while it is on screen. sw.js caches the whole new version and takes over; the bar then offers to
-// reload. “Sonra” hides the bar until the app comes back to the screen. Ayarlar → “Yeniləməni yoxla” stays as a
-// manual check.
+// every half hour while it is on screen. sw.js caches the whole new version and takes over; the page then moves to it
+// by itself the moment the reader leaves it (or at once if it is not on screen), back at the same place — unless
+// app.js says a reload would lose work in hand (DQ_PWA.busy: a test half done, a chat, typed text). Meanwhile the bar
+// offers “Yenilə” for those who want it now; “Sonra” hides it until the app comes back to the screen. Ayarlar →
+// “İndi yoxla” stays as a manual check.
 const RECHECK = 60e3;            // resumes closer together than this ask once
 const CHECK_EVERY = 30 * 60e3;
+const K_PLACE = 'dq-kitab:pwa:place'; // sessionStorage: where the page was before a reload into a new version
 const sw = { supported: 'serviceWorker' in navigator && window.isSecureContext && location.protocol !== 'file:', reg: null, ready: false, updated: false, error: '' };
 let swTries = 0, lastCheck = 0;
 async function checkCache() {
@@ -145,20 +148,39 @@ function showUpdateBar() {
   closeBanner(false); // the update bar sits in the same place
   const bar = document.createElement('div');
   bar.id = 'pwa-bar'; bar.className = 'pwa-bar'; bar.setAttribute('role', 'status');
-  bar.innerHTML = '<div class="pb-text"><b>Kitabın yeni versiyası hazırdır</b><span>İrəliləyişin və nəticələrin itmir.</span></div>'
+  bar.innerHTML = '<div class="pb-text"><b>Kitabın yeni versiyası hazırdır</b><span>Tətbiqdən çıxıb qayıdanda özü açılacaq.</span></div>'
     + '<button type="button" class="pb-go">Yenilə</button><button type="button" class="pb-x" aria-label="Sonra" title="Sonra">×</button>';
-  bar.querySelector('.pb-go').addEventListener('click', () => location.reload());
+  bar.querySelector('.pb-go').addEventListener('click', reloadNow);
   bar.querySelector('.pb-x').addEventListener('click', hideUpdateBar);
   document.body.appendChild(bar);
   document.documentElement.classList.add('pwa-has-bar'); // the toast and the corner buttons move up over it
 }
-// the new version has taken over this page: the next load is the new one
+const busy = () => { try { return typeof api.busy === 'function' && !!api.busy(); } catch (e) { return false; } };
+// into the new version, back at the same place: the hash survives a reload, the scroll is put back after it
+function reloadNow() {
+  try { sessionStorage.setItem(K_PLACE, JSON.stringify({ h: location.hash, y: Math.round(window.scrollY), at: Date.now() })); } catch (e) { }
+  location.reload();
+}
+// the new version has taken over this page: off screen it reloads at once, on screen when the reader leaves it
 function newVersion() {
   if (sw.updated) return;
   sw.updated = true;
   emit('sw');
-  showUpdateBar();
+  if (document.visibilityState === 'hidden' && !busy()) reloadNow();
+  else showUpdateBar();
 }
+function notice(text) {
+  let t = document.querySelector('.toast');
+  if (!t) { t = document.createElement('div'); t.className = 'toast'; t.setAttribute('role', 'status'); document.body.appendChild(t); }
+  t.textContent = text; t.hidden = false;
+  setTimeout(() => { t.hidden = true; }, 2600);
+}
+(function back() { // after such a reload: the same scroll, and a word that the book is new
+  let p = null;
+  try { p = JSON.parse(sessionStorage.getItem(K_PLACE) || 'null'); sessionStorage.removeItem(K_PLACE); } catch (e) { p = null; }
+  if (!p || Date.now() - p.at > 10 * 60e3 || p.h !== location.hash) return;
+  window.addEventListener('load', () => requestAnimationFrame(() => { if (p.y) window.scrollTo(0, p.y); notice('Kitab yeni versiyaya keçdi'); }));
+})();
 function autoCheck() {
   if (!sw.reg || sw.updated || !online() || document.visibilityState === 'hidden' || Date.now() - lastCheck < RECHECK) return;
   lastCheck = Date.now();
@@ -177,8 +199,8 @@ if (sw.supported) {
     } catch (e) { sw.error = String(e && e.message || e); emit('sw'); }
   });
   document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState !== 'visible') return;
-    if (sw.updated) showUpdateBar(); // hidden with “Sonra”: shown again when the app comes back
+    if (document.visibilityState === 'hidden') { if (sw.updated && !busy()) reloadNow(); return; }
+    if (sw.updated) showUpdateBar(); // still the old page (work was in hand): the bar again, “Sonra” or not
     else autoCheck();
   });
   window.addEventListener('pageshow', e => { if (e.persisted) autoCheck(); }); // Safari's back-forward cache
@@ -311,9 +333,10 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('online', () => emit('net'));
 window.addEventListener('offline', () => emit('net'));
 
-window.DQ_PWA = {
+// busy: app.js sets it — true while a reload would lose work in hand
+const api = window.DQ_PWA = {
   VERSION, online, sw, checkUpdate, installState, install, isIOS, isStandalone,
   persisted, persist, saveFile, pickFile, on,
-  sample, hasKey, keyHint, testKey, setKey, clearKey, artifactLink
+  sample, hasKey, keyHint, testKey, setKey, clearKey, artifactLink, busy: null
 };
 })();

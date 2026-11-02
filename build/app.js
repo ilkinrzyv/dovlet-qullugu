@@ -78,9 +78,27 @@ const ICONS = {
   chart: '<path d="M3 20h18"/><path d="M6 20v-6M11 20V6M16 20v-9M21 20V9" transform="translate(-1.5 0)"/>',
   copy: '<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4h-9A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H8"/>',
   star: '<path d="M12 3.6l2.55 5.2 5.7.83-4.13 4.03.98 5.69L12 16.66 6.9 19.35l.98-5.69-4.13-4.03 5.7-.83z"/>',
-  up: '<path d="M12 19V5M6 11l6-6 6 6"/>'
+  up: '<path d="M12 19V5M6 11l6-6 6 6"/>',
+  spark: '<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/>',
+  scale: '<path d="M12 4v16M8 20h8M5 7h14"/><path d="M7 7l-2.6 6.2M7 7l2.6 6.2M4 13.2a3 3 0 0 0 6 0z"/><path d="M17 7l-2.6 6.2M17 7l2.6 6.2M14 13.2a3 3 0 0 0 6 0z"/>',
+  logic: '<circle cx="6" cy="6.5" r="2.5"/><circle cx="18" cy="6.5" r="2.5"/><circle cx="12" cy="17.5" r="2.5"/><path d="M8.5 6.5h7M7.3 8.7l3.4 6.6M16.7 8.7l-3.4 6.6"/>',
+  lang: '<path d="M3 18.5L8 6l5 12.5M4.9 14h6.2"/><circle cx="17.6" cy="15.3" r="2.8"/><path d="M20.4 12.3v6.2"/>',
+  monitor: '<rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/>',
+  user: '<circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/>'
 };
 const icon = (n, cls) => `<svg class="i${cls ? ' ' + cls : ''}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n] || ''}</svg>`;
+// each subject has its colour (.s-qan … in app.css) and icon; chapters without one are the interview part
+const SICON = { qan: 'scale', men: 'logic', az: 'lang', inf: 'monitor' };
+const sk = subj => 's-' + (SICON[subj] ? subj : 'mus');
+const sicon = subj => `<span class="sic">${icon(SICON[subj] || 'user')}</span>`;
+// a progress ring, p = 0–100; label: the text in its middle
+function ring(p, size, w, label, aria) {
+  const c = size / 2, r = (size - w) / 2, len = 2 * Math.PI * r, d = Math.max(0, Math.min(100, p || 0)) * len / 100;
+  return `<svg class="ring" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" ${aria ? `role="img" aria-label="${esc(aria)}"` : 'aria-hidden="true"'}>
+    <circle class="tr" cx="${c}" cy="${c}" r="${r}" fill="none" stroke-width="${w}"/>
+    ${d > 0.5 ? `<circle class="val" cx="${c}" cy="${c}" r="${r}" fill="none" stroke-width="${w}" stroke-linecap="round" stroke-dasharray="${d.toFixed(2)} ${len.toFixed(2)}" transform="rotate(-90 ${c} ${c})"/>` : ''}
+    ${label ? `<text x="${c}" y="${c}" dy=".36em" text-anchor="middle" font-size="${Math.round(size / 4.2)}">${label}</text>` : ''}</svg>`;
+}
 
 let toastTimer = null;
 // a yes/no question under `after` (claude.ai shows no confirm() dialogs)
@@ -379,8 +397,10 @@ const onlyFor = x => x && x.g && x.g.length < GROUPS.length ? `<span class="chip
 /* =========================================================
    4. Shell: top bar, tab bar, router
    ========================================================= */
-const TABS = [['home', 'Kitab', 'book'], ['testler', 'Testlər', 'checklist'], ['muellim', 'Müəllim', 'chat'], ['axtar', 'Axtarış', 'search'], ['ayarlar', 'Ayarlar', 'sliders']];
+// search opens from the book's own top bar; the tab bar floats and shows the label of the open tab only
+const TABS = [['home', 'Kitab', 'book'], ['testler', 'Testlər', 'checklist'], ['muellim', 'Müəllim', 'chat'], ['statistika', 'Statistika', 'chart'], ['ayarlar', 'Ayarlar', 'sliders']];
 let tab = 'home';
+let focus = false; // reading, a test or the exam: the tab bar gives way to the page's own bar
 let examTimer = null;
 // a view sets `after` to say where to scroll once it is on screen (default: the top)
 let after = null, curSec = null;
@@ -389,11 +409,14 @@ let after = null, curSec = null;
 let RET = null;
 let RESUME = false; // “Davam et” was tapped: the last section opens where the reader stopped
 
-function topbar(kicker, name, back, extra, sub) {
+// o.big: a tab's own page (a large title on the left); o.close: the way back is an ×; o.mid: html instead of the title
+function topbar(kicker, name, back, extra, sub, o) {
+  o = o || {};
+  $('#topbar').classList.toggle('big', !!o.big);
   $('#topbar .wrap').innerHTML = `
-    ${back ? `<a class="ibtn" href="#${esc(back)}" aria-label="Geri"${RET && back === RET.h ? ' data-retgo' : ''}>${icon('back')}</a>` : ''}
-    <div class="tb-title">${kicker ? `<span class="tb-kicker">${esc(kicker)}</span>` : ''}<span class="tb-name">${esc(name)}</span></div>
-    ${extra || ''}<div class="readbar"><i></i></div>`;
+    ${back ? `<a class="ibtn" href="#${esc(back)}" aria-label="${o.close ? 'Bağla' : 'Geri'}"${RET && back === RET.h ? ' data-retgo' : ''}>${icon(o.close ? 'x' : 'back')}</a>` : ''}
+    ${o.mid != null ? o.mid : `<div class="tb-title">${kicker ? `<span class="tb-kicker">${esc(kicker)}</span>` : ''}<span class="tb-name">${esc(name)}</span></div>`}
+    ${extra || (back && o.mid == null ? '<span class="ibtn-sp"></span>' : '')}<div class="readbar"><i></i></div>`;
   // a second row that stays on screen with the bar (the programme's subject tabs)
   let row = $('#topbar .tb-sub');
   if (sub && !row) { row = document.createElement('div'); row.className = 'wrap tb-sub'; $('#topbar').appendChild(row); }
@@ -401,7 +424,8 @@ function topbar(kicker, name, back, extra, sub) {
 }
 function tabbar() {
   $('#tabbar').innerHTML = `<div class="wrap">${TABS.map(([id, label, ic]) =>
-    `<a class="tab" href="#${id}" aria-current="${tab === id}">${icon(ic)}<span>${label}</span></a>`).join('')}</div>`;
+    `<a class="tab" href="#${id}" aria-current="${tab === id}" aria-label="${label}">${icon(ic)}<span>${label}</span></a>`).join('')}</div>`;
+  document.body.classList.toggle('focus', focus);
 }
 // home: the bar shows the book's name only once the big title has scrolled away
 let heroWatch = null;
@@ -410,8 +434,17 @@ function quietTitle(el) {
   if (heroWatch) { heroWatch.disconnect(); heroWatch = null; }
   bar.classList.toggle('quiet', watch);
   if (!watch) return;
-  heroWatch = new IntersectionObserver(([e]) => bar.classList.toggle('quiet', e.isIntersecting), { rootMargin: '-56px 0px 0px 0px' });
+  heroWatch = new IntersectionObserver(([e]) => bar.classList.toggle('quiet', e.isIntersecting), { rootMargin: '-64px 0px 0px 0px' });
   heroWatch.observe(el);
+}
+// a view redrawn in place (a test's next question, its result) says whether the tab bar shows
+function setFocus(on) { focus = on; document.body.classList.toggle('focus', on); }
+// a sheet over the page's bottom: the page gets the room to scroll everything above it
+function fitSheet(sh) {
+  if (!sh) return;
+  const fit = () => { const h = sh.offsetHeight + 16 + 'px'; $('#view').style.paddingBottom = h; document.documentElement.style.scrollPaddingBottom = h; };
+  fit();
+  if (window.ResizeObserver) new ResizeObserver(fit).observe(sh);
 }
 
 document.addEventListener('click', e => {
@@ -443,7 +476,8 @@ function route() {
   if (back || (RET && !sec)) RET = null; else if (RET) RET.n++;
   if (!h.startsWith('test-') && !RET) quizRun = null;
   const resume = RESUME;
-  RESUME = false; after = null; curSec = null; toTop.hidden = true;
+  RESUME = false; after = null; curSec = null; toTop.hidden = true; focus = false;
+  $('#view').style.paddingBottom = ''; document.documentElement.style.scrollPaddingBottom = '';
   quietTitle(null);
   if (sec) { tab = 'home'; vSection(sec, ANCH[h] ? h : null, resume); }
   else if (h === 'elfecinler') { tab = 'home'; vMarks(); }
@@ -455,11 +489,13 @@ function route() {
   else if (h === 'imtahan') { tab = 'testler'; vExam(); }
   else if (h === 'imtahan-netice') { tab = 'testler'; vExamResult(); }
   else if (h.startsWith('imtahan-') && SUBJ[h.slice(8)]) { tab = 'testler'; vExam(h.slice(8)); }
-  else if (h === 'statistika') { tab = 'testler'; vStats(); }
+  else if (h === 'statistika') { tab = 'statistika'; vStats(); }
   else if (h === 'muellim' || h.startsWith('muellim-')) { tab = 'muellim'; vTeacher(h.slice(8)); }
-  else if (h === 'axtar' || h.startsWith('axtar=')) { tab = 'axtar'; vSearch(h.slice(6)); }
+  else if (h === 'axtar' || h.startsWith('axtar=')) { tab = 'home'; vSearch(h.slice(6)); }
   else if (h === 'ayarlar') { tab = 'ayarlar'; vSettings(); }
   else { tab = 'home'; vHome(); }
+  // under a back button the bar shows the page's title only once its own big title has scrolled away
+  if (!heroWatch && !$('#topbar').classList.contains('big')) { const t = $('#view h1.h1:not(.sr)'); if (t) quietTitle(t); }
   tabbar();
   if (after) after();
   else if (back) window.scrollTo(0, back.y);
@@ -475,11 +511,10 @@ function bar(a, b) { return `<div class="bar" role="progressbar" aria-valuemin="
 const groupNote = x => vis(x) ? '' : `<p class="card note">Bu mövzu ${esc(S.group)} qrupunun proqramında yoxdur — yalnız ${esc(x.g.join(', '))} üçündür.</p>`;
 
 function chRow(c) {
-  const secs = visSections(c), n = readIn(c), nq = chQuiz(c.id).length;
-  const label = c.kind === 'chapter' ? `Fəsil ${c.n}` : 'Giriş';
-  return `<a class="chrow" href="#${c.id}">
-    <span class="chn">${esc(label)}</span>
-    <span class="cht"><b>${esc(c.title)}</b>${c.kind === 'chapter' ? `<span class="chm">${n}/${secs.length} bölmə${nq ? ` · ${nq} sual` : ''} ${onlyFor(c)}</span>${bar(n, secs.length)}` : ''}</span>
+  const secs = visSections(c), n = readIn(c), nq = chQuiz(c.id).length, chap = c.kind === 'chapter';
+  return `<a class="chrow${chap ? ' ' + sk(c.subj) : ''}" href="#${c.id}">
+    <span class="chn" aria-label="${chap ? `Fəsil ${c.n}` : 'Giriş'}">${chap ? c.n : icon('book')}</span>
+    <span class="cht"><b>${esc(c.title)}</b>${chap ? `<span class="chm">${n}/${secs.length} bölmə${nq ? ` · ${nq} sual` : ''} ${onlyFor(c)}</span>${bar(n, secs.length)}` : '<span class="chm">Giriş</span>'}</span>
     ${icon('chev')}</a>`;
 }
 
@@ -489,52 +524,55 @@ function coverage(subj) {
 }
 
 function vHome() {
-  topbar(`${S.group} qrupu`, BOOK.title);
+  const [name, sub] = BOOK.title.split(/:\s*/);
+  topbar(`${S.group} qrupu · ${sub || 'İmtahana hazırlıq'}`, name, null,
+    `<a class="ibtn" href="#axtar" aria-label="Axtarış">${icon('search')}</a>`, null, { big: true });
   const all = learnable(), done = all.filter(id => S.read[id]).length;
   const next = S.last && secById[S.last] && vis(secById[S.last]) ? S.last : (all.find(id => !S.read[id]) || order()[0]);
-  const nextSec = next && secById[next];
+  const nextSec = next && secById[next], nextCh = nextSec && chById[secCh[next]];
+  const chSecs = nextCh ? visSections(nextCh) : [], chDone = chSecs.filter(s => S.read[s.id]).length;
   const extras = CHAPTERS.filter(c => c.kind === 'extra' && vis(c));
-  const nq = pool().length;
-  const cov = PROG.subjects.map(s => coverage(s.id)).reduce((a, b) => [a[0] + b[0], a[1] + b[1]], [0, 0]);
-  const best = S.exams.filter(r => r.group === S.group && !r.subj).reduce((m, r) => Math.max(m, r.pct), -1);
+  const T = tally(pool());
+  const full = S.exams.filter(r => r.group === S.group && !r.subj);
+  const best = full.reduce((m, r) => Math.max(m, r.pct), -1);
   const marks = Object.keys(S.marks).filter(k => markInfo(k)).length;
   const parts = BOOK.parts.filter(vis).map(p => {
-    const chs = p.chapters.map(id => chById[id]).filter(vis), secs = chs.flatMap(visSections);
-    return { p, chs, secs, read: secs.filter(s => S.read[s.id]).length, name: p.title.split(/\s+[—–-]\s+/).pop() };
+    const chs = p.chapters.map(id => chById[id]).filter(vis), secs = chs.flatMap(visSections), subj = p.subj || '';
+    const t = tally(pool().filter(id => (qById[id].subj || '') === subj));
+    return { p, chs, secs, subj, read: secs.filter(s => S.read[s.id]).length, name: p.title.split(/\s+[—–-]\s+/).pop(), acc: t.n ? pct(t.r, t.n) : null };
   });
+  const hours = EXAM.minutes % 60 ? `${EXAM.minutes} dəq` : `${EXAM.minutes / 60} saat`;
   $('#view').innerHTML = `
-    <section class="hero">
-      <span class="kicker">İmtahana hazırlıq · ${esc(S.group)} qrupu</span>
-      <h1 class="h1">${esc(BOOK.title)}</h1>
-      <div class="card stat">
-        <div><b>${done}</b><span>/ ${all.length} bölmə oxunub</span></div>
-        <div><b>${nq}</b><span>test sualı</span></div>
-        ${bar(done, all.length)}
-        <a class="statlink" href="#statistika">${icon('chart')} Statistika: düzgünlük, zəif mövzular</a>
-      </div>
-      ${nextSec ? `<a class="card cont" href="#${next}" data-resume>
-        <span class="kicker">${S.last ? 'Davam et' : 'Başla'}</span>
-        <b>${esc((nextSec.num ? nextSec.num + '. ' : '') + nextSec.title)}</b>
-        <span class="muted">${esc(chById[secCh[next]].title)}</span>${icon('arrow')}</a>` : ''}
-      <div class="tiles">
-        <a class="card tile" href="#proqram">${icon('map')}<b>Proqram</b><span class="muted">${cov[0]}/${cov[1]} mövzu kitabda</span></a>
-        <a class="card tile" href="#imtahan">${icon('timer')}<b>Sınaq imtahanı</b><span class="muted">${S.exam ? 'davam edir' : best >= 0 ? `ən yaxşı: ${best}%` : `${EXAM.blocks.reduce((a, b) => a + b.n, 0)} sual`}</span></a>
-      </div>
-      <nav class="row subjnav" aria-label="Fənlər">${parts.filter(x => x.chs.length).map(x =>
-        `<button type="button" class="btn sm" data-part="${esc(x.p.id)}">${esc(x.name)}</button>`).join('')}</nav>
+    ${nextSec ? `<a class="hero cont" href="#${next}" data-resume>
+      <span class="pill">${S.last ? 'Davam et' : 'Başla'} · ${nextSec.mins} dəq</span>
+      <b>${esc(secName(nextSec))}</b>
+      <span class="hero-foot"><span>${bar(chDone, chSecs.length)}${esc(nextCh.kind === 'chapter' ? `Fəsil ${nextCh.n}` : nextCh.title)} · ${chDone} / ${chSecs.length} bölmə</span>
+        <span class="hero-go">${icon('arrow')}</span></span></a>` : ''}
+    <div class="kpis">
+      <a class="kpi" href="#proqram"><span class="sic">${icon('book')}</span><b>${pct(done, all.length)}%</b><span>kitab oxunub</span></a>
+      <a class="kpi" href="#statistika"><span class="sic ok">${icon('check')}</span><b>${T.n ? pct(T.r, T.n) + '%' : '—'}</b><span>düz cavab</span></a>
+      <a class="kpi" href="#imtahan"><span class="sic warm">${icon('timer')}</span><b>${full.length ? full[0].pct + '%' : '—'}</b><span>son sınaq</span></a>
+    </div>
+    <section class="block">
+      <div class="block-h"><h2>Fənlər</h2><a href="#proqram">Proqram</a></div>
+      <nav class="subjnav" aria-label="Fənlər">${parts.filter(x => x.chs.length).map(x => `<button type="button" class="subj ${sk(x.subj)}" data-part="${esc(x.p.id)}">
+        <span class="subj-top">${sicon(x.subj)}${ring(pct(x.read, x.secs.length), 40, 5)}</span>
+        <span><b>${esc(x.name)}</b><span class="muted">${x.read}/${x.secs.length} bölmə${x.acc != null ? ` · ${x.acc}% düz` : ''}</span></span></button>`).join('')}</nav>
     </section>
+    <a class="night" href="#imtahan"><span class="sic">${icon('timer')}</span>
+      <span><b>Sınaq imtahanı</b><span class="muted">${S.exam ? 'davam edir' : `${FULL} sual · ${hours}${best >= 0 ? ` · ən yaxşı: ${best}%` : ''}`}</span></span>
+      <span class="go">${S.exam ? 'Davam et' : 'Başla'}</span></a>
     <section class="block"><div class="list">
-      <a class="chrow" href="#elfecinler"><span class="chn">${icon('star')}</span>
+      <a class="chrow" href="#elfecinler"><span class="chn star">${icon('star')}</span>
         <span class="cht"><b>Əlfəcinlər</b><span class="chm">${marks ? `${marks} qeyd` : 'Vacib bölmə və maddələri ulduzla qeyd et'}</span></span>${icon('chev')}</a>
       ${extras.map(chRow).join('')}</div></section>
-    ${parts.map(({ p, chs, secs, read }) => `<section class="block" id="part-${esc(p.id)}">
+    ${parts.map(({ p, chs, secs, read, subj }) => `<section class="block ${sk(subj)}" id="part-${esc(p.id)}">
         <div class="block-h ph"><h2>${esc(p.title)}</h2>${secs.length ? `<span>${read}/${secs.length} bölmə</span>` : ''}</div>
         ${secs.length ? bar(read, secs.length) : ''}
         ${chs.length ? `<div class="list">${chs.map(chRow).join('')}</div>`
           : `<p class="card muted empty">Hazırlanır.${p.subj ? ` Mövzular <a href="#proqram-${p.subj}">Proqram</a> səhifəsindədir.` : ''}</p>`}
       </section>`).join('')}`;
   $$('[data-part]').forEach(b => b.addEventListener('click', () => $('#part-' + b.dataset.part).scrollIntoView({ behavior: 'smooth' })));
-  quietTitle($('.hero .h1'));
 }
 
 function vChapter(id) {
@@ -569,34 +607,49 @@ function vSection(id, anchor, resume) {
   const ord = order(), i = ord.indexOf(id), prev = i > 0 ? ord[i - 1] : null, next = i >= 0 ? ord[i + 1] : null;
   const kicker = c.kind === 'chapter' ? `Fəsil ${c.n}${s.num ? ' · ' + s.num : ''}` : c.title;
   topbar(kicker, s.title, RET ? RET.h : c.id, markBtn(id, 'ibtn mark', 'Bölməni əlfəcinlərə əlavə et'));
-  curSec = id;
+  curSec = id; focus = true;
   if (S.last !== id) { S.last = id; save(); }
-  const nq = secTests()[id] || 0, best = S.quiz['s-' + id];
+  const nq = secTests()[id] || 0, best = S.quiz['s-' + id], nmad = law ? (s.html.match(/<h4 id=/g) || []).length : 0;
   const nav = (sid, dir) => sid ? `<a class="pn ${dir}" href="#${sid}"><span class="muted">${dir === 'prev' ? 'Əvvəlki' : 'Növbəti'}</span><b>${esc(secById[sid].title)}</b></a>` : '<span></span>';
-  $('#view').innerHTML = `
-    <span class="kicker">${esc(kicker)}</span>
+  // the text on a white sheet; back, read and next in a bar under the thumb (the tab bar gives way while reading)
+  $('#view').innerHTML = `<div class="paper ${sk(c.subj)}">
+    <div class="chips">
+      <span class="chip">${icon('clock')} ${s.mins} dəq</span>
+      ${nmad ? `<span class="chip">${nmad} maddə</span>` : ''}
+      ${nq ? `<a class="quizcta secq" href="#test-s-${id}">${icon('checklist')}<span>Test · <span class="muted">${nq} sual${best ? ` · ən yaxşı ${best.best}%` : ''}</span></span>${icon('arrow')}</a>` : ''}
+      ${onlyFor(s)}
+    </div>
     <h1 class="h1">${esc(s.title)}</h1>
-    <div class="row meta muted">${icon('clock')} ${s.mins} dəq oxu ${onlyFor(s)}</div>
+    <p class="muted small secof">${esc(c.kind === 'chapter' ? `Fəsil ${c.n} · ${c.title}` : c.title)}</p>
     ${groupNote(vis(c) ? s : c)}
-    ${nq ? `<a class="card quizcta secq" href="#test-s-${id}">${icon('checklist')}<span><b>Bu bölmə üzrə test</b>
-      <span class="muted">${nq} sual${best ? ` · ən yaxşı nəticə ${best.best}%` : ''}</span></span>${icon('arrow')}</a>` : ''}
     <article class="prose${law ? ' law' : ''}">${s.html}</article>
     ${c.kind === 'chapter' ? `<div class="card claudebox"><span class="muted small">Aydın olmayan yer var? Virtual müəllim izah etsin.</span>${aiBox('sec', s.id, 'Claude-dan izah istə')}</div>` : ''}
-    <button type="button" class="btn ${S.read[id] ? 'done' : 'primary'} readbtn" data-act="read">${S.read[id] ? icon('check') + ' Oxunub' : 'Oxudum'}</button>
     <nav class="prevnext">${nav(prev, 'prev')}${nav(next, 'next')}</nav>
     <div class="fabspace"></div>
-    ${RET ? `<a class="retpill" href="#${esc(RET.h)}" data-retgo>${icon('back')} ${esc(RET.label)}</a>` : ''}`;
+    </div>
+    ${RET ? `<a class="retpill" href="#${esc(RET.h)}" data-retgo>${icon('back')} ${esc(RET.label)}</a>` : ''}
+    <nav class="actbar" aria-label="Bölmə">
+      <a class="ab-ic" href="#${prev || c.id}" aria-label="${prev ? 'Əvvəlki bölmə' : 'Fəslə qayıt'}">${icon('back')}</a>
+      <button type="button" class="ab-read${S.read[id] ? ' done' : ''}" data-act="read" aria-pressed="${!!S.read[id]}">${icon('check')}<span>${S.read[id] ? 'Oxunub' : 'Oxudum'}</span></button>
+      <a class="ab-next" href="#${next || c.id}">${next ? 'Növbəti' : 'Fəslə qayıt'} ${icon('arrow')}</a>
+    </nav>`;
   $('[data-act="read"]').addEventListener('click', e => {
     if (S.read[id]) delete S.read[id]; else S.read[id] = Date.now();
     save();
     const b = e.currentTarget;
-    b.className = `btn ${S.read[id] ? 'done' : 'primary'} readbtn`;
-    b.innerHTML = S.read[id] ? icon('check') + ' Oxunub' : 'Oxudum';
+    b.classList.toggle('done', !!S.read[id]);
+    b.setAttribute('aria-pressed', !!S.read[id]);
+    $('span', b).textContent = S.read[id] ? 'Oxunub' : 'Oxudum';
   });
   (s.qs || []).forEach((q, i) => { const box = $(`.iq[data-i="${i}"]`); if (box) inlineQ(box, s, c, q, i); });
   if (law) {
     lawToc();
-    $$('article.prose h4[id]').forEach(h => h.insertAdjacentHTML('beforeend', markBtn(h.id, 'hmark', 'Maddəni əlfəcinlərə əlavə et')));
+    // “Maddə 1. Hakimiyyətin mənbəyi” → a number pill and the name; the text itself stays the same
+    $$('article.prose h4[id]').forEach(h => {
+      const m = !h.children.length && /^(Maddə\s+[^\s.]+)(\.?\s*)([\s\S]*)$/.exec(h.textContent);
+      if (m) h.innerHTML = `<span class="mnum">${esc(m[1])}</span><span class="msep">${esc(m[2])}</span><span class="mname">${esc(m[3])}</span>`;
+      h.insertAdjacentHTML('beforeend', markBtn(h.id, 'hmark', 'Maddəni əlfəcinlərə əlavə et'));
+    });
   }
   if (anchor) after = () => showAnchor(anchor);
   else if (resume && S.at && S.at[0] === id && S.at[1] > 0) after = () => {
@@ -856,38 +909,34 @@ function qBody(q, order, picked, reveal) {
 let quizRun = null; // { key, items: [{ id, order }], i, picks: [] } — in memory only
 
 function vTests() {
-  topbar('', 'Testlər');
+  topbar(`Məşq · ${S.group} qrupu`, 'Testlər', null, null, null, { big: true });
   const all = pool();
   const wrong = Object.keys(S.wrong).filter(id => all.includes(id));
   const withQ = visChapters().filter(c => c.kind === 'chapter' && chQuiz(c.id).length);
   const subj = PROG.subjects.map(s => [s, all.filter(id => qById[id].subj === s.id).length]).filter(x => x[1]);
+  const hours = EXAM.minutes % 60 ? `${EXAM.minutes} dəq` : `${EXAM.minutes / 60} saat`;
   $('#view').innerHTML = `
-    <span class="kicker">Məşq · ${esc(S.group)} qrupu</span>
-    <h1 class="h1">Testlər</h1>
-    <a class="card cont" href="#imtahan">
-      <span class="kicker">${S.exam ? 'Davam edir' : 'Sınaq imtahanı'}</span>
-      <b>${S.exam ? 'İmtahana qayıt' : 'İmtahan kimi: taymerlə, fənlər üzrə nəticə'}</b>
-      <span class="muted">${EXAM.blocks.map(b => `${SUBJ[b.subj].title} ${b.n}`).join(' · ')}</span>${icon('arrow')}</a>
+    <a class="night cont" href="#imtahan"><span class="sic">${icon('timer')}</span>
+      <span><b>${S.exam ? 'İmtahana qayıt' : 'Sınaq imtahanı'}</b><span class="muted">${S.exam ? 'davam edir' : `İmtahan kimi: ${FULL} sual, ${hours}, fənlər üzrə nəticə`}</span></span>
+      <span class="go">${S.exam ? 'Davam et' : 'Başla'}</span></a>
     ${S.exam ? '' : `<div class="subjex"><span class="muted small">Yalnız bir fənn, vaxtla:</span>
-      <div class="row">${EXAM.blocks.map(b => `<a class="btn sm" href="#imtahan-${b.subj}">${esc(SUBJ[b.subj].title)} · ${b.n}</a>`).join('')}</div></div>`}
+      <div class="row">${EXAM.blocks.map(b => `<a class="btn sm ${sk(b.subj)}" href="#imtahan-${b.subj}">${esc(SUBJ[b.subj].title)} · ${b.n}</a>`).join('')}</div></div>`}
     <div class="list block">
       <a class="secrow${all.length ? '' : ' off'}" href="#test-mix"><span class="tick acc">${icon('shuffle')}</span>
         <span class="sect"><b>Qarışıq test</b><span class="muted">${all.length ? `Bütün fəsillərdən ${Math.min(MIX_SIZE, all.length)} təsadüfi sual${S.quiz.mix ? ` · son nəticə ${S.quiz.mix.last}%` : ''}` : 'Hələ sual yoxdur'}</span></span>${icon('chev')}</a>
-      <a class="secrow${wrong.length ? '' : ' off'}" href="#test-wrong"><span class="tick acc">${icon('redo')}</span>
+      <a class="secrow s-men${wrong.length ? '' : ' off'}" href="#test-wrong"><span class="tick acc">${icon('redo')}</span>
         <span class="sect"><b>Səhvlərim</b><span class="muted">${wrong.length ? `${wrong.length} sual təkrar gözləyir` : 'Hələ səhv yoxdur'}</span></span>${icon('chev')}</a>
-      <a class="secrow" href="#statistika"><span class="tick acc">${icon('chart')}</span>
-        <span class="sect"><b>Statistika</b><span class="muted">Fənlər üzrə düzgünlük, zəif mövzular, sınaq dinamikası</span></span>${icon('chev')}</a>
     </div>
     ${subj.length ? `<section class="block"><div class="block-h"><h2>Fənn testləri</h2></div>
       <div class="list">${subj.map(([s, n]) => {
         const r = S.quiz['f-' + s.id];
-        return `<a class="secrow" href="#test-f-${s.id}"><span class="tick acc">${icon('checklist')}</span>
+        return `<a class="secrow ${sk(s.id)}" href="#test-f-${s.id}"><span class="tick acc">${icon(SICON[s.id] || 'checklist')}</span>
           <span class="sect"><b>${esc(s.title)}</b><span class="muted">${Math.min(MIX_SIZE, n)} sual (bankda ${n})${r ? ` · ən yaxşı ${r.best}%` : ''}</span></span>${icon('chev')}</a>`;
       }).join('')}</div></section>` : ''}
     <section class="block"><div class="block-h"><h2>Fəsil testləri</h2></div>
       <div class="list">${withQ.length ? withQ.map(c => {
         const r = S.quiz[c.id];
-        return `<a class="secrow" href="#test-${c.id}"><span class="chn">${c.n}</span>
+        return `<a class="secrow ${sk(c.subj)}" href="#test-${c.id}"><span class="chn">${c.n}</span>
           <span class="sect"><b>${esc(c.title)}</b><span class="muted">${chQuiz(c.id).length} sual${r ? ` · ən yaxşı ${r.best}%` : ''}</span></span>${icon('chev')}</a>`;
       }).join('') : '<p class="muted empty">Hələ test yoxdur — fəsillər əlavə olunduqca burada görünəcək.</p>'}</div></section>`;
   $$('.secrow.off').forEach(a => { a.setAttribute('aria-disabled', 'true'); a.tabIndex = -1; a.addEventListener('click', e => e.preventDefault()); });
@@ -915,32 +964,40 @@ function vQuiz(key) {
     if (!ids.length) { location.replace('#testler'); return; }
     quizRun = { key, items: ids.map(id => ({ id, order: optOrder(qById[id]) })), i: 0, picks: [] };
   }
-  topbar('Test', quizName(key), 'testler');
-  if (quizRun.i >= quizRun.items.length) { quizResult(); return; }
+  $('#view').style.paddingBottom = ''; document.documentElement.style.scrollPaddingBottom = '';
+  if (quizRun.i >= quizRun.items.length) { topbar('Nəticə', quizName(key), 'testler'); quizResult(); return; }
+  setFocus(true);
   const it = quizRun.items[quizRun.i], q = qById[it.id], picked = quizRun.picks[quizRun.i];
-  const n = quizRun.items.length, answered = picked !== undefined;
-  const ok = answered && isRight(q, picked);
+  const n = quizRun.items.length, answered = picked !== undefined, done = quizRun.i + (answered ? 1 : 0);
+  const ok = answered && isRight(q, picked), sec = q.s && secById[q.s];
+  // the way out and the progress up top; the verdict comes up as a sheet with the way on
+  topbar('', '', 'testler', `<span class="qcount">${quizRun.i + 1}<span>/${n}</span></span>`, null, { close: true,
+    mid: `<div class="qbar" role="progressbar" aria-label="${esc(quizName(key))}" aria-valuemin="0" aria-valuemax="${n}" aria-valuenow="${done}"><i style="width:${pct(done, n)}%"></i></div>` });
   $('#view').innerHTML = `
-    <div class="row qhead"><span class="kicker">Sual ${quizRun.i + 1} / ${n}</span>${bar(quizRun.i + (answered ? 1 : 0), n)}</div>
+    <div class="qhead ${sk(q.subj)}"><span class="chip acc">${esc(subjName(q.subj))}</span><span class="kicker">Sual ${quizRun.i + 1} / ${n}</span>${sec ? `<span class="muted small">· ${esc(sec.num || sec.title)}</span>` : ''}</div>
     <h1 class="qtext">${esc(q.q)}</h1>
     ${qBody(q, it.order, picked, answered)}
-    ${!answered && q.t === 'open' ? `<button type="button" class="btn primary wide" data-act="check">Yoxla</button>` : ''}
-    ${answered ? `<div class="card expl ${ok ? 'ok' : 'bad'}">
-      <b>${ok ? 'Düzdür' : 'Səhvdir'}</b>
-      ${!ok ? `<p>Düz cavab: <b>${esc(rightText(q))}</b></p>` : ''}
-      ${q.e ? `<p>${lawLinks(q)}</p>` : ''}
-      ${q.s && secById[q.s] ? `<a href="#${q.s}" data-ret>Bölməni oxu: ${esc(secById[q.s].num)}. ${esc(secById[q.s].title)}</a>` : ''}
-      ${aiBox('q', it.id, 'Claude-dan ətraflı izah', { o: it.order, p: picked })}
-    </div>
-    <button type="button" class="btn primary wide" data-act="next">${quizRun.i + 1 < n ? 'Növbəti sual' : 'Nəticəni gör'} ${icon('arrow')}</button>` : ''}`;
+    ${!answered && q.t === 'open' ? `<div class="actbar"><button type="button" class="btn primary" data-act="check">Yoxla</button></div>` : ''}
+    ${answered ? `<section class="sheet expl ${ok ? 'ok' : 'bad'}" aria-label="Cavab">
+      <span class="grab" aria-hidden="true"></span>
+      <div class="sheet-h"><span class="res-ic">${icon(ok ? 'check' : 'x')}</span>
+        <div class="res"><b>${ok ? 'Düzdür' : 'Səhvdir'}</b>${ok ? '' : `<span>Düz cavab: ${esc(rightText(q))}</span>`}</div></div>
+      <div class="sheet-body">
+        ${q.e ? `<p>${lawLinks(q)}</p>` : ''}
+        ${sec ? `<a class="secref" href="#${q.s}" data-ret>${icon('book')}<span>Bölməni oxu: ${esc(secName(sec))}</span></a>` : ''}
+        ${aiBox('q', it.id, 'Claude-dan ətraflı izah', { o: it.order, p: picked })}
+      </div>
+      <div class="sheet-act"><button type="button" class="btn primary" data-act="next">${quizRun.i + 1 < n ? 'Növbəti sual' : 'Nəticəni gör'} ${icon('arrow')}</button></div>
+    </section>` : ''}`;
+  if (answered) fitSheet($('#view .sheet'));
   const pick = v => {
     quizRun.picks[quizRun.i] = v;
     if (isRight(q, v)) delete S.wrong[it.id]; else S.wrong[it.id] = Date.now();
     note(it.id, isRight(q, v));
     save();
     vQuiz(key);
-    const nx = $('[data-act="next"]');
-    if (nx) nx.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    const o = $$('#view .opt.wrong, #view .opt.right').pop() || $('#oa'); // the lower of the two stays above the sheet
+    if (o) o.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
   };
   $$('.opt[data-oi]').forEach(b => b.addEventListener('click', () => pick(+b.dataset.oi)));
   const chk = $('[data-act="check"]'), inp = $('#oa');
@@ -988,13 +1045,16 @@ function quizResult() {
   const prev = S.quiz[key];
   S.quiz[key] = { best: Math.max(score, prev ? prev.best : 0), last: score, at: Date.now() };
   save();
+  setFocus(false);
   $('#view').innerHTML = `
-    <span class="kicker">Nəticə</span>
-    <h1 class="h1">${right} / ${items.length} düz · ${score}%</h1>
-    ${bar(right, items.length)}
-    <div class="row block">
-      <button type="button" class="btn primary" data-act="again">${icon('refresh')} Yenidən</button>
-      <a class="btn" href="#testler">Testlərə qayıt</a>
+    <div class="card score">
+      ${ring(score, 136, 13, score + '%', `${score} faiz`)}
+      <h1 class="h1">${right} / ${items.length} düz cavab</h1>
+      <span class="muted small">${esc(quizName(key))}${prev ? ` · ən yaxşı ${Math.max(score, prev.best)}%` : ''}</span>
+      <div class="row">
+        <button type="button" class="btn primary" data-act="again">${icon('refresh')} Yenidən</button>
+        <a class="btn" href="#testler">Testlərə qayıt</a>
+      </div>
     </div>
     <section class="block"><div class="block-h"><h2>Səhv cavablar</h2></div>${missedList(items, picks)}</section>`;
   $('[data-act="again"]').addEventListener('click', () => { quizRun = null; vQuiz(key); });
@@ -1091,12 +1151,13 @@ function examRun() {
   const picked = E.ans[E.i];
   const done = Object.keys(E.ans).filter(k => E.ans[k] !== '' && E.ans[k] != null).length;
   const what = SUBJ[E.subj] ? 'Sınağı' : 'İmtahanı';
-  topbar(`${SUBJ[E.subj] ? SUBJ[E.subj].title + ' sınağı' : 'Sınaq imtahanı'} · ${E.group}`, SUBJ[q.subj] ? SUBJ[q.subj].title : 'Sual', 'testler', `<span class="timer mono" aria-live="off">${clock(examLeft())}</span>`);
+  setFocus(true);
+  topbar(`${SUBJ[E.subj] ? SUBJ[E.subj].title + ' sınağı' : 'Sınaq imtahanı'} · ${E.group}`, SUBJ[q.subj] ? SUBJ[q.subj].title : 'Sual', 'testler', `<span class="timer mono" aria-live="off">${clock(examLeft())}</span>`, null, { close: true });
   $('#view').innerHTML = `
-    <div class="row qhead"><span class="kicker">Sual ${E.i + 1} / ${n}${q.t === 'open' ? ' · açıq' : ''}</span>${bar(done, n)}</div>
+    <div class="row qhead ${sk(q.subj)}"><span class="kicker">Sual ${E.i + 1} / ${n}${q.t === 'open' ? ' · açıq' : ''}</span>${bar(done, n)}</div>
     <h1 class="qtext">${esc(q.q)}</h1>
     ${qBody(q, it.order, picked, false)}
-    <nav class="exnav">
+    <nav class="actbar" aria-label="Suallar">
       <button type="button" class="btn" data-act="prev"${E.i ? '' : ' disabled'}>${icon('back')} Əvvəlki</button>
       <button type="button" class="btn primary" data-act="next"${E.i + 1 < n ? '' : ' disabled'}>Növbəti ${icon('chev')}</button>
     </nav>
@@ -1160,25 +1221,45 @@ function vExamResult() {
   const R = S.examLast, one = R && SUBJ[R.subj] ? R.subj : null;
   topbar(one ? `${SUBJ[one].title} sınağı` : 'Sınaq imtahanı', 'Nəticə', 'testler');
   if (!R) { location.replace('#imtahan'); return; }
+  setFocus(false);
   const g = S.group;
   S.group = R.group; // the pass table belongs to the group the exam was taken in
-  const table = passTable(R.pct);
+  const table = passTable(R.pct), lines = one ? [] : EXAM.pass.filter(r => r.sub.startsWith(R.group));
   S.group = g;
+  const met = lines.filter(r => R.pct >= r.pct).map(r => r.sub).sort();
+  const and = a => a.length > 1 ? a.slice(0, -1).join(', ') + ' və ' + a[a.length - 1] : a[0];
   $('#view').innerHTML = `
-    <span class="kicker">${esc(R.group)} qrupu · ${one ? esc(SUBJ[one].title) + ' sınağı · ' : ''}${R.n} sual${R.timeUp ? ' · vaxt bitdi' : ''}</span>
-    <h1 class="h1">${R.pts} / ${R.max} bal · ${R.pct}%</h1>
-    ${bar(R.pts, R.max)}
-    <p class="muted">Vaxt: ${clock(R.used)}</p>
-    <div class="tbl block"><table><thead><tr><th>Fənn</th><th>Düz</th><th>Bal</th></tr></thead>
-      <tbody>${EXAM.blocks.filter(b => R.bySubj[b.subj]).map(b => { const r = R.bySubj[b.subj];
-        return `<tr><td>${esc(SUBJ[b.subj].title)}</td><td>${r.right} / ${r.n}</td><td>${r.pts} / ${r.max}</td></tr>`; }).join('')}</tbody></table></div>
-    ${one ? '<p class="muted small">Keçid balları bütün imtahan üçündür, ona görə fənn sınağında göstərilmir.</p>'
-      : `<section class="block"><div class="block-h"><h2>Keçid balları</h2></div>${table}</section>`}
+    <div class="card score">
+      <h1 class="h1 sr">${R.pts} / ${R.max} bal · ${R.pct}%</h1>
+      ${gauge(R.pct, R.pts, R.max, lines.map(r => r.pct))}
+      ${one ? '' : met.length ? `<span class="verdict ok">${icon('check')} ${esc(and(met))} üçün keçid balını topladın</span>`
+        : `<span class="verdict no">Keçid balına hələ çatmır — ən aşağı hədd ${Math.min(...lines.map(r => r.pct))}%</span>`}
+      <span class="muted small">${esc(R.group)} qrupu · ${one ? esc(SUBJ[one].title) + ' sınağı · ' : ''}${R.n} sual · vaxt ${clock(R.used)}${R.timeUp ? ' · vaxt bitdi' : ''}</span>
+    </div>
+    <div class="subjgrid">${EXAM.blocks.filter(b => R.bySubj[b.subj]).map(b => { const r = R.bySubj[b.subj], p = pct(r.right, r.n);
+      return `<div class="sbox ${sk(b.subj)}">${ring(p, 56, 6, p + '%', `${SUBJ[b.subj].title}: ${p} faiz`)}
+        <span><b>${esc(SUBJ[b.subj].title)}</b><span class="muted">${r.right} / ${r.n} düz · ${r.pts}/${r.max} bal</span></span></div>`; }).join('')}</div>
     <div class="row block">
       <a class="btn primary" href="#imtahan${one ? '-' + one : ''}">${icon('refresh')} ${one ? 'Yeni sınaq' : 'Yeni imtahan'}</a>
       <a class="btn" href="#testler">Testlərə qayıt</a>
     </div>
+    ${one ? '<p class="muted small">Keçid balları bütün imtahan üçündür, ona görə fənn sınağında göstərilmir.</p>'
+      : `<section class="block"><div class="block-h"><h2>Keçid balları</h2></div>${table}</section>`}
     <section class="block"><div class="block-h"><h2>Səhv və cavabsız suallar</h2></div>${missedList(R.items, R.picks)}</section>`;
+}
+// the exam's score on a half ring; the group's pass thresholds are ticks on it (none for one subject's exam)
+function gauge(p, pts, max, ticks) {
+  const cx = 140, cy = 134, r = 104, v = Math.max(0, Math.min(100, p)) * Math.PI * r / 100;
+  const at = (q, rr) => [cx - rr * Math.cos(Math.PI * q / 100), cy - rr * Math.sin(Math.PI * q / 100)];
+  const arc = `M${cx - r} ${cy} A${r} ${r} 0 0 1 ${cx + r} ${cy}`;
+  return `<svg class="gauge" width="280" height="150" viewBox="0 0 280 150" role="img" aria-label="${p} faiz${ticks.length ? ', keçid həddləri ' + ticks.join(', ') + ' faiz' : ''}">
+    <path class="tr" d="${arc}" fill="none" stroke-width="18" stroke-linecap="round"/>
+    ${v > 0.5 ? `<path class="val" d="${arc}" fill="none" stroke-width="18" stroke-linecap="round" stroke-dasharray="${v.toFixed(2)} 999"/>` : ''}
+    ${ticks.map(t => { const [x1, y1] = at(t, 95), [x2, y2] = at(t, 113), [lx, ly] = at(t, 127);
+      return `<path class="${t <= p ? 'tk-in' : 'tk-out'}" d="M${x1.toFixed(1)} ${y1.toFixed(1)}L${x2.toFixed(1)} ${y2.toFixed(1)}" stroke-width="2.5" stroke-linecap="round"/>
+        <text class="lb${t <= p ? ' ok' : ''}" x="${lx.toFixed(1)}" y="${(ly + 4).toFixed(1)}" text-anchor="${t > 50 ? 'start' : t < 50 ? 'end' : 'middle'}">${t}</text>`; }).join('')}
+    <text class="big" x="${cx}" y="112" text-anchor="middle" font-size="46">${p}%</text>
+    <text class="sub" x="${cx}" y="${cy}" text-anchor="middle" font-size="13">${pts} / ${max} bal</text></svg>`;
 }
 
 /* =========================================================
@@ -1212,7 +1293,7 @@ const MON = ['yan', 'fev', 'mar', 'apr', 'may', 'iyn', 'iyl', 'avq', 'sen', 'okt
 const day = t => { const d = new Date(t); return `${d.getDate()} ${MON[d.getMonth()]}`; };
 
 function vStats() {
-  topbar('Testlər', 'Statistika', 'testler');
+  topbar(`${S.group} qrupu`, 'Statistika', null, null, null, { big: true });
   const all = pool(), T = tally(all), secs = learnable();
   const full = S.exams.filter(r => r.group === S.group && !r.subj);
   const best = full.reduce((m, r) => Math.max(m, r.pct), -1);
@@ -1225,8 +1306,6 @@ function vStats() {
   const cols = EXAM.blocks.filter(b => full.some(r => r.bySubj[b.subj]));
   const subjEx = EXAM.blocks.map(b => ({ b, list: S.exams.filter(r => r.group === S.group && r.subj === b.subj) })).filter(x => x.list.length);
   $('#view').innerHTML = `
-    <span class="kicker">${esc(S.group)} qrupu</span>
-    <h1 class="h1">Statistika</h1>
     ${T.n ? '' : '<p class="card note">Hələ test cavabı yoxdur. <a href="#testler">Testlər</a> bölməsində fəsil testi və ya qarışıq test həll et — düzgünlük və zəif mövzular burada toplanacaq.</p>'}
     <div class="card stat">
       <div><b>${T.n ? pct(T.r, T.n) + '%' : '—'}</b><span>düz cavab</span></div>
@@ -1237,7 +1316,7 @@ function vStats() {
     <section class="block"><div class="block-h"><h2>Fənlər üzrə</h2></div>
       <div class="list">${subjects.map(x => {
         const p = x.t.n ? pct(x.t.r, x.t.n) : null, L = p == null ? null : level(p);
-        return `<div class="srow" data-subj="${x.id || 'other'}">
+        return `<div class="srow ${sk(x.id)}" data-subj="${x.id || 'other'}">
           <div class="srow-h"><b>${esc(subjName(x.id))}</b>${L ? `<span class="chip ${L[1]}">${p}% · ${L[2]}</span>` : '<span class="chip">cavab yoxdur</span>'}</div>
           ${bar(x.t.r, x.t.n)}
           <span class="muted small">${x.t.tried}/${x.t.bank} sual həll edilib · ${x.t.r}/${x.t.n} cavab düz · oxunub ${x.read}/${x.secs} bölmə</span>
@@ -1377,11 +1456,9 @@ async function chatSend(content, label) {
 
 const ASK_HINT = 'Sualını yaz… Məsələn: inzibati akt nədir? Bu məntiq məsələsini necə həll edim?';
 function vTeacher() {
-  topbar('Claude', 'Virtual müəllim');
+  topbar(`Claude · ${S.group} qrupu`, 'Virtual müəllim', null, null, null, { big: true });
   $('#view').innerHTML = `
-    <span class="kicker">${esc(S.group)} qrupu</span>
-    <h1 class="h1">Virtual müəllim</h1>
-    <p class="muted" id="ai-mode">${esc(aiMode())}</p>
+    <p class="muted small" id="ai-mode">${esc(aiMode())}</p>
     <section class="block">
       <div class="card stack chatcard">
         <div id="chat" class="chat" aria-live="polite"></div>
@@ -1432,7 +1509,7 @@ function snippet(raw, q) {
 }
 
 function vSearch(q0) {
-  topbar('', 'Axtarış');
+  topbar('Kitab', 'Axtarış', 'home');
   $('#view').innerHTML = `
     <label class="search"><span class="sr">Axtarış</span>${icon('search')}
       <input type="search" id="q" placeholder="Söz və ya ifadə yaz" autocomplete="off" value="${esc(q0)}"></label>
@@ -1471,13 +1548,13 @@ function appRow() {
     ${st === 'prompt' ? `<button type="button" class="btn primary" data-act="install">${icon('phone')} Tətbiqi quraşdır</button>` : ''}
     ${st === 'ios' ? '<p class="muted">iPhone/iPad: Paylaş düyməsi → “Ana ekrana əlavə et”.</p>' : ''}
     ${st === 'installed' ? '<p class="muted">Tətbiq quraşdırılıb.</p>' : ''}
-    <button type="button" class="btn" data-act="update">${icon('refresh')} Yeniləməni yoxla</button>`;
+    <p class="muted small">Yeni versiya özü yüklənir və tətbiqdən çıxıb qayıdanda açılır; yarımçıq test və ya söhbət varsa, bitənə qədər gözləyir.</p>
+    <button type="button" class="btn" data-act="update">${icon('refresh')} İndi yoxla</button>`;
 }
 
 function vSettings() {
-  topbar('', 'Ayarlar');
+  topbar(`${S.group} qrupu`, 'Ayarlar', null, null, null, { big: true });
   $('#view').innerHTML = `
-    <h1 class="h1">Ayarlar</h1>
     <section class="block"><div class="block-h"><h2>Vəzifə qrupu</h2></div>
       <div class="card stack">
         <div class="set"><span>Qrup</span>${seg('group', S.group, GROUPS.map(g => [g, g]))}</div>
@@ -1554,7 +1631,7 @@ function bindApp() {
   const up = $('[data-act="update"]');
   if (up) up.addEventListener('click', async () => {
     const r = await PWA.checkUpdate();
-    toast({ found: 'Yeni versiya yüklənir…', latest: 'Ən son versiyadır.', offline: 'İnternet yoxdur.', none: 'Offline rejim aktiv deyil.' }[r] || 'Yoxlamaq alınmadı.');
+    toast({ found: PWA.sw.updated ? 'Yeni versiya hazırdır.' : 'Yeni versiya yüklənir…', latest: 'Ən son versiyadır.', offline: 'İnternet yoxdur.', none: 'Offline rejim aktiv deyil.' }[r] || 'Yoxlamaq alınmadı.');
   });
 }
 function refreshApp() { const box = $('#set-app'); if (box) { box.innerHTML = appRow(); bindApp(); } }
@@ -1582,6 +1659,9 @@ async function importData() {
    ========================================================= */
 applyLook();
 AI.init();
+// the offline app reloads itself into a new version when the reader leaves it — unless that would lose work in hand
+if (PWA) PWA.busy = () => !!(quizRun && quizRun.picks.length && quizRun.i < quizRun.items.length) || CHAT.busy || CHAT.turns.length > 0
+  || !!tDraft.trim() || $$('.ai-box').some(b => b._ctl) || $$('#view input.oa:not([disabled]), #aikey').some(i => i.value.trim());
 window.addEventListener('hashchange', route);
 route();
 })();

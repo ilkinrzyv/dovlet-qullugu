@@ -4,7 +4,7 @@ Bu qovluq dövlət qulluğu imtahanlarına hazırlıq kitabının **offline tət
 internetlə açandan sonra kitab, testlər və irəliləyiş **internetsiz** işləyir. Telefonda ana ekrana adi tətbiq
 kimi quraşdırılır.
 
-Versiya: `2026.11.02-9b7eae5` · cihazda tutduğu yer: təxminən 3,2 MB.
+Versiya: `2026.11.02-81a058a` · cihazda tutduğu yer: təxminən 2,9 MB.
 
 ## Telefona quraşdır
 
@@ -22,8 +22,8 @@ Ayarlar → Tətbiq bölməsində “Offline hazırdır” yazısı görünənd�
 ## Yeniləmə
 
 Tətbiq yeni versiyanı özü yoxlayır: açılanda, ekrana qayıdanda, internet bərpa olanda və açıq qaldıqca yarım
-saatdan bir. Yeni versiya yüklənən kimi ekranın aşağısında “Yenilə” düyməsi çıxır — Ayarlara girmək lazım deyil.
-Məlumatların itmir.
+saatdan bir. Yüklənən versiyaya özü keçir — tətbiqdən çıxıb qayıdanda yeni versiya eyni yerdə açılır; yarımçıq test
+və ya söhbət varsa, gözləyir və ekranda “Yenilə” düyməsi durur. Ayarlara girmək lazım deyil, məlumatların itmir.
 
 ## Fayllar
 
@@ -34,4 +34,4 @@ Məlumatların itmir.
 - `libs/` — marked və DOMPurify (Claude cavablarının göstərilməsi; MIT, Apache-2.0/MPL-2.0)
 - `sw.js` — service worker (offline yaddaş)
 - `manifest.webmanifest`, `icons/` — tətbiqin adı və ikonları
-- `fonts/` — IBM Plex Sans, IBM Plex Mono, Literata (SIL Open Font License 1.1)
+- `fonts/` — Plus Jakarta Sans (SIL Open Font License 1.1)

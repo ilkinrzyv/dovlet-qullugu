@@ -70,7 +70,7 @@ function serve(port) {
     if (await page.$('#oa')) {
       await page.fill('#oa', ' Beş ');
       await page.click('[data-act="check"]');
-      out.openPractice = await page.$eval('.expl > b', el => el.textContent);
+      out.openPractice = await page.$eval('.expl .res > b', el => el.textContent);
       await shot('t1-open');
     } else {
       const q = await page.$eval('.qtext', el => el.textContent);
@@ -88,7 +88,7 @@ function serve(port) {
   out.figure = await page.$$eval('.qfig svg', els => els.length);
   out.figOrder = await page.$$eval('.opts.letters .opt .ol', els => els.map(e => e.textContent).join(''));
   await page.click('.opt[data-oi="1"]');
-  out.figRight = await page.$eval('.expl > b', el => el.textContent);
+  out.figRight = await page.$eval('.expl .res > b', el => el.textContent);
   await shot('t1-figure');
 
   // ---- questions inside the text (Məntiq): worked examples, checks without a solution ----
@@ -250,7 +250,7 @@ function serve(port) {
   });
   await page.reload();
   await go('home');
-  out.statLink = await page.$$eval('.statlink[href="#statistika"]', els => els.length);
+  out.statLink = await page.$$eval('a.kpi[href="#statistika"]', els => els.length);
   await go('statistika');
   out.statTop = await page.$$eval('.stat b', els => els.map(e => e.textContent));
   out.statSubj = await page.$$eval('.srow', els => els.map(e => e.dataset.subj + ' ' + e.querySelector('.chip').textContent));
@@ -289,7 +289,7 @@ function serve(port) {
   await go('imtahan');
   out.fullHist = await page.$$eval('.hist .secrow', els => els.length);
   await go('home');
-  out.homeBest = await page.$eval('a.tile[href="#imtahan"] .muted', el => el.textContent);
+  out.homeBest = await page.$eval('a.night[href="#imtahan"] .muted', el => el.textContent);
   await go('statistika');
   out.statSubjEx = await page.$$eval('.sx', els => els.map(e => e.getAttribute('href') + ' ' + e.querySelector('.chn').textContent));
   out.statTrendAfter = await page.$$eval('#trend .pt', els => els.length);
@@ -346,7 +346,7 @@ function serve(port) {
   out.retTest = (await page.textContent('.retpill')).trim();
   await page.click('.retpill');
   await page.waitForSelector('.expl');
-  out.backInTest = { hash: await page.evaluate(() => location.hash), q: await page.$eval('.qhead .kicker', el => el.textContent), right: await page.$eval('.expl > b', el => el.textContent) };
+  out.backInTest = { hash: await page.evaluate(() => location.hash), q: await page.$eval('.qhead .kicker', el => el.textContent), right: await page.$eval('.expl .res > b', el => el.textContent) };
 
   await go('c2s1');                                     // bookmarks: a section and a maddə
   await page.click('#topbar [data-mark="c2s1"]');
@@ -364,7 +364,7 @@ function serve(port) {
   out.chapterPage = await page.$eval('#view', v => ({ testFirst: !!(v.querySelector('.quizcta').compareDocumentPosition(v.querySelector('.list')) & Node.DOCUMENT_POSITION_FOLLOWING),
     meta: v.querySelector('.secrow .sect .muted').textContent.trim() }));
   await go('home');
-  out.homeNav = { parts: await page.$$eval('.subjnav [data-part]', els => els.map(b => b.textContent)), quiet: await page.$eval('#topbar', el => el.classList.contains('quiet')),
+  out.homeNav = { parts: await page.$$eval('.subjnav [data-part] b', els => els.map(b => b.textContent)), title: await page.$eval('#topbar.big .tb-name', el => el.textContent),
     progress: await page.$eval('#part-p1 .ph span', el => el.textContent), marks: await page.$eval('a.chrow[href="#elfecinler"] .chm', el => el.textContent) };
 
   await page.setViewportSize({ width: 390, height: 360 });  // “Davam et” opens the last section where reading stopped
@@ -433,11 +433,11 @@ function serve(port) {
   eq('menPlan', { h1: 'Məntiq sınağı', rows: 1 });
   eq('menExam', { subj: 'men', n: 2, secs: 300, kicker: 'Məntiq sınağı · BA' });
   eq('menResult', { h1: '2 / 3 bal · 67%', passChips: 0, again: '#imtahan-men', saved: 'men' });
-  eq('fullHist', 2); eq('homeBest', 'ən yaxşı: 100%');
+  eq('fullHist', 2); eq('homeBest', '100 sual · 3 saat · ən yaxşı: 100%');
   eq('statSubjEx', ['#imtahan-men 67%']); eq('statTrendAfter', 2);
-  eq('lightDefault', ['light', 'rgb(245, 243, 236)']);
+  eq('lightDefault', ['light', 'rgb(245, 246, 251)']);
   eq('oldSystem', ['light', 'light']);
-  eq('systemKept', [null, 'rgb(17, 19, 23)']);
+  eq('systemKept', [null, 'rgb(14, 16, 24)']);
   eq('law', { law: true, h5: 4, h4: ['Maddə 1.', 'Maddə 2.', 'Maddə 9', 'Maddə 1.'], removed: true, points: ['1.0.1.'] });
   eq('lawRead', [0, 1]);
   eq('toc', ['#konstitusiya-m1', '#konstitusiya-m2', '#dovlet-qullugu-m9', '#nha-m1']);
@@ -448,7 +448,7 @@ function serve(port) {
   eq('marks', ['#c2s1', '#konstitusiya-m2']); eq('marksLeft', ['#konstitusiya-m2']);
   eq('secTest', ['#test-s-c1s1', '3 sual', true]);
   eq('chapterPage', { testFirst: true, meta: '1 dəq · 0/3 tapşırıq · 2 test sualı' });
-  eq('homeNav', { parts: ['Qanunvericilik', 'Məntiq', 'Azərbaycan dili', 'İnformatika'], quiet: true, progress: '0/3 bölmə', marks: '1 qeyd' });
+  eq('homeNav', { parts: ['Qanunvericilik', 'Məntiq', 'Azərbaycan dili', 'İnformatika'], title: 'Yoxlama kitabı', progress: '0/3 bölmə', marks: '1 qeyd' });
   if (!out.at || out.at[0] !== 'c2s1' || out.at[1] < 4) fail.push('reading place not kept: ' + JSON.stringify(out.at));
   eq('resumed', true);
   eq('tabs', ['true', 'false', 'false', 'false']); eq('tabMen', ['pr-men']);

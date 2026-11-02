@@ -81,6 +81,15 @@ All checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build/
   letters. Optional `g`. Quiz ids are positional (`c1q3`): new questions go at the end of a chapter's list, and an
   outdated question is replaced in place, not deleted. `s` is the section number (`1.4`), so restructuring sections
   means remapping `s` (legislation questions: by the maddə their `e` cites).
+- The look is the “Müasir” design the owner chose (2026-11-02) from three drafts on a claude.ai canvas
+  (https://claude.ai/artifact/4ZEQvrMkBri4o8aiBgKE5N): Plus Jakarta Sans only (vendored in `fonts/`, Google Fonts on
+  the claude.ai page; it has ə and tabular figures), indigo accent `#4F46E5`, a colour per subject (`.s-qan`,
+  `.s-men`, `.s-az`, `.s-inf`, `.s-mus` set `--sc*`; `sk()`/`sicon()` in app.js), large rounded cards, a floating tab
+  bar (Kitab, Testlər, Müəllim, Statistika, Ayarlar; search opens from the Kitab page's top bar). A tab's own page
+  has a large title in the top bar (`topbar(…, {big})`); other pages a back button and a centred title that shows once
+  the page's `h1.h1` scrolls away. Reading a section, a test and the mock exam are `focus` pages: the tab bar gives
+  way to the page's own `.actbar` (back / Oxudum / Növbəti; Əvvəlki / Növbəti), and a test's verdict comes up as a
+  bottom `.sheet`. The law text's “Maddə N.” headings get a number pill without changing their text.
 - `build/app.js` — the whole UI in one IIFE: hash router (`#home`, `#c1`, `#c1s2`, `#konstitusiya-m72` (a law id),
   `#elfecinler` (bookmarks), `#proqram[-qan]` (one subject at a time; its tabs are a second top-bar row), `#testler`,
   `#test-c1` / `test-mix` / `test-wrong` / `test-f-qan` / `test-s-c1s2` (one section; linked at the top of the section,
@@ -118,11 +127,14 @@ All checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build/
 - `libs/` — marked 12.0.2 and DOMPurify 3.1.6 (render Claude's markdown safely); copied into `docs/libs/`; the
   claude.ai page loads the same versions from jsDelivr.
 - `build/pwa.js` — `window.DQ_PWA`: service-worker registration, update bar, install prompt, file save/pick, Claude
-  API calls. Present only in the PWA build; guard its use with `if (PWA)`. Updates need no visit to Ayarlar (the
-  owner's wish): it asks for a new sw.js when the app opens, comes back to the screen (installed apps are resumed, not
+  API calls. Present only in the PWA build; guard its use with `if (PWA)`. Updates happen by themselves (the owner's
+  wish): it asks for a new sw.js when the app opens, comes back to the screen (installed apps are resumed, not
   reopened — iOS above all; a minute apart at most), gets the network back and every 30 minutes; sw.js caches the new
-  version and takes over, and the bar offers “Yenilə” (“Sonra” hides it until the next return; the toast and the
-  corner buttons move up over it). It also shows the install banner when the
+  version and takes over, and the page reloads into it when the reader leaves the app (at once if it is off screen),
+  back at the same scroll with a “Kitab yeni versiyaya keçdi” toast — unless `DQ_PWA.busy()` (set by app.js: a test
+  half done, a chat, typed text) says a reload would lose work. Meanwhile the bar offers “Yenilə” (“Sonra” hides it
+  until the next return; the toast and the corner buttons move up over it; it waits while a test's answer sheet is
+  up). It also shows the install banner when the
   page opens (the owner's wish): a button for the browser's install dialog (`beforeinstallprompt`: Android, desktop
   Chrome/Edge), Share → “Ana ekrana əlavə et” steps on iOS (Safari and other iOS browsers worded apart), the ⋮ menu
   path on Android browsers without the event (after 3.5 s; it turns into the button if the event comes later).

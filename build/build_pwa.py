@@ -29,32 +29,29 @@ def wr(rel, text):
     with open(os.path.join(OUT, rel), 'w', encoding='utf-8', newline='\n') as f:
         f.write(text)
 
-# ---------- fonts (latin + latin-ext covers every Azerbaijani letter) ----------
+# ---------- fonts (latin + latin-ext covers every Azerbaijani letter, ə included) ----------
 FAM = [
-    ('IBM Plex Sans', 'fontsource-ibm-plex-sans-5.3.0', 'ibm-plex-sans', (400, 500, 600, 700), False),
-    ('IBM Plex Mono', 'fontsource-ibm-plex-mono-5.3.0', 'ibm-plex-mono', (400, 500, 600), False),
-    ('Literata', 'fontsource-literata-5.3.0', 'literata', (400, 500, 600, 700), True),
+    ('Plus Jakarta Sans', 'fontsource-plus-jakarta-sans-5.3.0', 'plus-jakarta-sans',
+     ((400, 'normal'), (500, 'normal'), (600, 'normal'), (700, 'normal'), (800, 'normal'), (400, 'italic'))),
 ]
 RANGES = {
     'latin': 'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD',
     'latin-ext': 'U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF',
 }
 font_css, font_files = '', []
-for name, d, slug, weights, italic in FAM:
-    for w in weights:
-        for style in (('normal', 'italic') if italic else ('normal',)):
-            for sub in ('latin-ext', 'latin'):
-                f = f'{slug}-{sub}-{w}-{style}.woff2'
-                src = os.path.join(FONTS, d, 'package', 'files', f)
-                if not os.path.exists(src):
-                    continue
-                shutil.copy(src, os.path.join(OUT, 'fonts', f))
-                font_files.append('fonts/' + f)
-                font_css += (f"@font-face{{font-family:'{name}';font-style:{style};font-weight:{w};font-display:swap;"
-                             f"src:url({f}) format('woff2');unicode-range:{RANGES[sub]};}}\n")
+for name, d, slug, faces in FAM:
+    for w, style in faces:
+        for sub in ('latin-ext', 'latin'):
+            f = f'{slug}-{sub}-{w}-{style}.woff2'
+            src = os.path.join(FONTS, d, 'package', 'files', f)
+            if not os.path.exists(src):
+                continue
+            shutil.copy(src, os.path.join(OUT, 'fonts', f))
+            font_files.append('fonts/' + f)
+            font_css += (f"@font-face{{font-family:'{name}';font-style:{style};font-weight:{w};font-display:swap;"
+                         f"src:url({f}) format('woff2');unicode-range:{RANGES[sub]};}}\n")
 wr('fonts/fonts.css', font_css)
-shutil.copy(os.path.join(FONTS, 'fontsource-ibm-plex-sans-5.3.0', 'package', 'LICENSE'), os.path.join(OUT, 'fonts', 'LICENSE-IBM-Plex.txt'))
-shutil.copy(os.path.join(FONTS, 'fontsource-literata-5.3.0', 'package', 'LICENSE'), os.path.join(OUT, 'fonts', 'LICENSE-Literata.txt'))
+shutil.copy(os.path.join(FONTS, 'fontsource-plus-jakarta-sans-5.3.0', 'package', 'LICENSE'), os.path.join(OUT, 'fonts', 'LICENSE-Plus-Jakarta-Sans.txt'))
 
 # ---------- markdown for Claude's answers: marked + DOMPurify, vendored so the app needs no network for them ----------
 lib_files = []
@@ -87,7 +84,7 @@ INDEX = f'''<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{NAME}</title>
 <meta name="description" content="{DESC}">
-<meta name="theme-color" content="#F5F3EC">
+<meta name="theme-color" content="#F5F6FB">
 <meta name="color-scheme" content="light dark">
 <script>{LOOK}</script>
 <link rel="manifest" href="manifest.webmanifest">
@@ -124,7 +121,7 @@ MANIFEST = {
     'lang': 'az', 'dir': 'ltr',
     'start_url': './', 'scope': './',
     'display': 'standalone',
-    'background_color': '#F5F3EC', 'theme_color': '#F5F3EC',
+    'background_color': '#F5F6FB', 'theme_color': '#F5F6FB',
     'categories': ['education', 'books'],
     'icons': [
         {'src': 'icons/icon-192.png', 'sizes': '192x192', 'type': 'image/png', 'purpose': 'any'},
@@ -185,8 +182,8 @@ Ayarlar → Tətbiq bölməsində “Offline hazırdır” yazısı görünənd�
 ## Yeniləmə
 
 Tətbiq yeni versiyanı özü yoxlayır: açılanda, ekrana qayıdanda, internet bərpa olanda və açıq qaldıqca yarım
-saatdan bir. Yeni versiya yüklənən kimi ekranın aşağısında “Yenilə” düyməsi çıxır — Ayarlara girmək lazım deyil.
-Məlumatların itmir.
+saatdan bir. Yüklənən versiyaya özü keçir — tətbiqdən çıxıb qayıdanda yeni versiya eyni yerdə açılır; yarımçıq test
+və ya söhbət varsa, gözləyir və ekranda “Yenilə” düyməsi durur. Ayarlara girmək lazım deyil, məlumatların itmir.
 
 ## Fayllar
 
@@ -197,7 +194,7 @@ Məlumatların itmir.
 - `libs/` — marked və DOMPurify (Claude cavablarının göstərilməsi; MIT, Apache-2.0/MPL-2.0)
 - `sw.js` — service worker (offline yaddaş)
 - `manifest.webmanifest`, `icons/` — tətbiqin adı və ikonları
-- `fonts/` — IBM Plex Sans, IBM Plex Mono, Literata (SIL Open Font License 1.1)
+- `fonts/` — Plus Jakarta Sans (SIL Open Font License 1.1)
 '''
 wr('README.md', README)
 wr('.nojekyll', '')  # GitHub Pages: serve files as they are, no Jekyll

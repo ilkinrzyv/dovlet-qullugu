@@ -20,9 +20,7 @@ look = open(os.path.join(BASE, 'look.js'), encoding='utf-8').read().strip()  # t
 data = json.dumps(book, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 assert '</script' not in js.lower()
 
-FONTS = ('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600'
-         '&family=IBM+Plex+Sans:wght@400;500;600;700'
-         '&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap')
+FONTS = 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400&display=swap'
 nch = sum(1 for c in book['chapters'] if c['kind'] == 'chapter')
 nq = sum(len(v) for v in book['quizzes'].values())
 

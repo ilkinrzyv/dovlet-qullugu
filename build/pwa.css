@@ -1,28 +1,32 @@
 
 /* ---------- offline app (PWA) ---------- */
-.pwa-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(72px + env(safe-area-inset-bottom,0px));z-index:61;
-  width:min(520px,calc(100% - 24px - env(safe-area-inset-left,0px) - env(safe-area-inset-right,0px)));
-  display:flex;align-items:center;gap:8px;padding:10px 6px 10px 16px;border-radius:14px;background:var(--ink);color:var(--bg);
-  font-size:14px;line-height:1.35;box-shadow:var(--shadow);animation:piup .25s ease-out}
+/* the update bar and the install banner float above the tab bar (or the page's own bar) */
+.pwa-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:var(--bottom);z-index:61;
+  width:min(536px,calc(100% - 24px - env(safe-area-inset-left,0px) - env(safe-area-inset-right,0px)));
+  display:flex;align-items:center;gap:8px;padding:10px 6px 10px 16px;border-radius:20px;background:var(--night);color:var(--night-ink);
+  font-size:14px;line-height:1.35;box-shadow:var(--shadow-lg);animation:piup .25s ease-out}
 .pb-text{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
-.pb-text span{font-size:13px;opacity:.78}
-.pb-go{flex:none;height:38px;padding:0 16px;border-radius:10px;background:var(--accent);color:var(--accent-ink);font-weight:600}
-.pb-x{flex:none;width:34px;height:34px;border-radius:9px;color:inherit;opacity:.7;font-size:24px;line-height:1}
+.pb-text b{font-weight:800}
+.pb-text span{font-size:12.5px;color:var(--night-2)}
+.pb-go{flex:none;height:40px;padding:0 16px;border-radius:13px;background:var(--accent);color:var(--accent-ink);font-weight:800}
+.pb-x{flex:none;width:36px;height:36px;border-radius:11px;color:inherit;opacity:.7;font-size:24px;line-height:1}
 .pb-x:hover{opacity:1}
 /* the toast, “Yuxarı” and the way back to the test stand where the bar is: they move up over it */
-.pwa-has-bar .toast,.pwa-has-bar .fab,.pwa-has-bar .retpill{bottom:calc(140px + env(safe-area-inset-bottom,0px))}
-.pwa-has-bar #view{padding-bottom:calc(160px + env(safe-area-inset-bottom,0px))}
-.pwa-install{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(72px + env(safe-area-inset-bottom,0px));z-index:59;
-  width:min(520px,calc(100% - 24px - env(safe-area-inset-left,0px) - env(safe-area-inset-right,0px)));
-  display:flex;align-items:flex-start;gap:12px;padding:12px 8px 12px 12px;background:var(--surface);color:var(--ink);
-  border:1px solid var(--line-2);border-radius:14px;box-shadow:var(--shadow);font-size:14px;line-height:1.45;animation:piup .25s ease-out}
-.pwa-install img{flex:none;width:44px;height:44px;border-radius:10px}
+.pwa-has-bar .toast,.pwa-has-bar .fab,.pwa-has-bar .retpill{bottom:calc(var(--bottom) + 74px)}
+.pwa-has-bar #view{padding-bottom:calc(var(--bottom) + 100px)}
+/* a test's answer sheet takes the bottom: the bar waits (the update comes by itself anyway) */
+body:has(.sheet) .pwa-bar,body:has(.sheet) .pwa-install{display:none}
+.pwa-install{position:fixed;left:50%;transform:translateX(-50%);bottom:var(--bottom);z-index:59;
+  width:min(536px,calc(100% - 24px - env(safe-area-inset-left,0px) - env(safe-area-inset-right,0px)));
+  display:flex;align-items:flex-start;gap:12px;padding:14px 8px 14px 14px;background:var(--surface);color:var(--ink);
+  border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-lg);font-size:14px;line-height:1.45;animation:piup .25s ease-out}
+.pwa-install img{flex:none;width:46px;height:46px;border-radius:13px}
 .pi-text{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
-.pi-title{font-size:15px}
+.pi-title{font-size:15px;font-weight:800}
 .pi-text span{color:var(--ink-2)}
 .pi-share{width:17px;height:17px;vertical-align:-3px;fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.pi-go{flex:none;align-self:center;height:38px;padding:0 14px;border-radius:10px;background:var(--accent);color:var(--accent-ink);font-weight:600}
-.pi-x{flex:none;width:34px;height:34px;margin-top:-6px;border-radius:9px;color:var(--ink-3);font-size:24px;line-height:1}
-.pi-x:hover{background:var(--bg-2);color:var(--ink)}
+.pi-go{flex:none;align-self:center;height:42px;padding:0 16px;border-radius:14px;background:var(--accent);color:var(--accent-ink);font-weight:800}
+.pi-x{flex:none;width:36px;height:36px;margin-top:-6px;border-radius:11px;color:var(--ink-3);font-size:24px;line-height:1}
+.pi-x:hover{background:var(--surface-2);color:var(--ink)}
 @keyframes piup{from{opacity:0;transform:translate(-50%,12px)}}
 @media (prefers-reduced-motion:reduce){.pwa-install,.pwa-bar{animation:none}}

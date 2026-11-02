@@ -1,11 +1,11 @@
-// Renders the app icons (a columned public building on the book's teal) to PNG with Chromium.
+// Renders the app icons (a columned public building on the book's indigo) to PNG with Chromium.
 const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
 fs.mkdirSync(path.join(__dirname, 'shots'), { recursive: true });
 const OUT = path.join(__dirname, 'icons');
 fs.mkdirSync(OUT, { recursive: true });
-const BG = '#0F6B7A', FG = '#F5F3EC';
+const BG = '#4F46E5', FG = '#FFFFFF';
 
 function glyph(scale) {
   // drawn on a 512 grid; pediment, four columns and a stepped base span ~100..412, centred on 256

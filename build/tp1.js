@@ -152,10 +152,12 @@ function serve(port) {
   await p.context().close();
   out.install = ins;
 
-  // ---- updates: a new release is found and offered by itself, without a visit to Ayarlar ----
-  // The app comes back to the screen (an installed app is usually resumed, not opened afresh), the bar offers the new
-  // version, “Sonra” hides it until the next return, “Yenilə” loads it; left open, the half-hourly check finds the next.
-  // The page clock jumps instead of waiting: resumes within a minute of a check do not ask again.
+  // ---- updates: a new release is found and put in place by itself, without a visit to Ayarlar ----
+  // The app comes back to the screen (an installed app is usually resumed, not opened afresh) and finds the new
+  // version: the bar offers it at once, “Sonra” hides it until the next return, and when the reader leaves the app it
+  // reloads into the new version by itself, back at the same place. A test half done holds that reload (“Yenilə” still
+  // works); left open, the half-hourly check finds the next one. The page clock jumps instead of waiting: resumes
+  // within a minute of a check do not ask again. Leaving is played by a hidden visibilityState.
   const updates = async (type, label, opts, init) => {
     NEXT = '';
     const b = await type.launch();
@@ -165,30 +167,56 @@ function serve(port) {
     const p = await c.newPage();
     p.on('pageerror', e => errors.push(`${label} pageerror: ${e.message}`));
     const r = {};
-    const resume = () => p.evaluate(() => document.dispatchEvent(new Event('visibilitychange')));
+    const resume = () => p.evaluate(() => { delete document.visibilityState; document.dispatchEvent(new Event('visibilitychange')); });
+    const leave = () => p.evaluate(() => {
+      Object.defineProperty(document, 'visibilityState', { configurable: true, get: () => 'hidden' });
+      document.dispatchEvent(new Event('visibilitychange'));
+    }).catch(() => null); // the page may reload under it
     const bars = () => p.$$eval('#pwa-bar', els => els.length);
+    const version = () => p.evaluate(() => DQ_PWA.VERSION);
+    const ready = () => p.waitForFunction(() => window.DQ_PWA && window.DQ_PWA.sw.ready === true, null, { timeout: 30000 });
     try {
-      await p.goto(`http://127.0.0.1:${PORT}/#c1`);
-      await p.waitForFunction(() => window.DQ_PWA && window.DQ_PWA.sw.ready === true, null, { timeout: 30000 });
+      await p.goto(`http://127.0.0.1:${PORT}/#c1s2`);
+      await ready();
       await resume();
       r.firstInstall = await bars();                    // nothing to offer on the very first visit
       NEXT = '-n1';
       await p.clock.fastForward(90000);
+      await p.evaluate(() => window.scrollTo(0, 900));
       await resume();
       await p.waitForSelector('#pwa-bar .pb-go', { timeout: 30000 });
       r.onResume = 1;
       await p.waitForTimeout(400);
       await p.screenshot({ path: path.join(__dirname, 'shots', `update-${label}.png`) });
-      r.overTabbar = await p.evaluate(() => document.getElementById('pwa-bar').getBoundingClientRect().bottom <= document.getElementById('tabbar').getBoundingClientRect().top);
+      r.overBar = await p.evaluate(() => document.getElementById('pwa-bar').getBoundingClientRect().bottom <= document.querySelector('.actbar').getBoundingClientRect().top);
       await p.click('#pwa-bar .pb-x');
       r.later = await bars();
       await resume();
       r.backOnResume = await bars();
-      await Promise.all([p.waitForEvent('load'), p.click('#pwa-bar .pb-go')]);
-      await p.waitForFunction(() => window.DQ_PWA && window.DQ_PWA.sw.ready === true, null, { timeout: 30000 });
-      r.reloaded = (await p.evaluate(() => DQ_PWA.VERSION)) === VERSION + '-n1' ? 1 : 0;
-      r.afterReload = await bars();
+      const y = await p.evaluate(() => Math.round(window.scrollY));
+      await Promise.all([p.waitForEvent('load'), leave()]);
+      await ready();
+      r.autoOnLeave = (await version()) === VERSION + '-n1' ? 1 : 0;
+      r.samePlace = await p.waitForFunction(y0 => location.hash === '#c1s2' && Math.abs(window.scrollY - y0) < 40, y, { timeout: 5000 }).then(() => true, () => false);
+      r.told = await p.$eval('.toast', t => t.textContent).catch(() => null);
+      await p.evaluate(() => { location.hash = '#test-c1'; });
+      await p.waitForSelector('.opt[data-oi], #oa');
+      if (await p.$('#oa')) { await p.fill('#oa', '1'); await p.click('[data-act="check"]'); } else await p.click('.opt[data-oi]');
+      await p.waitForSelector('.sheet');
       NEXT = '-n2';
+      await p.clock.fastForward(90000);
+      await resume();
+      await p.waitForSelector('#pwa-bar', { state: 'attached', timeout: 30000 });
+      await leave();
+      await p.waitForTimeout(1500);
+      r.busyHolds = (await version()) === VERSION + '-n1' && (await p.evaluate(() => location.hash)) === '#test-c1' ? 1 : 0;
+      await resume();
+      await p.click('[data-act="next"]');
+      await Promise.all([p.waitForEvent('load'), p.click('#pwa-bar .pb-go')]);
+      await ready();
+      r.yenile = (await version()) === VERSION + '-n2' ? 1 : 0;
+      r.afterReload = await bars();
+      NEXT = '-n3';
       await p.clock.fastForward('31:00');
       await p.waitForSelector('#pwa-bar .pb-go', { timeout: 30000 });
       r.halfHourly = 1;
@@ -214,7 +242,7 @@ function serve(port) {
   await page.goto(`http://127.0.0.1:${PORT}/#proqram`);
   await page.waitForSelector('.ptopic', { timeout: 15000 });
   out.offlineTopics = await page.$$eval('.ptopic', els => els.length);
-  out.offlineFont = await page.evaluate(async () => { await document.fonts.ready; return document.fonts.check('16px Literata', 'ə'); });
+  out.offlineFont = await page.evaluate(async () => { await document.fonts.ready; return document.fonts.check('16px "Plus Jakarta Sans"', 'ə'); });
 
   await browser.close();
   const fail = [];
@@ -231,7 +259,8 @@ function serve(port) {
   if (out.dark !== 'dark') fail.push('theme switch');
   const wantInstall = { desktopNone: 0, prompted: 1, ios: 'ios', iosLater: true, iosAfterClose: 0, iosChrome: 'iosother', iosInstalled: 0, android: 'android', androidLater: 'prompt' };
   if (JSON.stringify(out.install) !== JSON.stringify(wantInstall)) fail.push('install banner: ' + JSON.stringify(out.install));
-  const wantUpdate = { firstInstall: 0, onResume: 1, overTabbar: true, later: 0, backOnResume: 1, reloaded: 1, afterReload: 0, halfHourly: 1 };
+  const wantUpdate = { firstInstall: 0, onResume: 1, overBar: true, later: 0, backOnResume: 1, autoOnLeave: 1, samePlace: true,
+    told: 'Kitab yeni versiyaya keçdi', busyHolds: 1, yenile: 1, afterReload: 0, halfHourly: 1 };
   Object.keys(out.updates).forEach(k => { if (JSON.stringify(out.updates[k]) !== JSON.stringify(wantUpdate)) fail.push(`update (${k}): ` + JSON.stringify(out.updates[k])); });
   if (out.offlineSections !== firstCh.sections.length) fail.push('offline chapter view');
   if (out.offlineReadKept !== 1) fail.push('offline progress lost');

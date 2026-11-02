@@ -24,7 +24,7 @@ Quraşdırma və məlumatların ixracı haqqında: [docs/README.md](docs/README.
 | `build/pwa.js`, `build/pwa.css`, `build/sw.template.js` | Offline rejim, quraşdırma, yeniləmə, ixrac/idxal |
 | `build/make_icons.js`, `build/icons/` | Tətbiqin ikonları |
 | `build/tp1.js`, `build/t1.js`, `build/test/` | Playwright yoxlamaları və onların yoxlama kitabı |
-| `fonts/` | IBM Plex Sans, IBM Plex Mono, Literata |
+| `fonts/` | Plus Jakarta Sans |
 | `docs/` | **Hazır sayt** — GitHub Pages buradan yayımlayır. Əl ilə dəyişmə, build ilə yaradılır. |
 
 ## Kitabın mətni necə yazılır
@@ -178,9 +178,10 @@ npm run test:page   # claude.ai versiyası: #ai-… keçidləri cavabı özü ba
 
 `docs/` qovluğunu commit edib push edəndə GitHub Pages saytı 1–2 dəqiqəyə yeniləyir. Quraşdırılmış
 tətbiq yeni versiyanı özü axtarır — açılanda, ekrana qayıdanda, internet bərpa olanda və açıq qaldıqca yarım
-saatdan bir — yükləyən kimi ekranda “Yenilə” bildirişi çıxır; Ayarlara girmək lazım deyil.
+saatdan bir — və yükləyəndən sonra özü keçir: oxucu tətbiqdən çıxıb qayıdanda yeni versiya eyni yerdə açılır.
+Yarımçıq test və ya söhbət varsa, gözləyir; o vaxta qədər ekranda “Yenilə” bildirişi durur.
 
 ## Lisenziyalar
 
-Şriftlər: IBM Plex Sans, IBM Plex Mono, Literata — SIL Open Font License 1.1 (`fonts/*/package/LICENSE`).
+Şrift: Plus Jakarta Sans — SIL Open Font License 1.1 (`fonts/*/package/LICENSE`).
 Kitabxanalar: marked 12.0.2 (MIT), DOMPurify 3.1.6 (Apache-2.0 / MPL-2.0) — `libs/*/LICENSE*`.
