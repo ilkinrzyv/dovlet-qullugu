@@ -916,26 +916,25 @@ function vTests() {
   const all = pool();
   const wrong = Object.keys(S.wrong).filter(id => all.includes(id));
   const withQ = visChapters().filter(c => c.kind === 'chapter' && chQuiz(c.id).length);
-  const subj = PROG.subjects.map(s => [s, all.filter(id => qById[id].subj === s.id).length]).filter(x => x[1]);
   const hours = EXAM.minutes % 60 ? `${EXAM.minutes} dəq` : `${EXAM.minutes / 60} saat`;
+  // the whole exam, then one subject's part of it (its count, its share of the time), then practice
   $('#view').innerHTML = `
     <a class="night cont" href="#imtahan"><span class="sic">${icon('timer')}</span>
       <span><b>${S.exam ? 'İmtahana qayıt' : 'Sınaq imtahanı'}</b><span class="muted">${S.exam ? 'davam edir' : `İmtahan kimi: ${FULL} sual, ${hours}, fənlər üzrə nəticə`}</span></span>
       <span class="go">${S.exam ? 'Davam et' : 'Başla'}</span></a>
-    ${S.exam ? '' : `<div class="subjex"><span class="muted small">Yalnız bir fənn, vaxtla:</span>
-      <div class="row">${EXAM.blocks.map(b => `<a class="btn sm ${sk(b.subj)}" href="#imtahan-${b.subj}">${esc(SUBJ[b.subj].title)} · ${b.n}</a>`).join('')}</div></div>`}
+    ${S.exam ? '' : `<section class="block"><div class="block-h"><h2>Yalnız bir fənn</h2></div>
+      <p class="muted small sxnote">Bir fənnin sınağı: imtahandakı qədər sual, vaxt imtahandakı payına görə.</p>
+      <div class="subjex">${EXAM.blocks.map(b => {
+        const last = S.exams.find(r => r.group === S.group && r.subj === b.subj);
+        return `<a class="sxcard ${sk(b.subj)}" href="#imtahan-${b.subj}">${sicon(b.subj)}${last ? `<span class="chip acc">son ${last.pct}%</span>` : ''}
+          <span><b>${esc(SUBJ[b.subj].title)}</b><span class="muted">${b.n} sual · ${clock(examSecs(b.n))}</span></span></a>`;
+      }).join('')}</div></section>`}
     <div class="list block">
       <a class="secrow${all.length ? '' : ' off'}" href="#test-mix"><span class="tick acc">${icon('shuffle')}</span>
         <span class="sect"><b>Qarışıq test</b><span class="muted">${all.length ? `Bütün fəsillərdən ${Math.min(MIX_SIZE, all.length)} təsadüfi sual${S.quiz.mix ? ` · son nəticə ${S.quiz.mix.last}%` : ''}` : 'Hələ sual yoxdur'}</span></span>${icon('chev')}</a>
       <a class="secrow s-men${wrong.length ? '' : ' off'}" href="#test-wrong"><span class="tick acc">${icon('redo')}</span>
         <span class="sect"><b>Səhvlərim</b><span class="muted">${wrong.length ? `${wrong.length} sual təkrar gözləyir` : 'Hələ səhv yoxdur'}</span></span>${icon('chev')}</a>
     </div>
-    ${subj.length ? `<section class="block"><div class="block-h"><h2>Fənn testləri</h2></div>
-      <div class="list">${subj.map(([s, n]) => {
-        const r = S.quiz['f-' + s.id];
-        return `<a class="secrow ${sk(s.id)}" href="#test-f-${s.id}"><span class="tick acc">${icon(SICON[s.id] || 'checklist')}</span>
-          <span class="sect"><b>${esc(s.title)}</b><span class="muted">${Math.min(MIX_SIZE, n)} sual (bankda ${n})${r ? ` · ən yaxşı ${r.best}%` : ''}</span></span>${icon('chev')}</a>`;
-      }).join('')}</div></section>` : ''}
     <section class="block"><div class="block-h"><h2>Fəsil testləri</h2></div>
       <div class="list">${withQ.length ? withQ.map(c => {
         const r = S.quiz[c.id];
@@ -949,14 +948,12 @@ function quizIds(key) {
   const all = pool();
   if (key === 'mix') return shuffle(all).slice(0, MIX_SIZE);
   if (key === 'wrong') return shuffle(Object.keys(S.wrong).filter(id => all.includes(id)));
-  if (key.startsWith('f-')) return shuffle(all.filter(id => qById[id].subj === key.slice(2))).slice(0, MIX_SIZE);
   if (key.startsWith('s-')) return shuffle(all.filter(id => qById[id].s === key.slice(2)));
   return chById[key] ? chQuiz(key) : [];
 }
 function quizName(key) {
   if (key === 'mix') return 'Qarışıq test';
   if (key === 'wrong') return 'Səhvlərim';
-  if (key.startsWith('f-') && SUBJ[key.slice(2)]) return SUBJ[key.slice(2)].title;
   if (key.startsWith('s-') && secById[key.slice(2)]) return secName(secById[key.slice(2)]);
   return chById[key] ? `Fəsil ${chById[key].n}. ${chById[key].title}` : 'Test';
 }
@@ -1104,10 +1101,10 @@ function vExam(subj) {
       <p class="muted small">${one ? `Vaxt ${EXAM.minutes} dəqiqənin bu fənnin sual payına (${n}/${FULL}) düşən hissəsidir. ` : ''}${esc(EXAM.minutes_note)}${open ? ' ' + esc(EXAM.open_note) : ''}</p>
       <button type="button" class="btn primary" data-act="start"${take ? '' : ' disabled'}>${take ? (one ? 'Sınağı başla' : 'İmtahanı başla') : 'Hələ sual yoxdur'}</button>
     </div>
-    ${one ? '' : `<section class="block"><div class="block-h"><h2>Fənn üzrə sınaq</h2></div>
+    ${one ? '' : `<section class="block"><div class="block-h"><h2>Yalnız bir fənn</h2></div>
       <div class="list">${EXAM.blocks.map(b => {
         const last = S.exams.find(r => r.group === S.group && r.subj === b.subj);
-        return `<a class="secrow" href="#imtahan-${b.subj}"><span class="tick acc">${icon('timer')}</span>
+        return `<a class="secrow ${sk(b.subj)}" href="#imtahan-${b.subj}"><span class="tick acc">${icon(SICON[b.subj] || 'timer')}</span>
           <span class="sect"><b>${esc(SUBJ[b.subj].title)}</b><span class="muted">${b.n} sual · ${clock(examSecs(b.n))}${last ? ` · son nəticə ${last.pct}%` : ''}</span></span>${icon('chev')}</a>`;
       }).join('')}</div>
       <p class="muted small">Yalnız bir fənn: imtahandakı qədər sual, vaxt imtahandakı payına görə.</p></section>

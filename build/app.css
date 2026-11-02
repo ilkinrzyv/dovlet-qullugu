@@ -449,8 +449,16 @@ svg.i{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-widt
 .gq.has{background:var(--accent-soft);border-color:var(--accent-line);color:var(--accent)}
 .gq.cur{outline:2px solid var(--accent);outline-offset:1px}
 .tbl td.small{color:var(--ink-2)}
-.subjex{display:flex;flex-direction:column;gap:8px;margin-top:14px}
-.subjex .btn{border-color:transparent;background:var(--sc-soft);color:var(--sc-ink)}
+/* one subject's timed exam: a card per subject under the whole exam's banner */
+.sxnote{margin:-6px 0 12px}
+.subjex{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.sxcard{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:14px;border-radius:22px;
+  background:var(--surface);border:1px solid var(--line);color:var(--ink);text-decoration:none}
+.sxcard:hover{border-color:var(--sc,var(--line-2))}
+.sxcard>span:last-child{display:flex;flex-direction:column;gap:2px}
+.sxcard b{font-size:15px;font-weight:800;line-height:1.25}
+.sxcard .muted{font-size:12.5px}
+.sxcard .chip{position:absolute;top:14px;right:12px}
 #view>.block:first-child{margin-top:4px}
 #ai-mode{margin:0 0 4px}
 
