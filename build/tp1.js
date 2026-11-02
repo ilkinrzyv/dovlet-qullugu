@@ -1,12 +1,15 @@
-// PWA check on the real build: service worker precache, installability, reading, offline reload with the host gone.
+// PWA check on the real build: service worker precache, installability, reading, updates found by themselves (Chromium
+// and WebKit as an iPhone, in Safari and from the home screen), offline reload with the host gone.
 // The app's own flows (groups, tests, mock exam) are checked on a fixture book by t1.js.
-const { chromium } = require('playwright');
+const { chromium, webkit, devices } = require('playwright');
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
 fs.mkdirSync(path.join(__dirname, 'shots'), { recursive: true });
 const ROOT = path.resolve(__dirname, '..', 'docs');
 const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json', '.webmanifest': 'application/manifest+json', '.png': 'image/png', '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.md': 'text/markdown; charset=utf-8', '.txt': 'text/plain; charset=utf-8' };
+const VERSION = /const VERSION = '([^']+)'/.exec(fs.readFileSync(path.join(ROOT, 'pwa.js'), 'utf-8'))[1];
+let NEXT = ''; // set: the host plays a newer release — sw.js and pwa.js carry VERSION + NEXT, so a new cache as well
 
 function serve(port) {
   const srv = http.createServer((req, res) => {
@@ -15,6 +18,7 @@ function serve(port) {
     const f = path.join(ROOT, p);
     if (!f.startsWith(ROOT) || !fs.existsSync(f) || fs.statSync(f).isDirectory()) { res.writeHead(404); res.end('nf'); return; }
     res.writeHead(200, { 'content-type': TYPES[path.extname(f)] || 'application/octet-stream', 'cache-control': 'max-age=600' });
+    if (NEXT && (p === '/sw.js' || p === '/pwa.js')) { res.end(fs.readFileSync(f, 'utf-8').split(VERSION).join(VERSION + NEXT)); return; }
     fs.createReadStream(f).pipe(res);
   });
   return new Promise(r => srv.listen(port, '127.0.0.1', () => r(srv)));
@@ -148,6 +152,58 @@ function serve(port) {
   await p.context().close();
   out.install = ins;
 
+  // ---- updates: a new release is found and offered by itself, without a visit to Ayarlar ----
+  // The app comes back to the screen (an installed app is usually resumed, not opened afresh), the bar offers the new
+  // version, “Sonra” hides it until the next return, “Yenilə” loads it; left open, the half-hourly check finds the next.
+  // The page clock jumps instead of waiting: resumes within a minute of a check do not ask again.
+  const updates = async (type, label, opts, init) => {
+    NEXT = '';
+    const b = await type.launch();
+    const c = await b.newContext(opts);
+    await c.clock.install();
+    if (init) await c.addInitScript(init);
+    const p = await c.newPage();
+    p.on('pageerror', e => errors.push(`${label} pageerror: ${e.message}`));
+    const r = {};
+    const resume = () => p.evaluate(() => document.dispatchEvent(new Event('visibilitychange')));
+    const bars = () => p.$$eval('#pwa-bar', els => els.length);
+    try {
+      await p.goto(`http://127.0.0.1:${PORT}/#c1`);
+      await p.waitForFunction(() => window.DQ_PWA && window.DQ_PWA.sw.ready === true, null, { timeout: 30000 });
+      await resume();
+      r.firstInstall = await bars();                    // nothing to offer on the very first visit
+      NEXT = '-n1';
+      await p.clock.fastForward(90000);
+      await resume();
+      await p.waitForSelector('#pwa-bar .pb-go', { timeout: 30000 });
+      r.onResume = 1;
+      await p.waitForTimeout(400);
+      await p.screenshot({ path: path.join(__dirname, 'shots', `update-${label}.png`) });
+      r.overTabbar = await p.evaluate(() => document.getElementById('pwa-bar').getBoundingClientRect().bottom <= document.getElementById('tabbar').getBoundingClientRect().top);
+      await p.click('#pwa-bar .pb-x');
+      r.later = await bars();
+      await resume();
+      r.backOnResume = await bars();
+      await Promise.all([p.waitForEvent('load'), p.click('#pwa-bar .pb-go')]);
+      await p.waitForFunction(() => window.DQ_PWA && window.DQ_PWA.sw.ready === true, null, { timeout: 30000 });
+      r.reloaded = (await p.evaluate(() => DQ_PWA.VERSION)) === VERSION + '-n1' ? 1 : 0;
+      r.afterReload = await bars();
+      NEXT = '-n2';
+      await p.clock.fastForward('31:00');
+      await p.waitForSelector('#pwa-bar .pb-go', { timeout: 30000 });
+      r.halfHourly = 1;
+    } catch (e) { r.error = e.message.split('\n')[0]; }
+    await b.close();
+    NEXT = '';
+    return r;
+  };
+  const iPhone = devices['iPhone 15'];
+  out.updates = {
+    chromium: await updates(chromium, 'chromium', { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, hasTouch: true }),
+    iosSafari: await updates(webkit, 'ios-safari', iPhone),
+    iosHome: await updates(webkit, 'ios-home', iPhone, () => Object.defineProperty(navigator, 'standalone', { get: () => true }))
+  };
+
   // ---- host gone + offline: reload and use the book ----
   await new Promise(r => { srv.close(r); srv.closeAllConnections(); });
   await ctx.setOffline(true);
@@ -175,6 +231,8 @@ function serve(port) {
   if (out.dark !== 'dark') fail.push('theme switch');
   const wantInstall = { desktopNone: 0, prompted: 1, ios: 'ios', iosLater: true, iosAfterClose: 0, iosChrome: 'iosother', iosInstalled: 0, android: 'android', androidLater: 'prompt' };
   if (JSON.stringify(out.install) !== JSON.stringify(wantInstall)) fail.push('install banner: ' + JSON.stringify(out.install));
+  const wantUpdate = { firstInstall: 0, onResume: 1, overTabbar: true, later: 0, backOnResume: 1, reloaded: 1, afterReload: 0, halfHourly: 1 };
+  Object.keys(out.updates).forEach(k => { if (JSON.stringify(out.updates[k]) !== JSON.stringify(wantUpdate)) fail.push(`update (${k}): ` + JSON.stringify(out.updates[k])); });
   if (out.offlineSections !== firstCh.sections.length) fail.push('offline chapter view');
   if (out.offlineReadKept !== 1) fail.push('offline progress lost');
   if (!out.offlineFont) fail.push('fonts not cached');

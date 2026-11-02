@@ -4,7 +4,7 @@ Bu qovluq dövlət qulluğu imtahanlarına hazırlıq kitabının **offline tət
 internetlə açandan sonra kitab, testlər və irəliləyiş **internetsiz** işləyir. Telefonda ana ekrana adi tətbiq
 kimi quraşdırılır.
 
-Versiya: `2026.11.01-e9dbc9f` · cihazda tutduğu yer: təxminən 3,2 MB.
+Versiya: `2026.11.02-9b7eae5` · cihazda tutduğu yer: təxminən 3,2 MB.
 
 ## Telefona quraşdır
 
@@ -21,7 +21,9 @@ Ayarlar → Tətbiq bölməsində “Offline hazırdır” yazısı görünənd�
 
 ## Yeniləmə
 
-Sayt yenilənəndə tətbiq növbəti açılışda yeni versiyanı yükləyir və “Yenilə” düyməsini göstərir. Məlumatların itmir.
+Tətbiq yeni versiyanı özü yoxlayır: açılanda, ekrana qayıdanda, internet bərpa olanda və açıq qaldıqca yarım
+saatdan bir. Yeni versiya yüklənən kimi ekranın aşağısında “Yenilə” düyməsi çıxır — Ayarlara girmək lazım deyil.
+Məlumatların itmir.
 
 ## Fayllar
 

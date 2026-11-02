@@ -14,9 +14,10 @@ python build/qanun.py        # only when laws change: official texts from e-qanu
 python build/parse_book.py   # → build/book.json (gitignored); must print "errors 0"
 python build/build_pwa.py    # → docs/ and dist/dovlet-qullugu-offline.zip; prints the new version
 python build/build_page.py   # → dist/dovlet-qullugu.html, the claude.ai version (see Claude below)
-cd build && npm ci && npx playwright install chromium
+cd build && npm ci && npx playwright install chromium webkit
 npm run test:pwa             # real build: service worker, install + install banner, offline reload, programme page,
-                             # the longest law section's maddə list, a law explanation's links
+                             # the longest law section's maddə list, a law explanation's links, a new release found
+                             # and offered by itself (Chromium; WebKit as an iPhone, in Safari and from the home screen)
 npm run test:app             # fixture book (build/test/): BA/BB filter, open + figure questions, inline nümunə/yoxla,
                              # Claude with a mocked API key + handoff links, teacher chat, mock exam, time-up,
                              # law text from ```qanun blocks, old read marks on law sections dropped, maddə list,
@@ -117,7 +118,11 @@ All checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build/
 - `libs/` — marked 12.0.2 and DOMPurify 3.1.6 (render Claude's markdown safely); copied into `docs/libs/`; the
   claude.ai page loads the same versions from jsDelivr.
 - `build/pwa.js` — `window.DQ_PWA`: service-worker registration, update bar, install prompt, file save/pick, Claude
-  API calls. Present only in the PWA build; guard its use with `if (PWA)`. It also shows the install banner when the
+  API calls. Present only in the PWA build; guard its use with `if (PWA)`. Updates need no visit to Ayarlar (the
+  owner's wish): it asks for a new sw.js when the app opens, comes back to the screen (installed apps are resumed, not
+  reopened — iOS above all; a minute apart at most), gets the network back and every 30 minutes; sw.js caches the new
+  version and takes over, and the bar offers “Yenilə” (“Sonra” hides it until the next return; the toast and the
+  corner buttons move up over it). It also shows the install banner when the
   page opens (the owner's wish): a button for the browser's install dialog (`beforeinstallprompt`: Android, desktop
   Chrome/Edge), Share → “Ana ekrana əlavə et” steps on iOS (Safari and other iOS browsers worded apart), the ⋮ menu
   path on Android browsers without the event (after 3.5 s; it turns into the button if the event comes later).

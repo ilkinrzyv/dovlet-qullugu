@@ -184,7 +184,9 @@ Ayarlar → Tətbiq bölməsində “Offline hazırdır” yazısı görünənd�
 
 ## Yeniləmə
 
-Sayt yenilənəndə tətbiq növbəti açılışda yeni versiyanı yükləyir və “Yenilə” düyməsini göstərir. Məlumatların itmir.
+Tətbiq yeni versiyanı özü yoxlayır: açılanda, ekrana qayıdanda, internet bərpa olanda və açıq qaldıqca yarım
+saatdan bir. Yeni versiya yüklənən kimi ekranın aşağısında “Yenilə” düyməsi çıxır — Ayarlara girmək lazım deyil.
+Məlumatların itmir.
 
 ## Fayllar
 

@@ -167,17 +167,18 @@ python build/parse_book.py     # book.md + testlər → build/book.json; "errors
 python build/build_pwa.py      # → docs/ (sayt) və dist/dovlet-qullugu-offline.zip
 ```
 
-Yoxlama (Playwright, Chromium):
+Yoxlama (Playwright: Chromium, iPhone üçün WebKit):
 
 ```bash
-cd build && npm ci && npx playwright install chromium
-npm run test:pwa    # real sayt: offline, quraşdırma, oxu, axtarış, maddə siyahısı və izahdakı keçidlər
+cd build && npm ci && npx playwright install chromium webkit
+npm run test:pwa    # real sayt: offline, quraşdırma, oxu, axtarış, maddə siyahısı və izahdakı keçidlər, yeni versiya bildirişi (Chromium, iPhone — Safari və ana ekran)
 npm run test:app    # yoxlama kitabı ilə: BA/BB süzgəci, proqram və onun sekmələri, açıq və şəkilli suallar, nümunə/yoxla blokları, Claude (API açarı ilə), sınaq imtahanı, qanun mətni, izahdan maddəyə keçid və testə qayıtma, əlfəcinlər, qaldığın yerdən davam
 npm run test:page   # claude.ai versiyası: #ai-… keçidləri cavabı özü başladır, model seçimi
 ```
 
 `docs/` qovluğunu commit edib push edəndə GitHub Pages saytı 1–2 dəqiqəyə yeniləyir. Quraşdırılmış
-tətbiq növbəti açılışda yeni versiyanı yükləyir və “Yenilə” düyməsini göstərir.
+tətbiq yeni versiyanı özü axtarır — açılanda, ekrana qayıdanda, internet bərpa olanda və açıq qaldıqca yarım
+saatdan bir — yükləyən kimi ekranda “Yenilə” bildirişi çıxır; Ayarlara girmək lazım deyil.
 
 ## Lisenziyalar
 

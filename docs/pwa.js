@@ -2,7 +2,7 @@
    own API key. Loaded before app.js; app.js finds it as window.DQ_PWA (absent on the claude.ai page). */
 (function () {
 'use strict';
-const VERSION = '2026.11.01-e9dbc9f';
+const VERSION = '2026.11.02-9b7eae5';
 const ASSET_COUNT = 46;
 const CACHE = 'dq-kitab-' + VERSION;
 const ARTIFACT = 'https://claude.ai/artifact/DS1Sg1NBATqkMRPuVkHoER'; // the claude.ai version of the book; Claude runs there on the reader's own account
@@ -115,8 +115,15 @@ const setKey = k => { ls.set(K_KEY, (k || '').trim()); emit('key'); };
 const clearKey = () => { ls.del(K_KEY); emit('key'); };
 
 /* ---------- service worker: offline cache + updates ---------- */
+// A new version is looked for without the reader asking: when the app opens, each time it comes back to the screen
+// (phones keep an installed app in memory, so it rarely opens afresh — iOS above all), when the network returns, and
+// every half hour while it is on screen. sw.js caches the whole new version and takes over; the bar then offers to
+// reload. “Sonra” hides the bar until the app comes back to the screen. Ayarlar → “Yeniləməni yoxla” stays as a
+// manual check.
+const RECHECK = 60e3;            // resumes closer together than this ask once
+const CHECK_EVERY = 30 * 60e3;
 const sw = { supported: 'serviceWorker' in navigator && window.isSecureContext && location.protocol !== 'file:', reg: null, ready: false, updated: false, error: '' };
-let swTries = 0;
+let swTries = 0, lastCheck = 0;
 async function checkCache() {
   try {
     if (await caches.has(CACHE)) {
@@ -127,28 +134,61 @@ async function checkCache() {
   emit('sw');
   if (!sw.ready && ++swTries < 40) setTimeout(checkCache, 1500);
 }
+function hideUpdateBar() {
+  const bar = document.getElementById('pwa-bar');
+  if (bar) bar.remove();
+  document.documentElement.classList.remove('pwa-has-bar');
+}
 function showUpdateBar() {
   if (document.getElementById('pwa-bar')) return;
+  if (!document.body) { document.addEventListener('DOMContentLoaded', showUpdateBar); return; }
   closeBanner(false); // the update bar sits in the same place
   const bar = document.createElement('div');
   bar.id = 'pwa-bar'; bar.className = 'pwa-bar'; bar.setAttribute('role', 'status');
-  bar.innerHTML = '<span>Kitabın yeni versiyası yükləndi.</span><button type="button">Yenilə</button>';
-  bar.querySelector('button').addEventListener('click', () => location.reload());
+  bar.innerHTML = '<div class="pb-text"><b>Kitabın yeni versiyası hazırdır</b><span>İrəliləyişin və nəticələrin itmir.</span></div>'
+    + '<button type="button" class="pb-go">Yenilə</button><button type="button" class="pb-x" aria-label="Sonra" title="Sonra">×</button>';
+  bar.querySelector('.pb-go').addEventListener('click', () => location.reload());
+  bar.querySelector('.pb-x').addEventListener('click', hideUpdateBar);
   document.body.appendChild(bar);
+  document.documentElement.classList.add('pwa-has-bar'); // the toast and the corner buttons move up over it
+}
+// the new version has taken over this page: the next load is the new one
+function newVersion() {
+  if (sw.updated) return;
+  sw.updated = true;
+  emit('sw');
+  showUpdateBar();
+}
+function autoCheck() {
+  if (!sw.reg || sw.updated || !online() || document.visibilityState === 'hidden' || Date.now() - lastCheck < RECHECK) return;
+  lastCheck = Date.now();
+  sw.reg.update().catch(() => { });
 }
 if (sw.supported) {
-  const hadController = !!navigator.serviceWorker.controller;
-  navigator.serviceWorker.addEventListener('controllerchange', () => { if (hadController && !sw.updated) { sw.updated = true; emit('sw'); showUpdateBar(); } });
+  // a page the old version was serving gets the bar; the very first install (no controller before) does not
+  let served = !!navigator.serviceWorker.controller;
+  navigator.serviceWorker.addEventListener('controllerchange', () => { if (served) newVersion(); served = true; });
   window.addEventListener('load', async () => {
     try {
-      sw.reg = await navigator.serviceWorker.register('./sw.js', { scope: './' });
+      sw.reg = await navigator.serviceWorker.register('./sw.js', { scope: './', updateViaCache: 'none' });
       await navigator.serviceWorker.ready;
       checkCache();
+      autoCheck();
     } catch (e) { sw.error = String(e && e.message || e); emit('sw'); }
   });
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState !== 'visible') return;
+    if (sw.updated) showUpdateBar(); // hidden with “Sonra”: shown again when the app comes back
+    else autoCheck();
+  });
+  window.addEventListener('pageshow', e => { if (e.persisted) autoCheck(); }); // Safari's back-forward cache
+  window.addEventListener('online', autoCheck);
+  setInterval(autoCheck, CHECK_EVERY);
 }
 async function checkUpdate() {
   if (!sw.reg) return 'none';
+  if (sw.updated) { showUpdateBar(); return 'found'; } // already here, only the reload is left
+  lastCheck = Date.now();
   try { await sw.reg.update(); } catch (e) { return online() ? 'error' : 'offline'; }
   return sw.reg.installing || sw.reg.waiting ? 'found' : 'latest';
 }
