@@ -296,6 +296,21 @@ async function saveFile(name, text) {
   setTimeout(() => URL.revokeObjectURL(url), 5000);
   return 'downloaded';
 }
+// a picture (a result) to send: the phone's share sheet, else a download
+async function shareFile(name, blob, title) {
+  const file = new File([blob], name, { type: blob.type || 'image/png' });
+  let coarse = false; try { coarse = matchMedia('(pointer: coarse)').matches; } catch (e) { }
+  if (coarse && navigator.canShare && navigator.share) {
+    try {
+      if (navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title }); return 'shared'; }
+    } catch (e) { if (e && e.name === 'AbortError') return 'cancelled'; }
+  }
+  const url = URL.createObjectURL(file);
+  const a = document.createElement('a'); a.href = url; a.download = name; a.hidden = true;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 5000);
+  return 'downloaded';
+}
 function pickFile() {
   return new Promise(resolve => {
     const inp = document.createElement('input');
@@ -336,7 +351,7 @@ window.addEventListener('offline', () => emit('net'));
 // busy: app.js sets it — true while a reload would lose work in hand
 const api = window.DQ_PWA = {
   VERSION, online, sw, checkUpdate, installState, install, isIOS, isStandalone,
-  persisted, persist, saveFile, pickFile, on,
+  persisted, persist, saveFile, shareFile, pickFile, on,
   sample, hasKey, keyHint, testKey, setKey, clearKey, artifactLink, busy: null
 };
 })();

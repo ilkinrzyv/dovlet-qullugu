@@ -2,7 +2,7 @@
    own API key. Loaded before app.js; app.js finds it as window.DQ_PWA (absent on the claude.ai page). */
 (function () {
 'use strict';
-const VERSION = '2026.11.02-f4ff689';
+const VERSION = '2026.11.02-699ff99';
 const ASSET_COUNT = 28;
 const CACHE = 'dq-kitab-' + VERSION;
 const ARTIFACT = 'https://claude.ai/artifact/DS1Sg1NBATqkMRPuVkHoER'; // the claude.ai version of the book; Claude runs there on the reader's own account
@@ -296,6 +296,21 @@ async function saveFile(name, text) {
   setTimeout(() => URL.revokeObjectURL(url), 5000);
   return 'downloaded';
 }
+// a picture (a result) to send: the phone's share sheet, else a download
+async function shareFile(name, blob, title) {
+  const file = new File([blob], name, { type: blob.type || 'image/png' });
+  let coarse = false; try { coarse = matchMedia('(pointer: coarse)').matches; } catch (e) { }
+  if (coarse && navigator.canShare && navigator.share) {
+    try {
+      if (navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title }); return 'shared'; }
+    } catch (e) { if (e && e.name === 'AbortError') return 'cancelled'; }
+  }
+  const url = URL.createObjectURL(file);
+  const a = document.createElement('a'); a.href = url; a.download = name; a.hidden = true;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 5000);
+  return 'downloaded';
+}
 function pickFile() {
   return new Promise(resolve => {
     const inp = document.createElement('input');
@@ -336,7 +351,7 @@ window.addEventListener('offline', () => emit('net'));
 // busy: app.js sets it — true while a reload would lose work in hand
 const api = window.DQ_PWA = {
   VERSION, online, sw, checkUpdate, installState, install, isIOS, isStandalone,
-  persisted, persist, saveFile, pickFile, on,
+  persisted, persist, saveFile, shareFile, pickFile, on,
   sample, hasKey, keyHint, testKey, setKey, clearKey, artifactLink, busy: null
 };
 })();

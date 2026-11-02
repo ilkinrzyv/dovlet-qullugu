@@ -96,7 +96,9 @@ All checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build/
   as the chapter test is at the top of its chapter, and a filled one under its text — the owner found a small chip
   too easy to miss), `#imtahan`, `#imtahan-men` (one
   subject's part: its question count, its share of the time), `#imtahan-netice`, `#statistika`, `#sual-c1q3`,
-  `#muellim[-men]`, `#axtar=...`, `#ayarlar`). `vis()` filters everything by `S.group`. Law questions' explanations
+  `#muellim[-men]`, `#axtar=...`, `#ayarlar`, `#kartlar`, `#kartlar-c1` / `kartlar-reqem` (flash cards: a law
+  chapter's maddə number ↔ name, or every “Yadda saxla” table row; built from the book's own html by `decks()`)).
+  `vis()` filters everything by `S.group`. Law questions' explanations
   (`lawLinks`): “Maddə 72.III”, “109-cu maddəsinin”, “Bənd 25” link to the law id; a law's name before a reference
   (Konstitusiyanın, Bayraq/Gerb/Himn qanununun, Fərman 435/614, Fərmanın = the Təlimat's decree) picks the act until
   the next name, else the act of the question's section, then of its chapter — so write explanations as “Maddə N…” and
@@ -109,15 +111,23 @@ All checks print JSON; `"errors": []` = pass. `npm run icons` re-renders `build/
   marks a state saved after that, so an older `auto` opens light once; `build/look.js`, inlined at the top of both
   pages, applies it before paint), `lawV` (marks a state saved after the law text replaced the summaries; `upgrade()`
   drops older read marks on qan sections, also for imported files), `fs`, `group`, `exam` = the running mock exam with
-  its start time (`subj` set for a
-  one-subject exam), `exams` = history (entries with `subj` are subject exams; whole-exam views filter them out),
-  `examLast`). Export/import as JSON with `app: "dovlet-qullugu"` (offline app only).
+  its start time (`subj` set for a one-subject exam; `flags` = questions put aside with “Sonra bax”, shown again
+  before the end; `paused` = when a pause began — the ⏸ by the timer, or leaving the app while `pauseOnLeave`, a switch
+  on the exam's page, is on — the questions hide and `start` moves on by the pause), `exams` = history (entries with
+  `subj` are subject exams; whole-exam views filter them out), `examLast`, `run` = a practice test half done (the
+  same object as `quizRun`; it goes on from the same question after a reload until finished or another starts),
+  `hl` = highlights per section `[{k: block among the article's children (notes left out), a, b: offsets in its text,
+  t: the text}]`, `notes` = a note per maddə anchor or section id `{t, at}`, `cards` = flash card id → 1 known / 0 not
+  yet). “Sıfırla” keeps marks, highlights and notes. Export/import as JSON with `app: "dovlet-qullugu"` (offline app
+  only). The exam result shares as a 1080×1350 picture (`resultImage`, `DQ_PWA.shareFile`; offline app only).
 - Claude (`app.js` section 2b; teacher chat in section 10) answers inside the book, under the button, like the QA book.
   Two builds of the same `app.js`: the claude.ai page (`build_page.py`, published as an artifact with capability
   `sample` + images, URL in `build/artifact.txt`) runs on the reader's own claude.ai account via
   `window.claude.use('sample')`; the offline app calls the Messages API with the reader's own key (`DQ_PWA.sample`,
   key only in localStorage, sent only to api.anthropic.com). Without a key a button opens the claude.ai page at
-  `#ai-<act>-<ref>` (act `sec|hint|iq|q|topic|adv|chat`; claude.ai passes only plain anchors, no `/`), which routes
+  `#ai-<act>-<ref>` (act `sec|hint|iq|q|topic|adv|chat|mus` — `mus` is the mock interview: Claude on the hiring board,
+  seven questions one by one, a review after each, a mark at the end; started from the teacher's empty chat and the
+  interview chapters; claude.ai passes only plain anchors, no `/`), which routes
   to the place and starts the answer itself; only book ids travel, typed text goes to the clipboard. The model is
   the reader's choice (Ayarlar → Claude, `S.aiModel`; `auto` names none). Prompts are Azerbaijani; check questions
   ask for a hint, not the answer; figures go along as PNG. No Claude inside a running mock exam. claude.ai shows no

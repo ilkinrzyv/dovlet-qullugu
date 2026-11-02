@@ -1,5 +1,5 @@
 /* Dövlət Qulluğu — service worker: keeps the whole book on the device so it opens without internet. */
-const VERSION = '2026.11.02-f4ff689';
+const VERSION = '2026.11.02-699ff99';
 const CACHE = 'dq-kitab-' + VERSION;
 const ASSETS = [
  "./",

@@ -561,6 +561,66 @@ button.secrow{width:100%;text-align:left;font:inherit;color:inherit;background:n
 .ta:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
 .subh{font-size:15px;font-weight:700;margin:20px 0 10px;color:var(--ink-2)}
 
+/* ---------- a test to go on with, the cards, the interview, the exam's flags and pause ---------- */
+button.quizcta{width:100%;text-align:left;font:inherit;cursor:pointer}
+.quizcta+.quizcta{margin-top:10px}
+.quizcta.resume{margin-bottom:14px;background:var(--men-soft);border-color:transparent}
+.quizcta.resume .sic{color:var(--men)}
+.quizcta.resume>svg.i{color:var(--men-ink)}
+.quizcta.cardcta{background:var(--az-soft);border-color:transparent}
+.quizcta.cardcta .sic{color:var(--az)}
+.quizcta.cardcta>svg.i{color:var(--az-ink)}
+.quizcta.sim{background:var(--sc-soft);border-color:transparent}
+.quizcta.sim .sic{color:var(--sc)}
+.quizcta.sim>svg.i{color:var(--sc-ink)}
+.chat-empty .quizcta.sim{margin:0}
+.tb-ex{display:flex;align-items:center;gap:8px;flex:none}
+.flagbtn{margin-left:auto;display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:999px;background:var(--surface-2);
+  color:var(--ink-2);font-size:13px;font-weight:700}
+.flagbtn svg.i{width:15px;height:15px}
+.flagbtn.on{background:var(--warn-soft);color:var(--warn)}
+.flagbtn.on svg.i{fill:currentColor}
+.gq.flag{border-color:var(--warn);background:var(--warn-soft);color:var(--warn)}
+.review .grid{margin-top:2px}
+.review>.muted{display:block}
+.pausebox .sic{width:64px;height:64px;border-radius:22px}
+.pausebox .sic svg.i{width:28px;height:28px;fill:currentColor}
+.pausebox p{margin:0}
+.check{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;line-height:1.45;color:var(--ink-2);cursor:pointer}
+.check input{flex:none;width:20px;height:20px;margin:1px 0 0;accent-color:var(--accent)}
+.qhead .seg{margin-left:auto}
+.flash{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;width:100%;min-height:300px;margin-top:16px;padding:30px 22px;
+  border-radius:30px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);text-align:center;color:var(--ink);font:inherit;cursor:pointer}
+.flash .ff{font-size:25px;font-weight:800;line-height:1.3;letter-spacing:-.01em;text-wrap:balance}
+.flash.open .ff{font-size:16px;font-weight:700;color:var(--ink-3)}
+.flash .fb{font-size:22px;font-weight:800;line-height:1.35;color:var(--sc-ink,var(--accent));text-wrap:balance}
+.flash+.secref{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:14px;font-size:14px;font-weight:700;text-decoration:none}
+
+/* ---------- the reader's highlights and notes ---------- */
+mark.uhl{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px;cursor:pointer;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.nt mark.uhl{display:block;margin-top:4px;padding:6px 8px;border-radius:10px;font-size:14px;font-weight:500;line-height:1.5}
+.nt .sect{color:inherit;text-decoration:none;gap:2px}
+.ntext{display:flex;gap:6px;align-items:flex-start;margin-top:3px;font-size:13.5px;line-height:1.45;color:var(--ink-2)}
+.ntext svg.i{flex:none;width:15px;height:15px;margin-top:2px;color:var(--warn)}
+.nt .ibtn{border:0;background:none;color:var(--ink-3)}
+.unote{display:flex;gap:10px;align-items:flex-start;margin:.6em 0;padding:12px 14px;border-radius:16px;background:var(--warn-soft);color:var(--ink);
+  font-family:var(--f-ui);font-size:14.5px;line-height:1.5;cursor:pointer}
+.unote>svg.i{flex:none;width:18px;height:18px;margin-top:2px;color:var(--warn)}
+.unote p{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.unote.edit{display:block;cursor:default}
+.unote.edit .row{margin-top:10px}
+#secnote .unote{margin:12px 0 0}
+.hacts{flex:none;display:flex;align-items:center;margin:-8px -8px -8px auto}
+.hacts .hmark{margin:0}
+.hnote{flex:none;width:40px;height:40px;display:grid;place-items:center;border-radius:12px;color:var(--ink-3)}
+.hnote:hover{background:var(--surface-2)}
+.hnote svg.i{width:18px;height:18px}
+.hnote.on{color:var(--warn)}
+.chip.notebtn{cursor:pointer}
+.hlpop{position:fixed;z-index:70;display:flex;gap:4px;padding:5px;border-radius:14px;background:var(--night);box-shadow:var(--shadow-lg)}
+.hlpop button{display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 13px;border-radius:10px;color:var(--night-ink);font-weight:700;font-size:14px}
+.hlpop svg.i{width:17px;height:17px}
+
 /* ---------- toast ---------- */
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--bottom) + 4px);z-index:60;
   padding:11px 18px;border-radius:16px;background:var(--night);color:var(--night-ink);font-size:14px;font-weight:600;box-shadow:var(--shadow-lg);max-width:calc(100% - 32px);width:max-content}

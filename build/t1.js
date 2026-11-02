@@ -183,6 +183,11 @@ function serve(port) {
   await page.click('#chat [data-adv="0"]');
   await page.waitForFunction(() => document.querySelectorAll('#chat .bub.ai.prose').length === 1);
   out.adviceCtx = JSON.stringify(apiCalls[apiCalls.length - 1].messages).includes('İmtahan (BB qrupu)');
+  await page.click('[data-act="chat-new"]');             // the mock interview: Claude on the hiring board
+  await page.click('#chat [data-sim]');
+  await page.waitForFunction(() => document.querySelectorAll('#chat .bub.ai.prose').length === 1);
+  out.sim = { label: await page.$eval('#chat .bub.me', el => el.textContent),
+    board: JSON.stringify(apiCalls[apiCalls.length - 1].messages).includes('müsahibə mərhələsini aparan komissiyanın') };
   await go('muellim-inf');
   out.oldLink = { tab: await page.$eval('.tab[aria-current="true"] span', el => el.textContent), kept: await page.$$eval('#chat .bub', els => els.length) };
   await shot('t1-teacher');
@@ -193,8 +198,9 @@ function serve(port) {
   await page.fill('#q', 'cedvel');
   out.searchBB = await page.$$eval('.hit', els => els.length);
 
-  // ---- mock exam, BB: closed questions only, time runs out ----
+  // ---- mock exam, BB: closed questions only, time runs out (no pause on leaving: the reload must not stop it) ----
   await go('imtahan');
+  await page.uncheck('#pauseOnLeave');
   await page.click('[data-act="start"]');
   await page.waitForSelector('.timer');
   out.bbExam = await state().then(s => s.exam.items.map(it => qOf(it.id).t));
@@ -215,6 +221,17 @@ function serve(port) {
   out.baExam = ex.items.map(it => qOf(it.id).t).join(',');
   for (let i = 0; i < ex.items.length; i++) {
     const q = qOf(ex.items[i].id);
+    if (i === 1) {                                      // put aside for later, then a pause: the clock stops, the question hides
+      await page.click('[data-act="flag"]');
+      await page.click('[data-act="pause"]');
+      await page.waitForSelector('.pausebox');
+      const s1 = (await state()).exam;
+      await page.waitForTimeout(1200);
+      const s2 = (await state()).exam;
+      out.examPause = { paused: !!s1.paused, hidden: await page.$$eval('#view .opt, #view #oa', els => els.length), frozen: s1.paused === s2.paused && s1.start === s2.start };
+      await page.click('[data-act="resume"]');
+      await page.waitForSelector('.flagbtn.on');
+    }
     if (q.t === 'open') await page.fill('#oa', q.a[0]);
     else await page.click(`.opt[data-oi="${q.a}"]`);
     if (i === 0) { await shot('t1-exam'); out.examNoClaude = await page.$$eval('.ai-box', els => els.length); }
@@ -222,7 +239,9 @@ function serve(port) {
   }
   await page.click('.qgrid summary');
   out.gridAnswered = await page.$$eval('.gq.has', els => els.length);
+  out.gridFlag = await page.$$eval('.qgrid .gq.flag', els => els.map(b => b.textContent));
   await page.click('[data-act="finish"]');
+  out.review = { text: await page.$eval('.review p', el => el.textContent), flagged: await page.$$eval('.review .gq.flag', els => els.map(b => b.textContent)) };
   await page.click('[data-act="ask-yes"]');
   await page.waitForFunction(() => location.hash === '#imtahan-netice');
   await page.waitForSelector('.tbl');
@@ -230,6 +249,10 @@ function serve(port) {
   out.baResult = { pts: last.pts, max: last.max, pct: last.pct, n: last.n };
   out.passChips = await page.$$eval('.chip.pass', els => els.length);
   await shot('t1-result');
+  const [dl] = await Promise.all([page.waitForEvent('download'), page.click('[data-act="share"]')]); // the result as a picture
+  const png = fs.readFileSync(await dl.path());
+  out.share = { name: dl.suggestedFilename(), png: png.slice(1, 4).toString(), size: [png.readUInt32BE(16), png.readUInt32BE(20)] };
+  fs.copyFileSync(await dl.path(), path.join(__dirname, 'shots', 't1-share.png'));
 
   // ---- statistics: every answer counts; a wrong round in chapter 1 makes its sections weak ----
   await go('test-c1');
@@ -386,6 +409,54 @@ function serve(port) {
   out.tabMen = await page.$$eval('section[id^="pr-"]', els => els.map(e => e.id));
   await shot('t1-programme-tabs');
 
+  // ---- a practice test left half done goes on from the same question, also after a reload ----
+  await go('test-c1');                                  // the run from “reading aids” above: question 1 answered
+  await page.click('[data-act="next"]');
+  await go('home');
+  await go('testler');
+  out.resumeCard = await page.$eval('.quizcta.resume .muted', el => el.textContent);
+  await go('test-c1');
+  out.resumed1 = await page.$eval('.qhead .kicker', el => el.textContent);
+  await page.reload();
+  await page.waitForSelector('.qhead .kicker');
+  out.resumed2 = await page.$eval('.qhead .kicker', el => el.textContent);
+
+  // ---- flash cards: a law chapter's maddələr, number first; known ones counted ----
+  await go('kartlar');
+  out.decks = await page.$$eval('.secrow .sect b', els => els.map(b => b.textContent));
+  await go('kartlar-c2');
+  const faces = [];
+  for (let k = 0; k < 3; k++) {
+    await page.waitForSelector('.flash .ff');
+    const front = await page.$eval('.flash .ff', el => el.textContent);
+    await page.click('.flash');
+    faces.push([front, await page.$eval('.flash .fb', el => el.textContent)]);
+    await page.click(k === 2 ? '[data-act="miss"]' : '[data-act="knew"]');
+  }
+  out.cards = { faces: faces.map(f => f[0]).sort(), done: await page.$eval('.score .h1', el => el.textContent), known: Object.values((await state()).cards).join('') };
+  await shot('t1-cards');
+
+  // ---- notes and highlights: a maddə's note, a highlight that survives a reload, both in the bookmarks list ----
+  await go('c2s1');
+  await page.click('h4#konstitusiya-m2 .hnote');
+  await page.fill('#notetext', 'Mənim qeydim');
+  await page.click('[data-act="note-save"]');
+  out.note = { shown: await page.$eval('.unote[data-note="konstitusiya-m2"] p', el => el.textContent), saved: (await state()).notes['konstitusiya-m2'].t };
+  await page.evaluate(() => {
+    const p = [...document.querySelectorAll('article.prose > p')].find(x => x.textContent.length > 30), r = document.createRange(), t = p.firstChild;
+    r.setStart(t, 0); r.setEnd(t, 20); getSelection().removeAllRanges(); getSelection().addRange(r);
+  });
+  await page.click('.hlpop button');
+  const hl = (await state()).hl.c2s1;
+  await page.reload();
+  await page.waitForSelector('mark.uhl');
+  out.hl = { saved: hl.length, text: hl[0].t, painted: await page.$eval('mark.uhl', el => el.textContent) };
+  await go('elfecinler');
+  out.myNotes = await page.$$eval('.nt', els => els.length);
+  await go('home');
+  out.homeMarks = await page.$eval('a.chrow[href="#elfecinler"] .chm', el => el.textContent);
+  await shot('t1-notes');
+
   await browser.close();
   srv.close();
   const eq = (k, v) => { if (JSON.stringify(out[k]) !== JSON.stringify(v)) fail.push(`${k}: expected ${JSON.stringify(v)}, got ${JSON.stringify(out[k])}`); };
@@ -448,10 +519,23 @@ function serve(port) {
   eq('marks', ['#c2s1', '#konstitusiya-m2']); eq('marksLeft', ['#konstitusiya-m2']);
   eq('secTest', ['#test-s-c1s1', '3 sual', true]);
   eq('chapterPage', { testFirst: true, meta: '1 dəq · 0/3 tapşırıq · 2 test sualı' });
-  eq('homeNav', { parts: ['Qanunvericilik', 'Məntiq', 'Azərbaycan dili', 'İnformatika'], title: 'Yoxlama kitabı', progress: '0/3 bölmə', marks: '1 qeyd' });
+  eq('homeNav', { parts: ['Qanunvericilik', 'Məntiq', 'Azərbaycan dili', 'İnformatika'], title: 'Yoxlama kitabı', progress: '0/3 bölmə', marks: '1 əlfəcin' });
   if (!out.at || out.at[0] !== 'c2s1' || out.at[1] < 4) fail.push('reading place not kept: ' + JSON.stringify(out.at));
   eq('resumed', true);
   eq('tabs', ['true', 'false', 'false', 'false']); eq('tabMen', ['pr-men']);
+  eq('sim', { label: 'Müsahibə simulyatoru', board: true });
+  eq('examPause', { paused: true, hidden: 0, frozen: true });
+  eq('gridFlag', ['2']);
+  eq('review', { text: 'Bütün suallar cavablanıb. 1 sual “sonra bax” ilə qeyd olunub. İmtahan bitsin?', flagged: ['2'] });
+  eq('share', { name: 'sinaq-100.png', png: 'PNG', size: [1080, 1350] });
+  eq('resumeCard', '1/4 cavablanıb · qaldığın sualdan davam et');
+  eq('resumed1', 'Sual 2 / 4'); eq('resumed2', 'Sual 2 / 4');
+  eq('decks', ['Yalnız BA fəsli']);
+  eq('cards', { faces: ['Maddə 1', 'Maddə 1', 'Maddə 2'], done: '2 bildin, 1 təkrar', known: '110' });
+  eq('note', { shown: 'Mənim qeydim', saved: 'Mənim qeydim' });
+  if (!out.hl || out.hl.saved !== 1 || out.hl.text !== out.hl.painted || out.hl.text.length < 10) fail.push('highlight: ' + JSON.stringify(out.hl));
+  eq('myNotes', 2);
+  eq('homeMarks', '1 əlfəcin · 1 qeyd · 1 vurğu');
   out.errors = errors.concat(fail);
   console.log(JSON.stringify(out, null, 1));
   process.exit(out.errors.length ? 1 : 0);

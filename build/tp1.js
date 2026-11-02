@@ -199,24 +199,35 @@ function serve(port) {
       r.autoOnLeave = (await version()) === VERSION + '-n1' ? 1 : 0;
       r.samePlace = await p.waitForFunction(y0 => location.hash === '#c1s2' && Math.abs(window.scrollY - y0) < 40, y, { timeout: 5000 }).then(() => true, () => false);
       r.told = await p.$eval('.toast', t => t.textContent).catch(() => null);
+      // a test half done is kept: the reload goes ahead and the test goes on from the same question
       await p.evaluate(() => { location.hash = '#test-c1'; });
       await p.waitForSelector('.opt[data-oi], #oa');
       if (await p.$('#oa')) { await p.fill('#oa', '1'); await p.click('[data-act="check"]'); } else await p.click('.opt[data-oi]');
-      await p.waitForSelector('.sheet');
+      await p.click('[data-act="next"]');
       NEXT = '-n2';
       await p.clock.fastForward(90000);
       await resume();
       await p.waitForSelector('#pwa-bar', { state: 'attached', timeout: 30000 });
+      await Promise.all([p.waitForEvent('load'), leave()]);
+      await ready();
+      r.testKept = (await version()) === VERSION + '-n2' && /^Sual 2 \//.test(await p.$eval('.qhead .kicker', el => el.textContent)) ? 1 : 0;
+      // text being typed holds the reload until “Yenilə”
+      await p.evaluate(() => { location.hash = '#muellim'; });
+      await p.waitForSelector('#tq');
+      await p.fill('#tq', 'Yarımçıq sual');
+      NEXT = '-n3';
+      await p.clock.fastForward(90000);
+      await resume();
+      await p.waitForSelector('#pwa-bar .pb-go', { timeout: 30000 });
       await leave();
       await p.waitForTimeout(1500);
-      r.busyHolds = (await version()) === VERSION + '-n1' && (await p.evaluate(() => location.hash)) === '#test-c1' ? 1 : 0;
+      r.busyHolds = (await version()) === VERSION + '-n2' && (await p.evaluate(() => location.hash)) === '#muellim' ? 1 : 0;
       await resume();
-      await p.click('[data-act="next"]');
       await Promise.all([p.waitForEvent('load'), p.click('#pwa-bar .pb-go')]);
       await ready();
-      r.yenile = (await version()) === VERSION + '-n2' ? 1 : 0;
+      r.yenile = (await version()) === VERSION + '-n3' ? 1 : 0;
       r.afterReload = await bars();
-      NEXT = '-n3';
+      NEXT = '-n4';
       await p.clock.fastForward('31:00');
       await p.waitForSelector('#pwa-bar .pb-go', { timeout: 30000 });
       r.halfHourly = 1;
@@ -260,7 +271,7 @@ function serve(port) {
   const wantInstall = { desktopNone: 0, prompted: 1, ios: 'ios', iosLater: true, iosAfterClose: 0, iosChrome: 'iosother', iosInstalled: 0, android: 'android', androidLater: 'prompt' };
   if (JSON.stringify(out.install) !== JSON.stringify(wantInstall)) fail.push('install banner: ' + JSON.stringify(out.install));
   const wantUpdate = { firstInstall: 0, onResume: 1, overBar: true, later: 0, backOnResume: 1, autoOnLeave: 1, samePlace: true,
-    told: 'Kitab yeni versiyaya keçdi', busyHolds: 1, yenile: 1, afterReload: 0, halfHourly: 1 };
+    told: 'Kitab yeni versiyaya keçdi', testKept: 1, busyHolds: 1, yenile: 1, afterReload: 0, halfHourly: 1 };
   Object.keys(out.updates).forEach(k => { if (JSON.stringify(out.updates[k]) !== JSON.stringify(wantUpdate)) fail.push(`update (${k}): ` + JSON.stringify(out.updates[k])); });
   if (out.offlineSections !== firstCh.sections.length) fail.push('offline chapter view');
   if (out.offlineReadKept !== 1) fail.push('offline progress lost');

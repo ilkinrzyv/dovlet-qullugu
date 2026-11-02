@@ -84,7 +84,13 @@ const ICONS = {
   logic: '<circle cx="6" cy="6.5" r="2.5"/><circle cx="18" cy="6.5" r="2.5"/><circle cx="12" cy="17.5" r="2.5"/><path d="M8.5 6.5h7M7.3 8.7l3.4 6.6M16.7 8.7l-3.4 6.6"/>',
   lang: '<path d="M3 18.5L8 6l5 12.5M4.9 14h6.2"/><circle cx="17.6" cy="15.3" r="2.8"/><path d="M20.4 12.3v6.2"/>',
   monitor: '<rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/>',
-  user: '<circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/>'
+  user: '<circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/>',
+  pause: '<rect x="6.5" y="5" width="3.5" height="14" rx="1"/><rect x="14" y="5" width="3.5" height="14" rx="1"/>',
+  play: '<path d="M8 5.5v13l10.5-6.5z"/>',
+  share: '<path d="M12 15V3M8 7l4-4 4 4"/><path d="M8 11H6.5A1.5 1.5 0 0 0 5 12.5v7A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5v-7a1.5 1.5 0 0 0-1.5-1.5H16"/>',
+  cards: '<rect x="8" y="3" width="12" height="15" rx="2"/><path d="M5 7v11a3 3 0 0 0 3 3h8"/>',
+  note: '<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/>',
+  marker: '<path d="M9.5 14.5L5 19h5l1.5-1.5"/><path d="M9.5 14.5l7-7a2.1 2.1 0 0 1 3 3l-7 7z"/>'
 };
 const icon = (n, cls) => `<svg class="i${cls ? ' ' + cls : ''}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n] || ''}</svg>`;
 // each subject has its colour (.s-qan … in app.css) and icon; chapters without one are the interview part
@@ -228,7 +234,8 @@ function pExplain(q, order, picked, topic, subj, img) {
     + (e ? `\nKitabdakı izah: ${clip(e, 1500)}` : '');
 }
 
-// what a Claude button asks: act = sec | hint | iq | q | topic | adv; ref = a book id; x = {o: order, p: pick}
+// what a Claude button asks: act = sec | hint | iq | q | topic | adv | mus (the mock interview); ref = a book id;
+// x = {o: order, p: pick}
 function inlineAt(ref) {
   const m = /^(.+)k(\d+)$/.exec(ref);
   const s = m && secById[m[1]], q = s && s.qs && s.qs[+m[2]];
@@ -253,6 +260,7 @@ function aiTask(act, ref, x) {
     return t ? { label: `${s.title}, ${t.num}: ${t.title}`, make: () => pTopic(s, t) } : null;
   }
   if (act === 'adv') { const a = ADVICE[+ref]; return a ? { label: a[0], make: () => pAdvice(a[1]) } : null; }
+  if (act === 'mus') return { label: 'Müsahibə simulyatoru', make: pInterview };
   return null;
 }
 const aiBox = (act, ref, label, x) =>
@@ -338,7 +346,7 @@ function runPending() {
   const p = PENDING; PENDING = null;
   if (!p) return;
   if (p.act === 'chat') { toast('Sualın kopyalanıb — aşağıdakı sahəyə yapışdır və göndər.'); return; }
-  if (p.act === 'topic' || p.act === 'adv') { const t = aiTask(p.act, p.ref); if (t) chatSend(t.make(), t.label); return; }
+  if (p.act === 'topic' || p.act === 'adv' || p.act === 'mus') { const t = aiTask(p.act, p.ref); if (t) chatSend(t.make(), t.label); return; }
   const box = $$('.ai-box').find(b => b.dataset.act === p.act && b.dataset.ref === p.ref);
   if (!box) return;
   box.scrollIntoView({ block: 'center' });
@@ -354,7 +362,10 @@ const KEY = 'dq-kitab:v1';
 // set on the old summary sections, which no longer line up with the new ones
 // at: [section, block] — where in the last section the reader stopped (“Davam et” opens it there)
 // marks: bookmarks, a section id or a law anchor (konstitusiya-m72) → when it was marked
-const blank = () => ({ read: {}, last: '', at: null, marks: {}, quiz: {}, wrong: {}, ans: {}, chk: {}, aiModel: 'auto', theme: 'light', themeV: 1, lawV: 1, fs: 'm', group: GROUPS[0], exam: null, exams: [], examLast: null });
+// run: a practice test half done; hl: highlights per section [{ k: block, a, b: offsets in its text, t }];
+// notes: a maddə's or a section's own note { t, at }; cards: a flash card known (1) or not yet (0)
+const blank = () => ({ read: {}, last: '', at: null, marks: {}, quiz: {}, wrong: {}, ans: {}, chk: {}, aiModel: 'auto', theme: 'light', themeV: 1, lawV: 1, fs: 'm', group: GROUPS[0], exam: null, exams: [], examLast: null,
+  run: null, hl: {}, notes: {}, cards: {}, pauseOnLeave: true });
 // A state an older version saved (on this device or in an exported file), brought up to date
 function upgrade(saved) {
   if (saved.theme === 'auto' && !saved.themeV) saved.theme = 'light';   // the same rule as look.js
@@ -408,6 +419,7 @@ let after = null, curSec = null;
 // book offers the way back. { h: the test's route, y: where it was scrolled, n: book pages opened since, label }
 let RET = null;
 let RESUME = false; // “Davam et” was tapped: the last section opens where the reader stopped
+let JUMP = null;    // a highlight in the bookmarks list was tapped: { s: section, k: its block } to scroll to
 
 // o.big: a tab's own page (a large title on the left); o.close: the way back is an ×; o.mid: html instead of the title
 function topbar(kicker, name, back, extra, sub, o) {
@@ -452,7 +464,8 @@ document.addEventListener('click', e => {
   if (!t || !t.closest) return;
   if (t.closest('a.lawref, a[data-ret]')) {
     const h = decodeURIComponent(location.hash.slice(1));
-    const label = h.startsWith('sual-') ? 'Suala qayıt' : h === 'imtahan-netice' || (quizRun && quizRun.i >= quizRun.items.length) ? 'Nəticəyə qayıt' : 'Testə qayıt';
+    const label = h.startsWith('sual-') ? 'Suala qayıt' : h.startsWith('kartlar') ? 'Kartlara qayıt'
+      : h === 'imtahan-netice' || (quizRun && quizRun.i >= quizRun.items.length) ? 'Nəticəyə qayıt' : 'Testə qayıt';
     RET = { h, y: window.scrollY, n: 0, label };
     return;
   }
@@ -468,15 +481,17 @@ document.addEventListener('click', e => {
 
 function route() {
   const h = decodeURIComponent(location.hash.slice(1)) || 'home';
-  const ai = /^ai-(sec|hint|iq|q|topic|adv|chat)(?:-([\w.]+))?$/.exec(h);
+  const ai = /^ai-(sec|hint|iq|q|topic|adv|chat|mus)(?:-([\w.]+))?$/.exec(h);
   if (ai) { PENDING = { act: ai[1], ref: ai[2] || '' }; location.replace('#' + aiTarget(ai[1], ai[2] || '')); return; }
   clearInterval(examTimer); examTimer = null;
   const sec = ANCH[h] ? ANCH[h].s : secById[h] ? h : null;
   const back = RET && h === RET.h ? RET : null;
   if (back || (RET && !sec)) RET = null; else if (RET) RET.n++;
   if (!h.startsWith('test-') && !RET) quizRun = null;
+  if (!h.startsWith('kartlar-') && !RET) cardRun = null;
+  if (!secById[h] || !JUMP || JUMP.s !== h) JUMP = null;
   const resume = RESUME;
-  RESUME = false; after = null; curSec = null; toTop.hidden = true; focus = false;
+  RESUME = false; after = null; curSec = null; toTop.hidden = true; focus = false; hidePop();
   $('#view').style.paddingBottom = ''; document.documentElement.style.scrollPaddingBottom = '';
   quietTitle(null);
   if (sec) { tab = 'home'; vSection(sec, ANCH[h] ? h : null, resume); }
@@ -486,6 +501,8 @@ function route() {
   else if (h === 'proqram' || h.startsWith('proqram-')) { tab = 'home'; vProgram(h.slice(8)); }
   else if (h === 'testler') { tab = 'testler'; vTests(); }
   else if (h.startsWith('test-')) { tab = 'testler'; vQuiz(h.slice(5)); }
+  else if (h === 'kartlar') { tab = 'testler'; vDecks(); }
+  else if (h.startsWith('kartlar-')) { tab = 'testler'; vCards(h.slice(8)); }
   else if (h === 'imtahan') { tab = 'testler'; vExam(); }
   else if (h === 'imtahan-netice') { tab = 'testler'; vExamResult(); }
   else if (h.startsWith('imtahan-') && SUBJ[h.slice(8)]) { tab = 'testler'; vExam(h.slice(8)); }
@@ -560,7 +577,8 @@ function vHome() {
     </section>
     <section class="block"><div class="list">
       <a class="chrow" href="#elfecinler"><span class="chn star">${icon('star')}</span>
-        <span class="cht"><b>Əlfəcinlər</b><span class="chm">${marks ? `${marks} qeyd` : 'Vacib bölmə və maddələri ulduzla qeyd et'}</span></span>${icon('chev')}</a>
+        <span class="cht"><b>Əlfəcinlər və qeydlər</b><span class="chm">${[marks && `${marks} əlfəcin`, myNotes().length && `${myNotes().length} qeyd`, myHls().length && `${myHls().length} vurğu`].filter(Boolean).join(' · ')
+          || 'Vacib yerləri ulduzla qeyd et, qeyd yaz, mətni vurğula'}</span></span>${icon('chev')}</a>
       ${extras.map(chRow).join('')}</div></section>
     ${parts.map(({ p, chs, secs, read, subj }) => `<section class="block ${sk(subj)}" id="part-${esc(p.id)}">
         <div class="block-h ph"><h2>${esc(p.title)}</h2>${secs.length ? `<span>${read}/${secs.length} bölmə</span>` : ''}</div>
@@ -575,7 +593,7 @@ function vChapter(id) {
   const c = chById[id];
   const kicker = c.kind === 'chapter' ? `Fəsil ${c.n}` : 'Giriş';
   topbar(kicker, c.title, 'home');
-  const q = chQuiz(id), best = S.quiz[id], tests = secTests();
+  const q = chQuiz(id), best = S.quiz[id], tests = secTests(), deck = deckCards(id);
   // under each section: reading time, its checks solved so far, its test questions
   const meta = s => {
     const chk = (s.qs || []).map((x, i) => x.k === 'chk' ? `${s.id}k${i}` : '').filter(Boolean);
@@ -588,7 +606,10 @@ function vChapter(id) {
     ${groupNote(c)}
     ${c.lead ? `<div class="prose lead">${c.lead}</div>` : ''}
     ${q.length ? `<a class="card quizcta block" href="#test-${id}">
-      <span class="sic">${icon('checklist')}</span><span><b>Fəsil testi</b><span class="muted">${q.length} sual${best ? ` · ən yaxşı nəticə ${best.best}%` : ''}</span></span>${icon('arrow')}</a>` : ''}
+      <span class="sic">${icon('checklist')}</span><span><b>Fəsil testi</b><span class="muted">${q.length} sual${best ? ` · ən yaxşı nəticə ${best.best}%` : ''}${runNote(id)}</span></span>${icon('arrow')}</a>` : ''}
+    ${deck.length ? `<a class="card quizcta cardcta" href="#kartlar-${id}"><span class="sic">${icon('cards')}</span>
+      <span><b>Maddə kartları</b><span class="muted">${deck.length} kart · öyrənilib ${deck.filter(x => S.cards[x.id] === 1).length}</span></span>${icon('arrow')}</a>` : ''}
+    ${c.kind === 'chapter' && !SICON[c.subj] ? simCard() : ''}
     <div class="list block">${visSections(c).map(s => `<a class="secrow${S.read[s.id] ? ' done' : ''}" href="#${s.id}">
       <span class="tick">${S.read[s.id] ? icon('check') : ''}</span>
       <span class="sect"><b>${esc((s.num ? s.num + '. ' : '') + s.title)}</b><span class="muted">${meta(s)} ${onlyFor(s)}</span></span>
@@ -612,13 +633,15 @@ function vSection(id, anchor, resume) {
     <div class="chips">
       <span class="chip">${icon('clock')} ${s.mins} dəq</span>
       ${nmad ? `<span class="chip">${nmad} maddə</span>` : ''}
+      <button type="button" class="chip notebtn" data-note="${id}">${icon('note')} ${S.notes[id] ? 'Qeydim' : 'Qeyd yaz'}</button>
       ${onlyFor(s)}
     </div>
     <h1 class="h1">${esc(s.title)}</h1>
     <p class="muted small secof">${esc(c.kind === 'chapter' ? `Fəsil ${c.n} · ${c.title}` : c.title)}</p>
+    <div id="secnote"></div>
     ${groupNote(vis(c) ? s : c)}
     ${nq ? `<a class="card quizcta secq" href="#test-s-${id}"><span class="sic">${icon('checklist')}</span>
-      <span><b>Bu bölmə üzrə test</b><span class="muted">${nq} sual${best ? ` · ən yaxşı nəticə ${best.best}%` : ''}</span></span>${icon('arrow')}</a>` : ''}
+      <span><b>Bu bölmə üzrə test</b><span class="muted">${nq} sual${best ? ` · ən yaxşı nəticə ${best.best}%` : ''}${runNote('s-' + id)}</span></span>${icon('arrow')}</a>` : ''}
     <article class="prose${law ? ' law' : ''}">${s.html}</article>
     ${nq ? `<a class="card quizcta endq" href="#test-s-${id}"><span class="sic">${icon('checklist')}</span>
       <span><b>Oxudun? Özünü yoxla</b><span class="muted">Bu bölmə üzrə ${nq} sual${best ? ` · ən yaxşı nəticə ${best.best}%` : ''}</span></span>${icon('arrow')}</a>` : ''}
@@ -647,15 +670,142 @@ function vSection(id, anchor, resume) {
     $$('article.prose h4[id]').forEach(h => {
       const m = !h.children.length && /^(Maddə\s+[^\s.]+)(\.?\s*)([\s\S]*)$/.exec(h.textContent);
       if (m) h.innerHTML = `<span class="mnum">${esc(m[1])}</span><span class="msep">${esc(m[2])}</span><span class="mname">${esc(m[3])}</span>`;
-      h.insertAdjacentHTML('beforeend', markBtn(h.id, 'hmark', 'Maddəni əlfəcinlərə əlavə et'));
+      h.insertAdjacentHTML('beforeend', `<span class="hacts"><button type="button" class="hnote${S.notes[h.id] ? ' on' : ''}" data-note="${h.id}" aria-label="Maddəyə qeyd yaz" title="Qeyd">${icon('note')}</button>${markBtn(h.id, 'hmark', 'Maddəni əlfəcinlərə əlavə et')}</span>`);
     });
   }
+  placeNotes(id);
+  paintHl(id);
+  const jump = JUMP && JUMP.s === id ? JUMP.k : -1;
+  JUMP = null;
   if (anchor) after = () => showAnchor(anchor);
+  else if (jump >= 0) after = () => {
+    const el = blocks($('article.prose'))[jump];
+    if (el) { el.scrollIntoView({ block: 'center' }); el.classList.add('hl'); } else window.scrollTo(0, 0);
+  };
   else if (resume && S.at && S.at[0] === id && S.at[1] > 0) after = () => {
-    const el = $('article.prose').children[S.at[1]];
+    const el = blocks($('article.prose'))[S.at[1]];
     if (el) el.scrollIntoView(); else window.scrollTo(0, 0);
   };
 }
+
+/* the reader's highlights and notes. A highlight is a stretch of one block of a section's text: the block's place
+   among the article's blocks, its offsets in that block's text, and the text itself, to find it again should the
+   book move it. A note belongs to a maddə (its anchor; shown under the heading) or to a section (under its title). */
+const blocks = art => art ? [...art.children].filter(el => !el.classList.contains('unote')) : [];
+function textOffset(block, node, off) { const r = document.createRange(); r.selectNodeContents(block); r.setEnd(node, off); return r.toString().length; }
+function wrapText(block, a, b, i) {
+  const w = document.createTreeWalker(block, NodeFilter.SHOW_TEXT), parts = [];
+  let pos = 0, n;
+  while ((n = w.nextNode())) {
+    const s = Math.max(a, pos), e = Math.min(b, pos + n.data.length);
+    if (s < e && !n.parentElement.closest('button')) parts.push([n, s - pos, e - pos]);
+    pos += n.data.length;
+  }
+  parts.forEach(([node, s, e]) => {
+    if (e < node.data.length) node.splitText(e);
+    const mid = s > 0 ? node.splitText(s) : node, m = document.createElement('mark');
+    m.className = 'uhl'; m.dataset.h = i;
+    mid.parentNode.insertBefore(m, mid); m.appendChild(mid);
+  });
+}
+function paintHl(sid) {
+  const art = $('article.prose'), bs = blocks(art);
+  $$('mark.uhl', art).forEach(m => { const p = m.parentNode; while (m.firstChild) p.insertBefore(m.firstChild, m); m.remove(); p.normalize(); });
+  (S.hl[sid] || []).forEach((h, i) => {
+    let el = bs[h.k], at = el && el.textContent.slice(h.a, h.b) === h.t ? h.a : -1;
+    if (at < 0) { el = bs.find(x => !x.classList.contains('iq') && x.textContent.includes(h.t)); at = el ? el.textContent.indexOf(h.t) : -1; }
+    if (at >= 0) wrapText(el, at, at + h.t.length, i);
+  });
+}
+// a small bar of actions by a selection or a highlight
+let hlPop = null, selTimer = null;
+function hidePop() { if (hlPop) { hlPop.remove(); hlPop = null; } }
+function showPop(rect, acts) {
+  hidePop();
+  hlPop = document.createElement('div');
+  hlPop.className = 'hlpop';
+  hlPop.innerHTML = acts.map(([label, ic], k) => `<button type="button" data-k="${k}">${icon(ic)} ${label}</button>`).join('');
+  hlPop.addEventListener('pointerdown', e => e.preventDefault()); // keep the selection while a button is pressed
+  $$('button', hlPop).forEach(b => b.addEventListener('click', () => { const f = acts[+b.dataset.k][2]; hidePop(); f(); }));
+  document.body.appendChild(hlPop);
+  const w = hlPop.offsetWidth, h = hlPop.offsetHeight, below = rect.bottom + 12 + h < innerHeight - 90;
+  hlPop.style.left = Math.max(8, Math.min(innerWidth - w - 8, rect.left + rect.width / 2 - w / 2)) + 'px';
+  hlPop.style.top = (below ? rect.bottom + 12 : Math.max(70, rect.top - h - 12)) + 'px'; // phones show their own menu above
+}
+document.addEventListener('selectionchange', () => { clearTimeout(selTimer); selTimer = setTimeout(onSelect, 350); });
+function onSelect() {
+  const sel = getSelection(), art = $('article.prose');
+  if (!curSec || !art || !sel.rangeCount || sel.isCollapsed) { if (hlPop && hlPop.dataset.sel) hidePop(); return; }
+  const r = sel.getRangeAt(0), bs = blocks(art), block = bs.find(x => x.contains(r.startContainer));
+  if (!block || !block.contains(r.endContainer) || block.classList.contains('iq')) return;
+  let a = textOffset(block, r.startContainer, r.startOffset), b = textOffset(block, r.endContainer, r.endOffset);
+  const raw = block.textContent.slice(a, b);
+  a += raw.length - raw.trimStart().length; b -= raw.length - raw.trimEnd().length;
+  if (b - a < 2) return;
+  const sid = curSec, k = bs.indexOf(block), t = block.textContent.slice(a, b);
+  showPop(r.getBoundingClientRect(), [['Vurğula', 'marker', () => {
+    (S.hl[sid] = S.hl[sid] || []).push({ k, a, b, t, at: Date.now() });
+    save(); getSelection().removeAllRanges(); paintHl(sid); toast('Vurğulandı — Əlfəcinlər səhifəsində də görünür');
+  }]]);
+  hlPop.dataset.sel = 1;
+}
+document.addEventListener('click', e => {
+  const m = e.target.closest && e.target.closest('mark.uhl');
+  if (!m || !curSec || !getSelection().isCollapsed) return;
+  const sid = curSec, i = +m.dataset.h;
+  showPop(m.getBoundingClientRect(), [['Vurğunu sil', 'x', () => { (S.hl[sid] || []).splice(i, 1); if (S.hl[sid] && !S.hl[sid].length) delete S.hl[sid]; save(); paintHl(sid); }]]);
+});
+// notes: shown under the maddə's heading or the section's title; a tap on one (or on its pencil) opens it to edit
+function placeNotes(sid) {
+  $$('#view .unote').forEach(n => n.remove());
+  const show = (key, where, inside) => {
+    const n = S.notes[key];
+    if (!n || !where) return;
+    const d = document.createElement('div');
+    d.className = 'unote'; d.dataset.note = key; d.setAttribute('role', 'button'); d.tabIndex = 0;
+    d.innerHTML = `${icon('note')}<p>${esc(n.t)}</p>`;
+    if (inside) where.appendChild(d); else where.insertAdjacentElement('afterend', d);
+  };
+  show(sid, $('#secnote'), true);
+  $$('article.prose h4[id]').forEach(h => show(h.id, h));
+}
+function editNote(key) {
+  const sid = curSec, old = $(`#view .unote[data-note="${key}"]`), h = document.getElementById(key);
+  $$('#view .unote.edit').forEach(n => n.remove());
+  const d = document.createElement('div');
+  d.className = 'unote edit'; d.dataset.for = key;
+  d.innerHTML = `<label class="sr" for="notetext">Qeyd</label><textarea id="notetext" class="ta" rows="3" placeholder="Qeydin…">${esc(S.notes[key] ? S.notes[key].t : '')}</textarea>
+    <div class="row"><button type="button" class="btn sm primary" data-act="note-save">Saxla</button>
+      ${S.notes[key] ? '<button type="button" class="btn sm ghost danger" data-act="note-del">Sil</button>' : ''}
+      <button type="button" class="btn sm ghost" data-act="note-x">Bağla</button></div>`;
+  if (old) old.replaceWith(d);
+  else if (key === sid) $('#secnote').appendChild(d);
+  else if (h) h.insertAdjacentElement('afterend', d);
+  const ta = $('textarea', d);
+  ta.focus();
+  const done = () => {
+    placeNotes(sid);
+    $$(`[data-note="${key}"].hnote, [data-note="${key}"].notebtn`).forEach(b => {
+      b.classList.toggle('on', !!S.notes[key]);
+      if (b.classList.contains('notebtn')) b.innerHTML = `${icon('note')} ${S.notes[key] ? 'Qeydim' : 'Qeyd yaz'}`;
+    });
+  };
+  $('[data-act="note-save"]', d).addEventListener('click', () => {
+    const t = ta.value.trim();
+    if (t) S.notes[key] = { t, at: Date.now() }; else delete S.notes[key];
+    save(); done(); if (t) toast('Qeyd saxlanıldı');
+  });
+  const del = $('[data-act="note-del"]', d);
+  if (del) del.addEventListener('click', () => { delete S.notes[key]; save(); done(); });
+  $('[data-act="note-x"]', d).addEventListener('click', done);
+}
+document.addEventListener('click', e => {
+  const n = e.target.closest && e.target.closest('[data-note]');
+  if (n && curSec && !n.classList.contains('edit')) editNote(n.dataset.note);
+});
+document.addEventListener('keydown', e => {
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.classList && e.target.classList.contains('unote') && !e.target.classList.contains('edit')) { e.preventDefault(); editNote(e.target.dataset.note); }
+});
 
 // a long law section starts with its maddələr (bəndlər for the Təlimat); each opens its place, marked
 function lawToc() {
@@ -698,19 +848,38 @@ function markInfo(k) {
   if (!s || !vis(s) || !vis(c)) return null;
   return { k, s, c, title: a ? a.t : secName(s), at: secAt[sid] * 1e4 + (a ? a.i + 1 : 0) };
 }
+// the reader's notes and highlights in the chosen group's programme, in book order
+const myNotes = () => Object.keys(S.notes).map(k => { const x = markInfo(k); return x && Object.assign(x, { t: S.notes[k].t }); }).filter(Boolean).sort((x, y) => x.at - y.at);
+const myHls = () => Object.keys(S.hl).filter(sid => markInfo(sid)).flatMap(sid => S.hl[sid].map((h, i) => ({ sid, i, h })))
+  .sort((x, y) => secAt[x.sid] - secAt[y.sid] || x.h.k - y.h.k || x.h.a - y.h.a);
 function vMarks() {
-  topbar('Kitab', 'Əlfəcinlər', 'home');
-  const list = Object.keys(S.marks).map(markInfo).filter(Boolean).sort((x, y) => x.at - y.at);
+  topbar('Kitab', 'Əlfəcinlər və qeydlər', 'home');
+  const list = Object.keys(S.marks).map(markInfo).filter(Boolean).sort((x, y) => x.at - y.at), notes = myNotes(), hls = myHls();
+  const where = x => esc(x.c.kind === 'chapter' ? `Fəsil ${x.c.n}${ANCH[x.k] && x.s.num ? ' · ' + x.s.num : ''}` : x.c.title);
   $('#view').innerHTML = `
     <span class="kicker">${esc(S.group)} qrupu</span>
-    <h1 class="h1">Əlfəcinlər</h1>
-    <p class="muted">Bölməni yuxarıdakı ulduzla, qanun maddəsini başlığının yanındakı ulduzla qeyd et — hamısı burada, kitabdakı sırası ilə.</p>
-    ${list.length ? `<div class="list block">${list.map(x => `<div class="secrow mk">
-        <a class="sect" href="#${esc(x.k)}"><span class="kicker">${esc(x.c.kind === 'chapter' ? `Fəsil ${x.c.n}${ANCH[x.k] && x.s.num ? ' · ' + x.s.num : ''}` : x.c.title)}</span>
+    <h1 class="h1">Əlfəcinlər və qeydlər</h1>
+    <p class="muted">Bölməni yuxarıdakı ulduzla, maddəni başlığının yanındakı ulduzla qeyd et. Qeydi qələmlə yaz; mətndə bir yeri seçib “Vurğula” de — hamısı burada, kitabdakı sırası ilə.</p>
+    <section class="block"><div class="block-h"><h2>Əlfəcinlər</h2></div>
+    ${list.length ? `<div class="list">${list.map(x => `<div class="secrow mk">
+        <a class="sect" href="#${esc(x.k)}"><span class="kicker">${where(x)}</span>
           <b>${esc(clip(x.title, 120))}</b></a>
         <button type="button" class="ibtn" data-unmark="${esc(x.k)}" aria-label="Əlfəcindən çıxar" title="Əlfəcindən çıxar">${icon('x')}</button></div>`).join('')}</div>`
-      : '<p class="card muted empty block">Hələ əlfəcin yoxdur.</p>'}`;
-  $$('[data-unmark]').forEach(b => b.addEventListener('click', () => { delete S.marks[b.dataset.unmark]; save(); const y = scrollY; vMarks(); window.scrollTo(0, y); }));
+      : '<p class="card muted empty">Hələ əlfəcin yoxdur.</p>'}</section>
+    ${notes.length ? `<section class="block"><div class="block-h"><h2>Qeydlər</h2></div><div class="list">${notes.map(x => `<div class="secrow nt">
+        <a class="sect" href="#${esc(x.k)}"><span class="kicker">${where(x)}</span><b>${esc(clip(x.title, 90))}</b>
+          <span class="ntext">${icon('note')} ${esc(clip(x.t, 220))}</span></a></div>`).join('')}</div></section>` : ''}
+    ${hls.length ? `<section class="block"><div class="block-h"><h2>Vurğulamalar</h2></div><div class="list">${hls.map(x => { const s = secById[x.sid];
+      return `<div class="secrow nt">
+        <a class="sect" href="#${x.sid}" data-jump="${x.sid}:${x.h.k}"><span class="kicker">${esc(secName(s))}</span><mark class="uhl">${esc(clip(x.h.t, 220))}</mark></a>
+        <button type="button" class="ibtn" data-unhl="${x.sid}:${x.i}" aria-label="Vurğunu sil" title="Vurğunu sil">${icon('x')}</button></div>`; }).join('')}</div></section>` : ''}`;
+  const again = () => { const y = scrollY; vMarks(); window.scrollTo(0, y); };
+  $$('[data-unmark]').forEach(b => b.addEventListener('click', () => { delete S.marks[b.dataset.unmark]; save(); again(); }));
+  $$('[data-unhl]').forEach(b => b.addEventListener('click', () => {
+    const [sid, i] = b.dataset.unhl.split(':');
+    S.hl[sid].splice(+i, 1); if (!S.hl[sid].length) delete S.hl[sid]; save(); again();
+  }));
+  $$('[data-jump]').forEach(a => a.addEventListener('click', () => { const [s, k] = a.dataset.jump.split(':'); JUMP = { s, k: +k }; }));
 }
 
 /* questions inside the text: a worked example (answer and solution shown) or a check (no solution, Claude helps) */
@@ -785,13 +954,14 @@ window.addEventListener('scroll', () => {
   const i = $('.readbar i'), max = document.documentElement.scrollHeight - innerHeight;
   if (i) i.style.width = (curSec && max > 0 ? Math.min(100, scrollY * 100 / max) : 0) + '%';
   toTop.hidden = !(curSec && scrollY > innerHeight * 1.5);
+  if (hlPop) { const sel = hlPop.dataset.sel; hidePop(); if (sel) { clearTimeout(selTimer); selTimer = setTimeout(onSelect, 200); } } // back by the selection once the page rests
   if (curSec) { clearTimeout(placeTimer); placeTimer = setTimeout(keepPlace, 500); }
 }, { passive: true });
 // S.at = [section, the first block of its text still on screen]
 function keepPlace() {
   const art = $('article.prose');
   if (!art || !curSec) return;
-  const top = $('#topbar').getBoundingClientRect().bottom + 8, kids = art.children;
+  const top = $('#topbar').getBoundingClientRect().bottom + 8, kids = blocks(art);
   let k = 0;
   while (k < kids.length - 1 && kids[k].getBoundingClientRect().bottom < top) k++;
   if (!k && S.at && S.at[0] === curSec) return; // opened at the top again: keep how far it was read
@@ -905,7 +1075,11 @@ function qBody(q, order, picked, reveal) {
 /* =========================================================
    8. Practice tests
    ========================================================= */
-let quizRun = null; // { key, items: [{ id, order }], i, picks: [] } — in memory only
+// { key, items: [{ id, order }], i, picks: [] }; kept in S.run as well, so a test left half done (another page, the
+// app closed, a reload into a new version) goes on from the same question until it is finished or another starts
+let quizRun = null;
+const unfinished = () => S.run && S.run.picks.length && S.run.i < S.run.items.length ? S.run : null;
+const runNote = key => { const r = unfinished(); return r && r.key === key ? ` · ${r.picks.length}/${r.items.length} cavablanıb, davam et` : ''; };
 
 function vTests() {
   topbar(`Məşq · ${S.group} qrupu`, 'Testlər', null, null, null, { big: true });
@@ -913,10 +1087,13 @@ function vTests() {
   const wrong = Object.keys(S.wrong).filter(id => all.includes(id));
   const withQ = visChapters().filter(c => c.kind === 'chapter' && chQuiz(c.id).length);
   const hours = EXAM.minutes % 60 ? `${EXAM.minutes} dəq` : `${EXAM.minutes / 60} saat`;
-  // the whole exam, then one subject's part of it (its count, its share of the time), then practice
+  const run = unfinished();
+  // a test left half done, the whole exam, one subject's part of it (its count, its share of the time), then practice
   $('#view').innerHTML = `
+    ${run ? `<a class="card quizcta resume" href="#test-${esc(run.key)}"><span class="sic">${icon('redo')}</span>
+      <span><b>Yarımçıq test: ${esc(quizName(run.key))}</b><span class="muted">${run.picks.length}/${run.items.length} cavablanıb · qaldığın sualdan davam et</span></span>${icon('arrow')}</a>` : ''}
     <a class="night cont" href="#imtahan"><span class="sic">${icon('timer')}</span>
-      <span><b>${S.exam ? 'İmtahana qayıt' : 'Sınaq imtahanı'}</b><span class="muted">${S.exam ? 'davam edir' : `İmtahan kimi: ${FULL} sual, ${hours}, fənlər üzrə nəticə`}</span></span>
+      <span><b>${S.exam ? 'İmtahana qayıt' : 'Sınaq imtahanı'}</b><span class="muted">${S.exam ? (S.exam.paused ? 'fasilədədir' : 'davam edir') : `İmtahan kimi: ${FULL} sual, ${hours}, fənlər üzrə nəticə`}</span></span>
       <span class="go">${S.exam ? 'Davam et' : 'Başla'}</span></a>
     ${S.exam ? '' : `<section class="block"><div class="block-h"><h2>Yalnız bir fənn</h2></div>
       <p class="muted small sxnote">Bir fənnin sınağı: imtahandakı qədər sual, vaxt imtahandakı payına görə.</p>
@@ -930,6 +1107,8 @@ function vTests() {
         <span class="sect"><b>Qarışıq test</b><span class="muted">${all.length ? `Bütün fəsillərdən ${Math.min(MIX_SIZE, all.length)} təsadüfi sual${S.quiz.mix ? ` · son nəticə ${S.quiz.mix.last}%` : ''}` : 'Hələ sual yoxdur'}</span></span>${icon('chev')}</a>
       <a class="secrow s-men${wrong.length ? '' : ' off'}" href="#test-wrong"><span class="tick acc">${icon('redo')}</span>
         <span class="sect"><b>Səhvlərim</b><span class="muted">${wrong.length ? `${wrong.length} sual təkrar gözləyir` : 'Hələ səhv yoxdur'}</span></span>${icon('chev')}</a>
+      ${Object.keys(decks()).some(k => deckCards(k).length) ? `<a class="secrow s-az" href="#kartlar"><span class="tick acc">${icon('cards')}</span>
+        <span class="sect"><b>Kartlar</b><span class="muted">Maddələrin nömrə və adları, rəqəmlər və müddətlər — yadda saxlamaq üçün</span></span>${icon('chev')}</a>` : ''}
     </div>
     <section class="block"><div class="block-h"><h2>Fəsil testləri</h2></div>
       <div class="list">${withQ.length ? withQ.map(c => {
@@ -956,9 +1135,14 @@ function quizName(key) {
 
 function vQuiz(key) {
   if (!quizRun || quizRun.key !== key) {
-    const ids = quizIds(key);
-    if (!ids.length) { location.replace('#testler'); return; }
-    quizRun = { key, items: ids.map(id => ({ id, order: optOrder(qById[id]) })), i: 0, picks: [] };
+    const kept = S.run && S.run.key === key && S.run.i < S.run.items.length && S.run.items.every(it => qById[it.id]) ? S.run : null;
+    if (kept) quizRun = kept;
+    else {
+      const ids = quizIds(key);
+      if (!ids.length) { location.replace('#testler'); return; }
+      quizRun = S.run = { key, items: ids.map(id => ({ id, order: optOrder(qById[id]) })), i: 0, picks: [] };
+      save();
+    }
   }
   $('#view').style.paddingBottom = ''; document.documentElement.style.scrollPaddingBottom = '';
   if (quizRun.i >= quizRun.items.length) { topbar('Nəticə', quizName(key), 'testler'); quizResult(); return; }
@@ -1003,7 +1187,7 @@ function vQuiz(key) {
     inp.addEventListener('keydown', e => { if (e.key === 'Enter') go(); });
   }
   const nx = $('[data-act="next"]');
-  if (nx) nx.addEventListener('click', () => { quizRun.i++; vQuiz(key); window.scrollTo(0, 0); });
+  if (nx) nx.addEventListener('click', () => { quizRun.i++; save(); vQuiz(key); window.scrollTo(0, 0); });
 }
 
 /* one question with its answer and explanation (the claude.ai version opens it from the offline app's links) */
@@ -1040,6 +1224,7 @@ function quizResult() {
   const score = pct(right, items.length);
   const prev = S.quiz[key];
   S.quiz[key] = { best: Math.max(score, prev ? prev.best : 0), last: score, at: Date.now() };
+  if (S.run === quizRun) S.run = null; // finished: nothing to go on with
   save();
   setFocus(false);
   $('#view').innerHTML = `
@@ -1054,6 +1239,100 @@ function quizResult() {
     </div>
     <section class="block"><div class="block-h"><h2>Səhv cavablar</h2></div>${missedList(items, picks)}</section>`;
   $('[data-act="again"]').addEventListener('click', () => { quizRun = null; vQuiz(key); });
+}
+
+/* =========================================================
+   8b. Flash cards: a law's maddələr (number ↔ name) and the rows of the “Yadda saxla” tables (what → number, term)
+   ========================================================= */
+// a deck per law chapter, and “reqem”: every Yadda saxla table's rows. S.cards[id] = 1 once known, 0 when missed;
+// a round takes ROUND cards, those not known yet first. cardRun lives in memory like a test.
+const ROUND = 20;
+let DECKS = null, cardRun = null; // { deck, dir: 'n' number first | 'a' name first, items, i, flip, right, miss: [] }
+function decks() {
+  if (DECKS) return DECKS;
+  DECKS = {};
+  const cell = h => deTag(h).replace(/\s+/g, ' ').trim();
+  CHAPTERS.filter(c => c.subj === 'qan').forEach(c => c.sections.forEach(s => {
+    for (const m of s.html.matchAll(/<h4 id="([\w-]+)">([\s\S]*?)<\/h4>/g)) {
+      const t = /^Maddə\s+([^\s.]+)\.?\s*(.+)$/.exec(cell(m[2]));
+      if (t) (DECKS[c.id] = DECKS[c.id] || []).push({ id: m[1], s: s.id, front: `Maddə ${t[1]}`, back: t[2] });
+    }
+    if (!/^Yadda saxla/.test(s.title)) return;
+    const rows = [...s.html.matchAll(/<tr>([\s\S]*?)<\/tr>/g)].map(r => [...r[1].matchAll(/<t[hd]>([\s\S]*?)<\/t[hd]>/g)].map(x => cell(x[1])));
+    const head = rows.shift() || [], what = head.indexOf('Nə'), where = head.indexOf('Maddə');
+    const val = head.findIndex((h, k) => k !== what && k !== where);
+    if (what < 0 || val < 0) return;
+    rows.forEach((r, k) => { if (r[what] && r[val]) (DECKS.reqem = DECKS.reqem || []).push({ id: `${s.id}-r${k}`, s: s.id, front: r[what], back: r[val], where: where >= 0 && r[where] ? `Maddə ${r[where]}` : '' }); });
+  }));
+  return DECKS;
+}
+const deckCards = key => (decks()[key] || []).filter(x => vis(secById[x.s]) && vis(chById[secCh[x.s]]));
+const deckName = key => chById[key] ? `Fəsil ${chById[key].n}. ${chById[key].title}` : 'Rəqəmlər, müddətlər və qaydalar';
+
+function vDecks() {
+  topbar('Testlər', 'Kartlar', 'testler');
+  const list = ['reqem', ...Object.keys(decks()).filter(k => k !== 'reqem')].map(k => ({ k, cards: deckCards(k) })).filter(x => x.cards.length);
+  $('#view').innerHTML = `
+    <span class="kicker">${esc(S.group)} qrupu</span>
+    <h1 class="h1">Kartlar</h1>
+    <p class="muted">Kartın üzündə maddənin nömrəsi (və ya adı), “Yadda saxla” kartlarında isə “nə?” sualı; toxunanda cavab çıxır. Bilmədiyin kartlar növbəti dəfə əvvəl gəlir; bir dövrdə ${ROUND} kart.</p>
+    ${list.length ? `<div class="list block">${list.map(x => {
+      const c = chById[x.k];
+      return `<a class="secrow ${c ? sk(c.subj) : 's-qan'}" href="#kartlar-${x.k}"><span class="${c ? 'chn' : 'tick acc'}">${c ? c.n : icon('cards')}</span>
+        <span class="sect"><b>${esc(c ? c.title : deckName(x.k))}</b><span class="muted">${x.cards.length} kart · öyrənilib ${x.cards.filter(y => S.cards[y.id] === 1).length}</span></span>${icon('chev')}</a>`;
+    }).join('')}</div>` : '<p class="card muted empty block">Bu qrup üçün kart yoxdur.</p>'}`;
+}
+
+function vCards(key) {
+  const all = deckCards(key), law = !!chById[key];
+  if (!all.length) { location.replace('#kartlar'); return; }
+  if (!cardRun || cardRun.deck !== key) {
+    const fresh = shuffle(all.filter(x => S.cards[x.id] !== 1)), known = shuffle(all.filter(x => S.cards[x.id] === 1));
+    cardRun = { deck: key, dir: 'n', items: fresh.concat(known).slice(0, ROUND), i: 0, flip: false, right: 0, miss: [] };
+  }
+  const R = cardRun, n = R.items.length;
+  if (R.i >= n) { topbar('Kartlar', deckName(key), 'kartlar'); cardsDone(key, all); return; }
+  setFocus(true);
+  topbar('', '', 'kartlar', `<span class="qcount">${R.i + 1}<span>/${n}</span></span>`, null, { close: true,
+    mid: `<div class="qbar" role="progressbar" aria-label="${esc(deckName(key))}" aria-valuemin="0" aria-valuemax="${n}" aria-valuenow="${R.i}"><i style="width:${pct(R.i, n)}%"></i></div>` });
+  const x = R.items[R.i], c = chById[secCh[x.s]], rev = law && R.dir === 'a';
+  const front = rev ? x.back : x.front, back = rev ? x.front : x.back;
+  $('#view').innerHTML = `
+    <div class="qhead ${sk(c.subj)}"><span class="chip acc">${esc(law ? `Fəsil ${c.n}` : secName(secById[x.s]))}</span>
+      ${law ? `<div class="seg" role="radiogroup" aria-label="Kartın üzü">
+        <button type="button" role="radio" aria-checked="${!rev}" data-dir="n">Nömrə</button><button type="button" role="radio" aria-checked="${rev}" data-dir="a">Ad</button></div>` : ''}</div>
+    <button type="button" class="flash ${sk(c.subj)}${R.flip ? ' open' : ''}" data-act="flip" aria-label="${R.flip ? 'Kart' : 'Kartı çevir'}">
+      <span class="ff">${esc(front)}</span>
+      ${R.flip ? `<span class="fb">${esc(back)}</span>${x.where ? `<span class="muted small">${esc(x.where)}</span>` : ''}` : '<span class="muted small">Cavabı görmək üçün toxun</span>'}
+    </button>
+    ${R.flip ? `<a class="secref" href="#${law ? x.id : x.s}" data-ret>${icon('book')}<span>Kitabda oxu</span></a>` : ''}
+    <nav class="actbar" aria-label="Kart">${R.flip
+      ? `<button type="button" class="btn" data-act="miss">${icon('x')} Bilmirdim</button><button type="button" class="btn primary" data-act="knew">${icon('check')} Bilirdim</button>`
+      : `<button type="button" class="btn primary" data-act="flip">Cavabı göstər</button>`}</nav>`;
+  const step = ok => { S.cards[x.id] = ok ? 1 : 0; save(); if (ok) R.right++; else R.miss.push(x); R.i++; R.flip = false; vCards(key); };
+  $$('[data-act="flip"]').forEach(b => b.addEventListener('click', () => { if (!R.flip) { R.flip = true; vCards(key); } }));
+  const k = $('[data-act="knew"]'), m = $('[data-act="miss"]');
+  if (k) k.addEventListener('click', () => step(true));
+  if (m) m.addEventListener('click', () => step(false));
+  $$('[data-dir]').forEach(b => b.addEventListener('click', () => { R.dir = b.dataset.dir; R.flip = false; vCards(key); }));
+}
+function cardsDone(key, all) {
+  const R = cardRun, n = R.items.length;
+  setFocus(false);
+  $('#view').innerHTML = `
+    <div class="card score">
+      ${ring(pct(R.right, n), 136, 13, `${R.right}/${n}`, `${n} kartdan ${R.right}`)}
+      <h1 class="h1">${R.right} bildin${R.miss.length ? `, ${R.miss.length} təkrar` : ''}</h1>
+      <span class="muted small">${esc(deckName(key))} · öyrənilib ${all.filter(x => S.cards[x.id] === 1).length} / ${all.length}</span>
+      <div class="row">
+        ${R.miss.length ? `<button type="button" class="btn primary" data-act="again-miss">${icon('redo')} Bilmədiklərim · ${R.miss.length}</button>` : ''}
+        <button type="button" class="btn${R.miss.length ? '' : ' primary'}" data-act="next-round">${icon('refresh')} Yeni dövr</button>
+        <a class="btn ghost" href="#kartlar">Bütün kartlar</a>
+      </div>
+    </div>`;
+  const a = $('[data-act="again-miss"]');
+  if (a) a.addEventListener('click', () => { cardRun = { deck: key, dir: R.dir, items: shuffle(R.miss), i: 0, flip: false, right: 0, miss: [] }; vCards(key); });
+  $('[data-act="next-round"]').addEventListener('click', () => { cardRun = null; vCards(key); });
 }
 
 /* =========================================================
@@ -1095,6 +1374,8 @@ function vExam(subj) {
       <p>${icon('clock')} Vaxt: <b>${clock(examSecs(n))}</b> (${n} sual üçün) · Qapalı sual ${EXAM.points.closed} bal${open ? `, açıq sual ${EXAM.points.open} bal` : ''} · Ən yüksək bal: <b>${maxPts}</b></p>
       ${take < n ? `<p class="warnline">Bankda hələ ${take} uyğun sual var — ${what} ${take} sualla olacaq, vaxt da mütənasib: ${clock(examSecs(take))}.</p>` : ''}
       <p class="muted small">${one ? `Vaxt ${EXAM.minutes} dəqiqənin bu fənnin sual payına (${n}/${FULL}) düşən hissəsidir. ` : ''}${esc(EXAM.minutes_note)}${open ? ' ' + esc(EXAM.open_note) : ''}</p>
+      <label class="check"><input type="checkbox" id="pauseOnLeave"${S.pauseOnLeave ? ' checked' : ''}>
+        <span>Tətbiqdən çıxanda (məsələn, zəng gələndə) vaxt dayansın. Fasiləni taymerin yanındakı düymə ilə özün də verə bilərsən.</span></label>
       <button type="button" class="btn primary" data-act="start"${take ? '' : ' disabled'}>${take ? (one ? 'Sınağı başla' : 'İmtahanı başla') : 'Hələ sual yoxdur'}</button>
     </div>
     ${one ? '' : `<section class="block"><div class="block-h"><h2>Yalnız bir fənn</h2></div>
@@ -1109,6 +1390,7 @@ function vExam(subj) {
     ${hist.length ? `<section class="block"><div class="block-h"><h2>Əvvəlki nəticələr</h2></div>
       <div class="list hist">${hist.map(r => `<div class="secrow"><span class="chn">${r.pct}%</span>
         <span class="sect"><b>${r.pts} / ${r.max} bal</b><span class="muted">${day(r.at)} · ${r.n} sual${r.timeUp ? ' · vaxt bitdi' : ''}</span></span></div>`).join('')}</div></section>` : ''}`;
+  $('#pauseOnLeave').addEventListener('change', e => { S.pauseOnLeave = e.currentTarget.checked; save(); });
   const st = $('[data-act="start"]');
   if (st) st.addEventListener('click', () => {
     const items = [];
@@ -1116,7 +1398,7 @@ function vExam(subj) {
       shuffle(p.mc).slice(0, p.b.n - p.open).forEach(id => items.push({ id, order: optOrder(qById[id]) }));
       shuffle(p.op).slice(0, p.open).forEach(id => items.push({ id, order: null }));
     });
-    S.exam = { group: S.group, subj: one, start: Date.now(), secs: examSecs(items.length), items, ans: {}, i: 0 };
+    S.exam = { group: S.group, subj: one, start: Date.now(), secs: examSecs(items.length), items, ans: {}, i: 0, flags: {}, paused: null };
     save();
     examRun();
   });
@@ -1128,10 +1410,36 @@ function passTable(score) {
     <tbody>${rows.map(r => `<tr><td><b>${r.sub}</b></td><td>${r.pct}%</td>${score != null ? `<td>${score >= r.pct ? `<span class="chip pass">${icon('check')} keçir</span>` : '<span class="chip fail">keçmir</span>'}</td>` : ''}<td class="small">${esc(r.who)}</td></tr>`).join('')}</tbody></table></div>`;
 }
 
-function examLeft() { return S.exam.secs - (Date.now() - S.exam.start) / 1000; }
+// a pause stops the clock: the reader's own (the ⏸ by the timer), or leaving the app — a call, another app — while
+// S.pauseOnLeave is on (a switch on the exam's page). The questions stay hidden while it lasts.
+function examLeft() { const E = S.exam; return E.secs - ((E.paused || Date.now()) - E.start) / 1000; }
+function examPause(on) {
+  const E = S.exam;
+  if (!E) return;
+  if (on && !E.paused) E.paused = Date.now();
+  else if (!on && E.paused) { E.start += Date.now() - E.paused; E.paused = null; }
+  save();
+}
+const onExam = () => /^#imtahan(-\w+)?$/.test(location.hash) && location.hash !== '#imtahan-netice';
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'hidden' && S.exam && !S.exam.paused && S.pauseOnLeave && onExam()) { examPause(true); examRun(); }
+});
+function examPaused(E) {
+  const one = SUBJ[E.subj];
+  topbar(`${one ? one.title + ' sınağı' : 'Sınaq imtahanı'} · ${E.group}`, 'Fasilə', 'testler', `<span class="timer mono">${clock(examLeft())}</span>`, null, { close: true });
+  $('#view').innerHTML = `
+    <div class="card score pausebox">
+      <span class="sic">${icon('pause')}</span>
+      <h2 class="h1">Fasilə</h2>
+      <p class="muted">Vaxt dayandırılıb: ${clock(examLeft())} qalıb. Fasilə vaxtı suallar gizlidir.</p>
+      <button type="button" class="btn primary" data-act="resume">${icon('play')} Davam et</button>
+    </div>`;
+  $('[data-act="resume"]').addEventListener('click', () => { examPause(false); examRun(); });
+}
 
 function examRun() {
   const E = S.exam;
+  E.flags = E.flags || {};
   if (E.items.some(it => !qById[it.id])) { // the book was updated mid-exam: drop questions that no longer exist
     const items = [], ans = {};
     E.items.forEach((it, k) => { if (qById[it.id]) { if (E.ans[k] !== undefined) ans[items.length] = E.ans[k]; items.push(it); } });
@@ -1141,16 +1449,20 @@ function examRun() {
     if (!S.exam) { vExam(); return; }
   }
   if (examLeft() <= 0) { examFinish(true); return; }
+  setFocus(true);
+  clearInterval(examTimer);
+  if (E.paused) { examPaused(E); return; }
   const n = E.items.length;
   if (E.i >= n) E.i = n - 1;
   const it = E.items[E.i], q = qById[it.id];
-  const picked = E.ans[E.i];
+  const picked = E.ans[E.i], flag = !!E.flags[E.i];
   const done = Object.keys(E.ans).filter(k => E.ans[k] !== '' && E.ans[k] != null).length;
   const what = SUBJ[E.subj] ? 'Sınağı' : 'İmtahanı';
-  setFocus(true);
-  topbar(`${SUBJ[E.subj] ? SUBJ[E.subj].title + ' sınağı' : 'Sınaq imtahanı'} · ${E.group}`, SUBJ[q.subj] ? SUBJ[q.subj].title : 'Sual', 'testler', `<span class="timer mono" aria-live="off">${clock(examLeft())}</span>`, null, { close: true });
+  topbar(`${SUBJ[E.subj] ? SUBJ[E.subj].title + ' sınağı' : 'Sınaq imtahanı'} · ${E.group}`, SUBJ[q.subj] ? SUBJ[q.subj].title : 'Sual', 'testler',
+    `<span class="tb-ex"><button type="button" class="ibtn" data-act="pause" aria-label="Fasilə" title="Fasilə">${icon('pause')}</button><span class="timer mono" aria-live="off">${clock(examLeft())}</span></span>`, null, { close: true });
   $('#view').innerHTML = `
-    <div class="row qhead ${sk(q.subj)}"><span class="kicker">Sual ${E.i + 1} / ${n}${q.t === 'open' ? ' · açıq' : ''}</span>${bar(done, n)}</div>
+    <div class="row qhead ${sk(q.subj)}"><span class="kicker">Sual ${E.i + 1} / ${n}${q.t === 'open' ? ' · açıq' : ''}</span>
+      <button type="button" class="flagbtn${flag ? ' on' : ''}" data-act="flag" aria-pressed="${flag}">${icon('flag')} Sonra bax</button>${bar(done, n)}</div>
     <h1 class="qtext">${esc(q.q)}</h1>
     ${qBody(q, it.order, picked, false)}
     <nav class="actbar" aria-label="Suallar">
@@ -1160,7 +1472,7 @@ function examRun() {
     <details class="qgrid card"><summary>Bütün suallar · ${done}/${n} cavablanıb</summary>
       <div class="grid">${E.items.map((x, k) => {
         const a = E.ans[k], has = a !== undefined && a !== '' && a !== null;
-        return `<button type="button" class="gq${has ? ' has' : ''}${k === E.i ? ' cur' : ''}" data-go="${k}">${k + 1}</button>`;
+        return `<button type="button" class="gq${has ? ' has' : ''}${E.flags[k] ? ' flag' : ''}${k === E.i ? ' cur' : ''}" data-go="${k}">${k + 1}</button>`;
       }).join('')}</div></details>
     <button type="button" class="btn ghost danger wide" data-act="finish">${icon('flag')} ${what} bitir</button>`;
   const go = k => { E.i = k; save(); examRun(); window.scrollTo(0, 0); };
@@ -1174,14 +1486,31 @@ function examRun() {
   $('[data-act="prev"]').addEventListener('click', () => go(E.i - 1));
   $('[data-act="next"]').addEventListener('click', () => go(E.i + 1));
   $$('.gq').forEach(b => b.addEventListener('click', () => go(+b.dataset.go)));
+  $('[data-act="flag"]').addEventListener('click', () => { if (E.flags[E.i]) delete E.flags[E.i]; else E.flags[E.i] = 1; save(); examRun(); });
+  $('[data-act="pause"]').addEventListener('click', () => { examPause(true); examRun(); });
+  // before the end: what is still unanswered and what was put aside, each a tap away
   $('[data-act="finish"]').addEventListener('click', e => {
-    const left = n - Object.keys(E.ans).length;
-    const ask = SUBJ[E.subj] ? 'Sınaq bitsin?' : 'İmtahan bitsin?';
-    askHere(e.currentTarget, left ? `${left} sual cavabsızdır. ${ask}` : ask, 'Bəli, bitir', () => examFinish(false));
+    const old = $('#view .review');
+    if (old) { old.remove(); return; }
+    const empty = [], flagged = [];
+    E.items.forEach((x, k) => { const a = E.ans[k]; if (a === undefined || a === '' || a === null) empty.push(k); if (E.flags[k]) flagged.push(k); });
+    const nums = (ks, cls) => `<div class="grid">${ks.map(k => `<button type="button" class="gq${cls}" data-go="${k}">${k + 1}</button>`).join('')}</div>`;
+    const d = document.createElement('div');
+    d.className = 'card askhere review';
+    d.setAttribute('role', 'alertdialog');
+    d.innerHTML = `<p>${empty.length ? `${empty.length} sual cavabsızdır.` : 'Bütün suallar cavablanıb.'}${flagged.length ? ` ${flagged.length} sual “sonra bax” ilə qeyd olunub.` : ''} ${SUBJ[E.subj] ? 'Sınaq bitsin?' : 'İmtahan bitsin?'}</p>
+      ${empty.length ? `<span class="muted small">Cavabsız suallar</span>${nums(empty, '')}` : ''}
+      ${flagged.length ? `<span class="muted small">Sonra baxılacaqlar</span>${nums(flagged, ' flag')}` : ''}
+      <div class="row"><button type="button" class="btn sm primary" data-act="ask-yes">Bəli, bitir</button>
+        <button type="button" class="btn sm ghost" data-act="ask-no">Davam et</button></div>`;
+    e.currentTarget.insertAdjacentElement('afterend', d);
+    $$('[data-go]', d).forEach(b => b.addEventListener('click', () => go(+b.dataset.go)));
+    $('[data-act="ask-yes"]', d).addEventListener('click', () => { d.remove(); examFinish(false); });
+    $('[data-act="ask-no"]', d).addEventListener('click', () => d.remove());
+    d.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
   });
-  clearInterval(examTimer);
   examTimer = setInterval(() => {
-    if (!S.exam) { clearInterval(examTimer); return; }
+    if (!S.exam || S.exam.paused) { clearInterval(examTimer); return; }
     const left = examLeft(), t = $('.timer');
     if (t) { t.textContent = clock(left); t.classList.toggle('low', left < 300); }
     if (left <= 0) { clearInterval(examTimer); examFinish(true); }
@@ -1237,11 +1566,69 @@ function vExamResult() {
         <span><b>${esc(SUBJ[b.subj].title)}</b><span class="muted">${r.right} / ${r.n} düz · ${r.pts}/${r.max} bal</span></span></div>`; }).join('')}</div>
     <div class="row block">
       <a class="btn primary" href="#imtahan${one ? '-' + one : ''}">${icon('refresh')} ${one ? 'Yeni sınaq' : 'Yeni imtahan'}</a>
+      ${PWA ? `<button type="button" class="btn" data-act="share">${icon('share')} Paylaş</button>` : ''}
       <a class="btn" href="#testler">Testlərə qayıt</a>
     </div>
     ${one ? '<p class="muted small">Keçid balları bütün imtahan üçündür, ona görə fənn sınağında göstərilmir.</p>'
       : `<section class="block"><div class="block-h"><h2>Keçid balları</h2></div>${table}</section>`}
     <section class="block"><div class="block-h"><h2>Səhv və cavabsız suallar</h2></div>${missedList(R.items, R.picks)}</section>`;
+  // the result as a picture to send (the offline app only: the claude.ai page may not hand out files)
+  const sh = $('[data-act="share"]');
+  if (sh) sh.addEventListener('click', async () => {
+    sh.disabled = true;
+    try {
+      const r = await PWA.shareFile(`sinaq-${R.pct}.png`, await resultImage(R, one, met, lines), one ? `${SUBJ[one].title} sınağı` : 'Sınaq imtahanı');
+      if (r === 'downloaded') toast('Şəkil yükləndi');
+    } catch (e) { toast('Şəkli hazırlamaq alınmadı.'); }
+    sh.disabled = false;
+  });
+}
+// 1080×1350, always in the light look: the score on a half ring with the group's thresholds, the subjects, the date
+async function resultImage(R, one, met, lines) {
+  const F = 'Plus Jakarta Sans', W = 1080, H = 1350, cv = document.createElement('canvas');
+  try { await Promise.all([400, 600, 700, 800].map(w => document.fonts.load(`${w} 40px "${F}"`, 'Əə'))); } catch (e) { }
+  cv.width = W; cv.height = H;
+  const g = cv.getContext('2d'), font = (w, s) => `${w} ${s}px "${F}", system-ui, sans-serif`;
+  const box = (x, y, w, h, r) => { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); };
+  const text = (t, x, y, f, color, align) => { g.font = f; g.fillStyle = color; g.textAlign = align || 'left'; g.fillText(t, x, y); };
+  g.fillStyle = '#F5F6FB'; g.fillRect(0, 0, W, H);
+  g.save(); box(60, 60, W - 120, 640, 56); g.fillStyle = '#4F46E5'; g.fill(); g.clip();
+  g.strokeStyle = 'rgba(255,255,255,.09)'; g.lineWidth = 50; g.beginPath(); g.arc(940, 110, 170, 0, 2 * Math.PI); g.stroke();
+  g.restore();
+  text(`Dövlət Qulluğu · ${one ? SUBJ[one].title + ' sınağı' : 'Sınaq imtahanı'}`, 120, 150, font(700, 34), 'rgba(255,255,255,.88)');
+  const cx = 540, cy = 520, r = 230, a0 = Math.PI, p = Math.max(0, Math.min(100, R.pct));
+  g.lineCap = 'round'; g.lineWidth = 46;
+  g.strokeStyle = 'rgba(255,255,255,.22)'; g.beginPath(); g.arc(cx, cy, r, a0, 2 * Math.PI); g.stroke();
+  if (p > 0) { g.strokeStyle = '#FFFFFF'; g.beginPath(); g.arc(cx, cy, r, a0, a0 + Math.PI * p / 100); g.stroke(); }
+  lines.forEach(l => {
+    const a = a0 + Math.PI * l.pct / 100, at = rr => [cx + rr * Math.cos(a), cy + rr * Math.sin(a)];
+    const [x1, y1] = at(r - 29), [x2, y2] = at(r + 29), [lx, ly] = at(r + 60);
+    g.lineWidth = 5; g.strokeStyle = l.pct <= p ? '#4F46E5' : 'rgba(255,255,255,.7)';
+    g.beginPath(); g.moveTo(x1, y1); g.lineTo(x2, y2); g.stroke();
+    text(String(l.pct), lx, ly + 10, font(700, 28), 'rgba(255,255,255,.9)', 'center');
+  });
+  let big = 150; // as large as fits inside the ring
+  g.font = font(800, big);
+  while (g.measureText(`${R.pct}%`).width > 330 && big > 80) { big -= 6; g.font = font(800, big); }
+  text(`${R.pct}%`, cx, cy - 30, font(800, big), '#FFFFFF', 'center');
+  text(`${R.pts} / ${R.max} bal`, cx, cy + 40, font(600, 40), 'rgba(255,255,255,.85)', 'center');
+  const verdict = one ? `${R.n} sual · vaxt ${clock(R.used)}` : met.length ? `${met.join(', ')} üçün keçid balı toplanıb` : 'Keçid balına hələ çatmır';
+  g.font = font(800, 32); const vw = g.measureText(verdict).width + 64;
+  box(cx - vw / 2, 600, vw, 64, 32); g.fillStyle = '#FFFFFF'; g.fill();
+  text(verdict, cx, 643, font(800, 32), '#4F46E5', 'center');
+  const subs = EXAM.blocks.filter(b => R.bySubj[b.subj]), COL = { qan: '#4F46E5', men: '#EA580C', az: '#059669', inf: '#0284C7' };
+  box(60, 740, W - 120, 100 + subs.length * 96, 48); g.fillStyle = '#FFFFFF'; g.fill();
+  text('Fənlər üzrə', 110, 810, font(800, 36), '#111827');
+  subs.forEach((b, k) => {
+    const s = R.bySubj[b.subj], y = 870 + k * 96, sp = pct(s.right, s.n);
+    text(SUBJ[b.subj].title, 110, y, font(700, 32), '#111827');
+    text(`${s.right}/${s.n} · ${sp}%`, W - 110, y, font(600, 30), '#636B7D', 'right');
+    box(110, y + 22, W - 220, 16, 8); g.fillStyle = '#EEF0FF'; g.fill();
+    if (sp > 0) { box(110, y + 22, Math.max(16, (W - 220) * sp / 100), 16, 8); g.fillStyle = COL[b.subj] || '#4F46E5'; g.fill(); }
+  });
+  text(`${day(R.at)} · ${R.group} qrupu · ${R.n} sual · vaxt ${clock(R.used)}`, cx, H - 92, font(600, 28), '#636B7D', 'center');
+  text('ilkinrzyv.github.io/dovlet-qullugu', cx, H - 48, font(800, 28), '#4F46E5', 'center');
+  return new Promise((res, rej) => cv.toBlob(b => b ? res(b) : rej(new Error('toBlob')), 'image/png'));
 }
 // the exam's score on a half ring; the group's pass thresholds are ticks on it (none for one subject's exam)
 function gauge(p, pts, max, ticks) {
@@ -1410,6 +1797,25 @@ function examFacts() {
 const pAdvice = ask => `Sən Azərbaycanda dövlət qulluğuna qəbul imtahanına hazırlaşanlara məsləhət verən təcrübəli mentorsan. Azərbaycan dilində, konkret və praktik cavab ver. Rəsmi qaydanı bilmirsənsə uydurma — DİM-in saytında (dim.gov.az) yoxlamağı məsləhət gör.\n\n${ask}\n\n${myStatus()}\n${examFacts()}`;
 // the first typed question carries the teacher's instructions; the reader may ask about anything
 const pFree = text => `${tutor()} Söhbət istənilən mövzuda ola bilər: imtahan fənləri (qanunvericilik, məntiq, Azərbaycan dili, informatika), müsahibə, hazırlıq və ya başqa sual. Qanunlar və rəsmi qaydalar barədə əmin olmadığın faktı uydurma — e-qanun.az və ya dim.gov.az saytında yoxlamağı məsləhət gör.\n\n${text}`;
+// the mock interview: Claude is on the hiring board, asks one question at a time, answers each reply with a short
+// review and ends with a mark; the book's own interview chapter is its guide
+function pInterview() {
+  const mus = CHAPTERS.find(c => c.kind === 'chapter' && !SICON[c.subj]);
+  const notes = mus ? clip(mus.sections.map(s => `${s.title}: ${s.text}`).join('\n'), 4500) : '';
+  return `Sən Azərbaycanda dövlət qulluğuna qəbulun müsahibə mərhələsini aparan komissiyanın üzvüsən. Mən ${S.group} qrupu vəzifəsinə namizədəm və test mərhələsindən keçmişəm. Müsahibəni real kimi apar: özünü qısa təqdim et və birinci sualı ver.\n\nQaydalar:\n- Hər dəfə yalnız BİR sual ver və cavabımı gözlə.\n- Hər cavabımdan sonra 2–3 cümləlik rəy ver (nə yaxşı idi, nəyi necə gücləndirim), sonra növbəti suala keç.\n- Suallar müxtəlif olsun: özüm haqqında, motivasiya, dövlət qulluğunun prinsipləri və etika, qanunvericilik biliyi (Konstitusiya, “Dövlət qulluğu haqqında” Qanun, korrupsiyaya qarşı mübarizə, vətəndaşların müraciətləri), situasiya sualları (narazı vətəndaş, maraqlar toqquşması, qanuna zidd göstəriş) və ümumi dünyagörüşü.\n- 7 sualdan sonra müsahibəni bitir və yekun ver: 10 ballıq qiymət, güclü tərəflər, inkişaf etdirilməli məqamlar və 3 konkret tövsiyə.\n- Azərbaycan dilində, nəzakətli və rəsmi danış. Qanunlar barədə əmin olmadığın faktı uydurma.${notes ? `\n\nKitabdakı müsahibə qeydləri (bələdçi kimi istifadə et):\n${notes}` : ''}`;
+}
+// from any page: a fresh chat on the teacher's page opens with the interview (or the claude.ai version starts it)
+async function startSim() {
+  await AI.ready;
+  if (!AI.here()) { handoff('ai-mus'); return; }
+  if (CHAT.busy) return;
+  CHAT.turns = [];
+  PENDING = { act: 'mus', ref: '' };
+  if (location.hash === '#muellim') { vTeacher(); runPending(); } else location.hash = '#muellim';
+}
+document.addEventListener('click', e => { if (e.target.closest && e.target.closest('[data-sim]')) startSim(); });
+const simCard = () => `<button type="button" class="card quizcta sim s-mus" data-sim><span class="sic">${icon('user')}</span>
+  <span><b>Müsahibə simulyatoru</b><span class="muted">Claude komissiya üzvü kimi 7 sual verir, hər cavabına rəy bildirir, sonda qiymət verir</span></span>${icon('arrow')}</button>`;
 const pTopic = (s, t) => `${tutor(s.id)}\n\nBu mövzunu imtahan səviyyəsində izah et: əsas qaydalar, tipik sual növləri, 2–3 həll olunmuş nümunə və sonda özümü yoxlamaq üçün 3 sual (cavabları ən sonda).\n\nDİM proqramı, ${s.title}, mövzu ${t.num}: ${t.title}${t.src ? ` (${t.src})` : ''}.${t.items ? ` Proqrama daxildir: ${clip(t.items.join('; '), 600)}.` : ''}`;
 
 // the conversation lives while the app is open: {role, content, label?}; label is what the bubble shows
@@ -1426,7 +1832,7 @@ function drawChat() {
   el.innerHTML = CHAT.turns.length ? CHAT.turns.map(t => t.role === 'user'
     ? `<div class="bub me">${esc(t.label || t.content)}</div>`
     : `<div class="bub ai prose">${mdToHtml(t.content)}</div>`).join('')
-    : `<div class="chat-empty"><p class="muted small">İstənilən mövzuda yaz: qanun maddəsi, məntiq məsələsi, dil qaydası, Excel düsturu, müsahibə və ya hazırlıq planı. Cavab burada yazılacaq.</p>
+    : `<div class="chat-empty">${simCard()}<p class="muted small">İstənilən mövzuda yaz: qanun maddəsi, məntiq məsələsi, dil qaydası, Excel düsturu, müsahibə və ya hazırlıq planı. Cavab burada yazılacaq.</p>
       <div class="row">${ADVICE.map(([l], i) => `<button type="button" class="btn sm" data-adv="${i}">${esc(l)}</button>`).join('')}</div>
       <p class="muted small">Bu hazır mövzular Claude-a irəliləyişini də göndərir: oxunan bölmələr, səhvlər, son sınaq nəticəsi.</p></div>`;
 }
@@ -1585,7 +1991,9 @@ function vSettings() {
     $('[data-act="import"]').addEventListener('click', importData);
   }
   $('[data-act="reset"]').addEventListener('click', e => askHere(e.currentTarget.parentNode, 'Bütün irəliləyiş və test nəticələri silinsin?', 'Bəli, sil', () => {
-    S = Object.assign(blank(), { theme: S.theme, fs: S.fs, group: S.group, aiModel: S.aiModel, marks: S.marks }); save(); toast('Sıfırlandı');
+    // the reader's own marks, highlights and notes stay; progress, results and the cards learned go
+    S = Object.assign(blank(), { theme: S.theme, fs: S.fs, group: S.group, aiModel: S.aiModel, marks: S.marks, hl: S.hl, notes: S.notes, pauseOnLeave: S.pauseOnLeave });
+    quizRun = null; save(); toast('Sıfırlandı');
   }));
 }
 // model choice (every build) and, in the offline app, the reader's own API key
@@ -1656,8 +2064,9 @@ async function importData() {
 applyLook();
 AI.init();
 // the offline app reloads itself into a new version when the reader leaves it — unless that would lose work in hand
-if (PWA) PWA.busy = () => !!(quizRun && quizRun.picks.length && quizRun.i < quizRun.items.length) || CHAT.busy || CHAT.turns.length > 0
-  || !!tDraft.trim() || $$('.ai-box').some(b => b._ctl) || $$('#view input.oa:not([disabled]), #aikey').some(i => i.value.trim());
+// (a test half done is kept in S.run and the mock exam in S.exam, so neither holds it)
+if (PWA) PWA.busy = () => CHAT.busy || CHAT.turns.length > 0 || !!tDraft.trim() || $$('.ai-box').some(b => b._ctl)
+  || $$('#view input.oa:not([disabled]), #view textarea, #aikey').some(i => i.value.trim());
 window.addEventListener('hashchange', route);
 route();
 })();
