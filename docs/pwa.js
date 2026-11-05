@@ -2,7 +2,7 @@
    own API key. Loaded before app.js; app.js finds it as window.DQ_PWA (absent on the claude.ai page). */
 (function () {
 'use strict';
-const VERSION = '2026.11.02-699ff99';
+const VERSION = '2026.11.05-046344b';
 const ASSET_COUNT = 28;
 const CACHE = 'dq-kitab-' + VERSION;
 const ARTIFACT = 'https://claude.ai/artifact/DS1Sg1NBATqkMRPuVkHoER'; // the claude.ai version of the book; Claude runs there on the reader's own account
@@ -64,7 +64,8 @@ async function sample(input, opts) {
   let resp;
   try {
     resp = await fetch(API + '/messages', { method: 'POST', headers: apiHeaders(key(), true), signal: opts.signal,
-      body: JSON.stringify({ model, max_tokens: 8000, stream: true, messages: msgs }) });
+      // promptCache (the teacher's chat): the conversation so far is cached for the next turn; too short a prefix just isn't
+      body: JSON.stringify(Object.assign({ model, max_tokens: 8000, stream: true, messages: msgs }, opts.promptCache ? { cache_control: { type: 'ephemeral' } } : {})) });
   } catch (e) {
     if (opts.signal && opts.signal.aborted) throw { code: 'cancelled', message: 'cancelled', text: '' };
     throw { code: online() ? 'network' : 'offline', message: String(e && e.message || e) };

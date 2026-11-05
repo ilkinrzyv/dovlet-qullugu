@@ -4,6 +4,7 @@
   "description": "Build helpers and Playwright checks for Dövlət Qulluğu",
   "scripts": {
     "icons": "node make_icons.js",
+    "check": "node check.js",
     "test:pwa": "node tp1.js",
     "test:app": "cd .. && python build/parse_book.py --src build/test/book.md --quiz build/test/quiz --fig build/test/fig --out build/test/book.json && cd build && node t1.js",
     "test:page": "cd .. && python build/parse_book.py --src build/test/book.md --quiz build/test/quiz --fig build/test/fig --out build/test/book.json && python build/build_page.py --book build/test/book.json --out build/test/page.html --wrap && cd build && node t2.js"

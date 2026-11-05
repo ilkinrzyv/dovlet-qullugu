@@ -1,0 +1,5 @@
+# generated or vendored: search the sources instead (ripgrep skips these)
+docs/
+fonts/
+libs/
+build/icons/

@@ -283,7 +283,26 @@ function handoff(path, copy) {
   toast(copy ? 'claude.ai versiyası açılır. Sualın kopyalandı — orada yapışdır.' : 'claude.ai versiyası açılır — Claude cavabı orada özü başladacaq.');
 }
 
-async function runBox(box) {
+// An answer already given to the same prompt on the same model comes back from this device and costs no tokens.
+// Oldest out past 40 answers or 400k characters; cut-off answers are not kept. The prompt carries the book's text,
+// so a change in the book asks again. It sits apart from the reader's state: neither export nor “Sıfırla” touches it.
+const K_ANS = 'dq-kitab:ai-answers', ANS_MAX = 40, ANS_CHARS = 4e5;
+const ansKey = (input, img) => {
+  let h1 = 0xdeadbeef, h2 = 0x41c6ce57;
+  const s = `${(AI.opts().model || 'auto')}|${img ? 1 : 0}|${input}`;
+  for (let i = 0; i < s.length; i++) { const c = s.charCodeAt(i); h1 = Math.imul(h1 ^ c, 2654435761); h2 = Math.imul(h2 ^ c, 1597334677); }
+  return `${(h1 >>> 0).toString(36)}${(h2 >>> 0).toString(36)}${s.length}`;
+};
+function ansAll() { try { return JSON.parse(localStorage.getItem(K_ANS)) || {}; } catch (e) { return {}; } }
+function ansSave(k, text, model) {
+  const all = ansAll();
+  all[k] = { t: text, m: model || '', at: Date.now() };
+  const keys = Object.keys(all).sort((a, b) => all[b].at - all[a].at);
+  let n = 0;
+  keys.forEach((id, i) => { n += all[id].t.length; if (i && (i >= ANS_MAX || n > ANS_CHARS)) delete all[id]; });
+  try { localStorage.setItem(K_ANS, JSON.stringify(all)); } catch (e) { }
+}
+async function runBox(box, fresh) {
   const act = box.dataset.act, ref = box.dataset.ref;
   let x = null; try { x = box.dataset.x ? JSON.parse(box.dataset.x) : null; } catch (e) { x = null; }
   const task = aiTask(act, ref, x);
@@ -294,15 +313,26 @@ async function runBox(box) {
   if (box._ctl) return; // already answering
   let images = null;
   if (task.img && AI.images) { const png = await svgToPng(task.img); if (png) images = [png]; }
-  const input = task.make(!!images);
-  btn.disabled = true;
-  const res = await aiStream(out, [{ role: 'user', content: input }], { images, holder: box });
-  btn.disabled = false;
+  const input = task.make(!!images), key = ansKey(input, !!images);
+  const kept = fresh ? null : ansAll()[key];
+  let res;
+  if (kept) {
+    out.hidden = false;
+    out.innerHTML = `<div class="ai-text prose">${mdToHtml(kept.t)}</div><p class="ai-meta">Saxlanmış cavab, token xərclənmədi · faktları kitabla yoxla</p>`;
+    res = { text: kept.t };
+  } else {
+    btn.disabled = true;
+    res = await aiStream(out, [{ role: 'user', content: input }], { images, holder: box });
+    btn.disabled = false;
+    if (res && !res.truncated) ansSave(key, res.text, res.modelApplied);
+  }
   if (res) {
     const more = document.createElement('div');
     more.className = 'row ai-more';
-    more.innerHTML = `<button type="button" class="btn sm ghost" data-act="ai-chat">${icon('chat')} Müəllimlə davam et</button>`;
+    more.innerHTML = `<button type="button" class="btn sm ghost" data-act="ai-chat">${icon('chat')} Müəllimlə davam et</button>`
+      + (kept ? `<button type="button" class="btn sm ghost" data-act="ai-again">Yenidən soruş</button>` : '');
     more.firstChild.addEventListener('click', () => { CHAT.turns = [{ role: 'user', content: input, label: task.label }, { role: 'assistant', content: res.text }]; location.hash = '#muellim'; });
+    if (kept) more.lastChild.addEventListener('click', () => runBox(box, true));
     out.appendChild(more);
   }
 }
@@ -317,6 +347,7 @@ async function aiStream(out, turns, o) {
   ctlRow.firstChild.addEventListener('click', () => ctl.abort());
   const opts = Object.assign({ signal: ctl.signal, onText: ({ text }) => { wait.hidden = true; textEl.innerHTML = mdToHtml(text); } }, AI.opts());
   if (o.chat) opts.cache = false; // every chat turn must be a fresh answer; one-off explanations may replay
+  if (o.chat && PWA) opts.promptCache = true; // the API key pays per token: earlier turns are read back at a tenth of the price
   if (o.images) opts.images = o.images;
   let res = null;
   try {
@@ -1846,7 +1877,9 @@ async function chatSend(content, label) {
   out.className = 'bub ai';
   el.appendChild(out);
   out.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-  const turns = CHAT.turns.length > CHAT_KEEP ? [CHAT.turns[0], ...CHAT.turns.slice(-(CHAT_KEEP - 1))] : CHAT.turns;
+  // old turns drop six at a time, not one by one: the cached start of the conversation stays the same between drops
+  const over = CHAT.turns.length - CHAT_KEEP + 1, drop = over > 0 ? over - over % 6 : 0;
+  const turns = drop ? [CHAT.turns[0], ...CHAT.turns.slice(drop)] : CHAT.turns;
   CHAT.busy = true;
   const send = $('[data-act="chat-send"]');
   if (send) send.disabled = true;

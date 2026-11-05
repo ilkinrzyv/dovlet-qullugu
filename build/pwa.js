@@ -64,7 +64,8 @@ async function sample(input, opts) {
   let resp;
   try {
     resp = await fetch(API + '/messages', { method: 'POST', headers: apiHeaders(key(), true), signal: opts.signal,
-      body: JSON.stringify({ model, max_tokens: 8000, stream: true, messages: msgs }) });
+      // promptCache (the teacher's chat): the conversation so far is cached for the next turn; too short a prefix just isn't
+      body: JSON.stringify(Object.assign({ model, max_tokens: 8000, stream: true, messages: msgs }, opts.promptCache ? { cache_control: { type: 'ephemeral' } } : {})) });
   } catch (e) {
     if (opts.signal && opts.signal.aborted) throw { code: 'cancelled', message: 'cancelled', text: '' };
     throw { code: online() ? 'network' : 'offline', message: String(e && e.message || e) };

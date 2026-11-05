@@ -163,6 +163,15 @@ function serve(port) {
   await page.locator('.claudebox .ai-meta').waitFor();
   out.modelChoice = apiCalls[2].model;
   out.sectionPrompt = JSON.stringify(apiCalls[2].messages).includes('Fəsil 3. Məntiq fəsli');
+  // the same button again: the saved answer, no call; “Yenidən soruş” asks anew
+  const callsBefore = apiCalls.length;
+  await page.click('.claudebox [data-ai]');
+  await page.locator('.claudebox [data-act="ai-again"]').waitFor();
+  out.saved = { calls: apiCalls.length - callsBefore, text: (await page.locator('.claudebox .ai-text').innerText()).includes('Cavab 3'),
+    meta: (await page.locator('.claudebox .ai-meta').innerText()).includes('token xərclənmədi') };
+  await page.click('.claudebox [data-act="ai-again"]');
+  await page.waitForFunction(() => document.querySelector('.claudebox .ai-text').textContent.includes('Cavab 4') && document.querySelector('.claudebox .ai-meta'));
+  out.savedAgain = apiCalls.length - callsBefore;
   await shot('t1-claude');
 
   // ---- virtual teacher: a chat whose next turn carries the earlier ones ----
@@ -177,6 +186,7 @@ function serve(port) {
   await page.click('[data-act="chat-send"]');
   await page.waitForFunction(() => document.querySelectorAll('#chat .bub.ai.prose').length === 2);
   const t1c = apiCalls[apiCalls.length - 2], t2c = apiCalls[apiCalls.length - 1];
+  out.promptCache = { oneOff: apiCalls[2].cache_control === undefined, chat: t2c.cache_control && t2c.cache_control.type };
   out.chat = { first: JSON.stringify(t1c.messages).includes('istənilən mövzuda'), roles: t2c.messages.map(m => m.role).join(','), last: t2c.messages[2].content,
     starters: await page.$$eval('#chat [data-adv]', els => els.length) };
   await page.click('[data-act="chat-new"]');
@@ -487,6 +497,7 @@ function serve(port) {
   eq('hintCall', { model: 'claude-sonnet-5-5', hint: true, question: true });
   eq('figureSent', true);
   eq('modelChoice', 'claude-haiku-5-5'); eq('sectionPrompt', true);
+  eq('saved', { calls: 0, text: true, meta: true }); eq('savedAgain', 1); eq('promptCache', { oneOff: true, chat: 'ephemeral' });
   eq('teacherTab', 'Müəllim');
   eq('teacherPlain', { subjects: 0, topics: 0, starters: 6 });
   eq('chat', { first: true, roles: 'user,assistant,user', last: 'Bir misal ver', starters: 0 });

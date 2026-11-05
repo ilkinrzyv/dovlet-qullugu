@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(/docs/**)",
+      "Read(/build/book.json)",
+      "Read(/build/test/book.json)",
+      "Read(/build/node_modules/**)",
+      "Read(/fonts/**)",
+      "Read(/dist/*.zip)"
+    ]
+  }
+}
