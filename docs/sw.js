@@ -1,5 +1,5 @@
 /* Dövlət Qulluğu — service worker: keeps the whole book on the device so it opens without internet. */
-const VERSION = '2026.11.05-046344b';
+const VERSION = '2026.11.05-2a9a62c';
 const CACHE = 'dq-kitab-' + VERSION;
 const ASSETS = [
  "./",
@@ -29,7 +29,8 @@ const ASSETS = [
  "icons/icon-512.png",
  "icons/icon.svg",
  "icons/maskable-192.png",
- "icons/maskable-512.png"
+ "icons/maskable-512.png",
+ "icons/qr.svg"
 ];
 
 async function putClean(cache, url) {

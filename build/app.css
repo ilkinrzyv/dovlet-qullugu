@@ -503,6 +503,10 @@ mark{background:var(--mark);color:inherit;border-radius:4px;padding:0 2px}
 /* ---------- settings ---------- */
 .set{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .set>span{font-weight:700}
+.share{align-items:center;text-align:center}
+.share .row{justify-content:center}
+.share .qr{width:220px;max-width:70%;height:auto;aspect-ratio:1;background:#fff;border-radius:16px;padding:6px;box-shadow:0 0 0 1px var(--line,rgba(0,0,0,.08))}
+.share-url{margin:0;word-break:break-all}
 .seg{display:inline-flex;padding:4px;border-radius:14px;background:var(--surface-2);gap:2px}
 .seg button{height:36px;padding:0 14px;border-radius:11px;font-size:13.5px;font-weight:600;color:var(--ink-2)}
 .seg button[aria-checked="true"]{background:var(--surface);color:var(--ink);font-weight:800;box-shadow:0 1px 3px rgba(17,24,39,.12)}

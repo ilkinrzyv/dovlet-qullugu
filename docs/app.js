@@ -1987,6 +1987,26 @@ function appRow() {
     <button type="button" class="btn" data-act="update">${icon('refresh')} İndi yoxla</button>`;
 }
 
+// the QR (build/icons/qr.svg, made once with segno) points at the public address; scanning it opens the book on a friend's phone
+const SHARE_URL = 'https://ilkinrzyv.github.io/dovlet-qullugu/';
+const shareCard = () => `<section class="block"><div class="block-h"><h2>Paylaş</h2></div>
+  <div class="card stack share">
+    <img class="qr" src="icons/qr.svg" alt="Kitabın ünvanını açan QR kod" width="220" height="220">
+    <p class="muted small">Telefonun kamerası ilə oxut: kitab açılır. Orada Ayarlar və ya brauzer menyusu ilə ana ekrana əlavə olunur, sonra internetsiz də işləyir.</p>
+    <p class="mono small share-url">${esc(SHARE_URL.replace('https://', ''))}</p>
+    <div class="row"><button type="button" class="btn sm" data-act="share-link">${icon('arrow')} Linki göndər</button>
+      <button type="button" class="btn sm ghost" data-act="share-copy">Linki kopyala</button></div>
+  </div></section>`;
+function bindShare() {
+  const sh = $('[data-act="share-link"]'), cp = $('[data-act="share-copy"]');
+  if (!sh) return;
+  sh.addEventListener('click', async () => {
+    if (navigator.share) { try { await navigator.share({ title: 'Dövlət Qulluğu', text: 'Dövlət qulluğu imtahanına hazırlıq kitabı', url: SHARE_URL }); return; } catch (e) { if (e && e.name === 'AbortError') return; } }
+    toast((await copyText(SHARE_URL)) ? 'Link kopyalandı' : SHARE_URL);
+  });
+  cp.addEventListener('click', async () => toast((await copyText(SHARE_URL)) ? 'Link kopyalandı' : SHARE_URL));
+}
+
 function vSettings() {
   topbar(`${S.group} qrupu`, 'Ayarlar', null, null, null, { big: true });
   $('#view').innerHTML = `
@@ -2004,6 +2024,7 @@ function vSettings() {
       <div class="card stack" id="set-ai">${claudeRow()}</div></section>
     <section class="block"><div class="block-h"><h2>Tətbiq</h2></div>
       <div class="card stack" id="set-app">${appRow()}</div></section>
+    ${PWA ? shareCard() : ''}
     <section class="block"><div class="block-h"><h2>Məlumatlar</h2></div>
       <div class="card stack">
         <p class="muted">${PWA ? 'İrəliləyiş və test nəticələri yalnız bu cihazda saxlanılır. Başqa cihaza keçmək üçün ixrac et, orada idxal et.'
@@ -2019,6 +2040,7 @@ function vSettings() {
   $$('[data-fs]').forEach(b => b.addEventListener('click', () => { S.fs = b.dataset.fs; save(); applyLook(); vSettings(); }));
   bindApp();
   bindClaude();
+  bindShare();
   if (PWA) {
     $('[data-act="export"]').addEventListener('click', exportData);
     $('[data-act="import"]').addEventListener('click', importData);

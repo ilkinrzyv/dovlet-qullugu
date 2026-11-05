@@ -2,8 +2,8 @@
    own API key. Loaded before app.js; app.js finds it as window.DQ_PWA (absent on the claude.ai page). */
 (function () {
 'use strict';
-const VERSION = '2026.11.05-046344b';
-const ASSET_COUNT = 28;
+const VERSION = '2026.11.05-2a9a62c';
+const ASSET_COUNT = 29;
 const CACHE = 'dq-kitab-' + VERSION;
 const ARTIFACT = 'https://claude.ai/artifact/DS1Sg1NBATqkMRPuVkHoER'; // the claude.ai version of the book; Claude runs there on the reader's own account
 const API = 'https://api.anthropic.com/v1';

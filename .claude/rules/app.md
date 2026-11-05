@@ -66,6 +66,9 @@ paths:
   The teacher page is one plain chat on any topic (the owner's wish: no subject picker, no topic list); the
   ready-made advice prompts show only on an empty chat; `#ai-topic-…` links still open the chat with that topic.
   After changing `app.js`/`app.css` or the book, rebuild the page and republish it to the same artifact URL.
+- Ayarlar → “Paylaş” (offline app only, `shareCard()`): a QR for the public address (`SHARE_URL`) plus “Linki göndər”
+  (`navigator.share`, else copy) and “Linki kopyala”. The QR is `build/icons/qr.svg`, made once with `segno`
+  (`segno.make(url, error='m').save(…, scale=8, border=2)`); regenerate it only if the address changes.
 - `libs/` — marked 12.0.2 and DOMPurify 3.1.6 (render Claude's markdown safely); copied into `docs/libs/`; the
   claude.ai page loads the same versions from jsDelivr.
 - Saving the reader's tokens: a Claude button's answer is kept on the device (`runBox`, localStorage `dq-kitab:ai-answers`, keyed by a hash of model + prompt, 40 answers / 400k characters) and shown again without a call, with “Yenidən soruş”. The teacher's chat is never replayed; in the offline app it sends `cache_control` (`opts.promptCache`) so earlier turns are read from the API's prompt cache, and old turns drop six at a time so that the prefix stays the same.
